@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Tangram Blocks</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+		<script type="text/javascript" src="https://rawgit.com/chjj/marked/master/lib/marked.js"></script>
+
+		<link rel="stylesheet" href="https://mapzen.com/common/styleguide/styles/styleguide.css">
+		<style type="text/css">
+			canvas {
+				position: relative;
+				left: 50%;
+				transform: translate(-50%, 0px);
+			}
+			img {
+				position: relative;
+				left: 50%;
+				transform: translate(-50%, 0px);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div id="content"> </div>
+		</div>
+		<script src="https://mapzen.com/common/styleguide/scripts/mapzen-styleguide.min.js"></script>
+		<script type="text/javascript">
+
+			function fetchHTTP(url, methood){
+	            var request = new XMLHttpRequest(), response;
+	            request.onreadystatechange = function () {
+	                if (request.readyState === 4 && request.status === 200) {
+	                    response = request.responseText;
+	                }
+	            }
+	            request.open(methood ? methood : 'GET', url, false);
+	            request.send();
+	            return response;
+	        }
+
+	        function loadMarkdown(){
+	        	var content = document.getElementById('content');
+	            var mdText = fetchHTTP("README.md");
+	            content.innerHTML = marked(mdText);
+	            // Load codes tags that have "src" attributes
+		        var list = document.getElementsByTagName("code");
+		        for(var i = 0; i < list.length; i++){
+		            if (list[i].className == "lang-glsl" ||
+		                list[i].className == "lang-js" ){
+		                hljs.highlightBlock(list[i]);
+		            }
+		        }
+	        }
+
+	        window.onload = function(){
+	            loadMarkdown();
+	        };
+		</script>
+	</body>
+</html>
