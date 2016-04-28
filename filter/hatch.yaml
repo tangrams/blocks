@@ -2,20 +2,21 @@
 # Based on Jaume's Sanchez (@thespite) Cross-hatching GLSL shader (https://www.clicktorelease.com/code/cross-hatching/)
 
 styles:
-    shaders:
-        uniforms:
-            u_hatchmap: hatch.png
-        blocks:
-            global: |
-                float getHatch(vec2 st, float brightness){
-                    st  = fract(st)/3.;
-                    brightness = clamp(brightness,0.,0.9999999);
-                    vec2 pos1 = vec2(floor(brightness*9.0)/3.,
-                                     floor(brightness*3.0)/3.) + st;
-                    float minBrightness = clamp(brightness-0.111111111,0.,1.0);
-                    vec2 pos2 = vec2(floor(minBrightness*9.0)/3.,
-                                     floor(minBrightness*3.0)/3.)+st;
-                    return mix(texture2D(u_hatchmap, fract(pos1) ).a,
-                               texture2D(u_hatchmap, fract(pos2) ).a,
-                               1.0-fract(brightness*9.0));
-                }
+    filter-hatch:
+        shaders:
+            uniforms:
+                u_hatchmap: hatch.png
+            blocks:
+                global: |
+                    float getHatch(vec2 st, float brightness){
+                        st  = fract(st)/3.;
+                        brightness = clamp(brightness,0.,0.9999999);
+                        vec2 pos1 = vec2(floor(brightness*9.0)/3.,
+                                         floor(brightness*3.0)/3.) + st;
+                        float minBrightness = clamp(brightness-0.111111111,0.,1.0);
+                        vec2 pos2 = vec2(floor(minBrightness*9.0)/3.,
+                                         floor(minBrightness*3.0)/3.)+st;
+                        return mix(texture2D(u_hatchmap, fract(pos1) ).a,
+                                   texture2D(u_hatchmap, fract(pos2) ).a,
+                                   1.0-fract(brightness*9.0));
+                    }
