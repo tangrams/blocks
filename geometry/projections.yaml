@@ -1,12 +1,12 @@
  # Patricio Gonzalez Vivo - 2015
 
 styles:
-    geometry-projection:
+    geometry-projections:
         shaders:
             defines:
                 EARTH_RADIUS: 6378137.0
-                PI: 3.14159265358979323846
-                HALF_PI: 1.570796327
+                PI: 3.1415926535897932384626433832795
+                HALF_PI: 1.5707963267948966192313216916398
                 QUATER_PI: .785398163
                 deg2rad(d): (((d)*3.14159265358979323846)/180.0)
                 rad2deg(d): (((d)*180.0)/3.14159265358979323846)
