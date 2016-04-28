@@ -2,8 +2,10 @@
 
 styles:
     filter-tv:
-        shaders: 
+        shaders:
+            defines:
+                TV_FREQ: 10.
             blocks: 
                 filter: |
-                    color *= abs(cos((gl_FragCoord.y*10.+u_time*5.)));
+                    color *= abs(cos((gl_FragCoord.y*TV_FREQ+u_time*5.)));
 
