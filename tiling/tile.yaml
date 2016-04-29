@@ -8,7 +8,7 @@ styles:
                 global: |
                     // Repeats a coordinate space (st) in diferent tiles
                     // ================================
-                    vec2 tile(vec2 st, float zoom){
+                    vec2 tile (vec2 st, float zoom) {
                         st *= zoom;
                         return fract(st);
                     }

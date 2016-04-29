@@ -8,7 +8,7 @@ styles:
                 global: |
                     // Repeats a coordinate space (st) in diferent brick-like tiles
                     // ================================
-                    vec2 brick(vec2 st, float zoom){
+                    vec2 brick (vec2 st, float zoom) {
                         st *= zoom;
                         // Here is where the offset is happening
                         st.x += step(1., mod(st.y,2.0)) * 0.5;

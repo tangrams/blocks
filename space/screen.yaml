@@ -5,7 +5,22 @@ styles:
             blocks:
                 global: |
                     // Get the coordinates in screen space
-                    // ================================
+                    // ===================================
                     vec2 getScreenCoords () {
                         return gl_FragCoord.xy / u_resolution.xy;
+                    }
+
+                    // Get the coordinates in screen space 
+                    // non stretching the coords system
+                    // ===================================
+                    vec2 getScreenNonStretchCoords () {
+                        vec2 st = gl_FragCoord.xy/u_resolution.xy;
+                        if (u_resolution.y > u_resolution.x ) {
+                            st.y *= u_resolution.y/u_resolution.x;
+                            st.y -= (u_resolution.y*.5-u_resolution.x*.5)/u_resolution.x;
+                        } else {
+                            st.x *= u_resolution.x/u_resolution.y;
+                            st.x -= (u_resolution.x*.5-u_resolution.y*.5)/u_resolution.y;
+                        } 
+                        return st;
                     }
