@@ -4,6 +4,7 @@ styles:
         shaders:
             blocks:
                 global: |
+                    #ifdef TANGRAM_FRAGMENT_SHADER
                     // Get the coordinates in screen space
                     // ===================================
                     vec2 getScreenCoords () {
@@ -14,7 +15,7 @@ styles:
                     // non stretching the coords system
                     // ===================================
                     vec2 getScreenNonStretchCoords () {
-                        vec2 st = gl_FragCoord.xy/u_resolution.xy;
+                        vec2 st = getScreenCoords();
                         if (u_resolution.y > u_resolution.x ) {
                             st.y *= u_resolution.y/u_resolution.x;
                             st.y -= (u_resolution.y*.5-u_resolution.x*.5)/u_resolution.x;
@@ -24,3 +25,4 @@ styles:
                         } 
                         return st;
                     }
+                    #endif
