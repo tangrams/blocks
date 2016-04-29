@@ -33,15 +33,15 @@ styles:
                     }
                     //
                     vec4 getLut (vec3 textureColor) {
-                        return LUT(textureColor, u_lut);
+                        return getLut(textureColor, u_lut);
                     }
                     //
                     vec4 getLut (vec4 textureColor, sampler2D lookupTable) {
-                        return LUT(textureColor.rgb, lookupTable);
+                        return getLut(textureColor.rgb, lookupTable);
                     }
                     //
                     vec4 getLut (vec4 textureColor) {
-                        return LUT(textureColor.rgb, u_lut);
+                        return getLut(textureColor.rgb, u_lut);
                     }
                 filter: |
                     color = getLut(color);
