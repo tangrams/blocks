@@ -1,16 +1,16 @@
 # Patricio Gonzalez Vivo - 2015
 
 styles:
-    LUT:
+    filter-lut:
         shaders:
             uniforms:
-                u_lut: imgs/lut-0001.png
+                u_lut: lut-0001.png
             blocks:
                 global: |
                     // Apply Look up table on a color
                     // The user need to provide a valid url to the uniform "u_lut"
                     // ================================
-                    vec4 LUT (vec3 textureColor, sampler2D lookupTable) {
+                    vec4 getLut (vec3 textureColor, sampler2D lookupTable) {
                         textureColor.g = 1.-textureColor.g;
                         textureColor = clamp(textureColor, 0.0, 1.0);
                         float blueColor = textureColor.b * 63.0;
@@ -32,8 +32,16 @@ styles:
                         return newColor;
                     }
                     //
-                    vec4 LUT (vec4 textureColor, sampler2D lookupTable) {
+                    vec4 getLut (vec3 textureColor) {
+                        return LUT(textureColor, u_lut);
+                    }
+                    //
+                    vec4 getLut (vec4 textureColor, sampler2D lookupTable) {
                         return LUT(textureColor.rgb, lookupTable);
                     }
+                    //
+                    vec4 getLut (vec4 textureColor) {
+                        return LUT(textureColor.rgb, u_lut);
+                    }
                 filter: |
-                    color = LUT(color,u_lut);
+                    color = getLut(color);
