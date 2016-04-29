@@ -7,10 +7,11 @@ styles:
         animated: true
         shaders:
             defines:
-                PI: 3.1415926535897932384626433832795
-                HALF_PI: 1.5707963267948966192313216916398
+                TILT_IN: 15.
+                TILT_OUT: 20.
+                TILT_MAX_ZOOM: 20.
             blocks:
                 position: |
                     float t = u_time*0.1; 
-                    float z = smoothstep(0.7,1.,max((u_map_position.z)/20.,0.)*0.9);
+                    float z = clamp(smoothstep(TILT_IN/TILT_MAX_ZOOM, TILT_OUT/TILT_MAX_ZOOM, max(u_map_position.z/TILT_MAX_ZOOM,0.)*0.9), 0., 1.);
                     position.xyz = rotateX3D(z*HALF_PI) * rotateZ3D(sin(t)*PI*z) * position.xyz;
