@@ -10,7 +10,7 @@ styles:
                 NUM_OCTAVES: 5
             blocks:
                 global: |
-                    // Fractional Brownian motion for 1 and 2 dimensions
+                    // Fractional Brownian motion for 1, 2 and 3 dimensions
                     float fbm (float x) {
                         float v = 0.0;
                         float a = 0.5;
@@ -31,6 +31,17 @@ styles:
                         for (int i = 0; i < int(NUM_OCTAVES); ++i) {
                             v += a * noise(xy);
                             xy = rot * xy * 2.0 + shift;
+                            a *= 0.5;
+                        }
+                        return v;
+                    }
+                    float fbm ( in vec3 xyz) {
+                        float v = 0.0;
+                        float a = 0.5;
+                        vec3 shift = vec3(100);
+                        for (int i = 0; i < 5; ++i) {
+                            v += a * noise(xyz);
+                            xyz = xyz * 2.0 + shift;
                             a *= 0.5;
                         }
                         return v;
