@@ -1,0 +1,13 @@
+global:
+    order: function () { return feature.sort_key; }
+    order-top: function () { return feature.sort_key + 1; }
+    order-buttom: function () { return feature.sort_key - 1; }
+    pseudoRandomColor: |
+        function() {
+            return [
+                0.7 * (parseInt(feature.id, 16) / 100 % 1),     // jshint ignore:line
+                0.7 * (parseInt(feature.id, 16) / 10000 % 1),   // jshint ignore:line
+                0.7 * (parseInt(feature.id, 16) / 1000000 % 1), // jshint ignore:line
+                1
+            ];
+        }
