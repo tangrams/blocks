@@ -5,7 +5,7 @@ import:
     - ../space/tile.yaml
 styles:
     grids-tile:
-        mix: [space-tile,grids-grid]
+        mix: [space-tile, grids-grid]
         shaders:
             blocks:
                 global: |

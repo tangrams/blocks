@@ -3,4 +3,4 @@ styles:
         shaders:
             blocks:
                 color: |
-                    color.rgb *= vec3(min((worldPosition().z*.001 + .5),1.));
+                    color.rgb *= min((worldPosition().z*.001 + .5),1.);
