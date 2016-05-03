@@ -1,0 +1,6 @@
+styles:
+    filter-height:
+        shaders:
+            blocks:
+                color: |
+                    color.rgb *= vec3(min((worldPosition().z*.001 + .5),1.));
