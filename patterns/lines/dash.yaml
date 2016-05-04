@@ -3,6 +3,9 @@
 styles:
     patterns-lines-dots:
         base: lines
+        lighting: false
+        texcoords: true
+        blend: overlay
         shaders:
             defines:
                 dash_size: .5
