@@ -1,0 +1,15 @@
+# Patricio Gonzalez Vivo - 2016
+
+styles:
+    patterns-lines-outline:
+        base: lines
+        texcoords: true
+        shaders:
+            defines:
+                outline_width: 0.1
+                outline_color: vec3(1.)
+            blocks:
+                color: |
+                    color.rgb = mix(color.rgb,
+                                    outline_color,
+                                    (1.0-(step(outline_width,v_texcoord.x)-step(1.0-outline_width,v_texcoord.x))));
