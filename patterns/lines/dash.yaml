@@ -12,4 +12,4 @@ styles:
                 dash_scale: .1
             blocks:
                 color: |
-                    color.a = 1.- step(dash_size,fract(v_texcoord.y*dash_scale));
+                    color.a = 1.-step(dash_size,fract(v_texcoord.y*dash_scale));
