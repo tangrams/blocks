@@ -12,5 +12,4 @@ styles:
                 dash_scale: .1
             blocks:
                 color: |
-                    vec2 st = fract(v_texcoord.xy*vec2(1.,dash_scale));
-                    color.a = 1.- step(dash_size,st.y);
+                    color.a = 1.- step(dash_size,fract(v_texcoord.y*dash_scale));
