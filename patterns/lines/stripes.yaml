@@ -1,0 +1,12 @@
+# Patricio Gonzalez Vivo - 2016
+
+styles:
+    patterns-lines-stripes:
+        base: lines
+        lighting: false
+        texcoords: true
+        shaders:
+            blocks:
+                color: |
+                    vec2 st = fract(v_texcoord);
+                    color.rgb += step(.1,sin((st.x+st.y)*6.283))*.1;
