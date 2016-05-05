@@ -1,14 +1,25 @@
 # Patricio Gonzalez Vivo - 2015
 
-import: 
-    - grid.yaml
+import:
     - ../space/tile.yaml
+
 styles:
-    grids-tile:
-        mix: [space-tile, grids-grid]
+    patterns-grid:
+        mix: [space-tile]
         shaders:
             blocks:
                 global: |
+                    // Draw a grid in the space a specific resolution and pressition
+                    bool grid(vec2 st, float res, float press){
+                        vec2 grid = fract(st*res);
+                        return grid.x < res*press || grid.y < res*press;
+                    }
+                    //
+                    // Draw a grid in the space a specific resolution
+                    bool grid(vec2 st, float res){
+                        return grid(st, res, 1.0);
+                    }
+
                     // Draw a grid using tile coordenates in a specific resolution
                     float tileGrid(float res){
                         vec2 st = getTileCoords()*100.*res;
@@ -18,6 +29,7 @@ styles:
                         if (grid(st,0.1,press)) pct += 0.1;
                         return pct;
                     }
+
                     // Draw two grid that smoothly interpolates acording to zooms
                     float tileGrid(){ 
                         return mix(tileGrid(1.),tileGrid(2.),fract(u_map_position.z)); 

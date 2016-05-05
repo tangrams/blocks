@@ -5,7 +5,7 @@ styles:
     filter-hatch:
         shaders:
             uniforms:
-                u_hatchmap: hatch.png
+                u_hatchmap: imgs/hatch.png
             blocks:
                 global: |
                     float getHatch(vec2 st, float brightness){

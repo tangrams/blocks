@@ -1,16 +1,15 @@
 # Patricio Gonzalez Vivo - 2016
 
 styles:
-    patterns-lines-dots:
+    lines-dots:
         base: lines
         lighting: false
         texcoords: true
         blend: overlay
         shaders:
             defines:
-                dotSize: .05
+                dash_size: .5
+                dash_scale: .1
             blocks:
                 color: |
-                    vec2 st = fract(v_texcoord.xy);
-                    st -= .5;
-                    color.a = 1.- step(dotSize, dot(st,st)*2.);
+                    color.a = 1.-step(dash_size,fract(v_texcoord.y*dash_scale));

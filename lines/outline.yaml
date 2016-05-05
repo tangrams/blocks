@@ -1,8 +1,9 @@
 # Patricio Gonzalez Vivo - 2016
 
-import: ../../functions/aastep.yaml
+import: ../functions/aastep.yaml
+
 styles:
-    patterns-lines-outline:
+    lines-outline:
         base: lines
         mix: functions-aastep
         texcoords: true

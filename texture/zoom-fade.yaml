@@ -1,8 +1,8 @@
 # Patricio Gonzalez Vivo - 2015
 
-import: ../../space/tile.yaml
+import: ../space/tile.yaml
 styles:
-    tiling-texture-zoom-fade:
+    texture-zoom-fade:
         mix: space-tile
         shaders:
             blocks:

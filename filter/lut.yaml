@@ -4,7 +4,7 @@ styles:
     filter-lut:
         shaders:
             uniforms:
-                u_lut: lut-0001.png
+                u_lut: imgs/lut-0001.png
             blocks:
                 global: |
                     // Apply Look up table on a color
