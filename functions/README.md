@@ -2,15 +2,24 @@
 
 ### [functions-aastep](https://github.com/tangrams/blocks/blob/gh-pages/functions/aastep.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float aastep(float threshold, float value) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./functions./functions/aastep.yaml
+```
+
+
+
 
 ### [functions-easing](https://github.com/tangrams/blocks/blob/gh-pages/functions/easing.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float linear(float t) `
@@ -45,19 +54,46 @@ Provides the following blocks:
  + `float backOut(float t) `
  + `float backInOut(float t) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./functions./functions/easing.yaml
+```
+
+
+
 
 ### [functions-map](https://github.com/tangrams/blocks/blob/gh-pages/functions/map.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax, bool clamp) `
  + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./functions./functions/map.yaml
+```
+
+
+
 
 ### [functions-pulse](https://github.com/tangrams/blocks/blob/gh-pages/functions/pulse.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float pulse (float x, float p, float w) `
+
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./functions./functions/pulse.yaml
+```
+
+

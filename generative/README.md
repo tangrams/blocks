@@ -2,7 +2,7 @@
 
 ### [generative-fbm](https://github.com/tangrams/blocks/blob/gh-pages/generative/fbm.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float fbm (float x) `
@@ -11,10 +11,19 @@ Provides the following blocks:
  + `int i = 0; i < int(NUM_OCTAVES); ++i) `
  + `float fbm ( in vec3 xyz) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./generative./generative/fbm.yaml
+```
+
+
+
 
 ### [generative-noise](https://github.com/tangrams/blocks/blob/gh-pages/generative/noise.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float noise (in float x) `
@@ -22,10 +31,19 @@ Provides the following blocks:
  + `float noise (vec3 xyz) `
  + `float snoise (vec3 p) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./generative./generative/noise.yaml
+```
+
+
+
 
 ### [generative-random](https://github.com/tangrams/blocks/blob/gh-pages/generative/random.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float random(float x) `
@@ -35,10 +53,28 @@ Provides the following blocks:
  + `vec3 random3 (vec2 xy) `
  + `vec3 random3 (vec3 c) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./generative./generative/random.yaml
+```
+
+
+
 
 ### [generative-voronoi](https://github.com/tangrams/blocks/blob/gh-pages/generative/voronoi.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `vec3 voronoi (vec2 st) `
+
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./generative./generative/voronoi.yaml
+```
+
+

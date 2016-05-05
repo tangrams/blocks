@@ -25,17 +25,16 @@ for folder in folders:
 
             if 'doc' in yaml_file['styles'][name_block]:
                 if 'description' in yaml_file['styles'][name_block]['doc']:
-                    readme_file.write(yaml_file['styles'][name_block]['doc']['description'])
-
-                readme_file.write(  '\n\nImport it using:\n\n' +
-                                    '```yaml\n' +
-                                    'import:\n' +
-                                    '    - http://tangrams.github.io/blocks/' + folder + filename + '\n' +
-                                    '```\n\n')
+                    readme_file.write(yaml_file['styles'][name_block]['doc']['description']+'\n')
 
             if 'shaders' in yaml_file['styles'][name_block]:
+
+                if 'defines' in yaml_file['styles'][name_block]['shaders']:
+                    print yaml_file['styles'][name_block]['shaders']['defines']
+
                 if 'blocks' in yaml_file['styles'][name_block]['shaders']:
-                    readme_file.write('Provides the following blocks:\n');
+                    readme_file.write('This provides the following blocks:\n');
+
                     for block in yaml_file['styles'][name_block]['shaders']['blocks'].keys():
                         readme_file.write('\n- **' + block + '**:')
 
@@ -47,6 +46,15 @@ for folder in folders:
                             readme_file.write(  '\n\n```glsl\n' + 
                                                 yaml_file['styles'][name_block]['shaders']['blocks'][block] +
                                                 '\n```\n\n')
+
+            
+
+            readme_file.write(  '\n\nImport it using:\n\n' +
+                                '```yaml\n' +
+                                'import:\n' +
+                                '    - http://tangrams.github.io/blocks/' + folder + filename + '\n' +
+                                '```\n\n')
+
             readme_file.write('\n')
     readme_file.close()
     readmes.append(readme)

@@ -3,10 +3,11 @@
 styles:
     lines-stripes:
         base: lines
-        lighting: false
         texcoords: true
         shaders:
+            defines:
+                STRIPES_WIDTH: .1
+                STRIPES_INTENSITY: .1
             blocks:
                 color: |
-                    vec2 st = fract(v_texcoord);
-                    color.rgb += step(.1,sin((st.x+st.y)*6.283))*.1;
+                    color.rgb += step(STRIPES_WIDTH, sin((fract(v_texcoord).x+fract(v_texcoord).y) * 6.283)) * STRIPES_INTENSITY;

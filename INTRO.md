@@ -22,7 +22,7 @@ styles:
         mix: [filter-grain]
 ```
 
-This will add all the functions defined on that **Tangram Block** to your current custom style (in this case ```buildings```). Note that some of this modules have some values on the ````defines``` that can be tweaked. For example in the above example we can increase the detail and amount of the grain by modifying this two defines:
+This will add all the functions defined on that **Tangram Block** to your current custom style (in this case ```buildings```). Note that some of this modules have some values on the ```defines``` that can be tweaked. For example in the above example we can increase the detail and amount of the grain by modifying this two defines:
 
 ```yaml
 styles:

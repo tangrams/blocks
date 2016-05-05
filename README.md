@@ -22,7 +22,7 @@ styles:
         mix: [filter-grain]
 ```
 
-This will add all the functions defined on that **Tangram Block** to your current custom style (in this case ```buildings```). Note that some of this modules have some values on the ````defines``` that can be tweaked. For example in the above example we can increase the detail and amount of the grain by modifying this two defines:
+This will add all the functions defined on that **Tangram Block** to your current custom style (in this case ```buildings```). Note that some of this modules have some values on the ```defines``` that can be tweaked. For example in the above example we can increase the detail and amount of the grain by modifying this two defines:
 
 ```yaml
 styles:
@@ -40,7 +40,15 @@ styles:
 
 ### [color-conversion](https://github.com/tangrams/blocks/blob/gh-pages/color/conversion.yaml)
 
-Set of functions to convert colors between color systems/spaces
+Set of functions to convert colors between color systems/spaces.
+For more information on this theme read [this chapter of The Book of Shaders about color](http://thebookofshaders.com/06/).
+
+This provides the following blocks:
+
+- **global**:
+ + `vec3 rgb2hsb (vec3 c) `
+ + `vec3 rgb2hsb (vec4 c) `
+ + `vec3 hsb2rgb (vec3 c) `
 
 Import it using:
 
@@ -49,25 +57,34 @@ import:
     - http://tangrams.github.io/blocks/./color./color/conversion.yaml
 ```
 
-Provides the following blocks:
 
-- **global**:
- + `vec3 rgb2hsb (vec3 c) `
- + `vec3 rgb2hsb (vec4 c) `
- + `vec3 hsb2rgb (vec3 c) `
 
 
 ### [color-palette](https://github.com/tangrams/blocks/blob/gh-pages/color/palette.yaml)
 
-Provides the following blocks:
+Procedural generation of color paletters implemented by Inigo Quiles (1999) explained in [this article](http://www.iquilezles.org/www/articles/palettes/palettes.htm)
+
+This provides the following blocks:
 
 - **global**:
  + `vec3 palette (float t, vec3 a, vec3 b, vec3 c, vec3 d) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./color./color/palette.yaml
+```
+
+
+
 
 ### [color-tools](https://github.com/tangrams/blocks/blob/gh-pages/color/tools.yaml)
 
-Provides the following blocks:
+Set of color tools to get the **intensity** and **brightness** of a color.
+For more information on this theme read [this chapter of The Book of Shaders about color](http://thebookofshaders.com/06/).
+
+This provides the following blocks:
 
 - **global**:
  + `float getIntensity (vec3 c) `
@@ -75,10 +92,22 @@ Provides the following blocks:
  + `float getBrightness (vec3 c) `
  + `float getBrightness (vec4 c) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./color./color/tools.yaml
+```
+
+
+
 
 ### [filter-grain](https://github.com/tangrams/blocks/blob/gh-pages/filter/grain.yaml)
 
-Provides the following blocks:
+Apply a lens grain effect to the scene.
+The amount can be set by the GRAIN_AMOUNT define [0.0~1.0]
+
+This provides the following blocks:
 
 - **filter**:
 
@@ -91,17 +120,35 @@ color.rgb -= grain()*GRAIN_AMOUNT;
 
 - **global**:
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./filter./filter/grain.yaml
+```
+
+
+
 
 ### [filter-hatch](https://github.com/tangrams/blocks/blob/gh-pages/filter/hatch.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
+
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./filter./filter/hatch.yaml
+```
+
+
 
 
 ### [filter-height](https://github.com/tangrams/blocks/blob/gh-pages/filter/height.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **color**:
 
@@ -111,10 +158,19 @@ color.rgb *= min((worldPosition().z*.001 + .5),1.);
 
 
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./filter./filter/height.yaml
+```
+
+
+
 
 ### [filter-lut](https://github.com/tangrams/blocks/blob/gh-pages/filter/lut.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **filter**:
 
@@ -129,10 +185,19 @@ color = getLut(color);
  + `vec4 getLut (vec4 textureColor, sampler2D lookupTable) `
  + `vec4 getLut (vec4 textureColor) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./filter./filter/lut.yaml
+```
+
+
+
 
 ### [filter-tv](https://github.com/tangrams/blocks/blob/gh-pages/filter/tv.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **filter**:
 
@@ -143,18 +208,36 @@ color *= abs(cos((gl_FragCoord.y*TV_FREQ+u_time*5.)));
 
 
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./filter./filter/tv.yaml
+```
+
+
+
 
 ### [functions-aastep](https://github.com/tangrams/blocks/blob/gh-pages/functions/aastep.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float aastep(float threshold, float value) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./functions./functions/aastep.yaml
+```
+
+
+
 
 ### [functions-easing](https://github.com/tangrams/blocks/blob/gh-pages/functions/easing.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float linear(float t) `
@@ -189,27 +272,54 @@ Provides the following blocks:
  + `float backOut(float t) `
  + `float backInOut(float t) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./functions./functions/easing.yaml
+```
+
+
+
 
 ### [functions-map](https://github.com/tangrams/blocks/blob/gh-pages/functions/map.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax, bool clamp) `
  + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./functions./functions/map.yaml
+```
+
+
+
 
 ### [functions-pulse](https://github.com/tangrams/blocks/blob/gh-pages/functions/pulse.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float pulse (float x, float p, float w) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./functions./functions/pulse.yaml
+```
+
+
+
 
 ### [generative-fbm](https://github.com/tangrams/blocks/blob/gh-pages/generative/fbm.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float fbm (float x) `
@@ -218,10 +328,19 @@ Provides the following blocks:
  + `int i = 0; i < int(NUM_OCTAVES); ++i) `
  + `float fbm ( in vec3 xyz) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./generative./generative/fbm.yaml
+```
+
+
+
 
 ### [generative-noise](https://github.com/tangrams/blocks/blob/gh-pages/generative/noise.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float noise (in float x) `
@@ -229,10 +348,19 @@ Provides the following blocks:
  + `float noise (vec3 xyz) `
  + `float snoise (vec3 p) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./generative./generative/noise.yaml
+```
+
+
+
 
 ### [generative-random](https://github.com/tangrams/blocks/blob/gh-pages/generative/random.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float random(float x) `
@@ -242,18 +370,36 @@ Provides the following blocks:
  + `vec3 random3 (vec2 xy) `
  + `vec3 random3 (vec3 c) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./generative./generative/random.yaml
+```
+
+
+
 
 ### [generative-voronoi](https://github.com/tangrams/blocks/blob/gh-pages/generative/voronoi.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `vec3 voronoi (vec2 st) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./generative./generative/voronoi.yaml
+```
+
+
+
 
 ### [geometry-dynamic-height](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-height.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **position**:
 
@@ -264,10 +410,19 @@ position.z *= max(1.,.5+ZOOM_LINEAR_FACTOR*zoom);
 
 
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./geometry./geometry/dynamic-height.yaml
+```
+
+
+
 
 ### [geometry-dynamic-width](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-width.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **width**:
 
@@ -277,10 +432,19 @@ width *= 0.2+min(pow(position.z*0.006,2.),.6);
 
 
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./geometry./geometry/dynamic-width.yaml
+```
+
+
+
 
 ### [geometry-matrices](https://github.com/tangrams/blocks/blob/gh-pages/geometry/matrices.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `mat2 rotate2D (float angle) `
@@ -293,19 +457,37 @@ Provides the following blocks:
  + `mat4 scale4D (float x, float y, float z) `
  + `mat4 translate4D (float x, float y, float z) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./geometry./geometry/matrices.yaml
+```
+
+
+
 
 ### [geometry-normal](https://github.com/tangrams/blocks/blob/gh-pages/geometry/normal.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `bool isWall() `
  + `bool isRoof() `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./geometry./geometry/normal.yaml
+```
+
+
+
 
 ### [geometry-projections](https://github.com/tangrams/blocks/blob/gh-pages/geometry/projections.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float y2lat_d (float y) `
@@ -324,10 +506,19 @@ Provides the following blocks:
  + `vec2 azimuthalNorth(float lat, float lon) `
  + `vec2 azimuthalSouth(float lat, float lon) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./geometry./geometry/projections.yaml
+```
+
+
+
 
 ### [geometry-terrarium](https://github.com/tangrams/blocks/blob/gh-pages/geometry/terrarium.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **position**:
 
@@ -341,10 +532,19 @@ extrudeTerrain(position);
  + `float getHeight() `
  + `void extrudeTerrain(inout vec4 position) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./geometry./geometry/terrarium.yaml
+```
+
+
+
 
 ### [geometry-tilt](https://github.com/tangrams/blocks/blob/gh-pages/geometry/tilt.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **position**:
 
@@ -356,10 +556,19 @@ position.xyz = rotateX3D(z*HALF_PI) * rotateZ3D(sin(t)*PI*z) * position.xyz;
 
 
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./geometry./geometry/tilt.yaml
+```
+
+
+
 
 ### [lines-dots](https://github.com/tangrams/blocks/blob/gh-pages/lines/dash.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **color**:
 
@@ -369,10 +578,19 @@ color.a = 1.-step(dash_size,fract(v_texcoord.y*dash_scale));
 
 
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./lines./lines/dash.yaml
+```
+
+
+
 
 ### [lines-dots](https://github.com/tangrams/blocks/blob/gh-pages/lines/dots.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **color**:
 
@@ -384,10 +602,19 @@ color.a = 1.- step(dotSize, dot(st,st)*2.);
 
 
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./lines./lines/dots.yaml
+```
+
+
+
 
 ### [lines-outline](https://github.com/tangrams/blocks/blob/gh-pages/lines/outline.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **color**:
 
@@ -399,10 +626,19 @@ color.rgb = mix(color.rgb,
 
 
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./lines./lines/outline.yaml
+```
+
+
+
 
 ### [lines-stripes](https://github.com/tangrams/blocks/blob/gh-pages/lines/stripes.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **color**:
 
@@ -413,88 +649,178 @@ color.rgb += step(.1,sin((st.x+st.y)*6.283))*.1;
 
 
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./lines./lines/stripes.yaml
+```
+
+
+
 
 ### [patterns-dots](https://github.com/tangrams/blocks/blob/gh-pages/patterns/dots.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float TileDots(float scale, float size) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./patterns./patterns/dots.yaml
+```
+
+
+
 
 ### [patterns-grid](https://github.com/tangrams/blocks/blob/gh-pages/patterns/grid.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
+
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./patterns./patterns/grid.yaml
+```
+
+
 
 
 ### [patterns-stripes](https://github.com/tangrams/blocks/blob/gh-pages/patterns/stripes.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float stripesDF (vec2 st) `
  + `float stripes (vec2 st, float width) `
  + `float diagonalStripes (vec2 st) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./patterns./patterns/stripes.yaml
+```
+
+
+
 
 ### [patterns-waves](https://github.com/tangrams/blocks/blob/gh-pages/patterns/waves.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float wavesDF (vec2 st, float freq, float amp) `
  + `float waves (vec2 st, float freq, float amp, float width) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./patterns./patterns/waves.yaml
+```
+
+
+
 
 ### [patterns-zigzag](https://github.com/tangrams/blocks/blob/gh-pages/patterns/zigzag.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float zigzagDF (vec2 st, float freq) `
  + `float zigzag (vec2 st, float freq, float width) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./patterns./patterns/zigzag.yaml
+```
+
+
+
 
 ### [shapes-circle](https://github.com/tangrams/blocks/blob/gh-pages/shapes/circle.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float circleDF (vec2 st) `
  + `float circle (vec2 st, float radius) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./shapes./shapes/circle.yaml
+```
+
+
+
 
 ### [shapes-cross](https://github.com/tangrams/blocks/blob/gh-pages/shapes/cross.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float cross (vec2 st, float size, float width) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./shapes./shapes/cross.yaml
+```
+
+
+
 
 ### [shapes-digits](https://github.com/tangrams/blocks/blob/gh-pages/shapes/digits.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float SampleDigit(const in float fDigit, const in vec2 vUV) `
  + `float PrintValue(const in vec2 vStringCharCoords, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./shapes./shapes/digits.yaml
+```
+
+
+
 
 ### [shapes-polygons](https://github.com/tangrams/blocks/blob/gh-pages/shapes/polygons.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float shapeDF (vec2 st, int N) `
  + `float shape (vec2 st, int N, float width) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./shapes./shapes/polygons.yaml
+```
+
+
+
 
 ### [shapes-rect](https://github.com/tangrams/blocks/blob/gh-pages/shapes/rect.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float rectDF(vec2 st, vec2 size) `
@@ -502,10 +828,19 @@ Provides the following blocks:
  + `float rect(vec2 st, vec2 size, float radio) `
  + `float rect(vec2 st, float size, float radio) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./shapes./shapes/rect.yaml
+```
+
+
+
 
 ### [shapes-simplex](https://github.com/tangrams/blocks/blob/gh-pages/shapes/simplex.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float warp (vec3 S) `
@@ -515,35 +850,71 @@ Provides the following blocks:
  + `vec3 sakura (vec3 S) `
  + `float lotus (vec3 S, float petals_size, float roundness) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./shapes./shapes/simplex.yaml
+```
+
+
+
 
 ### [space-constant](https://github.com/tangrams/blocks/blob/gh-pages/space/constant.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `vec2 getConstantCoords () `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./space./space/constant.yaml
+```
+
+
+
 
 ### [space-screen](https://github.com/tangrams/blocks/blob/gh-pages/space/screen.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `vec2 getScreenCoords () `
  + `vec2 getScreenNonStretchCoords () `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./space./space/screen.yaml
+```
+
+
+
 
 ### [space-tex](https://github.com/tangrams/blocks/blob/gh-pages/space/tex.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `vec2 getTexCoords () `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./space./space/tex.yaml
+```
+
+
+
 
 ### [space-tile](https://github.com/tangrams/blocks/blob/gh-pages/space/tile.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **position**:
 
@@ -556,42 +927,87 @@ v_pos = modelPosition().xyz;
 - **global**:
  + `vec2 getTileCoords() `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./space./space/tile.yaml
+```
+
+
+
 
 ### [space-uz](https://github.com/tangrams/blocks/blob/gh-pages/space/uz.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `vec2 getUZCoords () `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./space./space/uz.yaml
+```
+
+
+
 
 ### [texture-non-repetitive](https://github.com/tangrams/blocks/blob/gh-pages/texture/non-repetitive.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `vec4 NonRepetitiveTexture(sampler2D tex, vec2 x, float v) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./texture./texture/non-repetitive.yaml
+```
+
+
+
 
 ### [texture-zoom-fade](https://github.com/tangrams/blocks/blob/gh-pages/texture/zoom-fade.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `vec4 TileTexture (sampler2D tex, float scale) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./texture./texture/zoom-fade.yaml
+```
+
+
+
 
 ### [tiling-brick](https://github.com/tangrams/blocks/blob/gh-pages/tiling/brick.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `vec2 brick (vec2 st, float zoom) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./tiling./tiling/brick.yaml
+```
+
+
+
 
 ### [tiling-simplex](https://github.com/tangrams/blocks/blob/gh-pages/tiling/simplex.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `vec2 simplex (vec2 st) `
@@ -599,22 +1015,49 @@ Provides the following blocks:
  + `vec3 simplexGrid (vec2 st) `
  + `vec3 simplexRotatedGrid (vec2 st) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./tiling./tiling/simplex.yaml
+```
+
+
+
 
 ### [tiling-tile](https://github.com/tangrams/blocks/blob/gh-pages/tiling/tile.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `vec2 tile (vec2 st, float zoom) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./tiling./tiling/tile.yaml
+```
+
+
+
 
 ### [tiling-truchet](https://github.com/tangrams/blocks/blob/gh-pages/tiling/truchet.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `vec2 truchetMirror (vec2 st) `
  + `vec2 truchetRotate (vec2 st) `
+
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./tiling./tiling/truchet.yaml
+```
+
+
 
 ## License
 ### The MIT License (MIT)

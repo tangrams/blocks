@@ -3,14 +3,13 @@
 styles:
     lines-dots:
         base: lines
-        lighting: false
         texcoords: true
         blend: overlay
         shaders:
             defines:
-                dotSize: .05
+                DOT_SIZE: .05
             blocks:
                 color: |
                     vec2 st = fract(v_texcoord.xy);
                     st -= .5;
-                    color.a = 1.- step(dotSize, dot(st,st)*2.);
+                    color.a = 1.- step(DOT_SIZE, dot(st,st)*2.);

@@ -2,32 +2,59 @@
 
 ### [space-constant](https://github.com/tangrams/blocks/blob/gh-pages/space/constant.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `vec2 getConstantCoords () `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./space./space/constant.yaml
+```
+
+
+
 
 ### [space-screen](https://github.com/tangrams/blocks/blob/gh-pages/space/screen.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `vec2 getScreenCoords () `
  + `vec2 getScreenNonStretchCoords () `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./space./space/screen.yaml
+```
+
+
+
 
 ### [space-tex](https://github.com/tangrams/blocks/blob/gh-pages/space/tex.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `vec2 getTexCoords () `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./space./space/tex.yaml
+```
+
+
+
 
 ### [space-tile](https://github.com/tangrams/blocks/blob/gh-pages/space/tile.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **position**:
 
@@ -40,10 +67,28 @@ v_pos = modelPosition().xyz;
 - **global**:
  + `vec2 getTileCoords() `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./space./space/tile.yaml
+```
+
+
+
 
 ### [space-uz](https://github.com/tangrams/blocks/blob/gh-pages/space/uz.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `vec2 getUZCoords () `
+
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./space./space/uz.yaml
+```
+
+

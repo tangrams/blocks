@@ -2,7 +2,7 @@
 
 ### [geometry-dynamic-height](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-height.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **position**:
 
@@ -13,10 +13,19 @@ position.z *= max(1.,.5+ZOOM_LINEAR_FACTOR*zoom);
 
 
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./geometry./geometry/dynamic-height.yaml
+```
+
+
+
 
 ### [geometry-dynamic-width](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-width.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **width**:
 
@@ -26,10 +35,19 @@ width *= 0.2+min(pow(position.z*0.006,2.),.6);
 
 
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./geometry./geometry/dynamic-width.yaml
+```
+
+
+
 
 ### [geometry-matrices](https://github.com/tangrams/blocks/blob/gh-pages/geometry/matrices.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `mat2 rotate2D (float angle) `
@@ -42,19 +60,37 @@ Provides the following blocks:
  + `mat4 scale4D (float x, float y, float z) `
  + `mat4 translate4D (float x, float y, float z) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./geometry./geometry/matrices.yaml
+```
+
+
+
 
 ### [geometry-normal](https://github.com/tangrams/blocks/blob/gh-pages/geometry/normal.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `bool isWall() `
  + `bool isRoof() `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./geometry./geometry/normal.yaml
+```
+
+
+
 
 ### [geometry-projections](https://github.com/tangrams/blocks/blob/gh-pages/geometry/projections.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **global**:
  + `float y2lat_d (float y) `
@@ -73,10 +109,19 @@ Provides the following blocks:
  + `vec2 azimuthalNorth(float lat, float lon) `
  + `vec2 azimuthalSouth(float lat, float lon) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./geometry./geometry/projections.yaml
+```
+
+
+
 
 ### [geometry-terrarium](https://github.com/tangrams/blocks/blob/gh-pages/geometry/terrarium.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **position**:
 
@@ -90,10 +135,19 @@ extrudeTerrain(position);
  + `float getHeight() `
  + `void extrudeTerrain(inout vec4 position) `
 
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./geometry./geometry/terrarium.yaml
+```
+
+
+
 
 ### [geometry-tilt](https://github.com/tangrams/blocks/blob/gh-pages/geometry/tilt.yaml)
 
-Provides the following blocks:
+This provides the following blocks:
 
 - **position**:
 
@@ -101,6 +155,15 @@ Provides the following blocks:
 float t = u_time*0.1; 
 float z = clamp(smoothstep(TILT_IN/TILT_MAX_ZOOM, TILT_OUT/TILT_MAX_ZOOM, max(u_map_position.z/TILT_MAX_ZOOM,0.)*0.9), 0., 1.);
 position.xyz = rotateX3D(z*HALF_PI) * rotateZ3D(sin(t)*PI*z) * position.xyz;
+```
+
+
+
+Import it using:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/./geometry./geometry/tilt.yaml
 ```
 
 

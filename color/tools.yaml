@@ -1,8 +1,11 @@
 # Patricio Gonzalez Vivo - 2015
-# From Chapter about Color at http://thebookofshaders.com/06/
 
 styles:
     color-tools:
+        doc:
+            description: |
+                Set of color tools to get the **intensity** and **brightness** of a color.
+                For more information on this theme read [this chapter of The Book of Shaders about color](http://thebookofshaders.com/06/).
         shaders:
             blocks:
                 global: |

@@ -3,13 +3,12 @@
 styles:
     lines-dots:
         base: lines
-        lighting: false
         texcoords: true
         blend: overlay
         shaders:
             defines:
-                dash_size: .5
-                dash_scale: .1
+                DASH_SIZE: .5
+                DASH_SCALE: .1
             blocks:
                 color: |
-                    color.a = 1.-step(dash_size,fract(v_texcoord.y*dash_scale));
+                    color.a = 1.-step(DASH_SIZE,fract(v_texcoord.y*DASH_SCALE));
