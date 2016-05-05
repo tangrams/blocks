@@ -10,7 +10,7 @@ styles:
                 u_hatchmap: imgs/hatch.png
             blocks:
                 global: |
-                    float getHatch(vec2 st, float brightness){
+                    float getHatch (vec2 st, float brightness) {
                         st  = fract(st)/3.;
                         brightness = clamp(brightness,0.,0.9999999);
                         vec2 pos1 = vec2(floor(brightness*9.0)/3.,

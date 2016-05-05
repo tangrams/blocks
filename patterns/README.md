@@ -22,6 +22,10 @@ import:
 This provides the following blocks:
 
 - **global**:
+ + `bool grid (vec2 st, float res, float press) `
+ + `bool grid (vec2 st, float res) `
+ + `float tileGrid (float res) `
+ + `float tileGrid() `
 
 Import it using:
 
@@ -42,7 +46,7 @@ This provides the following blocks:
  + `float stripes (vec2 st, float width) `
  + `float diagonalStripes (vec2 st) `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **PI**: ```3.14159265359```
 
 

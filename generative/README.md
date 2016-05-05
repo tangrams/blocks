@@ -11,7 +11,7 @@ This provides the following blocks:
  + `int i = 0; i < int(NUM_OCTAVES); ++i) `
  + `float fbm ( in vec3 xyz) `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **NUM_OCTAVES**: ```5```
 
 
@@ -50,9 +50,9 @@ import:
 This provides the following blocks:
 
 - **global**:
- + `float random(float x) `
- + `float random(vec2 p) `
- + `float random(vec3 p) `
+ + `float random (float x) `
+ + `float random (vec2 p) `
+ + `float random (vec3 p) `
  + `vec2 random2 (vec2 xy) `
  + `vec3 random3 (vec2 xy) `
  + `vec3 random3 (vec3 c) `

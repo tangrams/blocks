@@ -12,7 +12,7 @@ color.a = 1.-step(DASH_SIZE,fract(v_texcoord.y*DASH_SCALE));
 
 
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **DASH_SIZE**: ```0.5```
  - **DASH_SCALE**: ```0.1```
 
@@ -41,7 +41,7 @@ color.a = 1.- step(DOT_SIZE, dot(st,st)*2.);
 
 
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **DOT_SIZE**: ```0.05```
 
 
@@ -69,7 +69,7 @@ color.rgb = mix(color.rgb,
 
 
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **OUTLINE_WIDTH**: ```0.1```
  - **OUTLINE_COLOR**: ```vec3(1.)```
 
@@ -96,7 +96,7 @@ color.rgb += step(STRIPES_WIDTH, sin((fract(v_texcoord).x+fract(v_texcoord).y) *
 
 
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **STRIPES_INTENSITY**: ```0.1```
  - **STRIPES_WIDTH**: ```0.1```
 

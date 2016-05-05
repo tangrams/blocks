@@ -119,8 +119,9 @@ color.rgb -= grain()*GRAIN_AMOUNT;
 
 
 - **global**:
+ + `float grain () `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **GRAIN_AMOUNT**: ```0.3```
 
 
@@ -143,6 +144,11 @@ Giving a brightness level it provides a fragment of the following table of textu
 This provides the following blocks:
 
 - **global**:
+ + `float getHatch (vec2 st, float brightness) `
+
+This block use the following **uniforms** with the following defaults. Remember you can use or tweak.
+ - **u_hatchmap**: ```imgs/hatch.png```
+
 
 Import it using:
 
@@ -193,6 +199,10 @@ color = getLut(color);
  + `vec4 getLut (vec4 textureColor, sampler2D lookupTable) `
  + `vec4 getLut (vec4 textureColor) `
 
+This block use the following **uniforms** with the following defaults. Remember you can use or tweak.
+ - **u_lut**: ```imgs/lut-0001.png```
+
+
 Import it using:
 
 ```yaml
@@ -216,7 +226,7 @@ color *= abs(cos((gl_FragCoord.y*TV_FREQ+u_time*5.)));
 
 
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **TV_FREQ**: ```1.2```
 
 
@@ -288,7 +298,7 @@ This provides the following blocks:
  + `float backOut(float t) `
  + `float backInOut(float t) `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **HALF_PI**: ```1.57079632679```
  - **PI**: ```3.14159265359```
 
@@ -311,7 +321,7 @@ This provides the following blocks:
  + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax, bool clamp) `
  + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax) `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **EPSILON**: ```1e-07```
 
 
@@ -353,7 +363,7 @@ This provides the following blocks:
  + `int i = 0; i < int(NUM_OCTAVES); ++i) `
  + `float fbm ( in vec3 xyz) `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **NUM_OCTAVES**: ```5```
 
 
@@ -392,9 +402,9 @@ import:
 This provides the following blocks:
 
 - **global**:
- + `float random(float x) `
- + `float random(vec2 p) `
- + `float random(vec3 p) `
+ + `float random (float x) `
+ + `float random (vec2 p) `
+ + `float random (vec3 p) `
  + `vec2 random2 (vec2 xy) `
  + `vec3 random3 (vec2 xy) `
  + `vec3 random3 (vec3 c) `
@@ -439,7 +449,7 @@ position.z *= max(1.,.5+ZOOM_LINEAR_FACTOR*zoom);
 
 
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **ZOOM_LINEAR_FACTOR**: ```2.0```
  - **ZOOM_START**: ```15.0```
  - **ZOOM_END**: ```20.0```
@@ -492,7 +502,7 @@ This provides the following blocks:
  + `mat4 scale4D (float x, float y, float z) `
  + `mat4 translate4D (float x, float y, float z) `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **HALF_PI**: ```1.57079632679```
  - **TWO_PI**: ```6.28318530718```
  - **PI**: ```3.14159265359```
@@ -513,8 +523,8 @@ import:
 This provides the following blocks:
 
 - **global**:
- + `bool isWall() `
- + `bool isRoof() `
+ + `bool isWall () `
+ + `bool isRoof () `
 
 Import it using:
 
@@ -539,15 +549,17 @@ This provides the following blocks:
  + `float x2lon_m (float x) `
  + `float lat2y_m (float lat) `
  + `float lon2x_m (float lon) `
- + `vec2 latlon2albers(float lat, float lon, float lat0, float lng0, float phi1, float phi2 ) `
+ + `vec2 latlon2albers (float lat, float lon, float lat0, float lng0, float phi1, float phi2 ) `
  + `vec2 latlon2albers (float lat, float lon, float delta_phi1, float delta_phi2) `
  + `vec2 latlon2albers (float lat, float lon, float width) `
+ + `vec2 latlon2albers (float lat, float lon) `
+ + `vec2 latlon2USalbers (float lat, float lon) `
  + `vec2 latlon2azimuthal (float lat, float lon, float phi1, float lambda0) `
  + `vec2 azimuthal(float lat, float lon) `
  + `vec2 azimuthalNorth(float lat, float lon) `
  + `vec2 azimuthalSouth(float lat, float lon) `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **PI**: ```3.14159265359```
  - **HALF_PI**: ```1.57079632679```
  - **EARTH_RADIUS**: ```6378137.0```
@@ -580,9 +592,9 @@ extrudeTerrain(position);
 
 - **global**:
  + `float getHeight() `
- + `void extrudeTerrain(inout vec4 position) `
+ + `void extrudeTerrain (inout vec4 position) `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **ZOFFSET**: ```0.0```
 
 
@@ -610,7 +622,7 @@ position.xyz = rotateX3D(z*HALF_PI) * rotateZ3D(sin(t)*PI*z) * position.xyz;
 
 
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **TILT_MAX_ZOOM**: ```20.0```
  - **TILT_IN**: ```15.0```
  - **TILT_OUT**: ```20.0```
@@ -638,7 +650,7 @@ color.a = 1.-step(DASH_SIZE,fract(v_texcoord.y*DASH_SCALE));
 
 
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **DASH_SIZE**: ```0.5```
  - **DASH_SCALE**: ```0.1```
 
@@ -667,7 +679,7 @@ color.a = 1.- step(DOT_SIZE, dot(st,st)*2.);
 
 
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **DOT_SIZE**: ```0.05```
 
 
@@ -695,7 +707,7 @@ color.rgb = mix(color.rgb,
 
 
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **OUTLINE_WIDTH**: ```0.1```
  - **OUTLINE_COLOR**: ```vec3(1.)```
 
@@ -722,7 +734,7 @@ color.rgb += step(STRIPES_WIDTH, sin((fract(v_texcoord).x+fract(v_texcoord).y) *
 
 
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **STRIPES_INTENSITY**: ```0.1```
  - **STRIPES_WIDTH**: ```0.1```
 
@@ -759,6 +771,10 @@ import:
 This provides the following blocks:
 
 - **global**:
+ + `bool grid (vec2 st, float res, float press) `
+ + `bool grid (vec2 st, float res) `
+ + `float tileGrid (float res) `
+ + `float tileGrid() `
 
 Import it using:
 
@@ -779,7 +795,7 @@ This provides the following blocks:
  + `float stripes (vec2 st, float width) `
  + `float diagonalStripes (vec2 st) `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **PI**: ```3.14159265359```
 
 
@@ -837,7 +853,7 @@ This provides the following blocks:
  + `float circleDF (vec2 st) `
  + `float circle (vec2 st, float radius) `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **PI**: ```3.14159265359```
 
 
@@ -857,6 +873,8 @@ This provides the following blocks:
 
 - **global**:
  + `float cross (vec2 st, float size, float width) `
+ + `float cross (in vec2 st, float _size) `
+ + `float cross (in vec2 st, vec2 _size) `
 
 Import it using:
 
@@ -873,10 +891,11 @@ import:
 This provides the following blocks:
 
 - **global**:
- + `float SampleDigit(const in float fDigit, const in vec2 vUV) `
- + `float PrintValue(const in vec2 vStringCharCoords, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces) `
+ + `float SampleDigit (const in float fDigit, const in vec2 vUV) `
+ + `float PrintValue (const in vec2 vStringCharCoords, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces) `
+ + `float PrintValue (in vec2 fragCoord, const in vec2 vPixelCoords, const in vec2 vFontSize, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces) `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **CHAR_DECIMAL_POINT**: ```10.0```
  - **CHAR_MINUS**: ```11.0```
  - **CHAR_BLANK**: ```12.0```
@@ -900,7 +919,7 @@ This provides the following blocks:
  + `float shapeDF (vec2 st, int N) `
  + `float shape (vec2 st, int N, float width) `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **TWO_PI**: ```6.283185307```
  - **PI**: ```3.14159265359```
 
@@ -920,10 +939,10 @@ import:
 This provides the following blocks:
 
 - **global**:
- + `float rectDF(vec2 st, vec2 size) `
- + `float rectDF(vec2 st, float size) `
- + `float rect(vec2 st, vec2 size, float radio) `
- + `float rect(vec2 st, float size, float radio) `
+ + `float rectDF (vec2 st, vec2 size) `
+ + `float rectDF (vec2 st, float size) `
+ + `float rect (vec2 st, vec2 size, float radio) `
+ + `float rect (vec2 st, float size, float radio) `
 
 Import it using:
 
@@ -1056,7 +1075,7 @@ import:
 This provides the following blocks:
 
 - **global**:
- + `vec4 NonRepetitiveTexture(sampler2D tex, vec2 x, float v) `
+ + `vec4 NonRepetitiveTexture (sampler2D tex, vec2 x, float v) `
 
 Import it using:
 
@@ -1147,7 +1166,7 @@ This provides the following blocks:
  + `vec2 truchetMirror (vec2 st) `
  + `vec2 truchetRotate (vec2 st) `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **PI**: ```3.14159265359```
 
 

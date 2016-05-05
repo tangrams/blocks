@@ -13,7 +13,7 @@ position.z *= max(1.,.5+ZOOM_LINEAR_FACTOR*zoom);
 
 
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **ZOOM_LINEAR_FACTOR**: ```2.0```
  - **ZOOM_START**: ```15.0```
  - **ZOOM_END**: ```20.0```
@@ -66,7 +66,7 @@ This provides the following blocks:
  + `mat4 scale4D (float x, float y, float z) `
  + `mat4 translate4D (float x, float y, float z) `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **HALF_PI**: ```1.57079632679```
  - **TWO_PI**: ```6.28318530718```
  - **PI**: ```3.14159265359```
@@ -87,8 +87,8 @@ import:
 This provides the following blocks:
 
 - **global**:
- + `bool isWall() `
- + `bool isRoof() `
+ + `bool isWall () `
+ + `bool isRoof () `
 
 Import it using:
 
@@ -113,15 +113,17 @@ This provides the following blocks:
  + `float x2lon_m (float x) `
  + `float lat2y_m (float lat) `
  + `float lon2x_m (float lon) `
- + `vec2 latlon2albers(float lat, float lon, float lat0, float lng0, float phi1, float phi2 ) `
+ + `vec2 latlon2albers (float lat, float lon, float lat0, float lng0, float phi1, float phi2 ) `
  + `vec2 latlon2albers (float lat, float lon, float delta_phi1, float delta_phi2) `
  + `vec2 latlon2albers (float lat, float lon, float width) `
+ + `vec2 latlon2albers (float lat, float lon) `
+ + `vec2 latlon2USalbers (float lat, float lon) `
  + `vec2 latlon2azimuthal (float lat, float lon, float phi1, float lambda0) `
  + `vec2 azimuthal(float lat, float lon) `
  + `vec2 azimuthalNorth(float lat, float lon) `
  + `vec2 azimuthalSouth(float lat, float lon) `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **PI**: ```3.14159265359```
  - **HALF_PI**: ```1.57079632679```
  - **EARTH_RADIUS**: ```6378137.0```
@@ -154,9 +156,9 @@ extrudeTerrain(position);
 
 - **global**:
  + `float getHeight() `
- + `void extrudeTerrain(inout vec4 position) `
+ + `void extrudeTerrain (inout vec4 position) `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **ZOFFSET**: ```0.0```
 
 
@@ -184,7 +186,7 @@ position.xyz = rotateX3D(z*HALF_PI) * rotateZ3D(sin(t)*PI*z) * position.xyz;
 
 
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **TILT_MAX_ZOOM**: ```20.0```
  - **TILT_IN**: ```15.0```
  - **TILT_OUT**: ```20.0```

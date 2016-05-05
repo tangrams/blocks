@@ -58,7 +58,7 @@ This provides the following blocks:
  + `float backOut(float t) `
  + `float backInOut(float t) `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **HALF_PI**: ```1.57079632679```
  - **PI**: ```3.14159265359```
 
@@ -81,7 +81,7 @@ This provides the following blocks:
  + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax, bool clamp) `
  + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax) `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **EPSILON**: ```1e-07```
 
 

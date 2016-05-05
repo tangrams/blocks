@@ -17,8 +17,9 @@ color.rgb -= grain()*GRAIN_AMOUNT;
 
 
 - **global**:
+ + `float grain () `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **GRAIN_AMOUNT**: ```0.3```
 
 
@@ -41,6 +42,11 @@ Giving a brightness level it provides a fragment of the following table of textu
 This provides the following blocks:
 
 - **global**:
+ + `float getHatch (vec2 st, float brightness) `
+
+This block use the following **uniforms** with the following defaults. Remember you can use or tweak.
+ - **u_hatchmap**: ```imgs/hatch.png```
+
 
 Import it using:
 
@@ -91,6 +97,10 @@ color = getLut(color);
  + `vec4 getLut (vec4 textureColor, sampler2D lookupTable) `
  + `vec4 getLut (vec4 textureColor) `
 
+This block use the following **uniforms** with the following defaults. Remember you can use or tweak.
+ - **u_lut**: ```imgs/lut-0001.png```
+
+
 Import it using:
 
 ```yaml
@@ -114,7 +124,7 @@ color *= abs(cos((gl_FragCoord.y*TV_FREQ+u_time*5.)));
 
 
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **TV_FREQ**: ```1.2```
 
 

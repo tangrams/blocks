@@ -15,7 +15,7 @@ styles:
                 global: |
                     // Grain fractor on screen space with less concetration in the center
                     // ================================
-                    float grain(){
+                    float grain () {
                         #ifdef TANGRAM_FRAGMENT_SHADER
                             vec2 pos = gl_FragCoord.xy;
                             vec2 st = pos/u_resolution.xy-vec2(.5);

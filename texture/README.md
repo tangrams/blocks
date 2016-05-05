@@ -5,7 +5,7 @@
 This provides the following blocks:
 
 - **global**:
- + `vec4 NonRepetitiveTexture(sampler2D tex, vec2 x, float v) `
+ + `vec4 NonRepetitiveTexture (sampler2D tex, vec2 x, float v) `
 
 Import it using:
 

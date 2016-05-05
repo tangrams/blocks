@@ -10,18 +10,18 @@ styles:
             blocks:
                 global: |
                     // Draw a grid in the space a specific resolution and pressition
-                    bool grid(vec2 st, float res, float press){
+                    bool grid (vec2 st, float res, float press) {
                         vec2 grid = fract(st*res);
                         return grid.x < res*press || grid.y < res*press;
                     }
                     //
                     // Draw a grid in the space a specific resolution
-                    bool grid(vec2 st, float res){
+                    bool grid (vec2 st, float res) {
                         return grid(st, res, 1.0);
                     }
 
                     // Draw a grid using tile coordenates in a specific resolution
-                    float tileGrid(float res){
+                    float tileGrid (float res) {
                         vec2 st = getTileCoords()*100.*res;
                         float pct = 0.0;
                         float press = 0.4+(1.0-fract(u_map_position.z))*0.1;
@@ -31,6 +31,6 @@ styles:
                     }
 
                     // Draw two grid that smoothly interpolates acording to zooms
-                    float tileGrid(){ 
+                    float tileGrid() { 
                         return mix(tileGrid(1.),tileGrid(2.),fract(u_map_position.z)); 
                     }

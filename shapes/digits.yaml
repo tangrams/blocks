@@ -12,7 +12,7 @@ styles:
             blocks:
                 global: |
                     #ifdef TANGRAM_FRAGMENT_SHADER
-                    float SampleDigit(const in float fDigit, const in vec2 vUV) {       
+                    float SampleDigit (const in float fDigit, const in vec2 vUV) {       
                         if(vUV.x < 0.0) return 0.0;
                         if(vUV.y < 0.0) return 0.0;
                         if(vUV.x >= 1.0) return 0.0;
@@ -52,7 +52,7 @@ styles:
                         return mod(floor(fDigitBinary / pow(2.0, fIndex)), 2.0);
                     }
 
-                    float PrintValue(const in vec2 vStringCharCoords, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces) {
+                    float PrintValue (const in vec2 vStringCharCoords, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces) {
                         float fAbsValue = abs(fValue);
                         float fStringCharIndex = floor(vStringCharCoords.x);
                         float fLog10Value = log2(fAbsValue) / log2(10.0);
@@ -92,7 +92,7 @@ styles:
                         return SampleDigit(fDigitCharacter, vCharPos);  
                     }
 
-                    float PrintValue(in vec2 fragCoord, const in vec2 vPixelCoords, const in vec2 vFontSize, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces){
+                    float PrintValue (in vec2 fragCoord, const in vec2 vPixelCoords, const in vec2 vFontSize, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces) {
                         return PrintValue((fragCoord.xy - vPixelCoords) / vFontSize, fValue, fMaxDigits, fDecimalPlaces);
                     }
                     #endif

@@ -43,9 +43,14 @@ for folder in folders:
                                                 yaml_file['styles'][name_block]['shaders']['blocks'][block] +
                                                 '\n```\n\n')
                 if 'defines' in yaml_file['styles'][name_block]['shaders']:
-                    readme_file.write('\n\nThis blocks have the following defines you can use or tweak:\n')
+                    readme_file.write('\n\nThis block use the following **defines** with the following defaults. Remember you can use or tweak.\n')
                     for define in yaml_file['styles'][name_block]['shaders']['defines'].keys():
                         readme_file.write(' - **' + define + '**: ```' + str(yaml_file['styles'][name_block]['shaders']['defines'][define]) + '```\n')
+
+                if 'uniforms' in yaml_file['styles'][name_block]['shaders']:
+                    readme_file.write('\n\nThis block use the following **uniforms** with the following defaults. Remember you can use or tweak.\n')
+                    for uniform in yaml_file['styles'][name_block]['shaders']['uniforms'].keys():
+                        readme_file.write(' - **' + uniform + '**: ```' + str(yaml_file['styles'][name_block]['shaders']['uniforms'][uniform]) + '```\n')
 
             readme_file.write(  '\n\nImport it using:\n\n' +
                                 '```yaml\n' +

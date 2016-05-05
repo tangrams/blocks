@@ -10,7 +10,7 @@ styles:
         shaders:
             blocks:
                 global: |
-                    vec4 NonRepetitiveTexture(sampler2D tex, vec2 x, float v) {
+                    vec4 NonRepetitiveTexture (sampler2D tex, vec2 x, float v) {
                         vec2 p = floor(xy);
                         vec2 f = fract(xy);
                         vec4 va = vec4(0.0);

@@ -8,7 +8,7 @@ This provides the following blocks:
  + `float circleDF (vec2 st) `
  + `float circle (vec2 st, float radius) `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **PI**: ```3.14159265359```
 
 
@@ -28,6 +28,8 @@ This provides the following blocks:
 
 - **global**:
  + `float cross (vec2 st, float size, float width) `
+ + `float cross (in vec2 st, float _size) `
+ + `float cross (in vec2 st, vec2 _size) `
 
 Import it using:
 
@@ -44,10 +46,11 @@ import:
 This provides the following blocks:
 
 - **global**:
- + `float SampleDigit(const in float fDigit, const in vec2 vUV) `
- + `float PrintValue(const in vec2 vStringCharCoords, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces) `
+ + `float SampleDigit (const in float fDigit, const in vec2 vUV) `
+ + `float PrintValue (const in vec2 vStringCharCoords, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces) `
+ + `float PrintValue (in vec2 fragCoord, const in vec2 vPixelCoords, const in vec2 vFontSize, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces) `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **CHAR_DECIMAL_POINT**: ```10.0```
  - **CHAR_MINUS**: ```11.0```
  - **CHAR_BLANK**: ```12.0```
@@ -71,7 +74,7 @@ This provides the following blocks:
  + `float shapeDF (vec2 st, int N) `
  + `float shape (vec2 st, int N, float width) `
 
-This blocks have the following defines you can use or tweak:
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **TWO_PI**: ```6.283185307```
  - **PI**: ```3.14159265359```
 
@@ -91,10 +94,10 @@ import:
 This provides the following blocks:
 
 - **global**:
- + `float rectDF(vec2 st, vec2 size) `
- + `float rectDF(vec2 st, float size) `
- + `float rect(vec2 st, vec2 size, float radio) `
- + `float rect(vec2 st, float size, float radio) `
+ + `float rectDF (vec2 st, vec2 size) `
+ + `float rectDF (vec2 st, float size) `
+ + `float rect (vec2 st, vec2 size, float radio) `
+ + `float rect (vec2 st, float size, float radio) `
 
 Import it using:
 

@@ -27,7 +27,7 @@
                             return -1.0;
                         }
                     }
-                    void extrudeTerrain(inout vec4 position) {
+                    void extrudeTerrain (inout vec4 position) {
                         vec2 pos = position.xy;
                         float height = getHeight();
                         if (height != -1.0) {
