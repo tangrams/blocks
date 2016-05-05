@@ -1,9 +1,8 @@
-# By Matt DesLauriers
-# The MIT License (MIT) Copyright (c) 2015 stackgl
-# https://github.com/stackgl/glsl-aastep
-
 styles:
     functions-aastep:
+        doc:
+            description: |
+                AnitAliased ```step()``` function implemented by [Matt DesLauriers](https://twitter.com/mattdesl) in this module <https://github.com/stackgl/glsl-aastep>
         shaders:
             extensions: OES_standard_derivatives
             blocks:

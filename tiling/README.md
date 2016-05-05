@@ -62,7 +62,7 @@ This provides the following blocks:
  + `vec2 truchetMirror (vec2 st) `
  + `vec2 truchetRotate (vec2 st) `
 
-This blocks have the following defines you can tweak:
+This blocks have the following defines you can use or tweak:
  - **PI**: ```3.14159265359```
 
 

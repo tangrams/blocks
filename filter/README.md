@@ -18,7 +18,7 @@ color.rgb -= grain()*GRAIN_AMOUNT;
 
 - **global**:
 
-This blocks have the following defines you can tweak:
+This blocks have the following defines you can use or tweak:
  - **GRAIN_AMOUNT**: ```0.3```
 
 
@@ -33,6 +33,10 @@ import:
 
 
 ### [filter-hatch](https://github.com/tangrams/blocks/blob/gh-pages/filter/hatch.yaml)
+
+Hatching filter based on [Jaume's Sanchez](https://twitter.com/thespite?lang=en) [Cross-hatching GLSL shader](https://www.clicktorelease.com/code/cross-hatching/). 
+Giving a brightness level it provides a fragment of the following table of textures:
+![](https://cdn.rawgit.com/tangrams/blocks/gh-pages/filter/imgs/hatch.png)
 
 This provides the following blocks:
 
@@ -110,7 +114,7 @@ color *= abs(cos((gl_FragCoord.y*TV_FREQ+u_time*5.)));
 
 
 
-This blocks have the following defines you can tweak:
+This blocks have the following defines you can use or tweak:
  - **TV_FREQ**: ```1.2```
 
 

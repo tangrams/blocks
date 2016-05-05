@@ -1,5 +1,3 @@
-![](blocks.jpg)
-
 # Tangram Blocks
 
 Set of reusable building blocks for Tangram to make beatifull maps. Is in esence a library of our own Tangram recipes. A simpler way to add new GSLS Shaders features into your maps.
@@ -35,4 +33,6 @@ styles:
                 NUM_OCTAVES: 3
 ```
 
-## Blocks
+![](blocks.jpg)
+
+## Blocks Index

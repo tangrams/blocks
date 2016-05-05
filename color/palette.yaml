@@ -2,7 +2,7 @@ styles:
     color-palette:
         doc:
             description: |
-                Procedural generation of color paletters implemented by Inigo Quiles (1999) explained in [this article](http://www.iquilezles.org/www/articles/palettes/palettes.htm)
+                Procedural generation of color paletters implemented by [Inigo Quiles](https://twitter.com/iquilezles) (1999) explained in [this article](http://www.iquilezles.org/www/articles/palettes/palettes.htm)
         shaders:
             blocks:
                 global: |

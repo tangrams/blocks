@@ -1,8 +1,10 @@
-# Patricio Gonzalez Vivo - 2015
-# Based on Jaume's Sanchez (@thespite) Cross-hatching GLSL shader (https://www.clicktorelease.com/code/cross-hatching/)
-
 styles:
     filter-hatch:
+        doc:
+            description: |
+                Hatching filter based on [Jaume's Sanchez](https://twitter.com/thespite?lang=en) [Cross-hatching GLSL shader](https://www.clicktorelease.com/code/cross-hatching/). 
+                Giving a brightness level it provides a fragment of the following table of textures:
+                ![](https://cdn.rawgit.com/tangrams/blocks/gh-pages/filter/imgs/hatch.png)
         shaders:
             uniforms:
                 u_hatchmap: imgs/hatch.png

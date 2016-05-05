@@ -13,7 +13,7 @@ position.z *= max(1.,.5+ZOOM_LINEAR_FACTOR*zoom);
 
 
 
-This blocks have the following defines you can tweak:
+This blocks have the following defines you can use or tweak:
  - **ZOOM_LINEAR_FACTOR**: ```2.0```
  - **ZOOM_START**: ```15.0```
  - **ZOOM_END**: ```20.0```
@@ -66,7 +66,7 @@ This provides the following blocks:
  + `mat4 scale4D (float x, float y, float z) `
  + `mat4 translate4D (float x, float y, float z) `
 
-This blocks have the following defines you can tweak:
+This blocks have the following defines you can use or tweak:
  - **HALF_PI**: ```1.57079632679```
  - **TWO_PI**: ```6.28318530718```
  - **PI**: ```3.14159265359```
@@ -121,7 +121,7 @@ This provides the following blocks:
  + `vec2 azimuthalNorth(float lat, float lon) `
  + `vec2 azimuthalSouth(float lat, float lon) `
 
-This blocks have the following defines you can tweak:
+This blocks have the following defines you can use or tweak:
  - **PI**: ```3.14159265359```
  - **HALF_PI**: ```1.57079632679```
  - **EARTH_RADIUS**: ```6378137.0```
@@ -156,7 +156,7 @@ extrudeTerrain(position);
  + `float getHeight() `
  + `void extrudeTerrain(inout vec4 position) `
 
-This blocks have the following defines you can tweak:
+This blocks have the following defines you can use or tweak:
  - **ZOFFSET**: ```0.0```
 
 
@@ -184,7 +184,7 @@ position.xyz = rotateX3D(z*HALF_PI) * rotateZ3D(sin(t)*PI*z) * position.xyz;
 
 
 
-This blocks have the following defines you can tweak:
+This blocks have the following defines you can use or tweak:
  - **TILT_MAX_ZOOM**: ```20.0```
  - **TILT_IN**: ```15.0```
  - **TILT_OUT**: ```20.0```

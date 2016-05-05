@@ -11,7 +11,7 @@ This provides the following blocks:
  + `int i = 0; i < int(NUM_OCTAVES); ++i) `
  + `float fbm ( in vec3 xyz) `
 
-This blocks have the following defines you can tweak:
+This blocks have the following defines you can use or tweak:
  - **NUM_OCTAVES**: ```5```
 
 

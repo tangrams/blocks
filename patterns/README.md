@@ -42,7 +42,7 @@ This provides the following blocks:
  + `float stripes (vec2 st, float width) `
  + `float diagonalStripes (vec2 st) `
 
-This blocks have the following defines you can tweak:
+This blocks have the following defines you can use or tweak:
  - **PI**: ```3.14159265359```
 
 

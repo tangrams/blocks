@@ -2,6 +2,8 @@
 
 ### [functions-aastep](https://github.com/tangrams/blocks/blob/gh-pages/functions/aastep.yaml)
 
+AnitAliased ```step()``` function implemented by [Matt DesLauriers](https://twitter.com/mattdesl) in this module <https://github.com/stackgl/glsl-aastep>
+
 This provides the following blocks:
 
 - **global**:
@@ -18,6 +20,8 @@ import:
 
 
 ### [functions-easing](https://github.com/tangrams/blocks/blob/gh-pages/functions/easing.yaml)
+
+Easing functions originally develop by Robert Penner's and transformed to GLSL by [StackGL](http://stack.gl/) in this repo: <https://github.com/stackgl/glsl-easings>
 
 This provides the following blocks:
 
@@ -54,7 +58,7 @@ This provides the following blocks:
  + `float backOut(float t) `
  + `float backInOut(float t) `
 
-This blocks have the following defines you can tweak:
+This blocks have the following defines you can use or tweak:
  - **HALF_PI**: ```1.57079632679```
  - **PI**: ```3.14159265359```
 
@@ -77,7 +81,7 @@ This provides the following blocks:
  + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax, bool clamp) `
  + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax) `
 
-This blocks have the following defines you can tweak:
+This blocks have the following defines you can use or tweak:
  - **EPSILON**: ```1e-07```
 
 

@@ -24,7 +24,7 @@ import:
 
 ### [color-palette](https://github.com/tangrams/blocks/blob/gh-pages/color/palette.yaml)
 
-Procedural generation of color paletters implemented by Inigo Quiles (1999) explained in [this article](http://www.iquilezles.org/www/articles/palettes/palettes.htm)
+Procedural generation of color paletters implemented by [Inigo Quiles](https://twitter.com/iquilezles) (1999) explained in [this article](http://www.iquilezles.org/www/articles/palettes/palettes.htm)
 
 This provides the following blocks:
 
