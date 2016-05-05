@@ -85,6 +85,7 @@ Provides the following blocks:
 ```glsl
 // Apply the grain in the amount defined on GRAIN_AMOUNT
 color.rgb -= grain()*GRAIN_AMOUNT;
+
 ```
 
 
@@ -105,7 +106,8 @@ Provides the following blocks:
 - **color**:
 
 ```glsl
-color.rgb *= min((worldPosition().z*.001 + .5),1.);```
+color.rgb *= min((worldPosition().z*.001 + .5),1.);
+```
 
 
 
@@ -117,7 +119,8 @@ Provides the following blocks:
 - **filter**:
 
 ```glsl
-color = getLut(color);```
+color = getLut(color);
+```
 
 
 - **global**:
@@ -135,6 +138,7 @@ Provides the following blocks:
 
 ```glsl
 color *= abs(cos((gl_FragCoord.y*TV_FREQ+u_time*5.)));
+
 ```
 
 
@@ -255,7 +259,8 @@ Provides the following blocks:
 
 ```glsl
 float zoom = map(u_map_position.z,ZOOM_START,ZOOM_END,1.,0.);
-position.z *= max(1.,.5+ZOOM_LINEAR_FACTOR*zoom);```
+position.z *= max(1.,.5+ZOOM_LINEAR_FACTOR*zoom);
+```
 
 
 
@@ -267,7 +272,8 @@ Provides the following blocks:
 - **width**:
 
 ```glsl
-width *= 0.2+min(pow(position.z*0.006,2.),.6);```
+width *= 0.2+min(pow(position.z*0.006,2.),.6);
+```
 
 
 
@@ -327,7 +333,8 @@ Provides the following blocks:
 
 ```glsl
 position.z += ZOFFSET*u_meters_per_pixel;
-extrudeTerrain(position);```
+extrudeTerrain(position);
+```
 
 
 - **global**:
@@ -344,7 +351,8 @@ Provides the following blocks:
 ```glsl
 float t = u_time*0.1; 
 float z = clamp(smoothstep(TILT_IN/TILT_MAX_ZOOM, TILT_OUT/TILT_MAX_ZOOM, max(u_map_position.z/TILT_MAX_ZOOM,0.)*0.9), 0., 1.);
-position.xyz = rotateX3D(z*HALF_PI) * rotateZ3D(sin(t)*PI*z) * position.xyz;```
+position.xyz = rotateX3D(z*HALF_PI) * rotateZ3D(sin(t)*PI*z) * position.xyz;
+```
 
 
 
@@ -356,7 +364,8 @@ Provides the following blocks:
 - **color**:
 
 ```glsl
-color.a = 1.-step(dash_size,fract(v_texcoord.y*dash_scale));```
+color.a = 1.-step(dash_size,fract(v_texcoord.y*dash_scale));
+```
 
 
 
@@ -370,7 +379,8 @@ Provides the following blocks:
 ```glsl
 vec2 st = fract(v_texcoord.xy);
 st -= .5;
-color.a = 1.- step(dotSize, dot(st,st)*2.);```
+color.a = 1.- step(dotSize, dot(st,st)*2.);
+```
 
 
 
@@ -384,7 +394,8 @@ Provides the following blocks:
 ```glsl
 color.rgb = mix(color.rgb,
                 outline_color,
-                (1.0-(aastep(outline_width,v_texcoord.x)-step(1.0-outline_width,v_texcoord.x))));```
+                (1.0-(aastep(outline_width,v_texcoord.x)-step(1.0-outline_width,v_texcoord.x))));
+```
 
 
 
@@ -397,7 +408,8 @@ Provides the following blocks:
 
 ```glsl
 vec2 st = fract(v_texcoord);
-color.rgb += step(.1,sin((st.x+st.y)*6.283))*.1;```
+color.rgb += step(.1,sin((st.x+st.y)*6.283))*.1;
+```
 
 
 
@@ -537,7 +549,8 @@ Provides the following blocks:
 
 ```glsl
 // Normalize the attribute position of a vertex
-v_pos = modelPosition().xyz;```
+v_pos = modelPosition().xyz;
+```
 
 
 - **global**:

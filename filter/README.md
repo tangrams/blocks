@@ -9,6 +9,7 @@ Provides the following blocks:
 ```glsl
 // Apply the grain in the amount defined on GRAIN_AMOUNT
 color.rgb -= grain()*GRAIN_AMOUNT;
+
 ```
 
 
@@ -29,7 +30,8 @@ Provides the following blocks:
 - **color**:
 
 ```glsl
-color.rgb *= min((worldPosition().z*.001 + .5),1.);```
+color.rgb *= min((worldPosition().z*.001 + .5),1.);
+```
 
 
 
@@ -41,7 +43,8 @@ Provides the following blocks:
 - **filter**:
 
 ```glsl
-color = getLut(color);```
+color = getLut(color);
+```
 
 
 - **global**:
@@ -59,6 +62,7 @@ Provides the following blocks:
 
 ```glsl
 color *= abs(cos((gl_FragCoord.y*TV_FREQ+u_time*5.)));
+
 ```
 
 

@@ -46,7 +46,7 @@ for folder in folders:
                         else:
                             readme_file.write(  '\n\n```glsl\n' + 
                                                 yaml_file['styles'][name_block]['shaders']['blocks'][block] +
-                                                '```\n\n')
+                                                '\n```\n\n')
             readme_file.write('\n')
     readme_file.close()
     readmes.append(readme)

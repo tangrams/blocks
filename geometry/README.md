@@ -8,7 +8,8 @@ Provides the following blocks:
 
 ```glsl
 float zoom = map(u_map_position.z,ZOOM_START,ZOOM_END,1.,0.);
-position.z *= max(1.,.5+ZOOM_LINEAR_FACTOR*zoom);```
+position.z *= max(1.,.5+ZOOM_LINEAR_FACTOR*zoom);
+```
 
 
 
@@ -20,7 +21,8 @@ Provides the following blocks:
 - **width**:
 
 ```glsl
-width *= 0.2+min(pow(position.z*0.006,2.),.6);```
+width *= 0.2+min(pow(position.z*0.006,2.),.6);
+```
 
 
 
@@ -80,7 +82,8 @@ Provides the following blocks:
 
 ```glsl
 position.z += ZOFFSET*u_meters_per_pixel;
-extrudeTerrain(position);```
+extrudeTerrain(position);
+```
 
 
 - **global**:
@@ -97,6 +100,7 @@ Provides the following blocks:
 ```glsl
 float t = u_time*0.1; 
 float z = clamp(smoothstep(TILT_IN/TILT_MAX_ZOOM, TILT_OUT/TILT_MAX_ZOOM, max(u_map_position.z/TILT_MAX_ZOOM,0.)*0.9), 0., 1.);
-position.xyz = rotateX3D(z*HALF_PI) * rotateZ3D(sin(t)*PI*z) * position.xyz;```
+position.xyz = rotateX3D(z*HALF_PI) * rotateZ3D(sin(t)*PI*z) * position.xyz;
+```
 
 

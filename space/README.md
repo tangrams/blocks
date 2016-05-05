@@ -33,7 +33,8 @@ Provides the following blocks:
 
 ```glsl
 // Normalize the attribute position of a vertex
-v_pos = modelPosition().xyz;```
+v_pos = modelPosition().xyz;
+```
 
 
 - **global**:
