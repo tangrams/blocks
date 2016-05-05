@@ -54,6 +54,11 @@ This provides the following blocks:
  + `float backOut(float t) `
  + `float backInOut(float t) `
 
+This blocks have the following defines you can tweak:
+ - **HALF_PI**: ```1.57079632679```
+ - **PI**: ```3.14159265359```
+
+
 Import it using:
 
 ```yaml
@@ -71,6 +76,10 @@ This provides the following blocks:
 - **global**:
  + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax, bool clamp) `
  + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax) `
+
+This blocks have the following defines you can tweak:
+ - **EPSILON**: ```1e-07```
+
 
 Import it using:
 

@@ -13,6 +13,12 @@ position.z *= max(1.,.5+ZOOM_LINEAR_FACTOR*zoom);
 
 
 
+This blocks have the following defines you can tweak:
+ - **ZOOM_LINEAR_FACTOR**: ```2.0```
+ - **ZOOM_START**: ```15.0```
+ - **ZOOM_END**: ```20.0```
+
+
 Import it using:
 
 ```yaml
@@ -59,6 +65,12 @@ This provides the following blocks:
  + `mat4 rotateZ4D (float psi) `
  + `mat4 scale4D (float x, float y, float z) `
  + `mat4 translate4D (float x, float y, float z) `
+
+This blocks have the following defines you can tweak:
+ - **HALF_PI**: ```1.57079632679```
+ - **TWO_PI**: ```6.28318530718```
+ - **PI**: ```3.14159265359```
+
 
 Import it using:
 
@@ -109,6 +121,15 @@ This provides the following blocks:
  + `vec2 azimuthalNorth(float lat, float lon) `
  + `vec2 azimuthalSouth(float lat, float lon) `
 
+This blocks have the following defines you can tweak:
+ - **PI**: ```3.14159265359```
+ - **HALF_PI**: ```1.57079632679```
+ - **EARTH_RADIUS**: ```6378137.0```
+ - **deg2rad(d)**: ```(((d)*3.14159265358979323846)/180.0)```
+ - **QUATER_PI**: ```0.785398163```
+ - **rad2deg(d)**: ```(((d)*180.0)/3.14159265358979323846)```
+
+
 Import it using:
 
 ```yaml
@@ -135,6 +156,10 @@ extrudeTerrain(position);
  + `float getHeight() `
  + `void extrudeTerrain(inout vec4 position) `
 
+This blocks have the following defines you can tweak:
+ - **ZOFFSET**: ```0.0```
+
+
 Import it using:
 
 ```yaml
@@ -157,6 +182,12 @@ float z = clamp(smoothstep(TILT_IN/TILT_MAX_ZOOM, TILT_OUT/TILT_MAX_ZOOM, max(u_
 position.xyz = rotateX3D(z*HALF_PI) * rotateZ3D(sin(t)*PI*z) * position.xyz;
 ```
 
+
+
+This blocks have the following defines you can tweak:
+ - **TILT_MAX_ZOOM**: ```20.0```
+ - **TILT_IN**: ```15.0```
+ - **TILT_OUT**: ```20.0```
 
 
 Import it using:

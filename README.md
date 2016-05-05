@@ -120,6 +120,10 @@ color.rgb -= grain()*GRAIN_AMOUNT;
 
 - **global**:
 
+This blocks have the following defines you can tweak:
+ - **GRAIN_AMOUNT**: ```0.3```
+
+
 Import it using:
 
 ```yaml
@@ -208,6 +212,10 @@ color *= abs(cos((gl_FragCoord.y*TV_FREQ+u_time*5.)));
 
 
 
+This blocks have the following defines you can tweak:
+ - **TV_FREQ**: ```1.2```
+
+
 Import it using:
 
 ```yaml
@@ -272,6 +280,11 @@ This provides the following blocks:
  + `float backOut(float t) `
  + `float backInOut(float t) `
 
+This blocks have the following defines you can tweak:
+ - **HALF_PI**: ```1.57079632679```
+ - **PI**: ```3.14159265359```
+
+
 Import it using:
 
 ```yaml
@@ -289,6 +302,10 @@ This provides the following blocks:
 - **global**:
  + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax, bool clamp) `
  + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax) `
+
+This blocks have the following defines you can tweak:
+ - **EPSILON**: ```1e-07```
+
 
 Import it using:
 
@@ -327,6 +344,10 @@ This provides the following blocks:
  + `float fbm (vec2 xy) `
  + `int i = 0; i < int(NUM_OCTAVES); ++i) `
  + `float fbm ( in vec3 xyz) `
+
+This blocks have the following defines you can tweak:
+ - **NUM_OCTAVES**: ```5```
+
 
 Import it using:
 
@@ -410,6 +431,12 @@ position.z *= max(1.,.5+ZOOM_LINEAR_FACTOR*zoom);
 
 
 
+This blocks have the following defines you can tweak:
+ - **ZOOM_LINEAR_FACTOR**: ```2.0```
+ - **ZOOM_START**: ```15.0```
+ - **ZOOM_END**: ```20.0```
+
+
 Import it using:
 
 ```yaml
@@ -456,6 +483,12 @@ This provides the following blocks:
  + `mat4 rotateZ4D (float psi) `
  + `mat4 scale4D (float x, float y, float z) `
  + `mat4 translate4D (float x, float y, float z) `
+
+This blocks have the following defines you can tweak:
+ - **HALF_PI**: ```1.57079632679```
+ - **TWO_PI**: ```6.28318530718```
+ - **PI**: ```3.14159265359```
+
 
 Import it using:
 
@@ -506,6 +539,15 @@ This provides the following blocks:
  + `vec2 azimuthalNorth(float lat, float lon) `
  + `vec2 azimuthalSouth(float lat, float lon) `
 
+This blocks have the following defines you can tweak:
+ - **PI**: ```3.14159265359```
+ - **HALF_PI**: ```1.57079632679```
+ - **EARTH_RADIUS**: ```6378137.0```
+ - **deg2rad(d)**: ```(((d)*3.14159265358979323846)/180.0)```
+ - **QUATER_PI**: ```0.785398163```
+ - **rad2deg(d)**: ```(((d)*180.0)/3.14159265358979323846)```
+
+
 Import it using:
 
 ```yaml
@@ -532,6 +574,10 @@ extrudeTerrain(position);
  + `float getHeight() `
  + `void extrudeTerrain(inout vec4 position) `
 
+This blocks have the following defines you can tweak:
+ - **ZOFFSET**: ```0.0```
+
+
 Import it using:
 
 ```yaml
@@ -556,6 +602,12 @@ position.xyz = rotateX3D(z*HALF_PI) * rotateZ3D(sin(t)*PI*z) * position.xyz;
 
 
 
+This blocks have the following defines you can tweak:
+ - **TILT_MAX_ZOOM**: ```20.0```
+ - **TILT_IN**: ```15.0```
+ - **TILT_OUT**: ```20.0```
+
+
 Import it using:
 
 ```yaml
@@ -573,9 +625,14 @@ This provides the following blocks:
 - **color**:
 
 ```glsl
-color.a = 1.-step(dash_size,fract(v_texcoord.y*dash_scale));
+color.a = 1.-step(DASH_SIZE,fract(v_texcoord.y*DASH_SCALE));
 ```
 
+
+
+This blocks have the following defines you can tweak:
+ - **DASH_SIZE**: ```0.5```
+ - **DASH_SCALE**: ```0.1```
 
 
 Import it using:
@@ -597,9 +654,13 @@ This provides the following blocks:
 ```glsl
 vec2 st = fract(v_texcoord.xy);
 st -= .5;
-color.a = 1.- step(dotSize, dot(st,st)*2.);
+color.a = 1.- step(DOT_SIZE, dot(st,st)*2.);
 ```
 
+
+
+This blocks have the following defines you can tweak:
+ - **DOT_SIZE**: ```0.05```
 
 
 Import it using:
@@ -620,10 +681,15 @@ This provides the following blocks:
 
 ```glsl
 color.rgb = mix(color.rgb,
-                outline_color,
-                (1.0-(aastep(outline_width,v_texcoord.x)-step(1.0-outline_width,v_texcoord.x))));
+                OUTLINE_COLOR,
+                (1.0-(aastep(OUTLINE_WIDTH,v_texcoord.x)-step(1.0-OUTLINE_WIDTH,v_texcoord.x))));
 ```
 
+
+
+This blocks have the following defines you can tweak:
+ - **OUTLINE_WIDTH**: ```0.1```
+ - **OUTLINE_COLOR**: ```vec3(1.)```
 
 
 Import it using:
@@ -643,10 +709,14 @@ This provides the following blocks:
 - **color**:
 
 ```glsl
-vec2 st = fract(v_texcoord);
-color.rgb += step(.1,sin((st.x+st.y)*6.283))*.1;
+color.rgb += step(STRIPES_WIDTH, sin((fract(v_texcoord).x+fract(v_texcoord).y) * 6.283)) * STRIPES_INTENSITY;
 ```
 
+
+
+This blocks have the following defines you can tweak:
+ - **STRIPES_INTENSITY**: ```0.1```
+ - **STRIPES_WIDTH**: ```0.1```
 
 
 Import it using:
@@ -700,6 +770,10 @@ This provides the following blocks:
  + `float stripesDF (vec2 st) `
  + `float stripes (vec2 st, float width) `
  + `float diagonalStripes (vec2 st) `
+
+This blocks have the following defines you can tweak:
+ - **PI**: ```3.14159265359```
+
 
 Import it using:
 
@@ -755,6 +829,10 @@ This provides the following blocks:
  + `float circleDF (vec2 st) `
  + `float circle (vec2 st, float radius) `
 
+This blocks have the following defines you can tweak:
+ - **PI**: ```3.14159265359```
+
+
 Import it using:
 
 ```yaml
@@ -790,6 +868,12 @@ This provides the following blocks:
  + `float SampleDigit(const in float fDigit, const in vec2 vUV) `
  + `float PrintValue(const in vec2 vStringCharCoords, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces) `
 
+This blocks have the following defines you can tweak:
+ - **CHAR_DECIMAL_POINT**: ```10.0```
+ - **CHAR_MINUS**: ```11.0```
+ - **CHAR_BLANK**: ```12.0```
+
+
 Import it using:
 
 ```yaml
@@ -807,6 +891,11 @@ This provides the following blocks:
 - **global**:
  + `float shapeDF (vec2 st, int N) `
  + `float shape (vec2 st, int N, float width) `
+
+This blocks have the following defines you can tweak:
+ - **TWO_PI**: ```6.283185307```
+ - **PI**: ```3.14159265359```
+
 
 Import it using:
 
@@ -1049,6 +1138,10 @@ This provides the following blocks:
 - **global**:
  + `vec2 truchetMirror (vec2 st) `
  + `vec2 truchetRotate (vec2 st) `
+
+This blocks have the following defines you can tweak:
+ - **PI**: ```3.14159265359```
+
 
 Import it using:
 

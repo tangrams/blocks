@@ -7,9 +7,14 @@ This provides the following blocks:
 - **color**:
 
 ```glsl
-color.a = 1.-step(dash_size,fract(v_texcoord.y*dash_scale));
+color.a = 1.-step(DASH_SIZE,fract(v_texcoord.y*DASH_SCALE));
 ```
 
+
+
+This blocks have the following defines you can tweak:
+ - **DASH_SIZE**: ```0.5```
+ - **DASH_SCALE**: ```0.1```
 
 
 Import it using:
@@ -31,9 +36,13 @@ This provides the following blocks:
 ```glsl
 vec2 st = fract(v_texcoord.xy);
 st -= .5;
-color.a = 1.- step(dotSize, dot(st,st)*2.);
+color.a = 1.- step(DOT_SIZE, dot(st,st)*2.);
 ```
 
+
+
+This blocks have the following defines you can tweak:
+ - **DOT_SIZE**: ```0.05```
 
 
 Import it using:
@@ -54,10 +63,15 @@ This provides the following blocks:
 
 ```glsl
 color.rgb = mix(color.rgb,
-                outline_color,
-                (1.0-(aastep(outline_width,v_texcoord.x)-step(1.0-outline_width,v_texcoord.x))));
+                OUTLINE_COLOR,
+                (1.0-(aastep(OUTLINE_WIDTH,v_texcoord.x)-step(1.0-OUTLINE_WIDTH,v_texcoord.x))));
 ```
 
+
+
+This blocks have the following defines you can tweak:
+ - **OUTLINE_WIDTH**: ```0.1```
+ - **OUTLINE_COLOR**: ```vec3(1.)```
 
 
 Import it using:
@@ -77,10 +91,14 @@ This provides the following blocks:
 - **color**:
 
 ```glsl
-vec2 st = fract(v_texcoord);
-color.rgb += step(.1,sin((st.x+st.y)*6.283))*.1;
+color.rgb += step(STRIPES_WIDTH, sin((fract(v_texcoord).x+fract(v_texcoord).y) * 6.283)) * STRIPES_INTENSITY;
 ```
 
+
+
+This blocks have the following defines you can tweak:
+ - **STRIPES_INTENSITY**: ```0.1```
+ - **STRIPES_WIDTH**: ```0.1```
 
 
 Import it using:

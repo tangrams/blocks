@@ -8,6 +8,10 @@ This provides the following blocks:
  + `float circleDF (vec2 st) `
  + `float circle (vec2 st, float radius) `
 
+This blocks have the following defines you can tweak:
+ - **PI**: ```3.14159265359```
+
+
 Import it using:
 
 ```yaml
@@ -43,6 +47,12 @@ This provides the following blocks:
  + `float SampleDigit(const in float fDigit, const in vec2 vUV) `
  + `float PrintValue(const in vec2 vStringCharCoords, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces) `
 
+This blocks have the following defines you can tweak:
+ - **CHAR_DECIMAL_POINT**: ```10.0```
+ - **CHAR_MINUS**: ```11.0```
+ - **CHAR_BLANK**: ```12.0```
+
+
 Import it using:
 
 ```yaml
@@ -60,6 +70,11 @@ This provides the following blocks:
 - **global**:
  + `float shapeDF (vec2 st, int N) `
  + `float shape (vec2 st, int N, float width) `
+
+This blocks have the following defines you can tweak:
+ - **TWO_PI**: ```6.283185307```
+ - **PI**: ```3.14159265359```
+
 
 Import it using:
 

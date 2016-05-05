@@ -18,6 +18,10 @@ color.rgb -= grain()*GRAIN_AMOUNT;
 
 - **global**:
 
+This blocks have the following defines you can tweak:
+ - **GRAIN_AMOUNT**: ```0.3```
+
+
 Import it using:
 
 ```yaml
@@ -104,6 +108,10 @@ color *= abs(cos((gl_FragCoord.y*TV_FREQ+u_time*5.)));
 
 ```
 
+
+
+This blocks have the following defines you can tweak:
+ - **TV_FREQ**: ```1.2```
 
 
 Import it using:

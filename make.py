@@ -28,10 +28,6 @@ for folder in folders:
                     readme_file.write(yaml_file['styles'][name_block]['doc']['description']+'\n')
 
             if 'shaders' in yaml_file['styles'][name_block]:
-
-                if 'defines' in yaml_file['styles'][name_block]['shaders']:
-                    print yaml_file['styles'][name_block]['shaders']['defines']
-
                 if 'blocks' in yaml_file['styles'][name_block]['shaders']:
                     readme_file.write('This provides the following blocks:\n');
 
@@ -46,8 +42,10 @@ for folder in folders:
                             readme_file.write(  '\n\n```glsl\n' + 
                                                 yaml_file['styles'][name_block]['shaders']['blocks'][block] +
                                                 '\n```\n\n')
-
-            
+                if 'defines' in yaml_file['styles'][name_block]['shaders']:
+                    readme_file.write('\n\nThis blocks have the following defines you can use or tweak:\n')
+                    for define in yaml_file['styles'][name_block]['shaders']['defines'].keys():
+                        readme_file.write(' - **' + define + '**: ```' + str(yaml_file['styles'][name_block]['shaders']['defines'][define]) + '```\n')
 
             readme_file.write(  '\n\nImport it using:\n\n' +
                                 '```yaml\n' +
