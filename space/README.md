@@ -11,7 +11,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./space./space/constant.yaml
+    - http://tangrams.github.io/blocks/space/constant.yaml
 ```
 
 
@@ -29,7 +29,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./space./space/screen.yaml
+    - http://tangrams.github.io/blocks/space/screen.yaml
 ```
 
 
@@ -46,7 +46,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./space./space/tex.yaml
+    - http://tangrams.github.io/blocks/space/tex.yaml
 ```
 
 
@@ -71,7 +71,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./space./space/tile.yaml
+    - http://tangrams.github.io/blocks/space/tile.yaml
 ```
 
 
@@ -88,7 +88,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./space./space/uz.yaml
+    - http://tangrams.github.io/blocks/space/uz.yaml
 ```
 
 

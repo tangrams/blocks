@@ -16,7 +16,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./color./color/conversion.yaml
+    - http://tangrams.github.io/blocks/color/conversion.yaml
 ```
 
 
@@ -35,7 +35,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./color./color/palette.yaml
+    - http://tangrams.github.io/blocks/color/palette.yaml
 ```
 
 
@@ -58,7 +58,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./color./color/tools.yaml
+    - http://tangrams.github.io/blocks/color/tools.yaml
 ```
 
 

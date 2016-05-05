@@ -11,7 +11,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./texture./texture/non-repetitive.yaml
+    - http://tangrams.github.io/blocks/texture/non-repetitive.yaml
 ```
 
 
@@ -28,7 +28,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./texture./texture/zoom-fade.yaml
+    - http://tangrams.github.io/blocks/texture/zoom-fade.yaml
 ```
 
 

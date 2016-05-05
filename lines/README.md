@@ -21,7 +21,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./lines./lines/dash.yaml
+    - http://tangrams.github.io/blocks/lines/dash.yaml
 ```
 
 
@@ -49,7 +49,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./lines./lines/dots.yaml
+    - http://tangrams.github.io/blocks/lines/dots.yaml
 ```
 
 
@@ -78,7 +78,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./lines./lines/outline.yaml
+    - http://tangrams.github.io/blocks/lines/outline.yaml
 ```
 
 
@@ -105,7 +105,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./lines./lines/stripes.yaml
+    - http://tangrams.github.io/blocks/lines/stripes.yaml
 ```
 
 

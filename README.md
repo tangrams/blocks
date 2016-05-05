@@ -54,7 +54,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./color./color/conversion.yaml
+    - http://tangrams.github.io/blocks/color/conversion.yaml
 ```
 
 
@@ -73,7 +73,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./color./color/palette.yaml
+    - http://tangrams.github.io/blocks/color/palette.yaml
 ```
 
 
@@ -96,7 +96,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./color./color/tools.yaml
+    - http://tangrams.github.io/blocks/color/tools.yaml
 ```
 
 
@@ -128,7 +128,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./filter./filter/grain.yaml
+    - http://tangrams.github.io/blocks/filter/grain.yaml
 ```
 
 
@@ -148,7 +148,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./filter./filter/hatch.yaml
+    - http://tangrams.github.io/blocks/filter/hatch.yaml
 ```
 
 
@@ -170,7 +170,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./filter./filter/height.yaml
+    - http://tangrams.github.io/blocks/filter/height.yaml
 ```
 
 
@@ -197,7 +197,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./filter./filter/lut.yaml
+    - http://tangrams.github.io/blocks/filter/lut.yaml
 ```
 
 
@@ -224,7 +224,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./filter./filter/tv.yaml
+    - http://tangrams.github.io/blocks/filter/tv.yaml
 ```
 
 
@@ -243,7 +243,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./functions./functions/aastep.yaml
+    - http://tangrams.github.io/blocks/functions/aastep.yaml
 ```
 
 
@@ -297,7 +297,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./functions./functions/easing.yaml
+    - http://tangrams.github.io/blocks/functions/easing.yaml
 ```
 
 
@@ -319,7 +319,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./functions./functions/map.yaml
+    - http://tangrams.github.io/blocks/functions/map.yaml
 ```
 
 
@@ -336,7 +336,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./functions./functions/pulse.yaml
+    - http://tangrams.github.io/blocks/functions/pulse.yaml
 ```
 
 
@@ -361,7 +361,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./generative./generative/fbm.yaml
+    - http://tangrams.github.io/blocks/generative/fbm.yaml
 ```
 
 
@@ -381,7 +381,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./generative./generative/noise.yaml
+    - http://tangrams.github.io/blocks/generative/noise.yaml
 ```
 
 
@@ -403,7 +403,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./generative./generative/random.yaml
+    - http://tangrams.github.io/blocks/generative/random.yaml
 ```
 
 
@@ -420,7 +420,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./generative./generative/voronoi.yaml
+    - http://tangrams.github.io/blocks/generative/voronoi.yaml
 ```
 
 
@@ -449,7 +449,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./geometry./geometry/dynamic-height.yaml
+    - http://tangrams.github.io/blocks/geometry/dynamic-height.yaml
 ```
 
 
@@ -471,7 +471,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./geometry./geometry/dynamic-width.yaml
+    - http://tangrams.github.io/blocks/geometry/dynamic-width.yaml
 ```
 
 
@@ -502,7 +502,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./geometry./geometry/matrices.yaml
+    - http://tangrams.github.io/blocks/geometry/matrices.yaml
 ```
 
 
@@ -520,7 +520,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./geometry./geometry/normal.yaml
+    - http://tangrams.github.io/blocks/geometry/normal.yaml
 ```
 
 
@@ -560,7 +560,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./geometry./geometry/projections.yaml
+    - http://tangrams.github.io/blocks/geometry/projections.yaml
 ```
 
 
@@ -590,7 +590,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./geometry./geometry/terrarium.yaml
+    - http://tangrams.github.io/blocks/geometry/terrarium.yaml
 ```
 
 
@@ -620,7 +620,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./geometry./geometry/tilt.yaml
+    - http://tangrams.github.io/blocks/geometry/tilt.yaml
 ```
 
 
@@ -647,7 +647,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./lines./lines/dash.yaml
+    - http://tangrams.github.io/blocks/lines/dash.yaml
 ```
 
 
@@ -675,7 +675,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./lines./lines/dots.yaml
+    - http://tangrams.github.io/blocks/lines/dots.yaml
 ```
 
 
@@ -704,7 +704,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./lines./lines/outline.yaml
+    - http://tangrams.github.io/blocks/lines/outline.yaml
 ```
 
 
@@ -731,7 +731,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./lines./lines/stripes.yaml
+    - http://tangrams.github.io/blocks/lines/stripes.yaml
 ```
 
 
@@ -748,7 +748,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./patterns./patterns/dots.yaml
+    - http://tangrams.github.io/blocks/patterns/dots.yaml
 ```
 
 
@@ -764,7 +764,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./patterns./patterns/grid.yaml
+    - http://tangrams.github.io/blocks/patterns/grid.yaml
 ```
 
 
@@ -787,7 +787,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./patterns./patterns/stripes.yaml
+    - http://tangrams.github.io/blocks/patterns/stripes.yaml
 ```
 
 
@@ -805,7 +805,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./patterns./patterns/waves.yaml
+    - http://tangrams.github.io/blocks/patterns/waves.yaml
 ```
 
 
@@ -823,7 +823,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./patterns./patterns/zigzag.yaml
+    - http://tangrams.github.io/blocks/patterns/zigzag.yaml
 ```
 
 
@@ -845,7 +845,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./shapes./shapes/circle.yaml
+    - http://tangrams.github.io/blocks/shapes/circle.yaml
 ```
 
 
@@ -862,7 +862,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./shapes./shapes/cross.yaml
+    - http://tangrams.github.io/blocks/shapes/cross.yaml
 ```
 
 
@@ -886,7 +886,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./shapes./shapes/digits.yaml
+    - http://tangrams.github.io/blocks/shapes/digits.yaml
 ```
 
 
@@ -909,7 +909,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./shapes./shapes/polygons.yaml
+    - http://tangrams.github.io/blocks/shapes/polygons.yaml
 ```
 
 
@@ -929,7 +929,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./shapes./shapes/rect.yaml
+    - http://tangrams.github.io/blocks/shapes/rect.yaml
 ```
 
 
@@ -951,7 +951,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./shapes./shapes/simplex.yaml
+    - http://tangrams.github.io/blocks/shapes/simplex.yaml
 ```
 
 
@@ -968,7 +968,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./space./space/constant.yaml
+    - http://tangrams.github.io/blocks/space/constant.yaml
 ```
 
 
@@ -986,7 +986,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./space./space/screen.yaml
+    - http://tangrams.github.io/blocks/space/screen.yaml
 ```
 
 
@@ -1003,7 +1003,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./space./space/tex.yaml
+    - http://tangrams.github.io/blocks/space/tex.yaml
 ```
 
 
@@ -1028,7 +1028,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./space./space/tile.yaml
+    - http://tangrams.github.io/blocks/space/tile.yaml
 ```
 
 
@@ -1045,7 +1045,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./space./space/uz.yaml
+    - http://tangrams.github.io/blocks/space/uz.yaml
 ```
 
 
@@ -1062,7 +1062,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./texture./texture/non-repetitive.yaml
+    - http://tangrams.github.io/blocks/texture/non-repetitive.yaml
 ```
 
 
@@ -1079,7 +1079,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./texture./texture/zoom-fade.yaml
+    - http://tangrams.github.io/blocks/texture/zoom-fade.yaml
 ```
 
 
@@ -1096,7 +1096,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./tiling./tiling/brick.yaml
+    - http://tangrams.github.io/blocks/tiling/brick.yaml
 ```
 
 
@@ -1116,7 +1116,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./tiling./tiling/simplex.yaml
+    - http://tangrams.github.io/blocks/tiling/simplex.yaml
 ```
 
 
@@ -1133,7 +1133,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./tiling./tiling/tile.yaml
+    - http://tangrams.github.io/blocks/tiling/tile.yaml
 ```
 
 
@@ -1155,7 +1155,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./tiling./tiling/truchet.yaml
+    - http://tangrams.github.io/blocks/tiling/truchet.yaml
 ```
 
 

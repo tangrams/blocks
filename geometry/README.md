@@ -23,7 +23,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./geometry./geometry/dynamic-height.yaml
+    - http://tangrams.github.io/blocks/geometry/dynamic-height.yaml
 ```
 
 
@@ -45,7 +45,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./geometry./geometry/dynamic-width.yaml
+    - http://tangrams.github.io/blocks/geometry/dynamic-width.yaml
 ```
 
 
@@ -76,7 +76,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./geometry./geometry/matrices.yaml
+    - http://tangrams.github.io/blocks/geometry/matrices.yaml
 ```
 
 
@@ -94,7 +94,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./geometry./geometry/normal.yaml
+    - http://tangrams.github.io/blocks/geometry/normal.yaml
 ```
 
 
@@ -134,7 +134,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./geometry./geometry/projections.yaml
+    - http://tangrams.github.io/blocks/geometry/projections.yaml
 ```
 
 
@@ -164,7 +164,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./geometry./geometry/terrarium.yaml
+    - http://tangrams.github.io/blocks/geometry/terrarium.yaml
 ```
 
 
@@ -194,7 +194,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./geometry./geometry/tilt.yaml
+    - http://tangrams.github.io/blocks/geometry/tilt.yaml
 ```
 
 

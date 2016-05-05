@@ -11,7 +11,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./tiling./tiling/brick.yaml
+    - http://tangrams.github.io/blocks/tiling/brick.yaml
 ```
 
 
@@ -31,7 +31,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./tiling./tiling/simplex.yaml
+    - http://tangrams.github.io/blocks/tiling/simplex.yaml
 ```
 
 
@@ -48,7 +48,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./tiling./tiling/tile.yaml
+    - http://tangrams.github.io/blocks/tiling/tile.yaml
 ```
 
 
@@ -70,7 +70,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./tiling./tiling/truchet.yaml
+    - http://tangrams.github.io/blocks/tiling/truchet.yaml
 ```
 
 

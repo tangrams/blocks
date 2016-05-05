@@ -26,7 +26,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./filter./filter/grain.yaml
+    - http://tangrams.github.io/blocks/filter/grain.yaml
 ```
 
 
@@ -46,7 +46,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./filter./filter/hatch.yaml
+    - http://tangrams.github.io/blocks/filter/hatch.yaml
 ```
 
 
@@ -68,7 +68,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./filter./filter/height.yaml
+    - http://tangrams.github.io/blocks/filter/height.yaml
 ```
 
 
@@ -95,7 +95,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./filter./filter/lut.yaml
+    - http://tangrams.github.io/blocks/filter/lut.yaml
 ```
 
 
@@ -122,7 +122,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./filter./filter/tv.yaml
+    - http://tangrams.github.io/blocks/filter/tv.yaml
 ```
 
 

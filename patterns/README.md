@@ -11,7 +11,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./patterns./patterns/dots.yaml
+    - http://tangrams.github.io/blocks/patterns/dots.yaml
 ```
 
 
@@ -27,7 +27,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./patterns./patterns/grid.yaml
+    - http://tangrams.github.io/blocks/patterns/grid.yaml
 ```
 
 
@@ -50,7 +50,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./patterns./patterns/stripes.yaml
+    - http://tangrams.github.io/blocks/patterns/stripes.yaml
 ```
 
 
@@ -68,7 +68,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./patterns./patterns/waves.yaml
+    - http://tangrams.github.io/blocks/patterns/waves.yaml
 ```
 
 
@@ -86,7 +86,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./patterns./patterns/zigzag.yaml
+    - http://tangrams.github.io/blocks/patterns/zigzag.yaml
 ```
 
 

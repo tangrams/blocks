@@ -50,7 +50,7 @@ for folder in folders:
             readme_file.write(  '\n\nImport it using:\n\n' +
                                 '```yaml\n' +
                                 'import:\n' +
-                                '    - http://tangrams.github.io/blocks/' + folder + filename + '\n' +
+                                '    - http://tangrams.github.io/blocks/' + filename[2:] + '\n' +
                                 '```\n\n')
 
             readme_file.write('\n')

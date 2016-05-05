@@ -13,7 +13,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./functions./functions/aastep.yaml
+    - http://tangrams.github.io/blocks/functions/aastep.yaml
 ```
 
 
@@ -67,7 +67,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./functions./functions/easing.yaml
+    - http://tangrams.github.io/blocks/functions/easing.yaml
 ```
 
 
@@ -89,7 +89,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./functions./functions/map.yaml
+    - http://tangrams.github.io/blocks/functions/map.yaml
 ```
 
 
@@ -106,7 +106,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./functions./functions/pulse.yaml
+    - http://tangrams.github.io/blocks/functions/pulse.yaml
 ```
 
 

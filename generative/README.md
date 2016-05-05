@@ -19,7 +19,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./generative./generative/fbm.yaml
+    - http://tangrams.github.io/blocks/generative/fbm.yaml
 ```
 
 
@@ -39,7 +39,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./generative./generative/noise.yaml
+    - http://tangrams.github.io/blocks/generative/noise.yaml
 ```
 
 
@@ -61,7 +61,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./generative./generative/random.yaml
+    - http://tangrams.github.io/blocks/generative/random.yaml
 ```
 
 
@@ -78,7 +78,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./generative./generative/voronoi.yaml
+    - http://tangrams.github.io/blocks/generative/voronoi.yaml
 ```
 
 

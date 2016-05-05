@@ -16,7 +16,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./shapes./shapes/circle.yaml
+    - http://tangrams.github.io/blocks/shapes/circle.yaml
 ```
 
 
@@ -33,7 +33,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./shapes./shapes/cross.yaml
+    - http://tangrams.github.io/blocks/shapes/cross.yaml
 ```
 
 
@@ -57,7 +57,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./shapes./shapes/digits.yaml
+    - http://tangrams.github.io/blocks/shapes/digits.yaml
 ```
 
 
@@ -80,7 +80,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./shapes./shapes/polygons.yaml
+    - http://tangrams.github.io/blocks/shapes/polygons.yaml
 ```
 
 
@@ -100,7 +100,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./shapes./shapes/rect.yaml
+    - http://tangrams.github.io/blocks/shapes/rect.yaml
 ```
 
 
@@ -122,7 +122,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/./shapes./shapes/simplex.yaml
+    - http://tangrams.github.io/blocks/shapes/simplex.yaml
 ```
 
 
