@@ -638,7 +638,7 @@ import:
 
 
 
-### [lines-dots](https://github.com/tangrams/blocks/blob/gh-pages/lines/dash.yaml)
+### [lines-dash](https://github.com/tangrams/blocks/blob/gh-pages/lines/dash.yaml)
 
 This provides the following blocks:
 
