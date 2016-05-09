@@ -5,7 +5,7 @@
 Apply a lens grain effect to the scene.
 <p>The amount can be set by the GRAIN_AMOUNT define [0.0~1.0]</p>
 <p>For example:</p>
-<a href="http://tangrams.github.io/tangram-sandbox/tangram.html?styles/grain#10.97291/40.7461/-74.0931"><div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/grain.png); width: 100%; height: 100px; background-position: center center;"></div></a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/grain.yaml"><div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/grain.png); width: 100%; height: 100px; background-position: center center;"></div></a>
 
 This provides the following blocks:
 
@@ -49,8 +49,8 @@ import:
 
 Hatching filter based on [Jaume's Sanchez](https://twitter.com/thespite?lang=en) [Cross-hatching GLSL shader](https://www.clicktorelease.com/code/cross-hatching/). 
 <p>Examples:</p>
-[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/crosshatch.png); width: 100%; height: 100px; background-position: center center;"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/crosshatch#17.575/40.70495/-74.00486)
-[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/pericoli.png); width: 100%; height: 100px; background-position: center center;"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/pericoli#17.575/40.70495/-74.00486)
+[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/crosshatch.png); width: 100%; height: 100px; background-position: center center;"></div> ](https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/crosshatch.yaml)
+[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/pericoli.png); width: 100%; height: 100px; background-position: center center;"></div> ](https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/pericoli.yaml)
 
 This provides the following blocks:
 
@@ -84,7 +84,7 @@ import:
 #### [filter-height](https://github.com/tangrams/blocks/blob/gh-pages/filter/height.yaml)
 
 Adds a dark gradiant to the geometries conform they aproach to height 0. <p>For example:</p>
-[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/default.png); width: 100%; height: 100px; background-position: center center;"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/default.yaml#10.97291/40.7461/-74.0931)
+[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/default.png); width: 100%; height: 100px; background-position: center center;"></div> ](https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/default.yaml)
 
 This provides the following blocks:
 
@@ -119,7 +119,7 @@ import:
 #### [filter-lut](https://github.com/tangrams/blocks/blob/gh-pages/filter/lut.yaml)
 
 Add a look up table filter defined on the uniform ```u_lut``` to the current style. This look up tables are hable to produce similar effect to instagram filters. <p>For example:</p>
-[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/sandbox-lut.png); width: 100%; height: 100px; background-position: center center;"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/sandbox-lut#10.97291/40.7461/-74.0931)
+[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/sandbox-lut.png); width: 100%; height: 100px; background-position: center center;"></div> ](https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/sandbox-lut.yaml)
 
 This provides the following blocks:
 
@@ -163,7 +163,7 @@ import:
 #### [filter-tv](https://github.com/tangrams/blocks/blob/gh-pages/filter/tv.yaml)
 
 <p>Apply a TV effect to the style like</p>
-[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/9845C.png); width: 100%; height: 100px; background-position: center center;"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/9845C#10.97291/40.7461/-74.0931)
+[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/9845C.png); width: 100%; height: 100px; background-position: center center;"></div> ](https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml)
 
 This provides the following blocks:
 

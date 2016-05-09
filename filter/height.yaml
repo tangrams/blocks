@@ -3,7 +3,7 @@ styles:
         doc:
             description: |  
                 Adds a dark gradiant to the geometries conform they aproach to height 0. <p>For example:</p>
-                [ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/default.png); width: 100%; height: 100px; background-position: center center;"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/default.yaml#10.97291/40.7461/-74.0931)
+                [ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/default.png); width: 100%; height: 100px; background-position: center center;"></div> ](https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/default.yaml)
         shaders:
             blocks:
                 color: |

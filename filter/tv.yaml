@@ -5,7 +5,7 @@ styles:
         doc:
             description: |  
                 <p>Apply a TV effect to the style like</p>
-                [ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/9845C.png); width: 100%; height: 100px; background-position: center center;"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/9845C#10.97291/40.7461/-74.0931)
+                [ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/9845C.png); width: 100%; height: 100px; background-position: center center;"></div> ](https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml)
         shaders:
             defines:
                 TV_FREQ: 1.2
