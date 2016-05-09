@@ -16,7 +16,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/color/conversion.yaml
+    - https://tangrams.github.io/blocks/color/conversion.yaml
 ```
 
 
@@ -26,7 +26,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/color/conversion-full.yaml
+    - https://tangrams.github.io/blocks/color/conversion-full.yaml
 ```
 
 
@@ -45,7 +45,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/color/palette.yaml
+    - https://tangrams.github.io/blocks/color/palette.yaml
 ```
 
 
@@ -55,7 +55,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/color/palette-full.yaml
+    - https://tangrams.github.io/blocks/color/palette-full.yaml
 ```
 
 
@@ -78,7 +78,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/color/tools.yaml
+    - https://tangrams.github.io/blocks/color/tools.yaml
 ```
 
 
@@ -88,7 +88,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/color/tools-full.yaml
+    - https://tangrams.github.io/blocks/color/tools-full.yaml
 ```
 
 

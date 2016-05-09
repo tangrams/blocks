@@ -11,7 +11,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/space/constant.yaml
+    - https://tangrams.github.io/blocks/space/constant.yaml
 ```
 
 
@@ -21,7 +21,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/space/constant-full.yaml
+    - https://tangrams.github.io/blocks/space/constant-full.yaml
 ```
 
 
@@ -39,7 +39,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/space/screen.yaml
+    - https://tangrams.github.io/blocks/space/screen.yaml
 ```
 
 
@@ -49,7 +49,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/space/screen-full.yaml
+    - https://tangrams.github.io/blocks/space/screen-full.yaml
 ```
 
 
@@ -66,7 +66,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/space/tex.yaml
+    - https://tangrams.github.io/blocks/space/tex.yaml
 ```
 
 
@@ -76,7 +76,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/space/tex-full.yaml
+    - https://tangrams.github.io/blocks/space/tex-full.yaml
 ```
 
 
@@ -101,7 +101,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/space/tile.yaml
+    - https://tangrams.github.io/blocks/space/tile.yaml
 ```
 
 
@@ -111,7 +111,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/space/tile-full.yaml
+    - https://tangrams.github.io/blocks/space/tile-full.yaml
 ```
 
 
@@ -128,7 +128,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/space/uz.yaml
+    - https://tangrams.github.io/blocks/space/uz.yaml
 ```
 
 
@@ -138,7 +138,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/space/uz-full.yaml
+    - https://tangrams.github.io/blocks/space/uz-full.yaml
 ```
 
 

@@ -53,14 +53,14 @@ def appendDocumentation(readme_file, filename):
         readme_file.write(  '\n\nImport it using:\n\n' +
                             '```yaml\n' +
                             'import:\n' +
-                            '    - http://tangrams.github.io/blocks/' + filename[2:] + '\n' +
+                            '    - https://tangrams.github.io/blocks/' + filename[2:] + '\n' +
                             '```\n\n\n')
 
         # Add an explanation of how to import this block with dependencies
         readme_file.write(  '\n\nIf you want to import this block with dependences included try this:\n\n' +
                             '```yaml\n' +
                             'import:\n' +
-                            '    - http://tangrams.github.io/blocks/' + filename[2:-5] + '-full.yaml\n' +
+                            '    - https://tangrams.github.io/blocks/' + filename[2:-5] + '-full.yaml\n' +
                             '```\n\n\n')
 
     return blocks

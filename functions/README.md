@@ -13,7 +13,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/functions/aastep.yaml
+    - https://tangrams.github.io/blocks/functions/aastep.yaml
 ```
 
 
@@ -23,7 +23,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/functions/aastep-full.yaml
+    - https://tangrams.github.io/blocks/functions/aastep-full.yaml
 ```
 
 
@@ -77,7 +77,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/functions/easing.yaml
+    - https://tangrams.github.io/blocks/functions/easing.yaml
 ```
 
 
@@ -87,7 +87,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/functions/easing-full.yaml
+    - https://tangrams.github.io/blocks/functions/easing-full.yaml
 ```
 
 
@@ -109,7 +109,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/functions/map.yaml
+    - https://tangrams.github.io/blocks/functions/map.yaml
 ```
 
 
@@ -119,7 +119,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/functions/map-full.yaml
+    - https://tangrams.github.io/blocks/functions/map-full.yaml
 ```
 
 
@@ -136,7 +136,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/functions/pulse.yaml
+    - https://tangrams.github.io/blocks/functions/pulse.yaml
 ```
 
 
@@ -146,7 +146,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/functions/pulse-full.yaml
+    - https://tangrams.github.io/blocks/functions/pulse-full.yaml
 ```
 
 

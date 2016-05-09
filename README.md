@@ -11,7 +11,7 @@ In your style add a path to it, like this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/filter/grain.yaml
+    - https://tangrams.github.io/blocks/filter/grain.yaml
 ```
 
 Then ```mix``` it with your custom styles like this:
@@ -149,7 +149,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/color/conversion.yaml
+    - https://tangrams.github.io/blocks/color/conversion.yaml
 ```
 
 
@@ -159,7 +159,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/color/conversion-full.yaml
+    - https://tangrams.github.io/blocks/color/conversion-full.yaml
 ```
 
 
@@ -178,7 +178,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/color/palette.yaml
+    - https://tangrams.github.io/blocks/color/palette.yaml
 ```
 
 
@@ -188,7 +188,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/color/palette-full.yaml
+    - https://tangrams.github.io/blocks/color/palette-full.yaml
 ```
 
 
@@ -211,7 +211,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/color/tools.yaml
+    - https://tangrams.github.io/blocks/color/tools.yaml
 ```
 
 
@@ -221,7 +221,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/color/tools-full.yaml
+    - https://tangrams.github.io/blocks/color/tools-full.yaml
 ```
 
 
@@ -260,7 +260,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/filter/grain.yaml
+    - https://tangrams.github.io/blocks/filter/grain.yaml
 ```
 
 
@@ -270,7 +270,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/filter/grain-full.yaml
+    - https://tangrams.github.io/blocks/filter/grain-full.yaml
 ```
 
 
@@ -296,7 +296,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/filter/hatch.yaml
+    - https://tangrams.github.io/blocks/filter/hatch.yaml
 ```
 
 
@@ -306,7 +306,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/filter/hatch-full.yaml
+    - https://tangrams.github.io/blocks/filter/hatch-full.yaml
 ```
 
 
@@ -331,7 +331,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/filter/height.yaml
+    - https://tangrams.github.io/blocks/filter/height.yaml
 ```
 
 
@@ -341,7 +341,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/filter/height-full.yaml
+    - https://tangrams.github.io/blocks/filter/height-full.yaml
 ```
 
 
@@ -375,7 +375,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/filter/lut.yaml
+    - https://tangrams.github.io/blocks/filter/lut.yaml
 ```
 
 
@@ -385,7 +385,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/filter/lut-full.yaml
+    - https://tangrams.github.io/blocks/filter/lut-full.yaml
 ```
 
 
@@ -415,7 +415,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/filter/tv.yaml
+    - https://tangrams.github.io/blocks/filter/tv.yaml
 ```
 
 
@@ -425,7 +425,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/filter/tv-full.yaml
+    - https://tangrams.github.io/blocks/filter/tv-full.yaml
 ```
 
 
@@ -448,7 +448,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/functions/aastep.yaml
+    - https://tangrams.github.io/blocks/functions/aastep.yaml
 ```
 
 
@@ -458,7 +458,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/functions/aastep-full.yaml
+    - https://tangrams.github.io/blocks/functions/aastep-full.yaml
 ```
 
 
@@ -512,7 +512,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/functions/easing.yaml
+    - https://tangrams.github.io/blocks/functions/easing.yaml
 ```
 
 
@@ -522,7 +522,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/functions/easing-full.yaml
+    - https://tangrams.github.io/blocks/functions/easing-full.yaml
 ```
 
 
@@ -544,7 +544,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/functions/map.yaml
+    - https://tangrams.github.io/blocks/functions/map.yaml
 ```
 
 
@@ -554,7 +554,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/functions/map-full.yaml
+    - https://tangrams.github.io/blocks/functions/map-full.yaml
 ```
 
 
@@ -571,7 +571,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/functions/pulse.yaml
+    - https://tangrams.github.io/blocks/functions/pulse.yaml
 ```
 
 
@@ -581,7 +581,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/functions/pulse-full.yaml
+    - https://tangrams.github.io/blocks/functions/pulse-full.yaml
 ```
 
 
@@ -610,7 +610,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/generative/fbm.yaml
+    - https://tangrams.github.io/blocks/generative/fbm.yaml
 ```
 
 
@@ -620,7 +620,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/generative/fbm-full.yaml
+    - https://tangrams.github.io/blocks/generative/fbm-full.yaml
 ```
 
 
@@ -640,7 +640,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/generative/noise.yaml
+    - https://tangrams.github.io/blocks/generative/noise.yaml
 ```
 
 
@@ -650,7 +650,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/generative/noise-full.yaml
+    - https://tangrams.github.io/blocks/generative/noise-full.yaml
 ```
 
 
@@ -672,7 +672,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/generative/random.yaml
+    - https://tangrams.github.io/blocks/generative/random.yaml
 ```
 
 
@@ -682,7 +682,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/generative/random-full.yaml
+    - https://tangrams.github.io/blocks/generative/random-full.yaml
 ```
 
 
@@ -699,7 +699,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/generative/voronoi.yaml
+    - https://tangrams.github.io/blocks/generative/voronoi.yaml
 ```
 
 
@@ -709,7 +709,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/generative/voronoi-full.yaml
+    - https://tangrams.github.io/blocks/generative/voronoi-full.yaml
 ```
 
 
@@ -742,7 +742,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/geometry/dynamic-height.yaml
+    - https://tangrams.github.io/blocks/geometry/dynamic-height.yaml
 ```
 
 
@@ -752,7 +752,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/geometry/dynamic-height-full.yaml
+    - https://tangrams.github.io/blocks/geometry/dynamic-height-full.yaml
 ```
 
 
@@ -774,7 +774,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/geometry/dynamic-width.yaml
+    - https://tangrams.github.io/blocks/geometry/dynamic-width.yaml
 ```
 
 
@@ -784,7 +784,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/geometry/dynamic-width-full.yaml
+    - https://tangrams.github.io/blocks/geometry/dynamic-width-full.yaml
 ```
 
 
@@ -815,7 +815,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/geometry/matrices.yaml
+    - https://tangrams.github.io/blocks/geometry/matrices.yaml
 ```
 
 
@@ -825,7 +825,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/geometry/matrices-full.yaml
+    - https://tangrams.github.io/blocks/geometry/matrices-full.yaml
 ```
 
 
@@ -843,7 +843,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/geometry/normal.yaml
+    - https://tangrams.github.io/blocks/geometry/normal.yaml
 ```
 
 
@@ -853,7 +853,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/geometry/normal-full.yaml
+    - https://tangrams.github.io/blocks/geometry/normal-full.yaml
 ```
 
 
@@ -895,7 +895,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/geometry/projections.yaml
+    - https://tangrams.github.io/blocks/geometry/projections.yaml
 ```
 
 
@@ -905,7 +905,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/geometry/projections-full.yaml
+    - https://tangrams.github.io/blocks/geometry/projections-full.yaml
 ```
 
 
@@ -935,7 +935,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/geometry/terrarium.yaml
+    - https://tangrams.github.io/blocks/geometry/terrarium.yaml
 ```
 
 
@@ -945,7 +945,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/geometry/terrarium-full.yaml
+    - https://tangrams.github.io/blocks/geometry/terrarium-full.yaml
 ```
 
 
@@ -975,7 +975,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/geometry/tilt.yaml
+    - https://tangrams.github.io/blocks/geometry/tilt.yaml
 ```
 
 
@@ -985,7 +985,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/geometry/tilt-full.yaml
+    - https://tangrams.github.io/blocks/geometry/tilt-full.yaml
 ```
 
 
@@ -1016,7 +1016,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/lines/dash.yaml
+    - https://tangrams.github.io/blocks/lines/dash.yaml
 ```
 
 
@@ -1026,7 +1026,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/lines/dash-full.yaml
+    - https://tangrams.github.io/blocks/lines/dash-full.yaml
 ```
 
 
@@ -1054,7 +1054,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/lines/dots.yaml
+    - https://tangrams.github.io/blocks/lines/dots.yaml
 ```
 
 
@@ -1064,7 +1064,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/lines/dots-full.yaml
+    - https://tangrams.github.io/blocks/lines/dots-full.yaml
 ```
 
 
@@ -1093,7 +1093,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/lines/outline.yaml
+    - https://tangrams.github.io/blocks/lines/outline.yaml
 ```
 
 
@@ -1103,7 +1103,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/lines/outline-full.yaml
+    - https://tangrams.github.io/blocks/lines/outline-full.yaml
 ```
 
 
@@ -1130,7 +1130,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/lines/stripes.yaml
+    - https://tangrams.github.io/blocks/lines/stripes.yaml
 ```
 
 
@@ -1140,7 +1140,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/lines/stripes-full.yaml
+    - https://tangrams.github.io/blocks/lines/stripes-full.yaml
 ```
 
 
@@ -1161,7 +1161,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/patterns/dots.yaml
+    - https://tangrams.github.io/blocks/patterns/dots.yaml
 ```
 
 
@@ -1171,7 +1171,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/patterns/dots-full.yaml
+    - https://tangrams.github.io/blocks/patterns/dots-full.yaml
 ```
 
 
@@ -1191,7 +1191,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/patterns/grid.yaml
+    - https://tangrams.github.io/blocks/patterns/grid.yaml
 ```
 
 
@@ -1201,7 +1201,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/patterns/grid-full.yaml
+    - https://tangrams.github.io/blocks/patterns/grid-full.yaml
 ```
 
 
@@ -1224,7 +1224,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/patterns/stripes.yaml
+    - https://tangrams.github.io/blocks/patterns/stripes.yaml
 ```
 
 
@@ -1234,7 +1234,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/patterns/stripes-full.yaml
+    - https://tangrams.github.io/blocks/patterns/stripes-full.yaml
 ```
 
 
@@ -1252,7 +1252,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/patterns/waves.yaml
+    - https://tangrams.github.io/blocks/patterns/waves.yaml
 ```
 
 
@@ -1262,7 +1262,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/patterns/waves-full.yaml
+    - https://tangrams.github.io/blocks/patterns/waves-full.yaml
 ```
 
 
@@ -1280,7 +1280,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/patterns/zigzag.yaml
+    - https://tangrams.github.io/blocks/patterns/zigzag.yaml
 ```
 
 
@@ -1290,7 +1290,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/patterns/zigzag-full.yaml
+    - https://tangrams.github.io/blocks/patterns/zigzag-full.yaml
 ```
 
 
@@ -1316,7 +1316,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/circle.yaml
+    - https://tangrams.github.io/blocks/shapes/circle.yaml
 ```
 
 
@@ -1326,7 +1326,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/circle-full.yaml
+    - https://tangrams.github.io/blocks/shapes/circle-full.yaml
 ```
 
 
@@ -1345,7 +1345,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/cross.yaml
+    - https://tangrams.github.io/blocks/shapes/cross.yaml
 ```
 
 
@@ -1355,7 +1355,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/cross-full.yaml
+    - https://tangrams.github.io/blocks/shapes/cross-full.yaml
 ```
 
 
@@ -1380,7 +1380,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/digits.yaml
+    - https://tangrams.github.io/blocks/shapes/digits.yaml
 ```
 
 
@@ -1390,7 +1390,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/digits-full.yaml
+    - https://tangrams.github.io/blocks/shapes/digits-full.yaml
 ```
 
 
@@ -1413,7 +1413,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/polygons.yaml
+    - https://tangrams.github.io/blocks/shapes/polygons.yaml
 ```
 
 
@@ -1423,7 +1423,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/polygons-full.yaml
+    - https://tangrams.github.io/blocks/shapes/polygons-full.yaml
 ```
 
 
@@ -1443,7 +1443,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/rect.yaml
+    - https://tangrams.github.io/blocks/shapes/rect.yaml
 ```
 
 
@@ -1453,7 +1453,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/rect-full.yaml
+    - https://tangrams.github.io/blocks/shapes/rect-full.yaml
 ```
 
 
@@ -1475,7 +1475,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/simplex.yaml
+    - https://tangrams.github.io/blocks/shapes/simplex.yaml
 ```
 
 
@@ -1485,7 +1485,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/simplex-full.yaml
+    - https://tangrams.github.io/blocks/shapes/simplex-full.yaml
 ```
 
 
@@ -1506,7 +1506,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/space/constant.yaml
+    - https://tangrams.github.io/blocks/space/constant.yaml
 ```
 
 
@@ -1516,7 +1516,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/space/constant-full.yaml
+    - https://tangrams.github.io/blocks/space/constant-full.yaml
 ```
 
 
@@ -1534,7 +1534,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/space/screen.yaml
+    - https://tangrams.github.io/blocks/space/screen.yaml
 ```
 
 
@@ -1544,7 +1544,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/space/screen-full.yaml
+    - https://tangrams.github.io/blocks/space/screen-full.yaml
 ```
 
 
@@ -1561,7 +1561,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/space/tex.yaml
+    - https://tangrams.github.io/blocks/space/tex.yaml
 ```
 
 
@@ -1571,7 +1571,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/space/tex-full.yaml
+    - https://tangrams.github.io/blocks/space/tex-full.yaml
 ```
 
 
@@ -1596,7 +1596,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/space/tile.yaml
+    - https://tangrams.github.io/blocks/space/tile.yaml
 ```
 
 
@@ -1606,7 +1606,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/space/tile-full.yaml
+    - https://tangrams.github.io/blocks/space/tile-full.yaml
 ```
 
 
@@ -1623,7 +1623,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/space/uz.yaml
+    - https://tangrams.github.io/blocks/space/uz.yaml
 ```
 
 
@@ -1633,7 +1633,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/space/uz-full.yaml
+    - https://tangrams.github.io/blocks/space/uz-full.yaml
 ```
 
 
@@ -1654,7 +1654,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/texture/non-repetitive.yaml
+    - https://tangrams.github.io/blocks/texture/non-repetitive.yaml
 ```
 
 
@@ -1664,7 +1664,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/texture/non-repetitive-full.yaml
+    - https://tangrams.github.io/blocks/texture/non-repetitive-full.yaml
 ```
 
 
@@ -1681,7 +1681,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/texture/zoom-fade.yaml
+    - https://tangrams.github.io/blocks/texture/zoom-fade.yaml
 ```
 
 
@@ -1691,7 +1691,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/texture/zoom-fade-full.yaml
+    - https://tangrams.github.io/blocks/texture/zoom-fade-full.yaml
 ```
 
 
@@ -1712,7 +1712,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/tiling/brick.yaml
+    - https://tangrams.github.io/blocks/tiling/brick.yaml
 ```
 
 
@@ -1722,7 +1722,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/tiling/brick-full.yaml
+    - https://tangrams.github.io/blocks/tiling/brick-full.yaml
 ```
 
 
@@ -1742,7 +1742,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/tiling/simplex.yaml
+    - https://tangrams.github.io/blocks/tiling/simplex.yaml
 ```
 
 
@@ -1752,7 +1752,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/tiling/simplex-full.yaml
+    - https://tangrams.github.io/blocks/tiling/simplex-full.yaml
 ```
 
 
@@ -1769,7 +1769,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/tiling/tile.yaml
+    - https://tangrams.github.io/blocks/tiling/tile.yaml
 ```
 
 
@@ -1779,7 +1779,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/tiling/tile-full.yaml
+    - https://tangrams.github.io/blocks/tiling/tile-full.yaml
 ```
 
 
@@ -1801,7 +1801,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/tiling/truchet.yaml
+    - https://tangrams.github.io/blocks/tiling/truchet.yaml
 ```
 
 
@@ -1811,7 +1811,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/tiling/truchet-full.yaml
+    - https://tangrams.github.io/blocks/tiling/truchet-full.yaml
 ```
 
 

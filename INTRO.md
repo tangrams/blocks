@@ -11,7 +11,7 @@ In your style add a path to it, like this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/filter/grain.yaml
+    - https://tangrams.github.io/blocks/filter/grain.yaml
 ```
 
 Then ```mix``` it with your custom styles like this:

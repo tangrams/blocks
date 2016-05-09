@@ -29,7 +29,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/filter/grain.yaml
+    - https://tangrams.github.io/blocks/filter/grain.yaml
 ```
 
 
@@ -39,7 +39,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/filter/grain-full.yaml
+    - https://tangrams.github.io/blocks/filter/grain-full.yaml
 ```
 
 
@@ -65,7 +65,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/filter/hatch.yaml
+    - https://tangrams.github.io/blocks/filter/hatch.yaml
 ```
 
 
@@ -75,7 +75,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/filter/hatch-full.yaml
+    - https://tangrams.github.io/blocks/filter/hatch-full.yaml
 ```
 
 
@@ -100,7 +100,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/filter/height.yaml
+    - https://tangrams.github.io/blocks/filter/height.yaml
 ```
 
 
@@ -110,7 +110,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/filter/height-full.yaml
+    - https://tangrams.github.io/blocks/filter/height-full.yaml
 ```
 
 
@@ -144,7 +144,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/filter/lut.yaml
+    - https://tangrams.github.io/blocks/filter/lut.yaml
 ```
 
 
@@ -154,7 +154,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/filter/lut-full.yaml
+    - https://tangrams.github.io/blocks/filter/lut-full.yaml
 ```
 
 
@@ -184,7 +184,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/filter/tv.yaml
+    - https://tangrams.github.io/blocks/filter/tv.yaml
 ```
 
 
@@ -194,7 +194,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/filter/tv-full.yaml
+    - https://tangrams.github.io/blocks/filter/tv-full.yaml
 ```
 
 

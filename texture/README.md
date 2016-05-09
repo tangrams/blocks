@@ -11,7 +11,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/texture/non-repetitive.yaml
+    - https://tangrams.github.io/blocks/texture/non-repetitive.yaml
 ```
 
 
@@ -21,7 +21,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/texture/non-repetitive-full.yaml
+    - https://tangrams.github.io/blocks/texture/non-repetitive-full.yaml
 ```
 
 
@@ -38,7 +38,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/texture/zoom-fade.yaml
+    - https://tangrams.github.io/blocks/texture/zoom-fade.yaml
 ```
 
 
@@ -48,7 +48,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/texture/zoom-fade-full.yaml
+    - https://tangrams.github.io/blocks/texture/zoom-fade-full.yaml
 ```
 
 

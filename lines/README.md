@@ -21,7 +21,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/lines/dash.yaml
+    - https://tangrams.github.io/blocks/lines/dash.yaml
 ```
 
 
@@ -31,7 +31,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/lines/dash-full.yaml
+    - https://tangrams.github.io/blocks/lines/dash-full.yaml
 ```
 
 
@@ -59,7 +59,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/lines/dots.yaml
+    - https://tangrams.github.io/blocks/lines/dots.yaml
 ```
 
 
@@ -69,7 +69,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/lines/dots-full.yaml
+    - https://tangrams.github.io/blocks/lines/dots-full.yaml
 ```
 
 
@@ -98,7 +98,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/lines/outline.yaml
+    - https://tangrams.github.io/blocks/lines/outline.yaml
 ```
 
 
@@ -108,7 +108,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/lines/outline-full.yaml
+    - https://tangrams.github.io/blocks/lines/outline-full.yaml
 ```
 
 
@@ -135,7 +135,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/lines/stripes.yaml
+    - https://tangrams.github.io/blocks/lines/stripes.yaml
 ```
 
 
@@ -145,7 +145,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/lines/stripes-full.yaml
+    - https://tangrams.github.io/blocks/lines/stripes-full.yaml
 ```
 
 

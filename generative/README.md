@@ -19,7 +19,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/generative/fbm.yaml
+    - https://tangrams.github.io/blocks/generative/fbm.yaml
 ```
 
 
@@ -29,7 +29,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/generative/fbm-full.yaml
+    - https://tangrams.github.io/blocks/generative/fbm-full.yaml
 ```
 
 
@@ -49,7 +49,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/generative/noise.yaml
+    - https://tangrams.github.io/blocks/generative/noise.yaml
 ```
 
 
@@ -59,7 +59,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/generative/noise-full.yaml
+    - https://tangrams.github.io/blocks/generative/noise-full.yaml
 ```
 
 
@@ -81,7 +81,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/generative/random.yaml
+    - https://tangrams.github.io/blocks/generative/random.yaml
 ```
 
 
@@ -91,7 +91,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/generative/random-full.yaml
+    - https://tangrams.github.io/blocks/generative/random-full.yaml
 ```
 
 
@@ -108,7 +108,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/generative/voronoi.yaml
+    - https://tangrams.github.io/blocks/generative/voronoi.yaml
 ```
 
 
@@ -118,7 +118,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/generative/voronoi-full.yaml
+    - https://tangrams.github.io/blocks/generative/voronoi-full.yaml
 ```
 
 

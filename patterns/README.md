@@ -11,7 +11,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/patterns/dots.yaml
+    - https://tangrams.github.io/blocks/patterns/dots.yaml
 ```
 
 
@@ -21,7 +21,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/patterns/dots-full.yaml
+    - https://tangrams.github.io/blocks/patterns/dots-full.yaml
 ```
 
 
@@ -41,7 +41,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/patterns/grid.yaml
+    - https://tangrams.github.io/blocks/patterns/grid.yaml
 ```
 
 
@@ -51,7 +51,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/patterns/grid-full.yaml
+    - https://tangrams.github.io/blocks/patterns/grid-full.yaml
 ```
 
 
@@ -74,7 +74,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/patterns/stripes.yaml
+    - https://tangrams.github.io/blocks/patterns/stripes.yaml
 ```
 
 
@@ -84,7 +84,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/patterns/stripes-full.yaml
+    - https://tangrams.github.io/blocks/patterns/stripes-full.yaml
 ```
 
 
@@ -102,7 +102,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/patterns/waves.yaml
+    - https://tangrams.github.io/blocks/patterns/waves.yaml
 ```
 
 
@@ -112,7 +112,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/patterns/waves-full.yaml
+    - https://tangrams.github.io/blocks/patterns/waves-full.yaml
 ```
 
 
@@ -130,7 +130,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/patterns/zigzag.yaml
+    - https://tangrams.github.io/blocks/patterns/zigzag.yaml
 ```
 
 
@@ -140,7 +140,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/patterns/zigzag-full.yaml
+    - https://tangrams.github.io/blocks/patterns/zigzag-full.yaml
 ```
 
 

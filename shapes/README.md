@@ -16,7 +16,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/circle.yaml
+    - https://tangrams.github.io/blocks/shapes/circle.yaml
 ```
 
 
@@ -26,7 +26,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/circle-full.yaml
+    - https://tangrams.github.io/blocks/shapes/circle-full.yaml
 ```
 
 
@@ -45,7 +45,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/cross.yaml
+    - https://tangrams.github.io/blocks/shapes/cross.yaml
 ```
 
 
@@ -55,7 +55,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/cross-full.yaml
+    - https://tangrams.github.io/blocks/shapes/cross-full.yaml
 ```
 
 
@@ -80,7 +80,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/digits.yaml
+    - https://tangrams.github.io/blocks/shapes/digits.yaml
 ```
 
 
@@ -90,7 +90,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/digits-full.yaml
+    - https://tangrams.github.io/blocks/shapes/digits-full.yaml
 ```
 
 
@@ -113,7 +113,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/polygons.yaml
+    - https://tangrams.github.io/blocks/shapes/polygons.yaml
 ```
 
 
@@ -123,7 +123,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/polygons-full.yaml
+    - https://tangrams.github.io/blocks/shapes/polygons-full.yaml
 ```
 
 
@@ -143,7 +143,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/rect.yaml
+    - https://tangrams.github.io/blocks/shapes/rect.yaml
 ```
 
 
@@ -153,7 +153,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/rect-full.yaml
+    - https://tangrams.github.io/blocks/shapes/rect-full.yaml
 ```
 
 
@@ -175,7 +175,7 @@ Import it using:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/simplex.yaml
+    - https://tangrams.github.io/blocks/shapes/simplex.yaml
 ```
 
 
@@ -185,7 +185,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - http://tangrams.github.io/blocks/shapes/simplex-full.yaml
+    - https://tangrams.github.io/blocks/shapes/simplex-full.yaml
 ```
 
 
