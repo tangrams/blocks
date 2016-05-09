@@ -1,5 +1,5 @@
 styles:
-    lines-dots:
+    lines-dash:
         base: lines
         blend: overlay
         shaders:

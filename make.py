@@ -72,7 +72,7 @@ def dict_merge(dct, merge_dct):
 
 # Append yaml dependences in yaml_file ('import' files) to another yaml file (full_yaml_file)
 def appendDependencies(full_yaml, filename):
-    print "Append all dependences of " + filename
+    # print "Append all dependences of " + filename
     folder = os.path.dirname(filename)
     yaml_file = yaml.safe_load(open(filename))
 
@@ -81,12 +81,12 @@ def appendDependencies(full_yaml, filename):
     if 'import' in yaml_file:
         if (type(yaml_file['import']) is str):
             dep = folder + '/' + yaml_file['import']
-            print "\tMerging " + dep
+            # print "\tMerging " + dep
             appendDependencies(full_yaml, dep)
         else:
             for file in yaml_file['import']:
                 dep = folder + '/' + file
-                print "\tMerging " + dep
+                # print "\tMerging " + dep
                 appendDependencies(full_yaml, dep)
 
 # ================================== Main function
