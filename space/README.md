@@ -17,6 +17,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/space/constant-full.yaml
+```
+
+
+
+
 #### + [space-screen](https://github.com/tangrams/blocks/blob/gh-pages/space/screen.yaml)
 
 This provides the following blocks:
@@ -35,6 +45,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/space/screen-full.yaml
+```
+
+
+
+
 #### + [space-tex](https://github.com/tangrams/blocks/blob/gh-pages/space/tex.yaml)
 
 This provides the following blocks:
@@ -47,6 +67,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/space/tex.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/space/tex-full.yaml
 ```
 
 
@@ -77,6 +107,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/space/tile-full.yaml
+```
+
+
+
+
 #### + [space-uz](https://github.com/tangrams/blocks/blob/gh-pages/space/uz.yaml)
 
 This provides the following blocks:
@@ -89,6 +129,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/space/uz.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/space/uz-full.yaml
 ```
 
 

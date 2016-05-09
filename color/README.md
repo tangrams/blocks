@@ -22,6 +22,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/color/conversion-full.yaml
+```
+
+
+
+
 #### + [color-palette](https://github.com/tangrams/blocks/blob/gh-pages/color/palette.yaml)
 
 Procedural generation of color paletters implemented by [Inigo Quiles](https://twitter.com/iquilezles) (1999) explained in [this article](http://www.iquilezles.org/www/articles/palettes/palettes.htm)
@@ -36,6 +46,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/color/palette.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/color/palette-full.yaml
 ```
 
 
@@ -59,6 +79,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/color/tools.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/color/tools-full.yaml
 ```
 
 

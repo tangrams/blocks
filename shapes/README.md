@@ -22,6 +22,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/shapes/circle-full.yaml
+```
+
+
+
+
 #### + [shapes-cross](https://github.com/tangrams/blocks/blob/gh-pages/shapes/cross.yaml)
 
 This provides the following blocks:
@@ -36,6 +46,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/shapes/cross.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/shapes/cross-full.yaml
 ```
 
 
@@ -66,6 +86,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/shapes/digits-full.yaml
+```
+
+
+
+
 #### + [shapes-polygons](https://github.com/tangrams/blocks/blob/gh-pages/shapes/polygons.yaml)
 
 This provides the following blocks:
@@ -84,6 +114,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/shapes/polygons.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/shapes/polygons-full.yaml
 ```
 
 
@@ -109,6 +149,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/shapes/rect-full.yaml
+```
+
+
+
+
 #### + [shapes-simplex](https://github.com/tangrams/blocks/blob/gh-pages/shapes/simplex.yaml)
 
 This provides the following blocks:
@@ -126,6 +176,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/shapes/simplex.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/shapes/simplex-full.yaml
 ```
 
 

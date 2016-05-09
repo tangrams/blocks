@@ -53,6 +53,13 @@ def appendDocumentation(readme_file, yaml_file):
                             '    - http://tangrams.github.io/blocks/' + filename[2:] + '\n' +
                             '```\n\n\n')
 
+        # Add an explanation of how to import this block with dependencies
+        readme_file.write(  '\n\nIf you want to import this block with dependences included try this:\n\n' +
+                            '```yaml\n' +
+                            'import:\n' +
+                            '    - http://tangrams.github.io/blocks/' + filename[2:-5] + '-full.yaml\n' +
+                            '```\n\n\n')
+
 # https://gist.github.com/angstwad/bf22d1822c38a92ec0a9
 def dict_merge(dct, merge_dct):
     """ Recursive dict merge. Inspired by :meth:``dict.update()``, instead of
@@ -149,6 +156,6 @@ with open('README.md', 'w') as outfile:
             outfile.write(infile.read())
 
     # Add the License at the end
-    outfile.write('\n## License\n')
+    outfile.write('\n<hr><hr>\n')
     with open('LICENSE.md') as infile:
             outfile.write(infile.read())

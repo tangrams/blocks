@@ -25,6 +25,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/generative/fbm-full.yaml
+```
+
+
+
+
 #### + [generative-noise](https://github.com/tangrams/blocks/blob/gh-pages/generative/noise.yaml)
 
 This provides the following blocks:
@@ -40,6 +50,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/generative/noise.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/generative/noise-full.yaml
 ```
 
 
@@ -67,6 +87,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/generative/random-full.yaml
+```
+
+
+
+
 #### + [generative-voronoi](https://github.com/tangrams/blocks/blob/gh-pages/generative/voronoi.yaml)
 
 This provides the following blocks:
@@ -79,6 +109,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/generative/voronoi.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/generative/voronoi-full.yaml
 ```
 
 

@@ -64,6 +64,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/color/conversion-full.yaml
+```
+
+
+
+
 #### + [color-palette](https://github.com/tangrams/blocks/blob/gh-pages/color/palette.yaml)
 
 Procedural generation of color paletters implemented by [Inigo Quiles](https://twitter.com/iquilezles) (1999) explained in [this article](http://www.iquilezles.org/www/articles/palettes/palettes.htm)
@@ -78,6 +88,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/color/palette.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/color/palette-full.yaml
 ```
 
 
@@ -105,6 +125,16 @@ import:
 
 
 
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/color/tools-full.yaml
+```
+
+
+
 <hr>
 
 
@@ -113,7 +143,9 @@ import:
 #### + [filter-grain](https://github.com/tangrams/blocks/blob/gh-pages/filter/grain.yaml)
 
 Apply a lens grain effect to the scene.
-The amount can be set by the GRAIN_AMOUNT define [0.0~1.0]
+<p>The amount can be set by the GRAIN_AMOUNT define [0.0~1.0]</p>
+<p>For example:</p>
+[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/grain.png); width: 100%; height: 100px; background-position: center center;"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/grain#10.97291/40.7461/-74.0931)
 
 This provides the following blocks:
 
@@ -143,12 +175,22 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/filter/grain-full.yaml
+```
+
+
+
+
 #### + [filter-hatch](https://github.com/tangrams/blocks/blob/gh-pages/filter/hatch.yaml)
 
 Hatching filter based on [Jaume's Sanchez](https://twitter.com/thespite?lang=en) [Cross-hatching GLSL shader](https://www.clicktorelease.com/code/cross-hatching/). 
 <p>Examples:</p>
-[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/crosshatch.png); width: 100%; height: 100px;"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/crosshatch#17.575/40.70495/-74.00486)
-[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/pericoli.png); width: 100%; height: 100px;"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/pericoli#17.575/40.70495/-74.00486)
+[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/crosshatch.png); width: 100%; height: 100px; background-position: center center;"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/crosshatch#17.575/40.70495/-74.00486)
+[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/pericoli.png); width: 100%; height: 100px; background-position: center center;"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/pericoli#17.575/40.70495/-74.00486)
 
 This provides the following blocks:
 
@@ -169,7 +211,20 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/filter/hatch-full.yaml
+```
+
+
+
+
 #### + [filter-height](https://github.com/tangrams/blocks/blob/gh-pages/filter/height.yaml)
+
+Adds a dark gradiant to the geometries conform they aproach to height 0. <p>For example:</p>
+[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/default.png); width: 100%; height: 100px; background-position: center center;"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/default.yaml#10.97291/40.7461/-74.0931)
 
 This provides the following blocks:
 
@@ -191,7 +246,20 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/filter/height-full.yaml
+```
+
+
+
+
 #### + [filter-lut](https://github.com/tangrams/blocks/blob/gh-pages/filter/lut.yaml)
+
+Add a look up table filter defined on the uniform ```u_lut``` to the current style. This look up tables are hable to produce similar effect to instagram filters. <p>For example:</p>
+[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/sandbox-lut.png); width: 100%; height: 100px; background-position: center center;"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/sandbox-lut#10.97291/40.7461/-74.0931)
 
 This provides the following blocks:
 
@@ -222,7 +290,20 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/filter/lut-full.yaml
+```
+
+
+
+
 #### + [filter-tv](https://github.com/tangrams/blocks/blob/gh-pages/filter/tv.yaml)
+
+<p>Apply a TV effect to the style like</p>
+[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/9845C.png); width: 100%; height: 100px; background-position: center center;"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/9845C#10.97291/40.7461/-74.0931)
 
 This provides the following blocks:
 
@@ -248,6 +329,16 @@ import:
 
 
 
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/filter/tv-full.yaml
+```
+
+
+
 <hr>
 
 
@@ -267,6 +358,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/functions/aastep.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/functions/aastep-full.yaml
 ```
 
 
@@ -326,6 +427,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/functions/easing-full.yaml
+```
+
+
+
+
 #### + [functions-map](https://github.com/tangrams/blocks/blob/gh-pages/functions/map.yaml)
 
 This provides the following blocks:
@@ -348,6 +459,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/functions/map-full.yaml
+```
+
+
+
+
 #### + [functions-pulse](https://github.com/tangrams/blocks/blob/gh-pages/functions/pulse.yaml)
 
 This provides the following blocks:
@@ -360,6 +481,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/functions/pulse.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/functions/pulse-full.yaml
 ```
 
 
@@ -394,6 +525,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/generative/fbm-full.yaml
+```
+
+
+
+
 #### + [generative-noise](https://github.com/tangrams/blocks/blob/gh-pages/generative/noise.yaml)
 
 This provides the following blocks:
@@ -409,6 +550,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/generative/noise.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/generative/noise-full.yaml
 ```
 
 
@@ -436,6 +587,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/generative/random-full.yaml
+```
+
+
+
+
 #### + [generative-voronoi](https://github.com/tangrams/blocks/blob/gh-pages/generative/voronoi.yaml)
 
 This provides the following blocks:
@@ -448,6 +609,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/generative/voronoi.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/generative/voronoi-full.yaml
 ```
 
 
@@ -486,6 +657,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/geometry/dynamic-height-full.yaml
+```
+
+
+
+
 #### + [geometry-dynamic-width](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-width.yaml)
 
 This provides the following blocks:
@@ -503,6 +684,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/geometry/dynamic-width.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/geometry/dynamic-width-full.yaml
 ```
 
 
@@ -539,6 +730,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/geometry/matrices-full.yaml
+```
+
+
+
+
 #### + [geometry-normal](https://github.com/tangrams/blocks/blob/gh-pages/geometry/normal.yaml)
 
 This provides the following blocks:
@@ -552,6 +753,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/geometry/normal.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/geometry/normal-full.yaml
 ```
 
 
@@ -599,6 +810,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/geometry/projections-full.yaml
+```
+
+
+
+
 #### + [geometry-terrarium](https://github.com/tangrams/blocks/blob/gh-pages/geometry/terrarium.yaml)
 
 This provides the following blocks:
@@ -629,6 +850,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/geometry/terrarium-full.yaml
+```
+
+
+
+
 #### + [geometry-tilt](https://github.com/tangrams/blocks/blob/gh-pages/geometry/tilt.yaml)
 
 This provides the following blocks:
@@ -654,6 +885,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/geometry/tilt.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/geometry/tilt-full.yaml
 ```
 
 
@@ -690,6 +931,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/lines/dash-full.yaml
+```
+
+
+
+
 #### + [lines-dots](https://github.com/tangrams/blocks/blob/gh-pages/lines/dots.yaml)
 
 This provides the following blocks:
@@ -713,6 +964,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/lines/dots.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/lines/dots-full.yaml
 ```
 
 
@@ -747,6 +1008,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/lines/outline-full.yaml
+```
+
+
+
+
 #### + [lines-stripes](https://github.com/tangrams/blocks/blob/gh-pages/lines/stripes.yaml)
 
 This provides the following blocks:
@@ -773,6 +1044,16 @@ import:
 
 
 
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/lines/stripes-full.yaml
+```
+
+
+
 <hr>
 
 
@@ -795,6 +1076,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/patterns/dots-full.yaml
+```
+
+
+
+
 #### + [patterns-grid](https://github.com/tangrams/blocks/blob/gh-pages/patterns/grid.yaml)
 
 This provides the following blocks:
@@ -810,6 +1101,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/patterns/grid.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/patterns/grid-full.yaml
 ```
 
 
@@ -838,6 +1139,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/patterns/stripes-full.yaml
+```
+
+
+
+
 #### + [patterns-waves](https://github.com/tangrams/blocks/blob/gh-pages/patterns/waves.yaml)
 
 This provides the following blocks:
@@ -856,6 +1167,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/patterns/waves-full.yaml
+```
+
+
+
+
 #### + [patterns-zigzag](https://github.com/tangrams/blocks/blob/gh-pages/patterns/zigzag.yaml)
 
 This provides the following blocks:
@@ -869,6 +1190,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/patterns/zigzag.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/patterns/zigzag-full.yaml
 ```
 
 
@@ -900,6 +1231,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/shapes/circle-full.yaml
+```
+
+
+
+
 #### + [shapes-cross](https://github.com/tangrams/blocks/blob/gh-pages/shapes/cross.yaml)
 
 This provides the following blocks:
@@ -914,6 +1255,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/shapes/cross.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/shapes/cross-full.yaml
 ```
 
 
@@ -944,6 +1295,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/shapes/digits-full.yaml
+```
+
+
+
+
 #### + [shapes-polygons](https://github.com/tangrams/blocks/blob/gh-pages/shapes/polygons.yaml)
 
 This provides the following blocks:
@@ -967,6 +1328,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/shapes/polygons-full.yaml
+```
+
+
+
+
 #### + [shapes-rect](https://github.com/tangrams/blocks/blob/gh-pages/shapes/rect.yaml)
 
 This provides the following blocks:
@@ -982,6 +1353,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/shapes/rect.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/shapes/rect-full.yaml
 ```
 
 
@@ -1008,6 +1389,16 @@ import:
 
 
 
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/shapes/simplex-full.yaml
+```
+
+
+
 <hr>
 
 
@@ -1025,6 +1416,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/space/constant.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/space/constant-full.yaml
 ```
 
 
@@ -1048,6 +1449,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/space/screen-full.yaml
+```
+
+
+
+
 #### + [space-tex](https://github.com/tangrams/blocks/blob/gh-pages/space/tex.yaml)
 
 This provides the following blocks:
@@ -1060,6 +1471,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/space/tex.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/space/tex-full.yaml
 ```
 
 
@@ -1090,6 +1511,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/space/tile-full.yaml
+```
+
+
+
+
 #### + [space-uz](https://github.com/tangrams/blocks/blob/gh-pages/space/uz.yaml)
 
 This provides the following blocks:
@@ -1102,6 +1533,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/space/uz.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/space/uz-full.yaml
 ```
 
 
@@ -1128,6 +1569,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/texture/non-repetitive-full.yaml
+```
+
+
+
+
 #### + [texture-zoom-fade](https://github.com/tangrams/blocks/blob/gh-pages/texture/zoom-fade.yaml)
 
 This provides the following blocks:
@@ -1140,6 +1591,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/texture/zoom-fade.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/texture/zoom-fade-full.yaml
 ```
 
 
@@ -1166,6 +1627,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/tiling/brick-full.yaml
+```
+
+
+
+
 #### + [tiling-simplex](https://github.com/tangrams/blocks/blob/gh-pages/tiling/simplex.yaml)
 
 This provides the following blocks:
@@ -1186,6 +1657,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/tiling/simplex-full.yaml
+```
+
+
+
+
 #### + [tiling-tile](https://github.com/tangrams/blocks/blob/gh-pages/tiling/tile.yaml)
 
 This provides the following blocks:
@@ -1198,6 +1679,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/tiling/tile.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/tiling/tile-full.yaml
 ```
 
 
@@ -1224,7 +1715,17 @@ import:
 
 
 
-## License
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/tiling/truchet-full.yaml
+```
+
+
+
+<hr><hr>
 ### The MIT License (MIT)
 
 *Copyright (c) 2016 [Mapzen](http://mapzen.com/)*

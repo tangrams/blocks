@@ -17,6 +17,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/tiling/brick-full.yaml
+```
+
+
+
+
 #### + [tiling-simplex](https://github.com/tangrams/blocks/blob/gh-pages/tiling/simplex.yaml)
 
 This provides the following blocks:
@@ -32,6 +42,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/tiling/simplex.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/tiling/simplex-full.yaml
 ```
 
 
@@ -54,6 +74,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/tiling/tile-full.yaml
+```
+
+
+
+
 #### + [tiling-truchet](https://github.com/tangrams/blocks/blob/gh-pages/tiling/truchet.yaml)
 
 This provides the following blocks:
@@ -71,6 +101,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/tiling/truchet.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/tiling/truchet-full.yaml
 ```
 
 

@@ -29,6 +29,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/geometry/dynamic-height-full.yaml
+```
+
+
+
+
 #### + [geometry-dynamic-width](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-width.yaml)
 
 This provides the following blocks:
@@ -46,6 +56,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/geometry/dynamic-width.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/geometry/dynamic-width-full.yaml
 ```
 
 
@@ -82,6 +102,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/geometry/matrices-full.yaml
+```
+
+
+
+
 #### + [geometry-normal](https://github.com/tangrams/blocks/blob/gh-pages/geometry/normal.yaml)
 
 This provides the following blocks:
@@ -95,6 +125,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/geometry/normal.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/geometry/normal-full.yaml
 ```
 
 
@@ -142,6 +182,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/geometry/projections-full.yaml
+```
+
+
+
+
 #### + [geometry-terrarium](https://github.com/tangrams/blocks/blob/gh-pages/geometry/terrarium.yaml)
 
 This provides the following blocks:
@@ -172,6 +222,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/geometry/terrarium-full.yaml
+```
+
+
+
+
 #### + [geometry-tilt](https://github.com/tangrams/blocks/blob/gh-pages/geometry/tilt.yaml)
 
 This provides the following blocks:
@@ -197,6 +257,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/geometry/tilt.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/geometry/tilt-full.yaml
 ```
 
 

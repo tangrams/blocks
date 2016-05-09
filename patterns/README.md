@@ -17,6 +17,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/patterns/dots-full.yaml
+```
+
+
+
+
 #### + [patterns-grid](https://github.com/tangrams/blocks/blob/gh-pages/patterns/grid.yaml)
 
 This provides the following blocks:
@@ -32,6 +42,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/patterns/grid.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/patterns/grid-full.yaml
 ```
 
 
@@ -60,6 +80,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/patterns/stripes-full.yaml
+```
+
+
+
+
 #### + [patterns-waves](https://github.com/tangrams/blocks/blob/gh-pages/patterns/waves.yaml)
 
 This provides the following blocks:
@@ -78,6 +108,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/patterns/waves-full.yaml
+```
+
+
+
+
 #### + [patterns-zigzag](https://github.com/tangrams/blocks/blob/gh-pages/patterns/zigzag.yaml)
 
 This provides the following blocks:
@@ -91,6 +131,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/patterns/zigzag.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/patterns/zigzag-full.yaml
 ```
 
 

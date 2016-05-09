@@ -17,6 +17,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/texture/non-repetitive-full.yaml
+```
+
+
+
+
 #### + [texture-zoom-fade](https://github.com/tangrams/blocks/blob/gh-pages/texture/zoom-fade.yaml)
 
 This provides the following blocks:
@@ -29,6 +39,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/texture/zoom-fade.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/texture/zoom-fade-full.yaml
 ```
 
 

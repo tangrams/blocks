@@ -27,6 +27,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/lines/dash-full.yaml
+```
+
+
+
+
 #### + [lines-dots](https://github.com/tangrams/blocks/blob/gh-pages/lines/dots.yaml)
 
 This provides the following blocks:
@@ -50,6 +60,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/lines/dots.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/lines/dots-full.yaml
 ```
 
 
@@ -84,6 +104,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/lines/outline-full.yaml
+```
+
+
+
+
 #### + [lines-stripes](https://github.com/tangrams/blocks/blob/gh-pages/lines/stripes.yaml)
 
 This provides the following blocks:
@@ -106,6 +136,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/lines/stripes.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/lines/stripes-full.yaml
 ```
 
 

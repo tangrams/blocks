@@ -19,6 +19,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/functions/aastep-full.yaml
+```
+
+
+
+
 #### + [functions-easing](https://github.com/tangrams/blocks/blob/gh-pages/functions/easing.yaml)
 
 Easing functions originally develop by Robert Penner's and transformed to GLSL by [StackGL](http://stack.gl/) in this repo: <https://github.com/stackgl/glsl-easings>
@@ -73,6 +83,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/functions/easing-full.yaml
+```
+
+
+
+
 #### + [functions-map](https://github.com/tangrams/blocks/blob/gh-pages/functions/map.yaml)
 
 This provides the following blocks:
@@ -95,6 +115,16 @@ import:
 
 
 
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/functions/map-full.yaml
+```
+
+
+
+
 #### + [functions-pulse](https://github.com/tangrams/blocks/blob/gh-pages/functions/pulse.yaml)
 
 This provides the following blocks:
@@ -107,6 +137,16 @@ Import it using:
 ```yaml
 import:
     - http://tangrams.github.io/blocks/functions/pulse.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - http://tangrams.github.io/blocks/functions/pulse-full.yaml
 ```
 
 
