@@ -1,0 +1,34 @@
+import: ../functions/aastep.yaml
+styles:
+    functions-aastep:
+        doc:
+            description: 'AnitAliased ```step()``` function implemented by [Matt DesLauriers](https://twitter.com/mattdesl)
+                in this module <https://github.com/stackgl/glsl-aastep>
+
+                '
+        shaders:
+            blocks:
+                global: "// AntiAliased Step function\n//=============================\n\
+                    float aastep(float threshold, float value) {\n    #ifdef TANGRAM_FRAGMENT_SHADER\n\
+                    \        #ifdef TANGRAM_EXTENSION_OES_standard_derivatives\n \
+                    \           float afwidth = length(vec2(dFdx(value), dFdy(value)))\
+                    \ * 0.70710678118654757;\n            return smoothstep(threshold-afwidth,\
+                    \ threshold+afwidth, value);\n        #else\n            return\
+                    \ step(threshold, value);\n        #endif  \n    #else\n     \
+                    \   return step(threshold, value);\n    #endif\n}"
+            extensions: OES_standard_derivatives
+    shapes-polygons:
+        mix: functions-aastep
+        shaders:
+            blocks:
+                global: "// get distance field of a polygon in the center\n// where\
+                    \ N is the number of sides of it\n// ================================\n\
+                    float shapeDF (vec2 st, int N) {\n    st = st *2.-1.;\n    float\
+                    \ a = atan(st.x,st.y)+PI;\n    float r = TWO_PI/float(N);\n  \
+                    \  return cos(floor(.5+a/r)*r-a)*length(st);\n}\n\n// draw a polygon\
+                    \ in the center\n// where N is the number of sides of it\n// ================================\n\
+                    float shape (vec2 st, int N, float width) {\n    return 1.0-aastep(width,shapeDF(st,N));\n\
+                    }"
+            defines:
+                PI: 3.141592653589793
+                TWO_PI: 6.283185307

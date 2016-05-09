@@ -1,0 +1,21 @@
+styles:
+    filter-hatch:
+        doc:
+            description: "Hatching filter based on [Jaume's Sanchez](https://twitter.com/thespite?lang=en)\
+                \ [Cross-hatching GLSL shader](https://www.clicktorelease.com/code/cross-hatching/).\
+                \ \n<p>Examples:</p>\n[ <div style=\"background-image: url(http://tangrams.github.io/tangram-sandbox/styles/crosshatch.png);\
+                \ width: 100%; height: 100px;\"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/crosshatch#17.575/40.70495/-74.00486)\n\
+                [ <div style=\"background-image: url(http://tangrams.github.io/tangram-sandbox/styles/pericoli.png);\
+                \ width: 100%; height: 100px;\"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/pericoli#17.575/40.70495/-74.00486)\n"
+        shaders:
+            blocks:
+                global: "float getHatch (vec2 st, float brightness) {\n    st  = fract(st)/3.;\n\
+                    \    brightness = clamp(brightness,0.,0.9999999);\n    vec2 pos1\
+                    \ = vec2(floor(brightness*9.0)/3.,\n                     floor(brightness*3.0)/3.)\
+                    \ + st;\n    float minBrightness = clamp(brightness-0.111111111,0.,1.0);\n\
+                    \    vec2 pos2 = vec2(floor(minBrightness*9.0)/3.,\n         \
+                    \            floor(minBrightness*3.0)/3.)+st;\n    return mix(texture2D(u_hatchmap,\
+                    \ fract(pos1) ).a,\n               texture2D(u_hatchmap, fract(pos2)\
+                    \ ).a,\n               1.0-fract(brightness*9.0));\n}"
+            uniforms:
+                u_hatchmap: imgs/hatch.png

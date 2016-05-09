@@ -1,6 +1,6 @@
 
 
-### [filter-grain](https://github.com/tangrams/blocks/blob/gh-pages/filter/grain.yaml)
+#### + [filter-grain](https://github.com/tangrams/blocks/blob/gh-pages/filter/grain.yaml)
 
 Apply a lens grain effect to the scene.
 The amount can be set by the GRAIN_AMOUNT define [0.0~1.0]
@@ -33,11 +33,12 @@ import:
 
 
 
-### [filter-hatch](https://github.com/tangrams/blocks/blob/gh-pages/filter/hatch.yaml)
+#### + [filter-hatch](https://github.com/tangrams/blocks/blob/gh-pages/filter/hatch.yaml)
 
 Hatching filter based on [Jaume's Sanchez](https://twitter.com/thespite?lang=en) [Cross-hatching GLSL shader](https://www.clicktorelease.com/code/cross-hatching/). 
-Giving a brightness level it provides a fragment of the following table of textures:
-![](https://cdn.rawgit.com/tangrams/blocks/gh-pages/filter/imgs/hatch.png)
+<p>Examples:</p>
+[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/crosshatch.png); width: 100%; height: 100px;"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/crosshatch#17.575/40.70495/-74.00486)
+[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/pericoli.png); width: 100%; height: 100px;"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/pericoli#17.575/40.70495/-74.00486)
 
 This provides the following blocks:
 
@@ -58,7 +59,7 @@ import:
 
 
 
-### [filter-height](https://github.com/tangrams/blocks/blob/gh-pages/filter/height.yaml)
+#### + [filter-height](https://github.com/tangrams/blocks/blob/gh-pages/filter/height.yaml)
 
 This provides the following blocks:
 
@@ -80,7 +81,7 @@ import:
 
 
 
-### [filter-lut](https://github.com/tangrams/blocks/blob/gh-pages/filter/lut.yaml)
+#### + [filter-lut](https://github.com/tangrams/blocks/blob/gh-pages/filter/lut.yaml)
 
 This provides the following blocks:
 
@@ -111,7 +112,7 @@ import:
 
 
 
-### [filter-tv](https://github.com/tangrams/blocks/blob/gh-pages/filter/tv.yaml)
+#### + [filter-tv](https://github.com/tangrams/blocks/blob/gh-pages/filter/tv.yaml)
 
 This provides the following blocks:
 

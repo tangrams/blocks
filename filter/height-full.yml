@@ -1,0 +1,5 @@
+styles:
+    filter-height:
+        shaders:
+            blocks:
+                color: color.rgb *= min((worldPosition().z*.001 + .5),1.);

@@ -1,6 +1,6 @@
 
 
-### [space-constant](https://github.com/tangrams/blocks/blob/gh-pages/space/constant.yaml)
+#### + [space-constant](https://github.com/tangrams/blocks/blob/gh-pages/space/constant.yaml)
 
 This provides the following blocks:
 
@@ -17,7 +17,7 @@ import:
 
 
 
-### [space-screen](https://github.com/tangrams/blocks/blob/gh-pages/space/screen.yaml)
+#### + [space-screen](https://github.com/tangrams/blocks/blob/gh-pages/space/screen.yaml)
 
 This provides the following blocks:
 
@@ -35,7 +35,7 @@ import:
 
 
 
-### [space-tex](https://github.com/tangrams/blocks/blob/gh-pages/space/tex.yaml)
+#### + [space-tex](https://github.com/tangrams/blocks/blob/gh-pages/space/tex.yaml)
 
 This provides the following blocks:
 
@@ -52,7 +52,7 @@ import:
 
 
 
-### [space-tile](https://github.com/tangrams/blocks/blob/gh-pages/space/tile.yaml)
+#### + [space-tile](https://github.com/tangrams/blocks/blob/gh-pages/space/tile.yaml)
 
 This provides the following blocks:
 
@@ -77,7 +77,7 @@ import:
 
 
 
-### [space-uz](https://github.com/tangrams/blocks/blob/gh-pages/space/uz.yaml)
+#### + [space-uz](https://github.com/tangrams/blocks/blob/gh-pages/space/uz.yaml)
 
 This provides the following blocks:
 

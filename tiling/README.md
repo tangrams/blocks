@@ -1,6 +1,6 @@
 
 
-### [tiling-brick](https://github.com/tangrams/blocks/blob/gh-pages/tiling/brick.yaml)
+#### + [tiling-brick](https://github.com/tangrams/blocks/blob/gh-pages/tiling/brick.yaml)
 
 This provides the following blocks:
 
@@ -17,7 +17,7 @@ import:
 
 
 
-### [tiling-simplex](https://github.com/tangrams/blocks/blob/gh-pages/tiling/simplex.yaml)
+#### + [tiling-simplex](https://github.com/tangrams/blocks/blob/gh-pages/tiling/simplex.yaml)
 
 This provides the following blocks:
 
@@ -37,7 +37,7 @@ import:
 
 
 
-### [tiling-tile](https://github.com/tangrams/blocks/blob/gh-pages/tiling/tile.yaml)
+#### + [tiling-tile](https://github.com/tangrams/blocks/blob/gh-pages/tiling/tile.yaml)
 
 This provides the following blocks:
 
@@ -54,7 +54,7 @@ import:
 
 
 
-### [tiling-truchet](https://github.com/tangrams/blocks/blob/gh-pages/tiling/truchet.yaml)
+#### + [tiling-truchet](https://github.com/tangrams/blocks/blob/gh-pages/tiling/truchet.yaml)
 
 This provides the following blocks:
 

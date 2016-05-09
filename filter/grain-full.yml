@@ -1,0 +1,103 @@
+import: random.yaml
+styles:
+    filter-grain:
+        doc:
+            description: 'Apply a lens grain effect to the scene.
+
+                The amount can be set by the GRAIN_AMOUNT define [0.0~1.0]
+
+                '
+        mix: generative-fbm
+        shaders:
+            blocks:
+                filter: '// Apply the grain in the amount defined on GRAIN_AMOUNT
+
+                    color.rgb -= grain()*GRAIN_AMOUNT;
+
+                    '
+                global: "// Grain fractor on screen space with less concetration in\
+                    \ the center\n// ================================\nfloat grain\
+                    \ () {\n    #ifdef TANGRAM_FRAGMENT_SHADER\n        vec2 pos =\
+                    \ gl_FragCoord.xy;\n        vec2 st = pos/u_resolution.xy-vec2(.5);\n\
+                    \        return dot(st,st)+(fbm(pos*0.6)*0.1);\n    #else\n  \
+                    \      return 0.0;\n    #endif\n}\n"
+            defines:
+                GRAIN_AMOUNT: 0.3
+    generative-fbm:
+        mix: generative-noise
+        shaders:
+            blocks:
+                global: "// Fractional Brownian motion for 1, 2 and 3 dimensions\n\
+                    float fbm (float x) {\n    float v = 0.0;\n    float a = 0.5;\n\
+                    \    float shift = float(100.0);\n    for (int i = 0; i < int(NUM_OCTAVES);\
+                    \ ++i) {\n        v += a * noise(x);\n        x = x * 2.0 + shift;\n\
+                    \        a *= 0.5;\n    }\n    return v;\n}\nfloat fbm (vec2 xy)\
+                    \ {\n    float v = 0.0;\n    float a = 0.5;\n    vec2 shift =\
+                    \ vec2(100.0);\n    mat2 rot = mat2(cos(0.5), sin(0.5), \n   \
+                    \                 -sin(0.5), cos(0.50));\n    for (int i = 0;\
+                    \ i < int(NUM_OCTAVES); ++i) {\n        v += a * noise(xy);\n\
+                    \        xy = rot * xy * 2.0 + shift;\n        a *= 0.5;\n   \
+                    \ }\n    return v;\n}\nfloat fbm ( in vec3 xyz) {\n    float v\
+                    \ = 0.0;\n    float a = 0.5;\n    vec3 shift = vec3(100);\n  \
+                    \  for (int i = 0; i < 5; ++i) {\n        v += a * noise(xyz);\n\
+                    \        xyz = xyz * 2.0 + shift;\n        a *= 0.5;\n    }\n\
+                    \    return v;\n}"
+            defines:
+                NUM_OCTAVES: 5
+    generative-noise:
+        mix: generative-random
+        shaders:
+            blocks:
+                global: "// 1D Value Noise for 1, 2 and 3 dimentions\n// ================================\n\
+                    float noise (in float x) {\n    float i = floor(x);\n    float\
+                    \ f = fract(x);\n    float u = f * f * (3.0 - 2.0 * f);\n    return\
+                    \ mix(random(i), random(i + 1.0), u);\n}\nfloat noise (vec2 xy)\
+                    \ {\n    vec2 i = floor(xy);\n    vec2 f = fract(xy);\n    float\
+                    \ a = random(i);\n    float b = random(i + vec2(1.0, 0.0));\n\
+                    \    float c = random(i + vec2(0.0, 1.0));\n    float d = random(i\
+                    \ + vec2(1.0, 1.0));\n    vec2 u = f * f * (3.0 - 2.0 * f);\n\
+                    \    return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d\
+                    \ - b) * u.x * u.y;\n}\nfloat noise (vec3 xyz) {\n    const vec3\
+                    \ step = vec3(110.0, 241.0, 171.0);\n    vec3 i = floor(xyz);\n\
+                    \    vec3 f = fract(xyz);\n    float n = dot(i, step);\n    vec3\
+                    \ u = f * f * (3.0 - 2.0 * f);\n    return mix( mix(mix(random(n\
+                    \ + dot(step, vec3(0,0,0))),\n                        random(n\
+                    \ + dot(step, vec3(1,0,0))),\n                        u.x),\n\
+                    \                    mix(random(n + dot(step, vec3(0,1,0))),\n\
+                    \                        random(n + dot(step, vec3(1,1,0))),\n\
+                    \                        u.x),\n                    u.y),\n  \
+                    \              mix(mix(random(n + dot(step, vec3(0,0,1))),\n \
+                    \                   random(n + dot(step, vec3(1,0,1))),\n    \
+                    \                u.x),\n                    mix(random(n + dot(step,\
+                    \ vec3(0,1,1))),\n                        random(n + dot(step,\
+                    \ vec3(1,1,1))),\n                        u.x),\n            \
+                    \    u.y),\n            u.z);\n}\n//\n// Simplex Noise\n//\nconst\
+                    \ float F3 =  0.3333333;\nconst float G3 =  0.1666667;\nfloat\
+                    \ snoise (vec3 p) {\n    vec3 s = floor(p + dot(p, vec3(F3)));\n\
+                    \    vec3 x = p - s + dot(s, vec3(G3));\n    vec3 e = step(vec3(0.0),\
+                    \ x - x.yzx);\n    vec3 i1 = e*(1.0 - e.zxy);\n    vec3 i2 = 1.0\
+                    \ - e.zxy*(1.0 - e);\n    vec3 x1 = x - i1 + G3;\n    vec3 x2\
+                    \ = x - i2 + 2.0*G3;\n    vec3 x3 = x - 1.0 + 3.0*G3;\n    vec4\
+                    \ w, d;\n    w.x = dot(x, x);\n    w.y = dot(x1, x1);\n    w.z\
+                    \ = dot(x2, x2);\n    w.w = dot(x3, x3);\n    w = max(0.6 - w,\
+                    \ 0.0);\n    d.x = dot(random3(s), x);\n    d.y = dot(random3(s\
+                    \ + i1), x1);\n    d.z = dot(random3(s + i2), x2);\n    d.w =\
+                    \ dot(random3(s + 1.0), x3);\n    w *= w;\n    w *= w;\n    d\
+                    \ *= w;\n    return dot(d, vec4(52.0));\n}"
+    generative-random:
+        shaders:
+            blocks:
+                global: "// 1D Random for 1 and 2 dimentions\n// ================================\n\
+                    float random (float x) { return fract(sin(x)*43758.5453);}\nfloat\
+                    \ random (vec2 p) { return fract(1e4 * sin(17.0 * p.x + p.y *\
+                    \ 0.1) * (0.1 + abs(sin(p.y * 13.0 + p.x)))); }\nfloat random\
+                    \ (vec3 p) { return fract(sin(dot(p.xyz, vec3(70.9898,78.233,32.4355)))*\
+                    \ 43758.5453123); }\n//\n// 2D Random for 2 dimentions\n// ================================\n\
+                    vec2 random2 (vec2 xy) { return fract(sin(vec2(dot(xy,vec2(127.1,311.7)),dot(xy,vec2(269.5,183.3))))*43758.5453);\
+                    \ }\n//\n// 3D Random for 2 dimentions\n// ================================\n\
+                    vec3 random3 (vec2 xy) { return fract(sin(vec3( dot(xy,vec2(127.1,311.7)),\
+                    \ dot(xy,vec2(269.5,183.3)), dot(xy,vec2(419.2,371.9)) ))*43758.5453);\
+                    \ }\nvec3 random3 (vec3 c) {\n    float j = 4096.0*sin(dot(c,vec3(17.0,\
+                    \ 59.4, 15.0)));\n    vec3 r;\n    r.z = fract(512.0*j);\n   \
+                    \ j *= .125;\n    r.x = fract(512.0*j);\n    j *= .125;\n    r.y\
+                    \ = fract(512.0*j);\n    return r-0.5;\n}"

@@ -1,6 +1,6 @@
 
 
-### [generative-fbm](https://github.com/tangrams/blocks/blob/gh-pages/generative/fbm.yaml)
+#### + [generative-fbm](https://github.com/tangrams/blocks/blob/gh-pages/generative/fbm.yaml)
 
 This provides the following blocks:
 
@@ -25,7 +25,7 @@ import:
 
 
 
-### [generative-noise](https://github.com/tangrams/blocks/blob/gh-pages/generative/noise.yaml)
+#### + [generative-noise](https://github.com/tangrams/blocks/blob/gh-pages/generative/noise.yaml)
 
 This provides the following blocks:
 
@@ -45,7 +45,7 @@ import:
 
 
 
-### [generative-random](https://github.com/tangrams/blocks/blob/gh-pages/generative/random.yaml)
+#### + [generative-random](https://github.com/tangrams/blocks/blob/gh-pages/generative/random.yaml)
 
 This provides the following blocks:
 
@@ -67,7 +67,7 @@ import:
 
 
 
-### [generative-voronoi](https://github.com/tangrams/blocks/blob/gh-pages/generative/voronoi.yaml)
+#### + [generative-voronoi](https://github.com/tangrams/blocks/blob/gh-pages/generative/voronoi.yaml)
 
 This provides the following blocks:
 

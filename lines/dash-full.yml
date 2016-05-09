@@ -1,0 +1,11 @@
+styles:
+    lines-dots:
+        base: lines
+        blend: overlay
+        shaders:
+            blocks:
+                color: color.a = 1.-step(DASH_SIZE,fract(v_texcoord.y*DASH_SCALE));
+            defines:
+                DASH_SCALE: 0.1
+                DASH_SIZE: 0.5
+        texcoords: true

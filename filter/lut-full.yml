@@ -1,0 +1,30 @@
+styles:
+    filter-lut:
+        shaders:
+            blocks:
+                filter: color = getLut(color);
+                global: "// Apply Look up table on a color\n// The user need to provide\
+                    \ a valid url to the uniform \"u_lut\"\n// ================================\n\
+                    vec4 getLut (vec3 textureColor, sampler2D lookupTable) {\n   \
+                    \ textureColor.g = 1.-textureColor.g;\n    textureColor = clamp(textureColor,\
+                    \ 0.0, 1.0);\n    float blueColor = textureColor.b * 63.0;\n \
+                    \   vec2 quad1 = vec2(0.0);\n    quad1.y = floor(floor(blueColor)\
+                    \ / 8.0);\n    quad1.x = floor(blueColor) - (quad1.y * 8.0);\n\
+                    \    vec2 quad2 = vec2(0.0);\n    quad2.y = floor(ceil(blueColor)\
+                    \ / 8.0);\n    quad2.x = ceil(blueColor) - (quad2.y * 8.0);\n\
+                    \    vec2 texPos1 = vec2(0.0);\n    texPos1.x = (quad1.x * 0.125)\
+                    \ + 0.5/512.0 + ((0.125 - 1.0/512.0) * textureColor.r);\n    texPos1.y\
+                    \ = (quad1.y * 0.125) + 0.5/512.0 + ((0.125 - 1.0/512.0) * textureColor.g);\n\
+                    \    vec2 texPos2 = vec2(0.0);\n    texPos2.x = (quad2.x * 0.125)\
+                    \ + 0.5/512.0 + ((0.125 - 1.0/512.0) * textureColor.r);\n    texPos2.y\
+                    \ = (quad2.y * 0.125) + 0.5/512.0 + ((0.125 - 1.0/512.0) * textureColor.g);\n\
+                    \    vec4 newColor1 = texture2D(lookupTable, texPos1);\n    vec4\
+                    \ newColor2 = texture2D(lookupTable, texPos2);\n    vec4 newColor\
+                    \ = mix(newColor1, newColor2, fract(blueColor));\n    return newColor;\n\
+                    }\n//\nvec4 getLut (vec3 textureColor) {\n    return getLut(textureColor,\
+                    \ u_lut);\n}\n//\nvec4 getLut (vec4 textureColor, sampler2D lookupTable)\
+                    \ {\n    return getLut(textureColor.rgb, lookupTable);\n}\n//\n\
+                    vec4 getLut (vec4 textureColor) {\n    return getLut(textureColor.rgb,\
+                    \ u_lut);\n}\n"
+            uniforms:
+                u_lut: imgs/lut-0001.png

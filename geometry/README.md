@@ -1,6 +1,6 @@
 
 
-### [geometry-dynamic-height](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-height.yaml)
+#### + [geometry-dynamic-height](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-height.yaml)
 
 This provides the following blocks:
 
@@ -29,7 +29,7 @@ import:
 
 
 
-### [geometry-dynamic-width](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-width.yaml)
+#### + [geometry-dynamic-width](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-width.yaml)
 
 This provides the following blocks:
 
@@ -51,7 +51,7 @@ import:
 
 
 
-### [geometry-matrices](https://github.com/tangrams/blocks/blob/gh-pages/geometry/matrices.yaml)
+#### + [geometry-matrices](https://github.com/tangrams/blocks/blob/gh-pages/geometry/matrices.yaml)
 
 This provides the following blocks:
 
@@ -82,7 +82,7 @@ import:
 
 
 
-### [geometry-normal](https://github.com/tangrams/blocks/blob/gh-pages/geometry/normal.yaml)
+#### + [geometry-normal](https://github.com/tangrams/blocks/blob/gh-pages/geometry/normal.yaml)
 
 This provides the following blocks:
 
@@ -100,7 +100,7 @@ import:
 
 
 
-### [geometry-projections](https://github.com/tangrams/blocks/blob/gh-pages/geometry/projections.yaml)
+#### + [geometry-projections](https://github.com/tangrams/blocks/blob/gh-pages/geometry/projections.yaml)
 
 This provides the following blocks:
 
@@ -142,7 +142,7 @@ import:
 
 
 
-### [geometry-terrarium](https://github.com/tangrams/blocks/blob/gh-pages/geometry/terrarium.yaml)
+#### + [geometry-terrarium](https://github.com/tangrams/blocks/blob/gh-pages/geometry/terrarium.yaml)
 
 This provides the following blocks:
 
@@ -172,7 +172,7 @@ import:
 
 
 
-### [geometry-tilt](https://github.com/tangrams/blocks/blob/gh-pages/geometry/tilt.yaml)
+#### + [geometry-tilt](https://github.com/tangrams/blocks/blob/gh-pages/geometry/tilt.yaml)
 
 This provides the following blocks:
 

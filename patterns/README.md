@@ -1,6 +1,6 @@
 
 
-### [patterns-dots](https://github.com/tangrams/blocks/blob/gh-pages/patterns/dots.yaml)
+#### + [patterns-dots](https://github.com/tangrams/blocks/blob/gh-pages/patterns/dots.yaml)
 
 This provides the following blocks:
 
@@ -17,7 +17,7 @@ import:
 
 
 
-### [patterns-grid](https://github.com/tangrams/blocks/blob/gh-pages/patterns/grid.yaml)
+#### + [patterns-grid](https://github.com/tangrams/blocks/blob/gh-pages/patterns/grid.yaml)
 
 This provides the following blocks:
 
@@ -37,7 +37,7 @@ import:
 
 
 
-### [patterns-stripes](https://github.com/tangrams/blocks/blob/gh-pages/patterns/stripes.yaml)
+#### + [patterns-stripes](https://github.com/tangrams/blocks/blob/gh-pages/patterns/stripes.yaml)
 
 This provides the following blocks:
 
@@ -60,7 +60,7 @@ import:
 
 
 
-### [patterns-waves](https://github.com/tangrams/blocks/blob/gh-pages/patterns/waves.yaml)
+#### + [patterns-waves](https://github.com/tangrams/blocks/blob/gh-pages/patterns/waves.yaml)
 
 This provides the following blocks:
 
@@ -78,7 +78,7 @@ import:
 
 
 
-### [patterns-zigzag](https://github.com/tangrams/blocks/blob/gh-pages/patterns/zigzag.yaml)
+#### + [patterns-zigzag](https://github.com/tangrams/blocks/blob/gh-pages/patterns/zigzag.yaml)
 
 This provides the following blocks:
 
