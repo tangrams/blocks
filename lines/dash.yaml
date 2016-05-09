@@ -1,7 +1,7 @@
 # Patricio Gonzalez Vivo - 2016
 
 styles:
-    lines-dots:
+    lines-dash:
         base: lines
         texcoords: true
         blend: overlay

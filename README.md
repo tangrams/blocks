@@ -661,9 +661,13 @@ import:
 <hr>
 
 
+<<<<<<< HEAD
 ### [LINES](https://github.com/tangrams/blocks/tree/gh-pages/lines)
 
 #### + [lines-dots](https://github.com/tangrams/blocks/blob/gh-pages/lines/dash.yaml)
+=======
+### [lines-dash](https://github.com/tangrams/blocks/blob/gh-pages/lines/dash.yaml)
+>>>>>>> b76906ef9873775be1016937f04d8127fa98a93f
 
 This provides the following blocks:
 
