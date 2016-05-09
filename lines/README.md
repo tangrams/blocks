@@ -1,6 +1,6 @@
 
 
-#### + [lines-dash](https://github.com/tangrams/blocks/blob/gh-pages/lines/dash.yaml)
+#### [lines-dash](https://github.com/tangrams/blocks/blob/gh-pages/lines/dash.yaml)
 
 This provides the following blocks:
 
@@ -37,7 +37,7 @@ import:
 
 
 
-#### + [lines-dots](https://github.com/tangrams/blocks/blob/gh-pages/lines/dots.yaml)
+#### [lines-dots](https://github.com/tangrams/blocks/blob/gh-pages/lines/dots.yaml)
 
 This provides the following blocks:
 
@@ -75,7 +75,7 @@ import:
 
 
 
-#### + [lines-outline](https://github.com/tangrams/blocks/blob/gh-pages/lines/outline.yaml)
+#### [lines-outline](https://github.com/tangrams/blocks/blob/gh-pages/lines/outline.yaml)
 
 This provides the following blocks:
 
@@ -114,7 +114,7 @@ import:
 
 
 
-#### + [lines-stripes](https://github.com/tangrams/blocks/blob/gh-pages/lines/stripes.yaml)
+#### [lines-stripes](https://github.com/tangrams/blocks/blob/gh-pages/lines/stripes.yaml)
 
 This provides the following blocks:
 

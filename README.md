@@ -2,7 +2,10 @@
 
 Set of reusable building blocks for Tangram to make beatifull maps. Is in esence a library of our own Tangram recipes. A simpler way to add new GSLS Shaders features into your maps.
 
+![](blocks.jpg)
+
 ## How to use them?
+<hr>
 
 In your style add a path to it, like this:
 
@@ -33,16 +36,104 @@ styles:
                 NUM_OCTAVES: 3
 ```
 
-![](blocks.jpg)
-
 ## Blocks Index
+<hr>
+- [Shapes](https://github.com/tangrams/blocks/tree/gh-pages/shapes)
+  - [Shapes-Digits](https://github.com/tangrams/blocks/tree/gh-pages/shapes/digits.yaml)
+
+  - [Shapes-Simplex](https://github.com/tangrams/blocks/tree/gh-pages/shapes/simplex.yaml)
+
+  - [Shapes-Cross](https://github.com/tangrams/blocks/tree/gh-pages/shapes/cross.yaml)
+
+  - [Shapes-Rect](https://github.com/tangrams/blocks/tree/gh-pages/shapes/rect.yaml)
+
+  - [Shapes-Polygons](https://github.com/tangrams/blocks/tree/gh-pages/shapes/polygons.yaml)
+
+- [Functions](https://github.com/tangrams/blocks/tree/gh-pages/functions)
+  - [Functions-Easing](https://github.com/tangrams/blocks/tree/gh-pages/functions/easing.yaml)
+
+  - [Functions-Pulse](https://github.com/tangrams/blocks/tree/gh-pages/functions/pulse.yaml)
+
+  - [Functions-Map](https://github.com/tangrams/blocks/tree/gh-pages/functions/map.yaml)
+
+- [Patterns](https://github.com/tangrams/blocks/tree/gh-pages/patterns)
+  - [Patterns-Grid](https://github.com/tangrams/blocks/tree/gh-pages/patterns/grid.yaml)
+
+  - [Patterns-Stripes](https://github.com/tangrams/blocks/tree/gh-pages/patterns/stripes.yaml)
+
+  - [Patterns-Zigzag](https://github.com/tangrams/blocks/tree/gh-pages/patterns/zigzag.yaml)
+
+  - [Patterns-Waves](https://github.com/tangrams/blocks/tree/gh-pages/patterns/waves.yaml)
+
+- [Color](https://github.com/tangrams/blocks/tree/gh-pages/color)
+  - [Color-Palette](https://github.com/tangrams/blocks/tree/gh-pages/color/palette.yaml)
+
+  - [Color-Tools](https://github.com/tangrams/blocks/tree/gh-pages/color/tools.yaml)
+
+- [Space](https://github.com/tangrams/blocks/tree/gh-pages/space)
+  - [Space-Tex](https://github.com/tangrams/blocks/tree/gh-pages/space/tex.yaml)
+
+  - [Space-Tile](https://github.com/tangrams/blocks/tree/gh-pages/space/tile.yaml)
+
+  - [Space-Screen](https://github.com/tangrams/blocks/tree/gh-pages/space/screen.yaml)
+
+  - [Space-Uz](https://github.com/tangrams/blocks/tree/gh-pages/space/uz.yaml)
+
+- [Lines](https://github.com/tangrams/blocks/tree/gh-pages/lines)
+  - [Lines-Dots](https://github.com/tangrams/blocks/tree/gh-pages/lines/dots.yaml)
+
+  - [Lines-Outline](https://github.com/tangrams/blocks/tree/gh-pages/lines/outline.yaml)
+
+  - [Lines-Stripes](https://github.com/tangrams/blocks/tree/gh-pages/lines/stripes.yaml)
+
+- [Texture](https://github.com/tangrams/blocks/tree/gh-pages/texture)
+  - [Texture-Zoom-Fade](https://github.com/tangrams/blocks/tree/gh-pages/texture/zoom-fade.yaml)
+
+- [Filter](https://github.com/tangrams/blocks/tree/gh-pages/filter)
+  - [Filter-Tv](https://github.com/tangrams/blocks/tree/gh-pages/filter/tv.yaml)
+
+  - [Filter-Height](https://github.com/tangrams/blocks/tree/gh-pages/filter/height.yaml)
+
+  - [Filter-Lut](https://github.com/tangrams/blocks/tree/gh-pages/filter/lut.yaml)
+
+  - [Filter-Hatch](https://github.com/tangrams/blocks/tree/gh-pages/filter/hatch.yaml)
+
+- [Geometry](https://github.com/tangrams/blocks/tree/gh-pages/geometry)
+  - [Geometry-Normal](https://github.com/tangrams/blocks/tree/gh-pages/geometry/normal.yaml)
+
+  - [Geometry-Tilt](https://github.com/tangrams/blocks/tree/gh-pages/geometry/tilt.yaml)
+
+  - [Geometry-Terrarium](https://github.com/tangrams/blocks/tree/gh-pages/geometry/terrarium.yaml)
+
+  - [Geometry-Projections](https://github.com/tangrams/blocks/tree/gh-pages/geometry/projections.yaml)
+
+  - [Geometry-Matrices](https://github.com/tangrams/blocks/tree/gh-pages/geometry/matrices.yaml)
+
+  - [Geometry-Dynamic-Width](https://github.com/tangrams/blocks/tree/gh-pages/geometry/dynamic-width.yaml)
+
+- [Generative](https://github.com/tangrams/blocks/tree/gh-pages/generative)
+  - [Generative-Random](https://github.com/tangrams/blocks/tree/gh-pages/generative/random.yaml)
+
+  - [Generative-Voronoi](https://github.com/tangrams/blocks/tree/gh-pages/generative/voronoi.yaml)
+
+  - [Generative-Noise](https://github.com/tangrams/blocks/tree/gh-pages/generative/noise.yaml)
+
+- [Tiling](https://github.com/tangrams/blocks/tree/gh-pages/tiling)
+  - [Tiling-Tile](https://github.com/tangrams/blocks/tree/gh-pages/tiling/tile.yaml)
+
+  - [Tiling-Truchet](https://github.com/tangrams/blocks/tree/gh-pages/tiling/truchet.yaml)
+
+  - [Tiling-Simplex](https://github.com/tangrams/blocks/tree/gh-pages/tiling/simplex.yaml)
+
+
+## Blocks description
 
 <hr>
 
 
 ### [COLOR](https://github.com/tangrams/blocks/tree/gh-pages/color)
 
-#### + [color-conversion](https://github.com/tangrams/blocks/blob/gh-pages/color/conversion.yaml)
+#### [color-conversion](https://github.com/tangrams/blocks/blob/gh-pages/color/conversion.yaml)
 
 Set of functions to convert colors between color systems/spaces.
 For more information on this theme read [this chapter of The Book of Shaders about color](http://thebookofshaders.com/06/).
@@ -74,7 +165,7 @@ import:
 
 
 
-#### + [color-palette](https://github.com/tangrams/blocks/blob/gh-pages/color/palette.yaml)
+#### [color-palette](https://github.com/tangrams/blocks/blob/gh-pages/color/palette.yaml)
 
 Procedural generation of color paletters implemented by [Inigo Quiles](https://twitter.com/iquilezles) (1999) explained in [this article](http://www.iquilezles.org/www/articles/palettes/palettes.htm)
 
@@ -103,7 +194,7 @@ import:
 
 
 
-#### + [color-tools](https://github.com/tangrams/blocks/blob/gh-pages/color/tools.yaml)
+#### [color-tools](https://github.com/tangrams/blocks/blob/gh-pages/color/tools.yaml)
 
 Set of color tools to get the **intensity** and **brightness** of a color.
 For more information on this theme read [this chapter of The Book of Shaders about color](http://thebookofshaders.com/06/).
@@ -140,7 +231,7 @@ import:
 
 ### [FILTER](https://github.com/tangrams/blocks/tree/gh-pages/filter)
 
-#### + [filter-grain](https://github.com/tangrams/blocks/blob/gh-pages/filter/grain.yaml)
+#### [filter-grain](https://github.com/tangrams/blocks/blob/gh-pages/filter/grain.yaml)
 
 Apply a lens grain effect to the scene.
 <p>The amount can be set by the GRAIN_AMOUNT define [0.0~1.0]</p>
@@ -185,7 +276,7 @@ import:
 
 
 
-#### + [filter-hatch](https://github.com/tangrams/blocks/blob/gh-pages/filter/hatch.yaml)
+#### [filter-hatch](https://github.com/tangrams/blocks/blob/gh-pages/filter/hatch.yaml)
 
 Hatching filter based on [Jaume's Sanchez](https://twitter.com/thespite?lang=en) [Cross-hatching GLSL shader](https://www.clicktorelease.com/code/cross-hatching/). 
 <p>Examples:</p>
@@ -221,7 +312,7 @@ import:
 
 
 
-#### + [filter-height](https://github.com/tangrams/blocks/blob/gh-pages/filter/height.yaml)
+#### [filter-height](https://github.com/tangrams/blocks/blob/gh-pages/filter/height.yaml)
 
 Adds a dark gradiant to the geometries conform they aproach to height 0. <p>For example:</p>
 [ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/default.png); width: 100%; height: 100px; background-position: center center;"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/default.yaml#10.97291/40.7461/-74.0931)
@@ -256,7 +347,7 @@ import:
 
 
 
-#### + [filter-lut](https://github.com/tangrams/blocks/blob/gh-pages/filter/lut.yaml)
+#### [filter-lut](https://github.com/tangrams/blocks/blob/gh-pages/filter/lut.yaml)
 
 Add a look up table filter defined on the uniform ```u_lut``` to the current style. This look up tables are hable to produce similar effect to instagram filters. <p>For example:</p>
 [ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/sandbox-lut.png); width: 100%; height: 100px; background-position: center center;"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/sandbox-lut#10.97291/40.7461/-74.0931)
@@ -300,7 +391,7 @@ import:
 
 
 
-#### + [filter-tv](https://github.com/tangrams/blocks/blob/gh-pages/filter/tv.yaml)
+#### [filter-tv](https://github.com/tangrams/blocks/blob/gh-pages/filter/tv.yaml)
 
 <p>Apply a TV effect to the style like</p>
 [ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/9845C.png); width: 100%; height: 100px; background-position: center center;"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/9845C#10.97291/40.7461/-74.0931)
@@ -344,7 +435,7 @@ import:
 
 ### [FUNCTIONS](https://github.com/tangrams/blocks/tree/gh-pages/functions)
 
-#### + [functions-aastep](https://github.com/tangrams/blocks/blob/gh-pages/functions/aastep.yaml)
+#### [functions-aastep](https://github.com/tangrams/blocks/blob/gh-pages/functions/aastep.yaml)
 
 AnitAliased ```step()``` function implemented by [Matt DesLauriers](https://twitter.com/mattdesl) in this module <https://github.com/stackgl/glsl-aastep>
 
@@ -373,7 +464,7 @@ import:
 
 
 
-#### + [functions-easing](https://github.com/tangrams/blocks/blob/gh-pages/functions/easing.yaml)
+#### [functions-easing](https://github.com/tangrams/blocks/blob/gh-pages/functions/easing.yaml)
 
 Easing functions originally develop by Robert Penner's and transformed to GLSL by [StackGL](http://stack.gl/) in this repo: <https://github.com/stackgl/glsl-easings>
 
@@ -437,7 +528,7 @@ import:
 
 
 
-#### + [functions-map](https://github.com/tangrams/blocks/blob/gh-pages/functions/map.yaml)
+#### [functions-map](https://github.com/tangrams/blocks/blob/gh-pages/functions/map.yaml)
 
 This provides the following blocks:
 
@@ -469,7 +560,7 @@ import:
 
 
 
-#### + [functions-pulse](https://github.com/tangrams/blocks/blob/gh-pages/functions/pulse.yaml)
+#### [functions-pulse](https://github.com/tangrams/blocks/blob/gh-pages/functions/pulse.yaml)
 
 This provides the following blocks:
 
@@ -500,7 +591,7 @@ import:
 
 ### [GENERATIVE](https://github.com/tangrams/blocks/tree/gh-pages/generative)
 
-#### + [generative-fbm](https://github.com/tangrams/blocks/blob/gh-pages/generative/fbm.yaml)
+#### [generative-fbm](https://github.com/tangrams/blocks/blob/gh-pages/generative/fbm.yaml)
 
 This provides the following blocks:
 
@@ -535,7 +626,7 @@ import:
 
 
 
-#### + [generative-noise](https://github.com/tangrams/blocks/blob/gh-pages/generative/noise.yaml)
+#### [generative-noise](https://github.com/tangrams/blocks/blob/gh-pages/generative/noise.yaml)
 
 This provides the following blocks:
 
@@ -565,7 +656,7 @@ import:
 
 
 
-#### + [generative-random](https://github.com/tangrams/blocks/blob/gh-pages/generative/random.yaml)
+#### [generative-random](https://github.com/tangrams/blocks/blob/gh-pages/generative/random.yaml)
 
 This provides the following blocks:
 
@@ -597,7 +688,7 @@ import:
 
 
 
-#### + [generative-voronoi](https://github.com/tangrams/blocks/blob/gh-pages/generative/voronoi.yaml)
+#### [generative-voronoi](https://github.com/tangrams/blocks/blob/gh-pages/generative/voronoi.yaml)
 
 This provides the following blocks:
 
@@ -628,7 +719,7 @@ import:
 
 ### [GEOMETRY](https://github.com/tangrams/blocks/tree/gh-pages/geometry)
 
-#### + [geometry-dynamic-height](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-height.yaml)
+#### [geometry-dynamic-height](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-height.yaml)
 
 This provides the following blocks:
 
@@ -667,7 +758,7 @@ import:
 
 
 
-#### + [geometry-dynamic-width](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-width.yaml)
+#### [geometry-dynamic-width](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-width.yaml)
 
 This provides the following blocks:
 
@@ -699,7 +790,7 @@ import:
 
 
 
-#### + [geometry-matrices](https://github.com/tangrams/blocks/blob/gh-pages/geometry/matrices.yaml)
+#### [geometry-matrices](https://github.com/tangrams/blocks/blob/gh-pages/geometry/matrices.yaml)
 
 This provides the following blocks:
 
@@ -740,7 +831,7 @@ import:
 
 
 
-#### + [geometry-normal](https://github.com/tangrams/blocks/blob/gh-pages/geometry/normal.yaml)
+#### [geometry-normal](https://github.com/tangrams/blocks/blob/gh-pages/geometry/normal.yaml)
 
 This provides the following blocks:
 
@@ -768,7 +859,7 @@ import:
 
 
 
-#### + [geometry-projections](https://github.com/tangrams/blocks/blob/gh-pages/geometry/projections.yaml)
+#### [geometry-projections](https://github.com/tangrams/blocks/blob/gh-pages/geometry/projections.yaml)
 
 This provides the following blocks:
 
@@ -820,7 +911,7 @@ import:
 
 
 
-#### + [geometry-terrarium](https://github.com/tangrams/blocks/blob/gh-pages/geometry/terrarium.yaml)
+#### [geometry-terrarium](https://github.com/tangrams/blocks/blob/gh-pages/geometry/terrarium.yaml)
 
 This provides the following blocks:
 
@@ -860,7 +951,7 @@ import:
 
 
 
-#### + [geometry-tilt](https://github.com/tangrams/blocks/blob/gh-pages/geometry/tilt.yaml)
+#### [geometry-tilt](https://github.com/tangrams/blocks/blob/gh-pages/geometry/tilt.yaml)
 
 This provides the following blocks:
 
@@ -904,7 +995,7 @@ import:
 
 ### [LINES](https://github.com/tangrams/blocks/tree/gh-pages/lines)
 
-#### + [lines-dash](https://github.com/tangrams/blocks/blob/gh-pages/lines/dash.yaml)
+#### [lines-dash](https://github.com/tangrams/blocks/blob/gh-pages/lines/dash.yaml)
 
 This provides the following blocks:
 
@@ -941,7 +1032,7 @@ import:
 
 
 
-#### + [lines-dots](https://github.com/tangrams/blocks/blob/gh-pages/lines/dots.yaml)
+#### [lines-dots](https://github.com/tangrams/blocks/blob/gh-pages/lines/dots.yaml)
 
 This provides the following blocks:
 
@@ -979,7 +1070,7 @@ import:
 
 
 
-#### + [lines-outline](https://github.com/tangrams/blocks/blob/gh-pages/lines/outline.yaml)
+#### [lines-outline](https://github.com/tangrams/blocks/blob/gh-pages/lines/outline.yaml)
 
 This provides the following blocks:
 
@@ -1018,7 +1109,7 @@ import:
 
 
 
-#### + [lines-stripes](https://github.com/tangrams/blocks/blob/gh-pages/lines/stripes.yaml)
+#### [lines-stripes](https://github.com/tangrams/blocks/blob/gh-pages/lines/stripes.yaml)
 
 This provides the following blocks:
 
@@ -1059,7 +1150,7 @@ import:
 
 ### [PATTERNS](https://github.com/tangrams/blocks/tree/gh-pages/patterns)
 
-#### + [patterns-dots](https://github.com/tangrams/blocks/blob/gh-pages/patterns/dots.yaml)
+#### [patterns-dots](https://github.com/tangrams/blocks/blob/gh-pages/patterns/dots.yaml)
 
 This provides the following blocks:
 
@@ -1086,7 +1177,7 @@ import:
 
 
 
-#### + [patterns-grid](https://github.com/tangrams/blocks/blob/gh-pages/patterns/grid.yaml)
+#### [patterns-grid](https://github.com/tangrams/blocks/blob/gh-pages/patterns/grid.yaml)
 
 This provides the following blocks:
 
@@ -1116,7 +1207,7 @@ import:
 
 
 
-#### + [patterns-stripes](https://github.com/tangrams/blocks/blob/gh-pages/patterns/stripes.yaml)
+#### [patterns-stripes](https://github.com/tangrams/blocks/blob/gh-pages/patterns/stripes.yaml)
 
 This provides the following blocks:
 
@@ -1149,7 +1240,7 @@ import:
 
 
 
-#### + [patterns-waves](https://github.com/tangrams/blocks/blob/gh-pages/patterns/waves.yaml)
+#### [patterns-waves](https://github.com/tangrams/blocks/blob/gh-pages/patterns/waves.yaml)
 
 This provides the following blocks:
 
@@ -1177,7 +1268,7 @@ import:
 
 
 
-#### + [patterns-zigzag](https://github.com/tangrams/blocks/blob/gh-pages/patterns/zigzag.yaml)
+#### [patterns-zigzag](https://github.com/tangrams/blocks/blob/gh-pages/patterns/zigzag.yaml)
 
 This provides the following blocks:
 
@@ -1209,7 +1300,7 @@ import:
 
 ### [SHAPES](https://github.com/tangrams/blocks/tree/gh-pages/shapes)
 
-#### + [shapes-circle](https://github.com/tangrams/blocks/blob/gh-pages/shapes/circle.yaml)
+#### [shapes-circle](https://github.com/tangrams/blocks/blob/gh-pages/shapes/circle.yaml)
 
 This provides the following blocks:
 
@@ -1241,7 +1332,7 @@ import:
 
 
 
-#### + [shapes-cross](https://github.com/tangrams/blocks/blob/gh-pages/shapes/cross.yaml)
+#### [shapes-cross](https://github.com/tangrams/blocks/blob/gh-pages/shapes/cross.yaml)
 
 This provides the following blocks:
 
@@ -1270,7 +1361,7 @@ import:
 
 
 
-#### + [shapes-digits](https://github.com/tangrams/blocks/blob/gh-pages/shapes/digits.yaml)
+#### [shapes-digits](https://github.com/tangrams/blocks/blob/gh-pages/shapes/digits.yaml)
 
 This provides the following blocks:
 
@@ -1305,7 +1396,7 @@ import:
 
 
 
-#### + [shapes-polygons](https://github.com/tangrams/blocks/blob/gh-pages/shapes/polygons.yaml)
+#### [shapes-polygons](https://github.com/tangrams/blocks/blob/gh-pages/shapes/polygons.yaml)
 
 This provides the following blocks:
 
@@ -1338,7 +1429,7 @@ import:
 
 
 
-#### + [shapes-rect](https://github.com/tangrams/blocks/blob/gh-pages/shapes/rect.yaml)
+#### [shapes-rect](https://github.com/tangrams/blocks/blob/gh-pages/shapes/rect.yaml)
 
 This provides the following blocks:
 
@@ -1368,7 +1459,7 @@ import:
 
 
 
-#### + [shapes-simplex](https://github.com/tangrams/blocks/blob/gh-pages/shapes/simplex.yaml)
+#### [shapes-simplex](https://github.com/tangrams/blocks/blob/gh-pages/shapes/simplex.yaml)
 
 This provides the following blocks:
 
@@ -1404,7 +1495,7 @@ import:
 
 ### [SPACE](https://github.com/tangrams/blocks/tree/gh-pages/space)
 
-#### + [space-constant](https://github.com/tangrams/blocks/blob/gh-pages/space/constant.yaml)
+#### [space-constant](https://github.com/tangrams/blocks/blob/gh-pages/space/constant.yaml)
 
 This provides the following blocks:
 
@@ -1431,7 +1522,7 @@ import:
 
 
 
-#### + [space-screen](https://github.com/tangrams/blocks/blob/gh-pages/space/screen.yaml)
+#### [space-screen](https://github.com/tangrams/blocks/blob/gh-pages/space/screen.yaml)
 
 This provides the following blocks:
 
@@ -1459,7 +1550,7 @@ import:
 
 
 
-#### + [space-tex](https://github.com/tangrams/blocks/blob/gh-pages/space/tex.yaml)
+#### [space-tex](https://github.com/tangrams/blocks/blob/gh-pages/space/tex.yaml)
 
 This provides the following blocks:
 
@@ -1486,7 +1577,7 @@ import:
 
 
 
-#### + [space-tile](https://github.com/tangrams/blocks/blob/gh-pages/space/tile.yaml)
+#### [space-tile](https://github.com/tangrams/blocks/blob/gh-pages/space/tile.yaml)
 
 This provides the following blocks:
 
@@ -1521,7 +1612,7 @@ import:
 
 
 
-#### + [space-uz](https://github.com/tangrams/blocks/blob/gh-pages/space/uz.yaml)
+#### [space-uz](https://github.com/tangrams/blocks/blob/gh-pages/space/uz.yaml)
 
 This provides the following blocks:
 
@@ -1552,7 +1643,7 @@ import:
 
 ### [TEXTURE](https://github.com/tangrams/blocks/tree/gh-pages/texture)
 
-#### + [texture-non-repetitive](https://github.com/tangrams/blocks/blob/gh-pages/texture/non-repetitive.yaml)
+#### [texture-non-repetitive](https://github.com/tangrams/blocks/blob/gh-pages/texture/non-repetitive.yaml)
 
 This provides the following blocks:
 
@@ -1579,7 +1670,7 @@ import:
 
 
 
-#### + [texture-zoom-fade](https://github.com/tangrams/blocks/blob/gh-pages/texture/zoom-fade.yaml)
+#### [texture-zoom-fade](https://github.com/tangrams/blocks/blob/gh-pages/texture/zoom-fade.yaml)
 
 This provides the following blocks:
 
@@ -1610,7 +1701,7 @@ import:
 
 ### [TILING](https://github.com/tangrams/blocks/tree/gh-pages/tiling)
 
-#### + [tiling-brick](https://github.com/tangrams/blocks/blob/gh-pages/tiling/brick.yaml)
+#### [tiling-brick](https://github.com/tangrams/blocks/blob/gh-pages/tiling/brick.yaml)
 
 This provides the following blocks:
 
@@ -1637,7 +1728,7 @@ import:
 
 
 
-#### + [tiling-simplex](https://github.com/tangrams/blocks/blob/gh-pages/tiling/simplex.yaml)
+#### [tiling-simplex](https://github.com/tangrams/blocks/blob/gh-pages/tiling/simplex.yaml)
 
 This provides the following blocks:
 
@@ -1667,7 +1758,7 @@ import:
 
 
 
-#### + [tiling-tile](https://github.com/tangrams/blocks/blob/gh-pages/tiling/tile.yaml)
+#### [tiling-tile](https://github.com/tangrams/blocks/blob/gh-pages/tiling/tile.yaml)
 
 This provides the following blocks:
 
@@ -1694,7 +1785,7 @@ import:
 
 
 
-#### + [tiling-truchet](https://github.com/tangrams/blocks/blob/gh-pages/tiling/truchet.yaml)
+#### [tiling-truchet](https://github.com/tangrams/blocks/blob/gh-pages/tiling/truchet.yaml)
 
 This provides the following blocks:
 

@@ -1,6 +1,6 @@
 
 
-#### + [shapes-circle](https://github.com/tangrams/blocks/blob/gh-pages/shapes/circle.yaml)
+#### [shapes-circle](https://github.com/tangrams/blocks/blob/gh-pages/shapes/circle.yaml)
 
 This provides the following blocks:
 
@@ -32,7 +32,7 @@ import:
 
 
 
-#### + [shapes-cross](https://github.com/tangrams/blocks/blob/gh-pages/shapes/cross.yaml)
+#### [shapes-cross](https://github.com/tangrams/blocks/blob/gh-pages/shapes/cross.yaml)
 
 This provides the following blocks:
 
@@ -61,7 +61,7 @@ import:
 
 
 
-#### + [shapes-digits](https://github.com/tangrams/blocks/blob/gh-pages/shapes/digits.yaml)
+#### [shapes-digits](https://github.com/tangrams/blocks/blob/gh-pages/shapes/digits.yaml)
 
 This provides the following blocks:
 
@@ -96,7 +96,7 @@ import:
 
 
 
-#### + [shapes-polygons](https://github.com/tangrams/blocks/blob/gh-pages/shapes/polygons.yaml)
+#### [shapes-polygons](https://github.com/tangrams/blocks/blob/gh-pages/shapes/polygons.yaml)
 
 This provides the following blocks:
 
@@ -129,7 +129,7 @@ import:
 
 
 
-#### + [shapes-rect](https://github.com/tangrams/blocks/blob/gh-pages/shapes/rect.yaml)
+#### [shapes-rect](https://github.com/tangrams/blocks/blob/gh-pages/shapes/rect.yaml)
 
 This provides the following blocks:
 
@@ -159,7 +159,7 @@ import:
 
 
 
-#### + [shapes-simplex](https://github.com/tangrams/blocks/blob/gh-pages/shapes/simplex.yaml)
+#### [shapes-simplex](https://github.com/tangrams/blocks/blob/gh-pages/shapes/simplex.yaml)
 
 This provides the following blocks:
 

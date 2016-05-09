@@ -2,7 +2,10 @@
 
 Set of reusable building blocks for Tangram to make beatifull maps. Is in esence a library of our own Tangram recipes. A simpler way to add new GSLS Shaders features into your maps.
 
+![](blocks.jpg)
+
 ## How to use them?
+<hr>
 
 In your style add a path to it, like this:
 
@@ -32,7 +35,3 @@ styles:
                 GRAIN_AMOUNT: .4
                 NUM_OCTAVES: 3
 ```
-
-![](blocks.jpg)
-
-## Blocks Index

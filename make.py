@@ -4,13 +4,16 @@ import glob, os, yaml, re
 def extractFunctions(searchText):
     return re.findall("((void|bool|int|float|vec\\d|mat\\d)+\\s.*\\(.*\\)\\s+\\{)", searchText)
 
-def appendDocumentation(readme_file, yaml_file):
+def appendDocumentation(readme_file, filename):
+    blocks = []
+    yaml_file = yaml.safe_load(open(filename))
     # For each style ('styles') in this yaml_file 
     for name_block in yaml_file['styles']:
 
         # Add a title that points to github
         url = 'https://github.com/tangrams/blocks/blob/gh-pages'+filename[1:]
-        readme_file.write('\n\n#### + [' + name_block + ']('+url+')\n\n');
+        readme_file.write('\n\n#### [' + name_block + ']('+url+')\n\n');
+        blocks.append(name_block)
 
         # Add a description if it have
         if 'doc' in yaml_file['styles'][name_block]:
@@ -60,7 +63,9 @@ def appendDocumentation(readme_file, yaml_file):
                             '    - http://tangrams.github.io/blocks/' + filename[2:-5] + '-full.yaml\n' +
                             '```\n\n\n')
 
-# https://gist.github.com/angstwad/bf22d1822c38a92ec0a9
+    return blocks
+
+# Recursive dict merge (From https://gist.github.com/angstwad/bf22d1822c38a92ec0a9)
 def dict_merge(dct, merge_dct):
     """ Recursive dict merge. Inspired by :meth:``dict.update()``, instead of
     updating only top-level keys, dict_merge recurses down into dicts nested
@@ -107,6 +112,7 @@ folders.sort()
 
 # List to append all folder README.md files to compose a big main README.md file
 readmes = []
+index = dict()
 #   Iterate through all the folders
 for folder in folders:
 
@@ -118,6 +124,7 @@ for folder in folders:
     readme = folder+'/README.md'
     readme_file = open(readme, "w")
 
+    index_blocks = []
     # That contatin the documentation of all the *.yaml files inside
     for filename in glob.glob(folder+'/*.yaml'):
         block = os.path.splitext(os.path.basename(filename))[0]
@@ -127,8 +134,13 @@ for folder in folders:
             print "Skipping " + block
             continue
 
-        yaml_file = yaml.safe_load(open(filename))
-        appendDocumentation(readme_file, yaml_file)
+        index_styles = appendDocumentation(readme_file, filename)
+
+        # Keep track of the folder structor for making an index
+        if not folder[2:] in index:
+            index[folder[2:]] = dict()
+        else:
+            index[folder[2:]][block] = index_styles
 
         # Make a *-full.yaml version that contain all dependencies
         full_yaml = dict()
@@ -136,7 +148,7 @@ for folder in folders:
         with open(folder+'/'+block+'-full.yml', 'w') as yaml_file:
             yaml_file.write( yaml.dump(full_yaml, default_flow_style=False, indent=4))
         
-        
+
     readme_file.close()
     # Keep track of all the README.md to construct a big main one
     readmes.append(readme)
@@ -147,7 +159,20 @@ with open('README.md', 'w') as outfile:
     with open('INTRO.md') as infile:
             outfile.write(infile.read())
 
+
+    # Make index
+    outfile.write('\n## Blocks Index\n<hr>\n')
+    for folder in index.keys():
+        outfile.write('- ['+ folder.title() +'](https://github.com/tangrams/blocks/tree/gh-pages/' + folder + ')\n')
+        for yaml in index[folder].keys():
+            for block in index[folder][yaml]:
+                outfile.write('  - ['+ block.title() +'](https://github.com/tangrams/blocks/tree/gh-pages/'+ folder + '/' + yaml+'.yaml)\n\n')
+
+
+
+    # Content
     # Add all folder README.md one after the other 
+    outfile.write('\n## Blocks description\n')
     for fname in readmes:
         with open(fname) as infile:
             folder = os.path.dirname(fname)[2:]

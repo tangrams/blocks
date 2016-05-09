@@ -1,6 +1,6 @@
 
 
-#### + [color-conversion](https://github.com/tangrams/blocks/blob/gh-pages/color/conversion.yaml)
+#### [color-conversion](https://github.com/tangrams/blocks/blob/gh-pages/color/conversion.yaml)
 
 Set of functions to convert colors between color systems/spaces.
 For more information on this theme read [this chapter of The Book of Shaders about color](http://thebookofshaders.com/06/).
@@ -32,7 +32,7 @@ import:
 
 
 
-#### + [color-palette](https://github.com/tangrams/blocks/blob/gh-pages/color/palette.yaml)
+#### [color-palette](https://github.com/tangrams/blocks/blob/gh-pages/color/palette.yaml)
 
 Procedural generation of color paletters implemented by [Inigo Quiles](https://twitter.com/iquilezles) (1999) explained in [this article](http://www.iquilezles.org/www/articles/palettes/palettes.htm)
 
@@ -61,7 +61,7 @@ import:
 
 
 
-#### + [color-tools](https://github.com/tangrams/blocks/blob/gh-pages/color/tools.yaml)
+#### [color-tools](https://github.com/tangrams/blocks/blob/gh-pages/color/tools.yaml)
 
 Set of color tools to get the **intensity** and **brightness** of a color.
 For more information on this theme read [this chapter of The Book of Shaders about color](http://thebookofshaders.com/06/).
