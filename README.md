@@ -145,7 +145,7 @@ import:
 Apply a lens grain effect to the scene.
 <p>The amount can be set by the GRAIN_AMOUNT define [0.0~1.0]</p>
 <p>For example:</p>
-[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/grain.png); width: 100%; height: 100px; background-position: center center;"></div> ](http://tangrams.github.io/tangram-sandbox/tangram.html?styles/grain#10.97291/40.7461/-74.0931)
+<a href="http://tangrams.github.io/tangram-sandbox/tangram.html?styles/grain#10.97291/40.7461/-74.0931"><div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/grain.png); width: 100%; height: 100px; background-position: center center;"></div></a>
 
 This provides the following blocks:
 
