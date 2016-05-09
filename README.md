@@ -997,7 +997,7 @@ import:
 
 ### [LINES](https://github.com/tangrams/blocks/tree/gh-pages/lines)
 
-#### [lines-dash](https://github.com/tangrams/blocks/blob/gh-pages/lines/chevron.yaml)
+#### [lines-chevron](https://github.com/tangrams/blocks/blob/gh-pages/lines/chevron.yaml)
 
 This provides the following blocks:
 
