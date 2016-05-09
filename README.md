@@ -80,6 +80,8 @@ styles:
   - [Space-Uz](https://github.com/tangrams/blocks/tree/gh-pages/space/uz.yaml)
 
 - [Lines](https://github.com/tangrams/blocks/tree/gh-pages/lines)
+  - [Lines-Dash](https://github.com/tangrams/blocks/tree/gh-pages/lines/dash.yaml)
+
   - [Lines-Dots](https://github.com/tangrams/blocks/tree/gh-pages/lines/dots.yaml)
 
   - [Lines-Outline](https://github.com/tangrams/blocks/tree/gh-pages/lines/outline.yaml)
@@ -994,6 +996,47 @@ import:
 
 
 ### [LINES](https://github.com/tangrams/blocks/tree/gh-pages/lines)
+
+#### [lines-dash](https://github.com/tangrams/blocks/blob/gh-pages/lines/chevron.yaml)
+
+This provides the following blocks:
+
+- **color**:
+
+```glsl
+color = mix(color,
+            vec4(CHEVRON_COLOR, CHEVRON_ALPHA),
+            step(.5,fract((v_texcoord.y+abs(v_texcoord.x-.5)) * CHEVRON_SCALE)*CHEVRON_SIZE));
+```
+
+
+
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
+ - **CHEVRON_SIZE**: ```1.0```
+ - **CHEVRON_COLOR**: ```vec3(1., 0., 0.)```
+ - **CHEVRON_ALPHA**: ```1.0```
+ - **CHEVRON_SCALE**: ```1.0```
+
+
+Import it using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/chevron.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/chevron-full.yaml
+```
+
+
+
 
 #### [lines-dash](https://github.com/tangrams/blocks/blob/gh-pages/lines/dash.yaml)
 
