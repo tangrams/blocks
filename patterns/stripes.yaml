@@ -1,12 +1,16 @@
 # Patricio Gonzalez Vivo - 2015
 
-import: ../functions/aastep.yaml
+import: 
+    - ../functions/aastep.yaml
+    - ../geometry/matrices.yaml
+
 styles:
     patterns-stripes:
         mix: functions-aastep
         shaders:
             defines:
                 PI: 3.14159265358979323846
+                STRIPE_ANGLE: 0.78539816339
             blocks:
                 global: |
                     // Return a distance function of stripes
@@ -16,7 +20,13 @@ styles:
                     
                     // Adjustable width stripes
                     float stripes (vec2 st, float width) {
-                        return aastep(width,stripesDF(st));
+                        return aastep(width, stripesDF(st));
+                    }
+
+                    // Adjustable Angle
+                    float stripes (vec2 st, float width, float angle) {
+                        st = rotate2D(angle)*st;
+                        return stripes(st, width);
                     }
                     
                     // Faster optimisation of diagonal stripes

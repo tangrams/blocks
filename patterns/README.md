@@ -64,10 +64,12 @@ This provides the following blocks:
 - **global**:
  + `float stripesDF (vec2 st) `
  + `float stripes (vec2 st, float width) `
+ + `float stripes (vec2 st, float width, float angle) `
  + `float diagonalStripes (vec2 st) `
 
 This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **PI**: ```3.14159265359```
+ - **STRIPE_ANGLE**: ```0.78539816339```
 
 
 Import it using:
