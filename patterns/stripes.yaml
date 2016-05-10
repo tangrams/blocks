@@ -6,7 +6,7 @@ import:
 
 styles:
     patterns-stripes:
-        mix: functions-aastep
+        mix: [functions-aastep, geometry-matrices]
         shaders:
             defines:
                 PI: 3.14159265358979323846
@@ -25,7 +25,7 @@ styles:
 
                     // Adjustable Angle
                     float stripes (vec2 st, float width, float angle) {
-                        st = rotate2D(angle)*st;
+                        st = rotate2D(angle) * st;
                         return stripes(st, width);
                     }
                     
