@@ -26,7 +26,7 @@ styles:
                     // Adjustable Angle
                     float stripes (vec2 st, float width, float angle) {
                         st = rotate2D(angle) * st;
-                        return stripes(st*5.5152, width);
+                        return stripes(st, width);
                     }
                     
                     // Faster optimisation of diagonal stripes
