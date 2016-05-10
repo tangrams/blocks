@@ -1,6 +1,7 @@
 # Patricio Gonzalez Vivo - 2015
 
 import: stripes.yaml
+
 styles:
     patterns-zigzag:
         mix: patterns-stripes

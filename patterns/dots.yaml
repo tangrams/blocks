@@ -5,6 +5,7 @@ import:
     - ../tiling/brick.yaml
     - ../space/tile.yaml
     - ../shapes/circle.yaml
+    
 styles:
     patterns-dots:
         mix: [space-tile, tiling-brick, shapes-circle]
