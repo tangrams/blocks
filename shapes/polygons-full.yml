@@ -18,7 +18,8 @@ styles:
                     \   return step(threshold, value);\n    #endif\n}"
             extensions: OES_standard_derivatives
     shapes-polygons:
-        mix: functions-aastep
+        mix:
+        - functions-aastep
         shaders:
             blocks:
                 global: "// get distance field of a polygon in the center\n// where\

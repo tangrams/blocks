@@ -35,7 +35,8 @@ styles:
                 SHAPE_SIZE: 1.0
         texcoord: true
     shapes-polygons:
-        mix: functions-aastep
+        mix:
+        - functions-aastep
         shaders:
             blocks:
                 global: "// get distance field of a polygon in the center\n// where\
