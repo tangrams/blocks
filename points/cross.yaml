@@ -1,0 +1,17 @@
+# Patricio Gonzalez Vivo - 2016
+# From Chapter about shapes at http://thebookofshaders.com/07/
+
+import:
+    - ../shapes/cross.yaml
+
+styles:
+  points-cross:
+        base: points
+        mix: [shapes-cross]
+        texcoord: true
+        shaders:
+            defines:
+                CROSS_ALPHA: .75
+            blocks:
+                color: |
+                    color.a = clamp(cross(v_texcoord.xy,vec2(2.,.5)),0.,1.)*CROSS_ALPHA;

@@ -1,0 +1,25 @@
+# Patricio Gonzalez Vivo - 2016
+# From Chapter about shapes at http://thebookofshaders.com/07/
+
+import:
+    - ../shapes/polygons.yaml
+
+styles:
+    points-shape:
+        base: points
+        mix: [shapes-polygons]
+        texcoord: true
+        shaders:
+            defines:
+                SHAPE_SIDES: 3
+                SHAPE_SIZE: 1.
+                SHAPE_BORDER_WIDTH: 0.15
+                SHAPE_BORDER_COLOR: vec3(1.)
+                SHAPE_ALPHA: 1.
+            blocks:
+                color: |
+                    float df = shapeDF(vec2(v_texcoord.x,1.-v_texcoord.y),SHAPE_SIDES);
+                    color.rgb = mix(color.rgb,
+                                    SHAPE_BORDER_COLOR,
+                                    aastep(SHAPE_SIZE*.5-SHAPE_BORDER_WIDTH,df));
+                    color.a = (1.-aastep(SHAPE_SIZE*.5,df))*SHAPE_ALPHA;

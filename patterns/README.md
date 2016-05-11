@@ -69,7 +69,7 @@ This provides the following blocks:
 
 This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **PI**: ```3.14159265359```
- - **STRIPE_ANGLE**: ```0.78539816339```
+ - **STRIPE_SCALE**: ```28.296```
 
 
 Import it using:

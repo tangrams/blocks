@@ -1,6 +1,7 @@
 # Patricio Gonzalez Vivo - 2015
 
 import: ../generative/fbm.yaml
+
 styles:
     filter-grain:
         mix: generative-fbm
