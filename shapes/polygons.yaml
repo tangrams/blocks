@@ -2,6 +2,7 @@
 # From Chapter about Shapes at http://thebookofshaders.com/07/
 
 import: ../functions/aastep.yaml
+
 styles:
     shapes-polygons:
         mix: functions-aastep
