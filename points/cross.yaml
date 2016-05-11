@@ -5,7 +5,7 @@ import:
     - ../shapes/cross.yaml
 
 styles:
-  points-cross:
+    points-cross:
         base: points
         mix: [shapes-cross]
         texcoord: true

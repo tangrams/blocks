@@ -5,7 +5,7 @@ import: ../functions/aastep.yaml
 
 styles:
     shapes-polygons:
-        mix: functions-aastep
+        mix: [functions-aastep]
         shaders:
             defines:
                 PI: 3.14159265358979323846
