@@ -18,7 +18,7 @@ styles:
                 SHAPE_ALPHA: 1.
             blocks:
                 color: |
-                    float df = shapeDF(vec2(v_texcoord.x,1.-v_texcoord.y),SHAPE_SIDES);
+                    float df = shapeDF(vec2(v_texcoord.x,1.-v_texcoord.y),int(SHAPE_SIDES));
                     color.rgb = mix(color.rgb,
                                     SHAPE_BORDER_COLOR,
                                     aastep(SHAPE_SIZE*.5-SHAPE_BORDER_WIDTH,df));
