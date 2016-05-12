@@ -1,0 +1,21 @@
+# Patricio Gonzalez Vivo - 2016
+
+import:
+    - ../space/tile.yaml
+    - ../patterns/stripes.yaml
+
+styles:
+    elevation-stripes:
+        base: polygons
+        mix: [patterns-stripes, space-tile]
+        blend: inlay
+        lighting: false
+        raster: custom
+        shaders: 
+            blocks:
+                color: |
+                    float stripes_pct = clamp(u_map_position.z/13.,0.0,1.0);
+                    stripes_pct = mix( (1.-stripes_pct),
+                                dot((sampleRaster(0).rgb-.5)*2., 
+                                vec3(-0.600,-0.420,0.600)), stripes_pct);
+                    color.a = stripes(getTileCoords()*2., stripes_pct*1.6, PI*0.25)*.5;

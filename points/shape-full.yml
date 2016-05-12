@@ -23,7 +23,7 @@ styles:
         - shapes-polygons
         shaders:
             blocks:
-                color: "float df = shapeDF(vec2(v_texcoord.x,1.-v_texcoord.y),SHAPE_SIDES);\n\
+                color: "float df = shapeDF(vec2(v_texcoord.x,1.-v_texcoord.y),int(SHAPE_SIDES));\n\
                     color.rgb = mix(color.rgb,\n                SHAPE_BORDER_COLOR,\n\
                     \                aastep(SHAPE_SIZE*.5-SHAPE_BORDER_WIDTH,df));\n\
                     color.a = (1.-aastep(SHAPE_SIZE*.5,df))*SHAPE_ALPHA;"
