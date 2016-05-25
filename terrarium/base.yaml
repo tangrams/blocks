@@ -26,7 +26,7 @@ styles:
                     #endif
 
                     float getHeight() {
-                        vec3 color = sampleRaster(TERRARIUM_TEXTURE_INDEX).rgb;
+                        vec3 color = sampleRaster(int(TERRARIUM_TEXTURE_INDEX)).rgb;
                         if (color.rg != vec2(0.0)) {
                             return -32768.+color.g*65025.+color.b*255.;
                         } else {

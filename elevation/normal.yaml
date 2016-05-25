@@ -8,4 +8,4 @@ styles:
                 NORMAL_TEXTURE_INDEX: 0
             blocks:
                 normal: |
-                    normal = (sampleRaster(NORMAL_TEXTURE_INDEX).rgb-.5)*2.;
+                    normal = (sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2.;
