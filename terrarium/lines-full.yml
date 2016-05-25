@@ -80,7 +80,8 @@ styles:
                 TERRARIUM_ZOFFSET: 0.0
     terrarium-lines:
         base: lines
-        mix: terrarium-base
+        mix:
+        - terrarium-base
         shaders:
             defines:
                 TERRARIUM_ZOFFSET: 0.2
