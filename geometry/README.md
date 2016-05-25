@@ -201,7 +201,11 @@ This provides the following blocks:
 ```glsl
 float t = u_time*0.1; 
 float z = clamp(smoothstep(TILT_IN/TILT_MAX_ZOOM, TILT_OUT/TILT_MAX_ZOOM, max(u_map_position.z/TILT_MAX_ZOOM,0.)*0.9), 0., 1.);
+#ifdef TILT_Z
 position.xyz = rotateX3D(z*HALF_PI) * rotateZ3D(sin(t)*PI*z) * position.xyz;
+#else
+position.xyz = rotateX3D(z*HALF_PI) * rotateZ3D(sin(t)*PI*z) * position.xyz;
+#endif
 ```
 
 
@@ -210,6 +214,7 @@ This block use the following **defines** with the following defaults. Remember y
  - **TILT_MAX_ZOOM**: ```20.0```
  - **TILT_IN**: ```15.0```
  - **TILT_OUT**: ```20.0```
+ - **TILT_Z**: ```True```
 
 
 Import it using:
