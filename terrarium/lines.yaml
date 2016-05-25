@@ -1,9 +1,9 @@
 # Patricio Gonzalez Vivo (@patriciogv) - 2016
 
-import:
-    - base.yaml
+import: 
+    -base.yaml
 
-styles
+styles:
     terrarium-lines:
         base: lines
         mix: [terrarium-base]
