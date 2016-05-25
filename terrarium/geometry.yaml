@@ -22,21 +22,13 @@ styles:
                     #endif
 
                     float getHeight() {
-                        vec3 color = sampleRaster(1).rgb;
+                        vec3 color = sampleRaster(int(TERRARIUM_TEXTURE_INDEX)).rgb;
                         if (color.rg != vec2(0.0)) {
                             return -32768.+color.g*65025.+color.b*255.;
                         } else {
                             return -1.0;
                         }
                     }
-
-                    void extrudeTerrarium (inout vec4 position) {
-                        vec2 pos = position.xy;
-                        float height = getHeight();
-                        if (height != -1.0) {
-                            position.z += height;
-                        }
-                    }
                 position: |
                     position.z += TERRARIUM_ZOFFSET*u_meters_per_pixel;
-                    extrudeTerrarium(position);
+                    position.z += getHeight();
