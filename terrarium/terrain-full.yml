@@ -1,5 +1,15 @@
 import: matrices.yaml
+sources:
+    normals-elevation:
+        max_zoom: 15
+        type: Raster
+        url: https://s3.amazonaws.com/elevation-tiles-prod/normal/{z}/{x}/{y}.png
 styles:
+    elevation-normals:
+        raster: custom
+        shaders:
+            blocks:
+                normal: normal = (sampleRaster(0).rgb-.5)*2.;
     geometry-matrices:
         shaders:
             blocks:
@@ -72,5 +82,13 @@ styles:
                 position: 'position.z += TERRARIUM_ZOFFSET*u_meters_per_pixel;
 
                     extrudeTerrarium(position);'
+            defines:
+                TERRARIUM_ZOFFSET: 0.0
+    terrarium-terrain:
+        base: polygons
+        mix:
+        - terrarium-base
+        - elevation-normals
+        shaders:
             defines:
                 TERRARIUM_ZOFFSET: 0.0

@@ -57,6 +57,8 @@ styles:
   - [Functions-Map](https://github.com/tangrams/blocks/tree/gh-pages/functions/map.yaml)
 
 - [Elevation](https://github.com/tangrams/blocks/tree/gh-pages/elevation)
+  - [Elevation-Ramp](https://github.com/tangrams/blocks/tree/gh-pages/elevation/ramp.yaml)
+
   - [Elevation-Stripes](https://github.com/tangrams/blocks/tree/gh-pages/elevation/stripes.yaml)
 
 - [Patterns](https://github.com/tangrams/blocks/tree/gh-pages/patterns)
@@ -92,17 +94,15 @@ styles:
   - [Lines-Stripes](https://github.com/tangrams/blocks/tree/gh-pages/lines/stripes.yaml)
 
 - [Geometry](https://github.com/tangrams/blocks/tree/gh-pages/geometry)
-  - [Geometry-Normal](https://github.com/tangrams/blocks/tree/gh-pages/geometry/normal.yaml)
+  - [Geometry-Projections](https://github.com/tangrams/blocks/tree/gh-pages/geometry/projections.yaml)
 
   - [Geometry-Tilt](https://github.com/tangrams/blocks/tree/gh-pages/geometry/tilt.yaml)
-
-  - [Geometry-Terrarium](https://github.com/tangrams/blocks/tree/gh-pages/geometry/terrarium.yaml)
-
-  - [Geometry-Projections](https://github.com/tangrams/blocks/tree/gh-pages/geometry/projections.yaml)
 
   - [Geometry-Matrices](https://github.com/tangrams/blocks/tree/gh-pages/geometry/matrices.yaml)
 
   - [Geometry-Dynamic-Width](https://github.com/tangrams/blocks/tree/gh-pages/geometry/dynamic-width.yaml)
+
+  - [Geometry-Normal](https://github.com/tangrams/blocks/tree/gh-pages/geometry/normal.yaml)
 
 - [Texture](https://github.com/tangrams/blocks/tree/gh-pages/texture)
   - [Texture-Zoom-Fade](https://github.com/tangrams/blocks/tree/gh-pages/texture/zoom-fade.yaml)
@@ -117,6 +117,11 @@ styles:
   - [Filter-Hatch](https://github.com/tangrams/blocks/tree/gh-pages/filter/hatch.yaml)
 
 - [Fx](https://github.com/tangrams/blocks/tree/gh-pages/fx)
+- [Terrarium](https://github.com/tangrams/blocks/tree/gh-pages/terrarium)
+  - [Terrarium-Terrain](https://github.com/tangrams/blocks/tree/gh-pages/terrarium/terrain.yaml)
+
+  - [Terrarium-Lines](https://github.com/tangrams/blocks/tree/gh-pages/terrarium/lines.yaml)
+
 - [Points](https://github.com/tangrams/blocks/tree/gh-pages/points)
   - [Points-Shape](https://github.com/tangrams/blocks/tree/gh-pages/points/shape.yaml)
 
@@ -241,6 +246,38 @@ import:
 
 
 ### [ELEVATION](https://github.com/tangrams/blocks/tree/gh-pages/elevation)
+
+#### [elevation-normals](https://github.com/tangrams/blocks/blob/gh-pages/elevation/normals.yaml)
+
+This provides the following blocks:
+
+- **normal**:
+
+```glsl
+normal = (sampleRaster(0).rgb-.5)*2.;
+```
+
+
+
+Import it using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/elevation/normals.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/elevation/normals-full.yaml
+```
+
+
+
 
 #### [elevation-ramp](https://github.com/tangrams/blocks/blob/gh-pages/elevation/ramp.yaml)
 
@@ -697,7 +734,7 @@ import:
 #### [fx-water](https://github.com/tangrams/blocks/blob/gh-pages/fx/water.yaml)
 
 Water effect, made by altering the normal map of a surface and applying a sky spherical map to the surface. The result looks like moving water. <p>See sandbox example:</p>
-[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/sandbox.png); width: 100%; height: 100px; background-position: center center;"></div> ](https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/sandbox.yaml)
+[ <div style="background-image: url(https://tangrams.github.io/tangram-sandbox/styles/sandbox.png); width: 100%; height: 100px; background-position: center center;"></div> ](https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/sandbox.yaml)
 This provides the following blocks:
 
 - **normal**:
@@ -1080,46 +1117,6 @@ If you want to import this block with dependences included try this:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/geometry/projections-full.yaml
-```
-
-
-
-
-#### [geometry-terrarium](https://github.com/tangrams/blocks/blob/gh-pages/geometry/terrarium.yaml)
-
-This provides the following blocks:
-
-- **position**:
-
-```glsl
-position.z += ZOFFSET*u_meters_per_pixel;
-extrudeTerrain(position);
-```
-
-
-- **global**:
- + `float getHeight() `
- + `void extrudeTerrain (inout vec4 position) `
-
-This block use the following **defines** with the following defaults. Remember you can use or tweak.
- - **ZOFFSET**: ```0.0```
-
-
-Import it using:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/geometry/terrarium.yaml
-```
-
-
-
-
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/geometry/terrarium-full.yaml
 ```
 
 
@@ -1938,6 +1935,106 @@ If you want to import this block with dependences included try this:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/space/uz-full.yaml
+```
+
+
+
+<hr>
+
+
+### [TERRARIUM](https://github.com/tangrams/blocks/tree/gh-pages/terrarium)
+
+#### [terrarium-base](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/base.yaml)
+
+This provides the following blocks:
+
+- **position**:
+
+```glsl
+position.z += TERRARIUM_ZOFFSET*u_meters_per_pixel;
+extrudeTerrarium(position);
+```
+
+
+- **global**:
+ + `float getHeight() `
+ + `void extrudeTerrarium (inout vec4 position) `
+
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
+ - **TERRARIUM_ZOFFSET**: ```0.0```
+
+
+Import it using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/terrarium/base.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/terrarium/base-full.yaml
+```
+
+
+
+
+#### [terrarium-lines](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/lines.yaml)
+
+
+
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
+ - **TERRARIUM_ZOFFSET**: ```0.2```
+
+
+Import it using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/terrarium/lines.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/terrarium/lines-full.yaml
+```
+
+
+
+
+#### [terrarium-terrain](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/terrain.yaml)
+
+
+
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
+ - **TERRARIUM_ZOFFSET**: ```0.0```
+
+
+Import it using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/terrarium/terrain.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/terrarium/terrain-full.yaml
 ```
 
 
