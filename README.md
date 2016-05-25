@@ -118,6 +118,8 @@ styles:
 
 - [Fx](https://github.com/tangrams/blocks/tree/gh-pages/fx)
 - [Terrarium](https://github.com/tangrams/blocks/tree/gh-pages/terrarium)
+  - [Terrarium-Geometry](https://github.com/tangrams/blocks/tree/gh-pages/terrarium/geometry.yaml)
+
   - [Terrarium-Terrain](https://github.com/tangrams/blocks/tree/gh-pages/terrarium/terrain.yaml)
 
   - [Terrarium-Lines](https://github.com/tangrams/blocks/tree/gh-pages/terrarium/lines.yaml)
@@ -1961,6 +1963,30 @@ import:
 
 #### [terrarium-base](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/base.yaml)
 
+
+
+Import it using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/terrarium/base.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/terrarium/base-full.yaml
+```
+
+
+
+
+#### [terrarium-geometry](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/geometry.yaml)
+
 This provides the following blocks:
 
 - **position**:
@@ -1984,7 +2010,7 @@ Import it using:
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/terrarium/base.yaml
+    - https://tangrams.github.io/blocks/terrarium/geometry.yaml
 ```
 
 
@@ -1994,7 +2020,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/terrarium/base-full.yaml
+    - https://tangrams.github.io/blocks/terrarium/geometry-full.yaml
 ```
 
 
@@ -2030,10 +2056,6 @@ import:
 
 #### [terrarium-terrain](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/terrain.yaml)
 
-
-
-This block use the following **defines** with the following defaults. Remember you can use or tweak.
- - **TERRARIUM_ZOFFSET**: ```0.0```
 
 
 Import it using:

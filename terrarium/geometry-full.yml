@@ -1,0 +1,29 @@
+styles:
+    terrarium-geometry:
+        raster: custom
+        shaders:
+            blocks:
+                global: "#ifdef TANGRAM_VERTEX_SHADER\nuniform sampler2D u_rasters[TANGRAM_NUM_RASTER_SOURCES];\n\
+                    uniform vec2 u_raster_sizes[TANGRAM_NUM_RASTER_SOURCES];\nuniform\
+                    \ vec3 u_raster_offsets[TANGRAM_NUM_RASTER_SOURCES];\n#define\
+                    \ adjustRasterUV(raster_index, uv) ((uv) * u_raster_offsets[raster_index].z\
+                    \ + u_raster_offsets[raster_index].xy)\n#define currentRasterUV(raster_index)\
+                    \ (adjustRasterUV(raster_index, v_modelpos_base_zoom.xy))\n#define\
+                    \ currentRasterPixel(raster_index) (currentRasterUV(raster_index)\
+                    \ * rasterPixelSize(raster_index))\n#define sampleRaster(raster_index)\
+                    \ (texture2D(u_rasters[raster_index], currentRasterUV(raster_index)))\n\
+                    #define sampleRasterAtPixel(raster_index, pixel) (texture2D(u_rasters[raster_index],\
+                    \ adjustRasterUV(raster_index, (pixel) / rasterPixelSize(raster_index))))\n\
+                    #define rasterPixelSize(raster_index) (u_raster_sizes[raster_index])\n\
+                    #endif\n\nfloat getHeight() {\n    vec3 color = sampleRaster(1).rgb;\n\
+                    \    if (color.rg != vec2(0.0)) {\n        return -32768.+color.g*65025.+color.b*255.;\n\
+                    \    } else {\n        return -1.0;\n    }\n}\n\nvoid extrudeTerrarium\
+                    \ (inout vec4 position) {\n    vec2 pos = position.xy;\n    float\
+                    \ height = getHeight();\n    if (height != -1.0) {\n        position.z\
+                    \ += height;\n    }\n}\n"
+                position: 'position.z += TERRARIUM_ZOFFSET*u_meters_per_pixel;
+
+                    extrudeTerrarium(position);'
+            defines:
+                TERRARIUM_TEXTURE_INDEX: 1
+                TERRARIUM_ZOFFSET: 0.0
