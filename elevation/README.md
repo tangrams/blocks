@@ -1,5 +1,37 @@
 
 
+#### [elevation-normals](https://github.com/tangrams/blocks/blob/gh-pages/elevation/normals.yaml)
+
+This provides the following blocks:
+
+- **normal**:
+
+```glsl
+normal = (sampleRaster(0).rgb-.5)*2.;
+```
+
+
+
+Import it using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/elevation/normals.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/elevation/normals-full.yaml
+```
+
+
+
+
 #### [elevation-ramp](https://github.com/tangrams/blocks/blob/gh-pages/elevation/ramp.yaml)
 
 This provides the following blocks:

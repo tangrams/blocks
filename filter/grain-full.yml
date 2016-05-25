@@ -57,14 +57,14 @@ styles:
                 global: "// 1D Value Noise for 1, 2 and 3 dimentions\n// ================================\n\
                     float noise (in float x) {\n    float i = floor(x);\n    float\
                     \ f = fract(x);\n    float u = f * f * (3.0 - 2.0 * f);\n    return\
-                    \ mix(random(i), random(i + 1.0), u);\n}\nfloat noise (vec2 xy)\
-                    \ {\n    vec2 i = floor(xy);\n    vec2 f = fract(xy);\n    float\
-                    \ a = random(i);\n    float b = random(i + vec2(1.0, 0.0));\n\
+                    \ mix(random(i), random(i + 1.0), u);\n}\n\nfloat noise (vec2\
+                    \ xy) {\n    vec2 i = floor(xy);\n    vec2 f = fract(xy);\n  \
+                    \  float a = random(i);\n    float b = random(i + vec2(1.0, 0.0));\n\
                     \    float c = random(i + vec2(0.0, 1.0));\n    float d = random(i\
                     \ + vec2(1.0, 1.0));\n    vec2 u = f * f * (3.0 - 2.0 * f);\n\
                     \    return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d\
-                    \ - b) * u.x * u.y;\n}\nfloat noise (vec3 xyz) {\n    const vec3\
-                    \ step = vec3(110.0, 241.0, 171.0);\n    vec3 i = floor(xyz);\n\
+                    \ - b) * u.x * u.y;\n}\n\nfloat noise (vec3 xyz) {\n    const\
+                    \ vec3 step = vec3(110.0, 241.0, 171.0);\n    vec3 i = floor(xyz);\n\
                     \    vec3 f = fract(xyz);\n    float n = dot(i, step);\n    vec3\
                     \ u = f * f * (3.0 - 2.0 * f);\n    return mix( mix(mix(random(n\
                     \ + dot(step, vec3(0,0,0))),\n                        random(n\
