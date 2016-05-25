@@ -1,0 +1,14 @@
+# Patricio Gonzalez Vivo (@patriciogv) - 2016
+
+# import:
+    # - ../source-elevation.yaml
+
+styles:
+    elevation-normal:
+        raster: custom
+        shaders:
+            defines:
+                NORMAL_TEXTURE_INDEX: 0
+            blocks:
+                normal: |
+                    normal = (sampleRaster(TEXTURE_INDEX_NORMAL).rgb-.5)*2.;

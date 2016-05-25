@@ -9,6 +9,7 @@ styles:
         mix: geometry-tilt
         shaders:
             defines:
+                TERRARIUM_TEXTURE_INDEX: 1
                 TERRARIUM_ZOFFSET: 0.
             blocks:
                 global: |

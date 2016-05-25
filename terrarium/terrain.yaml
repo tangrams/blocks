@@ -1,13 +1,13 @@
 # Patricio Gonzalez Vivo (@patriciogv) - 2016
 
 import:
-    - ../elevation/normals.yaml
-    - base.yaml
+    - ../elevation/normal.yaml
+    # - base.yaml
 
 styles:
     terrarium-terrain:
         base: polygons
-        mix: [terrarium-base, elevation-normals]
+        mix: [terrarium-base, elevation-normal]
         shaders:
             defines:
                 TERRARIUM_ZOFFSET: 0.

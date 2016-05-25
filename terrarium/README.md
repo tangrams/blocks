@@ -18,6 +18,7 @@ extrudeTerrarium(position);
 
 This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **TERRARIUM_ZOFFSET**: ```0.0```
+ - **TERRARIUM_TEXTURE_INDEX**: ```1```
 
 
 Import it using:

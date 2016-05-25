@@ -1,22 +1,26 @@
 
 
-#### [elevation-normals](https://github.com/tangrams/blocks/blob/gh-pages/elevation/normals.yaml)
+#### [elevation-normal](https://github.com/tangrams/blocks/blob/gh-pages/elevation/normal.yaml)
 
 This provides the following blocks:
 
 - **normal**:
 
 ```glsl
-normal = (sampleRaster(0).rgb-.5)*2.;
+normal = (sampleRaster(TEXTURE_INDEX_NORMAL).rgb-.5)*2.;
 ```
 
+
+
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
+ - **NORMAL_TEXTURE_INDEX**: ```0```
 
 
 Import it using:
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/elevation/normals.yaml
+    - https://tangrams.github.io/blocks/elevation/normal.yaml
 ```
 
 
@@ -26,7 +30,7 @@ If you want to import this block with dependences included try this:
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/elevation/normals-full.yaml
+    - https://tangrams.github.io/blocks/elevation/normal-full.yaml
 ```
 
 

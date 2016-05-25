@@ -73,4 +73,5 @@ styles:
 
                     extrudeTerrarium(position);'
             defines:
+                TERRARIUM_TEXTURE_INDEX: 1
                 TERRARIUM_ZOFFSET: 0.0
