@@ -8,6 +8,3 @@ styles:
     terrarium-terrain:
         base: polygons
         mix: [terrarium-base, elevation-normal]
-        shaders:
-            defines:
-                TERRARIUM_ZOFFSET: 0.
