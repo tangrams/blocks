@@ -1,5 +1,4 @@
-include:
-- ../generative/noise.yaml
+include: ../generative/noise.yaml
 styles:
     fx-water:
         animated: true

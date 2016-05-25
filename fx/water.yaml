@@ -1,7 +1,6 @@
 #   Patricio Gonzalez Vivo - 2016
 
-include:
-    - ../generative/noise.yaml
+include: ../generative/noise.yaml
 
 styles:
     fx-water:
