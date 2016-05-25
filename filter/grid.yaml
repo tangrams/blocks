@@ -1,19 +1,16 @@
 # Patricio Gonzalez Vivo - 2015
 
-import: 
-    - ../patterns/grid.yaml
+import: ../patterns/grid.yaml
 
 styles:
-    filter-grain:
-        mix: generative-fbm
+    filter-grid:
+        mix: [patterns-grid]
         doc:
             description: |
                 Apply a grid filter to they syle
                 <p>The amount can be set by the GRID_AMOUNT define [0.0~1.0]</p>
-                <p>Then you should choose between the modes: `GRID_ADD`, `GRID_SUBSTRACT` and `GRID_MULTIPLY` </p>
-                <p>For example:</p>
-                <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/grain.yaml"><div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/grain.png); width: 100%; height: 100px; background-position: center center;"></div></a>
-                shaders:
+                <p>Then you should choose between the modes: ```GRID_ADD```, ```GRID_SUBSTRACT``` and ```GRID_MULTIPLY```</p>
+        shaders:
             defines:
                 GRID_AMOUNT: .2
                 GRID_ADD: true
