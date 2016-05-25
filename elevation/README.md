@@ -52,13 +52,20 @@ This provides the following blocks:
 - **color**:
 
 ```glsl
-float stripes_pct = clamp(u_map_position.z/13.,0.0,1.0);
-stripes_pct = mix( (1.-stripes_pct),
-            dot((sampleRaster(0).rgb-.5)*2., 
-            vec3(-0.600,-0.420,0.600)), stripes_pct);
+float stripes_pct = clamp(smoothstep(STRIPES_IN/STRIPES_MAX_ZOOM, STRIPES_OUT/STRIPES_MAX_ZOOM, max(u_map_position.z/STRIPES_MAX_ZOOM,0.)*0.9), 0., 1.);
+stripes_pct = mix(  (1.-stripes_pct),
+                    dot((sampleRaster(0).rgb-.5)*2., 
+                        vec3(-0.600,-0.420,0.600)), 
+                    stripes_pct);
 color.a = stripes(getTileCoords()*2., stripes_pct*1.6, PI*0.25)*.5;
 ```
 
+
+
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
+ - **STRIPES_IN**: ```0.0```
+ - **STRIPES_OUT**: ```13.0```
+ - **STRIPES_MAX_ZOOM**: ```13.0```
 
 
 Import it using:

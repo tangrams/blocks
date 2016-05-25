@@ -1,5 +1,9 @@
 # Patricio Gonzalez Vivo - 2016
 
+# 
+#   Requires a source of type 
+#   https://s3.amazonaws.com/elevation-tiles-prod/normal/{z}/{x}/{y}.png
+
 styles:
     elevation-ramp:
         raster: custom

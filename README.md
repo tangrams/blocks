@@ -91,18 +91,6 @@ styles:
 
   - [Lines-Stripes](https://github.com/tangrams/blocks/tree/gh-pages/lines/stripes.yaml)
 
-- [Texture](https://github.com/tangrams/blocks/tree/gh-pages/texture)
-  - [Texture-Zoom-Fade](https://github.com/tangrams/blocks/tree/gh-pages/texture/zoom-fade.yaml)
-
-- [Filter](https://github.com/tangrams/blocks/tree/gh-pages/filter)
-  - [Filter-Tv](https://github.com/tangrams/blocks/tree/gh-pages/filter/tv.yaml)
-
-  - [Filter-Height](https://github.com/tangrams/blocks/tree/gh-pages/filter/height.yaml)
-
-  - [Filter-Lut](https://github.com/tangrams/blocks/tree/gh-pages/filter/lut.yaml)
-
-  - [Filter-Hatch](https://github.com/tangrams/blocks/tree/gh-pages/filter/hatch.yaml)
-
 - [Geometry](https://github.com/tangrams/blocks/tree/gh-pages/geometry)
   - [Geometry-Normal](https://github.com/tangrams/blocks/tree/gh-pages/geometry/normal.yaml)
 
@@ -116,6 +104,19 @@ styles:
 
   - [Geometry-Dynamic-Width](https://github.com/tangrams/blocks/tree/gh-pages/geometry/dynamic-width.yaml)
 
+- [Texture](https://github.com/tangrams/blocks/tree/gh-pages/texture)
+  - [Texture-Zoom-Fade](https://github.com/tangrams/blocks/tree/gh-pages/texture/zoom-fade.yaml)
+
+- [Filter](https://github.com/tangrams/blocks/tree/gh-pages/filter)
+  - [Filter-Tv](https://github.com/tangrams/blocks/tree/gh-pages/filter/tv.yaml)
+
+  - [Filter-Height](https://github.com/tangrams/blocks/tree/gh-pages/filter/height.yaml)
+
+  - [Filter-Lut](https://github.com/tangrams/blocks/tree/gh-pages/filter/lut.yaml)
+
+  - [Filter-Hatch](https://github.com/tangrams/blocks/tree/gh-pages/filter/hatch.yaml)
+
+- [Fx](https://github.com/tangrams/blocks/tree/gh-pages/fx)
 - [Points](https://github.com/tangrams/blocks/tree/gh-pages/points)
   - [Points-Shape](https://github.com/tangrams/blocks/tree/gh-pages/points/shape.yaml)
 
@@ -125,6 +126,8 @@ styles:
   - [Generative-Voronoi](https://github.com/tangrams/blocks/tree/gh-pages/generative/voronoi.yaml)
 
   - [Generative-Noise](https://github.com/tangrams/blocks/tree/gh-pages/generative/noise.yaml)
+
+  - [Generative-Fbm](https://github.com/tangrams/blocks/tree/gh-pages/generative/fbm.yaml)
 
 - [Tiling](https://github.com/tangrams/blocks/tree/gh-pages/tiling)
   - [Tiling-Tile](https://github.com/tangrams/blocks/tree/gh-pages/tiling/tile.yaml)
@@ -291,13 +294,20 @@ This provides the following blocks:
 - **color**:
 
 ```glsl
-float stripes_pct = clamp(u_map_position.z/13.,0.0,1.0);
-stripes_pct = mix( (1.-stripes_pct),
-            dot((sampleRaster(0).rgb-.5)*2., 
-            vec3(-0.600,-0.420,0.600)), stripes_pct);
+float stripes_pct = clamp(smoothstep(STRIPES_IN/STRIPES_MAX_ZOOM, STRIPES_OUT/STRIPES_MAX_ZOOM, max(u_map_position.z/STRIPES_MAX_ZOOM,0.)*0.9), 0., 1.);
+stripes_pct = mix(  (1.-stripes_pct),
+                    dot((sampleRaster(0).rgb-.5)*2., 
+                        vec3(-0.600,-0.420,0.600)), 
+                    stripes_pct);
 color.a = stripes(getTileCoords()*2., stripes_pct*1.6, PI*0.25)*.5;
 ```
 
+
+
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
+ - **STRIPES_IN**: ```0.0```
+ - **STRIPES_OUT**: ```13.0```
+ - **STRIPES_MAX_ZOOM**: ```13.0```
 
 
 Import it using:
@@ -682,7 +692,76 @@ import:
 <hr>
 
 
+### [FX](https://github.com/tangrams/blocks/tree/gh-pages/fx)
+
+#### [fx-water](https://github.com/tangrams/blocks/blob/gh-pages/fx/water.yaml)
+
+This provides the following blocks:
+
+- **normal**:
+
+```glsl
+normal += snoise(vec3(worldPosition().xy*0.08,u_time*.5))*0.02;
+```
+
+
+
+Import it using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/fx/water.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/fx/water-full.yaml
+```
+
+
+
+<hr>
+
+
 ### [GENERATIVE](https://github.com/tangrams/blocks/tree/gh-pages/generative)
+
+#### [generative-caustic](https://github.com/tangrams/blocks/blob/gh-pages/generative/caustics.yaml)
+
+This provides the following blocks:
+
+- **global**:
+ + `vec3 getCaustic (vec2 uv) `
+ + `int n = 0; n < int(CAUSTIC_ITERATIONS); n++) `
+
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
+ - **TAU**: ```6.28318530718```
+ - **CAUSTIC_ITERATIONS**: ```3```
+
+
+Import it using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/generative/caustics.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/generative/caustics-full.yaml
+```
+
+
+
 
 #### [generative-fbm](https://github.com/tangrams/blocks/blob/gh-pages/generative/fbm.yaml)
 
@@ -1136,7 +1215,9 @@ This provides the following blocks:
 - **color**:
 
 ```glsl
-color.a = 1.-step(DASH_SIZE,fract(v_texcoord.y*DASH_SCALE));
+if ( step(DASH_SIZE,fract(v_texcoord.y*DASH_SCALE)) == 0.){
+    discard;
+}
 ```
 
 

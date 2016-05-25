@@ -48,7 +48,9 @@ This provides the following blocks:
 - **color**:
 
 ```glsl
-color.a = 1.-step(DASH_SIZE,fract(v_texcoord.y*DASH_SCALE));
+if ( step(DASH_SIZE,fract(v_texcoord.y*DASH_SCALE)) == 0.){
+    discard;
+}
 ```
 
 

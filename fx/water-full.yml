@@ -1,0 +1,15 @@
+include:
+- ../generative/noise.yaml
+styles:
+    fx-water:
+        animated: true
+        material:
+            ambient: 0.7
+            diffuse:
+                mapping: spheremap
+                texture: ./imgs/sem-sky-0001.jpg
+        mix:
+        - generative-noise
+        shaders:
+            blocks:
+                normal: normal += snoise(vec3(worldPosition().xy*0.08,u_time*.5))*0.02;

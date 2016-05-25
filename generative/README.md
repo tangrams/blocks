@@ -1,5 +1,38 @@
 
 
+#### [generative-caustic](https://github.com/tangrams/blocks/blob/gh-pages/generative/caustics.yaml)
+
+This provides the following blocks:
+
+- **global**:
+ + `vec3 getCaustic (vec2 uv) `
+ + `int n = 0; n < int(CAUSTIC_ITERATIONS); n++) `
+
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
+ - **TAU**: ```6.28318530718```
+ - **CAUSTIC_ITERATIONS**: ```3```
+
+
+Import it using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/generative/caustics.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/generative/caustics-full.yaml
+```
+
+
+
+
 #### [generative-fbm](https://github.com/tangrams/blocks/blob/gh-pages/generative/fbm.yaml)
 
 This provides the following blocks:

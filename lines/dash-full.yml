@@ -1,10 +1,10 @@
 styles:
     lines-dash:
         base: lines
-        blend: overlay
         shaders:
             blocks:
-                color: color.a = 1.-step(DASH_SIZE,fract(v_texcoord.y*DASH_SCALE));
+                color: "if ( step(DASH_SIZE,fract(v_texcoord.y*DASH_SCALE)) == 0.){\n\
+                    \    discard;\n}"
             defines:
                 DASH_SCALE: 0.1
                 DASH_SIZE: 0.5
