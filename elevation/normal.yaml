@@ -18,4 +18,5 @@ styles:
                 NORMAL_TEXTURE_INDEX: 0
             blocks:
                 normal: |
-                    normal = (sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2.;
+                    vec4 normal_elv_raster = sampleRaster(int(NORMAL_TEXTURE_INDEX));
+                    normal = (normal_elv_raster.rgb-.5)*2.;
