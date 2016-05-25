@@ -1,11 +1,15 @@
- # Patricio Gonzalez Vivo - 2016
+# Patricio Gonzalez Vivo (@patriciogv) - 2016
 
- styles:
-    geometry-terrarium:
+import:
+    - ../geometry/tilt.yaml
+
+styles:
+    terrarium-base:
+        mix: [geometry-tilt]
         raster: custom
         shaders:
             defines:
-                ZOFFSET: 0.
+                TERRARIUM_ZOFFSET: 0.
             blocks:
                 global: |
                     #ifdef TANGRAM_VERTEX_SHADER
@@ -35,5 +39,5 @@
                         }
                     }
                 position: |
-                    position.z += ZOFFSET*u_meters_per_pixel;
+                    position.z += TERRARIUM_ZOFFSET*u_meters_per_pixel;
                     extrudeTerrain(position);

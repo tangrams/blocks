@@ -1,6 +1,7 @@
 # Patricio Gonzalez Vivo - 2016
 
 import:
+    - ../source-elevation.yaml
     - ../space/tile.yaml
     - ../patterns/stripes.yaml
 
