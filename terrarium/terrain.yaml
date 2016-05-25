@@ -2,7 +2,7 @@
 
 import:
     - ../elevation/normal.yaml
-    # - base.yaml
+    - base.yaml
 
 styles:
     terrarium-terrain:

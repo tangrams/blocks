@@ -1,8 +1,5 @@
 # Patricio Gonzalez Vivo (@patriciogv) - 2016
 
-# import:
-    # - ../source-elevation.yaml
-
 styles:
     elevation-normal:
         raster: custom

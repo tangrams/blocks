@@ -7,7 +7,7 @@ This provides the following blocks:
 - **normal**:
 
 ```glsl
-normal = (sampleRaster(TEXTURE_INDEX_NORMAL).rgb-.5)*2.;
+normal = (sampleRaster(NORMAL_TEXTURE_INDEX).rgb-.5)*2.;
 ```
 
 
