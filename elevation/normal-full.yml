@@ -1,8 +1,13 @@
 styles:
     elevation-normal:
+        doc:
+            description: "When a raster normalmap tiles source is load like:\n\n```\n\
+                \    normals-elevation:\n        type: Raster\n        url: https://s3.amazonaws.com/elevation-tiles-prod/normal/{z}/{x}/{y}.png\n\
+                \        max_zoom: 15\n```\n\nUse it to apply the normalmap and let\
+                \ the lighting system do the rest\n"
         raster: custom
         shaders:
             blocks:
-                normal: normal = (sampleRaster(NORMAL_TEXTURE_INDEX).rgb-.5)*2.;
+                normal: normal = (sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2.;
             defines:
                 NORMAL_TEXTURE_INDEX: 0

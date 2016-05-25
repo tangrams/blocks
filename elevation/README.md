@@ -2,12 +2,23 @@
 
 #### [elevation-normal](https://github.com/tangrams/blocks/blob/gh-pages/elevation/normal.yaml)
 
+When a raster normalmap tiles source is load like:
+
+```
+    normals-elevation:
+        type: Raster
+        url: https://s3.amazonaws.com/elevation-tiles-prod/normal/{z}/{x}/{y}.png
+        max_zoom: 15
+```
+
+Use it to apply the normalmap and let the lighting system do the rest
+
 This provides the following blocks:
 
 - **normal**:
 
 ```glsl
-normal = (sampleRaster(NORMAL_TEXTURE_INDEX).rgb-.5)*2.;
+normal = (sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2.;
 ```
 
 
