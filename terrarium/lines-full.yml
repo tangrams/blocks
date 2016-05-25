@@ -40,15 +40,14 @@ styles:
             blocks:
                 position: "float t = u_time*0.1; \nfloat z = clamp(smoothstep(TILT_IN/TILT_MAX_ZOOM,\
                     \ TILT_OUT/TILT_MAX_ZOOM, max(u_map_position.z/TILT_MAX_ZOOM,0.)*0.9),\
-                    \ 0., 1.);\n#ifdef TILT_Z\nposition.xyz = rotateX3D(z*HALF_PI)\
+                    \ 0., 1.);\n#ifdef TILT_ROTATE\nposition.xyz = rotateX3D(z*HALF_PI)\
                     \ * rotateZ3D(sin(t)*PI*z) * position.xyz;\n#else\nposition.xyz\
-                    \ = rotateX3D(z*HALF_PI) * rotateZ3D(sin(t)*PI*z) * position.xyz;\n\
-                    #endif"
+                    \ = rotateX3D(z*HALF_PI) * position.xyz;\n#endif"
             defines:
                 TILT_IN: 15.0
                 TILT_MAX_ZOOM: 20.0
                 TILT_OUT: 20.0
-                TILT_Z: true
+                TILT_ROTATE: true
     terrarium-base:
         mix:
         - terrarium-geometry
