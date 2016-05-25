@@ -110,9 +110,11 @@ styles:
 - [Filter](https://github.com/tangrams/blocks/tree/gh-pages/filter)
   - [Filter-Tv](https://github.com/tangrams/blocks/tree/gh-pages/filter/tv.yaml)
 
+  - [Filter-Lut](https://github.com/tangrams/blocks/tree/gh-pages/filter/lut.yaml)
+
   - [Filter-Height](https://github.com/tangrams/blocks/tree/gh-pages/filter/height.yaml)
 
-  - [Filter-Lut](https://github.com/tangrams/blocks/tree/gh-pages/filter/lut.yaml)
+  - [Filter-Grid](https://github.com/tangrams/blocks/tree/gh-pages/filter/grid.yaml)
 
   - [Filter-Hatch](https://github.com/tangrams/blocks/tree/gh-pages/filter/hatch.yaml)
 
@@ -265,7 +267,8 @@ This provides the following blocks:
 - **normal**:
 
 ```glsl
-normal = (sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2.;
+vec4 normal_elv_raster = sampleRaster(int(NORMAL_TEXTURE_INDEX));
+normal = (normal_elv_raster.rgb-.5)*2.;
 ```
 
 
@@ -301,16 +304,7 @@ This provides the following blocks:
 - **color**:
 
 ```glsl
-color = texture2D(u_ramp,vec2((1.-raster.a),.5));
-```
-
-
-- **normal**:
-
-```glsl
-vec4 raster = sampleRaster(0);
-normal = (raster.rgb-.5)*2.;
-
+color = texture2D(u_ramp,vec2((1.-normal_elv_raster.a),.5));
 ```
 
 
@@ -426,6 +420,58 @@ If you want to import this block with dependences included try this:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/filter/grain-full.yaml
+```
+
+
+
+
+#### [filter-grid](https://github.com/tangrams/blocks/blob/gh-pages/filter/grid.yaml)
+
+Apply a grid filter to they syle
+<p>The amount can be set by the GRID_AMOUNT define [0.0~1.0]</p>
+<p>Then you should choose between the modes: ```GRID_ADD```, ```GRID_SUBSTRACT``` and ```GRID_MULTIPLY```</p>
+
+This provides the following blocks:
+
+- **filter**:
+
+```glsl
+#ifdef GRID_ADD
+color.rgb += tileGrid()*GRID_AMOUNT;
+#endif
+#ifdef GRID_SUBSTRACT
+color.rgb -= tileGrid()*GRID_AMOUNT;
+#endif
+#ifdef GRID_MULTIPLY
+color.rgb *= tileGrid()*GRID_AMOUNT;
+#endif
+
+```
+
+
+
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
+ - **GRID_AMOUNT**: ```0.2```
+ - **GRID_SUBSTRACT**: ```False```
+ - **GRID_ADD**: ```True```
+ - **GRID_MULTIPLY**: ```False```
+
+
+Import it using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/filter/grid.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/filter/grid-full.yaml
 ```
 
 
@@ -1991,13 +2037,12 @@ This provides the following blocks:
 
 ```glsl
 position.z += TERRARIUM_ZOFFSET*u_meters_per_pixel;
-extrudeTerrarium(position);
+position.z += getHeight();
 ```
 
 
 - **global**:
  + `float getHeight() `
- + `void extrudeTerrarium (inout vec4 position) `
 
 This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **TERRARIUM_ZOFFSET**: ```0.0```

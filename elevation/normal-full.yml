@@ -8,6 +8,8 @@ styles:
         raster: custom
         shaders:
             blocks:
-                normal: normal = (sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2.;
+                normal: 'vec4 normal_elv_raster = sampleRaster(int(NORMAL_TEXTURE_INDEX));
+
+                    normal = (normal_elv_raster.rgb-.5)*2.;'
             defines:
                 NORMAL_TEXTURE_INDEX: 0

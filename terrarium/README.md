@@ -32,13 +32,12 @@ This provides the following blocks:
 
 ```glsl
 position.z += TERRARIUM_ZOFFSET*u_meters_per_pixel;
-extrudeTerrarium(position);
+position.z += getHeight();
 ```
 
 
 - **global**:
  + `float getHeight() `
- + `void extrudeTerrarium (inout vec4 position) `
 
 This block use the following **defines** with the following defaults. Remember you can use or tweak.
  - **TERRARIUM_ZOFFSET**: ```0.0```

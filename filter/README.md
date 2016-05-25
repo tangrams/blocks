@@ -45,6 +45,58 @@ import:
 
 
 
+#### [filter-grid](https://github.com/tangrams/blocks/blob/gh-pages/filter/grid.yaml)
+
+Apply a grid filter to they syle
+<p>The amount can be set by the GRID_AMOUNT define [0.0~1.0]</p>
+<p>Then you should choose between the modes: ```GRID_ADD```, ```GRID_SUBSTRACT``` and ```GRID_MULTIPLY```</p>
+
+This provides the following blocks:
+
+- **filter**:
+
+```glsl
+#ifdef GRID_ADD
+color.rgb += tileGrid()*GRID_AMOUNT;
+#endif
+#ifdef GRID_SUBSTRACT
+color.rgb -= tileGrid()*GRID_AMOUNT;
+#endif
+#ifdef GRID_MULTIPLY
+color.rgb *= tileGrid()*GRID_AMOUNT;
+#endif
+
+```
+
+
+
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
+ - **GRID_AMOUNT**: ```0.2```
+ - **GRID_SUBSTRACT**: ```False```
+ - **GRID_ADD**: ```True```
+ - **GRID_MULTIPLY**: ```False```
+
+
+Import it using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/filter/grid.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/filter/grid-full.yaml
+```
+
+
+
+
 #### [filter-hatch](https://github.com/tangrams/blocks/blob/gh-pages/filter/hatch.yaml)
 
 Hatching filter based on [Jaume's Sanchez](https://twitter.com/thespite?lang=en) [Cross-hatching GLSL shader](https://www.clicktorelease.com/code/cross-hatching/). 
