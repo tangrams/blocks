@@ -91,18 +91,23 @@ This provides the following blocks:
 ```glsl
 float stripes_pct = clamp(smoothstep(STRIPES_IN/STRIPES_MAX_ZOOM, STRIPES_OUT/STRIPES_MAX_ZOOM, max(u_map_position.z/STRIPES_MAX_ZOOM,0.)*0.9), 0., 1.);
 stripes_pct = mix(  (1.-stripes_pct),
-                    dot((sampleRaster(0).rgb-.5)*2., 
-                        vec3(-0.600,-0.420,0.600)), 
+                    dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2., 
+                        STRIPES_DIR), 
                     stripes_pct);
-color.a = stripes(getTileCoords()*2., stripes_pct*1.6, PI*0.25)*.5;
+color.a = stripes(getTileCoords()*STRIPES_SCALE, stripes_pct*STRIPES_PCT, PI*0.25)*STRIPES_ALPHA;
 ```
 
 
 
 This block use the following **defines** with the following defaults. Remember you can use or tweak.
- - **STRIPES_IN**: ```0.0```
+ - **NORMAL_TEXTURE_INDEX**: ```0```
+ - **STRIPES_SCALE**: ```2.0```
+ - **STRIPES_ALPHA**: ```0.5```
  - **STRIPES_OUT**: ```13.0```
+ - **STRIPES_DIR**: ```vec3(-0.600,-0.420,0.600)```
+ - **STRIPES_PCT**: ```1.6```
  - **STRIPES_MAX_ZOOM**: ```13.0```
+ - **STRIPES_IN**: ```0.0```
 
 
 Import it using:
