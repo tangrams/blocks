@@ -3,7 +3,7 @@ styles:
         base: lines
         shaders:
             blocks:
-                color: "if ( step(DASH_SIZE,fract(v_texcoord.y*DASH_SCALE)) == 0.){\n\
+                filter: "if ( step(DASH_SIZE,fract(v_texcoord.y*DASH_SCALE)) == 0.){\n\
                     \    discard;\n}"
             defines:
                 DASH_SCALE: 0.1

@@ -9,7 +9,7 @@ styles:
                 DASH_SIZE: .5
                 DASH_SCALE: .1
             blocks:
-                color: |
+                filter: |
                     if ( step(DASH_SIZE,fract(v_texcoord.y*DASH_SCALE)) == 0.){
                         discard;
                     }

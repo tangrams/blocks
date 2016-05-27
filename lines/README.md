@@ -45,7 +45,7 @@ import:
 
 This provides the following blocks:
 
-- **color**:
+- **filter**:
 
 ```glsl
 if ( step(DASH_SIZE,fract(v_texcoord.y*DASH_SCALE)) == 0.){
