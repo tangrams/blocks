@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-import glob, os, yaml, re
+
+import sys, glob, os, yaml, re
 
 def extractFunctions(searchText):
     return re.findall("((void|bool|int|float|vec\\d|mat\\d)+\\s.*\\(.*\\)\\s+\\{)", searchText)
@@ -101,8 +102,7 @@ def appendDependencies(full_yaml, filename):
                 # print "\tMerging " + dep
                 appendDependencies(full_yaml, dep)
 
-# ================================== Main function
-
+# ================================== Main functions
 # local folder
 d='.'
 
@@ -110,77 +110,89 @@ d='.'
 folders = [os.path.join(d,o) for o in os.listdir(d) if os.path.isdir(os.path.join(d,o))];
 folders.sort()
 
-# List to append all folder README.md files to compose a big main README.md file
-readmes = []
-index = dict()
-#   Iterate through all the folders
-for folder in folders:
+def cleanAll():
+    for folder in folders:
+        for filename in glob.glob(folder+'/*-full.yaml'):
+            
 
-    # Skip hidden folders (ex.: .git)
-    if (folder.startswith('./.')):
-        continue
 
-    # Make a README.md file per folder
-    readme = folder+'/README.md'
-    readme_file = open(readme, "w")
+def makeAll():
+    # List to append all folder README.md files to compose a big main README.md file
+    readmes = []
+    index = dict()
+    #   Iterate through all the folders
+    for folder in folders:
 
-    index_blocks = []
-    # That contatin the documentation of all the *.yaml files inside
-    for filename in glob.glob(folder+'/*.yaml'):
-        block = os.path.splitext(os.path.basename(filename))[0]
-
-        # Skip *-full.yaml
-        if block.endswith('-full'):
-            print "Skipping " + block
+        # Skip hidden folders (ex.: .git)
+        if (folder.startswith('./.')):
             continue
 
-        index_styles = appendDocumentation(readme_file, filename)
+        # Make a README.md file per folder
+        readme = folder+'/README.md'
+        readme_file = open(readme, "w")
 
-        # Keep track of the folder structor for making an index
-        if not folder[2:] in index:
-            index[folder[2:]] = dict()
-        else:
-            index[folder[2:]][block] = index_styles
+        index_blocks = []
+        # That contatin the documentation of all the *.yaml files inside
+        for filename in glob.glob(folder+'/*.yaml'):
+            block = os.path.splitext(os.path.basename(filename))[0]
 
-        # Make a *-full.yaml version that contain all dependencies
-        full_yaml = dict()
-        appendDependencies(full_yaml, filename)
-        with open(folder+'/'+block+'-full.yml', 'w') as yaml_file:
-            yaml_file.write( yaml.dump(full_yaml, default_flow_style=False, indent=4))
-        
+            # Skip *-full.yaml
+            if block.endswith('-full'):
+                print "Skipping " + block
+                continue
 
-    readme_file.close()
-    # Keep track of all the README.md to construct a big main one
-    readmes.append(readme)
+            index_styles = appendDocumentation(readme_file, filename)
 
-# Compose a the BIG main README.md
-with open('README.md', 'w') as outfile:
-    # Add the intro 
-    with open('INTRO.md') as infile:
-            outfile.write(infile.read())
+            # Keep track of the folder structor for making an index
+            if not folder[2:] in index:
+                index[folder[2:]] = dict()
+            else:
+                index[folder[2:]][block] = index_styles
+
+            # Make a *-full.yaml version that contain all dependencies
+            full_yaml = dict()
+            appendDependencies(full_yaml, filename)
+            with open(folder+'/'+block+'-full.yml', 'w') as yaml_file:
+                yaml_file.write( yaml.dump(full_yaml, default_flow_style=False, indent=4))
+            
+
+        readme_file.close()
+        # Keep track of all the README.md to construct a big main one
+        readmes.append(readme)
+
+    # Compose a the BIG main README.md
+    with open('README.md', 'w') as outfile:
+        # Add the intro 
+        with open('INTRO.md') as infile:
+                outfile.write(infile.read())
 
 
-    # Make index
-    outfile.write('\n## Blocks Index\n<hr>\n')
-    for folder in index.keys():
-        outfile.write('- ['+ folder.title() +'](https://github.com/tangrams/blocks/tree/gh-pages/' + folder + ')\n')
-        for yaml in index[folder].keys():
-            for block in index[folder][yaml]:
-                outfile.write('  - ['+ block.title() +'](https://github.com/tangrams/blocks/tree/gh-pages/'+ folder + '/' + yaml+'.yaml)\n\n')
+        # Make index
+        outfile.write('\n## Blocks Index\n<hr>\n')
+        for folder in index.keys():
+            outfile.write('- ['+ folder.title() +'](https://github.com/tangrams/blocks/tree/gh-pages/' + folder + ')\n')
+            for yaml in index[folder].keys():
+                for block in index[folder][yaml]:
+                    outfile.write('  - ['+ block.title() +'](https://github.com/tangrams/blocks/tree/gh-pages/'+ folder + '/' + yaml+'.yaml)\n\n')
 
 
 
-    # Content
-    # Add all folder README.md one after the other 
-    outfile.write('\n## Blocks description\n')
-    for fname in readmes:
-        with open(fname) as infile:
-            folder = os.path.dirname(fname)[2:]
-            outfile.write("\n<hr>\n")
-            outfile.write("\n\n### [" + folder.upper() +"](https://github.com/tangrams/blocks/tree/gh-pages/"+folder+")")
-            outfile.write(infile.read())
+        # Content
+        # Add all folder README.md one after the other 
+        outfile.write('\n## Blocks description\n')
+        for fname in readmes:
+            with open(fname) as infile:
+                folder = os.path.dirname(fname)[2:]
+                outfile.write("\n<hr>\n")
+                outfile.write("\n\n### [" + folder.upper() +"](https://github.com/tangrams/blocks/tree/gh-pages/"+folder+")")
+                outfile.write(infile.read())
 
-    # Add the License at the end
-    outfile.write('\n<hr><hr>\n')
-    with open('LICENSE.md') as infile:
-            outfile.write(infile.read())
+        # Add the License at the end
+        outfile.write('\n<hr><hr>\n')
+        with open('LICENSE.md') as infile:
+                outfile.write(infile.read())
+
+if len(sys.argv) > 1:
+    print sys.argv[1]
+else:
+    print "Make all"

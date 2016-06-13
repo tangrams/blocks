@@ -1,0 +1,10 @@
+# Patricio Gonzalez Vivo (@patriciogv) - 2016
+
+import:
+    - ../geometry/tilt.yaml
+    - geometry.yaml
+
+styles:
+    terrain-base:
+        mix: [terrain-geometry, geometry-tilt]
+        

@@ -1,0 +1,9 @@
+# Patricio Gonzalez Vivo (@patriciogv) - 2016
+
+import: 
+    - base.yaml
+
+styles:
+    terrain-terrain:
+        base: polygons
+        mix: [elevation-normal, terrain-base]

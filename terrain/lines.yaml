@@ -1,0 +1,12 @@
+# Patricio Gonzalez Vivo (@patriciogv) - 2016
+
+import: 
+    - base.yaml
+
+styles:
+    terrain-lines:
+        base: lines
+        mix: [terrain-base]
+        shaders:
+            defines:
+                TERRAIN_ZOFFSET: 1.5

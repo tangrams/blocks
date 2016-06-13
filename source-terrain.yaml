@@ -1,0 +1,55 @@
+sources:
+    mapzen:
+        type: TopoJSON
+        url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
+        rasters: [normals]
+        scripts: ['https://api.tiles.mapbox.com/mapbox.js/plugins/turf/v2.0.0/turf.min.js']
+        transform: |
+            function(data, extra_data) {
+                var points = [];
+                
+                if (data.earth &&
+                    data.earth.features) {
+                    var earth_points = turf.explode(data.earth);
+                    points = points.concat(earth_points.features);
+                    
+                    //var units = 'miles';
+                    //var cellWidth = .1;
+                    
+                    //var buffed = turf.buffer(earth_points, cellWidth*.5, units)
+                    //var bbox = turf.extent(buffed);
+                    //var grid = turf.pointGrid(bbox, cellWidth, units);
+                    //points = points.concat(grid.features);
+                    
+                    if (data.roads && data.roads.features) {
+                        var roads_points = turf.explode(data.roads);
+                        points = points.concat(roads_points.features);
+                    }
+                    if (data.landuse && data.landuse.features) {
+                        var landuse_points = turf.explode(data.landuse);
+                        points = points.concat(landuse_points.features);
+                    }
+                    if (data.buildings && data.buildings.features) {
+                        var buildings_points = turf.explode(data.buildings);
+                        points = points.concat(buildings_points.features);
+                    }
+                    if (data.water && data.water.features) {
+                        var water_points = turf.explode(data.water);
+                        points = points.concat(water_points.features);
+                    }
+                } else if (data.water && data.water.features) {
+                    var water_points = turf.explode(data.water);
+                    points = points.concat(water_points.features);
+                }
+                
+                if (!data.terrain) {
+                    data.terrain = {};
+                    data.terrain = turf.tin(turf.featurecollection(points));
+                }
+                
+                return data;
+            }
+    normals:
+        type: Raster
+        url: https://s3.amazonaws.com/elevation-tiles-prod/normal/{z}/{x}/{y}.png
+        max_zoom: 14
