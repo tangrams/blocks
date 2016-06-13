@@ -150,6 +150,7 @@ def makeAll():
             # Keep track of the folder structor for making an index
             if not folder[2:] in index:
                 index[folder[2:]] = dict()
+                index[folder[2:]][block] = index_styles
             else:
                 index[folder[2:]][block] = index_styles
 
@@ -172,7 +173,7 @@ def makeAll():
 
         # Make index
         outfile.write('\n## Blocks Index\n<hr>\n')
-        for folder in index.keys():
+        for folder in sorted(index.keys()):
             outfile.write('- ['+ folder.title() +'](https://github.com/tangrams/blocks/tree/gh-pages/' + folder + ')\n')
             for yaml in index[folder].keys():
                 for block in index[folder][yaml]:

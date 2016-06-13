@@ -92,6 +92,34 @@ import:
 
 
 
+#### [terrarium-polygons](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/polygons.yaml)
+
+
+
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
+ - **TERRARIUM_ZOFFSET**: ```1.0```
+
+
+Import it using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/terrarium/polygons.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/terrarium/polygons-full.yaml
+```
+
+
+
+
 #### [terrarium-terrain](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/terrain.yaml)
 
 

@@ -38,88 +38,24 @@ styles:
 
 ## Blocks Index
 <hr>
-- [Shapes](https://github.com/tangrams/blocks/tree/gh-pages/shapes)
-  - [Shapes-Digits](https://github.com/tangrams/blocks/tree/gh-pages/shapes/digits.yaml)
+- [Color](https://github.com/tangrams/blocks/tree/gh-pages/color)
+  - [Color-Conversion](https://github.com/tangrams/blocks/tree/gh-pages/color/conversion.yaml)
 
-  - [Shapes-Simplex](https://github.com/tangrams/blocks/tree/gh-pages/shapes/simplex.yaml)
+  - [Color-Tools](https://github.com/tangrams/blocks/tree/gh-pages/color/tools.yaml)
 
-  - [Shapes-Cross](https://github.com/tangrams/blocks/tree/gh-pages/shapes/cross.yaml)
-
-  - [Shapes-Rect](https://github.com/tangrams/blocks/tree/gh-pages/shapes/rect.yaml)
-
-  - [Shapes-Polygons](https://github.com/tangrams/blocks/tree/gh-pages/shapes/polygons.yaml)
-
-- [Functions](https://github.com/tangrams/blocks/tree/gh-pages/functions)
-  - [Functions-Easing](https://github.com/tangrams/blocks/tree/gh-pages/functions/easing.yaml)
-
-  - [Functions-Pulse](https://github.com/tangrams/blocks/tree/gh-pages/functions/pulse.yaml)
-
-  - [Functions-Map](https://github.com/tangrams/blocks/tree/gh-pages/functions/map.yaml)
+  - [Color-Palette](https://github.com/tangrams/blocks/tree/gh-pages/color/palette.yaml)
 
 - [Elevation](https://github.com/tangrams/blocks/tree/gh-pages/elevation)
   - [Elevation-Ramp](https://github.com/tangrams/blocks/tree/gh-pages/elevation/ramp.yaml)
 
   - [Elevation-Stripes](https://github.com/tangrams/blocks/tree/gh-pages/elevation/stripes.yaml)
 
-- [Patterns](https://github.com/tangrams/blocks/tree/gh-pages/patterns)
-  - [Patterns-Grid](https://github.com/tangrams/blocks/tree/gh-pages/patterns/grid.yaml)
-
-  - [Patterns-Stripes](https://github.com/tangrams/blocks/tree/gh-pages/patterns/stripes.yaml)
-
-  - [Patterns-Zigzag](https://github.com/tangrams/blocks/tree/gh-pages/patterns/zigzag.yaml)
-
-  - [Patterns-Waves](https://github.com/tangrams/blocks/tree/gh-pages/patterns/waves.yaml)
-
-- [Color](https://github.com/tangrams/blocks/tree/gh-pages/color)
-  - [Color-Palette](https://github.com/tangrams/blocks/tree/gh-pages/color/palette.yaml)
-
-  - [Color-Tools](https://github.com/tangrams/blocks/tree/gh-pages/color/tools.yaml)
-
-- [Terrain](https://github.com/tangrams/blocks/tree/gh-pages/terrain)
-  - [Terrain-Geometry](https://github.com/tangrams/blocks/tree/gh-pages/terrain/geometry.yaml)
-
-  - [Terrain-Terrain](https://github.com/tangrams/blocks/tree/gh-pages/terrain/terrain.yaml)
-
-  - [Terrain-Lines](https://github.com/tangrams/blocks/tree/gh-pages/terrain/lines.yaml)
-
-  - [Terrain-Polygons](https://github.com/tangrams/blocks/tree/gh-pages/terrain/polygons.yaml)
-
-- [Space](https://github.com/tangrams/blocks/tree/gh-pages/space)
-  - [Space-Tex](https://github.com/tangrams/blocks/tree/gh-pages/space/tex.yaml)
-
-  - [Space-Tile](https://github.com/tangrams/blocks/tree/gh-pages/space/tile.yaml)
-
-  - [Space-Screen](https://github.com/tangrams/blocks/tree/gh-pages/space/screen.yaml)
-
-  - [Space-Uz](https://github.com/tangrams/blocks/tree/gh-pages/space/uz.yaml)
-
-- [Lines](https://github.com/tangrams/blocks/tree/gh-pages/lines)
-  - [Lines-Dash](https://github.com/tangrams/blocks/tree/gh-pages/lines/dash.yaml)
-
-  - [Lines-Dots](https://github.com/tangrams/blocks/tree/gh-pages/lines/dots.yaml)
-
-  - [Lines-Outline](https://github.com/tangrams/blocks/tree/gh-pages/lines/outline.yaml)
-
-  - [Lines-Stripes](https://github.com/tangrams/blocks/tree/gh-pages/lines/stripes.yaml)
-
-- [Geometry](https://github.com/tangrams/blocks/tree/gh-pages/geometry)
-  - [Geometry-Projections](https://github.com/tangrams/blocks/tree/gh-pages/geometry/projections.yaml)
-
-  - [Geometry-Tilt](https://github.com/tangrams/blocks/tree/gh-pages/geometry/tilt.yaml)
-
-  - [Geometry-Matrices](https://github.com/tangrams/blocks/tree/gh-pages/geometry/matrices.yaml)
-
-  - [Geometry-Dynamic-Width](https://github.com/tangrams/blocks/tree/gh-pages/geometry/dynamic-width.yaml)
-
-  - [Geometry-Normal](https://github.com/tangrams/blocks/tree/gh-pages/geometry/normal.yaml)
-
-- [Texture](https://github.com/tangrams/blocks/tree/gh-pages/texture)
-  - [Texture-Zoom-Fade](https://github.com/tangrams/blocks/tree/gh-pages/texture/zoom-fade.yaml)
+  - [Elevation-Normal](https://github.com/tangrams/blocks/tree/gh-pages/elevation/normal.yaml)
 
 - [Filter](https://github.com/tangrams/blocks/tree/gh-pages/filter)
-  - [Filter-Tv](https://github.com/tangrams/blocks/tree/gh-pages/filter/tv.yaml)
-
   - [Filter-Lut](https://github.com/tangrams/blocks/tree/gh-pages/filter/lut.yaml)
+
+  - [Filter-Tv](https://github.com/tangrams/blocks/tree/gh-pages/filter/tv.yaml)
 
   - [Filter-Height](https://github.com/tangrams/blocks/tree/gh-pages/filter/height.yaml)
 
@@ -127,16 +63,19 @@ styles:
 
   - [Filter-Hatch](https://github.com/tangrams/blocks/tree/gh-pages/filter/hatch.yaml)
 
+  - [Filter-Grain](https://github.com/tangrams/blocks/tree/gh-pages/filter/grain.yaml)
+
+- [Functions](https://github.com/tangrams/blocks/tree/gh-pages/functions)
+  - [Functions-Easing](https://github.com/tangrams/blocks/tree/gh-pages/functions/easing.yaml)
+
+  - [Functions-Aastep](https://github.com/tangrams/blocks/tree/gh-pages/functions/aastep.yaml)
+
+  - [Functions-Pulse](https://github.com/tangrams/blocks/tree/gh-pages/functions/pulse.yaml)
+
+  - [Functions-Map](https://github.com/tangrams/blocks/tree/gh-pages/functions/map.yaml)
+
 - [Fx](https://github.com/tangrams/blocks/tree/gh-pages/fx)
-- [Terrarium](https://github.com/tangrams/blocks/tree/gh-pages/terrarium)
-  - [Terrarium-Geometry](https://github.com/tangrams/blocks/tree/gh-pages/terrarium/geometry.yaml)
-
-  - [Terrarium-Terrain](https://github.com/tangrams/blocks/tree/gh-pages/terrarium/terrain.yaml)
-
-  - [Terrarium-Lines](https://github.com/tangrams/blocks/tree/gh-pages/terrarium/lines.yaml)
-
-- [Points](https://github.com/tangrams/blocks/tree/gh-pages/points)
-  - [Points-Shape](https://github.com/tangrams/blocks/tree/gh-pages/points/shape.yaml)
+  - [Fx-Water](https://github.com/tangrams/blocks/tree/gh-pages/fx/water.yaml)
 
 - [Generative](https://github.com/tangrams/blocks/tree/gh-pages/generative)
   - [Generative-Random](https://github.com/tangrams/blocks/tree/gh-pages/generative/random.yaml)
@@ -145,10 +84,105 @@ styles:
 
   - [Generative-Noise](https://github.com/tangrams/blocks/tree/gh-pages/generative/noise.yaml)
 
+  - [Generative-Caustic](https://github.com/tangrams/blocks/tree/gh-pages/generative/caustics.yaml)
+
   - [Generative-Fbm](https://github.com/tangrams/blocks/tree/gh-pages/generative/fbm.yaml)
+
+- [Geometry](https://github.com/tangrams/blocks/tree/gh-pages/geometry)
+  - [Geometry-Normal](https://github.com/tangrams/blocks/tree/gh-pages/geometry/normal.yaml)
+
+  - [Geometry-Tilt](https://github.com/tangrams/blocks/tree/gh-pages/geometry/tilt.yaml)
+
+  - [Geometry-Dynamic-Height](https://github.com/tangrams/blocks/tree/gh-pages/geometry/dynamic-height.yaml)
+
+  - [Geometry-Projections](https://github.com/tangrams/blocks/tree/gh-pages/geometry/projections.yaml)
+
+  - [Geometry-Matrices](https://github.com/tangrams/blocks/tree/gh-pages/geometry/matrices.yaml)
+
+  - [Geometry-Dynamic-Width](https://github.com/tangrams/blocks/tree/gh-pages/geometry/dynamic-width.yaml)
+
+- [Lines](https://github.com/tangrams/blocks/tree/gh-pages/lines)
+  - [Lines-Dash](https://github.com/tangrams/blocks/tree/gh-pages/lines/dash.yaml)
+
+  - [Lines-Dots](https://github.com/tangrams/blocks/tree/gh-pages/lines/dots.yaml)
+
+  - [Lines-Outline](https://github.com/tangrams/blocks/tree/gh-pages/lines/outline.yaml)
+
+  - [Lines-Chevron](https://github.com/tangrams/blocks/tree/gh-pages/lines/chevron.yaml)
+
+  - [Lines-Stripes](https://github.com/tangrams/blocks/tree/gh-pages/lines/stripes.yaml)
+
+- [Patterns](https://github.com/tangrams/blocks/tree/gh-pages/patterns)
+  - [Patterns-Dots](https://github.com/tangrams/blocks/tree/gh-pages/patterns/dots.yaml)
+
+  - [Patterns-Grid](https://github.com/tangrams/blocks/tree/gh-pages/patterns/grid.yaml)
+
+  - [Patterns-Stripes](https://github.com/tangrams/blocks/tree/gh-pages/patterns/stripes.yaml)
+
+  - [Patterns-Zigzag](https://github.com/tangrams/blocks/tree/gh-pages/patterns/zigzag.yaml)
+
+  - [Patterns-Waves](https://github.com/tangrams/blocks/tree/gh-pages/patterns/waves.yaml)
+
+- [Points](https://github.com/tangrams/blocks/tree/gh-pages/points)
+  - [Points-Shape](https://github.com/tangrams/blocks/tree/gh-pages/points/shape.yaml)
+
+  - [Points-Cross](https://github.com/tangrams/blocks/tree/gh-pages/points/cross.yaml)
+
+- [Shapes](https://github.com/tangrams/blocks/tree/gh-pages/shapes)
+  - [Shapes-Digits](https://github.com/tangrams/blocks/tree/gh-pages/shapes/digits.yaml)
+
+  - [Shapes-Cross](https://github.com/tangrams/blocks/tree/gh-pages/shapes/cross.yaml)
+
+  - [Shapes-Simplex](https://github.com/tangrams/blocks/tree/gh-pages/shapes/simplex.yaml)
+
+  - [Shapes-Circle](https://github.com/tangrams/blocks/tree/gh-pages/shapes/circle.yaml)
+
+  - [Shapes-Polygons](https://github.com/tangrams/blocks/tree/gh-pages/shapes/polygons.yaml)
+
+  - [Shapes-Rect](https://github.com/tangrams/blocks/tree/gh-pages/shapes/rect.yaml)
+
+- [Space](https://github.com/tangrams/blocks/tree/gh-pages/space)
+  - [Space-Tex](https://github.com/tangrams/blocks/tree/gh-pages/space/tex.yaml)
+
+  - [Space-Tile](https://github.com/tangrams/blocks/tree/gh-pages/space/tile.yaml)
+
+  - [Space-Screen](https://github.com/tangrams/blocks/tree/gh-pages/space/screen.yaml)
+
+  - [Space-Constant](https://github.com/tangrams/blocks/tree/gh-pages/space/constant.yaml)
+
+  - [Space-Uz](https://github.com/tangrams/blocks/tree/gh-pages/space/uz.yaml)
+
+- [Terrain](https://github.com/tangrams/blocks/tree/gh-pages/terrain)
+  - [Terrain-Geometry](https://github.com/tangrams/blocks/tree/gh-pages/terrain/geometry.yaml)
+
+  - [Terrain-Terrain](https://github.com/tangrams/blocks/tree/gh-pages/terrain/terrain.yaml)
+
+  - [Terrain-Base](https://github.com/tangrams/blocks/tree/gh-pages/terrain/base.yaml)
+
+  - [Terrain-Lines](https://github.com/tangrams/blocks/tree/gh-pages/terrain/lines.yaml)
+
+  - [Terrain-Polygons](https://github.com/tangrams/blocks/tree/gh-pages/terrain/polygons.yaml)
+
+- [Terrarium](https://github.com/tangrams/blocks/tree/gh-pages/terrarium)
+  - [Terrarium-Geometry](https://github.com/tangrams/blocks/tree/gh-pages/terrarium/geometry.yaml)
+
+  - [Terrarium-Terrain](https://github.com/tangrams/blocks/tree/gh-pages/terrarium/terrain.yaml)
+
+  - [Terrarium-Base](https://github.com/tangrams/blocks/tree/gh-pages/terrarium/base.yaml)
+
+  - [Terrarium-Lines](https://github.com/tangrams/blocks/tree/gh-pages/terrarium/lines.yaml)
+
+  - [Terrarium-Polygons](https://github.com/tangrams/blocks/tree/gh-pages/terrarium/polygons.yaml)
+
+- [Texture](https://github.com/tangrams/blocks/tree/gh-pages/texture)
+  - [Texture-Non-Repetitive](https://github.com/tangrams/blocks/tree/gh-pages/texture/non-repetitive.yaml)
+
+  - [Texture-Zoom-Fade](https://github.com/tangrams/blocks/tree/gh-pages/texture/zoom-fade.yaml)
 
 - [Tiling](https://github.com/tangrams/blocks/tree/gh-pages/tiling)
   - [Tiling-Tile](https://github.com/tangrams/blocks/tree/gh-pages/tiling/tile.yaml)
+
+  - [Tiling-Brick](https://github.com/tangrams/blocks/tree/gh-pages/tiling/brick.yaml)
 
   - [Tiling-Truchet](https://github.com/tangrams/blocks/tree/gh-pages/tiling/truchet.yaml)
 
@@ -2259,6 +2293,34 @@ If you want to import this block with dependences included try this:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/terrarium/lines-full.yaml
+```
+
+
+
+
+#### [terrarium-polygons](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/polygons.yaml)
+
+
+
+This block use the following **defines** with the following defaults. Remember you can use or tweak.
+ - **TERRARIUM_ZOFFSET**: ```1.0```
+
+
+Import it using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/terrarium/polygons.yaml
+```
+
+
+
+
+If you want to import this block with dependences included try this:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/terrarium/polygons-full.yaml
 ```
 
 
