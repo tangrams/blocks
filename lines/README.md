@@ -1,7 +1,6 @@
 
 
-#### [lines-chevron](https://github.com/tangrams/blocks/blob/gh-pages/lines/chevron.yaml)
-
+#### lines-chevron [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//lines/chevron.yaml)
 This provides the following blocks:
 
 - **color**:
@@ -41,8 +40,7 @@ import:
 
 
 
-#### [lines-dash](https://github.com/tangrams/blocks/blob/gh-pages/lines/dash.yaml)
-
+#### lines-dash [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//lines/dash.yaml)
 This provides the following blocks:
 
 - **filter**:
@@ -80,8 +78,7 @@ import:
 
 
 
-#### [lines-dots](https://github.com/tangrams/blocks/blob/gh-pages/lines/dots.yaml)
-
+#### lines-dots [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//lines/dots.yaml)
 This provides the following blocks:
 
 - **color**:
@@ -118,8 +115,7 @@ import:
 
 
 
-#### [lines-outline](https://github.com/tangrams/blocks/blob/gh-pages/lines/outline.yaml)
-
+#### lines-outline [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//lines/outline.yaml)
 This provides the following blocks:
 
 - **color**:
@@ -157,8 +153,7 @@ import:
 
 
 
-#### [lines-stripes](https://github.com/tangrams/blocks/blob/gh-pages/lines/stripes.yaml)
-
+#### lines-stripes [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//lines/stripes.yaml)
 This provides the following blocks:
 
 - **color**:

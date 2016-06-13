@@ -1,7 +1,6 @@
 
 
-#### [points-cross](https://github.com/tangrams/blocks/blob/gh-pages/points/cross.yaml)
-
+#### points-cross [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//points/cross.yaml)
 This provides the following blocks:
 
 - **color**:
@@ -37,8 +36,7 @@ import:
 
 
 
-#### [points-shape](https://github.com/tangrams/blocks/blob/gh-pages/points/shape.yaml)
-
+#### points-shape [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//points/shape.yaml)
 This provides the following blocks:
 
 - **color**:

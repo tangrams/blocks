@@ -1,7 +1,6 @@
 
 
-#### [functions-aastep](https://github.com/tangrams/blocks/blob/gh-pages/functions/aastep.yaml)
-
+#### functions-aastep [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//functions/aastep.yaml)
 AnitAliased ```step()``` function implemented by [Matt DesLauriers](https://twitter.com/mattdesl) in this module <https://github.com/stackgl/glsl-aastep>
 
 This provides the following blocks:
@@ -29,8 +28,7 @@ import:
 
 
 
-#### [functions-easing](https://github.com/tangrams/blocks/blob/gh-pages/functions/easing.yaml)
-
+#### functions-easing [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//functions/easing.yaml)
 Easing functions originally develop by Robert Penner's and transformed to GLSL by [StackGL](http://stack.gl/) in this repo: <https://github.com/stackgl/glsl-easings>
 
 This provides the following blocks:
@@ -93,8 +91,7 @@ import:
 
 
 
-#### [functions-map](https://github.com/tangrams/blocks/blob/gh-pages/functions/map.yaml)
-
+#### functions-map [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//functions/map.yaml)
 This provides the following blocks:
 
 - **global**:
@@ -125,8 +122,7 @@ import:
 
 
 
-#### [functions-pulse](https://github.com/tangrams/blocks/blob/gh-pages/functions/pulse.yaml)
-
+#### functions-pulse [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//functions/pulse.yaml)
 This provides the following blocks:
 
 - **global**:

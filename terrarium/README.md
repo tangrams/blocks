@@ -1,7 +1,6 @@
 
 
-#### [terrarium-base](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/base.yaml)
-
+#### terrarium-base [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//terrarium/base.yaml)
 
 
 Import it using:
@@ -24,8 +23,7 @@ import:
 
 
 
-#### [terrarium-geometry](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/geometry.yaml)
-
+#### terrarium-geometry [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//terrarium/geometry.yaml)
 This provides the following blocks:
 
 - **position**:
@@ -64,8 +62,7 @@ import:
 
 
 
-#### [terrarium-lines](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/lines.yaml)
-
+#### terrarium-lines [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//terrarium/lines.yaml)
 
 
 This block use the following **defines** with the following defaults. Remember you can use or tweak.
@@ -92,8 +89,7 @@ import:
 
 
 
-#### [terrarium-polygons](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/polygons.yaml)
-
+#### terrarium-polygons [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//terrarium/polygons.yaml)
 
 
 This block use the following **defines** with the following defaults. Remember you can use or tweak.
@@ -120,8 +116,7 @@ import:
 
 
 
-#### [terrarium-terrain](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/terrain.yaml)
-
+#### terrarium-terrain [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//terrarium/terrain.yaml)
 
 
 Import it using:

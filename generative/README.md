@@ -1,7 +1,6 @@
 
 
-#### [generative-caustic](https://github.com/tangrams/blocks/blob/gh-pages/generative/caustics.yaml)
-
+#### generative-caustic [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//generative/caustics.yaml)
 This provides the following blocks:
 
 - **global**:
@@ -33,8 +32,7 @@ import:
 
 
 
-#### [generative-fbm](https://github.com/tangrams/blocks/blob/gh-pages/generative/fbm.yaml)
-
+#### generative-fbm [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//generative/fbm.yaml)
 This provides the following blocks:
 
 - **global**:
@@ -68,8 +66,7 @@ import:
 
 
 
-#### [generative-noise](https://github.com/tangrams/blocks/blob/gh-pages/generative/noise.yaml)
-
+#### generative-noise [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//generative/noise.yaml)
 This provides the following blocks:
 
 - **global**:
@@ -98,8 +95,7 @@ import:
 
 
 
-#### [generative-random](https://github.com/tangrams/blocks/blob/gh-pages/generative/random.yaml)
-
+#### generative-random [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//generative/random.yaml)
 This provides the following blocks:
 
 - **global**:
@@ -130,8 +126,7 @@ import:
 
 
 
-#### [generative-voronoi](https://github.com/tangrams/blocks/blob/gh-pages/generative/voronoi.yaml)
-
+#### generative-voronoi [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//generative/voronoi.yaml)
 This provides the following blocks:
 
 - **global**:

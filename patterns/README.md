@@ -1,7 +1,6 @@
 
 
-#### [patterns-dots](https://github.com/tangrams/blocks/blob/gh-pages/patterns/dots.yaml)
-
+#### patterns-dots [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//patterns/dots.yaml)
 This provides the following blocks:
 
 - **global**:
@@ -27,8 +26,7 @@ import:
 
 
 
-#### [patterns-grid](https://github.com/tangrams/blocks/blob/gh-pages/patterns/grid.yaml)
-
+#### patterns-grid [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//patterns/grid.yaml)
 This provides the following blocks:
 
 - **global**:
@@ -57,8 +55,7 @@ import:
 
 
 
-#### [patterns-stripes](https://github.com/tangrams/blocks/blob/gh-pages/patterns/stripes.yaml)
-
+#### patterns-stripes [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//patterns/stripes.yaml)
 This provides the following blocks:
 
 - **global**:
@@ -92,8 +89,7 @@ import:
 
 
 
-#### [patterns-waves](https://github.com/tangrams/blocks/blob/gh-pages/patterns/waves.yaml)
-
+#### patterns-waves [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//patterns/waves.yaml)
 This provides the following blocks:
 
 - **global**:
@@ -120,8 +116,7 @@ import:
 
 
 
-#### [patterns-zigzag](https://github.com/tangrams/blocks/blob/gh-pages/patterns/zigzag.yaml)
-
+#### patterns-zigzag [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//patterns/zigzag.yaml)
 This provides the following blocks:
 
 - **global**:

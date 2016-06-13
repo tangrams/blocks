@@ -1,7 +1,6 @@
 
 
-#### [terrain-base](https://github.com/tangrams/blocks/blob/gh-pages/terrain/base.yaml)
-
+#### terrain-base [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//terrain/base.yaml)
 
 
 Import it using:
@@ -24,8 +23,7 @@ import:
 
 
 
-#### [terrain-geometry](https://github.com/tangrams/blocks/blob/gh-pages/terrain/geometry.yaml)
-
+#### terrain-geometry [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//terrain/geometry.yaml)
 This provides the following blocks:
 
 - **position**:
@@ -64,8 +62,7 @@ import:
 
 
 
-#### [terrain-lines](https://github.com/tangrams/blocks/blob/gh-pages/terrain/lines.yaml)
-
+#### terrain-lines [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//terrain/lines.yaml)
 
 
 This block use the following **defines** with the following defaults. Remember you can use or tweak.
@@ -92,8 +89,7 @@ import:
 
 
 
-#### [terrain-polygons](https://github.com/tangrams/blocks/blob/gh-pages/terrain/polygons.yaml)
-
+#### terrain-polygons [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//terrain/polygons.yaml)
 
 
 This block use the following **defines** with the following defaults. Remember you can use or tweak.
@@ -120,8 +116,7 @@ import:
 
 
 
-#### [terrain-terrain](https://github.com/tangrams/blocks/blob/gh-pages/terrain/terrain.yaml)
-
+#### terrain-terrain [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//terrain/terrain.yaml)
 
 
 Import it using:

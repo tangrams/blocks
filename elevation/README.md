@@ -1,7 +1,6 @@
 
 
-#### [elevation-normal](https://github.com/tangrams/blocks/blob/gh-pages/elevation/normal.yaml)
-
+#### elevation-normal [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//elevation/normal.yaml)
 When a raster normalmap tiles source is load like:
 ```
     normals-elevation:
@@ -46,8 +45,7 @@ import:
 
 
 
-#### [elevation-ramp](https://github.com/tangrams/blocks/blob/gh-pages/elevation/ramp.yaml)
-
+#### elevation-ramp [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//elevation/ramp.yaml)
 This provides the following blocks:
 
 - **color**:
@@ -82,8 +80,7 @@ import:
 
 
 
-#### [elevation-stripes](https://github.com/tangrams/blocks/blob/gh-pages/elevation/stripes.yaml)
-
+#### elevation-stripes [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//elevation/stripes.yaml)
 This provides the following blocks:
 
 - **color**:

@@ -12,8 +12,8 @@ def appendDocumentation(readme_file, filename):
     for name_block in yaml_file['styles']:
 
         # Add a title that points to github
-        url = 'https://github.com/tangrams/blocks/blob/gh-pages'+filename[1:]
-        readme_file.write('\n\n#### [' + name_block + ']('+url+')\n\n');
+        readme_file.write('\n\n#### ' + name_block + " [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages/"+filename[1:]+")\n")
+
         blocks.append(name_block)
 
         # Add a description if it have
@@ -188,7 +188,7 @@ def makeAll():
             with open(fname) as infile:
                 folder = os.path.dirname(fname)[2:]
                 outfile.write("\n<hr>\n")
-                outfile.write("\n\n### [" + folder.upper() +"](https://github.com/tangrams/blocks/tree/gh-pages/"+folder+")")
+                outfile.write("\n\n### " + folder.upper() + " [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages/"+folder+")")
                 outfile.write(infile.read())
 
         # Add the License at the end
