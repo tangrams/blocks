@@ -1,7 +1,0 @@
-styles:
-    tiling-tile:
-        shaders:
-            blocks:
-                global: "// Repeats a coordinate space (st) in diferent tiles\n//\
-                    \ ================================\nvec2 tile (vec2 st, float\
-                    \ zoom) {\n    st *= zoom;\n    return fract(st);\n}"

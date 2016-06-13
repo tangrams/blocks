@@ -1,9 +1,0 @@
-styles:
-    space-uz:
-        shaders:
-            blocks:
-                global: "// Get the position on U (x or s) from the TexCoords and\n\
-                    // the Z of the World Position\n// ================================\n\
-                    vec2 getUZCoords () {\n    return vec2(v_texcoord.x*10.,worldPosition().z*0.2);\n\
-                    }"
-        texcoords: true

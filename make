@@ -111,12 +111,16 @@ folders = [os.path.join(d,o) for o in os.listdir(d) if os.path.isdir(os.path.joi
 folders.sort()
 
 def cleanAll():
-    for folder in folders:
-        for filename in glob.glob(folder+'/*-full.yaml'):
-            
+    print "CLEAN ALL *-full.yaml"
+    os.system("rm -R */*-full.yaml") 
 
+    print "CLEAN ALL README.md"
+    os.system("rm README.md") 
+    os.system("rm -R */README.md") 
 
 def makeAll():
+    print "MAKE ALL"
+
     # List to append all folder README.md files to compose a big main README.md file
     readmes = []
     index = dict()
@@ -150,10 +154,10 @@ def makeAll():
                 index[folder[2:]][block] = index_styles
 
             # Make a *-full.yaml version that contain all dependencies
-            full_yaml = dict()
-            appendDependencies(full_yaml, filename)
-            with open(folder+'/'+block+'-full.yml', 'w') as yaml_file:
-                yaml_file.write( yaml.dump(full_yaml, default_flow_style=False, indent=4))
+            # full_yaml = dict()
+            # appendDependencies(full_yaml, filename)
+            # with open(folder+'/'+block+'-full.yaml', 'w') as yaml_file:
+            #     yaml_file.write( yaml.dump(full_yaml, default_flow_style=False, indent=4))
             
 
         readme_file.close()
@@ -165,7 +169,6 @@ def makeAll():
         # Add the intro 
         with open('INTRO.md') as infile:
                 outfile.write(infile.read())
-
 
         # Make index
         outfile.write('\n## Blocks Index\n<hr>\n')
@@ -193,6 +196,9 @@ def makeAll():
                 outfile.write(infile.read())
 
 if len(sys.argv) > 1:
-    print sys.argv[1]
+    if sys.argv[1] == 'clean':
+        cleanAll()
+    elif sys.argv[1] == 'all':
+        makeAll()
 else:
-    print "Make all"
+    makeAll()

@@ -1,7 +1,0 @@
-styles:
-    functions-pulse:
-        shaders:
-            blocks:
-                global: "float pulse (float x, float p, float w) {\n    x = abs(x\
-                    \ - p);\n    if (x>w) return 0.0;\n    x /= w;\n    return 1.0\
-                    \ - x*x*(3.0-2.0*x);\n}"
