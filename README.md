@@ -36,167 +36,11 @@ styles:
                 NUM_OCTAVES: 3
 ```
 
-## Blocks Index
-<hr>
-- [Color](https://github.com/tangrams/blocks/tree/gh-pages/color)
-  - [Color-Conversion](https://github.com/tangrams/blocks/tree/gh-pages/color/conversion.yaml)
-
-  - [Color-Tools](https://github.com/tangrams/blocks/tree/gh-pages/color/tools.yaml)
-
-  - [Color-Palette](https://github.com/tangrams/blocks/tree/gh-pages/color/palette.yaml)
-
-- [Elevation](https://github.com/tangrams/blocks/tree/gh-pages/elevation)
-  - [Elevation-Ramp](https://github.com/tangrams/blocks/tree/gh-pages/elevation/ramp.yaml)
-
-  - [Elevation-Stripes](https://github.com/tangrams/blocks/tree/gh-pages/elevation/stripes.yaml)
-
-  - [Elevation-Normal](https://github.com/tangrams/blocks/tree/gh-pages/elevation/normal.yaml)
-
-- [Filter](https://github.com/tangrams/blocks/tree/gh-pages/filter)
-  - [Filter-Lut](https://github.com/tangrams/blocks/tree/gh-pages/filter/lut.yaml)
-
-  - [Filter-Tv](https://github.com/tangrams/blocks/tree/gh-pages/filter/tv.yaml)
-
-  - [Filter-Height](https://github.com/tangrams/blocks/tree/gh-pages/filter/height.yaml)
-
-  - [Filter-Grid](https://github.com/tangrams/blocks/tree/gh-pages/filter/grid.yaml)
-
-  - [Filter-Hatch](https://github.com/tangrams/blocks/tree/gh-pages/filter/hatch.yaml)
-
-  - [Filter-Grain](https://github.com/tangrams/blocks/tree/gh-pages/filter/grain.yaml)
-
-- [Functions](https://github.com/tangrams/blocks/tree/gh-pages/functions)
-  - [Functions-Easing](https://github.com/tangrams/blocks/tree/gh-pages/functions/easing.yaml)
-
-  - [Functions-Aastep](https://github.com/tangrams/blocks/tree/gh-pages/functions/aastep.yaml)
-
-  - [Functions-Pulse](https://github.com/tangrams/blocks/tree/gh-pages/functions/pulse.yaml)
-
-  - [Functions-Map](https://github.com/tangrams/blocks/tree/gh-pages/functions/map.yaml)
-
-- [Fx](https://github.com/tangrams/blocks/tree/gh-pages/fx)
-  - [Fx-Water](https://github.com/tangrams/blocks/tree/gh-pages/fx/water.yaml)
-
-- [Generative](https://github.com/tangrams/blocks/tree/gh-pages/generative)
-  - [Generative-Random](https://github.com/tangrams/blocks/tree/gh-pages/generative/random.yaml)
-
-  - [Generative-Voronoi](https://github.com/tangrams/blocks/tree/gh-pages/generative/voronoi.yaml)
-
-  - [Generative-Noise](https://github.com/tangrams/blocks/tree/gh-pages/generative/noise.yaml)
-
-  - [Generative-Caustic](https://github.com/tangrams/blocks/tree/gh-pages/generative/caustics.yaml)
-
-  - [Generative-Fbm](https://github.com/tangrams/blocks/tree/gh-pages/generative/fbm.yaml)
-
-- [Geometry](https://github.com/tangrams/blocks/tree/gh-pages/geometry)
-  - [Geometry-Normal](https://github.com/tangrams/blocks/tree/gh-pages/geometry/normal.yaml)
-
-  - [Geometry-Tilt](https://github.com/tangrams/blocks/tree/gh-pages/geometry/tilt.yaml)
-
-  - [Geometry-Dynamic-Height](https://github.com/tangrams/blocks/tree/gh-pages/geometry/dynamic-height.yaml)
-
-  - [Geometry-Projections](https://github.com/tangrams/blocks/tree/gh-pages/geometry/projections.yaml)
-
-  - [Geometry-Matrices](https://github.com/tangrams/blocks/tree/gh-pages/geometry/matrices.yaml)
-
-  - [Geometry-Dynamic-Width](https://github.com/tangrams/blocks/tree/gh-pages/geometry/dynamic-width.yaml)
-
-- [Lines](https://github.com/tangrams/blocks/tree/gh-pages/lines)
-  - [Lines-Dash](https://github.com/tangrams/blocks/tree/gh-pages/lines/dash.yaml)
-
-  - [Lines-Dots](https://github.com/tangrams/blocks/tree/gh-pages/lines/dots.yaml)
-
-  - [Lines-Outline](https://github.com/tangrams/blocks/tree/gh-pages/lines/outline.yaml)
-
-  - [Lines-Chevron](https://github.com/tangrams/blocks/tree/gh-pages/lines/chevron.yaml)
-
-  - [Lines-Stripes](https://github.com/tangrams/blocks/tree/gh-pages/lines/stripes.yaml)
-
-- [Patterns](https://github.com/tangrams/blocks/tree/gh-pages/patterns)
-  - [Patterns-Dots](https://github.com/tangrams/blocks/tree/gh-pages/patterns/dots.yaml)
-
-  - [Patterns-Grid](https://github.com/tangrams/blocks/tree/gh-pages/patterns/grid.yaml)
-
-  - [Patterns-Stripes](https://github.com/tangrams/blocks/tree/gh-pages/patterns/stripes.yaml)
-
-  - [Patterns-Zigzag](https://github.com/tangrams/blocks/tree/gh-pages/patterns/zigzag.yaml)
-
-  - [Patterns-Waves](https://github.com/tangrams/blocks/tree/gh-pages/patterns/waves.yaml)
-
-- [Points](https://github.com/tangrams/blocks/tree/gh-pages/points)
-  - [Points-Shape](https://github.com/tangrams/blocks/tree/gh-pages/points/shape.yaml)
-
-  - [Points-Cross](https://github.com/tangrams/blocks/tree/gh-pages/points/cross.yaml)
-
-- [Shapes](https://github.com/tangrams/blocks/tree/gh-pages/shapes)
-  - [Shapes-Digits](https://github.com/tangrams/blocks/tree/gh-pages/shapes/digits.yaml)
-
-  - [Shapes-Cross](https://github.com/tangrams/blocks/tree/gh-pages/shapes/cross.yaml)
-
-  - [Shapes-Simplex](https://github.com/tangrams/blocks/tree/gh-pages/shapes/simplex.yaml)
-
-  - [Shapes-Circle](https://github.com/tangrams/blocks/tree/gh-pages/shapes/circle.yaml)
-
-  - [Shapes-Polygons](https://github.com/tangrams/blocks/tree/gh-pages/shapes/polygons.yaml)
-
-  - [Shapes-Rect](https://github.com/tangrams/blocks/tree/gh-pages/shapes/rect.yaml)
-
-- [Space](https://github.com/tangrams/blocks/tree/gh-pages/space)
-  - [Space-Tex](https://github.com/tangrams/blocks/tree/gh-pages/space/tex.yaml)
-
-  - [Space-Tile](https://github.com/tangrams/blocks/tree/gh-pages/space/tile.yaml)
-
-  - [Space-Screen](https://github.com/tangrams/blocks/tree/gh-pages/space/screen.yaml)
-
-  - [Space-Constant](https://github.com/tangrams/blocks/tree/gh-pages/space/constant.yaml)
-
-  - [Space-Uz](https://github.com/tangrams/blocks/tree/gh-pages/space/uz.yaml)
-
-- [Terrain](https://github.com/tangrams/blocks/tree/gh-pages/terrain)
-  - [Terrain-Geometry](https://github.com/tangrams/blocks/tree/gh-pages/terrain/geometry.yaml)
-
-  - [Terrain-Terrain](https://github.com/tangrams/blocks/tree/gh-pages/terrain/terrain.yaml)
-
-  - [Terrain-Base](https://github.com/tangrams/blocks/tree/gh-pages/terrain/base.yaml)
-
-  - [Terrain-Lines](https://github.com/tangrams/blocks/tree/gh-pages/terrain/lines.yaml)
-
-  - [Terrain-Polygons](https://github.com/tangrams/blocks/tree/gh-pages/terrain/polygons.yaml)
-
-- [Terrarium](https://github.com/tangrams/blocks/tree/gh-pages/terrarium)
-  - [Terrarium-Geometry](https://github.com/tangrams/blocks/tree/gh-pages/terrarium/geometry.yaml)
-
-  - [Terrarium-Terrain](https://github.com/tangrams/blocks/tree/gh-pages/terrarium/terrain.yaml)
-
-  - [Terrarium-Base](https://github.com/tangrams/blocks/tree/gh-pages/terrarium/base.yaml)
-
-  - [Terrarium-Lines](https://github.com/tangrams/blocks/tree/gh-pages/terrarium/lines.yaml)
-
-  - [Terrarium-Polygons](https://github.com/tangrams/blocks/tree/gh-pages/terrarium/polygons.yaml)
-
-- [Texture](https://github.com/tangrams/blocks/tree/gh-pages/texture)
-  - [Texture-Non-Repetitive](https://github.com/tangrams/blocks/tree/gh-pages/texture/non-repetitive.yaml)
-
-  - [Texture-Zoom-Fade](https://github.com/tangrams/blocks/tree/gh-pages/texture/zoom-fade.yaml)
-
-- [Tiling](https://github.com/tangrams/blocks/tree/gh-pages/tiling)
-  - [Tiling-Tile](https://github.com/tangrams/blocks/tree/gh-pages/tiling/tile.yaml)
-
-  - [Tiling-Brick](https://github.com/tangrams/blocks/tree/gh-pages/tiling/brick.yaml)
-
-  - [Tiling-Truchet](https://github.com/tangrams/blocks/tree/gh-pages/tiling/truchet.yaml)
-
-  - [Tiling-Simplex](https://github.com/tangrams/blocks/tree/gh-pages/tiling/simplex.yaml)
-
-
 ## Blocks description
+![](https://mapzen.com/common/styleguide/images/divider/compass-lg-blue.png)
 
-<hr>
+#### [color-conversion](https://github.com/tangrams/blocks/blob/gh-pages/color/conversion.yaml)
 
-
-### COLOR [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages/color)
-
-#### color-conversion [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//color/conversion.yaml)
 Set of functions to convert colors between color systems/spaces.
 For more information on this theme read [this chapter of The Book of Shaders about color](http://thebookofshaders.com/06/).
 
@@ -227,7 +71,8 @@ import:
 
 
 
-#### color-palette [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//color/palette.yaml)
+#### [color-palette](https://github.com/tangrams/blocks/blob/gh-pages/color/palette.yaml)
+
 Procedural generation of color paletters implemented by [Inigo Quiles](https://twitter.com/iquilezles) (1999) explained in [this article](http://www.iquilezles.org/www/articles/palettes/palettes.htm)
 
 This provides the following blocks:
@@ -255,7 +100,8 @@ import:
 
 
 
-#### color-tools [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//color/tools.yaml)
+#### [color-tools](https://github.com/tangrams/blocks/blob/gh-pages/color/tools.yaml)
+
 Set of color tools to get the **intensity** and **brightness** of a color.
 For more information on this theme read [this chapter of The Book of Shaders about color](http://thebookofshaders.com/06/).
 
@@ -285,13 +131,10 @@ import:
 ```
 
 
+![](https://mapzen.com/common/styleguide/images/divider/compass-lg-blue.png)
 
-<hr>
+#### [elevation-normal](https://github.com/tangrams/blocks/blob/gh-pages/elevation/normal.yaml)
 
-
-### ELEVATION [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages/elevation)
-
-#### elevation-normal [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//elevation/normal.yaml)
 When a raster normalmap tiles source is load like:
 ```
     normals-elevation:
@@ -336,7 +179,8 @@ import:
 
 
 
-#### elevation-ramp [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//elevation/ramp.yaml)
+#### [elevation-ramp](https://github.com/tangrams/blocks/blob/gh-pages/elevation/ramp.yaml)
+
 This provides the following blocks:
 
 - **color**:
@@ -371,7 +215,8 @@ import:
 
 
 
-#### elevation-stripes [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//elevation/stripes.yaml)
+#### [elevation-stripes](https://github.com/tangrams/blocks/blob/gh-pages/elevation/stripes.yaml)
+
 This provides the following blocks:
 
 - **color**:
@@ -416,13 +261,10 @@ import:
 ```
 
 
+![](https://mapzen.com/common/styleguide/images/divider/compass-lg-blue.png)
 
-<hr>
+#### [filter-grain](https://github.com/tangrams/blocks/blob/gh-pages/filter/grain.yaml)
 
-
-### FILTER [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages/filter)
-
-#### filter-grain [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//filter/grain.yaml)
 Apply a lens grain effect to the scene.
 <p>The amount can be set by the GRAIN_AMOUNT define [0.0~1.0]</p>
 <p>For example:</p>
@@ -466,7 +308,8 @@ import:
 
 
 
-#### filter-grid [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//filter/grid.yaml)
+#### [filter-grid](https://github.com/tangrams/blocks/blob/gh-pages/filter/grid.yaml)
+
 Apply a grid filter to they syle
 <p>The amount can be set by the GRID_AMOUNT define [0.0~1.0]</p>
 <p>Then you should choose between the modes: ```GRID_ADD```, ```GRID_SUBSTRACT``` and ```GRID_MULTIPLY```</p>
@@ -517,7 +360,8 @@ import:
 
 
 
-#### filter-hatch [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//filter/hatch.yaml)
+#### [filter-hatch](https://github.com/tangrams/blocks/blob/gh-pages/filter/hatch.yaml)
+
 Hatching filter based on [Jaume's Sanchez](https://twitter.com/thespite?lang=en) [Cross-hatching GLSL shader](https://www.clicktorelease.com/code/cross-hatching/). 
 <p>Examples:</p>
 [ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/crosshatch.png); width: 100%; height: 100px; background-position: center center;"></div> ](https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/crosshatch.yaml)
@@ -552,7 +396,8 @@ import:
 
 
 
-#### filter-height [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//filter/height.yaml)
+#### [filter-height](https://github.com/tangrams/blocks/blob/gh-pages/filter/height.yaml)
+
 Adds a dark gradiant to the geometries conform they aproach to height 0. <p>For example:</p>
 [ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/default.png); width: 100%; height: 100px; background-position: center center;"></div> ](https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/default.yaml)
 
@@ -586,7 +431,8 @@ import:
 
 
 
-#### filter-lut [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//filter/lut.yaml)
+#### [filter-lut](https://github.com/tangrams/blocks/blob/gh-pages/filter/lut.yaml)
+
 Add a look up table filter defined on the uniform ```u_lut``` to the current style. This look up tables are hable to produce similar effect to instagram filters. <p>For example:</p>
 [ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/sandbox-lut.png); width: 100%; height: 100px; background-position: center center;"></div> ](https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/sandbox-lut.yaml)
 
@@ -629,7 +475,8 @@ import:
 
 
 
-#### filter-tv [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//filter/tv.yaml)
+#### [filter-tv](https://github.com/tangrams/blocks/blob/gh-pages/filter/tv.yaml)
+
 <p>Apply a TV effect to the style like</p>
 [ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/9845C.png); width: 100%; height: 100px; background-position: center center;"></div> ](https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml)
 
@@ -666,13 +513,10 @@ import:
 ```
 
 
+![](https://mapzen.com/common/styleguide/images/divider/compass-lg-blue.png)
 
-<hr>
+#### [functions-aastep](https://github.com/tangrams/blocks/blob/gh-pages/functions/aastep.yaml)
 
-
-### FUNCTIONS [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages/functions)
-
-#### functions-aastep [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//functions/aastep.yaml)
 AnitAliased ```step()``` function implemented by [Matt DesLauriers](https://twitter.com/mattdesl) in this module <https://github.com/stackgl/glsl-aastep>
 
 This provides the following blocks:
@@ -700,7 +544,8 @@ import:
 
 
 
-#### functions-easing [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//functions/easing.yaml)
+#### [functions-easing](https://github.com/tangrams/blocks/blob/gh-pages/functions/easing.yaml)
+
 Easing functions originally develop by Robert Penner's and transformed to GLSL by [StackGL](http://stack.gl/) in this repo: <https://github.com/stackgl/glsl-easings>
 
 This provides the following blocks:
@@ -763,7 +608,8 @@ import:
 
 
 
-#### functions-map [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//functions/map.yaml)
+#### [functions-map](https://github.com/tangrams/blocks/blob/gh-pages/functions/map.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -794,7 +640,8 @@ import:
 
 
 
-#### functions-pulse [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//functions/pulse.yaml)
+#### [functions-pulse](https://github.com/tangrams/blocks/blob/gh-pages/functions/pulse.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -818,13 +665,10 @@ import:
 ```
 
 
+![](https://mapzen.com/common/styleguide/images/divider/compass-lg-blue.png)
 
-<hr>
+#### [fx-water](https://github.com/tangrams/blocks/blob/gh-pages/fx/water.yaml)
 
-
-### FX [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages/fx)
-
-#### fx-water [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//fx/water.yaml)
 Water effect, made by altering the normal map of a surface and applying a sky spherical map to the surface. The result looks like moving water. <p>See sandbox example:</p>
 [ <div style="background-image: url(https://tangrams.github.io/tangram-sandbox/styles/sandbox.png); width: 100%; height: 100px; background-position: center center;"></div> ](https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/sandbox.yaml)
 This provides the following blocks:
@@ -855,13 +699,10 @@ import:
 ```
 
 
+![](https://mapzen.com/common/styleguide/images/divider/compass-lg-blue.png)
 
-<hr>
+#### [generative-caustic](https://github.com/tangrams/blocks/blob/gh-pages/generative/caustics.yaml)
 
-
-### GENERATIVE [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages/generative)
-
-#### generative-caustic [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//generative/caustics.yaml)
 This provides the following blocks:
 
 - **global**:
@@ -893,7 +734,8 @@ import:
 
 
 
-#### generative-fbm [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//generative/fbm.yaml)
+#### [generative-fbm](https://github.com/tangrams/blocks/blob/gh-pages/generative/fbm.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -927,7 +769,8 @@ import:
 
 
 
-#### generative-noise [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//generative/noise.yaml)
+#### [generative-noise](https://github.com/tangrams/blocks/blob/gh-pages/generative/noise.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -956,7 +799,8 @@ import:
 
 
 
-#### generative-random [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//generative/random.yaml)
+#### [generative-random](https://github.com/tangrams/blocks/blob/gh-pages/generative/random.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -987,7 +831,8 @@ import:
 
 
 
-#### generative-voronoi [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//generative/voronoi.yaml)
+#### [generative-voronoi](https://github.com/tangrams/blocks/blob/gh-pages/generative/voronoi.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -1011,13 +856,10 @@ import:
 ```
 
 
+![](https://mapzen.com/common/styleguide/images/divider/compass-lg-blue.png)
 
-<hr>
+#### [geometry-dynamic-height](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-height.yaml)
 
-
-### GEOMETRY [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages/geometry)
-
-#### geometry-dynamic-height [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//geometry/dynamic-height.yaml)
 This provides the following blocks:
 
 - **position**:
@@ -1055,7 +897,8 @@ import:
 
 
 
-#### geometry-dynamic-width [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//geometry/dynamic-width.yaml)
+#### [geometry-dynamic-width](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-width.yaml)
+
 This provides the following blocks:
 
 - **width**:
@@ -1086,7 +929,8 @@ import:
 
 
 
-#### geometry-matrices [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//geometry/matrices.yaml)
+#### [geometry-matrices](https://github.com/tangrams/blocks/blob/gh-pages/geometry/matrices.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -1126,7 +970,8 @@ import:
 
 
 
-#### geometry-normal [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//geometry/normal.yaml)
+#### [geometry-normal](https://github.com/tangrams/blocks/blob/gh-pages/geometry/normal.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -1153,7 +998,8 @@ import:
 
 
 
-#### geometry-projections [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//geometry/projections.yaml)
+#### [geometry-projections](https://github.com/tangrams/blocks/blob/gh-pages/geometry/projections.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -1204,7 +1050,8 @@ import:
 
 
 
-#### geometry-tilt [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//geometry/tilt.yaml)
+#### [geometry-tilt](https://github.com/tangrams/blocks/blob/gh-pages/geometry/tilt.yaml)
+
 This provides the following blocks:
 
 - **position**:
@@ -1246,13 +1093,10 @@ import:
 ```
 
 
+![](https://mapzen.com/common/styleguide/images/divider/compass-lg-blue.png)
 
-<hr>
+#### [lines-chevron](https://github.com/tangrams/blocks/blob/gh-pages/lines/chevron.yaml)
 
-
-### LINES [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages/lines)
-
-#### lines-chevron [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//lines/chevron.yaml)
 This provides the following blocks:
 
 - **color**:
@@ -1292,7 +1136,8 @@ import:
 
 
 
-#### lines-dash [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//lines/dash.yaml)
+#### [lines-dash](https://github.com/tangrams/blocks/blob/gh-pages/lines/dash.yaml)
+
 This provides the following blocks:
 
 - **filter**:
@@ -1330,7 +1175,8 @@ import:
 
 
 
-#### lines-dots [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//lines/dots.yaml)
+#### [lines-dots](https://github.com/tangrams/blocks/blob/gh-pages/lines/dots.yaml)
+
 This provides the following blocks:
 
 - **color**:
@@ -1367,7 +1213,8 @@ import:
 
 
 
-#### lines-outline [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//lines/outline.yaml)
+#### [lines-outline](https://github.com/tangrams/blocks/blob/gh-pages/lines/outline.yaml)
+
 This provides the following blocks:
 
 - **color**:
@@ -1405,7 +1252,8 @@ import:
 
 
 
-#### lines-stripes [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//lines/stripes.yaml)
+#### [lines-stripes](https://github.com/tangrams/blocks/blob/gh-pages/lines/stripes.yaml)
+
 This provides the following blocks:
 
 - **color**:
@@ -1439,13 +1287,10 @@ import:
 ```
 
 
+![](https://mapzen.com/common/styleguide/images/divider/compass-lg-blue.png)
 
-<hr>
+#### [patterns-dots](https://github.com/tangrams/blocks/blob/gh-pages/patterns/dots.yaml)
 
-
-### PATTERNS [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages/patterns)
-
-#### patterns-dots [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//patterns/dots.yaml)
 This provides the following blocks:
 
 - **global**:
@@ -1471,7 +1316,8 @@ import:
 
 
 
-#### patterns-grid [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//patterns/grid.yaml)
+#### [patterns-grid](https://github.com/tangrams/blocks/blob/gh-pages/patterns/grid.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -1500,7 +1346,8 @@ import:
 
 
 
-#### patterns-stripes [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//patterns/stripes.yaml)
+#### [patterns-stripes](https://github.com/tangrams/blocks/blob/gh-pages/patterns/stripes.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -1534,7 +1381,8 @@ import:
 
 
 
-#### patterns-waves [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//patterns/waves.yaml)
+#### [patterns-waves](https://github.com/tangrams/blocks/blob/gh-pages/patterns/waves.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -1561,7 +1409,8 @@ import:
 
 
 
-#### patterns-zigzag [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//patterns/zigzag.yaml)
+#### [patterns-zigzag](https://github.com/tangrams/blocks/blob/gh-pages/patterns/zigzag.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -1586,13 +1435,10 @@ import:
 ```
 
 
+![](https://mapzen.com/common/styleguide/images/divider/compass-lg-blue.png)
 
-<hr>
+#### [points-cross](https://github.com/tangrams/blocks/blob/gh-pages/points/cross.yaml)
 
-
-### POINTS [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages/points)
-
-#### points-cross [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//points/cross.yaml)
 This provides the following blocks:
 
 - **color**:
@@ -1628,7 +1474,8 @@ import:
 
 
 
-#### points-shape [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//points/shape.yaml)
+#### [points-shape](https://github.com/tangrams/blocks/blob/gh-pages/points/shape.yaml)
+
 This provides the following blocks:
 
 - **color**:
@@ -1669,13 +1516,10 @@ import:
 ```
 
 
+![](https://mapzen.com/common/styleguide/images/divider/compass-lg-blue.png)
 
-<hr>
+#### [shapes-circle](https://github.com/tangrams/blocks/blob/gh-pages/shapes/circle.yaml)
 
-
-### SHAPES [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages/shapes)
-
-#### shapes-circle [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//shapes/circle.yaml)
 This provides the following blocks:
 
 - **global**:
@@ -1706,7 +1550,8 @@ import:
 
 
 
-#### shapes-cross [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//shapes/cross.yaml)
+#### [shapes-cross](https://github.com/tangrams/blocks/blob/gh-pages/shapes/cross.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -1734,7 +1579,8 @@ import:
 
 
 
-#### shapes-digits [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//shapes/digits.yaml)
+#### [shapes-digits](https://github.com/tangrams/blocks/blob/gh-pages/shapes/digits.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -1768,7 +1614,8 @@ import:
 
 
 
-#### shapes-polygons [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//shapes/polygons.yaml)
+#### [shapes-polygons](https://github.com/tangrams/blocks/blob/gh-pages/shapes/polygons.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -1800,7 +1647,8 @@ import:
 
 
 
-#### shapes-rect [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//shapes/rect.yaml)
+#### [shapes-rect](https://github.com/tangrams/blocks/blob/gh-pages/shapes/rect.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -1829,7 +1677,8 @@ import:
 
 
 
-#### shapes-simplex [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//shapes/simplex.yaml)
+#### [shapes-simplex](https://github.com/tangrams/blocks/blob/gh-pages/shapes/simplex.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -1858,13 +1707,10 @@ import:
 ```
 
 
+![](https://mapzen.com/common/styleguide/images/divider/compass-lg-blue.png)
 
-<hr>
+#### [space-constant](https://github.com/tangrams/blocks/blob/gh-pages/space/constant.yaml)
 
-
-### SPACE [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages/space)
-
-#### space-constant [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//space/constant.yaml)
 This provides the following blocks:
 
 - **global**:
@@ -1890,7 +1736,8 @@ import:
 
 
 
-#### space-screen [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//space/screen.yaml)
+#### [space-screen](https://github.com/tangrams/blocks/blob/gh-pages/space/screen.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -1917,7 +1764,8 @@ import:
 
 
 
-#### space-tex [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//space/tex.yaml)
+#### [space-tex](https://github.com/tangrams/blocks/blob/gh-pages/space/tex.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -1943,7 +1791,8 @@ import:
 
 
 
-#### space-tile [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//space/tile.yaml)
+#### [space-tile](https://github.com/tangrams/blocks/blob/gh-pages/space/tile.yaml)
+
 This provides the following blocks:
 
 - **position**:
@@ -1977,7 +1826,8 @@ import:
 
 
 
-#### space-uz [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//space/uz.yaml)
+#### [space-uz](https://github.com/tangrams/blocks/blob/gh-pages/space/uz.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -2001,13 +1851,10 @@ import:
 ```
 
 
+![](https://mapzen.com/common/styleguide/images/divider/compass-lg-blue.png)
 
-<hr>
+#### [terrain-base](https://github.com/tangrams/blocks/blob/gh-pages/terrain/base.yaml)
 
-
-### TERRAIN [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages/terrain)
-
-#### terrain-base [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//terrain/base.yaml)
 
 
 Import it using:
@@ -2030,7 +1877,8 @@ import:
 
 
 
-#### terrain-geometry [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//terrain/geometry.yaml)
+#### [terrain-geometry](https://github.com/tangrams/blocks/blob/gh-pages/terrain/geometry.yaml)
+
 This provides the following blocks:
 
 - **position**:
@@ -2069,7 +1917,8 @@ import:
 
 
 
-#### terrain-lines [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//terrain/lines.yaml)
+#### [terrain-lines](https://github.com/tangrams/blocks/blob/gh-pages/terrain/lines.yaml)
+
 
 
 This block use the following **defines** with the following defaults. Remember you can use or tweak.
@@ -2096,7 +1945,8 @@ import:
 
 
 
-#### terrain-polygons [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//terrain/polygons.yaml)
+#### [terrain-polygons](https://github.com/tangrams/blocks/blob/gh-pages/terrain/polygons.yaml)
+
 
 
 This block use the following **defines** with the following defaults. Remember you can use or tweak.
@@ -2123,7 +1973,8 @@ import:
 
 
 
-#### terrain-terrain [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//terrain/terrain.yaml)
+#### [terrain-terrain](https://github.com/tangrams/blocks/blob/gh-pages/terrain/terrain.yaml)
+
 
 
 Import it using:
@@ -2144,13 +1995,10 @@ import:
 ```
 
 
+![](https://mapzen.com/common/styleguide/images/divider/compass-lg-blue.png)
 
-<hr>
+#### [terrarium-base](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/base.yaml)
 
-
-### TERRARIUM [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages/terrarium)
-
-#### terrarium-base [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//terrarium/base.yaml)
 
 
 Import it using:
@@ -2173,7 +2021,8 @@ import:
 
 
 
-#### terrarium-geometry [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//terrarium/geometry.yaml)
+#### [terrarium-geometry](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/geometry.yaml)
+
 This provides the following blocks:
 
 - **position**:
@@ -2212,7 +2061,8 @@ import:
 
 
 
-#### terrarium-lines [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//terrarium/lines.yaml)
+#### [terrarium-lines](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/lines.yaml)
+
 
 
 This block use the following **defines** with the following defaults. Remember you can use or tweak.
@@ -2239,7 +2089,8 @@ import:
 
 
 
-#### terrarium-polygons [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//terrarium/polygons.yaml)
+#### [terrarium-polygons](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/polygons.yaml)
+
 
 
 This block use the following **defines** with the following defaults. Remember you can use or tweak.
@@ -2266,7 +2117,8 @@ import:
 
 
 
-#### terrarium-terrain [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//terrarium/terrain.yaml)
+#### [terrarium-terrain](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/terrain.yaml)
+
 
 
 Import it using:
@@ -2287,13 +2139,10 @@ import:
 ```
 
 
+![](https://mapzen.com/common/styleguide/images/divider/compass-lg-blue.png)
 
-<hr>
+#### [texture-non-repetitive](https://github.com/tangrams/blocks/blob/gh-pages/texture/non-repetitive.yaml)
 
-
-### TEXTURE [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages/texture)
-
-#### texture-non-repetitive [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//texture/non-repetitive.yaml)
 This provides the following blocks:
 
 - **global**:
@@ -2319,7 +2168,8 @@ import:
 
 
 
-#### texture-zoom-fade [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//texture/zoom-fade.yaml)
+#### [texture-zoom-fade](https://github.com/tangrams/blocks/blob/gh-pages/texture/zoom-fade.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -2343,13 +2193,10 @@ import:
 ```
 
 
+![](https://mapzen.com/common/styleguide/images/divider/compass-lg-blue.png)
 
-<hr>
+#### [tiling-brick](https://github.com/tangrams/blocks/blob/gh-pages/tiling/brick.yaml)
 
-
-### TILING [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages/tiling)
-
-#### tiling-brick [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//tiling/brick.yaml)
 This provides the following blocks:
 
 - **global**:
@@ -2375,7 +2222,8 @@ import:
 
 
 
-#### tiling-simplex [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//tiling/simplex.yaml)
+#### [tiling-simplex](https://github.com/tangrams/blocks/blob/gh-pages/tiling/simplex.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -2404,7 +2252,8 @@ import:
 
 
 
-#### tiling-tile [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//tiling/tile.yaml)
+#### [tiling-tile](https://github.com/tangrams/blocks/blob/gh-pages/tiling/tile.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -2430,7 +2279,8 @@ import:
 
 
 
-#### tiling-truchet [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//tiling/truchet.yaml)
+#### [tiling-truchet](https://github.com/tangrams/blocks/blob/gh-pages/tiling/truchet.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -2459,7 +2309,7 @@ import:
 ```
 
 
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 <hr><hr>
 ### The MIT License (MIT)
 

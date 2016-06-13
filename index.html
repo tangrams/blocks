@@ -1,72 +1,141 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Tangram Blocks</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
-		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
-		<script type="text/javascript" src="https://rawgit.com/chjj/marked/master/lib/marked.js"></script>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Tangram Blocks</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+        <script type="text/javascript" src="https://rawgit.com/chjj/marked/master/lib/marked.js"></script>
 
-		<link rel="stylesheet" href="https://mapzen.com/common/styleguide/styles/styleguide.css">
-		<style type="text/css">
-			canvas {
-				position: relative;
-				left: 50%;
-				transform: translate(-50%, 0px);
-			}
-			img {
-				position: relative;
-				left: 50%;
-				transform: translate(-50%, 0px);
-			}
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<div class="col-xs-12 col-md-3">
-			      <div class="toc" role="directory" id="toc">
-			      </div>
-			    </div>
-			    <div class="col-xs-12 col-md-9">
-					<div id="content"> 
-					</div>
-				</div>
-		</div>
-		<script src="https://mapzen.com/common/styleguide/scripts/mapzen-styleguide.min.js"></script>
-		<script type="text/javascript">
+        <link rel="stylesheet" href="https://mapzen.com/common/styleguide/styles/styleguide.css">
+        <style type="text/css">
+            canvas {
+                position: relative;
+                left: 50%;
+                transform: translate(-50%, 0px);
+            }
+            img {
+                position: relative;
+                left: 50%;
+                transform: translate(-50%, 0px);
+                max-width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="side-nav styleguide-side-nav col-md-3">
+                <div class="toc hidden-print" role="directory">
+                    <ul class="nav toc-nav affix" id="toc">
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div id="content"> 
+                </div>
+            </div>
+        </div>
 
-			function fetchHTTP(url, methood){
-	            var request = new XMLHttpRequest(), response;
-	            request.onreadystatechange = function () {
-	                if (request.readyState === 4 && request.status === 200) {
-	                    response = request.responseText;
-	                }
-	            }
-	            request.open(methood ? methood : 'GET', url, false);
-	            request.send();
-	            return response;
-	        }
+        <script src="https://mapzen.com/common/styleguide/scripts/mapzen-styleguide.min.js"></script>
+        <script type="text/javascript">
 
-	        function loadMarkdown(){
-	        	var content = document.getElementById('content');
-	            var mdText = fetchHTTP("README.md");
-	            content.innerHTML = marked(mdText);
-	            // Load codes tags that have "src" attributes
-		        var list = document.getElementsByTagName("code");
-		        for(var i = 0; i < list.length; i++){
-		            if (list[i].className == "lang-glsl" ||
-		                list[i].className == "lang-js" ){
-		                hljs.highlightBlock(list[i]);
-		            }
-		        }
-	        }
+            function fetchHTTP(url, methood){
+                var request = new XMLHttpRequest(), response;
+                request.onreadystatechange = function () {
+                    if (request.readyState === 4 && request.status === 200) {
+                        response = request.responseText;
+                    }
+                }
+                request.open(methood ? methood : 'GET', url, false);
+                request.send();
+                return response;
+            }
 
-	        window.onload = function(){
-	            loadMarkdown();
-	        };
-		</script>
-	</body>
+            function loadTOC() {
+                var toc = document.getElementById('toc');
+                var tocData = JSON.parse(fetchHTTP('toc.json'));
+                for (var folder in tocData) {
+                    var category = document.createElement('li');
+                    category.className = 'toc-top-level';
+                    
+                    var link = document.createElement('a');
+                    link.className = 'toc-subnav-toggle';
+                    link.href = '#';//+folder;
+                    link.innerHTML = folder;
+                    category.appendChild(link);
+                    // link.addEventListener('click', function (e) {
+                    //     e.preventDefault();
+                    //     e.stopPropagation();
+                    //     e.target.className = 'toc-subnav-toggle '
+                    // })
+
+                    var holder = document.createElement('ul');
+                    holder.className = 'toc-subnav';
+                    var counter = 0;
+                    for (var block in tocData[folder]) {
+                        var li = document.createElement('li');
+                        li.innerHTML = '<a href="#'+folder+'-'+block+'">'+block+'</a>';
+                        if (counter === 0) {
+                            li.className = 'main';
+                        }
+
+                        holder.appendChild(li);
+                        counter++;
+                    }
+                    category.appendChild(holder);
+
+                    toc.appendChild(category);
+                }
+            }
+
+            function loadMarkdown() {
+                var content = document.getElementById('content');
+                var mdText = fetchHTTP('README.md');
+                content.innerHTML = marked(mdText);
+                // Load codes tags that have "src" attributes
+                var list = document.getElementsByTagName('code');
+                for (var i = 0; i < list.length; i++) {
+                    if (list[i].className == 'lang-glsl' ||
+                        list[i].className == 'lang-js' ){
+                        hljs.highlightBlock(list[i]);
+                    }
+                }
+            }
+
+            function searchHash() {
+                if (window.location.hash !== '') {
+                    var hashes = location.hash.split('&');
+                    for (var i in hashes) {
+                        let ext = hashes[i].substr(hashes[i].lastIndexOf('.') + 1);
+                        let hash = hashes[i];
+
+                        // Extract hash if is present
+                        if (hash.search('#') === 0) {
+                            hash = hash.substr(1);
+                        }
+
+                        search(hash);
+                    }
+                }
+            }
+
+            function search(string) {
+                var elements = document.querySelectorAll('[id^="-'+string+'-"]');
+                if (elements) {
+                    elements[0].scrollIntoView();
+                }
+            }
+
+            window.onload = function(){
+                loadTOC();
+                loadMarkdown();
+                searchHash();
+            };
+
+            window.addEventListener('hashchange', searchHash);
+        </script>
+    </body>
 </html>

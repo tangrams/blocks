@@ -1,6 +1,7 @@
 
 
-#### geometry-dynamic-height [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//geometry/dynamic-height.yaml)
+#### [geometry-dynamic-height](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-height.yaml)
+
 This provides the following blocks:
 
 - **position**:
@@ -38,7 +39,8 @@ import:
 
 
 
-#### geometry-dynamic-width [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//geometry/dynamic-width.yaml)
+#### [geometry-dynamic-width](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-width.yaml)
+
 This provides the following blocks:
 
 - **width**:
@@ -69,7 +71,8 @@ import:
 
 
 
-#### geometry-matrices [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//geometry/matrices.yaml)
+#### [geometry-matrices](https://github.com/tangrams/blocks/blob/gh-pages/geometry/matrices.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -109,7 +112,8 @@ import:
 
 
 
-#### geometry-normal [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//geometry/normal.yaml)
+#### [geometry-normal](https://github.com/tangrams/blocks/blob/gh-pages/geometry/normal.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -136,7 +140,8 @@ import:
 
 
 
-#### geometry-projections [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//geometry/projections.yaml)
+#### [geometry-projections](https://github.com/tangrams/blocks/blob/gh-pages/geometry/projections.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -187,7 +192,8 @@ import:
 
 
 
-#### geometry-tilt [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//geometry/tilt.yaml)
+#### [geometry-tilt](https://github.com/tangrams/blocks/blob/gh-pages/geometry/tilt.yaml)
+
 This provides the following blocks:
 
 - **position**:

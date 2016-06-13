@@ -1,6 +1,7 @@
 
 
-#### texture-non-repetitive [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//texture/non-repetitive.yaml)
+#### [texture-non-repetitive](https://github.com/tangrams/blocks/blob/gh-pages/texture/non-repetitive.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -26,7 +27,8 @@ import:
 
 
 
-#### texture-zoom-fade [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//texture/zoom-fade.yaml)
+#### [texture-zoom-fade](https://github.com/tangrams/blocks/blob/gh-pages/texture/zoom-fade.yaml)
+
 This provides the following blocks:
 
 - **global**:

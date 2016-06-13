@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import sys, glob, os, yaml, re
+import sys, glob, os, re, json, yaml
 
 def extractFunctions(searchText):
     return re.findall("((void|bool|int|float|vec\\d|mat\\d)+\\s.*\\(.*\\)\\s+\\{)", searchText)
@@ -12,7 +12,8 @@ def appendDocumentation(readme_file, filename):
     for name_block in yaml_file['styles']:
 
         # Add a title that points to github
-        readme_file.write('\n\n#### ' + name_block + " [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages/"+filename[1:]+")\n")
+        readme_file.write('\n\n#### [' + name_block + '](https://github.com/tangrams/blocks/blob/gh-pages'+filename[1:]+')\n\n');
+        # readme_file.write('\n\n#### [' + name_block + ']('+filename[1:]+')\n\n');
 
         blocks.append(name_block)
 
@@ -123,7 +124,7 @@ def makeAll():
 
     # List to append all folder README.md files to compose a big main README.md file
     readmes = []
-    index = dict()
+    toc = dict()
     #   Iterate through all the folders
     for folder in folders:
 
@@ -135,7 +136,7 @@ def makeAll():
         readme = folder+'/README.md'
         readme_file = open(readme, "w")
 
-        index_blocks = []
+        toc_blocks = []
         # That contatin the documentation of all the *.yaml files inside
         for filename in glob.glob(folder+'/*.yaml'):
             block = os.path.splitext(os.path.basename(filename))[0]
@@ -145,14 +146,14 @@ def makeAll():
                 print "Skipping " + block
                 continue
 
-            index_styles = appendDocumentation(readme_file, filename)
+            toc_styles = appendDocumentation(readme_file, filename)
 
-            # Keep track of the folder structor for making an index
-            if not folder[2:] in index:
-                index[folder[2:]] = dict()
-                index[folder[2:]][block] = index_styles
+            # Keep track of the folder structor for making an toc
+            if not folder[2:] in toc:
+                toc[folder[2:]] = dict()
+                toc[folder[2:]][block] = toc_styles
             else:
-                index[folder[2:]][block] = index_styles
+                toc[folder[2:]][block] = toc_styles
 
             # Make a *-full.yaml version that contain all dependencies
             # full_yaml = dict()
@@ -165,19 +166,23 @@ def makeAll():
         # Keep track of all the README.md to construct a big main one
         readmes.append(readme)
 
+    # Compose a toc.json with the structure of the blocks
+    with open('toc.json', 'w') as outfile:
+        json.dump(toc, outfile)
+
     # Compose a the BIG main README.md
     with open('README.md', 'w') as outfile:
         # Add the intro 
         with open('INTRO.md') as infile:
                 outfile.write(infile.read())
 
-        # Make index
-        outfile.write('\n## Blocks Index\n<hr>\n')
-        for folder in sorted(index.keys()):
-            outfile.write('- ['+ folder.title() +'](https://github.com/tangrams/blocks/tree/gh-pages/' + folder + ')\n')
-            for yaml in index[folder].keys():
-                for block in index[folder][yaml]:
-                    outfile.write('  - ['+ block.title() +'](https://github.com/tangrams/blocks/tree/gh-pages/'+ folder + '/' + yaml+'.yaml)\n\n')
+        # ADD TOC to main README
+        # outfile.write('\n## Blocks Index\n<hr>\n')
+        # for folder in sorted(toc.keys()):
+        #     outfile.write('- ['+ folder.title() +'](https://github.com/tangrams/blocks/tree/gh-pages/' + folder + ')\n')
+        #     for yaml in toc[folder].keys():
+        #         for block in toc[folder][yaml]:
+        #             outfile.write('  - ['+ block.title() +'](https://github.com/tangrams/blocks/tree/gh-pages/'+ folder + '/' + yaml+'.yaml)\n\n')
 
 
 
@@ -187,11 +192,14 @@ def makeAll():
         for fname in readmes:
             with open(fname) as infile:
                 folder = os.path.dirname(fname)[2:]
-                outfile.write("\n<hr>\n")
-                outfile.write("\n\n### " + folder.upper() + " [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages/"+folder+")")
+                # outfile.write("\n<hr>\n")
+                outfile.write('![](https://mapzen.com/common/styleguide/images/divider/compass-lg-blue.png)')
+                # outfile.write("\n\n### [" + folder.upper() + "](https://github.com/tangrams/blocks/tree/gh-pages/"+folder+")")
+                # outfile.write("\n\n### [" + folder.upper() + "]("+folder+")")
                 outfile.write(infile.read())
 
         # Add the License at the end
+        outfile.write('![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)')
         outfile.write('\n<hr><hr>\n')
         with open('LICENSE.md') as infile:
                 outfile.write(infile.read())

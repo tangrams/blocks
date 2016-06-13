@@ -1,6 +1,7 @@
 
 
-#### tiling-brick [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//tiling/brick.yaml)
+#### [tiling-brick](https://github.com/tangrams/blocks/blob/gh-pages/tiling/brick.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -26,7 +27,8 @@ import:
 
 
 
-#### tiling-simplex [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//tiling/simplex.yaml)
+#### [tiling-simplex](https://github.com/tangrams/blocks/blob/gh-pages/tiling/simplex.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -55,7 +57,8 @@ import:
 
 
 
-#### tiling-tile [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//tiling/tile.yaml)
+#### [tiling-tile](https://github.com/tangrams/blocks/blob/gh-pages/tiling/tile.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -81,7 +84,8 @@ import:
 
 
 
-#### tiling-truchet [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//tiling/truchet.yaml)
+#### [tiling-truchet](https://github.com/tangrams/blocks/blob/gh-pages/tiling/truchet.yaml)
+
 This provides the following blocks:
 
 - **global**:

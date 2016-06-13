@@ -1,6 +1,7 @@
 
 
-#### shapes-circle [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//shapes/circle.yaml)
+#### [shapes-circle](https://github.com/tangrams/blocks/blob/gh-pages/shapes/circle.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -31,7 +32,8 @@ import:
 
 
 
-#### shapes-cross [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//shapes/cross.yaml)
+#### [shapes-cross](https://github.com/tangrams/blocks/blob/gh-pages/shapes/cross.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -59,7 +61,8 @@ import:
 
 
 
-#### shapes-digits [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//shapes/digits.yaml)
+#### [shapes-digits](https://github.com/tangrams/blocks/blob/gh-pages/shapes/digits.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -93,7 +96,8 @@ import:
 
 
 
-#### shapes-polygons [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//shapes/polygons.yaml)
+#### [shapes-polygons](https://github.com/tangrams/blocks/blob/gh-pages/shapes/polygons.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -125,7 +129,8 @@ import:
 
 
 
-#### shapes-rect [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//shapes/rect.yaml)
+#### [shapes-rect](https://github.com/tangrams/blocks/blob/gh-pages/shapes/rect.yaml)
+
 This provides the following blocks:
 
 - **global**:
@@ -154,7 +159,8 @@ import:
 
 
 
-#### shapes-simplex [<i class='fa fa-github' aria-hidden='true'></i>](https://github.com/tangrams/blocks/tree/gh-pages//shapes/simplex.yaml)
+#### [shapes-simplex](https://github.com/tangrams/blocks/blob/gh-pages/shapes/simplex.yaml)
+
 This provides the following blocks:
 
 - **global**:
