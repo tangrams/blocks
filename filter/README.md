@@ -119,8 +119,7 @@ Examples:
 
 #### [filter-height](https://github.com/tangrams/blocks/blob/gh-pages/filter/height.yaml)
 
-Adds a dark gradiant to the geometries conform they aproach to height 0. <p>For example:</p>
-[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/default.png); width: 100%; height: 100px; background-position: center center;"></div> ](https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/default.yaml)
+Adds a dark gradiant to the geometries conform they aproach to height 0.
 
 
 
@@ -142,13 +141,17 @@ color.rgb *= min((worldPosition().z*.001 + .5),1.);
 
 
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/default.yaml&lines=88" target="_blank">
+<div style="background-image: url(https://tangrams.github.io/tangram-sandbox/styles/default.png); width: 100%; height: 100px; background-position: center center;"></div>
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [filter-lut](https://github.com/tangrams/blocks/blob/gh-pages/filter/lut.yaml)
 
-Add a look up table filter defined on the uniform ```u_lut``` to the current style. This look up tables are hable to produce similar effect to instagram filters. <p>For example:</p>
-[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/sandbox-lut.png); width: 100%; height: 100px; background-position: center center;"></div> ](https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/sandbox-lut.yaml)
+Add a look up table filter defined on the uniform ```u_lut``` to the current style. This look up tables are hable to produce similar effect to instagram filters.
 
 
 
@@ -178,13 +181,17 @@ color = getLut(color);
 
 
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/sandbox-lut.yaml" target="_blank">
+<div style="background-image: url(https://tangrams.github.io/tangram-sandbox/styles/sandbox-lut.png); width: 100%; height: 100px; background-position: center center;"></div>
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [filter-tv](https://github.com/tangrams/blocks/blob/gh-pages/filter/tv.yaml)
 
-<p>Apply a TV effect to the style like</p>
-[ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/9845C.png); width: 100%; height: 100px; background-position: center center;"></div> ](https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml)
+Apply a TV effect to the style.
 
 
 
@@ -209,3 +216,8 @@ color *= abs(cos((gl_FragCoord.y*TV_FREQ+u_time*5.)));
 ```
 
 
+
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml" target="_blank">
+<div style="background-image: url(https://tangrams.github.io/tangram-sandbox/styles/9845C.png); width: 100%; height: 100px; background-position: center center;"></div>
+</a>

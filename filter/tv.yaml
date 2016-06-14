@@ -4,8 +4,11 @@ styles:
     filter-tv:
         doc:
             description: |  
-                <p>Apply a TV effect to the style like</p>
-                [ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/9845C.png); width: 100%; height: 100px; background-position: center center;"></div> ](https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml)
+                Apply a TV effect to the style.
+            examples:
+                9845C:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/9845C.png
         shaders:
             defines:
                 TV_FREQ: 1.2

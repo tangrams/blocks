@@ -2,8 +2,12 @@ styles:
     filter-height:
         doc:
             description: |  
-                Adds a dark gradiant to the geometries conform they aproach to height 0. <p>For example:</p>
-                [ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/default.png); width: 100%; height: 100px; background-position: center center;"></div> ](https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/default.yaml)
+                Adds a dark gradiant to the geometries conform they aproach to height 0.
+            examples:
+                default:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/default.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/default.png
+                    lines: 88
         shaders:
             blocks:
                 color: |

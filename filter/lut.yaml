@@ -4,8 +4,11 @@ styles:
     filter-lut:
         doc:
             description: |  
-                Add a look up table filter defined on the uniform ```u_lut``` to the current style. This look up tables are hable to produce similar effect to instagram filters. <p>For example:</p>
-                [ <div style="background-image: url(http://tangrams.github.io/tangram-sandbox/styles/sandbox-lut.png); width: 100%; height: 100px; background-position: center center;"></div> ](https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/sandbox-lut.yaml)
+                Add a look up table filter defined on the uniform ```u_lut``` to the current style. This look up tables are hable to produce similar effect to instagram filters.
+            examples:
+                sandbox-lut:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/sandbox-lut.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/sandbox-lut.png
         shaders:
             uniforms:
                 u_lut: imgs/lut-0001.png
