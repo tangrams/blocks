@@ -6,6 +6,7 @@
         <title>Tangram Blocks</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
         <script type="text/javascript" src="https://rawgit.com/chjj/marked/master/lib/marked.js"></script>
@@ -54,6 +55,18 @@
                 return response;
             }
 
+            function cleanTOC() {
+                var topLevel = document.getElementsByClassName('toc-top-level');
+                for (var i in topLevel) {
+                    topLevel[i].className = 'toc-top-level';
+                }
+
+                var subNav = document.getElementsByClassName('toc-subnav');
+                for (var i in subNav) {
+                    subNav[i].className = 'toc-subnav';
+                }
+            }
+
             function loadTOC() {
                 var toc = document.getElementById('toc');
                 var tocData = JSON.parse(fetchHTTP('toc.json'));
@@ -63,14 +76,14 @@
                     
                     var link = document.createElement('a');
                     link.className = 'toc-subnav-toggle';
-                    link.href = '#';//+folder;
+                    link.href = '#'+folder;
                     link.innerHTML = folder;
                     category.appendChild(link);
-                    // link.addEventListener('click', function (e) {
-                    //     e.preventDefault();
-                    //     e.stopPropagation();
-                    //     e.target.className = 'toc-subnav-toggle '
-                    // })
+                    link.addEventListener('click', function (e) {
+                        cleanTOC();
+                        e.target.parentNode.className = "toc-top-level toc-current";
+                        e.target.parentNode.childNodes[1].className = "toc-subnav toc-expand";
+                    })
 
                     var holder = document.createElement('ul');
                     holder.className = 'toc-subnav';
