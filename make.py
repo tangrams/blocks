@@ -85,7 +85,8 @@ def appendDocumentation(readme_file, filename, counter):
                         if 'lines' in yaml_file['styles'][name_block]['doc']['examples'][example]:
                             url = url + '&lines=' + str(yaml_file['styles'][name_block]['doc']['examples'][example]['lines'])
                         if 'img' in yaml_file['styles'][name_block]['doc']['examples'][example]:
-                            readme_file.write('<a href="'+url+'" target="_blank">\n<div style="background-image: url('+yaml_file['styles'][name_block]['doc']['examples'][example]['img']+'); width: 100%; height: 100px; background-position: center center;"></div>\n</a>\n')
+                            readme_file.write('<a href="'+url+'" target="_blank">\n<img src="'+yaml_file['styles'][name_block]['doc']['examples'][example]['img']+'" style="width: 100%; height: 100px; object-fit: cover;">\n</a>\n')
+
                         else:
                             readme_file.write('<a href="'+url+'" target="_blank">'+example+'</a>\n')
 
