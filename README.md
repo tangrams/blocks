@@ -1,4 +1,4 @@
-![](blocks.jpg)
+![](blocks.png)
 
 # Tangram Blocks
 

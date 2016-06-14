@@ -3,6 +3,7 @@ precision mediump float;
 #endif
 
 uniform vec2 u_resolution;
+uniform vec2 u_mouse;
 uniform float u_time;
 
 float smoothedge(float v) {
@@ -24,16 +25,7 @@ float square(vec2 p, float size) {
 }
 
 float random (in float x) {
-    return fract(sin(x)*1e4);
-}
-
-float dist (vec2 st) {
-    // return length(st);
-    // return dot(st,st);
-    // return min(abs(st.x+st.y),abs(st.x-st.y))+0.001;
-    // return abs(st.x+st.y);
-    // return abs(st.x)+abs(st.y);
-    return abs(st.x);
+    return fract(sin(x)*43758.5453);
 }
 
 mat2 rotate2d(float angle){
@@ -62,18 +54,17 @@ void main() {
 
     st -= .5;
     
-    float rInv = 1./dist(st);
+    float rInv = 1./abs(st.x);
     vec2 pos = st * rInv - vec2(rInv,0.0);
-    rInv *= 0.3;
+    rInv *= 0.4;
 
     float t = u_time;
-    pos *= vec2(1.,2.)*10.;
+    pos *= 6.;
+    pos.y += sin(t*0.01)*100.;
     
-    float seed = random(floor(pos.y));
-    
-    float vel = t;
-    vel *= 1.5 * seed - .5;
-    pos.x += vel;
+    float seed = random(floor(pos.y))+.1;
+
+    pos.x -= (t*seed)*5.;
     
     vec2 ipos = floor(pos);
     vec2 fpos = fract(pos);    
@@ -81,7 +72,7 @@ void main() {
     fpos = rotate2d(t-seed) * fpos;
     
     float d = 1.;
-    float p = random(seed+ipos.x);
+    float p = random(seed*ipos.x);
     if (p <= .125) {
         d = min(d, triangle(fpos, 0.186));
     } else if (p <= .25) {
@@ -93,7 +84,7 @@ void main() {
     vec3 color = myPalette(fract(p+seed));
     color = mix(vec3(1.),
                 color,
-                clamp((1.-smoothedge(d))*(1.-rInv*rInv),0.,1.));
+                clamp((1.-smoothedge(d))*(1.-smoothstep(0.6,1.,rInv)),0.,1.));
     
     gl_FragColor = vec4(color,1.0);
 }
