@@ -1,9 +1,15 @@
 # Patricio Gonzalez Vivo - 2015
 # From Chapter about Noise at http://thebookofshaders.com/11/
 
-import: random.yaml
+import: 
+    - random.yaml
+
 styles:
     generative-noise:
+        doc:
+            description: |
+                Set of Noise functions.
+                For more information on this theme read [this chapter of The Book of Shaders about Noise](http://thebookofshaders.com/11/).
         mix: generative-random
         shaders:
             blocks:

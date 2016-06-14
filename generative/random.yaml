@@ -3,6 +3,10 @@
 
 styles:
     generative-random:
+        doc:
+            description: |
+                Set of functions about random.
+                For more information on this theme read [this chapter of The Book of Shaders about Random](http://thebookofshaders.com/10/).
         shaders:
             blocks:
                 global: |

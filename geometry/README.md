@@ -4,7 +4,7 @@
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -35,7 +35,7 @@ position.z *= max(1.,.5+ZOOM_LINEAR_FACTOR*zoom);
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -60,7 +60,7 @@ width *= 0.2+min(pow(position.z*0.006,2.),.6);
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -93,7 +93,7 @@ These are the **shader blocks**:
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -114,7 +114,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -158,7 +158,7 @@ These are the **shader blocks**:
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:

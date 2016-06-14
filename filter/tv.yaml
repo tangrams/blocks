@@ -4,7 +4,7 @@ styles:
     filter-tv:
         doc:
             description: |  
-                Apply a TV effect to the style.
+                Apply a old TV effect to the style.
             examples:
                 9845C:
                     url: https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml

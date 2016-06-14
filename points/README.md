@@ -4,7 +4,7 @@
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -33,7 +33,7 @@ color.a = clamp(cross(v_texcoord.xy,vec2(2.,.5)),0.,1.)*CROSS_ALPHA;
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:

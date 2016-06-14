@@ -7,7 +7,7 @@ For more information on this theme read [this chapter of The Book of Shaders abo
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -31,7 +31,7 @@ Procedural generation of color paletters implemented by [Inigo Quiles](https://t
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -54,7 +54,7 @@ For more information on this theme read [this chapter of The Book of Shaders abo
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:

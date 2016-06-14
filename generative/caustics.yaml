@@ -1,9 +1,10 @@
 #   Patricio Gonzalez Vivo - 2016
-#
-#   https://www.shadertoy.com/view/MdlXz8 by David Hoskins
 
 styles:
     generative-caustic:
+        doc:
+            description: |
+                Caustic generative texture inspired on <https://www.shadertoy.com/view/MdlXz8> by David Hoskins
         shaders:
             defines:
                 TAU: 6.28318530718

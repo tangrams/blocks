@@ -2,9 +2,11 @@
 
 #### [generative-caustic](https://github.com/tangrams/blocks/blob/gh-pages/generative/caustics.yaml)
 
+Caustic generative texture inspired on <https://www.shadertoy.com/view/MdlXz8> by David Hoskins
 
 
-Import using:
+
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -27,9 +29,12 @@ These are the **shader blocks**:
 
 #### [generative-fbm](https://github.com/tangrams/blocks/blob/gh-pages/generative/fbm.yaml)
 
+Set of Fractal Brownian Motion functions.
+For more information on this theme read [this chapter of The Book of Shaders about fractal Brownian Motion](http://thebookofshaders.com/13/).
 
 
-Import using:
+
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -43,20 +48,24 @@ This blocks use a custom **shader**.These are the defaults **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float fbm (float x) `
+ + `float fbm (in float x) `
  + `int i = 0; i < int(NUM_OCTAVES); ++i) `
- + `float fbm (vec2 xy) `
+ + `float fbm (in vec2 xy) `
  + `int i = 0; i < int(NUM_OCTAVES); ++i) `
- + `float fbm ( in vec3 xyz) `
+ + `float fbm (in vec3 xyz) `
+ + `int i = 0; i < int(NUM_OCTAVES); ++i) `
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [generative-noise](https://github.com/tangrams/blocks/blob/gh-pages/generative/noise.yaml)
 
+Set of Noise functions.
+For more information on this theme read [this chapter of The Book of Shaders about Noise](http://thebookofshaders.com/11/).
 
 
-Import using:
+
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -77,9 +86,12 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 
 #### [generative-random](https://github.com/tangrams/blocks/blob/gh-pages/generative/random.yaml)
 
+Set of functions about random.
+For more information on this theme read [this chapter of The Book of Shaders about Random](http://thebookofshaders.com/10/).
 
 
-Import using:
+
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -102,9 +114,12 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 
 #### [generative-voronoi](https://github.com/tangrams/blocks/blob/gh-pages/generative/voronoi.yaml)
 
+Set of Voronoi functions.
+For more information on this theme read [this chapter of The Book of Shaders about Cellular Noise and Voronoi](http://thebookofshaders.com/12/).
 
 
-Import using:
+
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:

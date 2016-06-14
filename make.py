@@ -26,7 +26,7 @@ def appendDocumentation(readme_file, filename, counter):
                 readme_file.write(yaml_file['styles'][name_block]['doc']['description']+'\n')
 
         # Add an explanation of how to import this block
-        readme_file.write(  '\n\nImport using:\n\n' +
+        readme_file.write(  '\n\nTo import this block add the following url to your `import` list:\n\n' +
                             '```yaml\n' +
                             'import:\n' +
                             '    - https://tangrams.github.io/blocks/' + filename[2:] + '\n' +

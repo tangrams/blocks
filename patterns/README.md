@@ -4,7 +4,7 @@
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -24,7 +24,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -47,7 +47,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -74,7 +74,7 @@ These are the **shader blocks**:
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -95,7 +95,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:

@@ -4,14 +4,19 @@ styles:
     elevation-normal:
         doc:
             description: |
-                When a raster normalmap tiles source is load like:
+                The raster normalmap tiles needs to be load like this:
                 ```
                     normals-elevation:
                         type: Raster
                         url: https://s3.amazonaws.com/elevation-tiles-prod/normal/{z}/{x}/{y}.png
                         max_zoom: 15
                 ```
-                Use it to apply the normalmap and let the lighting system do the rest
+                A simple way to do it is to import `https://tangrams.github.io/blocks/source-elevation.yaml` and then link the vector tiles to them (see the example).
+            examples:
+                grain:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/elevation.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/elevation.png
+                    lines: 14                
         raster: custom
         shaders:
             defines:

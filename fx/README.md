@@ -7,7 +7,7 @@ The result looks like moving water.
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:

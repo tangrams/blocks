@@ -1,0 +1,13 @@
+# Patricio Gonzalez Vivo - 2016
+
+import:
+    - ../color/conversion.yaml
+styles:
+    lines-stripes:
+        base: lines
+        mix: [color-conversion]
+        texcoords: true
+        shaders:
+            blocks:
+                color: |
+                    color.rgb = hsb2rgb(vec3(v_texcoord.x,1.,1.));

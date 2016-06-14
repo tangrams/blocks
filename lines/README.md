@@ -4,7 +4,7 @@
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -37,7 +37,7 @@ color = mix(color,
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -68,7 +68,7 @@ if ( step(DASH_SIZE,fract(v_texcoord.y*DASH_SCALE)) == 0.){
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -98,7 +98,7 @@ color.a = 1.- step(DOT_SIZE, dot(st,st)*2.);
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -125,11 +125,36 @@ color.rgb = mix(color.rgb,
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
+#### [lines-stripes](https://github.com/tangrams/blocks/blob/gh-pages/lines/rainbow.yaml)
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/rainbow.yaml
+```
+
+
+This blocks use a custom **shader**.These are the **shader blocks**:
+
+- **color**:
+
+```glsl
+color.rgb = hsb2rgb(vec3(v_texcoord.x,1.,1.));
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [lines-stripes](https://github.com/tangrams/blocks/blob/gh-pages/lines/stripes.yaml)
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:

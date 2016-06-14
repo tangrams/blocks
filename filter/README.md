@@ -7,7 +7,7 @@ The amount can be set by the GRAIN_AMOUNT define [0.0~1.0]
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -48,7 +48,7 @@ Apply a grid filter to they syle
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -90,7 +90,7 @@ Hatching filter based on [Jaume's Sanchez](https://twitter.com/thespite?lang=en)
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -123,7 +123,7 @@ Adds a dark gradiant to the geometries conform they aproach to height 0.
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -155,7 +155,7 @@ Add a look up table filter defined on the uniform ```u_lut``` to the current sty
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -191,11 +191,11 @@ Examples:
 
 #### [filter-tv](https://github.com/tangrams/blocks/blob/gh-pages/filter/tv.yaml)
 
-Apply a TV effect to the style.
+Apply a old TV effect to the style.
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:

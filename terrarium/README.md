@@ -4,7 +4,7 @@
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -20,7 +20,7 @@ import:
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -52,7 +52,7 @@ position.z += getHeight();
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -71,7 +71,7 @@ This blocks use a custom **shader**.These are the defaults **defines**:
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -90,7 +90,7 @@ This blocks use a custom **shader**.These are the defaults **defines**:
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:

@@ -7,6 +7,13 @@ import:
 
 styles:
     elevation-stripes:
+        doc:
+            description: |
+                Perfect for the `landuse` layer on your elevation maps, the `elevation-stripe` modules use the color of the layer to draw a stripe pattern that changes width based on the surface of the terrain.
+            examples:
+                stripes:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/elevation-stripes.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/elevation-stripes.png
         base: polygons
         mix: [patterns-stripes, space-tile]
         blend: inlay

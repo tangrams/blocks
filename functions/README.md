@@ -6,7 +6,7 @@ AnitAliased ```step()``` function implemented by [Matt DesLauriers](https://twit
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -28,7 +28,7 @@ Easing functions originally develop by Robert Penner's and transformed to GLSL b
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -82,7 +82,7 @@ These are the **shader blocks**:
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:
@@ -106,7 +106,7 @@ These are the **shader blocks**:
 
 
 
-Import using:
+To import this block add the following url to your `import` list:
 
 ```yaml
 import:

@@ -4,6 +4,10 @@
 import: random.yaml
 styles:
     generative-voronoi:
+        doc:
+            description: |
+                Set of Voronoi functions.
+                For more information on this theme read [this chapter of The Book of Shaders about Cellular Noise and Voronoi](http://thebookofshaders.com/12/).
         mix: generative-random
         shaders:
             blocks:
