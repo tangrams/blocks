@@ -4,7 +4,7 @@
 
 
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -13,21 +13,29 @@ import:
 
 
 
-
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/terrarium/base-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [terrarium-geometry](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/geometry.yaml)
 
-This provides the following blocks:
 
+
+Import using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/terrarium/geometry.yaml
+```
+
+
+This blocks use a custom **shader**.These are the defaults **defines**:
+ - **TERRARIUM_ZOFFSET**: ```0.0```
+ - **TERRARIUM_TEXTURE_INDEX**: ```1```
+
+These are the **shader blocks**:
+
+- **global**:
+ + `float getHeight() `
 - **position**:
 
 ```glsl
@@ -36,43 +44,15 @@ position.z += getHeight();
 ```
 
 
-- **global**:
- + `float getHeight() `
 
-This block use the following **defines** with the following defaults. Remember you can use or tweak.
- - **TERRARIUM_ZOFFSET**: ```0.0```
- - **TERRARIUM_TEXTURE_INDEX**: ```1```
-
-
-Import it using:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/terrarium/geometry.yaml
-```
-
-
-
-
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/terrarium/geometry-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [terrarium-lines](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/lines.yaml)
 
 
 
-This block use the following **defines** with the following defaults. Remember you can use or tweak.
- - **TERRARIUM_ZOFFSET**: ```0.2```
-
-
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -80,27 +60,18 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the defaults **defines**:
+ - **TERRARIUM_ZOFFSET**: ```0.2```
 
 
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/terrarium/lines-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [terrarium-polygons](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/polygons.yaml)
 
 
 
-This block use the following **defines** with the following defaults. Remember you can use or tweak.
- - **TERRARIUM_ZOFFSET**: ```1.0```
-
-
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -108,37 +79,22 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the defaults **defines**:
+ - **TERRARIUM_ZOFFSET**: ```1.0```
 
 
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/terrarium/polygons-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [terrarium-terrain](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/terrain.yaml)
 
 
 
-Import it using:
+Import using:
 
 ```yaml
 import:
     - https://tangrams.github.io/blocks/terrarium/terrain.yaml
-```
-
-
-
-
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/terrarium/terrain-full.yaml
 ```
 
 

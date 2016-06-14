@@ -2,12 +2,9 @@
 
 #### [space-constant](https://github.com/tangrams/blocks/blob/gh-pages/space/constant.yaml)
 
-This provides the following blocks:
 
-- **global**:
- + `vec2 getConstantCoords () `
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -15,27 +12,19 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the **shader blocks**:
 
+- **global**:
+ + `vec2 getConstantCoords () `
 
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/space/constant-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [space-screen](https://github.com/tangrams/blocks/blob/gh-pages/space/screen.yaml)
 
-This provides the following blocks:
 
-- **global**:
- + `vec2 getScreenCoords () `
- + `vec2 getScreenNonStretchCoords () `
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -43,26 +32,20 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the **shader blocks**:
 
+- **global**:
+ + `vec2 getScreenCoords () `
+ + `vec2 getScreenNonStretchCoords () `
 
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/space/screen-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [space-tex](https://github.com/tangrams/blocks/blob/gh-pages/space/tex.yaml)
 
-This provides the following blocks:
 
-- **global**:
- + `vec2 getTexCoords () `
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -70,22 +53,30 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the **shader blocks**:
 
+- **global**:
+ + `vec2 getTexCoords () `
 
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/space/tex-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [space-tile](https://github.com/tangrams/blocks/blob/gh-pages/space/tile.yaml)
 
-This provides the following blocks:
 
+
+Import using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/space/tile.yaml
+```
+
+
+This blocks use a custom **shader**.These are the **shader blocks**:
+
+- **global**:
+ + `vec2 getTileCoords() `
 - **position**:
 
 ```glsl
@@ -94,37 +85,15 @@ v_pos = modelPosition().xyz;
 ```
 
 
-- **global**:
- + `vec2 getTileCoords() `
 
-Import it using:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/space/tile.yaml
-```
-
-
-
-
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/space/tile-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [space-uz](https://github.com/tangrams/blocks/blob/gh-pages/space/uz.yaml)
 
-This provides the following blocks:
 
-- **global**:
- + `vec2 getUZCoords () `
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -132,13 +101,7 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the **shader blocks**:
 
-
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/space/uz-full.yaml
-```
-
-
+- **global**:
+ + `vec2 getUZCoords () `

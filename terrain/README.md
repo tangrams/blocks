@@ -4,7 +4,7 @@
 
 
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -13,21 +13,29 @@ import:
 
 
 
-
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/terrain/base-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [terrain-geometry](https://github.com/tangrams/blocks/blob/gh-pages/terrain/geometry.yaml)
 
-This provides the following blocks:
 
+
+Import using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/terrain/geometry.yaml
+```
+
+
+This blocks use a custom **shader**.These are the defaults **defines**:
+ - **TERRAIN_TEXTURE_INDEX**: ```0```
+ - **TERRAIN_ZOFFSET**: ```0.0```
+
+These are the **shader blocks**:
+
+- **global**:
+ + `float getHeight() `
 - **position**:
 
 ```glsl
@@ -36,43 +44,15 @@ position.z += getHeight();
 ```
 
 
-- **global**:
- + `float getHeight() `
 
-This block use the following **defines** with the following defaults. Remember you can use or tweak.
- - **TERRAIN_TEXTURE_INDEX**: ```0```
- - **TERRAIN_ZOFFSET**: ```0.0```
-
-
-Import it using:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/terrain/geometry.yaml
-```
-
-
-
-
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/terrain/geometry-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [terrain-lines](https://github.com/tangrams/blocks/blob/gh-pages/terrain/lines.yaml)
 
 
 
-This block use the following **defines** with the following defaults. Remember you can use or tweak.
- - **TERRAIN_ZOFFSET**: ```1.5```
-
-
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -80,27 +60,18 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the defaults **defines**:
+ - **TERRAIN_ZOFFSET**: ```1.5```
 
 
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/terrain/lines-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [terrain-polygons](https://github.com/tangrams/blocks/blob/gh-pages/terrain/polygons.yaml)
 
 
 
-This block use the following **defines** with the following defaults. Remember you can use or tweak.
- - **TERRAIN_ZOFFSET**: ```1.0```
-
-
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -108,37 +79,22 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the defaults **defines**:
+ - **TERRAIN_ZOFFSET**: ```1.0```
 
 
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/terrain/polygons-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [terrain-terrain](https://github.com/tangrams/blocks/blob/gh-pages/terrain/terrain.yaml)
 
 
 
-Import it using:
+Import using:
 
 ```yaml
 import:
     - https://tangrams.github.io/blocks/terrain/terrain.yaml
-```
-
-
-
-
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/terrain/terrain-full.yaml
 ```
 
 

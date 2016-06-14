@@ -34,7 +34,13 @@
                     </ul>
                 </div>
             </div>
+
             <div class="col-md-9">
+<!--                 <form class="row">
+                    <div class="form-group affix inline-submit">
+                        <input type="search" class="col-md-12" placeholder="type block">
+                    </div>
+                </form> -->
                 <div id="content"> 
                 </div>
             </div>
@@ -67,9 +73,32 @@
                 }
             }
 
+            function sortObjectByKey(obj) {
+                var keys = [];
+                var sorted_obj = {};
+
+                for(var key in obj){
+                    if(obj.hasOwnProperty(key)){
+                        keys.push(key);
+                    }
+                }
+
+                // sort keys
+                keys.sort();
+
+                // create new array based on Sorted Keys
+                jQuery.each(keys, function(i, key){
+                    sorted_obj[key] = obj[key];
+                });
+
+                return sorted_obj;
+            };
+
             function loadTOC() {
                 var toc = document.getElementById('toc');
                 var tocData = JSON.parse(fetchHTTP('toc.json'));
+                tocData = sortObjectByKey(tocData);
+
                 for (var folder in tocData) {
                     var category = document.createElement('li');
                     category.className = 'toc-top-level';
@@ -88,7 +117,8 @@
                     var holder = document.createElement('ul');
                     holder.className = 'toc-subnav';
                     var counter = 0;
-                    for (var block in tocData[folder]) {
+                    var blocks = sortObjectByKey(tocData[folder]);
+                    for (var block in blocks) {
                         var li = document.createElement('li');
                         li.innerHTML = '<a href="#'+folder+'-'+block+'">'+block+'</a>';
                         if (counter === 0) {

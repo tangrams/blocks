@@ -2,12 +2,9 @@
 
 #### [tiling-brick](https://github.com/tangrams/blocks/blob/gh-pages/tiling/brick.yaml)
 
-This provides the following blocks:
 
-- **global**:
- + `vec2 brick (vec2 st, float zoom) `
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -15,29 +12,19 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the **shader blocks**:
 
+- **global**:
+ + `vec2 brick (vec2 st, float zoom) `
 
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/tiling/brick-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [tiling-simplex](https://github.com/tangrams/blocks/blob/gh-pages/tiling/simplex.yaml)
 
-This provides the following blocks:
 
-- **global**:
- + `vec2 simplex (vec2 st) `
- + `vec2 unsimplex (vec2 st) `
- + `vec3 simplexGrid (vec2 st) `
- + `vec3 simplexRotatedGrid (vec2 st) `
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -45,26 +32,22 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the **shader blocks**:
 
+- **global**:
+ + `vec2 simplex (vec2 st) `
+ + `vec2 unsimplex (vec2 st) `
+ + `vec3 simplexGrid (vec2 st) `
+ + `vec3 simplexRotatedGrid (vec2 st) `
 
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/tiling/simplex-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [tiling-tile](https://github.com/tangrams/blocks/blob/gh-pages/tiling/tile.yaml)
 
-This provides the following blocks:
 
-- **global**:
- + `vec2 tile (vec2 st, float zoom) `
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -72,31 +55,19 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the **shader blocks**:
 
+- **global**:
+ + `vec2 tile (vec2 st, float zoom) `
 
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/tiling/tile-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [tiling-truchet](https://github.com/tangrams/blocks/blob/gh-pages/tiling/truchet.yaml)
 
-This provides the following blocks:
-
-- **global**:
- + `vec2 truchetMirror (vec2 st) `
- + `vec2 truchetRotate (vec2 st) `
-
-This block use the following **defines** with the following defaults. Remember you can use or tweak.
- - **PI**: ```3.14159265359```
 
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -104,13 +75,11 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the defaults **defines**:
+ - **PI**: ```3.14159265359```
 
+These are the **shader blocks**:
 
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/tiling/truchet-full.yaml
-```
-
-
+- **global**:
+ + `vec2 truchetMirror (vec2 st) `
+ + `vec2 truchetRotate (vec2 st) `

@@ -5,14 +5,9 @@
 Set of functions to convert colors between color systems/spaces.
 For more information on this theme read [this chapter of The Book of Shaders about color](http://thebookofshaders.com/06/).
 
-This provides the following blocks:
 
-- **global**:
- + `vec3 rgb2hsb (vec3 c) `
- + `vec3 rgb2hsb (vec4 c) `
- + `vec3 hsb2rgb (vec3 c) `
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -20,28 +15,23 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the **shader blocks**:
 
+- **global**:
+ + `vec3 rgb2hsb (vec3 c) `
+ + `vec3 rgb2hsb (vec4 c) `
+ + `vec3 hsb2rgb (vec3 c) `
 
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/color/conversion-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [color-palette](https://github.com/tangrams/blocks/blob/gh-pages/color/palette.yaml)
 
 Procedural generation of color paletters implemented by [Inigo Quiles](https://twitter.com/iquilezles) (1999) explained in [this article](http://www.iquilezles.org/www/articles/palettes/palettes.htm)
 
-This provides the following blocks:
 
-- **global**:
- + `vec3 palette (float t, vec3 a, vec3 b, vec3 c, vec3 d) `
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -49,16 +39,12 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the **shader blocks**:
 
+- **global**:
+ + `vec3 palette (float t, vec3 a, vec3 b, vec3 c, vec3 d) `
 
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/color/palette-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [color-tools](https://github.com/tangrams/blocks/blob/gh-pages/color/tools.yaml)
@@ -66,15 +52,9 @@ import:
 Set of color tools to get the **intensity** and **brightness** of a color.
 For more information on this theme read [this chapter of The Book of Shaders about color](http://thebookofshaders.com/06/).
 
-This provides the following blocks:
 
-- **global**:
- + `float getIntensity (vec3 c) `
- + `float getIntensity (vec4 c) `
- + `float getBrightness (vec3 c) `
- + `float getBrightness (vec4 c) `
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -82,13 +62,10 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the **shader blocks**:
 
-
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/color/tools-full.yaml
-```
-
-
+- **global**:
+ + `float getIntensity (vec3 c) `
+ + `float getIntensity (vec4 c) `
+ + `float getBrightness (vec3 c) `
+ + `float getBrightness (vec4 c) `

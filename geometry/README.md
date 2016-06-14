@@ -2,7 +2,22 @@
 
 #### [geometry-dynamic-height](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-height.yaml)
 
-This provides the following blocks:
+
+
+Import using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/geometry/dynamic-height.yaml
+```
+
+
+This blocks use a custom **shader**.These are the defaults **defines**:
+ - **ZOOM_LINEAR_FACTOR**: ```2.0```
+ - **ZOOM_START**: ```15.0```
+ - **ZOOM_END**: ```20.0```
+
+These are the **shader blocks**:
 
 - **position**:
 
@@ -13,35 +28,22 @@ position.z *= max(1.,.5+ZOOM_LINEAR_FACTOR*zoom);
 
 
 
-This block use the following **defines** with the following defaults. Remember you can use or tweak.
- - **ZOOM_LINEAR_FACTOR**: ```2.0```
- - **ZOOM_START**: ```15.0```
- - **ZOOM_END**: ```20.0```
-
-
-Import it using:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/geometry/dynamic-height.yaml
-```
-
-
-
-
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/geometry/dynamic-height-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [geometry-dynamic-width](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-width.yaml)
 
-This provides the following blocks:
+
+
+Import using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/geometry/dynamic-width.yaml
+```
+
+
+This blocks use a custom **shader**.These are the **shader blocks**:
 
 - **width**:
 
@@ -51,29 +53,27 @@ width *= 0.2+min(pow(position.z*0.006,2.),.6);
 
 
 
-Import it using:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/geometry/dynamic-width.yaml
-```
-
-
-
-
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/geometry/dynamic-width-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [geometry-matrices](https://github.com/tangrams/blocks/blob/gh-pages/geometry/matrices.yaml)
 
-This provides the following blocks:
+
+
+Import using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/geometry/matrices.yaml
+```
+
+
+This blocks use a custom **shader**.These are the defaults **defines**:
+ - **HALF_PI**: ```1.57079632679```
+ - **TWO_PI**: ```6.28318530718```
+ - **PI**: ```3.14159265359```
+
+These are the **shader blocks**:
 
 - **global**:
  + `mat2 rotate2D (float angle) `
@@ -86,41 +86,14 @@ This provides the following blocks:
  + `mat4 scale4D (float x, float y, float z) `
  + `mat4 translate4D (float x, float y, float z) `
 
-This block use the following **defines** with the following defaults. Remember you can use or tweak.
- - **HALF_PI**: ```1.57079632679```
- - **TWO_PI**: ```6.28318530718```
- - **PI**: ```3.14159265359```
-
-
-Import it using:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/geometry/matrices.yaml
-```
-
-
-
-
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/geometry/matrices-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [geometry-normal](https://github.com/tangrams/blocks/blob/gh-pages/geometry/normal.yaml)
 
-This provides the following blocks:
 
-- **global**:
- + `bool isWall () `
- + `bool isRoof () `
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -128,21 +101,36 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the **shader blocks**:
 
+- **global**:
+ + `bool isWall () `
+ + `bool isRoof () `
 
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/geometry/normal-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [geometry-projections](https://github.com/tangrams/blocks/blob/gh-pages/geometry/projections.yaml)
 
-This provides the following blocks:
+
+
+Import using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/geometry/projections.yaml
+```
+
+
+This blocks use a custom **shader**.These are the defaults **defines**:
+ - **PI**: ```3.14159265359```
+ - **HALF_PI**: ```1.57079632679```
+ - **EARTH_RADIUS**: ```6378137.0```
+ - **deg2rad(d)**: ```(((d)*3.14159265358979323846)/180.0)```
+ - **QUATER_PI**: ```0.785398163```
+ - **rad2deg(d)**: ```(((d)*180.0)/3.14159265358979323846)```
+
+These are the **shader blocks**:
 
 - **global**:
  + `float y2lat_d (float y) `
@@ -163,38 +151,28 @@ This provides the following blocks:
  + `vec2 azimuthalNorth(float lat, float lon) `
  + `vec2 azimuthalSouth(float lat, float lon) `
 
-This block use the following **defines** with the following defaults. Remember you can use or tweak.
- - **PI**: ```3.14159265359```
- - **HALF_PI**: ```1.57079632679```
- - **EARTH_RADIUS**: ```6378137.0```
- - **deg2rad(d)**: ```(((d)*3.14159265358979323846)/180.0)```
- - **QUATER_PI**: ```0.785398163```
- - **rad2deg(d)**: ```(((d)*180.0)/3.14159265358979323846)```
-
-
-Import it using:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/geometry/projections.yaml
-```
-
-
-
-
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/geometry/projections-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [geometry-tilt](https://github.com/tangrams/blocks/blob/gh-pages/geometry/tilt.yaml)
 
-This provides the following blocks:
+
+
+Import using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/geometry/tilt.yaml
+```
+
+
+This blocks use a custom **shader**.These are the defaults **defines**:
+ - **TILT_MAX_ZOOM**: ```20.0```
+ - **TILT_IN**: ```15.0```
+ - **TILT_OUT**: ```20.0```
+ - **TILT_ROTATE**: ```True```
+
+These are the **shader blocks**:
 
 - **position**:
 
@@ -206,32 +184,6 @@ position.xyz = rotateX3D(z*HALF_PI) * rotateZ3D(sin(t)*PI*z) * position.xyz;
 #else
 position.xyz = rotateX3D(z*HALF_PI) * position.xyz;
 #endif
-```
-
-
-
-This block use the following **defines** with the following defaults. Remember you can use or tweak.
- - **TILT_MAX_ZOOM**: ```20.0```
- - **TILT_IN**: ```15.0```
- - **TILT_OUT**: ```20.0```
- - **TILT_ROTATE**: ```True```
-
-
-Import it using:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/geometry/tilt.yaml
-```
-
-
-
-
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/geometry/tilt-full.yaml
 ```
 
 

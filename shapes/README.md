@@ -2,17 +2,9 @@
 
 #### [shapes-circle](https://github.com/tangrams/blocks/blob/gh-pages/shapes/circle.yaml)
 
-This provides the following blocks:
-
-- **global**:
- + `float circleDF (vec2 st) `
- + `float circle (vec2 st, float radius) `
-
-This block use the following **defines** with the following defaults. Remember you can use or tweak.
- - **PI**: ```3.14159265359```
 
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -20,28 +12,23 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the defaults **defines**:
+ - **PI**: ```3.14159265359```
 
+These are the **shader blocks**:
 
-If you want to import this block with dependences included try this:
+- **global**:
+ + `float circleDF (vec2 st) `
+ + `float circle (vec2 st, float radius) `
 
-```yaml
-import:
-    - https://tangrams.github.io/blocks/shapes/circle-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [shapes-cross](https://github.com/tangrams/blocks/blob/gh-pages/shapes/cross.yaml)
 
-This provides the following blocks:
 
-- **global**:
- + `float cross (vec2 st, float size, float width) `
- + `float cross (in vec2 st, float _size) `
- + `float cross (in vec2 st, vec2 _size) `
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -49,34 +36,21 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the **shader blocks**:
 
+- **global**:
+ + `float cross (vec2 st, float size, float width) `
+ + `float cross (in vec2 st, float _size) `
+ + `float cross (in vec2 st, vec2 _size) `
 
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/shapes/cross-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [shapes-digits](https://github.com/tangrams/blocks/blob/gh-pages/shapes/digits.yaml)
 
-This provides the following blocks:
-
-- **global**:
- + `float SampleDigit (const in float fDigit, const in vec2 vUV) `
- + `float PrintValue (const in vec2 vStringCharCoords, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces) `
- + `float PrintValue (in vec2 fragCoord, const in vec2 vPixelCoords, const in vec2 vFontSize, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces) `
-
-This block use the following **defines** with the following defaults. Remember you can use or tweak.
- - **CHAR_DECIMAL_POINT**: ```10.0```
- - **CHAR_MINUS**: ```11.0```
- - **CHAR_BLANK**: ```12.0```
 
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -84,32 +58,26 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the defaults **defines**:
+ - **CHAR_DECIMAL_POINT**: ```10.0```
+ - **CHAR_MINUS**: ```11.0```
+ - **CHAR_BLANK**: ```12.0```
 
+These are the **shader blocks**:
 
-If you want to import this block with dependences included try this:
+- **global**:
+ + `float SampleDigit (const in float fDigit, const in vec2 vUV) `
+ + `float PrintValue (const in vec2 vStringCharCoords, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces) `
+ + `float PrintValue (in vec2 fragCoord, const in vec2 vPixelCoords, const in vec2 vFontSize, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces) `
 
-```yaml
-import:
-    - https://tangrams.github.io/blocks/shapes/digits-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [shapes-polygons](https://github.com/tangrams/blocks/blob/gh-pages/shapes/polygons.yaml)
 
-This provides the following blocks:
-
-- **global**:
- + `float shapeDF (vec2 st, int N) `
- + `float shape (vec2 st, int N, float width) `
-
-This block use the following **defines** with the following defaults. Remember you can use or tweak.
- - **TWO_PI**: ```6.283185307```
- - **PI**: ```3.14159265359```
 
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -117,29 +85,24 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the defaults **defines**:
+ - **TWO_PI**: ```6.283185307```
+ - **PI**: ```3.14159265359```
 
+These are the **shader blocks**:
 
-If you want to import this block with dependences included try this:
+- **global**:
+ + `float shapeDF (vec2 st, int N) `
+ + `float shape (vec2 st, int N, float width) `
 
-```yaml
-import:
-    - https://tangrams.github.io/blocks/shapes/polygons-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [shapes-rect](https://github.com/tangrams/blocks/blob/gh-pages/shapes/rect.yaml)
 
-This provides the following blocks:
 
-- **global**:
- + `float rectDF (vec2 st, vec2 size) `
- + `float rectDF (vec2 st, float size) `
- + `float rect (vec2 st, vec2 size, float radio) `
- + `float rect (vec2 st, float size, float radio) `
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -147,21 +110,30 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the **shader blocks**:
 
+- **global**:
+ + `float rectDF (vec2 st, vec2 size) `
+ + `float rectDF (vec2 st, float size) `
+ + `float rect (vec2 st, vec2 size, float radio) `
+ + `float rect (vec2 st, float size, float radio) `
 
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/shapes/rect-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [shapes-simplex](https://github.com/tangrams/blocks/blob/gh-pages/shapes/simplex.yaml)
 
-This provides the following blocks:
+
+
+Import using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/shapes/simplex.yaml
+```
+
+
+This blocks use a custom **shader**.These are the **shader blocks**:
 
 - **global**:
  + `float warp (vec3 S) `
@@ -170,22 +142,3 @@ This provides the following blocks:
  + `vec3 star (vec3 S) `
  + `vec3 sakura (vec3 S) `
  + `float lotus (vec3 S, float petals_size, float roundness) `
-
-Import it using:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/shapes/simplex.yaml
-```
-
-
-
-
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/shapes/simplex-full.yaml
-```
-
-

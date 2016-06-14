@@ -2,18 +2,9 @@
 
 #### [generative-caustic](https://github.com/tangrams/blocks/blob/gh-pages/generative/caustics.yaml)
 
-This provides the following blocks:
-
-- **global**:
- + `vec3 getCaustic (vec2 uv) `
- + `int n = 0; n < int(CAUSTIC_ITERATIONS); n++) `
-
-This block use the following **defines** with the following defaults. Remember you can use or tweak.
- - **TAU**: ```6.28318530718```
- - **CAUSTIC_ITERATIONS**: ```3```
 
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -21,21 +12,35 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the defaults **defines**:
+ - **TAU**: ```6.28318530718```
+ - **CAUSTIC_ITERATIONS**: ```3```
 
+These are the **shader blocks**:
 
-If you want to import this block with dependences included try this:
+- **global**:
+ + `vec3 getCaustic (vec2 uv) `
+ + `int n = 0; n < int(CAUSTIC_ITERATIONS); n++) `
 
-```yaml
-import:
-    - https://tangrams.github.io/blocks/generative/caustics-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [generative-fbm](https://github.com/tangrams/blocks/blob/gh-pages/generative/fbm.yaml)
 
-This provides the following blocks:
+
+
+Import using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/generative/fbm.yaml
+```
+
+
+This blocks use a custom **shader**.These are the defaults **defines**:
+ - **NUM_OCTAVES**: ```5```
+
+These are the **shader blocks**:
 
 - **global**:
  + `float fbm (float x) `
@@ -44,41 +49,14 @@ This provides the following blocks:
  + `int i = 0; i < int(NUM_OCTAVES); ++i) `
  + `float fbm ( in vec3 xyz) `
 
-This block use the following **defines** with the following defaults. Remember you can use or tweak.
- - **NUM_OCTAVES**: ```5```
-
-
-Import it using:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/generative/fbm.yaml
-```
-
-
-
-
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/generative/fbm-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [generative-noise](https://github.com/tangrams/blocks/blob/gh-pages/generative/noise.yaml)
 
-This provides the following blocks:
 
-- **global**:
- + `float noise (in float x) `
- + `float noise (vec2 xy) `
- + `float noise (vec3 xyz) `
- + `float snoise (vec3 p) `
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -86,21 +64,30 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the **shader blocks**:
 
+- **global**:
+ + `float noise (in float x) `
+ + `float noise (vec2 xy) `
+ + `float noise (vec3 xyz) `
+ + `float snoise (vec3 p) `
 
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/generative/noise-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [generative-random](https://github.com/tangrams/blocks/blob/gh-pages/generative/random.yaml)
 
-This provides the following blocks:
+
+
+Import using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/generative/random.yaml
+```
+
+
+This blocks use a custom **shader**.These are the **shader blocks**:
 
 - **global**:
  + `float random (float x) `
@@ -110,34 +97,14 @@ This provides the following blocks:
  + `vec3 random3 (vec2 xy) `
  + `vec3 random3 (vec3 c) `
 
-Import it using:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/generative/random.yaml
-```
-
-
-
-
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/generative/random-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [generative-voronoi](https://github.com/tangrams/blocks/blob/gh-pages/generative/voronoi.yaml)
 
-This provides the following blocks:
 
-- **global**:
- + `vec3 voronoi (vec2 st) `
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -145,13 +112,7 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the **shader blocks**:
 
-
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/generative/voronoi-full.yaml
-```
-
-
+- **global**:
+ + `vec3 voronoi (vec2 st) `

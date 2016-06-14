@@ -4,12 +4,9 @@
 
 AnitAliased ```step()``` function implemented by [Matt DesLauriers](https://twitter.com/mattdesl) in this module <https://github.com/stackgl/glsl-aastep>
 
-This provides the following blocks:
 
-- **global**:
- + `float aastep(float threshold, float value) `
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -17,23 +14,33 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the **shader blocks**:
 
+- **global**:
+ + `float aastep(float threshold, float value) `
 
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/functions/aastep-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [functions-easing](https://github.com/tangrams/blocks/blob/gh-pages/functions/easing.yaml)
 
 Easing functions originally develop by Robert Penner's and transformed to GLSL by [StackGL](http://stack.gl/) in this repo: <https://github.com/stackgl/glsl-easings>
 
-This provides the following blocks:
+
+
+Import using:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/functions/easing.yaml
+```
+
+
+This blocks use a custom **shader**.These are the defaults **defines**:
+ - **HALF_PI**: ```1.57079632679```
+ - **PI**: ```3.14159265359```
+
+These are the **shader blocks**:
 
 - **global**:
  + `float linear(float t) `
@@ -68,44 +75,14 @@ This provides the following blocks:
  + `float backOut(float t) `
  + `float backInOut(float t) `
 
-This block use the following **defines** with the following defaults. Remember you can use or tweak.
- - **HALF_PI**: ```1.57079632679```
- - **PI**: ```3.14159265359```
-
-
-Import it using:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/functions/easing.yaml
-```
-
-
-
-
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/functions/easing-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [functions-map](https://github.com/tangrams/blocks/blob/gh-pages/functions/map.yaml)
 
-This provides the following blocks:
-
-- **global**:
- + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax, bool clamp) `
- + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax) `
-
-This block use the following **defines** with the following defaults. Remember you can use or tweak.
- - **EPSILON**: ```1e-07```
 
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -113,26 +90,23 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the defaults **defines**:
+ - **EPSILON**: ```1e-07```
 
+These are the **shader blocks**:
 
-If you want to import this block with dependences included try this:
+- **global**:
+ + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax, bool clamp) `
+ + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax) `
 
-```yaml
-import:
-    - https://tangrams.github.io/blocks/functions/map-full.yaml
-```
-
-
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [functions-pulse](https://github.com/tangrams/blocks/blob/gh-pages/functions/pulse.yaml)
 
-This provides the following blocks:
 
-- **global**:
- + `float pulse (float x, float p, float w) `
 
-Import it using:
+Import using:
 
 ```yaml
 import:
@@ -140,13 +114,7 @@ import:
 ```
 
 
+This blocks use a custom **shader**.These are the **shader blocks**:
 
-
-If you want to import this block with dependences included try this:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/functions/pulse-full.yaml
-```
-
-
+- **global**:
+ + `float pulse (float x, float p, float w) `
