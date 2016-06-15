@@ -1,6 +1,6 @@
 
 
-#### [terrarium-base](#terrarium-base) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrarium/base.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+#### [terrarium-base](http://tangrams.github.io/blocks/#terrarium-base) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrarium/base.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -16,7 +16,7 @@ import:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [terrarium-geometry](#terrarium-geometry) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrarium/geometry.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+#### [terrarium-geometry](http://tangrams.github.io/blocks/#terrarium-geometry) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrarium/geometry.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -48,7 +48,7 @@ position.z += getHeight();
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [terrarium-lines](#terrarium-lines) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrarium/lines.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+#### [terrarium-lines](http://tangrams.github.io/blocks/#terrarium-lines) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrarium/lines.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -67,7 +67,7 @@ This blocks use a custom **shader**.These are the defaults **defines**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [terrarium-polygons](#terrarium-polygons) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrarium/polygons.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+#### [terrarium-polygons](http://tangrams.github.io/blocks/#terrarium-polygons) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrarium/polygons.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -86,7 +86,7 @@ This blocks use a custom **shader**.These are the defaults **defines**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [terrarium-terrain](#terrarium-terrain) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrarium/terrain.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+#### [terrarium-terrain](http://tangrams.github.io/blocks/#terrarium-terrain) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrarium/terrain.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
