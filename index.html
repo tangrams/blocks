@@ -32,7 +32,6 @@
         </style>
     </head>
     <body>
-        <!-- <iframe id='background' src='http://player.thebookofshaders.com/?log=160614200010' allowtransparency="true"  frameborder="0" height="1920px" width="1080px" ></iframe> -->
         <canvas id='background' class="glslCanvas" data-fragment-url="blocks.frag" width="1920" height="1080"></canvas>
         <div class="container">
             <div class="side-nav styleguide-side-nav col-md-3">
@@ -123,7 +122,7 @@
                     var blocks = sortObjectByKey(tocData[folder]);
                     for (var block in blocks) {
                         var li = document.createElement('li');
-                        li.innerHTML = '<a href="#'+folder+'-'+block+'">'+block+'</a>';
+                        li.innerHTML = '<a href="#'+folder+'-'+block+'"> - '+block+'</a>';
                         if (counter === 0) {
                             li.className = 'main';
                         }

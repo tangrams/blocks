@@ -1,6 +1,6 @@
 
 
-#### [geometry-dynamic-height](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-height.yaml)
+#### [geometry-dynamic-height](#geometry-dynamic-height) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-height.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -31,7 +31,7 @@ position.z *= max(1.,.5+ZOOM_LINEAR_FACTOR*zoom);
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [geometry-dynamic-width](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-width.yaml)
+#### [geometry-dynamic-width](#geometry-dynamic-width) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-width.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -56,7 +56,7 @@ width *= 0.2+min(pow(position.z*0.006,2.),.6);
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [geometry-matrices](https://github.com/tangrams/blocks/blob/gh-pages/geometry/matrices.yaml)
+#### [geometry-matrices](#geometry-matrices) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/matrices.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -89,7 +89,7 @@ These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [geometry-normal](https://github.com/tangrams/blocks/blob/gh-pages/geometry/normal.yaml)
+#### [geometry-normal](#geometry-normal) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/normal.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -110,7 +110,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [geometry-projections](https://github.com/tangrams/blocks/blob/gh-pages/geometry/projections.yaml)
+#### [geometry-projections](#geometry-projections) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/projections.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -154,7 +154,7 @@ These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [geometry-tilt](https://github.com/tangrams/blocks/blob/gh-pages/geometry/tilt.yaml)
+#### [geometry-tilt](#geometry-tilt) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/tilt.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 

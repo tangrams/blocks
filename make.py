@@ -16,7 +16,7 @@ def appendDocumentation(readme_file, filename, counter):
             readme_file.write('\n![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)\n')
 
         # Add a title that points to github
-        readme_file.write('\n\n#### [' + name_block + '](https://github.com/tangrams/blocks/blob/gh-pages'+filename[1:]+')\n\n');
+        readme_file.write('\n\n#### [' + name_block + '](#'+name_block+') <a href="https://github.com/tangrams/blocks/blob/gh-pages'+filename[1:]+'" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>\n\n');
 
         blocks.append(name_block)
 
@@ -219,7 +219,8 @@ def makeAll():
         for fname in readmes:
             with open(fname) as infile:
                 folder = os.path.dirname(fname)[2:]
-                outfile.write("\n\n### [" + folder.upper() + "](https://github.com/tangrams/blocks/tree/gh-pages/"+folder+")")
+
+                outfile.write('\n\n### [' + folder.upper() + '](#'+folder+') <a href="https://github.com/tangrams/blocks/blob/gh-pages/'+folder+'" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>')
                 outfile.write(infile.read())
                 outfile.write('\n![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)\n')
 

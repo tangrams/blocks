@@ -1,6 +1,6 @@
 
 
-#### [fx-water](https://github.com/tangrams/blocks/blob/gh-pages/fx/water.yaml)
+#### [fx-water](#fx-water) <a href="https://github.com/tangrams/blocks/blob/gh-pages/fx/water.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Water effect, made by altering the normal map of a surface and applying a sky spherical map to the surface. 
 The result looks like moving water.

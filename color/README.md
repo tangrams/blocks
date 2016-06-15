@@ -1,6 +1,6 @@
 
 
-#### [color-conversion](https://github.com/tangrams/blocks/blob/gh-pages/color/conversion.yaml)
+#### [color-conversion](#color-conversion) <a href="https://github.com/tangrams/blocks/blob/gh-pages/color/conversion.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Set of functions to convert colors between color systems/spaces.
 For more information on this theme read [this chapter of The Book of Shaders about color](http://thebookofshaders.com/06/).
@@ -25,7 +25,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [color-palette](https://github.com/tangrams/blocks/blob/gh-pages/color/palette.yaml)
+#### [color-palette](#color-palette) <a href="https://github.com/tangrams/blocks/blob/gh-pages/color/palette.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Procedural generation of color paletters implemented by [Inigo Quiles](https://twitter.com/iquilezles) (1999) explained in [this article](http://www.iquilezles.org/www/articles/palettes/palettes.htm)
 
@@ -47,7 +47,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [color-tools](https://github.com/tangrams/blocks/blob/gh-pages/color/tools.yaml)
+#### [color-tools](#color-tools) <a href="https://github.com/tangrams/blocks/blob/gh-pages/color/tools.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Set of color tools to get the **intensity** and **brightness** of a color.
 For more information on this theme read [this chapter of The Book of Shaders about color](http://thebookofshaders.com/06/).

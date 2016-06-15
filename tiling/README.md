@@ -1,6 +1,6 @@
 
 
-#### [tiling-brick](https://github.com/tangrams/blocks/blob/gh-pages/tiling/brick.yaml)
+#### [tiling-brick](#tiling-brick) <a href="https://github.com/tangrams/blocks/blob/gh-pages/tiling/brick.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -20,7 +20,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [tiling-simplex](https://github.com/tangrams/blocks/blob/gh-pages/tiling/simplex.yaml)
+#### [tiling-simplex](#tiling-simplex) <a href="https://github.com/tangrams/blocks/blob/gh-pages/tiling/simplex.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -43,7 +43,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [tiling-tile](https://github.com/tangrams/blocks/blob/gh-pages/tiling/tile.yaml)
+#### [tiling-tile](#tiling-tile) <a href="https://github.com/tangrams/blocks/blob/gh-pages/tiling/tile.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -63,7 +63,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [tiling-truchet](https://github.com/tangrams/blocks/blob/gh-pages/tiling/truchet.yaml)
+#### [tiling-truchet](#tiling-truchet) <a href="https://github.com/tangrams/blocks/blob/gh-pages/tiling/truchet.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 

@@ -1,6 +1,6 @@
 
 
-#### [space-constant](https://github.com/tangrams/blocks/blob/gh-pages/space/constant.yaml)
+#### [space-constant](#space-constant) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/constant.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -20,7 +20,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [space-screen](https://github.com/tangrams/blocks/blob/gh-pages/space/screen.yaml)
+#### [space-screen](#space-screen) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/screen.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -41,7 +41,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [space-tex](https://github.com/tangrams/blocks/blob/gh-pages/space/tex.yaml)
+#### [space-tex](#space-tex) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/tex.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -61,7 +61,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [space-tile](https://github.com/tangrams/blocks/blob/gh-pages/space/tile.yaml)
+#### [space-tile](#space-tile) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/tile.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -89,7 +89,7 @@ v_pos = modelPosition().xyz;
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [space-uz](https://github.com/tangrams/blocks/blob/gh-pages/space/uz.yaml)
+#### [space-uz](#space-uz) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/uz.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 

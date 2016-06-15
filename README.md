@@ -40,9 +40,9 @@ styles:
 <hr>
 
 
-### [COLOR](https://github.com/tangrams/blocks/tree/gh-pages/color)
+### [COLOR](#color) <a href="https://github.com/tangrams/blocks/blob/gh-pages/color" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-#### [color-conversion](https://github.com/tangrams/blocks/blob/gh-pages/color/conversion.yaml)
+#### [color-conversion](#color-conversion) <a href="https://github.com/tangrams/blocks/blob/gh-pages/color/conversion.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Set of functions to convert colors between color systems/spaces.
 For more information on this theme read [this chapter of The Book of Shaders about color](http://thebookofshaders.com/06/).
@@ -67,7 +67,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [color-palette](https://github.com/tangrams/blocks/blob/gh-pages/color/palette.yaml)
+#### [color-palette](#color-palette) <a href="https://github.com/tangrams/blocks/blob/gh-pages/color/palette.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Procedural generation of color paletters implemented by [Inigo Quiles](https://twitter.com/iquilezles) (1999) explained in [this article](http://www.iquilezles.org/www/articles/palettes/palettes.htm)
 
@@ -89,7 +89,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [color-tools](https://github.com/tangrams/blocks/blob/gh-pages/color/tools.yaml)
+#### [color-tools](#color-tools) <a href="https://github.com/tangrams/blocks/blob/gh-pages/color/tools.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Set of color tools to get the **intensity** and **brightness** of a color.
 For more information on this theme read [this chapter of The Book of Shaders about color](http://thebookofshaders.com/06/).
@@ -115,9 +115,9 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
-### [ELEVATION](https://github.com/tangrams/blocks/tree/gh-pages/elevation)
+### [ELEVATION](#elevation) <a href="https://github.com/tangrams/blocks/blob/gh-pages/elevation" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-#### [elevation-normal](https://github.com/tangrams/blocks/blob/gh-pages/elevation/normal.yaml)
+#### [elevation-normal](#elevation-normal) <a href="https://github.com/tangrams/blocks/blob/gh-pages/elevation/normal.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 The raster normalmap tiles needs to be load like this:
 ```
@@ -160,7 +160,7 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [elevation-ramp](https://github.com/tangrams/blocks/blob/gh-pages/elevation/ramp.yaml)
+#### [elevation-ramp](#elevation-ramp) <a href="https://github.com/tangrams/blocks/blob/gh-pages/elevation/ramp.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Applies a image/texture named `u_ramp` to the height of a terrain. 
 The texture is esentially an image of 1 height by N width. 
@@ -200,7 +200,7 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [elevation-stripes](https://github.com/tangrams/blocks/blob/gh-pages/elevation/stripes.yaml)
+#### [elevation-stripes](#elevation-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/elevation/stripes.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Perfect for the `landuse` layer on your elevation maps, the `elevation-stripe` modules use the color of the layer to draw a stripe pattern that changes width based on the surface of the terrain.
 
@@ -247,9 +247,9 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
-### [FILTER](https://github.com/tangrams/blocks/tree/gh-pages/filter)
+### [FILTER](#filter) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-#### [filter-grain](https://github.com/tangrams/blocks/blob/gh-pages/filter/grain.yaml)
+#### [filter-grain](#filter-grain) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/grain.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Apply a lens grain effect to the scene.
 The amount can be set by the GRAIN_AMOUNT define [0.0~1.0]
@@ -289,7 +289,7 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [filter-grid](https://github.com/tangrams/blocks/blob/gh-pages/filter/grid.yaml)
+#### [filter-grid](#filter-grid) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/grid.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Apply a grid filter to they syle
 <p>The amount can be set by the GRID_AMOUNT define [0.0~1.0]</p>
@@ -333,7 +333,7 @@ color.rgb *= tileGrid()*GRID_AMOUNT;
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [filter-hatch](https://github.com/tangrams/blocks/blob/gh-pages/filter/hatch.yaml)
+#### [filter-hatch](#filter-hatch) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/hatch.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Hatching filter based on [Jaume's Sanchez](https://twitter.com/thespite?lang=en) [Cross-hatching GLSL shader](https://www.clicktorelease.com/code/cross-hatching/).
 
@@ -366,7 +366,7 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [filter-height](https://github.com/tangrams/blocks/blob/gh-pages/filter/height.yaml)
+#### [filter-height](#filter-height) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/height.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Adds a dark gradiant to the geometries conform they aproach to height 0.
 
@@ -398,7 +398,7 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [filter-lut](https://github.com/tangrams/blocks/blob/gh-pages/filter/lut.yaml)
+#### [filter-lut](#filter-lut) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/lut.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Add a look up table filter defined on the uniform ```u_lut``` to the current style. This look up tables are hable to produce similar effect to instagram filters.
 
@@ -438,7 +438,7 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [filter-tv](https://github.com/tangrams/blocks/blob/gh-pages/filter/tv.yaml)
+#### [filter-tv](#filter-tv) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/tv.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Apply a old TV effect to the style.
 
@@ -474,9 +474,9 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
-### [FUNCTIONS](https://github.com/tangrams/blocks/tree/gh-pages/functions)
+### [FUNCTIONS](#functions) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-#### [functions-aastep](https://github.com/tangrams/blocks/blob/gh-pages/functions/aastep.yaml)
+#### [functions-aastep](#functions-aastep) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions/aastep.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 AnitAliased ```step()``` function implemented by [Matt DesLauriers](https://twitter.com/mattdesl) in this module <https://github.com/stackgl/glsl-aastep>
 
@@ -498,7 +498,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [functions-easing](https://github.com/tangrams/blocks/blob/gh-pages/functions/easing.yaml)
+#### [functions-easing](#functions-easing) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions/easing.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Easing functions originally develop by Robert Penner's and transformed to GLSL by [StackGL](http://stack.gl/) in this repo: <https://github.com/stackgl/glsl-easings>
 
@@ -554,7 +554,7 @@ These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [functions-map](https://github.com/tangrams/blocks/blob/gh-pages/functions/map.yaml)
+#### [functions-map](#functions-map) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions/map.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -578,7 +578,7 @@ These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [functions-pulse](https://github.com/tangrams/blocks/blob/gh-pages/functions/pulse.yaml)
+#### [functions-pulse](#functions-pulse) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions/pulse.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -598,9 +598,9 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
-### [FX](https://github.com/tangrams/blocks/tree/gh-pages/fx)
+### [FX](#fx) <a href="https://github.com/tangrams/blocks/blob/gh-pages/fx" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-#### [fx-water](https://github.com/tangrams/blocks/blob/gh-pages/fx/water.yaml)
+#### [fx-water](#fx-water) <a href="https://github.com/tangrams/blocks/blob/gh-pages/fx/water.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Water effect, made by altering the normal map of a surface and applying a sky spherical map to the surface. 
 The result looks like moving water.
@@ -633,9 +633,9 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
-### [GENERATIVE](https://github.com/tangrams/blocks/tree/gh-pages/generative)
+### [GENERATIVE](#generative) <a href="https://github.com/tangrams/blocks/blob/gh-pages/generative" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-#### [generative-caustic](https://github.com/tangrams/blocks/blob/gh-pages/generative/caustics.yaml)
+#### [generative-caustic](#generative-caustic) <a href="https://github.com/tangrams/blocks/blob/gh-pages/generative/caustics.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Caustic generative texture inspired on <https://www.shadertoy.com/view/MdlXz8> by David Hoskins
 
@@ -662,7 +662,7 @@ These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [generative-fbm](https://github.com/tangrams/blocks/blob/gh-pages/generative/fbm.yaml)
+#### [generative-fbm](#generative-fbm) <a href="https://github.com/tangrams/blocks/blob/gh-pages/generative/fbm.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Set of Fractal Brownian Motion functions.
 For more information on this theme read [this chapter of The Book of Shaders about fractal Brownian Motion](http://thebookofshaders.com/13/).
@@ -693,7 +693,7 @@ These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [generative-noise](https://github.com/tangrams/blocks/blob/gh-pages/generative/noise.yaml)
+#### [generative-noise](#generative-noise) <a href="https://github.com/tangrams/blocks/blob/gh-pages/generative/noise.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Set of Noise functions.
 For more information on this theme read [this chapter of The Book of Shaders about Noise](http://thebookofshaders.com/11/).
@@ -719,7 +719,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [generative-random](https://github.com/tangrams/blocks/blob/gh-pages/generative/random.yaml)
+#### [generative-random](#generative-random) <a href="https://github.com/tangrams/blocks/blob/gh-pages/generative/random.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Set of functions about random.
 For more information on this theme read [this chapter of The Book of Shaders about Random](http://thebookofshaders.com/10/).
@@ -747,7 +747,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [generative-voronoi](https://github.com/tangrams/blocks/blob/gh-pages/generative/voronoi.yaml)
+#### [generative-voronoi](#generative-voronoi) <a href="https://github.com/tangrams/blocks/blob/gh-pages/generative/voronoi.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Set of Voronoi functions.
 For more information on this theme read [this chapter of The Book of Shaders about Cellular Noise and Voronoi](http://thebookofshaders.com/12/).
@@ -770,9 +770,9 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
-### [GEOMETRY](https://github.com/tangrams/blocks/tree/gh-pages/geometry)
+### [GEOMETRY](#geometry) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-#### [geometry-dynamic-height](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-height.yaml)
+#### [geometry-dynamic-height](#geometry-dynamic-height) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-height.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -803,7 +803,7 @@ position.z *= max(1.,.5+ZOOM_LINEAR_FACTOR*zoom);
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [geometry-dynamic-width](https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-width.yaml)
+#### [geometry-dynamic-width](#geometry-dynamic-width) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-width.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -828,7 +828,7 @@ width *= 0.2+min(pow(position.z*0.006,2.),.6);
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [geometry-matrices](https://github.com/tangrams/blocks/blob/gh-pages/geometry/matrices.yaml)
+#### [geometry-matrices](#geometry-matrices) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/matrices.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -861,7 +861,7 @@ These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [geometry-normal](https://github.com/tangrams/blocks/blob/gh-pages/geometry/normal.yaml)
+#### [geometry-normal](#geometry-normal) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/normal.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -882,7 +882,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [geometry-projections](https://github.com/tangrams/blocks/blob/gh-pages/geometry/projections.yaml)
+#### [geometry-projections](#geometry-projections) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/projections.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -926,7 +926,7 @@ These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [geometry-tilt](https://github.com/tangrams/blocks/blob/gh-pages/geometry/tilt.yaml)
+#### [geometry-tilt](#geometry-tilt) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/tilt.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -963,9 +963,9 @@ position.xyz = rotateX3D(z*HALF_PI) * position.xyz;
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
-### [LINES](https://github.com/tangrams/blocks/tree/gh-pages/lines)
+### [LINES](#lines) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-#### [lines-chevron](https://github.com/tangrams/blocks/blob/gh-pages/lines/chevron.yaml)
+#### [lines-chevron](#lines-chevron) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/chevron.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -998,7 +998,7 @@ color = mix(color,
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [lines-dash](https://github.com/tangrams/blocks/blob/gh-pages/lines/dash.yaml)
+#### [lines-dash](#lines-dash) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/dash.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1029,7 +1029,7 @@ if ( step(DASH_SIZE,fract(v_texcoord.y*DASH_SCALE)) == 0.){
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [lines-dots](https://github.com/tangrams/blocks/blob/gh-pages/lines/dots.yaml)
+#### [lines-dots](#lines-dots) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/dots.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1059,7 +1059,7 @@ color.a = 1.- step(DOT_SIZE, dot(st,st)*2.);
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [lines-outline](https://github.com/tangrams/blocks/blob/gh-pages/lines/outline.yaml)
+#### [lines-outline](#lines-outline) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/outline.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1090,7 +1090,7 @@ color.rgb = mix(color.rgb,
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [lines-stripes](https://github.com/tangrams/blocks/blob/gh-pages/lines/rainbow.yaml)
+#### [lines-stripes](#lines-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/rainbow.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1115,7 +1115,7 @@ color.rgb = hsb2rgb(vec3(v_texcoord.x,1.,1.));
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [lines-stripes](https://github.com/tangrams/blocks/blob/gh-pages/lines/stripes.yaml)
+#### [lines-stripes](#lines-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/stripes.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1144,9 +1144,9 @@ color.rgb += step(STRIPES_WIDTH, sin((fract(v_texcoord).x+fract(v_texcoord).y) *
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
-### [PATTERNS](https://github.com/tangrams/blocks/tree/gh-pages/patterns)
+### [PATTERNS](#patterns) <a href="https://github.com/tangrams/blocks/blob/gh-pages/patterns" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-#### [patterns-dots](https://github.com/tangrams/blocks/blob/gh-pages/patterns/dots.yaml)
+#### [patterns-dots](#patterns-dots) <a href="https://github.com/tangrams/blocks/blob/gh-pages/patterns/dots.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1166,7 +1166,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [patterns-grid](https://github.com/tangrams/blocks/blob/gh-pages/patterns/grid.yaml)
+#### [patterns-grid](#patterns-grid) <a href="https://github.com/tangrams/blocks/blob/gh-pages/patterns/grid.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1189,7 +1189,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [patterns-stripes](https://github.com/tangrams/blocks/blob/gh-pages/patterns/stripes.yaml)
+#### [patterns-stripes](#patterns-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/patterns/stripes.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1216,7 +1216,7 @@ These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [patterns-waves](https://github.com/tangrams/blocks/blob/gh-pages/patterns/waves.yaml)
+#### [patterns-waves](#patterns-waves) <a href="https://github.com/tangrams/blocks/blob/gh-pages/patterns/waves.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1237,7 +1237,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [patterns-zigzag](https://github.com/tangrams/blocks/blob/gh-pages/patterns/zigzag.yaml)
+#### [patterns-zigzag](#patterns-zigzag) <a href="https://github.com/tangrams/blocks/blob/gh-pages/patterns/zigzag.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1258,9 +1258,9 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
-### [POINTS](https://github.com/tangrams/blocks/tree/gh-pages/points)
+### [POINTS](#points) <a href="https://github.com/tangrams/blocks/blob/gh-pages/points" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-#### [points-cross](https://github.com/tangrams/blocks/blob/gh-pages/points/cross.yaml)
+#### [points-cross](#points-cross) <a href="https://github.com/tangrams/blocks/blob/gh-pages/points/cross.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1289,7 +1289,7 @@ color.a = clamp(cross(v_texcoord.xy,vec2(2.,.5)),0.,1.)*CROSS_ALPHA;
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [points-shape](https://github.com/tangrams/blocks/blob/gh-pages/points/shape.yaml)
+#### [points-shape](#points-shape) <a href="https://github.com/tangrams/blocks/blob/gh-pages/points/shape.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1325,9 +1325,9 @@ color.a = (1.-aastep(SHAPE_SIZE*.5,df))*SHAPE_ALPHA;
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
-### [SHAPES](https://github.com/tangrams/blocks/tree/gh-pages/shapes)
+### [SHAPES](#shapes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-#### [shapes-circle](https://github.com/tangrams/blocks/blob/gh-pages/shapes/circle.yaml)
+#### [shapes-circle](#shapes-circle) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/circle.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1351,7 +1351,7 @@ These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [shapes-cross](https://github.com/tangrams/blocks/blob/gh-pages/shapes/cross.yaml)
+#### [shapes-cross](#shapes-cross) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/cross.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1373,7 +1373,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [shapes-digits](https://github.com/tangrams/blocks/blob/gh-pages/shapes/digits.yaml)
+#### [shapes-digits](#shapes-digits) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/digits.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1400,7 +1400,7 @@ These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [shapes-polygons](https://github.com/tangrams/blocks/blob/gh-pages/shapes/polygons.yaml)
+#### [shapes-polygons](#shapes-polygons) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/polygons.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1425,7 +1425,7 @@ These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [shapes-rect](https://github.com/tangrams/blocks/blob/gh-pages/shapes/rect.yaml)
+#### [shapes-rect](#shapes-rect) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/rect.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1448,7 +1448,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [shapes-simplex](https://github.com/tangrams/blocks/blob/gh-pages/shapes/simplex.yaml)
+#### [shapes-simplex](#shapes-simplex) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/simplex.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1473,9 +1473,9 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
-### [SPACE](https://github.com/tangrams/blocks/tree/gh-pages/space)
+### [SPACE](#space) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-#### [space-constant](https://github.com/tangrams/blocks/blob/gh-pages/space/constant.yaml)
+#### [space-constant](#space-constant) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/constant.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1495,7 +1495,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [space-screen](https://github.com/tangrams/blocks/blob/gh-pages/space/screen.yaml)
+#### [space-screen](#space-screen) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/screen.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1516,7 +1516,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [space-tex](https://github.com/tangrams/blocks/blob/gh-pages/space/tex.yaml)
+#### [space-tex](#space-tex) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/tex.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1536,7 +1536,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [space-tile](https://github.com/tangrams/blocks/blob/gh-pages/space/tile.yaml)
+#### [space-tile](#space-tile) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/tile.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1564,7 +1564,7 @@ v_pos = modelPosition().xyz;
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [space-uz](https://github.com/tangrams/blocks/blob/gh-pages/space/uz.yaml)
+#### [space-uz](#space-uz) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/uz.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1584,9 +1584,9 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
-### [TERRAIN](https://github.com/tangrams/blocks/tree/gh-pages/terrain)
+### [TERRAIN](#terrain) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrain" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-#### [terrain-base](https://github.com/tangrams/blocks/blob/gh-pages/terrain/base.yaml)
+#### [terrain-base](#terrain-base) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrain/base.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1602,7 +1602,7 @@ import:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [terrain-geometry](https://github.com/tangrams/blocks/blob/gh-pages/terrain/geometry.yaml)
+#### [terrain-geometry](#terrain-geometry) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrain/geometry.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1634,7 +1634,7 @@ position.z += getHeight();
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [terrain-lines](https://github.com/tangrams/blocks/blob/gh-pages/terrain/lines.yaml)
+#### [terrain-lines](#terrain-lines) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrain/lines.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1653,7 +1653,7 @@ This blocks use a custom **shader**.These are the defaults **defines**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [terrain-polygons](https://github.com/tangrams/blocks/blob/gh-pages/terrain/polygons.yaml)
+#### [terrain-polygons](#terrain-polygons) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrain/polygons.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1672,7 +1672,7 @@ This blocks use a custom **shader**.These are the defaults **defines**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [terrain-terrain](https://github.com/tangrams/blocks/blob/gh-pages/terrain/terrain.yaml)
+#### [terrain-terrain](#terrain-terrain) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrain/terrain.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1688,9 +1688,9 @@ import:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
-### [TERRARIUM](https://github.com/tangrams/blocks/tree/gh-pages/terrarium)
+### [TERRARIUM](#terrarium) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrarium" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-#### [terrarium-base](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/base.yaml)
+#### [terrarium-base](#terrarium-base) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrarium/base.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1706,7 +1706,7 @@ import:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [terrarium-geometry](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/geometry.yaml)
+#### [terrarium-geometry](#terrarium-geometry) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrarium/geometry.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1738,7 +1738,7 @@ position.z += getHeight();
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [terrarium-lines](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/lines.yaml)
+#### [terrarium-lines](#terrarium-lines) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrarium/lines.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1757,7 +1757,7 @@ This blocks use a custom **shader**.These are the defaults **defines**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [terrarium-polygons](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/polygons.yaml)
+#### [terrarium-polygons](#terrarium-polygons) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrarium/polygons.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1776,7 +1776,7 @@ This blocks use a custom **shader**.These are the defaults **defines**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [terrarium-terrain](https://github.com/tangrams/blocks/blob/gh-pages/terrarium/terrain.yaml)
+#### [terrarium-terrain](#terrarium-terrain) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrarium/terrain.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1792,9 +1792,9 @@ import:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
-### [TEXTURE](https://github.com/tangrams/blocks/tree/gh-pages/texture)
+### [TEXTURE](#texture) <a href="https://github.com/tangrams/blocks/blob/gh-pages/texture" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-#### [texture-non-repetitive](https://github.com/tangrams/blocks/blob/gh-pages/texture/non-repetitive.yaml)
+#### [texture-non-repetitive](#texture-non-repetitive) <a href="https://github.com/tangrams/blocks/blob/gh-pages/texture/non-repetitive.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1814,7 +1814,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [texture-zoom-fade](https://github.com/tangrams/blocks/blob/gh-pages/texture/zoom-fade.yaml)
+#### [texture-zoom-fade](#texture-zoom-fade) <a href="https://github.com/tangrams/blocks/blob/gh-pages/texture/zoom-fade.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1834,9 +1834,9 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
-### [TILING](https://github.com/tangrams/blocks/tree/gh-pages/tiling)
+### [TILING](#tiling) <a href="https://github.com/tangrams/blocks/blob/gh-pages/tiling" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-#### [tiling-brick](https://github.com/tangrams/blocks/blob/gh-pages/tiling/brick.yaml)
+#### [tiling-brick](#tiling-brick) <a href="https://github.com/tangrams/blocks/blob/gh-pages/tiling/brick.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1856,7 +1856,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [tiling-simplex](https://github.com/tangrams/blocks/blob/gh-pages/tiling/simplex.yaml)
+#### [tiling-simplex](#tiling-simplex) <a href="https://github.com/tangrams/blocks/blob/gh-pages/tiling/simplex.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1879,7 +1879,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [tiling-tile](https://github.com/tangrams/blocks/blob/gh-pages/tiling/tile.yaml)
+#### [tiling-tile](#tiling-tile) <a href="https://github.com/tangrams/blocks/blob/gh-pages/tiling/tile.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1899,7 +1899,7 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [tiling-truchet](https://github.com/tangrams/blocks/blob/gh-pages/tiling/truchet.yaml)
+#### [tiling-truchet](#tiling-truchet) <a href="https://github.com/tangrams/blocks/blob/gh-pages/tiling/truchet.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 

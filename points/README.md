@@ -1,6 +1,6 @@
 
 
-#### [points-cross](https://github.com/tangrams/blocks/blob/gh-pages/points/cross.yaml)
+#### [points-cross](#points-cross) <a href="https://github.com/tangrams/blocks/blob/gh-pages/points/cross.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -29,7 +29,7 @@ color.a = clamp(cross(v_texcoord.xy,vec2(2.,.5)),0.,1.)*CROSS_ALPHA;
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [points-shape](https://github.com/tangrams/blocks/blob/gh-pages/points/shape.yaml)
+#### [points-shape](#points-shape) <a href="https://github.com/tangrams/blocks/blob/gh-pages/points/shape.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
