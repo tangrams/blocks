@@ -2,6 +2,14 @@
 
 styles:
     lines-stripes:
+        doc:
+            description: |
+                Apply a stripe pattern to a line
+            examples:
+                sandbox:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/grain-roads.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/grain-roads.png
+                    lines: 35
         base: lines
         texcoords: true
         shaders:

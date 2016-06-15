@@ -2,6 +2,9 @@
 
 styles:
     geometry-projections:
+        doc:
+            description: |  
+                Collection of functions to do different geometry projections
         shaders:
             defines:
                 EARTH_RADIUS: 6378137.0

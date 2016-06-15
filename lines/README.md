@@ -2,6 +2,8 @@
 
 #### [lines-chevron](http://tangrams.github.io/blocks/#lines-chevron) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/chevron.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Apply a chevron pattern to a line
+
 
 
 To import this block add the following url to your `import` list:
@@ -35,6 +37,8 @@ color = mix(color,
 
 #### [lines-dash](http://tangrams.github.io/blocks/#lines-dash) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/dash.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Apply a stripe pattern to a line
+
 
 
 To import this block add the following url to your `import` list:
@@ -61,10 +65,17 @@ if ( step(DASH_SIZE,fract(v_texcoord.y*DASH_SCALE)) == 0.){
 
 
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/elevation.yaml&lines=59-63" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/elevation.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [lines-dots](http://tangrams.github.io/blocks/#lines-dots) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/dots.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Apply a dot pattern to a line
 
 
 
@@ -96,6 +107,8 @@ color.a = 1.- step(DOT_SIZE, dot(st,st)*2.);
 
 #### [lines-outline](http://tangrams.github.io/blocks/#lines-outline) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/outline.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Apply an outline to a line
+
 
 
 To import this block add the following url to your `import` list:
@@ -122,10 +135,20 @@ color.rgb = mix(color.rgb,
 
 
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/blueprint.yaml&lines=116-120" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/blueprint.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/callejas.yaml&lines=116" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/callejas.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [lines-stripes](http://tangrams.github.io/blocks/#lines-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/rainbow.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Apply a rainbow color pattern to a line
 
 
 
@@ -147,10 +170,20 @@ color.rgb = hsb2rgb(vec3(v_texcoord.x,1.,1.));
 
 
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/crosshatch.yaml&lines=111" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/crosshatch.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/pericoli.yaml&lines=157" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/pericoli.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [lines-stripes](http://tangrams.github.io/blocks/#lines-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/stripes.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Apply a stripe pattern to a line
 
 
 
@@ -175,3 +208,8 @@ color.rgb += step(STRIPES_WIDTH, sin((fract(v_texcoord).x+fract(v_texcoord).y) *
 ```
 
 
+
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/grain-roads.yaml&lines=35" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/grain-roads.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>

@@ -2,6 +2,9 @@
 
 styles:
     geometry-normal:
+        doc:
+            description: |  
+                Functions to detect if the surface is a wall (`bool isWall()`) or a roof ('bool isRoof()') based on the normals
         shaders:
             blocks:
                 global: |

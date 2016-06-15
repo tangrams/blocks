@@ -2,6 +2,8 @@
 
 #### [geometry-dynamic-height](http://tangrams.github.io/blocks/#geometry-dynamic-height) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-height.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Scale geometries in `z` acording to the zoom level
+
 
 
 To import this block add the following url to your `import` list:
@@ -33,6 +35,8 @@ position.z *= max(1.,.5+ZOOM_LINEAR_FACTOR*zoom);
 
 #### [geometry-dynamic-width](http://tangrams.github.io/blocks/#geometry-dynamic-width) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-width.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Change the width of a line acording to the altitud
+
 
 
 To import this block add the following url to your `import` list:
@@ -53,10 +57,17 @@ width *= 0.2+min(pow(position.z*0.006,2.),.6);
 
 
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/blueprint.yaml&lines=7-28" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/blueprint.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [geometry-matrices](http://tangrams.github.io/blocks/#geometry-matrices) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/matrices.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Useful set of functions to construct scale, rotation and translation of 2, 3 or 4 dimensions
 
 
 
@@ -91,6 +102,8 @@ These are the **shader blocks**:
 
 #### [geometry-normal](http://tangrams.github.io/blocks/#geometry-normal) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/normal.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Functions to detect if the surface is a wall (`bool isWall()`) or a roof ('bool isRoof()') based on the normals
+
 
 
 To import this block add the following url to your `import` list:
@@ -111,6 +124,8 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 
 
 #### [geometry-projections](http://tangrams.github.io/blocks/#geometry-projections) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/projections.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Collection of functions to do different geometry projections
 
 
 
@@ -156,6 +171,8 @@ These are the **shader blocks**:
 
 #### [geometry-tilt](http://tangrams.github.io/blocks/#geometry-tilt) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/tilt.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Allows to TILT the camera while zooming between `TILT_IN` and `TILT_OUT`. Also is possible to rotate the tiles by turning `TILT_ROTATE` to `true`
+
 
 
 To import this block add the following url to your `import` list:
@@ -170,7 +187,7 @@ This blocks use a custom **shader**.These are the defaults **defines**:
  - **TILT_MAX_ZOOM**: ```20.0```
  - **TILT_IN**: ```15.0```
  - **TILT_OUT**: ```20.0```
- - **TILT_ROTATE**: ```True```
+ - **TILT_ROTATE**: ```False```
 
 These are the **shader blocks**:
 
@@ -187,3 +204,11 @@ position.xyz = rotateX3D(z*HALF_PI) * position.xyz;
 ```
 
 
+
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/tilt.yaml&lines=7-28" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/tilt.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/oblivion.yaml" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/oblivion.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>

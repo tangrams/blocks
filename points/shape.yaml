@@ -6,6 +6,14 @@ import:
 
 styles:
     points-shape:
+        doc:
+            description: |
+                Draws shape with N amount of sides (`SHAPE_SIDES`), a colored border (`SHAPE_BORDER_WIDTH` & `SHAPE_BORDER_COLOR`).
+            examples:
+                sandbox:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/elevation-places.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/elevation-places.png
+                    lines: 29-36
         base: points
         mix: [shapes-polygons]
         texcoord: true

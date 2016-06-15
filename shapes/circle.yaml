@@ -1,10 +1,24 @@
 # Patricio Gonzalez Vivo - 2015
-# From Chapter about Shapes at http://thebookofshaders.com/07/
-
 import: ../functions/aastep.yaml
 
 styles:
     shapes-circle:
+        doc:
+            description: |  
+                Collection of functions to draw circles. To learn more about how to make shapes on shaders go to From check [this chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
+            examples:
+                lego:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/lego.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/lego.png
+                    lines: 109-110
+                patterns:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/patterns.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/patterns.png
+                    lines: 146
+                nursery:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/nursery.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/nursery.png
+                    lines: 146
         mix: functions-aastep
         shaders:
             defines:

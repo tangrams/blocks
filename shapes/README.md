@@ -2,6 +2,8 @@
 
 #### [shapes-circle](http://tangrams.github.io/blocks/#shapes-circle) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/circle.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Collection of functions to draw circles. To learn more about how to make shapes on shaders go to From check [this chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
+
 
 
 To import this block add the following url to your `import` list:
@@ -21,10 +23,23 @@ These are the **shader blocks**:
  + `float circleDF (vec2 st) `
  + `float circle (vec2 st, float radius) `
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/patterns.yaml&lines=146" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/patterns.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/nursery.yaml&lines=146" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/nursery.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/lego.yaml&lines=109-110" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/lego.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [shapes-cross](http://tangrams.github.io/blocks/#shapes-cross) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/cross.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Collection of functions to draw crosses. To learn more about how to make shapes on shaders go to From check [this chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
 
 
 
@@ -43,10 +58,26 @@ This blocks use a custom **shader**.These are the **shader blocks**:
  + `float cross (in vec2 st, float _size) `
  + `float cross (in vec2 st, vec2 _size) `
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml&lines=181-183" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/9845C.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/oblivon.yaml&lines=155-156" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/oblivon.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/matrix.yaml&lines=101-104" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/matrix.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/tron.yaml&lines=122" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/tron.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [shapes-digits](http://tangrams.github.io/blocks/#shapes-digits) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/digits.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Collection of functions to draw number digits.
 
 
 
@@ -75,6 +106,8 @@ These are the **shader blocks**:
 
 #### [shapes-polygons](http://tangrams.github.io/blocks/#shapes-polygons) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/polygons.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Collection of functions to draw polygons. To learn more about how to make shapes on shaders go to From check [this chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
+
 
 
 To import this block add the following url to your `import` list:
@@ -95,10 +128,17 @@ These are the **shader blocks**:
  + `float shapeDF (vec2 st, int N) `
  + `float shape (vec2 st, int N, float width) `
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml&lines=153" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/9845C.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [shapes-rect](http://tangrams.github.io/blocks/#shapes-rect) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/rect.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Collection of functions to draw rectangles. To learn more about how to make shapes on shaders go to From check [this chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
 
 
 
@@ -122,6 +162,8 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 
 
 #### [shapes-simplex](http://tangrams.github.io/blocks/#shapes-simplex) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/simplex.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Collection of functions to draw shapes using a simplex grid. To learn more about simplex grids check [this chapter about noise from the Book of Shaders](https://thebookofshaders.com/11/)
 
 
 

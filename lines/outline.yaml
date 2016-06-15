@@ -4,6 +4,18 @@ import: ../functions/aastep.yaml
 
 styles:
     lines-outline:
+        doc:
+            description: |
+                Apply an outline to a line
+            examples:
+                blueprint:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/blueprint.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/blueprint.png
+                    lines: 116-120
+                callejas:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/callejas.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/callejas.png
+                    lines: 116
         base: lines
         mix: functions-aastep
         texcoords: true

@@ -2,6 +2,14 @@
 
 styles:
     geometry-dynamic-width:
+        doc:
+            description: |  
+                Change the width of a line acording to the altitud
+            examples:
+                blueprint:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/blueprint.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/blueprint.png
+                    lines: 7-28
         shaders:
             blocks:
                 width: |

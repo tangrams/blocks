@@ -3,6 +3,9 @@
 import: ../functions/map.yaml
 styles:
     geometry-dynamic-height:
+        doc:
+            description: |  
+                Scale geometries in `z` acording to the zoom level
         mix: functions-map
         shaders:
             defines:

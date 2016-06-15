@@ -3,6 +3,17 @@
 import: matrices.yaml
 styles:
     geometry-tilt:
+        doc:
+            description: |
+                Allows to TILT the camera while zooming between `TILT_IN` and `TILT_OUT`. Also is possible to rotate the tiles by turning `TILT_ROTATE` to `true`
+            examples:
+                tilt:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/tilt.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/tilt.png
+                    lines: 7-28
+                oblivion:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/oblivion.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/oblivion.png
         mix: geometry-matrices
         animated: true
         shaders:
@@ -10,7 +21,7 @@ styles:
                 TILT_IN: 15.
                 TILT_OUT: 20.
                 TILT_MAX_ZOOM: 20.
-                TILT_ROTATE: true
+                TILT_ROTATE: false
             blocks:
                 position: |
                     float t = u_time*0.1; 

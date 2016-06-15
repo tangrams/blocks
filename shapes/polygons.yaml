@@ -5,6 +5,14 @@ import: ../functions/aastep.yaml
 
 styles:
     shapes-polygons:
+        doc:
+            description: |  
+                Collection of functions to draw polygons. To learn more about how to make shapes on shaders go to From check [this chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
+            examples:
+                9845C:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/9845C.png
+                    lines: 153
         mix: [functions-aastep]
         shaders:
             defines:

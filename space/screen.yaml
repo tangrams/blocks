@@ -1,19 +1,26 @@
 
 styles:
     space-screen:
+        doc:
+            description: |
+                Get the coordinates in screen space streaching the proportion ('vec2 getScreenCoords ()') or non-streatching the proportion ('getScreenNonStretchCoords ()')
+            examples:
+                press:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/press.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/press.png
+                    lines: 136-145
+                radar:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/radar.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/radar.png
+                    lines: 0-143
         shaders:
             blocks:
                 global: |
                     #ifdef TANGRAM_FRAGMENT_SHADER
-                    // Get the coordinates in screen space
-                    // ===================================
                     vec2 getScreenCoords () {
                         return gl_FragCoord.xy / u_resolution.xy;
                     }
 
-                    // Get the coordinates in screen space 
-                    // non stretching the coords system
-                    // ===================================
                     vec2 getScreenNonStretchCoords () {
                         vec2 st = getScreenCoords();
                         if (u_resolution.y > u_resolution.x ) {

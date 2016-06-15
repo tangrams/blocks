@@ -1,11 +1,17 @@
 
 styles:
     space-constant:
+        doc:
+            description: |
+                Get the constant coordinates **(warning: could glitch on zooms)**
+            examples:
+                grain-area:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/grain-area.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/grain-area.png
+                    lines: 26
         shaders:
             blocks:
                 global: |
-                    // Get the constant coordinates (glitches on zooms)
-                    // ================================
                     vec2 getConstantCoords () {
                         #ifdef TANGRAM_FRAGMENT_SHADER
                         const float pixel_scale = 695.;

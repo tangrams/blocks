@@ -3,12 +3,22 @@
 import: ../space/tile.yaml
 styles:
     texture-zoom-fade:
+        doc:
+            description: |
+                Tile a texture across zoom levels by fading between them
+            examples:
+                crosshatch:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/crosshatch.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/crosshatch.png
+                    lines: 76 
+                pericoli:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/pericoli.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/pericoli.png
+                    lines: 121
         mix: space-tile
         shaders:
             blocks:
                 global: |
-                    // Tile a texture across zoom by fading between them
-                    // ================================
                     vec4 TileTexture (sampler2D tex, float scale) {
                         vec2 IN = getTileCoords()*scale;
                         vec2 OUT = getTileCoords()*scale*2.;

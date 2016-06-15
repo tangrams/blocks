@@ -774,6 +774,8 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 
 #### [geometry-dynamic-height](http://tangrams.github.io/blocks/#geometry-dynamic-height) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-height.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Scale geometries in `z` acording to the zoom level
+
 
 
 To import this block add the following url to your `import` list:
@@ -805,6 +807,8 @@ position.z *= max(1.,.5+ZOOM_LINEAR_FACTOR*zoom);
 
 #### [geometry-dynamic-width](http://tangrams.github.io/blocks/#geometry-dynamic-width) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-width.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Change the width of a line acording to the altitud
+
 
 
 To import this block add the following url to your `import` list:
@@ -825,10 +829,17 @@ width *= 0.2+min(pow(position.z*0.006,2.),.6);
 
 
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/blueprint.yaml&lines=7-28" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/blueprint.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [geometry-matrices](http://tangrams.github.io/blocks/#geometry-matrices) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/matrices.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Useful set of functions to construct scale, rotation and translation of 2, 3 or 4 dimensions
 
 
 
@@ -863,6 +874,8 @@ These are the **shader blocks**:
 
 #### [geometry-normal](http://tangrams.github.io/blocks/#geometry-normal) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/normal.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Functions to detect if the surface is a wall (`bool isWall()`) or a roof ('bool isRoof()') based on the normals
+
 
 
 To import this block add the following url to your `import` list:
@@ -883,6 +896,8 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 
 
 #### [geometry-projections](http://tangrams.github.io/blocks/#geometry-projections) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/projections.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Collection of functions to do different geometry projections
 
 
 
@@ -928,6 +943,8 @@ These are the **shader blocks**:
 
 #### [geometry-tilt](http://tangrams.github.io/blocks/#geometry-tilt) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/tilt.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Allows to TILT the camera while zooming between `TILT_IN` and `TILT_OUT`. Also is possible to rotate the tiles by turning `TILT_ROTATE` to `true`
+
 
 
 To import this block add the following url to your `import` list:
@@ -942,7 +959,7 @@ This blocks use a custom **shader**.These are the defaults **defines**:
  - **TILT_MAX_ZOOM**: ```20.0```
  - **TILT_IN**: ```15.0```
  - **TILT_OUT**: ```20.0```
- - **TILT_ROTATE**: ```True```
+ - **TILT_ROTATE**: ```False```
 
 These are the **shader blocks**:
 
@@ -960,12 +977,22 @@ position.xyz = rotateX3D(z*HALF_PI) * position.xyz;
 
 
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/tilt.yaml&lines=7-28" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/tilt.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/oblivion.yaml" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/oblivion.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
 ### [LINES](http://tangrams.github.io/blocks/#lines) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 #### [lines-chevron](http://tangrams.github.io/blocks/#lines-chevron) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/chevron.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Apply a chevron pattern to a line
 
 
 
@@ -1000,6 +1027,8 @@ color = mix(color,
 
 #### [lines-dash](http://tangrams.github.io/blocks/#lines-dash) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/dash.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Apply a stripe pattern to a line
+
 
 
 To import this block add the following url to your `import` list:
@@ -1026,10 +1055,17 @@ if ( step(DASH_SIZE,fract(v_texcoord.y*DASH_SCALE)) == 0.){
 
 
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/elevation.yaml&lines=59-63" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/elevation.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [lines-dots](http://tangrams.github.io/blocks/#lines-dots) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/dots.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Apply a dot pattern to a line
 
 
 
@@ -1061,6 +1097,8 @@ color.a = 1.- step(DOT_SIZE, dot(st,st)*2.);
 
 #### [lines-outline](http://tangrams.github.io/blocks/#lines-outline) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/outline.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Apply an outline to a line
+
 
 
 To import this block add the following url to your `import` list:
@@ -1087,10 +1125,20 @@ color.rgb = mix(color.rgb,
 
 
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/blueprint.yaml&lines=116-120" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/blueprint.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/callejas.yaml&lines=116" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/callejas.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [lines-stripes](http://tangrams.github.io/blocks/#lines-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/rainbow.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Apply a rainbow color pattern to a line
 
 
 
@@ -1112,10 +1160,20 @@ color.rgb = hsb2rgb(vec3(v_texcoord.x,1.,1.));
 
 
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/crosshatch.yaml&lines=111" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/crosshatch.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/pericoli.yaml&lines=157" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/pericoli.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [lines-stripes](http://tangrams.github.io/blocks/#lines-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/stripes.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Apply a stripe pattern to a line
 
 
 
@@ -1141,12 +1199,19 @@ color.rgb += step(STRIPES_WIDTH, sin((fract(v_texcoord).x+fract(v_texcoord).y) *
 
 
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/grain-roads.yaml&lines=35" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/grain-roads.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
 ### [PATTERNS](http://tangrams.github.io/blocks/#patterns) <a href="https://github.com/tangrams/blocks/blob/gh-pages/patterns" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 #### [patterns-dots](http://tangrams.github.io/blocks/#patterns-dots) <a href="https://github.com/tangrams/blocks/blob/gh-pages/patterns/dots.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Collection of functions to draw dot patterns that animate between zoom levels. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)    
 
 
 
@@ -1168,6 +1233,8 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 
 #### [patterns-grid](http://tangrams.github.io/blocks/#patterns-grid) <a href="https://github.com/tangrams/blocks/blob/gh-pages/patterns/grid.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Collection of functions to draw grids. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)    
+
 
 
 To import this block add the following url to your `import` list:
@@ -1186,10 +1253,20 @@ This blocks use a custom **shader**.These are the **shader blocks**:
  + `float tileGrid (float res) `
  + `float tileGrid() `
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/blueprint.yaml&lines=75-76" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/blueprint.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/grain.yaml&lines=15" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/grain.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [patterns-stripes](http://tangrams.github.io/blocks/#patterns-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/patterns/stripes.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Collection of functions to draw stripes. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)    
 
 
 
@@ -1213,10 +1290,23 @@ These are the **shader blocks**:
  + `float stripes (vec2 st, float width, float angle) `
  + `float diagonalStripes (vec2 st) `
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/press.yaml&lines=150" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/press.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/radar.yaml" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/radar.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/grain-area.yaml&lines=26" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/grain-area.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [patterns-waves](http://tangrams.github.io/blocks/#patterns-waves) <a href="https://github.com/tangrams/blocks/blob/gh-pages/patterns/waves.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Collection of functions to draw wavy stripes. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/) 
 
 
 
@@ -1238,6 +1328,8 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 
 
 #### [patterns-zigzag](http://tangrams.github.io/blocks/#patterns-zigzag) <a href="https://github.com/tangrams/blocks/blob/gh-pages/patterns/zigzag.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Collection of functions to draw zigzag stripes. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/) 
 
 
 
@@ -1261,6 +1353,8 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 ### [POINTS](http://tangrams.github.io/blocks/#points) <a href="https://github.com/tangrams/blocks/blob/gh-pages/points" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 #### [points-cross](http://tangrams.github.io/blocks/#points-cross) <a href="https://github.com/tangrams/blocks/blob/gh-pages/points/cross.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Draws a '+' shape in each point
 
 
 
@@ -1286,10 +1380,17 @@ color.a = clamp(cross(v_texcoord.xy,vec2(2.,.5)),0.,1.)*CROSS_ALPHA;
 
 
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/callejas.yaml&lines=96-99" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/callejas.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [points-shape](http://tangrams.github.io/blocks/#points-shape) <a href="https://github.com/tangrams/blocks/blob/gh-pages/points/shape.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Draws shape with N amount of sides (`SHAPE_SIDES`), a colored border (`SHAPE_BORDER_WIDTH` & `SHAPE_BORDER_COLOR`).
 
 
 
@@ -1322,12 +1423,19 @@ color.a = (1.-aastep(SHAPE_SIZE*.5,df))*SHAPE_ALPHA;
 
 
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/elevation-places.yaml&lines=29-36" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/elevation-places.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
 ### [SHAPES](http://tangrams.github.io/blocks/#shapes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 #### [shapes-circle](http://tangrams.github.io/blocks/#shapes-circle) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/circle.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Collection of functions to draw circles. To learn more about how to make shapes on shaders go to From check [this chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
 
 
 
@@ -1348,10 +1456,23 @@ These are the **shader blocks**:
  + `float circleDF (vec2 st) `
  + `float circle (vec2 st, float radius) `
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/patterns.yaml&lines=146" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/patterns.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/nursery.yaml&lines=146" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/nursery.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/lego.yaml&lines=109-110" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/lego.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [shapes-cross](http://tangrams.github.io/blocks/#shapes-cross) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/cross.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Collection of functions to draw crosses. To learn more about how to make shapes on shaders go to From check [this chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
 
 
 
@@ -1370,10 +1491,26 @@ This blocks use a custom **shader**.These are the **shader blocks**:
  + `float cross (in vec2 st, float _size) `
  + `float cross (in vec2 st, vec2 _size) `
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml&lines=181-183" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/9845C.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/oblivon.yaml&lines=155-156" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/oblivon.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/matrix.yaml&lines=101-104" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/matrix.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/tron.yaml&lines=122" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/tron.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [shapes-digits](http://tangrams.github.io/blocks/#shapes-digits) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/digits.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Collection of functions to draw number digits.
 
 
 
@@ -1402,6 +1539,8 @@ These are the **shader blocks**:
 
 #### [shapes-polygons](http://tangrams.github.io/blocks/#shapes-polygons) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/polygons.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Collection of functions to draw polygons. To learn more about how to make shapes on shaders go to From check [this chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
+
 
 
 To import this block add the following url to your `import` list:
@@ -1422,10 +1561,17 @@ These are the **shader blocks**:
  + `float shapeDF (vec2 st, int N) `
  + `float shape (vec2 st, int N, float width) `
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml&lines=153" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/9845C.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [shapes-rect](http://tangrams.github.io/blocks/#shapes-rect) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/rect.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Collection of functions to draw rectangles. To learn more about how to make shapes on shaders go to From check [this chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
 
 
 
@@ -1449,6 +1595,8 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 
 
 #### [shapes-simplex](http://tangrams.github.io/blocks/#shapes-simplex) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/simplex.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Collection of functions to draw shapes using a simplex grid. To learn more about simplex grids check [this chapter about noise from the Book of Shaders](https://thebookofshaders.com/11/)
 
 
 
@@ -1477,6 +1625,8 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 
 #### [space-constant](http://tangrams.github.io/blocks/#space-constant) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/constant.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Get the constant coordinates **(warning: could glitch on zooms)**
+
 
 
 To import this block add the following url to your `import` list:
@@ -1492,10 +1642,17 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 - **global**:
  + `vec2 getConstantCoords () `
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/grain-area.yaml&lines=26" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/grain-area.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [space-screen](http://tangrams.github.io/blocks/#space-screen) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/screen.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Get the coordinates in screen space streaching the proportion ('vec2 getScreenCoords ()') or non-streatching the proportion ('getScreenNonStretchCoords ()')
 
 
 
@@ -1513,10 +1670,20 @@ This blocks use a custom **shader**.These are the **shader blocks**:
  + `vec2 getScreenCoords () `
  + `vec2 getScreenNonStretchCoords () `
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/press.yaml&lines=136-145" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/press.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/radar.yaml&lines=0-143" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/radar.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [space-tex](http://tangrams.github.io/blocks/#space-tex) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/tex.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Get the position on TexCoords
 
 
 
@@ -1565,6 +1732,8 @@ v_pos = modelPosition().xyz;
 
 
 #### [space-uz](http://tangrams.github.io/blocks/#space-uz) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/uz.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Get the position on UZ from the TexCoords (on `x`) and the `z` of the World Position
 
 
 
@@ -1816,6 +1985,8 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 
 #### [texture-zoom-fade](http://tangrams.github.io/blocks/#texture-zoom-fade) <a href="https://github.com/tangrams/blocks/blob/gh-pages/texture/zoom-fade.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Tile a texture across zoom levels by fading between them
+
 
 
 To import this block add the following url to your `import` list:
@@ -1831,12 +2002,22 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 - **global**:
  + `vec4 TileTexture (sampler2D tex, float scale) `
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/crosshatch.yaml&lines=76" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/crosshatch.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/pericoli.yaml&lines=121" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/pericoli.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
 ### [TILING](http://tangrams.github.io/blocks/#tiling) <a href="https://github.com/tangrams/blocks/blob/gh-pages/tiling" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 #### [tiling-brick](http://tangrams.github.io/blocks/#tiling-brick) <a href="https://github.com/tangrams/blocks/blob/gh-pages/tiling/brick.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Repeats a coordinate space (`vec2 st`) in diferent brick-like tiles N times (`float zoom`)
 
 
 
@@ -1853,10 +2034,20 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 - **global**:
  + `vec2 brick (vec2 st, float zoom) `
 
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/patterns.yaml&lines=130" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/patterns.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/nursery.yaml&lines=99" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/nursery.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
 #### [tiling-simplex](http://tangrams.github.io/blocks/#tiling-simplex) <a href="https://github.com/tangrams/blocks/blob/gh-pages/tiling/simplex.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Repeats a coordinate space (`vec2 st`) in diferent simplex tiles. To learn more about simplex grids check [this chapter about noise from the Book of Shaders](https://thebookofshaders.com/11/)
 
 
 
@@ -1900,6 +2091,9 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 
 
 #### [tiling-truchet](http://tangrams.github.io/blocks/#tiling-truchet) <a href="https://github.com/tangrams/blocks/blob/gh-pages/tiling/truchet.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Repeats a coordinate space (`vec2 st`) in diferent tiles acording to a Truchet patern.
+There is two way to do this: by mirroring the spaces (`vec2 truchetMirror (vec2 st)`) or rotating them ('vec2 truchetRotate (vec2 st)')
 
 
 

@@ -6,6 +6,21 @@ import:
 
 styles:
     patterns-stripes:
+        doc:
+            description: |  
+                Collection of functions to draw stripes. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)    
+            examples:
+                grain-area:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/grain-area.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/grain-area.png
+                    lines: 26
+                press:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/press.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/press.png
+                    lines: 150
+                radar:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/radar.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/radar.png
         mix: [functions-aastep, geometry-matrices]
         shaders:
             defines:

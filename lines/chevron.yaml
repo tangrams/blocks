@@ -2,6 +2,9 @@
 
 styles:
     lines-chevron:
+        doc:
+            description: |
+                Apply a chevron pattern to a line
         base: lines
         texcoords: true
         shaders:

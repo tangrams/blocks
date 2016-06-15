@@ -3,11 +3,21 @@
 
 styles:
     tiling-brick:
+        doc:
+            description: |
+                Repeats a coordinate space (`vec2 st`) in diferent brick-like tiles N times (`float zoom`)
+            examples:
+                nursery:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/nursery.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/nursery.png
+                    lines: 99 
+                patterns:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/patterns.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/patterns.png
+                    lines: 130
         shaders:
             blocks:
                 global: |
-                    // Repeats a coordinate space (st) in diferent brick-like tiles
-                    // ================================
                     vec2 brick (vec2 st, float zoom) {
                         st *= zoom;
                         // Here is where the offset is happening

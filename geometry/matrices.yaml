@@ -3,6 +3,9 @@
 
 styles:
     geometry-matrices:
+        doc:
+            description: |  
+                Useful set of functions to construct scale, rotation and translation of 2, 3 or 4 dimensions
         shaders:
             defines:
                 TWO_PI: 6.2831853071795864769252867665590

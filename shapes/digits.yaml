@@ -4,6 +4,9 @@
 
 styles:
     shapes-digits:
+        doc:
+            description: |  
+                Collection of functions to draw number digits.
         shaders:
             defines:
                 CHAR_BLANK: 12.0

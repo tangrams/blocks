@@ -2,6 +2,9 @@
 
 styles:
     lines-dots:
+        doc:
+            description: |
+                Apply a dot pattern to a line
         base: lines
         texcoords: true
         blend: overlay

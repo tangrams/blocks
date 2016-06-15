@@ -2,6 +2,14 @@
 
 styles:
     lines-dash:
+        doc:
+            description: |
+                Apply a stripe pattern to a line
+            examples:
+                sandbox:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/elevation.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/elevation.png
+                    lines: 59-63
         base: lines
         texcoords: true
         shaders:

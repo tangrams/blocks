@@ -5,6 +5,18 @@ import:
 
 styles:
     patterns-grid:
+        doc:
+            description: |  
+                Collection of functions to draw grids. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)    
+            examples:
+                blueprint:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/blueprint.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/blueprint.png
+                    lines: 75-76
+                grain:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/grain.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/grain.png
+                    lines: 15
         mix: [space-tile]
         shaders:
             blocks:
