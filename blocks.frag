@@ -6,6 +6,8 @@ uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
 
+uniform float u_scroll;
+
 float smoothedge(float v) {
     return smoothstep(0.0, 1.0 / u_resolution.x, v);
 }
@@ -58,7 +60,8 @@ void main() {
     vec2 pos = st * rInv - vec2(rInv,0.0);
     rInv *= 0.3;
 
-    float t = u_time;
+    float scroll = 1.-u_scroll;
+    float t = u_time*smoothstep(.8,1.,scroll*scroll);
     pos *= 6.;
     pos.y += sin(t*0.01)*100.;
     
@@ -82,7 +85,7 @@ void main() {
     }
     
     vec3 color = myPalette(fract(p+seed));
-    color = mix(vec3(1.),
+    color = mix(vec3(1.0),
                 color,
                 clamp((1.-smoothedge(d))*(1.-smoothstep(0.6,1.,rInv)),0.,1.));
     

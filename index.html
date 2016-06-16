@@ -174,10 +174,27 @@
                 }
             }
 
+            function getScroll() {
+                var html = document.documentElement;
+                var body = document.body;
+                var height = Math.max(  body.scrollHeight, body.offsetHeight, 
+                                        html.clientHeight, html.scrollHeight, html.offsetHeight );
+                var scroll = html.scrollTop || body.scrollTop || 0;
+                return scroll/height;
+            }
+
             window.onload = function(){
                 loadTOC();
                 loadMarkdown();
                 searchHash();
+
+                window.addEventListener('scroll', function() {
+                    if (glslCanvases.length > 0) {
+                        var scroll = getScroll();
+                        console.log(scroll);
+                        glslCanvases[0].setUniform('u_scroll', scroll);
+                    }
+                });
             };
 
             window.addEventListener('hashchange', searchHash);
