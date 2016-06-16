@@ -1495,8 +1495,8 @@ Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml&lines=181-183" target="_blank">
 <img src="https://tangrams.github.io/tangram-sandbox/styles/9845C.png" style="width: 100%; height: 100px; object-fit: cover;">
 </a>
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/oblivon.yaml&lines=155-156" target="_blank">
-<img src="https://tangrams.github.io/tangram-sandbox/styles/oblivon.png" style="width: 100%; height: 100px; object-fit: cover;">
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/oblivion.yaml&lines=155-156" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/oblivion.png" style="width: 100%; height: 100px; object-fit: cover;">
 </a>
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/matrix.yaml&lines=101-104" target="_blank">
 <img src="https://tangrams.github.io/tangram-sandbox/styles/matrix.png" style="width: 100%; height: 100px; object-fit: cover;">
@@ -1850,110 +1850,6 @@ To import this block add the following url to your `import` list:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/terrain/terrain.yaml
-```
-
-
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
-
-
-### [TERRARIUM](http://tangrams.github.io/blocks/#terrarium) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrarium" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-#### [terrarium-base](http://tangrams.github.io/blocks/#terrarium-base) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrarium/base.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/terrarium/base.yaml
-```
-
-
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [terrarium-geometry](http://tangrams.github.io/blocks/#terrarium-geometry) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrarium/geometry.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/terrarium/geometry.yaml
-```
-
-
-This blocks use a custom **shader**.These are the defaults **defines**:
- - **TERRARIUM_ZOFFSET**: ```0.0```
- - **TERRARIUM_TEXTURE_INDEX**: ```1```
-
-These are the **shader blocks**:
-
-- **global**:
- + `float getHeight() `
-- **position**:
-
-```glsl
-position.z += TERRARIUM_ZOFFSET*u_meters_per_pixel;
-position.z += getHeight();
-```
-
-
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [terrarium-lines](http://tangrams.github.io/blocks/#terrarium-lines) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrarium/lines.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/terrarium/lines.yaml
-```
-
-
-This blocks use a custom **shader**.These are the defaults **defines**:
- - **TERRARIUM_ZOFFSET**: ```0.2```
-
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [terrarium-polygons](http://tangrams.github.io/blocks/#terrarium-polygons) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrarium/polygons.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/terrarium/polygons.yaml
-```
-
-
-This blocks use a custom **shader**.These are the defaults **defines**:
- - **TERRARIUM_ZOFFSET**: ```1.0```
-
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [terrarium-terrain](http://tangrams.github.io/blocks/#terrarium-terrain) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrarium/terrain.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/terrarium/terrain.yaml
 ```
 
 

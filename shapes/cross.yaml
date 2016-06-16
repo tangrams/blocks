@@ -20,9 +20,9 @@ styles:
                     url: https://tangrams.github.io/tangram-sandbox/styles/tron.yaml
                     img: https://tangrams.github.io/tangram-sandbox/styles/tron.png
                     lines: 122
-                oblivon:
-                    url: https://tangrams.github.io/tangram-sandbox/styles/oblivon.yaml
-                    img: https://tangrams.github.io/tangram-sandbox/styles/oblivon.png
+                oblivion:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/oblivion.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/oblivion.png
                     lines: 155-156
         mix: shapes-rect
         shaders:
