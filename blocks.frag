@@ -61,7 +61,7 @@ void main() {
     rInv *= 0.3;
 
     float scroll = 1.-u_scroll;
-    float t = u_time*smoothstep(.9,1.,scroll);
+    float t = u_time*smoothstep(.95,1.,scroll);
     pos *= 6.;
     pos.y += sin(t*0.01)*100.;
     
