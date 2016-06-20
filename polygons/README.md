@@ -54,7 +54,7 @@ color.rgb += vec3(1.)* min( 1.-(worldPosition().z*.001 + .7) , 0.5 );
 
 
 Examples:
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/gotham.yaml" target="_blank">
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/gotham.yaml&lines=131" target="_blank">
 <img src="https://tangrams.github.io/tangram-sandbox/styles/gotham.png" style="width: 100%; height: 100px; object-fit: cover;">
 </a>
 
@@ -114,6 +114,6 @@ color.rgb += vec3(1.)* min( 1.-(worldPosition().z*.001 + .7) , 0.5 );
 
 
 Examples:
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/gotham.yaml" target="_blank">
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/gotham.yaml&lines=128" target="_blank">
 <img src="https://tangrams.github.io/tangram-sandbox/styles/gotham.png" style="width: 100%; height: 100px; object-fit: cover;">
 </a>

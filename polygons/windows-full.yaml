@@ -32,6 +32,7 @@ styles:
             examples:
                 gotham:
                     img: https://tangrams.github.io/tangram-sandbox/styles/gotham.png
+                    lines: 128
                     url: https://tangrams.github.io/tangram-sandbox/styles/gotham.yaml
             licence: MIT
             tangram-version: 0.0.7

@@ -16,6 +16,7 @@ styles:
                 gotham:
                     url: https://tangrams.github.io/tangram-sandbox/styles/gotham.yaml
                     img: https://tangrams.github.io/tangram-sandbox/styles/gotham.png
+                    lines: 131
         texcoords: true
         base: polygons
         mix: [geometry-normal]
