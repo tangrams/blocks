@@ -14,10 +14,11 @@ styles:
                 tilt:
                     url: https://tangrams.github.io/tangram-sandbox/styles/tilt.yaml
                     img: https://tangrams.github.io/tangram-sandbox/styles/tilt.png
-                    lines: 7-28
+                    lines: 13-19
                 oblivion:
                     url: https://tangrams.github.io/tangram-sandbox/styles/oblivion.yaml
                     img: https://tangrams.github.io/tangram-sandbox/styles/oblivion.png
+                    lines: 88-94
         mix: geometry-matrices
         animated: true
         shaders:

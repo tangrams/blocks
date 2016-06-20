@@ -40,4 +40,7 @@ styles:
 ```
 
 The rest of the building blocks just provide reusable GLSL functions into the `global` shader block. To learn more about [Shaders inside Tangram read this documentation]. 
-l
+
+## Want to contribute?
+
+If you had made a nice shader style you are proud of and want to share it. Send me an email to <patricio@mapzen.com> or a DM to <@patriciogv> and I will be happy to help you make a **block** out of it. 

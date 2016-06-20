@@ -40,7 +40,11 @@ styles:
 ```
 
 The rest of the building blocks just provide reusable GLSL functions into the `global` shader block. To learn more about [Shaders inside Tangram read this documentation]. 
-l
+
+## Want to contribute?
+
+If you had made a nice shader style you are proud of and want to share it. Send me an email to <patricio@mapzen.com> or a DM to <@patriciogv> and I will be happy to help you make a **block** out of it. 
+
 ## Blocks description
 <hr>
 
@@ -1263,10 +1267,10 @@ position.xyz = rotateZ3D(PI*
 
 
 Examples:
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/tilt.yaml&lines=7-28" target="_blank">
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/tilt.yaml&lines=13-19" target="_blank">
 <img src="https://tangrams.github.io/tangram-sandbox/styles/tilt.png" style="width: 100%; height: 100px; object-fit: cover;">
 </a>
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/oblivion.yaml" target="_blank">
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/oblivion.yaml&lines=88-94" target="_blank">
 <img src="https://tangrams.github.io/tangram-sandbox/styles/oblivion.png" style="width: 100%; height: 100px; object-fit: cover;">
 </a>
 

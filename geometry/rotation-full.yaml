@@ -58,10 +58,11 @@ styles:
             examples:
                 oblivion:
                     img: https://tangrams.github.io/tangram-sandbox/styles/oblivion.png
+                    lines: 88-94
                     url: https://tangrams.github.io/tangram-sandbox/styles/oblivion.yaml
                 tilt:
                     img: https://tangrams.github.io/tangram-sandbox/styles/tilt.png
-                    lines: 7-28
+                    lines: 13-19
                     url: https://tangrams.github.io/tangram-sandbox/styles/tilt.yaml
             licence: MIT
             tangram-version: 0.0.7
