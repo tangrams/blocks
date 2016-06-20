@@ -2,19 +2,22 @@
 
 # Tangram Blocks
 
-Set of reusable building blocks for Tangram to make beatifull maps. Is in esence a library of our own Tangram recipes. A simpler way to add new GSLS Shaders features into your maps.
+Gallery of **reusable building blocks for Tangram** to make beatifull maps simpler.
+
+Writing custom styles for [Tangram](https://mapzen.com/projects/tangram/) could be trick because you need to know some GL Shading Language, but using this 
+library for recipes, you can mix and re use some of the snipets of shader code blocks that flavor our maps.
 
 ## How to use them?
 <hr>
 
-In your style add a path to it, like this:
+So first you need to `import` the block to the [YAML scene file](https://mapzen.com/documentation/tangram/Scene-file/) you are working on. That will look something like this:
 
 ```yaml
 import:
     - https://tangrams.github.io/blocks/filter/grain.yaml
 ```
 
-Then ```mix``` it with your custom styles like this:
+Then you need to ```mix``` it with the custom styles of your choose. For example:
 
 ```yaml
 styles:
@@ -23,7 +26,7 @@ styles:
         mix: [filter-grain]
 ```
 
-This will add all the functions defined on that **Tangram Block** to your current custom style (in this case ```buildings```). Note that some of this modules have some values on the ```defines``` that can be tweaked. For example in the above example we can increase the detail and amount of the grain by modifying this two defines:
+Some of the blocks like [points](#points), [lines](#lines), [polygons](#polygons), [fx](#fx) and [filter](#filter) automatically will add the necesary lines to the `normals`, `color` and `filter` blocks to make it work. So you don't have to do anything else than add it to the `mix:`. Then you can tweak the values from the ```defines``` to your own taste and desire. For example in the above example we can increase the detail and amount of the grain by modifying this two defines:
 
 ```yaml
 styles:
@@ -35,3 +38,5 @@ styles:
                 GRAIN_AMOUNT: .4
                 NUM_OCTAVES: 3
 ```
+
+The rest of the building blocks just provide reusable GLSL functions into the `global` shader block. To learn more about [Shaders inside Tangram read this documentation]. 
