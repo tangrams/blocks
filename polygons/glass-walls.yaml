@@ -1,0 +1,39 @@
+styles:
+    polygons-glass-walls:
+        doc:
+            author: 
+                name: Patricio Gonzalez Vivo
+                twitter: @patriciogv
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: MIT
+            description: |
+                Apply a chevron pattern to a line
+            examples:
+                gotham:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/gotham.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/gotham.png
+        texcoords: true
+        base: polygons
+        mix: [geometry-normal]
+        material:
+            shininess: 1.
+            specular: 0.0
+            emission: 0.0
+        shaders:
+            blocks:
+                color: |
+                    color.rgb *= vec3(min((worldPosition().z*.001 + .5),1.));
+                    
+                    if (isWall()) {
+                        vec2 st = vec2(v_texcoord.x*10.,worldPosition().z*0.2);
+                        vec2 ipos = floor(st);
+                        vec2 fpos = fract(st);
+                        if ( step(0.01,fpos.x)*step(0.1,fpos.y) > 0.0 ){
+                            material.specular = vec4(1.) * max( 1.-(worldPosition().z*.001 + .5), 0. );
+                            material.emission = vec4(0.957,0.988,0.976,1.0) * step(.5,random(ipos*vec2(0.0000001,0.01)+floor(worldNormal().xy*10.0)));
+                            material.emission *= vec4(0.988,0.983,0.880,1.0) * step(.5,random(ipos));
+                        }
+                    }
+                filter: |
+                    color.rgb += vec3(1.)* min( 1.-(worldPosition().z*.001 + .7) , 0.5 );

@@ -1,0 +1,35 @@
+import: matrices.yaml
+styles:
+    geometry-rotation:
+        doc:
+            author: 
+                name: Patricio Gonzalez Vivo
+                twitter: @patriciogv
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: MIT
+            description: |
+                Allows to rotate the camera while zooming between `ROTATION_IN` and `ROTATION_OUT`.
+            examples:
+                tilt:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/tilt.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/tilt.png
+                    lines: 7-28
+                oblivion:
+                    url: https://tangrams.github.io/tangram-sandbox/styles/oblivion.yaml
+                    img: https://tangrams.github.io/tangram-sandbox/styles/oblivion.png
+        mix: geometry-matrices
+        animated: true
+        shaders:
+            defines:
+                ROTATION_IN: 15.
+                ROTATION_OUT: 20.
+                ROTATION_MAX_ZOOM: 20.
+                ROTATION_MAX_SPEED: 0.1 
+            blocks:
+                position: |
+                    position.xyz = rotateZ3D(PI*
+                                            sin(u_time*ROTATION_MAX_SPEED)*
+                                            clamp(smoothstep(ROTATION_IN/ROTATION_MAX_ZOOM, ROTATION_OUT/ROTATION_MAX_ZOOM, max(u_map_position.z/ROTATION_MAX_ZOOM,0.)*0.9), 0., 1.)) * 
+                                            position.xyz;
+                    
