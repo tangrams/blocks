@@ -58,10 +58,9 @@ void main() {
     
     float rInv = 1./abs(st.x);
     vec2 pos = st * rInv - vec2(rInv,0.0);
-    rInv *= 0.3;
+    rInv *= .2+smoothstep(.0,.1,u_scroll);
 
-    float scroll = 1.-u_scroll;
-    float t = u_time*smoothstep(.99,1.,scroll);
+    float t = u_time;
     pos *= 6.;
     pos.y += sin(t*0.01)*100.;
     
@@ -87,7 +86,7 @@ void main() {
     vec3 color = myPalette(fract(p+seed));
     color = mix(vec3(1.0),
                 color,
-                clamp((1.-smoothedge(d))*(1.-smoothstep(0.6,1.,rInv)),0.,1.));
+                clamp((1.-smoothedge(d))*(1.-smoothstep(.6,1.,rInv)),0.,1.));
     
     gl_FragColor = vec4(color,1.0);
 }

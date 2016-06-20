@@ -1,5 +1,3 @@
-# Patricio Gonzalez Vivo - 2015
-
 import:
     - ../tiling/brick.yaml
     - ../space/tile.yaml
@@ -8,6 +6,12 @@ import:
 styles:
     patterns-dots:
         doc:
+            author: 
+                name: Patricio Gonzalez Vivo
+                twitter: @patriciogv
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: MIT
             description: |  
                 Collection of functions to draw dot patterns that animate between zoom levels. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)    
         mix: [space-tile, tiling-brick, shapes-circle]

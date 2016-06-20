@@ -1,10 +1,13 @@
-# Patricio Gonzalez Vivo - 2015
-# From Chapter about Cellular noise and FBM at http://thebookofshaders.com/12/
-
 import: random.yaml
 styles:
     generative-voronoi:
         doc:
+            author: 
+                name: Patricio Gonzalez Vivo
+                twitter: @patriciogv
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: MIT
             description: |
                 Set of Voronoi functions.
                 For more information on this theme read [this chapter of The Book of Shaders about Cellular Noise and Voronoi](http://thebookofshaders.com/12/).

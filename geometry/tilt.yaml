@@ -1,11 +1,15 @@
- # Patricio Gonzalez Vivo - 2015
-
 import: matrices.yaml
 styles:
     geometry-tilt:
         doc:
+            author: 
+                name: Patricio Gonzalez Vivo
+                twitter: @patriciogv
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: MIT
             description: |
-                Allows to TILT the camera while zooming between `TILT_IN` and `TILT_OUT`. Also is possible to rotate the tiles by turning `TILT_ROTATE` to `true`
+                Allows to TILT the camera while zooming between `TILT_IN` and `TILT_OUT`.
             examples:
                 tilt:
                     url: https://tangrams.github.io/tangram-sandbox/styles/tilt.yaml
@@ -21,13 +25,6 @@ styles:
                 TILT_IN: 15.
                 TILT_OUT: 20.
                 TILT_MAX_ZOOM: 20.
-                TILT_ROTATE: false
             blocks:
                 position: |
-                    float t = u_time*0.1; 
-                    float z = clamp(smoothstep(TILT_IN/TILT_MAX_ZOOM, TILT_OUT/TILT_MAX_ZOOM, max(u_map_position.z/TILT_MAX_ZOOM,0.)*0.9), 0., 1.);
-                    #ifdef TILT_ROTATE
-                    position.xyz = rotateX3D(z*HALF_PI) * rotateZ3D(sin(t)*PI*z) * position.xyz;
-                    #else
-                    position.xyz = rotateX3D(z*HALF_PI) * position.xyz;
-                    #endif
+                    position.xyz = rotateX3D(clamp(smoothstep(TILT_IN/TILT_MAX_ZOOM, TILT_OUT/TILT_MAX_ZOOM, max(u_map_position.z/TILT_MAX_ZOOM,0.)*0.9), 0., 1.)*HALF_PI) * position.xyz;

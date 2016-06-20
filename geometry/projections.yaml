@@ -1,8 +1,12 @@
- # Patricio Gonzalez Vivo - 2015
-
 styles:
     geometry-projections:
         doc:
+            author: 
+                name: Patricio Gonzalez Vivo
+                twitter: @patriciogv
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: MIT
             description: |  
                 Collection of functions to do different geometry projections
         shaders:

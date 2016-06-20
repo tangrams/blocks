@@ -1,10 +1,14 @@
-# Patricio Gonzalez Vivo - 2016
-
 import:
     - ../color/conversion.yaml
 styles:
     lines-stripes:
         doc:
+            author: 
+                name: Patricio Gonzalez Vivo
+                twitter: @patriciogv
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: MIT
             description: |
                 Apply a rainbow color pattern to a line
             examples:

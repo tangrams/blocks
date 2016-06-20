@@ -1,11 +1,15 @@
-# Patricio Gonzalez Vivo (@patriciogv) - 2016
-
 import:
     - normal.yaml
 
 styles:
     elevation-ramp:
         doc:
+            author: 
+                name: Patricio Gonzalez Vivo
+                twitter: @patriciogv
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: MIT
             description: |
                 Applies a image/texture named `u_ramp` to the height of a terrain. 
                 The texture is esentially an image of 1 height by N width. 

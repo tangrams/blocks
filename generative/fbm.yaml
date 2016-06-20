@@ -1,11 +1,15 @@
-# Patricio Gonzalez Vivo - 2015
-
 import: 
     - noise.yaml
 
 styles:
     generative-fbm:
         doc:
+            author: 
+                name: Patricio Gonzalez Vivo
+                twitter: @patriciogv
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: MIT
             description: |
                 Set of Fractal Brownian Motion functions.
                 For more information on this theme read [this chapter of The Book of Shaders about fractal Brownian Motion](http://thebookofshaders.com/13/).

@@ -1,14 +1,17 @@
-# Patricio Gonzalez Vivo - 2016
-# From Chapter about shapes at http://thebookofshaders.com/07/
-
 import:
     - ../shapes/polygons.yaml
 
 styles:
     points-shape:
         doc:
+            author: 
+                name: Patricio Gonzalez Vivo
+                twitter: @patriciogv
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: MIT
             description: |
-                Draws shape with N amount of sides (`SHAPE_SIDES`), a colored border (`SHAPE_BORDER_WIDTH` & `SHAPE_BORDER_COLOR`).
+                Draws shape with N amount of sides (`SHAPE_SIDES`), a colored border (`SHAPE_BORDER_WIDTH` & `SHAPE_BORDER_COLOR`). To learn more about shapes on shaders read [this chapter from The Nook of Shader](http://thebookofshaders.com/07/)
             examples:
                 sandbox:
                     url: https://tangrams.github.io/tangram-sandbox/styles/elevation-places.yaml

@@ -1,5 +1,3 @@
-# Patricio Gonzalez Vivo - 2016
-
 import:
     - ../source-elevation.yaml
     - ../space/tile.yaml
@@ -8,6 +6,12 @@ import:
 styles:
     elevation-stripes:
         doc:
+            author: 
+                name: Patricio Gonzalez Vivo
+                twitter: @patriciogv
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: MIT
             description: |
                 Perfect for the `landuse` layer on your elevation maps, the `elevation-stripe` modules use the color of the layer to draw a stripe pattern that changes width based on the surface of the terrain.
             examples:

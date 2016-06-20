@@ -1,6 +1,11 @@
 styles:
     filter-hatch:
         doc:
+            author: 
+                name: Jaume's Sanchez
+                twitter: @thespite
+            version: 0.0.1
+            tangram-version: 0.0.7
             description: |
                 Hatching filter based on [Jaume's Sanchez](https://twitter.com/thespite?lang=en) [Cross-hatching GLSL shader](https://www.clicktorelease.com/code/cross-hatching/).
             examples:

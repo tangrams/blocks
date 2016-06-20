@@ -1,9 +1,13 @@
-# Patricio Gonzalez Vivo - 2015
-
 import: ../space/tile.yaml
 styles:
     texture-zoom-fade:
         doc:
+            author: 
+                name: Patricio Gonzalez Vivo
+                twitter: @patriciogv
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: MIT
             description: |
                 Tile a texture across zoom levels by fading between them
             examples:

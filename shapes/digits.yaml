@@ -1,10 +1,13 @@
-# Number Printing - @P_Malin
-# License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
-# For a smaller less restrictive version, see this shader: https://www.shadertoy.com/view/4sBSWW
-
 styles:
     shapes-digits:
         doc:
+            author: 
+                name: P_Malin
+                url: https://www.shadertoy.com/view/4sBSWW
+                twitter: @P_Malin
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
             description: |  
                 Collection of functions to draw number digits.
         shaders:

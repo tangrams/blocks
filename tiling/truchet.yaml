@@ -1,10 +1,13 @@
-# Patricio Gonzalez Vivo - 2015
-# From Chapter about Paterns at http://thebookofshaders.com/09/
-
 import: ../geometry/matrices.yaml
 styles:
     tiling-truchet:
         doc:
+            author: 
+                name: Patricio Gonzalez Vivo
+                twitter: @patriciogv
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: MIT
             description: |
                 Repeats a coordinate space (`vec2 st`) in diferent tiles acording to a Truchet patern.
                 There is two way to do this: by mirroring the spaces (`vec2 truchetMirror (vec2 st)`) or rotating them ('vec2 truchetRotate (vec2 st)')

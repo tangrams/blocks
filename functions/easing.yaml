@@ -1,6 +1,12 @@
 styles:
     functions-easing:
         doc:
+            author: 
+                name: StackGL
+                url: http://stack.gl/
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: MIT
             description: |
                 Easing functions originally develop by Robert Penner's and transformed to GLSL by [StackGL](http://stack.gl/) in this repo: <https://github.com/stackgl/glsl-easings>
         shaders:

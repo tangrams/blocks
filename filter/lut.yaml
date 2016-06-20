@@ -1,8 +1,12 @@
-# Patricio Gonzalez Vivo - 2015
-
 styles:
     filter-lut:
         doc:
+            author: 
+                name: Patricio Gonzalez Vivo
+                twitter: @patriciogv
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: MIT
             description: |  
                 Add a look up table filter defined on the uniform ```u_lut``` to the current style. This look up tables are hable to produce similar effect to instagram filters.
             examples:

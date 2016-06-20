@@ -1,9 +1,12 @@
-# Patricio Gonzalez Vivo - 2015
-# From Chapter about Random at http://thebookofshaders.com/10/
-
 styles:
     generative-random:
         doc:
+            author: 
+                name: Patricio Gonzalez Vivo
+                twitter: @patriciogv
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: MIT
             description: |
                 Set of functions about random.
                 For more information on this theme read [this chapter of The Book of Shaders about Random](http://thebookofshaders.com/10/).

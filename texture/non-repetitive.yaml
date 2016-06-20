@@ -1,11 +1,16 @@
-# Patricio Gonzalez Vivo - 2015
-
 import: 
     - ../generative/random.yaml
     - ../space/tile.yaml
 
 styles:
     texture-non-repetitive:
+        doc:
+            author: 
+                name: Patricio Gonzalez Vivo
+                twitter: @patriciogv
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: MIT
         mix: [space-tile, generative-random]
         shaders:
             blocks:
