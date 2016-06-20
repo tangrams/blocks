@@ -24,7 +24,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **CHEVRON_SIZE**: ```1.0```
  - **CHEVRON_COLOR**: ```vec3(1., 0., 0.)```
  - **CHEVRON_ALPHA**: ```1.0```
@@ -69,7 +69,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **DASH_SIZE**: ```0.5```
  - **DASH_SCALE**: ```0.1```
 
@@ -117,7 +117,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **DOT_SIZE**: ```0.05```
 
 These are the **shader blocks**:
@@ -159,7 +159,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **OUTLINE_WIDTH**: ```0.1```
  - **OUTLINE_COLOR**: ```vec3(1.)```
 
@@ -210,7 +210,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **color**:
 
@@ -255,7 +255,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **STRIPES_INTENSITY**: ```0.1```
  - **STRIPES_WIDTH**: ```0.1```
 

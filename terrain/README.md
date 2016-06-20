@@ -48,7 +48,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **TERRAIN_TEXTURE_INDEX**: ```0```
  - **TERRAIN_ZOFFSET**: ```0.0```
 
@@ -90,7 +90,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **TERRAIN_ZOFFSET**: ```1.5```
 
 
@@ -119,7 +119,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **TERRAIN_ZOFFSET**: ```1.0```
 
 

@@ -8,7 +8,7 @@ styles:
             tangram-version: 0.0.7
             licence: MIT
             description: |
-                The raster normalmap tiles needs to be load like this:
+                The raster normal map tiles needs to be load like this:
                 ```
                     normals-elevation:
                         type: Raster

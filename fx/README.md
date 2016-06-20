@@ -25,7 +25,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **normal**:
 

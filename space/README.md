@@ -24,7 +24,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **global**:
  + `vec2 getConstantCoords () `
@@ -61,7 +61,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **global**:
  + `vec2 getScreenCoords () `
@@ -102,7 +102,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **global**:
  + `vec2 getTexCoords () `
@@ -134,7 +134,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **global**:
  + `vec2 getTileCoords() `
@@ -174,7 +174,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **global**:
  + `vec2 getUZCoords () `

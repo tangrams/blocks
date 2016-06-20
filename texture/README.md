@@ -22,7 +22,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **global**:
  + `vec4 NonRepetitiveTexture (sampler2D tex, vec2 x, float v) `
@@ -54,7 +54,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **global**:
  + `vec4 TileTexture (sampler2D tex, float scale) `

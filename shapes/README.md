@@ -24,7 +24,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **PI**: ```3.14159265359```
 
 These are the **shader blocks**:
@@ -71,7 +71,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **global**:
  + `float cross (vec2 st, float size, float width) `
@@ -119,7 +119,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **CHAR_DECIMAL_POINT**: ```10.0```
  - **CHAR_MINUS**: ```11.0```
  - **CHAR_BLANK**: ```12.0```
@@ -158,7 +158,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **TWO_PI**: ```6.283185307```
  - **PI**: ```3.14159265359```
 
@@ -200,7 +200,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **global**:
  + `float rectDF (vec2 st, vec2 size) `
@@ -235,7 +235,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **global**:
  + `float warp (vec3 S) `

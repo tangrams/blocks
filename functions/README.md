@@ -24,7 +24,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **global**:
  + `float aastep(float threshold, float value) `
@@ -56,7 +56,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **HALF_PI**: ```1.57079632679```
  - **PI**: ```3.14159265359```
 
@@ -122,7 +122,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **EPSILON**: ```1e-07```
 
 These are the **shader blocks**:
@@ -156,7 +156,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **global**:
  + `float pulse (float x, float peak, float width) `

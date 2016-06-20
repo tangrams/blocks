@@ -24,7 +24,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **TAU**: ```6.28318530718```
  - **CAUSTIC_ITERATIONS**: ```3```
 
@@ -62,7 +62,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **NUM_OCTAVES**: ```5```
 
 These are the **shader blocks**:
@@ -103,7 +103,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **global**:
  + `float noise (in float x) `
@@ -139,7 +139,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **global**:
  + `float random (float x) `
@@ -177,7 +177,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **global**:
  + `vec3 voronoi (vec2 st) `

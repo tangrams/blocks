@@ -24,7 +24,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **CROSS_ALPHA**: ```0.75```
 
 These are the **shader blocks**:
@@ -70,7 +70,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **SHAPE_ALPHA**: ```1.0```
  - **SHAPE_BORDER_WIDTH**: ```0.15```
  - **SHAPE_SIDES**: ```3```

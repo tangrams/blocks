@@ -8,7 +8,7 @@ styles:
             tangram-version: 0.0.7
             licence: MIT
             description: |  
-                Add a look up table filter defined on the uniform ```u_lut``` to the current style. This look up tables are hable to produce similar effect to instagram filters.
+                Add a look up table filter defined on the uniform ```u_lut``` to the current style. This look up tables are hable to produce similar effects to instagram filters.
             examples:
                 sandbox-lut:
                     url: https://tangrams.github.io/tangram-sandbox/styles/sandbox-lut.yaml

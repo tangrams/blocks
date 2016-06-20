@@ -8,7 +8,7 @@ styles:
             tangram-version: 0.0.7
             licence: MIT
             description: |  
-                Apply a old TV effect to the style.
+                Apply an old TV effect to the style.
             examples:
                 9845C:
                     url: https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml

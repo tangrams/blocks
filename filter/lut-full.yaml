@@ -6,7 +6,7 @@ styles:
                 twitter: patriciogv
             description: 'Add a look up table filter defined on the uniform ```u_lut```
                 to the current style. This look up tables are hable to produce similar
-                effect to instagram filters.
+                effects to instagram filters.
 
                 '
             examples:

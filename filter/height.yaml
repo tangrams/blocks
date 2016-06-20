@@ -8,7 +8,7 @@ styles:
             tangram-version: 0.0.7
             licence: MIT
             description: |  
-                Adds a dark gradiant to the geometries conform they aproach to height 0.
+                Adds a dark gradiant to the geometries conform they approach to height 0.
             examples:
                 default:
                     url: https://tangrams.github.io/tangram-sandbox/styles/default.yaml

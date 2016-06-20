@@ -24,7 +24,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **ZOOM_LINEAR_FACTOR**: ```2.0```
  - **ZOOM_START**: ```15.0```
  - **ZOOM_END**: ```20.0```
@@ -67,7 +67,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **width**:
 
@@ -109,7 +109,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **HALF_PI**: ```1.57079632679```
  - **TWO_PI**: ```6.28318530718```
  - **PI**: ```3.14159265359```
@@ -154,7 +154,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **global**:
  + `bool isWall () `
@@ -187,7 +187,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **PI**: ```3.14159265359```
  - **HALF_PI**: ```1.57079632679```
  - **EARTH_RADIUS**: ```6378137.0```
@@ -243,7 +243,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **ROTATION_MAX_ZOOM**: ```20.0```
  - **ROTATION_OUT**: ```20.0```
  - **ROTATION_IN**: ```15.0```
@@ -298,7 +298,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **TILT_MAX_ZOOM**: ```20.0```
  - **TILT_IN**: ```15.0```
  - **TILT_OUT**: ```20.0```

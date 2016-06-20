@@ -4,9 +4,9 @@ styles:
             author:
                 name: Inigo Quiles
                 twitter: iquilezles
-            description: 'Procedural generation of color paletters implemented by
-                [Inigo Quiles](https://twitter.com/iquilezles) (1999) explained in
-                [this article](http://www.iquilezles.org/www/articles/palettes/palettes.htm)
+            description: 'Procedural generation of color palettes implemented by [Inigo
+                Quiles](https://twitter.com/iquilezles) (1999) explained in [this
+                article](http://www.iquilezles.org/www/articles/palettes/palettes.htm)
 
                 '
             licence: MIT

@@ -25,7 +25,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **GRAIN_AMOUNT**: ```0.3```
 
 These are the **shader blocks**:
@@ -52,7 +52,7 @@ Examples:
 
 #### [filter-grid](http://tangrams.github.io/blocks/#filter-grid) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/grid.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-Apply a grid filter to they syle
+Apply a grid filter to the syle
 <p>The amount can be set by the GRID_AMOUNT define [0.0~1.0]</p>
 <p>Then you should choose between the modes: ```GRID_ADD```, ```GRID_SUBSTRACT``` and ```GRID_MULTIPLY```</p>
 
@@ -76,7 +76,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **GRID_AMOUNT**: ```0.2```
  - **GRID_SUBSTRACT**: ```False```
  - **GRID_ADD**: ```True```
@@ -128,7 +128,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.This are the **uniforms**:
+These blocks uses a custom **shader**. These are the **uniforms**:
  - **u_hatchmap**: ```imgs/hatch.png```
 
 These are the **shader blocks**:
@@ -149,7 +149,7 @@ Examples:
 
 #### [filter-height](http://tangrams.github.io/blocks/#filter-height) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/height.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-Adds a dark gradiant to the geometries conform they aproach to height 0.
+Adds a dark gradiant to the geometries conform they approach to height 0.
 
 
 
@@ -171,7 +171,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **color**:
 
@@ -191,7 +191,7 @@ Examples:
 
 #### [filter-lut](http://tangrams.github.io/blocks/#filter-lut) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/lut.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-Add a look up table filter defined on the uniform ```u_lut``` to the current style. This look up tables are hable to produce similar effect to instagram filters.
+Add a look up table filter defined on the uniform ```u_lut``` to the current style. This look up tables are hable to produce similar effects to instagram filters.
 
 
 
@@ -213,7 +213,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.This are the **uniforms**:
+These blocks uses a custom **shader**. These are the **uniforms**:
  - **u_lut**: ```imgs/lut-0001.png```
 
 These are the **shader blocks**:
@@ -241,7 +241,7 @@ Examples:
 
 #### [filter-tv](http://tangrams.github.io/blocks/#filter-tv) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/tv.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-Apply a old TV effect to the style.
+Apply an old TV effect to the style.
 
 
 
@@ -263,7 +263,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the defaults **defines**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
  - **TV_FREQ**: ```1.2```
 
 These are the **shader blocks**:

@@ -11,7 +11,7 @@ styles:
             tangram-version: 0.0.7
             licence: MIT
             description: |
-                Apply a grid filter to they syle
+                Apply a grid filter to the syle
                 <p>The amount can be set by the GRID_AMOUNT define [0.0~1.0]</p>
                 <p>Then you should choose between the modes: ```GRID_ADD```, ```GRID_SUBSTRACT``` and ```GRID_MULTIPLY```</p>
         shaders:

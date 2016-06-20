@@ -4,7 +4,7 @@ styles:
             author:
                 name: Patricio Gonzalez Vivo
                 twitter: patriciogv
-            description: "The raster normalmap tiles needs to be load like this:\n\
+            description: "The raster normal map tiles needs to be load like this:\n\
                 ```\n    normals-elevation:\n        type: Raster\n        url: https://s3.amazonaws.com/elevation-tiles-prod/normal/{z}/{x}/{y}.png\n\
                 \        max_zoom: 15\n```\nA simple way to do it is to import `https://tangrams.github.io/blocks/source-elevation.yaml`\
                 \ and then link the vector tiles to them (see the example).\n"

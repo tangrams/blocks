@@ -2,7 +2,7 @@
 
 #### [polygons-glass-walls](http://tangrams.github.io/blocks/#polygons-glass-walls) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/glass-walls.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-Apply a chevron pattern to a line
+Apply a glass walls to the sides of a geometry
 
 
 
@@ -24,7 +24,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **color**:
 
@@ -63,7 +63,7 @@ Examples:
 
 #### [polygons-windows](http://tangrams.github.io/blocks/#polygons-windows) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/windows.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-Apply a chevron pattern to a line
+Apply a windows patterns on the walls of a geometry
 
 
 
@@ -85,7 +85,7 @@ import:
 ```
 
 
-This blocks use a custom **shader**.These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **color**:
 

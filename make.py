@@ -42,11 +42,11 @@ def appendDocumentation(readme_file, filename, counter):
                             '```\n\n\n')
 
         if 'shaders' in yaml_file['styles'][name_block]:
-            readme_file.write('This blocks use a custom **shader**.');
+            readme_file.write('These blocks uses a custom **shader**. ');
 
             # Add a list of uniforms
             if 'uniforms' in yaml_file['styles'][name_block]['shaders']:
-                readme_file.write('This are the **uniforms**:\n')
+                readme_file.write('These are the **uniforms**:\n')
                 for uniform in yaml_file['styles'][name_block]['shaders']['uniforms'].keys():
                     readme_file.write(' - **' + uniform + '**: ```' + str(yaml_file['styles'][name_block]['shaders']['uniforms'][uniform]) + '```\n')
                 readme_file.write('\n')

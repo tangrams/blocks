@@ -6,7 +6,7 @@ styles:
             author:
                 name: Patricio Gonzalez Vivo
                 twitter: patriciogv
-            description: 'Apply a grid filter to they syle
+            description: 'Apply a grid filter to the syle
 
                 <p>The amount can be set by the GRID_AMOUNT define [0.0~1.0]</p>
 

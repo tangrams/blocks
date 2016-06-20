@@ -8,7 +8,7 @@ styles:
             tangram-version: 0.0.7
             licence: MIT
             description: |
-                Procedural generation of color paletters implemented by [Inigo Quiles](https://twitter.com/iquilezles) (1999) explained in [this article](http://www.iquilezles.org/www/articles/palettes/palettes.htm)
+                Procedural generation of color palettes implemented by [Inigo Quiles](https://twitter.com/iquilezles) (1999) explained in [this article](http://www.iquilezles.org/www/articles/palettes/palettes.htm)
         shaders:
             blocks:
                 global: |
