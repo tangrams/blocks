@@ -13,6 +13,16 @@ import:
 
 
 
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/terrain/base-full.yaml
+```
+
+
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
@@ -25,6 +35,16 @@ To import this block add the following url to your `import` list:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/terrain/geometry.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/terrain/geometry-full.yaml
 ```
 
 
@@ -60,6 +80,16 @@ import:
 ```
 
 
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/terrain/lines-full.yaml
+```
+
+
 This blocks use a custom **shader**.These are the defaults **defines**:
  - **TERRAIN_ZOFFSET**: ```1.5```
 
@@ -79,6 +109,16 @@ import:
 ```
 
 
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/terrain/polygons-full.yaml
+```
+
+
 This blocks use a custom **shader**.These are the defaults **defines**:
  - **TERRAIN_ZOFFSET**: ```1.0```
 
@@ -95,6 +135,16 @@ To import this block add the following url to your `import` list:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/terrain/terrain.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/terrain/terrain-full.yaml
 ```
 
 

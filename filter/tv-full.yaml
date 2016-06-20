@@ -1,0 +1,23 @@
+styles:
+    filter-tv:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Apply a old TV effect to the style.
+
+                '
+            examples:
+                9845C:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/9845C.png
+                    url: https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                filter: 'color *= abs(cos((gl_FragCoord.y*TV_FREQ+u_time*5.)));
+
+                    '
+            defines:
+                TV_FREQ: 1.2

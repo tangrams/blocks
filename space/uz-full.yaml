@@ -1,0 +1,18 @@
+styles:
+    space-uz:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Get the position on UZ from the TexCoords (on `x`) and the
+                `z` of the World Position
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "vec2 getUZCoords () {\n    return vec2(v_texcoord.x*10.,worldPosition().z*0.2);\n\
+                    }"
+        texcoords: true

@@ -1,0 +1,114 @@
+import:
+- ../functions/aastep.yaml
+- ../geometry/matrices.yaml
+styles:
+    functions-aastep:
+        doc:
+            author:
+                name: Matt DesLauriers
+                twitter: mattdesl
+            description: 'AnitAliased ```step()``` function implemented by [Matt DesLauriers](https://twitter.com/mattdesl)
+                in this module <https://github.com/stackgl/glsl-aastep>
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// AntiAliased Step function\n//=============================\n\
+                    float aastep(float threshold, float value) {\n    #ifdef TANGRAM_FRAGMENT_SHADER\n\
+                    \        #ifdef TANGRAM_EXTENSION_OES_standard_derivatives\n \
+                    \           float afwidth = length(vec2(dFdx(value), dFdy(value)))\
+                    \ * 0.70710678118654757;\n            return smoothstep(threshold-afwidth,\
+                    \ threshold+afwidth, value);\n        #else\n            return\
+                    \ step(threshold, value);\n        #endif  \n    #else\n     \
+                    \   return step(threshold, value);\n    #endif\n}"
+            extensions: OES_standard_derivatives
+    geometry-matrices:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Useful set of functions to construct scale, rotation and
+                translation of 2, 3 or 4 dimensions. For more information about matrices
+                read [this chapter from The Book of Shaders](http://thebookofshaders.com/08/)
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// Rotate in 2, 3 and 4 dimensions\n// ================================\n\
+                    mat2 rotate2D (float angle) {\n    return mat2(cos(angle),-sin(angle),\n\
+                    \                sin(angle),cos(angle));\n}\nmat3 rotateX3D (float\
+                    \ phi) {\n    return mat3(\n        vec3(1.,0.,0.),\n        vec3(0.,cos(phi),-sin(phi)),\n\
+                    \        vec3(0.,sin(phi),cos(phi)));\n}\nmat4 rotateX4D (float\
+                    \ phi) {\n    return mat4(\n        vec4(1.,0.,0.,0),\n      \
+                    \  vec4(0.,cos(phi),-sin(phi),0.),\n        vec4(0.,sin(phi),cos(phi),0.),\n\
+                    \        vec4(0.,0.,0.,1.));\n}\nmat3 rotateY3D (float theta)\
+                    \ {\n    return mat3(\n        vec3(cos(theta),0.,-sin(theta)),\n\
+                    \        vec3(0.,1.,0.),\n        vec3(sin(theta),0.,cos(theta)));\n\
+                    }\nmat4 rotateY4D (float theta) {\n    return mat4(\n        vec4(cos(theta),0.,-sin(theta),0),\n\
+                    \        vec4(0.,1.,0.,0.),\n        vec4(sin(theta),0.,cos(theta),0.),\n\
+                    \        vec4(0.,0.,0.,1.));\n}\nmat3 rotateZ3D (float psi) {\n\
+                    \    return mat3(\n        vec3(cos(psi),-sin(psi),0.),\n    \
+                    \    vec3(sin(psi),cos(psi),0.),\n        vec3(0.,0.,1.));\n}\n\
+                    mat4 rotateZ4D (float psi) {\n    return mat4(\n        vec4(cos(psi),-sin(psi),0.,0),\n\
+                    \        vec4(sin(psi),cos(psi),0.,0.),\n        vec4(0.,0.,1.,0.),\n\
+                    \        vec4(0.,0.,0.,1.));\n}\n//\n// Scale 4 dimensions\n//\
+                    \ ================================\nmat4 scale4D (float x, float\
+                    \ y, float z) {\n    return mat4(\n        vec4(x,   0.0, 0.0,\
+                    \ 0.0),\n        vec4(0.0, y,   0.0, 0.0),\n        vec4(0.0,\
+                    \ 0.0, z,   0.0),\n        vec4(0.0, 0.0, 0.0, 1.0)\n    );\n\
+                    }\n//\n// Translate in 4 dimensions\nmat4 translate4D (float x,\
+                    \ float y, float z) {\n    return mat4(\n        vec4(1.0, 0.0,\
+                    \ 0.0, 0.0),\n        vec4(0.0, 1.0, 0.0, 0.0),\n        vec4(0.0,\
+                    \ 0.0, 1.0, 0.0),\n        vec4(x,   y,   z,   1.0)\n    );\n}"
+            defines:
+                HALF_PI: 1.5707963267948966
+                PI: 3.141592653589793
+                TWO_PI: 6.283185307179586
+    patterns-stripes:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: "Collection of functions to draw stripes. To learn more about\
+                \ patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)\
+                \    \n"
+            examples:
+                grain-area:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/grain-area.png
+                    lines: 26
+                    url: https://tangrams.github.io/tangram-sandbox/styles/grain-area.yaml
+                press:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/press.png
+                    lines: 150
+                    url: https://tangrams.github.io/tangram-sandbox/styles/press.yaml
+                radar:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/radar.png
+                    url: https://tangrams.github.io/tangram-sandbox/styles/radar.yaml
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        mix:
+        - functions-aastep
+        - geometry-matrices
+        shaders:
+            blocks:
+                global: "// Return a distance function of stripes\nfloat stripesDF\
+                    \ (vec2 st) {\n    return abs(sin(st.y*PI));\n}\n\n// Adjustable\
+                    \ width stripes\nfloat stripes (vec2 st, float width) {\n    return\
+                    \ aastep(width, stripesDF(st));\n}\n\n// Adjustable Angle\nfloat\
+                    \ stripes (vec2 st, float width, float angle) {\n    st = rotate2D(angle)\
+                    \ * st;\n    return stripes(st*STRIPE_SCALE, width);\n}\n\n//\
+                    \ Faster optimisation of diagonal stripes\nfloat diagonalStripes\
+                    \ (vec2 st) {\n    vec2 i_st = floor(st);\n    vec2 f_st = fract(st);\n\
+                    \    if (mod(i_st.y,2.) - mod(i_st.x,2.) == 0.) {\n        return\
+                    \ 1.0 - aastep(f_st.x,f_st.y);\n    } else {\n        return aastep(f_st.x,f_st.y);\n\
+                    \    }\n}"
+            defines:
+                PI: 3.141592653589793
+                STRIPE_SCALE: 28.296

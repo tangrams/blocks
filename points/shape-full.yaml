@@ -1,0 +1,86 @@
+import: ../functions/aastep.yaml
+styles:
+    functions-aastep:
+        doc:
+            author:
+                name: Matt DesLauriers
+                twitter: mattdesl
+            description: 'AnitAliased ```step()``` function implemented by [Matt DesLauriers](https://twitter.com/mattdesl)
+                in this module <https://github.com/stackgl/glsl-aastep>
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// AntiAliased Step function\n//=============================\n\
+                    float aastep(float threshold, float value) {\n    #ifdef TANGRAM_FRAGMENT_SHADER\n\
+                    \        #ifdef TANGRAM_EXTENSION_OES_standard_derivatives\n \
+                    \           float afwidth = length(vec2(dFdx(value), dFdy(value)))\
+                    \ * 0.70710678118654757;\n            return smoothstep(threshold-afwidth,\
+                    \ threshold+afwidth, value);\n        #else\n            return\
+                    \ step(threshold, value);\n        #endif  \n    #else\n     \
+                    \   return step(threshold, value);\n    #endif\n}"
+            extensions: OES_standard_derivatives
+    points-shape:
+        base: points
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Draws shape with N amount of sides (`SHAPE_SIDES`), a colored
+                border (`SHAPE_BORDER_WIDTH` & `SHAPE_BORDER_COLOR`). To learn more
+                about shapes on shaders read [this chapter from The Nook of Shader](http://thebookofshaders.com/07/)
+
+                '
+            examples:
+                sandbox:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/elevation-places.png
+                    lines: 29-36
+                    url: https://tangrams.github.io/tangram-sandbox/styles/elevation-places.yaml
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        mix:
+        - shapes-polygons
+        shaders:
+            blocks:
+                color: "float df = shapeDF(vec2(v_texcoord.x,1.-v_texcoord.y),int(SHAPE_SIDES));\n\
+                    color.rgb = mix(color.rgb,\n                SHAPE_BORDER_COLOR,\n\
+                    \                aastep(SHAPE_SIZE*.5-SHAPE_BORDER_WIDTH,df));\n\
+                    color.a = (1.-aastep(SHAPE_SIZE*.5,df))*SHAPE_ALPHA;"
+            defines:
+                SHAPE_ALPHA: 1.0
+                SHAPE_BORDER_COLOR: vec3(1.)
+                SHAPE_BORDER_WIDTH: 0.15
+                SHAPE_SIDES: 3
+                SHAPE_SIZE: 1.0
+        texcoord: true
+    shapes-polygons:
+        doc:
+            description: 'Collection of functions to draw polygons. To learn more
+                about how to make shapes on shaders go to From check [this chapter
+                about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
+
+                '
+            examples:
+                9845C:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/9845C.png
+                    lines: 153
+                    url: https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml
+        mix:
+        - functions-aastep
+        shaders:
+            blocks:
+                global: "// get distance field of a polygon in the center\n// where\
+                    \ N is the number of sides of it\n// ================================\n\
+                    float shapeDF (vec2 st, int N) {\n    st = st *2.-1.;\n    float\
+                    \ a = atan(st.x,st.y)+PI;\n    float r = TWO_PI/float(N);\n  \
+                    \  return cos(floor(.5+a/r)*r-a)*length(st);\n}\n\n// draw a polygon\
+                    \ in the center\n// where N is the number of sides of it\n// ================================\n\
+                    float shape (vec2 st, int N, float width) {\n    return 1.0-aastep(width,shapeDF(st,N));\n\
+                    }"
+            defines:
+                PI: 3.141592653589793
+                TWO_PI: 6.283185307

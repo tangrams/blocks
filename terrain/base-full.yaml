@@ -1,0 +1,121 @@
+import: matrices.yaml
+styles:
+    geometry-matrices:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Useful set of functions to construct scale, rotation and
+                translation of 2, 3 or 4 dimensions. For more information about matrices
+                read [this chapter from The Book of Shaders](http://thebookofshaders.com/08/)
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// Rotate in 2, 3 and 4 dimensions\n// ================================\n\
+                    mat2 rotate2D (float angle) {\n    return mat2(cos(angle),-sin(angle),\n\
+                    \                sin(angle),cos(angle));\n}\nmat3 rotateX3D (float\
+                    \ phi) {\n    return mat3(\n        vec3(1.,0.,0.),\n        vec3(0.,cos(phi),-sin(phi)),\n\
+                    \        vec3(0.,sin(phi),cos(phi)));\n}\nmat4 rotateX4D (float\
+                    \ phi) {\n    return mat4(\n        vec4(1.,0.,0.,0),\n      \
+                    \  vec4(0.,cos(phi),-sin(phi),0.),\n        vec4(0.,sin(phi),cos(phi),0.),\n\
+                    \        vec4(0.,0.,0.,1.));\n}\nmat3 rotateY3D (float theta)\
+                    \ {\n    return mat3(\n        vec3(cos(theta),0.,-sin(theta)),\n\
+                    \        vec3(0.,1.,0.),\n        vec3(sin(theta),0.,cos(theta)));\n\
+                    }\nmat4 rotateY4D (float theta) {\n    return mat4(\n        vec4(cos(theta),0.,-sin(theta),0),\n\
+                    \        vec4(0.,1.,0.,0.),\n        vec4(sin(theta),0.,cos(theta),0.),\n\
+                    \        vec4(0.,0.,0.,1.));\n}\nmat3 rotateZ3D (float psi) {\n\
+                    \    return mat3(\n        vec3(cos(psi),-sin(psi),0.),\n    \
+                    \    vec3(sin(psi),cos(psi),0.),\n        vec3(0.,0.,1.));\n}\n\
+                    mat4 rotateZ4D (float psi) {\n    return mat4(\n        vec4(cos(psi),-sin(psi),0.,0),\n\
+                    \        vec4(sin(psi),cos(psi),0.,0.),\n        vec4(0.,0.,1.,0.),\n\
+                    \        vec4(0.,0.,0.,1.));\n}\n//\n// Scale 4 dimensions\n//\
+                    \ ================================\nmat4 scale4D (float x, float\
+                    \ y, float z) {\n    return mat4(\n        vec4(x,   0.0, 0.0,\
+                    \ 0.0),\n        vec4(0.0, y,   0.0, 0.0),\n        vec4(0.0,\
+                    \ 0.0, z,   0.0),\n        vec4(0.0, 0.0, 0.0, 1.0)\n    );\n\
+                    }\n//\n// Translate in 4 dimensions\nmat4 translate4D (float x,\
+                    \ float y, float z) {\n    return mat4(\n        vec4(1.0, 0.0,\
+                    \ 0.0, 0.0),\n        vec4(0.0, 1.0, 0.0, 0.0),\n        vec4(0.0,\
+                    \ 0.0, 1.0, 0.0),\n        vec4(x,   y,   z,   1.0)\n    );\n}"
+            defines:
+                HALF_PI: 1.5707963267948966
+                PI: 3.141592653589793
+                TWO_PI: 6.283185307179586
+    geometry-tilt:
+        animated: true
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Allows to TILT the camera while zooming between `TILT_IN`
+                and `TILT_OUT`.
+
+                '
+            examples:
+                oblivion:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/oblivion.png
+                    url: https://tangrams.github.io/tangram-sandbox/styles/oblivion.yaml
+                tilt:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/tilt.png
+                    lines: 7-28
+                    url: https://tangrams.github.io/tangram-sandbox/styles/tilt.yaml
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        mix: geometry-matrices
+        shaders:
+            blocks:
+                position: position.xyz = rotateX3D(clamp(smoothstep(TILT_IN/TILT_MAX_ZOOM,
+                    TILT_OUT/TILT_MAX_ZOOM, max(u_map_position.z/TILT_MAX_ZOOM,0.)*0.9),
+                    0., 1.)*HALF_PI) * position.xyz;
+            defines:
+                TILT_IN: 15.0
+                TILT_MAX_ZOOM: 20.0
+                TILT_OUT: 20.0
+    terrain-base:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        mix:
+        - terrain-geometry
+        - geometry-tilt
+    terrain-geometry:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        raster: custom
+        shaders:
+            blocks:
+                global: "#ifdef TANGRAM_VERTEX_SHADER\nuniform sampler2D u_rasters[TANGRAM_NUM_RASTER_SOURCES];\n\
+                    uniform vec2 u_raster_sizes[TANGRAM_NUM_RASTER_SOURCES];\nuniform\
+                    \ vec3 u_raster_offsets[TANGRAM_NUM_RASTER_SOURCES];\n#define\
+                    \ adjustRasterUV(raster_index, uv) ((uv) * u_raster_offsets[raster_index].z\
+                    \ + u_raster_offsets[raster_index].xy)\n#define currentRasterUV(raster_index)\
+                    \ (adjustRasterUV(raster_index, v_modelpos_base_zoom.xy))\n#define\
+                    \ currentRasterPixel(raster_index) (currentRasterUV(raster_index)\
+                    \ * rasterPixelSize(raster_index))\n#define sampleRaster(raster_index)\
+                    \ (texture2D(u_rasters[raster_index], currentRasterUV(raster_index)))\n\
+                    #define sampleRasterAtPixel(raster_index, pixel) (texture2D(u_rasters[raster_index],\
+                    \ adjustRasterUV(raster_index, (pixel) / rasterPixelSize(raster_index))))\n\
+                    #define rasterPixelSize(raster_index) (u_raster_sizes[raster_index])\n\
+                    #endif\n\nfloat getHeight() {\n    float h = sampleRaster(int(TERRAIN_TEXTURE_INDEX)).a;\n\
+                    \    if (h != 0.0) {\n        return (1.-h)*10000.;\n    } else\
+                    \ {\n        return 0.0;\n    }\n}\n"
+                position: 'position.z += TERRAIN_ZOFFSET*u_meters_per_pixel;
+
+                    position.z += getHeight();'
+            defines:
+                TERRAIN_TEXTURE_INDEX: 0
+                TERRAIN_ZOFFSET: 0.0

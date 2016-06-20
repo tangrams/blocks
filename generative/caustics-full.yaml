@@ -1,0 +1,30 @@
+styles:
+    generative-caustic:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Caustic generative texture inspired on <https://www.shadertoy.com/view/MdlXz8>
+                by David Hoskins
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// Caustic effect from https://www.shadertoy.com/view/4ljXWh\n\
+                    vec3 getCaustic (vec2 uv) {\n    vec2 p = mod(uv*TAU, TAU)-250.0;\n\
+                    \    float time = u_time * .5+23.0;\n    vec2 i = vec2(p);\n \
+                    \   float c = 1.0;\n    float inten = .005;\n    for (int n =\
+                    \ 0; n < int(CAUSTIC_ITERATIONS); n++) {\n        float t = time\
+                    \ * (1.0 - (3.5 / float(n+1)));\n        i = p + vec2(cos(t -\
+                    \ i.x) + sin(t + i.y), sin(t - i.y) + cos(t + i.x));\n       \
+                    \ c += 1.0/length(vec2(p.x / (sin(i.x+t)/inten),p.y / (cos(i.y+t)/inten)));\n\
+                    \    }\n    c /= float(CAUSTIC_ITERATIONS);\n    c = 1.17-pow(c,\
+                    \ 1.4);\n    vec3 color = vec3(pow(abs(c), 8.0));\n    color =\
+                    \ clamp(color + vec3(0.0, 0.35, 0.5), 0.0, 1.0);\n    color =\
+                    \ mix(color, vec3(1.0,1.0,1.0),0.3);\n    return color;\n}"
+            defines:
+                CAUSTIC_ITERATIONS: 3
+                TAU: 6.28318530718

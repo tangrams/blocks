@@ -3,7 +3,7 @@ styles:
         doc:
             author: 
                 name: Matt DesLauriers
-                twitter: @mattdesl
+                twitter: mattdesl
             version: 0.0.1
             tangram-version: 0.0.7
             licence: MIT

@@ -1,0 +1,28 @@
+styles:
+    tiling-brick:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Repeats a coordinate space (`vec2 st`) in diferent brick-like
+                tiles N times (`float zoom`). For more information about tilling patterns
+                read [this chapter of The Book of Shaders](https://thebookofshaders.com/09/)
+
+                '
+            examples:
+                nursery:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/nursery.png
+                    lines: 99
+                    url: https://tangrams.github.io/tangram-sandbox/styles/nursery.yaml
+                patterns:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/patterns.png
+                    lines: 130
+                    url: https://tangrams.github.io/tangram-sandbox/styles/patterns.yaml
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "vec2 brick (vec2 st, float zoom) {\n    st *= zoom;\n   \
+                    \ // Here is where the offset is happening\n    st.x += step(1.,\
+                    \ mod(st.y,2.0)) * 0.5;\n    return fract(st);\n}"

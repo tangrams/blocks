@@ -1,0 +1,84 @@
+styles:
+    shapes-digits:
+        doc:
+            author:
+                name: P_Malin
+                twitter: P_Malin
+                url: https://www.shadertoy.com/view/4sBSWW
+            description: 'Collection of functions to draw number digits.
+
+                '
+            licence: License Creative Commons Attribution-NonCommercial-ShareAlike
+                3.0 Unported License.
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "#ifdef TANGRAM_FRAGMENT_SHADER\nfloat SampleDigit (const\
+                    \ in float fDigit, const in vec2 vUV) {       \n    if(vUV.x <\
+                    \ 0.0) return 0.0;\n    if(vUV.y < 0.0) return 0.0;\n    if(vUV.x\
+                    \ >= 1.0) return 0.0;\n    if(vUV.y >= 1.0) return 0.0;\n    \n\
+                    \    // In this version, each digit is made up of a 4x5 array\
+                    \ of bits\n    float fDigitBinary = 0.0;\n    \n    if(fDigit\
+                    \ < 0.5) { // 0\n        fDigitBinary = 7.0 + 5.0 * 16.0 + 5.0\
+                    \ * 256.0 + 5.0 * 4096.0 + 7.0 * 65536.0;\n    } else if(fDigit\
+                    \ < 1.5) { // 1\n        fDigitBinary = 2.0 + 2.0 * 16.0 + 2.0\
+                    \ * 256.0 + 2.0 * 4096.0 + 2.0 * 65536.0;\n    } else if(fDigit\
+                    \ < 2.5) { // 2\n        fDigitBinary = 7.0 + 1.0 * 16.0 + 7.0\
+                    \ * 256.0 + 4.0 * 4096.0 + 7.0 * 65536.0;\n    } else if(fDigit\
+                    \ < 3.5) { // 3\n        fDigitBinary = 7.0 + 4.0 * 16.0 + 7.0\
+                    \ * 256.0 + 4.0 * 4096.0 + 7.0 * 65536.0;\n    } else if(fDigit\
+                    \ < 4.5) { // 4\n        fDigitBinary = 4.0 + 7.0 * 16.0 + 5.0\
+                    \ * 256.0 + 1.0 * 4096.0 + 1.0 * 65536.0;\n    } else if(fDigit\
+                    \ < 5.5) { // 5\n        fDigitBinary = 7.0 + 4.0 * 16.0 + 7.0\
+                    \ * 256.0 + 1.0 * 4096.0 + 7.0 * 65536.0;\n    } else if(fDigit\
+                    \ < 6.5) { // 6\n        fDigitBinary = 7.0 + 5.0 * 16.0 + 7.0\
+                    \ * 256.0 + 1.0 * 4096.0 + 7.0 * 65536.0;\n    } else if(fDigit\
+                    \ < 7.5) { // 7\n        fDigitBinary = 4.0 + 4.0 * 16.0 + 4.0\
+                    \ * 256.0 + 4.0 * 4096.0 + 7.0 * 65536.0;\n    } else if(fDigit\
+                    \ < 8.5) { // 8\n        fDigitBinary = 7.0 + 5.0 * 16.0 + 7.0\
+                    \ * 256.0 + 5.0 * 4096.0 + 7.0 * 65536.0;\n    } else if(fDigit\
+                    \ < 9.5) { // 9\n        fDigitBinary = 7.0 + 4.0 * 16.0 + 7.0\
+                    \ * 256.0 + 5.0 * 4096.0 + 7.0 * 65536.0;\n    } else if(fDigit\
+                    \ < 10.5) { // '.'\n        fDigitBinary = 2.0 + 0.0 * 16.0 +\
+                    \ 0.0 * 256.0 + 0.0 * 4096.0 + 0.0 * 65536.0;\n    } else if(fDigit\
+                    \ < 11.5) { // '-'\n        fDigitBinary = 0.0 + 0.0 * 16.0 +\
+                    \ 7.0 * 256.0 + 0.0 * 4096.0 + 0.0 * 65536.0;\n    }\n\n    vec2\
+                    \ vPixel = floor(vUV * vec2(4.0, 5.0));\n    float fIndex = vPixel.x\
+                    \ + (vPixel.y * 4.0);\n    return mod(floor(fDigitBinary / pow(2.0,\
+                    \ fIndex)), 2.0);\n}\n\nfloat PrintValue (const in vec2 vStringCharCoords,\
+                    \ const in float fValue, const in float fMaxDigits, const in float\
+                    \ fDecimalPlaces) {\n    float fAbsValue = abs(fValue);\n    float\
+                    \ fStringCharIndex = floor(vStringCharCoords.x);\n    float fLog10Value\
+                    \ = log2(fAbsValue) / log2(10.0);\n    float fBiggestDigitIndex\
+                    \ = max(floor(fLog10Value), 0.0);\n    \n    // This is the character\
+                    \ we are going to display for this pixel\n    float fDigitCharacter\
+                    \ = CHAR_BLANK;\n    float fDigitIndex = fMaxDigits - fStringCharIndex;\n\
+                    \    if(fDigitIndex > (-fDecimalPlaces - 1.5)) {\n        if(fDigitIndex\
+                    \ > fBiggestDigitIndex) {\n            if(fValue < 0.0) {\n  \
+                    \              if(fDigitIndex < (fBiggestDigitIndex+1.5)) {\n\
+                    \                    fDigitCharacter = CHAR_MINUS;\n         \
+                    \       }\n            }\n        } else {        \n         \
+                    \   if(fDigitIndex == -1.0) {\n                if(fDecimalPlaces\
+                    \ > 0.0) {\n                    fDigitCharacter = CHAR_DECIMAL_POINT;\n\
+                    \                }\n            } else {\n                if(fDigitIndex\
+                    \ < 0.0) {\n                    // move along one to account for\
+                    \ .\n                    fDigitIndex += 1.0;\n               \
+                    \ }\n                float fDigitValue = (fAbsValue / (pow(10.0,\
+                    \ fDigitIndex)));\n\n                // This is inaccurate - I\
+                    \ think because I treat each digit independently\n           \
+                    \     // The value 2.0 gets printed as 2.09 :/\n             \
+                    \   //fDigitCharacter = mod(floor(fDigitValue), 10.0);\n     \
+                    \           fDigitCharacter = mod(floor(0.0001+fDigitValue), 10.0);\
+                    \ // fix from iq\n            }       \n        }\n    }\n\n \
+                    \   vec2 vCharPos = vec2(fract(vStringCharCoords.x), vStringCharCoords.y);\n\
+                    \    return SampleDigit(fDigitCharacter, vCharPos);  \n}\n\nfloat\
+                    \ PrintValue (in vec2 fragCoord, const in vec2 vPixelCoords, const\
+                    \ in vec2 vFontSize, const in float fValue, const in float fMaxDigits,\
+                    \ const in float fDecimalPlaces) {\n    return PrintValue((fragCoord.xy\
+                    \ - vPixelCoords) / vFontSize, fValue, fMaxDigits, fDecimalPlaces);\n\
+                    }\n#endif"
+            defines:
+                CHAR_BLANK: 12.0
+                CHAR_DECIMAL_POINT: 10.0
+                CHAR_MINUS: 11.0

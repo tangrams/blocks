@@ -15,6 +15,16 @@ import:
 ```
 
 
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/filter/grain-full.yaml
+```
+
+
 This blocks use a custom **shader**.These are the defaults **defines**:
  - **GRAIN_AMOUNT**: ```0.3```
 
@@ -53,6 +63,16 @@ To import this block add the following url to your `import` list:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/filter/grid.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/filter/grid-full.yaml
 ```
 
 
@@ -98,6 +118,16 @@ import:
 ```
 
 
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/filter/hatch-full.yaml
+```
+
+
 This blocks use a custom **shader**.This are the **uniforms**:
  - **u_hatchmap**: ```imgs/hatch.png```
 
@@ -131,6 +161,16 @@ import:
 ```
 
 
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/filter/height-full.yaml
+```
+
+
 This blocks use a custom **shader**.These are the **shader blocks**:
 
 - **color**:
@@ -160,6 +200,16 @@ To import this block add the following url to your `import` list:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/filter/lut.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/filter/lut-full.yaml
 ```
 
 
@@ -200,6 +250,16 @@ To import this block add the following url to your `import` list:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/filter/tv.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/filter/tv-full.yaml
 ```
 
 

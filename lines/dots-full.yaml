@@ -1,0 +1,24 @@
+styles:
+    lines-dots:
+        base: lines
+        blend: overlay
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Apply a dot pattern to a line
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                color: 'vec2 st = fract(v_texcoord.xy);
+
+                    st -= .5;
+
+                    color.a = 1.- step(DOT_SIZE, dot(st,st)*2.);'
+            defines:
+                DOT_SIZE: 0.05
+        texcoords: true

@@ -1,0 +1,26 @@
+styles:
+    elevation-normal:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: "The raster normalmap tiles needs to be load like this:\n\
+                ```\n    normals-elevation:\n        type: Raster\n        url: https://s3.amazonaws.com/elevation-tiles-prod/normal/{z}/{x}/{y}.png\n\
+                \        max_zoom: 15\n```\nA simple way to do it is to import `https://tangrams.github.io/blocks/source-elevation.yaml`\
+                \ and then link the vector tiles to them (see the example).\n"
+            examples:
+                grain:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/elevation.png
+                    lines: 14
+                    url: https://tangrams.github.io/tangram-sandbox/styles/elevation.yaml
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        raster: custom
+        shaders:
+            blocks:
+                normal: 'vec4 normal_elv_raster = sampleRaster(int(NORMAL_TEXTURE_INDEX));
+
+                    normal = (normal_elv_raster.rgb-.5)*2.;'
+            defines:
+                NORMAL_TEXTURE_INDEX: 0

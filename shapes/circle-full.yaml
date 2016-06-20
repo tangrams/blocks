@@ -1,0 +1,61 @@
+import: ../functions/aastep.yaml
+styles:
+    functions-aastep:
+        doc:
+            author:
+                name: Matt DesLauriers
+                twitter: mattdesl
+            description: 'AnitAliased ```step()``` function implemented by [Matt DesLauriers](https://twitter.com/mattdesl)
+                in this module <https://github.com/stackgl/glsl-aastep>
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// AntiAliased Step function\n//=============================\n\
+                    float aastep(float threshold, float value) {\n    #ifdef TANGRAM_FRAGMENT_SHADER\n\
+                    \        #ifdef TANGRAM_EXTENSION_OES_standard_derivatives\n \
+                    \           float afwidth = length(vec2(dFdx(value), dFdy(value)))\
+                    \ * 0.70710678118654757;\n            return smoothstep(threshold-afwidth,\
+                    \ threshold+afwidth, value);\n        #else\n            return\
+                    \ step(threshold, value);\n        #endif  \n    #else\n     \
+                    \   return step(threshold, value);\n    #endif\n}"
+            extensions: OES_standard_derivatives
+    shapes-circle:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Collection of functions to draw circles. To learn more about
+                how to make shapes on shaders go to From check [this chapter about
+                shapes from the Book of Shaders](https://thebookofshaders.com/07/)
+
+                '
+            examples:
+                lego:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/lego.png
+                    lines: 109-110
+                    url: https://tangrams.github.io/tangram-sandbox/styles/lego.yaml
+                nursery:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/nursery.png
+                    lines: 146
+                    url: https://tangrams.github.io/tangram-sandbox/styles/nursery.yaml
+                patterns:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/patterns.png
+                    lines: 146
+                    url: https://tangrams.github.io/tangram-sandbox/styles/patterns.yaml
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        mix: functions-aastep
+        shaders:
+            blocks:
+                global: "// get distance field of a Circle\n// ================================\n\
+                    float circleDF (vec2 st) {\n    return dot(st,st);\n}\n//\n//\
+                    \ Draw a circle in the middle of the ST space\n// ================================\n\
+                    float circle (vec2 st, float radius) {\n    return 1.-aastep(radius,\
+                    \ circleDF(st-vec2(0.5))*PI);\n}"
+            defines:
+                PI: 3.141592653589793

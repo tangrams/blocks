@@ -14,6 +14,16 @@ import:
 ```
 
 
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/geometry/dynamic-height-full.yaml
+```
+
+
 This blocks use a custom **shader**.These are the defaults **defines**:
  - **ZOOM_LINEAR_FACTOR**: ```2.0```
  - **ZOOM_START**: ```15.0```
@@ -47,6 +57,16 @@ import:
 ```
 
 
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/geometry/dynamic-width-full.yaml
+```
+
+
 This blocks use a custom **shader**.These are the **shader blocks**:
 
 - **width**:
@@ -67,7 +87,7 @@ Examples:
 
 #### [geometry-matrices](http://tangrams.github.io/blocks/#geometry-matrices) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/matrices.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-Useful set of functions to construct scale, rotation and translation of 2, 3 or 4 dimensions
+Useful set of functions to construct scale, rotation and translation of 2, 3 or 4 dimensions. For more information about matrices read [this chapter from The Book of Shaders](http://thebookofshaders.com/08/)
 
 
 
@@ -76,6 +96,16 @@ To import this block add the following url to your `import` list:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/geometry/matrices.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/geometry/matrices-full.yaml
 ```
 
 
@@ -114,6 +144,16 @@ import:
 ```
 
 
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/geometry/normal-full.yaml
+```
+
+
 This blocks use a custom **shader**.These are the **shader blocks**:
 
 - **global**:
@@ -134,6 +174,16 @@ To import this block add the following url to your `import` list:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/geometry/projections.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/geometry/projections-full.yaml
 ```
 
 
@@ -169,9 +219,64 @@ These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
+#### [geometry-rotation](http://tangrams.github.io/blocks/#geometry-rotation) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/rotation.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Allows to rotate the camera while zooming between `ROTATION_IN` and `ROTATION_OUT`.
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/geometry/rotation.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/geometry/rotation-full.yaml
+```
+
+
+This blocks use a custom **shader**.These are the defaults **defines**:
+ - **ROTATION_MAX_ZOOM**: ```20.0```
+ - **ROTATION_OUT**: ```20.0```
+ - **ROTATION_IN**: ```15.0```
+ - **ROTATION_MAX_SPEED**: ```0.1```
+
+These are the **shader blocks**:
+
+- **position**:
+
+```glsl
+position.xyz = rotateZ3D(PI*
+                        sin(u_time*ROTATION_MAX_SPEED)*
+                        clamp(smoothstep(ROTATION_IN/ROTATION_MAX_ZOOM, ROTATION_OUT/ROTATION_MAX_ZOOM, max(u_map_position.z/ROTATION_MAX_ZOOM,0.)*0.9), 0., 1.)) * 
+                        position.xyz;
+
+```
+
+
+
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/tilt.yaml&lines=7-28" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/tilt.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/oblivion.yaml" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/oblivion.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [geometry-tilt](http://tangrams.github.io/blocks/#geometry-tilt) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/tilt.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-Allows to TILT the camera while zooming between `TILT_IN` and `TILT_OUT`. Also is possible to rotate the tiles by turning `TILT_ROTATE` to `true`
+Allows to TILT the camera while zooming between `TILT_IN` and `TILT_OUT`.
 
 
 
@@ -183,24 +288,27 @@ import:
 ```
 
 
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/geometry/tilt-full.yaml
+```
+
+
 This blocks use a custom **shader**.These are the defaults **defines**:
  - **TILT_MAX_ZOOM**: ```20.0```
  - **TILT_IN**: ```15.0```
  - **TILT_OUT**: ```20.0```
- - **TILT_ROTATE**: ```False```
 
 These are the **shader blocks**:
 
 - **position**:
 
 ```glsl
-float t = u_time*0.1; 
-float z = clamp(smoothstep(TILT_IN/TILT_MAX_ZOOM, TILT_OUT/TILT_MAX_ZOOM, max(u_map_position.z/TILT_MAX_ZOOM,0.)*0.9), 0., 1.);
-#ifdef TILT_ROTATE
-position.xyz = rotateX3D(z*HALF_PI) * rotateZ3D(sin(t)*PI*z) * position.xyz;
-#else
-position.xyz = rotateX3D(z*HALF_PI) * position.xyz;
-#endif
+position.xyz = rotateX3D(clamp(smoothstep(TILT_IN/TILT_MAX_ZOOM, TILT_OUT/TILT_MAX_ZOOM, max(u_map_position.z/TILT_MAX_ZOOM,0.)*0.9), 0., 1.)*HALF_PI) * position.xyz;
 ```
 
 

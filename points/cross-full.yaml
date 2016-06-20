@@ -1,0 +1,101 @@
+import: rect.yaml
+styles:
+    points-cross:
+        base: points
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Draws a ''+'' shape in each point. To learn more about shapes
+                on shaders read [this chapter from The Nook of Shader](http://thebookofshaders.com/07/)
+
+                '
+            examples:
+                sandbox:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/callejas.png
+                    lines: 96-99
+                    url: https://tangrams.github.io/tangram-sandbox/styles/callejas.yaml
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        mix:
+        - shapes-cross
+        shaders:
+            blocks:
+                color: 'color.a = clamp(cross(v_texcoord.xy,vec2(2.,.5)),0.,1.)*CROSS_ALPHA;
+
+                    '
+            defines:
+                CROSS_ALPHA: 0.75
+        texcoord: true
+    shapes-cross:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Collection of functions to draw crosses. To learn more about
+                how to make shapes on shaders go to From check [this chapter about
+                shapes from the Book of Shaders](https://thebookofshaders.com/07/)
+
+                '
+            examples:
+                9845C:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/9845C.png
+                    lines: 181-183
+                    url: https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml
+                matrix:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/matrix.png
+                    lines: 101-104
+                    url: https://tangrams.github.io/tangram-sandbox/styles/matrix.yaml
+                oblivion:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/oblivion.png
+                    lines: 155-156
+                    url: https://tangrams.github.io/tangram-sandbox/styles/oblivion.yaml
+                tron:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/tron.png
+                    lines: 122
+                    url: https://tangrams.github.io/tangram-sandbox/styles/tron.yaml
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        mix: shapes-rect
+        shaders:
+            blocks:
+                global: "// Draw a Cross in the middle of the ST space\nfloat cross\
+                    \ (vec2 st, float size, float width) {\n    return  clamp(  rect(st,\
+                    \ vec2(size*0.5,width*0.125)) +\n                    rect(st,\
+                    \ vec2(width*0.125,size*0.5)),0.,1.);\n}\nfloat cross (in vec2\
+                    \ st, float _size) {\n    return  rect(st, vec2(_size*0.5,_size*0.125))\
+                    \ +\n            rect(st, vec2(_size*0.125,_size*0.5));\n}\nfloat\
+                    \ cross (in vec2 st, vec2 _size) {\n    return  rect(st, vec2(_size.x*0.5,_size.y*0.125))\
+                    \ +\n            rect(st, vec2(_size.y*0.125,_size.x*0.5));\n}"
+    shapes-rect:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Collection of functions to draw rectangles. To learn more
+                about how to make shapes on shaders go to From check [this chapter
+                about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// get distance field of a rectangle in the center\n// ================================\n\
+                    float rectDF (vec2 st, vec2 size) {\n    //float aspect = u_resolution.x/u_resolution.y;\n\
+                    \    st = st*2.-1.;\n    //st.x *= aspect;\n    return length(max(abs(st)-size,.0));\n\
+                    }\nfloat rectDF (vec2 st, float size) {\n    //float aspect =\
+                    \ u_resolution.x/u_resolution.y;\n    st = st*2.-1.;\n    //st.x\
+                    \ *= aspect;\n    return length(max(abs(st)-size,.0));\n}\n\n\
+                    // Draw a round corners rectangle in the center\n// ================================\n\
+                    float rect (vec2 st, vec2 size, float radio) {\n    radio = max(.000001,\
+                    \ radio);\n    return 1.0-step(radio, rectDF(st, size-radio));\n\
+                    }\n\nfloat rect (vec2 st, float size, float radio) {\n    return\
+                    \ rect(st,vec2(size),radio);\n}\n\n// Draw a rectangle in the\
+                    \ center\n// ================================\nfloat rect (vec2\
+                    \ st, vec2 size){\n    size = .25-size*.125;\n    vec2 uv = step(size,st*(1.0-st));\n\
+                    \    return (uv.x*uv.y);\n}\n\nfloat rect (vec2 st, float size){\n\
+                    \    return rect(st,vec2(size));\n}\n"

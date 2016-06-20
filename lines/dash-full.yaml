@@ -1,0 +1,26 @@
+styles:
+    lines-dash:
+        base: lines
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Apply a stripe pattern to a line
+
+                '
+            examples:
+                sandbox:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/elevation.png
+                    lines: 59-63
+                    url: https://tangrams.github.io/tangram-sandbox/styles/elevation.yaml
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                filter: "if ( step(DASH_SIZE,fract(v_texcoord.y*DASH_SCALE)) == 0.){\n\
+                    \    discard;\n}"
+            defines:
+                DASH_SCALE: 0.1
+                DASH_SIZE: 0.5
+        texcoords: true

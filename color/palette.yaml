@@ -3,7 +3,7 @@ styles:
         doc:
             author: 
                 name: Inigo Quiles
-                twitter: @iquilezles
+                twitter: iquilezles
             version: 0.0.1
             tangram-version: 0.0.7
             licence: MIT

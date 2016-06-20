@@ -1,0 +1,16 @@
+styles:
+    space-tex:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Get the position on TexCoords
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "vec2 getTexCoords () {\n    return v_texcoord.xy;\n}"
+        texcoords: true

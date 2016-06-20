@@ -14,6 +14,16 @@ import:
 ```
 
 
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/functions/aastep-full.yaml
+```
+
+
 This blocks use a custom **shader**.These are the **shader blocks**:
 
 - **global**:
@@ -33,6 +43,16 @@ To import this block add the following url to your `import` list:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/functions/easing.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/functions/easing-full.yaml
 ```
 
 
@@ -80,6 +100,8 @@ These are the **shader blocks**:
 
 #### [functions-map](http://tangrams.github.io/blocks/#functions-map) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions/map.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+This function helps you to interpolate a `value` between an IN range (`inputMin` to `inputMax`) to a OUT range (`outputMin` to `outputMax`). 
+
 
 
 To import this block add the following url to your `import` list:
@@ -87,6 +109,16 @@ To import this block add the following url to your `import` list:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/functions/map.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/functions/map-full.yaml
 ```
 
 
@@ -102,7 +134,7 @@ These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [functions-pulse](http://tangrams.github.io/blocks/#functions-pulse) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions/pulse.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+#### [functions-peakulse](http://tangrams.github.io/blocks/#functions-peakulse) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions/pulse.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -114,7 +146,17 @@ import:
 ```
 
 
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/functions/pulse-full.yaml
+```
+
+
 This blocks use a custom **shader**.These are the **shader blocks**:
 
 - **global**:
- + `float pulse (float x, float p, float w) `
+ + `float pulse (float x, float peak, float width) `

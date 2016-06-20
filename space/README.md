@@ -14,6 +14,16 @@ import:
 ```
 
 
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/space/constant-full.yaml
+```
+
+
 This blocks use a custom **shader**.These are the **shader blocks**:
 
 - **global**:
@@ -38,6 +48,16 @@ To import this block add the following url to your `import` list:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/space/screen.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/space/screen-full.yaml
 ```
 
 
@@ -72,6 +92,16 @@ import:
 ```
 
 
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/space/tex-full.yaml
+```
+
+
 This blocks use a custom **shader**.These are the **shader blocks**:
 
 - **global**:
@@ -82,6 +112,8 @@ This blocks use a custom **shader**.These are the **shader blocks**:
 
 #### [space-tile](http://tangrams.github.io/blocks/#space-tile) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/tile.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Get the position on the tile
+
 
 
 To import this block add the following url to your `import` list:
@@ -89,6 +121,16 @@ To import this block add the following url to your `import` list:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/space/tile.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/space/tile-full.yaml
 ```
 
 
@@ -119,6 +161,16 @@ To import this block add the following url to your `import` list:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/space/uz.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/space/uz-full.yaml
 ```
 
 

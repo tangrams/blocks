@@ -15,6 +15,16 @@ import:
 ```
 
 
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/fx/water-full.yaml
+```
+
+
 This blocks use a custom **shader**.These are the **shader blocks**:
 
 - **normal**:

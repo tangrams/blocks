@@ -1,0 +1,49 @@
+import: ../space/tile.yaml
+styles:
+    space-tile:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Get the position on the tile
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// Variant to be add to both vertex and fragments shaders\n\
+                    varying vec3 v_pos;\n//\n// Get the coordinates in tile space\n\
+                    // ================================\nvec2 getTileCoords() {\n\
+                    \    return fract(v_pos.xy);\n}\n"
+                position: '// Normalize the attribute position of a vertex
+
+                    v_pos = modelPosition().xyz;'
+    texture-zoom-fade:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Tile a texture across zoom levels by fading between them
+
+                '
+            examples:
+                crosshatch:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/crosshatch.png
+                    lines: 76
+                    url: https://tangrams.github.io/tangram-sandbox/styles/crosshatch.yaml
+                pericoli:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/pericoli.png
+                    lines: 121
+                    url: https://tangrams.github.io/tangram-sandbox/styles/pericoli.yaml
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        mix: space-tile
+        shaders:
+            blocks:
+                global: "vec4 TileTexture (sampler2D tex, float scale) {\n    vec2\
+                    \ IN = getTileCoords()*scale;\n    vec2 OUT = getTileCoords()*scale*2.;\n\
+                    \    return mix(texture2D(tex,fract(IN)), texture2D(tex,fract(OUT)),\
+                    \ fract(u_map_position.z));\n}"

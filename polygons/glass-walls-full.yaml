@@ -1,0 +1,57 @@
+import:
+- ../geometry/normal.yaml
+styles:
+    geometry-normal:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Functions to detect if the surface is a wall (`bool isWall()`)
+                or a roof (''bool isRoof()'') based on the normals
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "#ifdef TANGRAM_FRAGMENT_SHADER\n// Ask to the geometry normals\
+                    \ if this surface is a Wall\nbool isWall () {\n    return dot(vec3(0.,\
+                    \ 0., 1.), worldNormal()) < 1.0 - TANGRAM_EPSILON;\n}\n//\n//\
+                    \ Ask to the geometry normals if this surface is a roof\nbool\
+                    \ isRoof () {\n    return !isWall();\n}\n#endif"
+    polygons-glass-walls:
+        base: polygons
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Apply a chevron pattern to a line
+
+                '
+            examples:
+                gotham:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/gotham.png
+                    url: https://tangrams.github.io/tangram-sandbox/styles/gotham.yaml
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        material:
+            emission: 0.0
+            shininess: 1.0
+            specular: 0.0
+        mix:
+        - geometry-normal
+        shaders:
+            blocks:
+                color: "color.rgb *= vec3(min((worldPosition().z*.001 + .5),1.));\n\
+                    \nif (isWall()) {\n    vec2 st = vec2(v_texcoord.x*10.,worldPosition().z*0.2);\n\
+                    \    vec2 ipos = floor(st);\n    vec2 fpos = fract(st);\n    if\
+                    \ ( step(0.01,fpos.x)*step(0.1,fpos.y) > 0.0 ){\n        material.specular\
+                    \ = vec4(1.) * max( 1.-(worldPosition().z*.001 + .5), 0. );\n\
+                    \        material.emission = vec4(0.957,0.988,0.976,1.0) * step(.5,random(ipos*vec2(0.0000001,0.01)+floor(worldNormal().xy*10.0)));\n\
+                    \        material.emission *= vec4(0.988,0.983,0.880,1.0) * step(.5,random(ipos));\n\
+                    \    }\n}\n"
+                filter: color.rgb += vec3(1.)* min( 1.-(worldPosition().z*.001 + .7)
+                    , 0.5 );
+        texcoords: true

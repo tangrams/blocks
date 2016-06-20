@@ -1,0 +1,26 @@
+styles:
+    space-constant:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Get the constant coordinates **(warning: could glitch on
+                zooms)**
+
+                '
+            examples:
+                grain-area:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/grain-area.png
+                    lines: 26
+                    url: https://tangrams.github.io/tangram-sandbox/styles/grain-area.yaml
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "vec2 getConstantCoords () {\n    #ifdef TANGRAM_FRAGMENT_SHADER\n\
+                    \    const float pixel_scale = 695.;\n    float meter_pixels =\
+                    \ u_meters_per_pixel / u_device_pixel_ratio;\n    vec2 st = gl_FragCoord.xy/pixel_scale;\n\
+                    \    const float dot_wrap = 1000.;\n    st += mod(u_map_position.xy\
+                    \ / meter_pixels, dot_wrap)/pixel_scale;\n    return st;\n   \
+                    \ #else\n    return vec2(0.0,0.0);\n    #endif\n}"

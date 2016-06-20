@@ -1,0 +1,20 @@
+styles:
+    geometry-dynamic-width:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Change the width of a line acording to the altitud
+
+                '
+            examples:
+                blueprint:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/blueprint.png
+                    lines: 7-28
+                    url: https://tangrams.github.io/tangram-sandbox/styles/blueprint.yaml
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                width: width *= 0.2+min(pow(position.z*0.006,2.),.6);

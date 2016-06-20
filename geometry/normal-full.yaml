@@ -1,0 +1,20 @@
+styles:
+    geometry-normal:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Functions to detect if the surface is a wall (`bool isWall()`)
+                or a roof (''bool isRoof()'') based on the normals
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "#ifdef TANGRAM_FRAGMENT_SHADER\n// Ask to the geometry normals\
+                    \ if this surface is a Wall\nbool isWall () {\n    return dot(vec3(0.,\
+                    \ 0., 1.), worldNormal()) < 1.0 - TANGRAM_EPSILON;\n}\n//\n//\
+                    \ Ask to the geometry normals if this surface is a roof\nbool\
+                    \ isRoof () {\n    return !isWall();\n}\n#endif"

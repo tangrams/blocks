@@ -1,0 +1,31 @@
+styles:
+    generative-random:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Set of functions about random.
+
+                For more information on this theme read [this chapter of The Book
+                of Shaders about Random](http://thebookofshaders.com/10/).
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// 1D Random for 1 and 2 dimentions\n// ================================\n\
+                    float random (float x) { return fract(sin(x)*43758.5453);}\nfloat\
+                    \ random (vec2 p) { return fract(1e4 * sin(17.0 * p.x + p.y *\
+                    \ 0.1) * (0.1 + abs(sin(p.y * 13.0 + p.x)))); }\nfloat random\
+                    \ (vec3 p) { return fract(sin(dot(p.xyz, vec3(70.9898,78.233,32.4355)))*\
+                    \ 43758.5453123); }\n//\n// 2D Random for 2 dimentions\n// ================================\n\
+                    vec2 random2 (vec2 xy) { return fract(sin(vec2(dot(xy,vec2(127.1,311.7)),dot(xy,vec2(269.5,183.3))))*43758.5453);\
+                    \ }\n//\n// 3D Random for 2 dimentions\n// ================================\n\
+                    vec3 random3 (vec2 xy) { return fract(sin(vec3( dot(xy,vec2(127.1,311.7)),\
+                    \ dot(xy,vec2(269.5,183.3)), dot(xy,vec2(419.2,371.9)) ))*43758.5453);\
+                    \ }\nvec3 random3 (vec3 c) {\n    float j = 4096.0*sin(dot(c,vec3(17.0,\
+                    \ 59.4, 15.0)));\n    vec3 r;\n    r.z = fract(512.0*j);\n   \
+                    \ j *= .125;\n    r.x = fract(512.0*j);\n    j *= .125;\n    r.y\
+                    \ = fract(512.0*j);\n    return r-0.5;\n}"

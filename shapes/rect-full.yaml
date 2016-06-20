@@ -1,0 +1,31 @@
+styles:
+    shapes-rect:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Collection of functions to draw rectangles. To learn more
+                about how to make shapes on shaders go to From check [this chapter
+                about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// get distance field of a rectangle in the center\n// ================================\n\
+                    float rectDF (vec2 st, vec2 size) {\n    //float aspect = u_resolution.x/u_resolution.y;\n\
+                    \    st = st*2.-1.;\n    //st.x *= aspect;\n    return length(max(abs(st)-size,.0));\n\
+                    }\nfloat rectDF (vec2 st, float size) {\n    //float aspect =\
+                    \ u_resolution.x/u_resolution.y;\n    st = st*2.-1.;\n    //st.x\
+                    \ *= aspect;\n    return length(max(abs(st)-size,.0));\n}\n\n\
+                    // Draw a round corners rectangle in the center\n// ================================\n\
+                    float rect (vec2 st, vec2 size, float radio) {\n    radio = max(.000001,\
+                    \ radio);\n    return 1.0-step(radio, rectDF(st, size-radio));\n\
+                    }\n\nfloat rect (vec2 st, float size, float radio) {\n    return\
+                    \ rect(st,vec2(size),radio);\n}\n\n// Draw a rectangle in the\
+                    \ center\n// ================================\nfloat rect (vec2\
+                    \ st, vec2 size){\n    size = .25-size*.125;\n    vec2 uv = step(size,st*(1.0-st));\n\
+                    \    return (uv.x*uv.y);\n}\n\nfloat rect (vec2 st, float size){\n\
+                    \    return rect(st,vec2(size));\n}\n"

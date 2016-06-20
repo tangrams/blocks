@@ -1,0 +1,25 @@
+styles:
+    color-tools:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Set of color tools to get the **intensity** and **brightness**
+                of a color.
+
+                For more information on this theme read [this chapter of The Book
+                of Shaders about color](http://thebookofshaders.com/06/).
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// Get the intensity of a color\n// ================================\n\
+                    float getIntensity (vec3 c) {\n    return (c.r+c.g+c.b)/3.0;\n\
+                    }\nfloat getIntensity (vec4 c) {\n    return getIntensity(c.rgb);\n\
+                    }\n//\n// Get the Brightness of a color\n// ================================\n\
+                    float getBrightness (vec3 c) {\n    return 0.212655 * c.r + 0.715158\
+                    \ * c.g + 0.072187 * c.b;\n}\nfloat getBrightness (vec4 c) {\n\
+                    \    return getBrightness(c.rgb);\n}"

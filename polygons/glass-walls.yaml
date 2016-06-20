@@ -1,9 +1,12 @@
+import:
+    - ../geometry/normal.yaml
+    
 styles:
     polygons-glass-walls:
         doc:
             author: 
                 name: Patricio Gonzalez Vivo
-                twitter: @patriciogv
+                twitter: patriciogv
             version: 0.0.1
             tangram-version: 0.0.7
             licence: MIT

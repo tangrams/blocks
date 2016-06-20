@@ -14,6 +14,16 @@ import:
 ```
 
 
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/shapes/circle-full.yaml
+```
+
+
 This blocks use a custom **shader**.These are the defaults **defines**:
  - **PI**: ```3.14159265359```
 
@@ -48,6 +58,16 @@ To import this block add the following url to your `import` list:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/shapes/cross.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/shapes/cross-full.yaml
 ```
 
 
@@ -89,6 +109,16 @@ import:
 ```
 
 
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/shapes/digits-full.yaml
+```
+
+
 This blocks use a custom **shader**.These are the defaults **defines**:
  - **CHAR_DECIMAL_POINT**: ```10.0```
  - **CHAR_MINUS**: ```11.0```
@@ -115,6 +145,16 @@ To import this block add the following url to your `import` list:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/shapes/polygons.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/shapes/polygons-full.yaml
 ```
 
 
@@ -150,6 +190,16 @@ import:
 ```
 
 
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/shapes/rect-full.yaml
+```
+
+
 This blocks use a custom **shader**.These are the **shader blocks**:
 
 - **global**:
@@ -172,6 +222,16 @@ To import this block add the following url to your `import` list:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/shapes/simplex.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/shapes/simplex-full.yaml
 ```
 
 

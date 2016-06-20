@@ -1,0 +1,31 @@
+styles:
+    color-conversion:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Set of functions to convert colors between color systems/spaces.
+
+                For more information on this theme read [this chapter of The Book
+                of Shaders about color](http://thebookofshaders.com/06/).
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// Convert a color from RGB to HSB\nvec3 rgb2hsb (vec3 c)\
+                    \ {\n    vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);\n  \
+                    \  vec4 p = mix(vec4(c.bg, K.wz),\n                 vec4(c.gb,\
+                    \ K.xy),\n                 step(c.b, c.g));\n    vec4 q = mix(vec4(p.xyw,\
+                    \ c.r),\n                 vec4(c.r, p.yzx),\n                \
+                    \ step(p.x, c.r));\n    float d = q.x - min(q.w, q.y);\n    float\
+                    \ e = 1.0e-10;\n    return vec3(abs(q.z + (q.w - q.y) / (6.0 *\
+                    \ d + e)),\n                d / (q.x + e),\n                q.x);\n\
+                    }\n\nvec3 rgb2hsb (vec4 c) {\n    return rgb2hsb(c.rgb);\n}\n\n\
+                    // Convert a color from HSB to RGB\n// By Inigo Quiles ( https://www.shadertoy.com/view/MsS3Wc\
+                    \ )\nvec3 hsb2rgb (vec3 c) {\n    vec3 rgb = clamp(abs(mod(c.x*6.0+vec3(0.0,4.0,2.0),\n\
+                    \                             6.0)-3.0)-1.0,\n               \
+                    \      0.0,\n                     1.0 );\n    rgb = rgb*rgb*(3.0-2.0*rgb);\n\
+                    \    return c.z * mix(vec3(1.0), rgb, c.y);\n}"

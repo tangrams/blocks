@@ -14,6 +14,16 @@ import:
 ```
 
 
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/chevron-full.yaml
+```
+
+
 This blocks use a custom **shader**.These are the defaults **defines**:
  - **CHEVRON_SIZE**: ```1.0```
  - **CHEVRON_COLOR**: ```vec3(1., 0., 0.)```
@@ -46,6 +56,16 @@ To import this block add the following url to your `import` list:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/lines/dash.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/dash-full.yaml
 ```
 
 
@@ -87,6 +107,16 @@ import:
 ```
 
 
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/dots-full.yaml
+```
+
+
 This blocks use a custom **shader**.These are the defaults **defines**:
  - **DOT_SIZE**: ```0.05```
 
@@ -116,6 +146,16 @@ To import this block add the following url to your `import` list:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/lines/outline.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/outline-full.yaml
 ```
 
 
@@ -160,6 +200,16 @@ import:
 ```
 
 
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/rainbow-full.yaml
+```
+
+
 This blocks use a custom **shader**.These are the **shader blocks**:
 
 - **color**:
@@ -192,6 +242,16 @@ To import this block add the following url to your `import` list:
 ```yaml
 import:
     - https://tangrams.github.io/blocks/lines/stripes.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/stripes-full.yaml
 ```
 
 

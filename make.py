@@ -35,11 +35,11 @@ def appendDocumentation(readme_file, filename, counter):
                             '```\n\n\n')
 
         # Add an explanation of how to import this block with dependencies
-        # readme_file.write(  '\n\nIf you want to import this block with dependences included try this:\n\n' +
-        #                     '```yaml\n' +
-        #                     'import:\n' +
-        #                     '    - https://tangrams.github.io/blocks/' + filename[2:-5] + '-full.yaml\n' +
-        #                     '```\n\n\n')
+        readme_file.write(  '\n\nIf you want to import this block together **with their dependencies** use this other url:\n\n' +
+                            '```yaml\n' +
+                            'import:\n' +
+                            '    - https://tangrams.github.io/blocks/' + filename[2:-5] + '-full.yaml\n' +
+                            '```\n\n\n')
 
         if 'shaders' in yaml_file['styles'][name_block]:
             readme_file.write('This blocks use a custom **shader**.');
@@ -186,10 +186,10 @@ def makeAll():
                 toc[folder[2:]][block] = toc_styles
 
             # Make a *-full.yaml version that contain all dependencies
-            # full_yaml = dict()
-            # appendDependencies(full_yaml, filename)
-            # with open(folder+'/'+block+'-full.yaml', 'w') as yaml_file:
-            #     yaml_file.write( yaml.dump(full_yaml, default_flow_style=False, indent=4))
+            full_yaml = dict()
+            appendDependencies(full_yaml, filename)
+            with open(folder+'/'+block+'-full.yaml', 'w') as yaml_file:
+                yaml_file.write( yaml.dump(full_yaml, default_flow_style=False, indent=4))
             
 
         readme_file.close()
@@ -206,14 +206,6 @@ def makeAll():
         # Add the intro 
         with open('INTRO.md') as infile:
                 outfile.write(infile.read())
-
-        # ADD TOC to main README
-        # outfile.write('\n## Blocks Index\n<hr>\n')
-        # for folder in sorted(toc.keys()):
-        #     outfile.write('- ['+ folder.title() +'](https://github.com/tangrams/blocks/tree/gh-pages/' + folder + ')\n')
-        #     for yaml in toc[folder].keys():
-        #         for block in toc[folder][yaml]:
-        #             outfile.write('  - ['+ block.title() +'](https://github.com/tangrams/blocks/tree/gh-pages/'+ folder + '/' + yaml+'.yaml)\n\n')
 
         # Content
         # Add all folder README.md one after the other 

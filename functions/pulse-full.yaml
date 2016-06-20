@@ -1,0 +1,17 @@
+styles:
+    functions-peakulse:
+        doct:
+            author:
+                name: Inigo Quiles
+                twitter: iquilezles
+            description: 'This one dimensional shaping function made by Inigo Quiles
+                in [this article](http://www.iquilezles.org/www/articles/functions/functions.htm).
+
+                '
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "float pulse (float x, float peak, float width) {\n    x =\
+                    \ abs(x - peak);\n    if (x>width) return 0.0;\n    x /= width;\n\
+                    \    return 1.0 - x*x*(3.0-2.0*x);\n}"

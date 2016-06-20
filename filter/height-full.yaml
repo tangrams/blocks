@@ -1,0 +1,21 @@
+styles:
+    filter-height:
+        doc:
+            author:
+                name: Peter Richardson
+                twitter: meetar
+            description: 'Adds a dark gradiant to the geometries conform they aproach
+                to height 0.
+
+                '
+            examples:
+                default:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/default.png
+                    lines: 88
+                    url: https://tangrams.github.io/tangram-sandbox/styles/default.yaml
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                color: color.rgb *= min((worldPosition().z*.001 + .5),1.);

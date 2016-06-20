@@ -1,0 +1,77 @@
+import:
+- ../generative/random.yaml
+- ../space/tile.yaml
+styles:
+    generative-random:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Set of functions about random.
+
+                For more information on this theme read [this chapter of The Book
+                of Shaders about Random](http://thebookofshaders.com/10/).
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// 1D Random for 1 and 2 dimentions\n// ================================\n\
+                    float random (float x) { return fract(sin(x)*43758.5453);}\nfloat\
+                    \ random (vec2 p) { return fract(1e4 * sin(17.0 * p.x + p.y *\
+                    \ 0.1) * (0.1 + abs(sin(p.y * 13.0 + p.x)))); }\nfloat random\
+                    \ (vec3 p) { return fract(sin(dot(p.xyz, vec3(70.9898,78.233,32.4355)))*\
+                    \ 43758.5453123); }\n//\n// 2D Random for 2 dimentions\n// ================================\n\
+                    vec2 random2 (vec2 xy) { return fract(sin(vec2(dot(xy,vec2(127.1,311.7)),dot(xy,vec2(269.5,183.3))))*43758.5453);\
+                    \ }\n//\n// 3D Random for 2 dimentions\n// ================================\n\
+                    vec3 random3 (vec2 xy) { return fract(sin(vec3( dot(xy,vec2(127.1,311.7)),\
+                    \ dot(xy,vec2(269.5,183.3)), dot(xy,vec2(419.2,371.9)) ))*43758.5453);\
+                    \ }\nvec3 random3 (vec3 c) {\n    float j = 4096.0*sin(dot(c,vec3(17.0,\
+                    \ 59.4, 15.0)));\n    vec3 r;\n    r.z = fract(512.0*j);\n   \
+                    \ j *= .125;\n    r.x = fract(512.0*j);\n    j *= .125;\n    r.y\
+                    \ = fract(512.0*j);\n    return r-0.5;\n}"
+    space-tile:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Get the position on the tile
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// Variant to be add to both vertex and fragments shaders\n\
+                    varying vec3 v_pos;\n//\n// Get the coordinates in tile space\n\
+                    // ================================\nvec2 getTileCoords() {\n\
+                    \    return fract(v_pos.xy);\n}\n"
+                position: '// Normalize the attribute position of a vertex
+
+                    v_pos = modelPosition().xyz;'
+    texture-non-repetitive:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        mix:
+        - space-tile
+        - generative-random
+        shaders:
+            blocks:
+                global: "vec4 NonRepetitiveTexture (sampler2D tex, vec2 x, float v)\
+                    \ {\n    vec2 p = floor(xy);\n    vec2 f = fract(xy);\n    vec4\
+                    \ va = vec4(0.0);\n    float wt = 0.0;\n    for (int j=-1; j<=1;\
+                    \ j++) {\n        for (int i=-1; i<=1; i++ ) {\n            vec2\
+                    \ g = vec2( float(i),float(j) );\n            vec3 o = random3(\
+                    \ p + g );\n            vec2 r = g - f + o.xy;\n            float\
+                    \ d = dot(r,r);\n            float w = pow( 1.0 - smoothstep(0.0,2.0,dot(d,d)),\
+                    \ 1.0 + 16.0*v );\n            vec4 c = texture2D(tex, fract(.2*xy\
+                    \ + v*o.zy) );\n            va += w*c;\n            wt += w;\n\
+                    \        }\n    }\n    return va/wt;\n}"

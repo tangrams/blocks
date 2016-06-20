@@ -1,0 +1,24 @@
+styles:
+    lines-chevron:
+        base: lines
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Apply a chevron pattern to a line
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                color: "color = mix(color,\n            vec4(CHEVRON_COLOR, CHEVRON_ALPHA),\n\
+                    \            step(.5,fract((v_texcoord.y+abs(v_texcoord.x-.5))\
+                    \ * CHEVRON_SCALE)*CHEVRON_SIZE));"
+            defines:
+                CHEVRON_ALPHA: 1.0
+                CHEVRON_COLOR: vec3(1., 0., 0.)
+                CHEVRON_SCALE: 1.0
+                CHEVRON_SIZE: 1.0
+        texcoords: true
