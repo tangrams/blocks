@@ -1,6 +1,27 @@
 import:
 - normal.yaml
+- ../color/palette.yaml
 styles:
+    color-palette:
+        doc:
+            author:
+                name: Inigo Quiles
+                twitter: iquilezles
+            description: 'Procedural generation of color palettes implemented by [Inigo
+                Quiles](https://twitter.com/iquilezles) (1999) explained in [this
+                article](http://www.iquilezles.org/www/articles/palettes/palettes.htm)
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// Cosine based palette, 4 vec3 params\n// by Inigo Quiles\
+                    \ ( http://www.iquilezles.org/www/articles/palettes/palettes.htm\
+                    \ )\n// ================================\nvec3 palette (float\
+                    \ t, vec3 a, vec3 b, vec3 c, vec3 d) {\n    return a + b*cos(\
+                    \ 6.28318*(c*t+d) );\n}"
     elevation-normal:
         doc:
             author:

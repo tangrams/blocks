@@ -1,5 +1,6 @@
 import:
     - normal.yaml
+    - ../color/palette.yaml
 
 styles:
     elevation-rainbow:
