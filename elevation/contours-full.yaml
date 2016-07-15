@@ -1,0 +1,68 @@
+import:
+- normal.yaml
+- ../functions/aastep.yaml
+styles:
+    elevation-contours:
+        animated: true
+        base: polygons
+        blend: add
+        lighting: false
+        mix:
+        - elevation-normal
+        - functions-aastep
+        raster: custom
+        shaders:
+            blocks:
+                color: "color = mix(vec4(0.0),\n            color,\n            aastep(\
+                    \ dot(normal,vec3(0.,0.,1.)),\n                    abs(sin(depth*3.1415*CONTOURS_SCALE+u_time*CONTOURS_SPEED))));"
+            defines:
+                CONTOURS_SCALE: 60.0
+                CONTOURS_SPEED: -0.1
+    elevation-normal:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: "The raster normal map tiles needs to be load like this:\n\
+                ```\n    normals-elevation:\n        type: Raster\n        url: https://s3.amazonaws.com/elevation-tiles-prod/normal/{z}/{x}/{y}.png\n\
+                \        max_zoom: 15\n```\nA simple way to do it is to import `https://tangrams.github.io/blocks/source-elevation.yaml`\
+                \ and then link the vector tiles to them (see the example).\n"
+            examples:
+                grain:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/elevation.png
+                    lines: 14
+                    url: https://tangrams.github.io/tangram-sandbox/styles/elevation.yaml
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        raster: custom
+        shaders:
+            blocks:
+                normal: 'vec4 normal_elv_raster = sampleRaster(int(NORMAL_TEXTURE_INDEX));
+
+                    normal = (normal_elv_raster.rgb-.5)*2.;'
+            defines:
+                NORMAL_TEXTURE_INDEX: 0
+    functions-aastep:
+        doc:
+            author:
+                name: Matt DesLauriers
+                twitter: mattdesl
+            description: 'AnitAliased ```step()``` function implemented by [Matt DesLauriers](https://twitter.com/mattdesl)
+                in this module <https://github.com/stackgl/glsl-aastep>
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// AntiAliased Step function\n//=============================\n\
+                    float aastep(float threshold, float value) {\n    #ifdef TANGRAM_FRAGMENT_SHADER\n\
+                    \        #ifdef TANGRAM_EXTENSION_OES_standard_derivatives\n \
+                    \           float afwidth = length(vec2(dFdx(value), dFdy(value)))\
+                    \ * 0.70710678118654757;\n            return smoothstep(threshold-afwidth,\
+                    \ threshold+afwidth, value);\n        #else\n            return\
+                    \ step(threshold, value);\n        #endif  \n    #else\n     \
+                    \   return step(threshold, value);\n    #endif\n}"
+            extensions: OES_standard_derivatives

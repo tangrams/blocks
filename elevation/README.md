@@ -1,5 +1,47 @@
 
 
+#### [elevation-contours](http://tangrams.github.io/blocks/#elevation-contours) <a href="https://github.com/tangrams/blocks/blob/gh-pages/elevation/contours.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/elevation/contours.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/elevation/contours-full.yaml
+```
+
+
+These blocks uses a custom **shader**. These are the defaults **defines**:
+ - **CONTOURS_SCALE**: ```60.0```
+ - **CONTOURS_SPEED**: ```-0.1```
+
+These are the **shader blocks**:
+
+- **color**:
+
+```glsl
+color = mix(vec4(0.0),
+            color,
+            aastep( dot(normal,vec3(0.,0.,1.)),
+                    abs(sin(depth*3.1415*CONTOURS_SCALE+u_time*CONTOURS_SPEED))));
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [elevation-normal](http://tangrams.github.io/blocks/#elevation-normal) <a href="https://github.com/tangrams/blocks/blob/gh-pages/elevation/normal.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 The raster normal map tiles needs to be load like this:
@@ -49,6 +91,44 @@ Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/elevation.yaml&lines=14" target="_blank">
 <img src="https://tangrams.github.io/tangram-sandbox/styles/elevation.png" style="width: 100%; height: 100px; object-fit: cover;">
 </a>
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [elevation-rainbow](http://tangrams.github.io/blocks/#elevation-rainbow) <a href="https://github.com/tangrams/blocks/blob/gh-pages/elevation/rainbow.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/elevation/rainbow.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/elevation/rainbow-full.yaml
+```
+
+
+These blocks uses a custom **shader**. These are the defaults **defines**:
+ - **RAINBOW_SPEED**: ```-0.5```
+
+These are the **shader blocks**:
+
+- **color**:
+
+```glsl
+color.rgb = palette(0.380+normal_elv_raster.a+u_time*RAINBOW_SPEED,vec3(.5),vec3(.5),vec3(2.,1.,0.),vec3(.5,.2,0.25));
+```
+
+
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 

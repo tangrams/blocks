@@ -1,0 +1,22 @@
+import:
+    - normal.yaml
+    - ../functions/aastep.yaml
+
+styles:
+    elevation-contours:
+        base: polygons
+        mix: [elevation-normal, functions-aastep]
+        lighting: false
+        raster: custom
+        animated: true
+        blend: add
+        shaders:
+            defines:
+                CONTOURS_SCALE: 60.
+                CONTOURS_SPEED: -0.1
+            blocks:
+                color: |
+                    color = mix(vec4(0.0),
+                                color,
+                                aastep( dot(normal,vec3(0.,0.,1.)),
+                                        abs(sin(depth*3.1415*CONTOURS_SCALE+u_time*CONTOURS_SPEED))));
