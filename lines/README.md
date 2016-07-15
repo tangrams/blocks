@@ -135,6 +135,51 @@ color.a = 1.- step(DOT_SIZE, dot(st,st)*2.);
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
+#### [lines-glow](http://tangrams.github.io/blocks/#lines-glow) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/glow.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/glow.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/glow-full.yaml
+```
+
+
+These blocks uses a custom **shader**. These are the defaults **defines**:
+ - **GLOW_WIDTH**: ```0.5```
+ - **GLOW_BRIGHTNESS**: ```0.25```
+ - **GLOW_GLOW**: ```0.75```
+
+These are the **shader blocks**:
+
+- **global**:
+ + `float pulse(float c, float w, float x ) `
+- **color**:
+
+```glsl
+vec4 line_color = color;
+color = vec4(0.0);
+color = mix(color, line_color*GLOW_BRIGHTNESS,pulse(.5,GLOW_WIDTH,v_texcoord.x));
+color += line_color*GLOW_BRIGHTNESS*GLOW_GLOW*sin(v_texcoord.x*3.145);
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [lines-outline](http://tangrams.github.io/blocks/#lines-outline) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/outline.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Apply an outline to a line

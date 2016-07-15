@@ -1,0 +1,41 @@
+import:
+- ../functions/pulse.yaml
+styles:
+    functions-pulse:
+        doct:
+            author:
+                name: Inigo Quiles
+                twitter: iquilezles
+            description: 'This one dimensional shaping function made by Inigo Quiles
+                in [this article](http://www.iquilezles.org/www/articles/functions/functions.htm).
+
+                '
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "float pulse (float x, float peak, float width) {\n    x =\
+                    \ abs(x - peak);\n    if (x>width) return 0.0;\n    x /= width;\n\
+                    \    return 1.0 - x*x*(3.0-2.0*x);\n}"
+    lines-glow:
+        base: lines
+        blend: add
+        mix:
+        - functions-pulse
+        shaders:
+            blocks:
+                color: 'vec4 line_color = color;
+
+                    color = vec4(0.0);
+
+                    color = mix(color, line_color*GLOW_BRIGHTNESS,pulse(.5,GLOW_WIDTH,v_texcoord.x));
+
+                    color += line_color*GLOW_BRIGHTNESS*GLOW_GLOW*sin(v_texcoord.x*3.145);'
+                global: "float pulse(float c, float w, float x ) {\n    x = abs(x\
+                    \ - c);\n    if( x>w ) return 0.0;\n    x /= w;\n    return 1.0\
+                    \ - x*x*(3.0-2.0*x);\n}\n"
+            defines:
+                GLOW_BRIGHTNESS: 0.25
+                GLOW_GLOW: 0.75
+                GLOW_WIDTH: 0.5
+        texcoords: true

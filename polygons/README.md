@@ -61,6 +61,45 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
+#### [polygons-pixelate](http://tangrams.github.io/blocks/#polygons-pixelate) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/pixelate.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/pixelate.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/pixelate-full.yaml
+```
+
+
+These blocks uses a custom **shader**. These are the **shader blocks**:
+
+- **filter**:
+
+```glsl
+float gridSize = 40.;
+float gradDarker = .7;
+color.rgb = mix(color.rgb,
+                color.rgb*gradDarker,
+                random(floor(getTileCoords()*gridSize)));
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [polygons-windows](http://tangrams.github.io/blocks/#polygons-windows) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/windows.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Apply a windows patterns on the walls of a geometry

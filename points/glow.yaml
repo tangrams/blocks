@@ -1,0 +1,14 @@
+import:
+    - ../color/tools.yaml
+
+styles:
+    points-glow:
+        base: points
+        mix: [color-tools]
+        blend: overlay
+        shaders:
+            blocks:
+                filter: |
+                    float b = getBrightness(color.rgb);
+                    vec2 st = v_texcoord.xy;
+                    color = mix(v_color*color.a,vec4(0.),b*b);

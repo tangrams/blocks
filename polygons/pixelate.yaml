@@ -1,0 +1,15 @@
+import:
+    - ../generative/random.yaml
+    - ../space/tile.yaml
+
+styles:
+    polygons-pixelate:
+        mix: [space-tile, generative-random]
+        shaders:
+            blocks:
+                filter: |
+                    float gridSize = 40.;
+                    float gradDarker = .7;
+                    color.rgb = mix(color.rgb,
+                                    color.rgb*gradDarker,
+                                    random(floor(getTileCoords()*gridSize)));

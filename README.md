@@ -739,7 +739,7 @@ These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [functions-peakulse](http://tangrams.github.io/blocks/#functions-peakulse) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions/pulse.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+#### [functions-pulse](http://tangrams.github.io/blocks/#functions-pulse) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions/pulse.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -1464,6 +1464,51 @@ color.a = 1.- step(DOT_SIZE, dot(st,st)*2.);
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
+#### [lines-glow](http://tangrams.github.io/blocks/#lines-glow) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/glow.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/glow.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/glow-full.yaml
+```
+
+
+These blocks uses a custom **shader**. These are the defaults **defines**:
+ - **GLOW_WIDTH**: ```0.5```
+ - **GLOW_BRIGHTNESS**: ```0.25```
+ - **GLOW_GLOW**: ```0.75```
+
+These are the **shader blocks**:
+
+- **global**:
+ + `float pulse(float c, float w, float x ) `
+- **color**:
+
+```glsl
+vec4 line_color = color;
+color = vec4(0.0);
+color = mix(color, line_color*GLOW_BRIGHTNESS,pulse(.5,GLOW_WIDTH,v_texcoord.x));
+color += line_color*GLOW_BRIGHTNESS*GLOW_GLOW*sin(v_texcoord.x*3.145);
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [lines-outline](http://tangrams.github.io/blocks/#lines-outline) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/outline.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Apply an outline to a line
@@ -1847,6 +1892,43 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
+#### [points-glow](http://tangrams.github.io/blocks/#points-glow) <a href="https://github.com/tangrams/blocks/blob/gh-pages/points/glow.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/points/glow.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/points/glow-full.yaml
+```
+
+
+These blocks uses a custom **shader**. These are the **shader blocks**:
+
+- **filter**:
+
+```glsl
+float b = getBrightness(color.rgb);
+vec2 st = v_texcoord.xy;
+color = mix(v_color*color.a,vec4(0.),b*b);
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [points-shape](http://tangrams.github.io/blocks/#points-shape) <a href="https://github.com/tangrams/blocks/blob/gh-pages/points/shape.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Draws shape with N amount of sides (`SHAPE_SIDES`), a colored border (`SHAPE_BORDER_WIDTH` & `SHAPE_BORDER_COLOR`). To learn more about shapes on shaders read [this chapter from The Nook of Shader](http://thebookofshaders.com/07/)
@@ -1959,6 +2041,45 @@ Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/gotham.yaml&lines=131" target="_blank">
 <img src="https://tangrams.github.io/tangram-sandbox/styles/gotham.png" style="width: 100%; height: 100px; object-fit: cover;">
 </a>
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [polygons-pixelate](http://tangrams.github.io/blocks/#polygons-pixelate) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/pixelate.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/pixelate.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/pixelate-full.yaml
+```
+
+
+These blocks uses a custom **shader**. These are the **shader blocks**:
+
+- **filter**:
+
+```glsl
+float gridSize = 40.;
+float gradDarker = .7;
+color.rgb = mix(color.rgb,
+                color.rgb*gradDarker,
+                random(floor(getTileCoords()*gridSize)));
+```
+
+
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
