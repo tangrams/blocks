@@ -13,13 +13,6 @@ styles:
                 GLOW_BRIGHTNESS: .25
                 GLOW_GLOW: .75
             blocks:
-                global: |
-                    float pulse(float c, float w, float x ) {
-                        x = abs(x - c);
-                        if( x>w ) return 0.0;
-                        x /= w;
-                        return 1.0 - x*x*(3.0-2.0*x);
-                    }
                 color: |
                     vec4 line_color = color;
                     color = vec4(0.0);

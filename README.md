@@ -1493,8 +1493,6 @@ These blocks uses a custom **shader**. These are the defaults **defines**:
 
 These are the **shader blocks**:
 
-- **global**:
- + `float pulse(float c, float w, float x ) `
 - **color**:
 
 ```glsl

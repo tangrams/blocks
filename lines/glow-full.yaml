@@ -31,9 +31,6 @@ styles:
                     color = mix(color, line_color*GLOW_BRIGHTNESS,pulse(.5,GLOW_WIDTH,v_texcoord.x));
 
                     color += line_color*GLOW_BRIGHTNESS*GLOW_GLOW*sin(v_texcoord.x*3.145);'
-                global: "float pulse(float c, float w, float x ) {\n    x = abs(x\
-                    \ - c);\n    if( x>w ) return 0.0;\n    x /= w;\n    return 1.0\
-                    \ - x*x*(3.0-2.0*x);\n}\n"
             defines:
                 GLOW_BRIGHTNESS: 0.25
                 GLOW_GLOW: 0.75
