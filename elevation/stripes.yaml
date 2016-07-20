@@ -1,6 +1,5 @@
 import:
     - ../source-elevation.yaml
-    - ../functions/zoom.yaml
     - ../space/tile.yaml
     - ../polygons/diagonal-stripes.yaml
 
@@ -20,7 +19,7 @@ styles:
                     url: https://tangrams.github.io/tangram-sandbox/styles/elevation-stripes.yaml
                     img: https://tangrams.github.io/tangram-sandbox/styles/elevation-stripes.png
         base: polygons
-        mix: [functions-zoom, polygons-diagonal-stripes, patterns-stripes, space-tile]
+        mix: [polygons-diagonal-stripes, patterns-stripes, space-tile]
         blend: inlay
         lighting: false
         raster: custom
@@ -32,13 +31,10 @@ styles:
                 ZOOM_IN: 0.
                 ZOOM_OUT: 1.
 
-                NORMAL_TEXTURE_INDEX: 0
-
-                STRIPES_DIR: vec3(-0.600,-0.420,0.600)
                 STRIPES_ALPHA: .5
                 STRIPES_SCALE: 20.
                 STRIPES_PCT: 1.8
-                STRIPES_WIDTH: mix( (1.-zoom()),
-                                    dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2.,
-                                        STRIPES_DIR),
-                                    zoom())*STRIPES_PCT
+                NORMAL_TEXTURE_INDEX: 0
+                STRIPES_DIR: vec3(-0.600,-0.420,0.600)
+                STRIPES_WIDTH: dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2.,
+                                    STRIPES_DIR)*STRIPES_PCT

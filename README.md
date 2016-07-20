@@ -368,7 +368,7 @@ These blocks uses a custom **shader**. These are the defaults **defines**:
  - **STRIPES_SCALE**: ```20.0```
  - **ZOOM_IN**: ```0.0```
  - **ZOOM_OUT**: ```1.0```
- - **STRIPES_WIDTH**: ```mix( (1.-zoom()), dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2., STRIPES_DIR), zoom())*STRIPES_PCT```
+ - **STRIPES_WIDTH**: ```dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2., STRIPES_DIR)*STRIPES_PCT```
  - **ZOOM**: ```linear```
  - **STRIPES_DIR**: ```vec3(-0.600,-0.420,0.600)```
  - **STRIPES_PCT**: ```1.8```
