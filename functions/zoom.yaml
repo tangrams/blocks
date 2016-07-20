@@ -2,7 +2,7 @@ import:
     - ./easing.yaml
 
 styles:
-    zoom:
+    functions-zoom:
         mix: [functions-easing]
         animated: true
         shaders:
