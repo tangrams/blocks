@@ -48,7 +48,8 @@ styles:
         - patterns-grid
         shaders:
             blocks:
-                color: color -= diagonalGrid(fract(getTileCoords()*GRID_SCALE),0.001+GRID_WIDTH);
+                color: "color -= diagonalGrid(  fract(getTileCoords()*GRID_SCALE),\n\
+                    \                        GRID_WIDTH);"
             defines:
                 GRID_SCALE: 20.0
                 GRID_WIDTH: 0.05

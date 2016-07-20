@@ -63,37 +63,37 @@ These blocks uses a custom **shader**. These are the defaults **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float linear(float t) `
- + `float exponentialIn(float t) `
- + `float exponentialOut(float t) `
- + `float exponentialInOut(float t) `
- + `float sineIn(float t) `
- + `float sineOut(float t) `
- + `float sineInOut(float t) `
- + `float qinticIn(float t) `
- + `float qinticOut(float t) `
- + `float qinticInOut(float t) `
- + `float quarticIn(float t) `
- + `float quarticOut(float t) `
- + `float quarticInOut(float t) `
- + `float quadraticInOut(float t) `
- + `float quadraticIn(float t) `
- + `float quadraticOut(float t) `
- + `float cubicIn(float t) `
- + `float cubicOut(float t) `
- + `float cubicInOut(float t) `
- + `float elasticIn(float t) `
- + `float elasticOut(float t) `
- + `float elasticInOut(float t) `
- + `float circularIn(float t) `
- + `float circularOut(float t) `
- + `float circularInOut(float t) `
- + `float bounceOut(float t) `
- + `float bounceIn(float t) `
- + `float bounceInOut(float t) `
- + `float backIn(float t) `
- + `float backOut(float t) `
- + `float backInOut(float t) `
+ + `float linear (in float t) `
+ + `float exponentialIn (in float t) `
+ + `float exponentialOut (in float t) `
+ + `float exponentialInOut (in float t) `
+ + `float sineIn (in float t) `
+ + `float sineOut (in float t) `
+ + `float sineInOut (in float t) `
+ + `float qinticIn (in float t) `
+ + `float qinticOut (in float t) `
+ + `float qinticInOut (in float t) `
+ + `float quarticIn (in float t) `
+ + `float quarticOut (in float t) `
+ + `float quarticInOut (in float t) `
+ + `float quadraticInOut (in float t) `
+ + `float quadraticIn (in float t) `
+ + `float quadraticOut (in float t) `
+ + `float cubicIn (in float t) `
+ + `float cubicOut (in float t) `
+ + `float cubicInOut (in float t) `
+ + `float elasticIn (in float t) `
+ + `float elasticOut (in float t) `
+ + `float elasticInOut (in float t) `
+ + `float circularIn (in float t) `
+ + `float circularOut (in float t) `
+ + `float circularInOut (in float t) `
+ + `float bounceOut (in float t) `
+ + `float bounceIn (in float t) `
+ + `float bounceInOut (in float t) `
+ + `float backIn (in float t) `
+ + `float backOut (in float t) `
+ + `float backInOut (in float t) `
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 

@@ -29,7 +29,6 @@ styles:
         shaders:
             defines:
                 PI: 3.14159265358979323846
-                STRIPE_SCALE: 28.296
             blocks:
                 global: |
                     // Return a distance function of stripes
@@ -45,7 +44,7 @@ styles:
                     // Adjustable Angle
                     float stripes (vec2 st, float width, float angle) {
                         st = rotate2D(angle) * st;
-                        return stripes(st*STRIPE_SCALE, width);
+                        return stripes(st, width);
                     }
                     
                     // Faster optimisation of diagonal stripes
@@ -58,9 +57,9 @@ styles:
                             return aastep(f_st.x,f_st.y);
                         }
                     }
-                    
+
                     // Faster optimisation of diagonal stripes with controlable width
                     float diagonalStripes (vec2 st, float width) {
                         st.y -= st.x;
-                        return stripes(st*STRIPE_SCALE, width);
+                        return stripes(st, width);
                     }

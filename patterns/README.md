@@ -101,7 +101,6 @@ import:
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
  - **PI**: ```3.14159265359```
- - **STRIPE_SCALE**: ```28.296```
 
 These are the **shader blocks**:
 

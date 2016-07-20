@@ -748,37 +748,37 @@ These blocks uses a custom **shader**. These are the defaults **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float linear(float t) `
- + `float exponentialIn(float t) `
- + `float exponentialOut(float t) `
- + `float exponentialInOut(float t) `
- + `float sineIn(float t) `
- + `float sineOut(float t) `
- + `float sineInOut(float t) `
- + `float qinticIn(float t) `
- + `float qinticOut(float t) `
- + `float qinticInOut(float t) `
- + `float quarticIn(float t) `
- + `float quarticOut(float t) `
- + `float quarticInOut(float t) `
- + `float quadraticInOut(float t) `
- + `float quadraticIn(float t) `
- + `float quadraticOut(float t) `
- + `float cubicIn(float t) `
- + `float cubicOut(float t) `
- + `float cubicInOut(float t) `
- + `float elasticIn(float t) `
- + `float elasticOut(float t) `
- + `float elasticInOut(float t) `
- + `float circularIn(float t) `
- + `float circularOut(float t) `
- + `float circularInOut(float t) `
- + `float bounceOut(float t) `
- + `float bounceIn(float t) `
- + `float bounceInOut(float t) `
- + `float backIn(float t) `
- + `float backOut(float t) `
- + `float backInOut(float t) `
+ + `float linear (in float t) `
+ + `float exponentialIn (in float t) `
+ + `float exponentialOut (in float t) `
+ + `float exponentialInOut (in float t) `
+ + `float sineIn (in float t) `
+ + `float sineOut (in float t) `
+ + `float sineInOut (in float t) `
+ + `float qinticIn (in float t) `
+ + `float qinticOut (in float t) `
+ + `float qinticInOut (in float t) `
+ + `float quarticIn (in float t) `
+ + `float quarticOut (in float t) `
+ + `float quarticInOut (in float t) `
+ + `float quadraticInOut (in float t) `
+ + `float quadraticIn (in float t) `
+ + `float quadraticOut (in float t) `
+ + `float cubicIn (in float t) `
+ + `float cubicOut (in float t) `
+ + `float cubicInOut (in float t) `
+ + `float elasticIn (in float t) `
+ + `float elasticOut (in float t) `
+ + `float elasticInOut (in float t) `
+ + `float circularIn (in float t) `
+ + `float circularOut (in float t) `
+ + `float circularInOut (in float t) `
+ + `float bounceOut (in float t) `
+ + `float bounceIn (in float t) `
+ + `float bounceInOut (in float t) `
+ + `float backIn (in float t) `
+ + `float backOut (in float t) `
+ + `float backInOut (in float t) `
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -1870,7 +1870,6 @@ import:
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
  - **PI**: ```3.14159265359```
- - **STRIPE_SCALE**: ```28.296```
 
 These are the **shader blocks**:
 
@@ -2132,7 +2131,8 @@ These are the **shader blocks**:
 - **color**:
 
 ```glsl
-color -= diagonalGrid(fract(getTileCoords()*GRID_SCALE),0.001+GRID_WIDTH);
+color -= diagonalGrid(  fract(getTileCoords()*GRID_SCALE),
+                        GRID_WIDTH);
 ```
 
 
@@ -2163,13 +2163,9 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **STRIPES_MAX**: ```-.2```
- - **STRIPES_SCALE**: ```2.0```
- - **STRIPES_MAX_ZOOM**: ```20.0```
- - **STRIPES_OUT**: ```16.0```
  - **STRIPES_ALPHA**: ```0.5```
- - **STRIPES_MIN**: ```0.9```
- - **STRIPES_IN**: ```3.0```
+ - **STRIPES_SCALE**: ```2.0```
+ - **STRIPES_WIDTH**: ```0.5```
 
 These are the **shader blocks**:
 
@@ -2177,12 +2173,7 @@ These are the **shader blocks**:
 
 ```glsl
 color.a = diagonalStripes(  (getTileCoords()*0.707)*(STRIPES_SCALE), 
-                            mix(STRIPES_MIN,
-                                STRIPES_MAX,
-                                clamp( smoothstep(  STRIPES_IN/STRIPES_MAX_ZOOM, 
-                                                    STRIPES_OUT/STRIPES_MAX_ZOOM, 
-                                                    max(u_map_position.z/STRIPES_MAX_ZOOM, 0.) * 0.9), 
-                                        0., 1.))) * STRIPES_ALPHA;
+                            STRIPES_WIDTH) * STRIPES_ALPHA;
 ```
 
 
@@ -2400,14 +2391,10 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
+ - **STRIPES_WIDTH**: ```0.5```
+ - **STRIPES_ANGLE**: ```PI*0.25```
  - **STRIPES_SCALE**: ```2.0```
- - **STRIPES_OUT**: ```16.0```
  - **STRIPES_ALPHA**: ```0.5```
- - **STRIPES_MIN**: ```0.9```
- - **STRIPES_MAX**: ```-.2```
- - **STRIPES_MAX_ZOOM**: ```20.0```
- - **STRIPES_IN**: ```3.0```
- - **STRIPES_ANGLE**: ```0.25```
 
 These are the **shader blocks**:
 
@@ -2415,10 +2402,8 @@ These are the **shader blocks**:
 
 ```glsl
 color.a = stripes(  getTileCoords()*STRIPES_SCALE, 
-                    mix(STRIPES_MIN,
-                        STRIPES_MAX,
-                        clamp(smoothstep(STRIPES_IN/STRIPES_MAX_ZOOM, STRIPES_OUT/STRIPES_MAX_ZOOM, max(u_map_position.z/STRIPES_MAX_ZOOM,0.)*0.9), 0., 1.)), 
-                  PI*STRIPES_ANGLE)*STRIPES_ALPHA;
+                    STRIPES_WIDTH, 
+                    STRIPES_ANGLE)*STRIPES_ALPHA;
 ```
 
 

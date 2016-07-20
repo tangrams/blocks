@@ -12,4 +12,5 @@ styles:
                 GRID_WIDTH: .05
             blocks:
                 color: |
-                    color -= diagonalGrid(fract(getTileCoords()*GRID_SCALE),0.001+GRID_WIDTH);
+                    color -= diagonalGrid(  fract(getTileCoords()*GRID_SCALE),
+                                            GRID_WIDTH);

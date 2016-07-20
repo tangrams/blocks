@@ -15,19 +15,19 @@ styles:
                 HALF_PI: 1.5707963267948966192313216916398
             blocks:
                 global: |
-                    float linear(float t) {
+                    float linear (in float t) {
                         return t;
                     }
 
-                    float exponentialIn(float t) {
+                    float exponentialIn (in float t) {
                         return t == 0.0 ? t : pow(2.0, 10.0 * (t - 1.0));
                     }
 
-                    float exponentialOut(float t) {
+                    float exponentialOut (in float t) {
                         return t == 1.0 ? t : 1.0 - pow(2.0, -10.0 * t);
                     }
 
-                    float exponentialInOut(float t) {
+                    float exponentialInOut (in float t) {
                         return t == 0.0 || t == 1.0
                         ? t
                         : t < 0.5
@@ -35,103 +35,103 @@ styles:
                             : -0.5 * pow(2.0, 10.0 - (t * 20.0)) + 1.0;
                     }
 
-                    float sineIn(float t) {
+                    float sineIn (in float t) {
                         return sin((t - 1.0) * HALF_PI) + 1.0;
                     }
 
-                    float sineOut(float t) {
+                    float sineOut (in float t) {
                         return sin(t * HALF_PI);
                     }
 
-                    float sineInOut(float t) {
+                    float sineInOut (in float t) {
                         return -0.5 * (cos(PI * t) - 1.0);
                     }
 
-                    float qinticIn(float t) {
+                    float qinticIn (in float t) {
                         return pow(t, 5.0);
                     }
 
-                    float qinticOut(float t) {
+                    float qinticOut (in float t) {
                         return 1.0 - (pow(t - 1.0, 5.0));
                     }
 
-                    float qinticInOut(float t) {
+                    float qinticInOut (in float t) {
                         return t < 0.5
                             ? +16.0 * pow(t, 5.0)
                             : -0.5 * pow(2.0 * t - 2.0, 5.0) + 1.0;
                     }
 
-                    float quarticIn(float t) {
+                    float quarticIn (in float t) {
                         return pow(t, 4.0);
                     }
 
-                    float quarticOut(float t) {
+                    float quarticOut (in float t) {
                         return pow(t - 1.0, 3.0) * (1.0 - t) + 1.0;
                     }
 
-                    float quarticInOut(float t) {
+                    float quarticInOut (in float t) {
                         return t < 0.5
                             ? +8.0 * pow(t, 4.0)
                             : -8.0 * pow(t - 1.0, 4.0) + 1.0;
                     }
 
-                    float quadraticInOut(float t) {
+                    float quadraticInOut (in float t) {
                         float p = 2.0 * t * t;
                         return t < 0.5 ? p : -p + (4.0 * t) - 1.0;
                     }
 
-                    float quadraticIn(float t) {
+                    float quadraticIn (in float t) {
                         return t * t;
                     }
 
-                    float quadraticOut(float t) {
+                    float quadraticOut (in float t) {
                         return -t * (t - 2.0);
                     }
 
-                    float cubicIn(float t) {
+                    float cubicIn (in float t) {
                         return t * t * t;
                     }
 
-                    float cubicOut(float t) {
+                    float cubicOut (in float t) {
                         float f = t - 1.0;
                         return f * f * f + 1.0;
                     }
 
-                    float cubicInOut(float t) {
+                    float cubicInOut (in float t) {
                         return t < 0.5
                             ? 4.0 * t * t * t
                             : 0.5 * pow(2.0 * t - 2.0, 3.0) + 1.0;
                     }
 
-                    float elasticIn(float t) {
+                    float elasticIn (in float t) {
                         return sin(13.0 * t * HALF_PI) * pow(2.0, 10.0 * (t - 1.0));
                     }
 
-                    float elasticOut(float t) {
+                    float elasticOut (in float t) {
                         return sin(-13.0 * (t + 1.0) * HALF_PI) * pow(2.0, -10.0 * t) + 1.0;
                     }
 
-                    float elasticInOut(float t) {
+                    float elasticInOut (in float t) {
                         return t < 0.5
                             ? 0.5 * sin(+13.0 * HALF_PI * 2.0 * t) * pow(2.0, 10.0 * (2.0 * t - 1.0))
                             : 0.5 * sin(-13.0 * HALF_PI * ((2.0 * t - 1.0) + 1.0)) * pow(2.0, -10.0 * (2.0 * t - 1.0)) + 1.0;
                     }
 
-                    float circularIn(float t) {
+                    float circularIn (in float t) {
                         return 1.0 - sqrt(1.0 - t * t);
                     }
 
-                    float circularOut(float t) {
+                    float circularOut (in float t) {
                         return sqrt((2.0 - t) * t);
                     }
 
-                    float circularInOut(float t) {
+                    float circularInOut (in float t) {
                         return t < 0.5
                             ? 0.5 * (1.0 - sqrt(1.0 - 4.0 * t * t))
                             : 0.5 * (sqrt((3.0 - 2.0 * t) * (2.0 * t - 1.0)) + 1.0);
                     }
 
-                    float bounceOut(float t) {
+                    float bounceOut (in float t) {
                         const float a = 4.0 / 11.0;
                         const float b = 8.0 / 11.0;
                         const float c = 9.0 / 10.0;
@@ -151,26 +151,26 @@ styles:
                                 : 10.8 * t * t - 20.52 * t + 10.72;
                     }
 
-                    float bounceIn(float t) {
+                    float bounceIn (in float t) {
                         return 1.0 - bounceOut(1.0 - t);
                     }
 
-                    float bounceInOut(float t) {
+                    float bounceInOut (in float t) {
                         return t < 0.5
                         ? 0.5 * (1.0 - bounceOut(1.0 - t * 2.0))
                         : 0.5 * bounceOut(t * 2.0 - 1.0) + 0.5;
                     }
 
-                    float backIn(float t) {
+                    float backIn (in float t) {
                         return pow(t, 3.0) - t * sin(t * PI);
                     }
 
-                    float backOut(float t) {
+                    float backOut (in float t) {
                         float f = 1.0 - t;
                         return 1.0 - (pow(f, 3.0) - f * sin(f * PI));
                     }
 
-                    float backInOut(float t) {
+                    float backInOut (in float t) {
                         float f = t < 0.5
                         ? 2.0 * t
                         : 1.0 - (2.0 * t - 1.0);

@@ -103,17 +103,16 @@ styles:
                     \ width stripes\nfloat stripes (vec2 st, float width) {\n    return\
                     \ aastep(width, stripesDF(st));\n}\n\n// Adjustable Angle\nfloat\
                     \ stripes (vec2 st, float width, float angle) {\n    st = rotate2D(angle)\
-                    \ * st;\n    return stripes(st*STRIPE_SCALE, width);\n}\n\n//\
-                    \ Faster optimisation of diagonal stripes\nfloat diagonalStripes\
-                    \ (vec2 st) {\n    vec2 i_st = floor(st);\n    vec2 f_st = fract(st);\n\
-                    \    if (mod(i_st.y,2.) - mod(i_st.x,2.) == 0.) {\n        return\
-                    \ 1.0 - aastep(f_st.x,f_st.y);\n    } else {\n        return aastep(f_st.x,f_st.y);\n\
-                    \    }\n}\n\n// Faster optimisation of diagonal stripes with controlable\
+                    \ * st;\n    return stripes(st, width);\n}\n\n// Faster optimisation\
+                    \ of diagonal stripes\nfloat diagonalStripes (vec2 st) {\n   \
+                    \ vec2 i_st = floor(st);\n    vec2 f_st = fract(st);\n    if (mod(i_st.y,2.)\
+                    \ - mod(i_st.x,2.) == 0.) {\n        return 1.0 - aastep(f_st.x,f_st.y);\n\
+                    \    } else {\n        return aastep(f_st.x,f_st.y);\n    }\n\
+                    }\n\n// Faster optimisation of diagonal stripes with controlable\
                     \ width\nfloat diagonalStripes (vec2 st, float width) {\n    st.y\
-                    \ -= st.x;\n    return stripes(st*STRIPE_SCALE, width);\n}"
+                    \ -= st.x;\n    return stripes(st, width);\n}"
             defines:
                 PI: 3.141592653589793
-                STRIPE_SCALE: 28.296
     polygons-stripes:
         base: polygons
         mix:
@@ -122,19 +121,12 @@ styles:
         shaders:
             blocks:
                 color: "color.a = stripes(  getTileCoords()*STRIPES_SCALE, \n    \
-                    \                mix(STRIPES_MIN,\n                        STRIPES_MAX,\n\
-                    \                        clamp(smoothstep(STRIPES_IN/STRIPES_MAX_ZOOM,\
-                    \ STRIPES_OUT/STRIPES_MAX_ZOOM, max(u_map_position.z/STRIPES_MAX_ZOOM,0.)*0.9),\
-                    \ 0., 1.)), \n                  PI*STRIPES_ANGLE)*STRIPES_ALPHA;"
+                    \                STRIPES_WIDTH, \n                    STRIPES_ANGLE)*STRIPES_ALPHA;"
             defines:
                 STRIPES_ALPHA: 0.5
-                STRIPES_ANGLE: 0.25
-                STRIPES_IN: 3.0
-                STRIPES_MAX: -.2
-                STRIPES_MAX_ZOOM: 20.0
-                STRIPES_MIN: 0.9
-                STRIPES_OUT: 16.0
+                STRIPES_ANGLE: PI*0.25
                 STRIPES_SCALE: 2.0
+                STRIPES_WIDTH: 0.5
     space-tile:
         doc:
             author:
