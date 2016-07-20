@@ -244,7 +244,7 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **ROTATION**: ```sin(u_time*ROTATION_MAX_SPEED)*ROTATION_RANGE```
+ - **ROTATION**: ```sin(u_time*ROTATION_SPEED)*ROTATION_RANGE```
  - **ROTATION_SPEED**: ```0.1```
  - **ROTATION_RANGE**: ```PI```
 
