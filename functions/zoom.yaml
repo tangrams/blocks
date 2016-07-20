@@ -1,0 +1,24 @@
+import:
+    - ./easing.yaml
+
+styles:
+    zoom:
+        mix: [functions-easing]
+        animated: true
+        shaders:
+            defines:
+                ZOOM_START: 14.
+                ZOOM_END: 20.
+                ZOOM_MAX: max(ZOOM_START, ZOOM_END)
+                ZOOM: linear
+                ZOOM_IN: 0.0
+                ZOOM_OUT: 1.0
+            blocks:
+                global: |
+                    float zoom() {
+                        return mix( ZOOM_IN, 
+                                    ZOOM_OUT, 
+                                    clamp(smoothstep(   ZOOM_START/ZOOM_MAX, 
+                                                        ZOOM_END/ZOOM_MAX, 
+                                                        max(u_map_position.z/ZOOM_MAX,0.)*0.9), 0., 1.) );
+                    }
