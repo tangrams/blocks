@@ -61,5 +61,5 @@ styles:
                     // Faster optimisation of diagonal stripes with controlable width
                     float diagonalStripes (vec2 st, float width) {
                         st.y -= st.x;
-                        return stripes(st, width);
+                        return stripes(st*0.944, width);
                     }

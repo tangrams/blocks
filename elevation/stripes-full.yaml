@@ -157,7 +157,7 @@ styles:
                     \    } else {\n        return aastep(f_st.x,f_st.y);\n    }\n\
                     }\n\n// Faster optimisation of diagonal stripes with controlable\
                     \ width\nfloat diagonalStripes (vec2 st, float width) {\n    st.y\
-                    \ -= st.x;\n    return stripes(st, width);\n}"
+                    \ -= st.x;\n    return stripes(st*0.944, width);\n}"
             defines:
                 PI: 3.141592653589793
     space-tile:
