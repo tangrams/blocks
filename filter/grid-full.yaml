@@ -74,6 +74,10 @@ styles:
                     \ fract(st*res);\n    return grid.x < res*press || grid.y < res*press;\n\
                     }\n//\n// Draw a grid in the space a specific resolution\nbool\
                     \ grid (vec2 st, float res) {\n    return grid(st, res, 1.0);\n\
+                    }\n\n//\n// Draw a grid in 45 degress with a specific width\n\
+                    float diagonalGrid(vec2 st, float width){\n    return step(.5,max(\
+                    \ smoothstep(st.x-width,st.x,st.y)*(1.-smoothstep(st.x,st.x+width,st.y)),\n\
+                    \                        smoothstep(st.x-width,st.x,1.0-st.y)*(1.-smoothstep(st.x,st.x+width,1.0-st.y))));\n\
                     }\n\n// Draw a grid using tile coordenates in a specific resolution\n\
                     float tileGrid (float res) {\n    vec2 st = getTileCoords()*100.*res;\n\
                     \    float pct = 0.0;\n    float press = 0.4+(1.0-fract(u_map_position.z))*0.1;\n\

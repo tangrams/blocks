@@ -1,0 +1,15 @@
+import:
+    - ../space/tile.yaml
+    - ../patterns/grid.yaml
+
+styles:
+    polygons-diagonal-grid:
+        base: polygons
+        mix: [space-tile, patterns-grid]
+        shaders:
+            defines:
+                GRID_SCALE: 20.
+                GRID_WIDTH: .05
+            blocks:
+                color: |
+                    color -= diagonalGrid(fract(getTileCoords()*GRID_SCALE),0.001+GRID_WIDTH);

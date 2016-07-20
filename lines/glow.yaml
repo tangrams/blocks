@@ -3,8 +3,8 @@ import:
 
 styles:
     lines-glow:
-        mix: [functions-pulse]
         base: lines
+        mix: [functions-pulse]
         texcoords: true
         blend: add
         shaders:

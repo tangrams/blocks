@@ -14,17 +14,17 @@ styles:
             version: 0.0.1
         shaders:
             blocks:
-                global: "// \n// ================================\nvec2 simplex (vec2\
-                    \ st) {\n    vec2 r = vec2(0.0);\n    r.x = 1.1547*st.x;\n   \
-                    \ r.y = st.y+0.5*r.x;\n    return r;\n}\nvec2 unsimplex (vec2\
-                    \ st) {\n    vec2 r;\n    r.y=st.y-0.5*st.x;\n    r.x=st.x/1.1547;\n\
-                    \    return r;\n}\n\nvec3 simplexGrid (vec2 st) {\n    vec3 xyz\
-                    \ = vec3(0.0);\n    \n    vec2 p = fract(simplex(st));\n    if\
-                    \ (p.x > p.y) {\n        xyz.xy = 1.0-vec2(p.x,p.y-p.x);\n   \
-                    \     xyz.z = p.y;\n    } else {\n        xyz.yz = 1.0-vec2(p.x-p.y,p.y);\n\
-                    \        xyz.x = p.x;\n    }\n    \n    return fract(xyz);\n}\n\
-                    \nvec3 simplexRotatedGrid (vec2 st) {\n    vec3 xyz = vec3(0.0);\n\
-                    \    \n    vec2 p = fract(simplex(st));\n    if (p.x > p.y) {\n\
-                    \        xyz.xy = 1.-vec2(p.x,p.y-p.x);\n        xyz.z = p.y;\n\
+                global: "// \n// ================================\nvec2 skew (vec2\
+                    \ st) {\n    st *= 1.733;\n    vec2 r = vec2(1.1547*st.x);\n \
+                    \   r.y = st.y+0.5*r.x;\n    return r;\n}\n\nvec3 simplexCoord\
+                    \ (vec2 st, float td) {\n    return 1.0-mix(vec3(st.x,1.0-vec2(st.x-st.y,st.y)),vec3(1.0-vec2(st.x,st.y-st.x),st.y),td);\n\
+                    }\n\nvec3 simplexGrid (vec2 st) {\n    vec3 xyz = vec3(0.0);\n\
+                    \    \n    vec2 p = fract(skew(st));\n    if (p.x > p.y) {\n \
+                    \       xyz.xy = 1.0-vec2(p.x,p.y-p.x);\n        xyz.z = p.y;\n\
+                    \    } else {\n        xyz.yz = 1.0-vec2(p.x-p.y,p.y);\n     \
+                    \   xyz.x = p.x;\n    }\n    \n    return fract(xyz);\n}\n\nvec3\
+                    \ simplexRotatedGrid (vec2 st) {\n    vec3 xyz = vec3(0.0);\n\
+                    \    \n    vec2 p = fract(skew(st));\n    if (p.x > p.y) {\n \
+                    \       xyz.xy = 1.-vec2(p.x,p.y-p.x);\n        xyz.z = p.y;\n\
                     \    } else {\n        xyz.zx = 1.-vec2(p.x-p.y,p.y);\n      \
                     \  xyz.y = p.x;\n    }\n    \n    return fract(xyz);\n}"

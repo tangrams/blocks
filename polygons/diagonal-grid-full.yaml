@@ -41,6 +41,17 @@ styles:
                     \ pct += 0.1;\n    return pct;\n}\n\n// Draw two grid that smoothly\
                     \ interpolates acording to zooms\nfloat tileGrid() { \n    return\
                     \ mix(tileGrid(1.),tileGrid(2.),fract(u_map_position.z)); \n}"
+    polygons-diagonal-grid:
+        base: polygons
+        mix:
+        - space-tile
+        - patterns-grid
+        shaders:
+            blocks:
+                color: color -= diagonalGrid(fract(getTileCoords()*GRID_SCALE),0.001+GRID_WIDTH);
+            defines:
+                GRID_SCALE: 20.0
+                GRID_WIDTH: 0.05
     space-tile:
         doc:
             author:

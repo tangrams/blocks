@@ -2,6 +2,7 @@ global:
     order: function () { return feature.sort_key; }
     order-top: function () { return feature.sort_key + 1; }
     order-buttom: function () { return feature.sort_key - 1; }
+    order-bottom: function () { return feature.sort_key - 1; }
     pseudoRandomColor: |
         function() {
             return [

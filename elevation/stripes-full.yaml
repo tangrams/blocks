@@ -155,7 +155,9 @@ styles:
                     \ (vec2 st) {\n    vec2 i_st = floor(st);\n    vec2 f_st = fract(st);\n\
                     \    if (mod(i_st.y,2.) - mod(i_st.x,2.) == 0.) {\n        return\
                     \ 1.0 - aastep(f_st.x,f_st.y);\n    } else {\n        return aastep(f_st.x,f_st.y);\n\
-                    \    }\n}"
+                    \    }\n}\n\n// Faster optimisation of diagonal stripes with controlable\
+                    \ width\nfloat diagonalStripes (vec2 st, float width) {\n    st.y\
+                    \ -= st.x;\n    return stripes(st*STRIPE_SCALE, width);\n}"
             defines:
                 PI: 3.141592653589793
                 STRIPE_SCALE: 28.296

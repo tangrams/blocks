@@ -34,7 +34,7 @@ These are the **shader blocks**:
 color = mix(vec4(0.0),
             color,
             aastep( dot(normal,vec3(0.,0.,1.)),
-                    abs(sin(depth*3.1415*CONTOURS_SCALE+u_time*CONTOURS_SPEED))));
+                    abs(sin(normal_elv_raster.a*3.1415*CONTOURS_SCALE+u_time*CONTOURS_SPEED))));
 ```
 
 

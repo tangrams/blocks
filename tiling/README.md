@@ -67,8 +67,8 @@ import:
 These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **global**:
- + `vec2 simplex (vec2 st) `
- + `vec2 unsimplex (vec2 st) `
+ + `vec2 skew (vec2 st) `
+ + `vec3 simplexCoord (vec2 st, float td) `
  + `vec3 simplexGrid (vec2 st) `
  + `vec3 simplexRotatedGrid (vec2 st) `
 

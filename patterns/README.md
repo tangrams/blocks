@@ -110,6 +110,7 @@ These are the **shader blocks**:
  + `float stripes (vec2 st, float width) `
  + `float stripes (vec2 st, float width, float angle) `
  + `float diagonalStripes (vec2 st) `
+ + `float diagonalStripes (vec2 st, float width) `
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/press.yaml&lines=150" target="_blank">

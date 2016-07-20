@@ -114,23 +114,46 @@ styles:
             defines:
                 PI: 3.141592653589793
                 STRIPE_SCALE: 28.296
-    patterns-zigzag:
+    polygons-diagonal-stripes:
+        base: polygons
+        mix:
+        - patterns-stripes
+        - space-tile
+        shaders:
+            blocks:
+                color: "color.a = diagonalStripes(  (getTileCoords()*0.707)*(STRIPES_SCALE),\
+                    \ \n                            mix(STRIPES_MIN,\n           \
+                    \                     STRIPES_MAX,\n                         \
+                    \       clamp( smoothstep(  STRIPES_IN/STRIPES_MAX_ZOOM, \n  \
+                    \                                                  STRIPES_OUT/STRIPES_MAX_ZOOM,\
+                    \ \n                                                    max(u_map_position.z/STRIPES_MAX_ZOOM,\
+                    \ 0.) * 0.9), \n                                        0., 1.)))\
+                    \ * STRIPES_ALPHA;"
+            defines:
+                STRIPES_ALPHA: 0.5
+                STRIPES_IN: 3.0
+                STRIPES_MAX: -.2
+                STRIPES_MAX_ZOOM: 20.0
+                STRIPES_MIN: 0.9
+                STRIPES_OUT: 16.0
+                STRIPES_SCALE: 2.0
+    space-tile:
         doc:
             author:
                 name: Patricio Gonzalez Vivo
                 twitter: patriciogv
-            description: "Collection of functions to draw zigzag stripes. To learn\
-                \ more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)\
-                \ \n"
+            description: 'Get the position on the tile
+
+                '
             licence: MIT
             tangram-version: 0.0.7
             version: 0.0.1
-        mix: patterns-stripes
         shaders:
             blocks:
-                global: "// Return a distance function of stripes\nfloat zigzagDF\
-                    \ (vec2 st, float freq) {\n    vec2 pos = fract(st);\n    pos.y\
-                    \ += mix(fract(pos.x),fract(1.0-pos.x),step(.5,pos.x))*freq;\n\
-                    \    return stripesDF(pos);\n}\n//\n// Adjustable width stripes\n\
-                    float zigzag (vec2 st, float freq, float width) {\n    return\
-                    \ aastep(width, zigzagDF(st, freq));\n}\n"
+                global: "// Variant to be add to both vertex and fragments shaders\n\
+                    varying vec3 v_pos;\n//\n// Get the coordinates in tile space\n\
+                    // ================================\nvec2 getTileCoords() {\n\
+                    \    return fract(v_pos.xy);\n}\n"
+                position: '// Normalize the attribute position of a vertex
+
+                    v_pos = modelPosition().xyz;'

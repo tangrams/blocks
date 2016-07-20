@@ -190,7 +190,7 @@ These are the **shader blocks**:
 color = mix(vec4(0.0),
             color,
             aastep( dot(normal,vec3(0.,0.,1.)),
-                    abs(sin(depth*3.1415*CONTOURS_SCALE+u_time*CONTOURS_SPEED))));
+                    abs(sin(normal_elv_raster.a*3.1415*CONTOURS_SCALE+u_time*CONTOURS_SPEED))));
 ```
 
 
@@ -1841,6 +1841,7 @@ These are the **shader blocks**:
  + `float stripes (vec2 st, float width) `
  + `float stripes (vec2 st, float width, float angle) `
  + `float diagonalStripes (vec2 st) `
+ + `float diagonalStripes (vec2 st, float width) `
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/press.yaml&lines=150" target="_blank">
@@ -2062,6 +2063,135 @@ Examples:
 
 ### [POLYGONS](http://tangrams.github.io/blocks/#polygons) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+#### [polygons-diagonal-grid](http://tangrams.github.io/blocks/#polygons-diagonal-grid) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/diagonal-grid.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/diagonal-grid.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/diagonal-grid-full.yaml
+```
+
+
+These blocks uses a custom **shader**. These are the defaults **defines**:
+ - **GRID_SCALE**: ```20.0```
+ - **GRID_WIDTH**: ```0.05```
+
+These are the **shader blocks**:
+
+- **color**:
+
+```glsl
+color -= diagonalGrid(fract(getTileCoords()*GRID_SCALE),0.001+GRID_WIDTH);
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [polygons-diagonal-stripes](http://tangrams.github.io/blocks/#polygons-diagonal-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/diagonal-stripes.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/diagonal-stripes.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/diagonal-stripes-full.yaml
+```
+
+
+These blocks uses a custom **shader**. These are the defaults **defines**:
+ - **STRIPES_MAX**: ```-.2```
+ - **STRIPES_SCALE**: ```2.0```
+ - **STRIPES_MAX_ZOOM**: ```20.0```
+ - **STRIPES_OUT**: ```16.0```
+ - **STRIPES_ALPHA**: ```0.5```
+ - **STRIPES_MIN**: ```0.9```
+ - **STRIPES_IN**: ```3.0```
+
+These are the **shader blocks**:
+
+- **color**:
+
+```glsl
+color.a = diagonalStripes(  (getTileCoords()*0.707)*(STRIPES_SCALE), 
+                            mix(STRIPES_MIN,
+                                STRIPES_MAX,
+                                clamp( smoothstep(  STRIPES_IN/STRIPES_MAX_ZOOM, 
+                                                    STRIPES_OUT/STRIPES_MAX_ZOOM, 
+                                                    max(u_map_position.z/STRIPES_MAX_ZOOM, 0.) * 0.9), 
+                                        0., 1.))) * STRIPES_ALPHA;
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [polygons-dots](http://tangrams.github.io/blocks/#polygons-dots) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/dots.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/dots.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/dots-full.yaml
+```
+
+
+These blocks uses a custom **shader**. These are the defaults **defines**:
+ - **DOTS_SIZE**: ```0.41```
+ - **DOTS_SCALE**: ```10.0```
+ - **DOTS_COLOR**: ```vec3(0.212,0.302,0.431)```
+
+These are the **shader blocks**:
+
+- **color**:
+
+```glsl
+color.rgb = mix(color.rgb, DOTS_COLOR, TileDots(DOTS_SCALE, DOTS_SIZE));
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [polygons-glass-walls](http://tangrams.github.io/blocks/#polygons-glass-walls) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/glass-walls.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Apply a glass walls to the sides of a geometry
@@ -2155,6 +2285,117 @@ float gradDarker = .7;
 color.rgb = mix(color.rgb,
                 color.rgb*gradDarker,
                 random(floor(getTileCoords()*gridSize)));
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [polygons-shimmering](http://tangrams.github.io/blocks/#polygons-shimmering) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/shimmering.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/shimmering.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/shimmering-full.yaml
+```
+
+
+These blocks uses a custom **shader**. These are the defaults **defines**:
+ - **SHIMMERING_OUT**: ```20.0```
+ - **SHIMMERING_SPEED**: ```0.1```
+ - **SHIMMERING_MAX_ZOOM**: ```20.0```
+ - **SHIMMERING_SCALE_IN**: ```10.0```
+ - **SHIMMERING_SCALE_OUT**: ```10.0```
+ - **SHIMMERING_IN**: ```14.0```
+ - **SHIMMERING_BACKGROUND**: ```vec3(0.000,0.00,0.94)```
+
+These are the **shader blocks**:
+
+- **color**:
+
+```glsl
+float z = clamp(smoothstep(SHIMMERING_IN/SHIMMERING_MAX_ZOOM, SHIMMERING_OUT/SHIMMERING_MAX_ZOOM, max(u_map_position.z/SHIMMERING_MAX_ZOOM,0.)*0.9), 0., 1.);
+float scale = mix(SHIMMERING_SCALE_IN, SHIMMERING_SCALE_OUT, z);
+/*
+vec2 st = gl_FragCoord.xy/u_resolution.xy;
+st = (st-.5)*scale+ .5;
+if (u_resolution.y > u_resolution.x ) {
+    st.y *= u_resolution.y/u_resolution.x;
+} else {
+    st.x *= u_resolution.x/u_resolution.y;
+}
+*/
+vec2 st = getConstantCoords()*scale;
+
+vec2 s = skew(st);
+vec2 s_f = fract(s);
+float n = snoise(vec3(floor(s+step(s_f.x,s_f.y)*5.),u_time*SHIMMERING_SPEED));
+color.rgb = mix(color.rgb,
+                mix(SHIMMERING_BACKGROUND,color.rgb,n),
+                z);
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [polygons-stripes](http://tangrams.github.io/blocks/#polygons-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/stripes.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/stripes.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/stripes-full.yaml
+```
+
+
+These blocks uses a custom **shader**. These are the defaults **defines**:
+ - **STRIPES_SCALE**: ```2.0```
+ - **STRIPES_OUT**: ```16.0```
+ - **STRIPES_ALPHA**: ```0.5```
+ - **STRIPES_MIN**: ```0.9```
+ - **STRIPES_MAX**: ```-.2```
+ - **STRIPES_MAX_ZOOM**: ```20.0```
+ - **STRIPES_IN**: ```3.0```
+ - **STRIPES_ANGLE**: ```0.25```
+
+These are the **shader blocks**:
+
+- **color**:
+
+```glsl
+color.a = stripes(  getTileCoords()*STRIPES_SCALE, 
+                    mix(STRIPES_MIN,
+                        STRIPES_MAX,
+                        clamp(smoothstep(STRIPES_IN/STRIPES_MAX_ZOOM, STRIPES_OUT/STRIPES_MAX_ZOOM, max(u_map_position.z/STRIPES_MAX_ZOOM,0.)*0.9), 0., 1.)), 
+                  PI*STRIPES_ANGLE)*STRIPES_ALPHA;
 ```
 
 
@@ -2951,8 +3192,8 @@ import:
 These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **global**:
- + `vec2 simplex (vec2 st) `
- + `vec2 unsimplex (vec2 st) `
+ + `vec2 skew (vec2 st) `
+ + `vec3 simplexCoord (vec2 st, float td) `
  + `vec3 simplexGrid (vec2 st) `
  + `vec3 simplexRotatedGrid (vec2 st) `
 

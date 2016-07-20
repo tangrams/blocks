@@ -1,0 +1,150 @@
+import: ../functions/aastep.yaml
+styles:
+    functions-aastep:
+        doc:
+            author:
+                name: Matt DesLauriers
+                twitter: mattdesl
+            description: 'AnitAliased ```step()``` function implemented by [Matt DesLauriers](https://twitter.com/mattdesl)
+                in this module <https://github.com/stackgl/glsl-aastep>
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// AntiAliased Step function\n//=============================\n\
+                    float aastep(float threshold, float value) {\n    #ifdef TANGRAM_FRAGMENT_SHADER\n\
+                    \        #ifdef TANGRAM_EXTENSION_OES_standard_derivatives\n \
+                    \           float afwidth = length(vec2(dFdx(value), dFdy(value)))\
+                    \ * 0.70710678118654757;\n            return smoothstep(threshold-afwidth,\
+                    \ threshold+afwidth, value);\n        #else\n            return\
+                    \ step(threshold, value);\n        #endif  \n    #else\n     \
+                    \   return step(threshold, value);\n    #endif\n}"
+            extensions: OES_standard_derivatives
+    patterns-dots:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: "Collection of functions to draw dot patterns that animate\
+                \ between zoom levels. To learn more about patterns check [this chapter\
+                \ from the Book of Shaders](https://thebookofshaders.com/09/)    \n"
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        mix:
+        - space-tile
+        - tiling-brick
+        - shapes-circle
+        shaders:
+            blocks:
+                global: "// Interpolated dot patern between zooms attached to tile\
+                    \ coords\nfloat TileDots(float scale, float size) {\n    // Beginning\
+                    \ of the transition\n    vec2 IN = brick(getTileCoords()*scale,2.);\n\
+                    \    float A = circleDF(vec2(0.5)-IN)*1.8;\n    //\n    // If\
+                    \ over 18. add an end B to transition with\n    float d = 0.0;\n\
+                    \    if (u_map_position.z < 18.) {\n        vec2 OUT = fract(getTileCoords()*scale*2.);\n\
+                    \        float B = circleDF(vec2(0.25)-OUT)*5.;\n        B = min(B,\
+                    \ circleDF(vec2(0.75,0.25)-OUT)*5.);\n        B = min(B, circleDF(vec2(0.5,0.75)-OUT)*5.);\n\
+                    \        B = min(B, circleDF(vec2(0.,0.75)-OUT)*5.);\n       \
+                    \ B = min(B, circleDF(vec2(1.,0.75)-OUT)*5.);\n        d = mix(A,\
+                    \ B, pow(fract(u_map_position.z),10.));\n    } else {\n      \
+                    \  d = A;\n    }\n    //\n    // Use the antialias step to make\
+                    \ a shape from the DF\n    return aastep(size,d);;\n}"
+    polygons-dots:
+        base: polygons
+        mix:
+        - patterns-dots
+        shaders:
+            blocks:
+                color: color.rgb = mix(color.rgb, DOTS_COLOR, TileDots(DOTS_SCALE,
+                    DOTS_SIZE));
+            defines:
+                DOTS_COLOR: vec3(0.212,0.302,0.431)
+                DOTS_SCALE: 10.0
+                DOTS_SIZE: 0.41
+    shapes-circle:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Collection of functions to draw circles. To learn more about
+                how to make shapes on shaders go to From check [this chapter about
+                shapes from the Book of Shaders](https://thebookofshaders.com/07/)
+
+                '
+            examples:
+                lego:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/lego.png
+                    lines: 109-110
+                    url: https://tangrams.github.io/tangram-sandbox/styles/lego.yaml
+                nursery:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/nursery.png
+                    lines: 146
+                    url: https://tangrams.github.io/tangram-sandbox/styles/nursery.yaml
+                patterns:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/patterns.png
+                    lines: 146
+                    url: https://tangrams.github.io/tangram-sandbox/styles/patterns.yaml
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        mix: functions-aastep
+        shaders:
+            blocks:
+                global: "// get distance field of a Circle\n// ================================\n\
+                    float circleDF (vec2 st) {\n    return dot(st,st);\n}\n//\n//\
+                    \ Draw a circle in the middle of the ST space\n// ================================\n\
+                    float circle (vec2 st, float radius) {\n    return 1.-aastep(radius,\
+                    \ circleDF(st-vec2(0.5))*PI);\n}"
+            defines:
+                PI: 3.141592653589793
+    space-tile:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Get the position on the tile
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// Variant to be add to both vertex and fragments shaders\n\
+                    varying vec3 v_pos;\n//\n// Get the coordinates in tile space\n\
+                    // ================================\nvec2 getTileCoords() {\n\
+                    \    return fract(v_pos.xy);\n}\n"
+                position: '// Normalize the attribute position of a vertex
+
+                    v_pos = modelPosition().xyz;'
+    tiling-brick:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Repeats a coordinate space (`vec2 st`) in diferent brick-like
+                tiles N times (`float zoom`). For more information about tilling patterns
+                read [this chapter of The Book of Shaders](https://thebookofshaders.com/09/)
+
+                '
+            examples:
+                nursery:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/nursery.png
+                    lines: 99
+                    url: https://tangrams.github.io/tangram-sandbox/styles/nursery.yaml
+                patterns:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/patterns.png
+                    lines: 130
+                    url: https://tangrams.github.io/tangram-sandbox/styles/patterns.yaml
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "vec2 brick (vec2 st, float zoom) {\n    st *= zoom;\n   \
+                    \ // Here is where the offset is happening\n    st.x += step(1.,\
+                    \ mod(st.y,2.0)) * 0.5;\n    return fract(st);\n}"
