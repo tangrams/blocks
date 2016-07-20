@@ -160,3 +160,41 @@ These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **global**:
  + `float pulse (float x, float peak, float width) `
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [functions-zoom](http://tangrams.github.io/blocks/#functions-zoom) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions/zoom.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/functions/zoom.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/functions/zoom-full.yaml
+```
+
+
+These blocks uses a custom **shader**. These are the defaults **defines**:
+ - **ZOOM_END**: ```20.0```
+ - **ZOOM_MAX**: ```max(ZOOM_START, ZOOM_END)```
+ - **ZOOM_IN**: ```0.0```
+ - **ZOOM_OUT**: ```1.0```
+ - **ZOOM_START**: ```14.0```
+ - **ZOOM**: ```linear```
+
+These are the **shader blocks**:
+
+- **global**:
+ + `float zoom() `

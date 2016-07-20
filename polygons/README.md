@@ -252,38 +252,23 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **SHIMMERING_OUT**: ```20.0```
- - **SHIMMERING_SPEED**: ```0.1```
- - **SHIMMERING_MAX_ZOOM**: ```20.0```
- - **SHIMMERING_SCALE_IN**: ```10.0```
- - **SHIMMERING_SCALE_OUT**: ```10.0```
- - **SHIMMERING_IN**: ```14.0```
  - **SHIMMERING_BACKGROUND**: ```vec3(0.000,0.00,0.94)```
+ - **SHIMMERING_SPEED**: ```0.1```
+ - **SHIMMERING_SCALE**: ```10.0```
+ - **SHIMMERING_AMOUNT**: ```1.0```
 
 These are the **shader blocks**:
 
 - **color**:
 
 ```glsl
-float z = clamp(smoothstep(SHIMMERING_IN/SHIMMERING_MAX_ZOOM, SHIMMERING_OUT/SHIMMERING_MAX_ZOOM, max(u_map_position.z/SHIMMERING_MAX_ZOOM,0.)*0.9), 0., 1.);
-float scale = mix(SHIMMERING_SCALE_IN, SHIMMERING_SCALE_OUT, z);
-/*
-vec2 st = gl_FragCoord.xy/u_resolution.xy;
-st = (st-.5)*scale+ .5;
-if (u_resolution.y > u_resolution.x ) {
-    st.y *= u_resolution.y/u_resolution.x;
-} else {
-    st.x *= u_resolution.x/u_resolution.y;
-}
-*/
-vec2 st = getConstantCoords()*scale;
-
+vec2 st = getConstantCoords()*SHIMMERING_SCALE;
 vec2 s = skew(st);
 vec2 s_f = fract(s);
 float n = snoise(vec3(floor(s+step(s_f.x,s_f.y)*5.),u_time*SHIMMERING_SPEED));
 color.rgb = mix(color.rgb,
                 mix(SHIMMERING_BACKGROUND,color.rgb,n),
-                z);
+                SHIMMERING_AMOUNT);
 ```
 
 
