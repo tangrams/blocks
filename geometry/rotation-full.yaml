@@ -74,6 +74,6 @@ styles:
 
                     '
             defines:
-                ROTATION: PI*sin(u_time*ROTATION_MAX_SPEED)*ROTATION_AMOUNT
-                ROTATION_AMOUNT: 1.0
+                ROTATION: sin(u_time*ROTATION_MAX_SPEED)*ROTATION_RANGE
+                ROTATION_RANGE: PI
                 ROTATION_SPEED: 0.1

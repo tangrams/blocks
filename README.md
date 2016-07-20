@@ -1354,9 +1354,9 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **ROTATION_AMOUNT**: ```1.0```
+ - **ROTATION**: ```sin(u_time*ROTATION_MAX_SPEED)*ROTATION_RANGE```
  - **ROTATION_SPEED**: ```0.1```
- - **ROTATION**: ```PI*sin(u_time*ROTATION_MAX_SPEED)*ROTATION_AMOUNT```
+ - **ROTATION_RANGE**: ```PI```
 
 These are the **shader blocks**:
 
