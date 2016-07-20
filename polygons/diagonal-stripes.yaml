@@ -13,5 +13,5 @@ styles:
                 STRIPES_WIDTH: .5
             blocks:
                 color: |
-                    color.a = diagonalStripes(  (getTileCoords()*0.707)*(STRIPES_SCALE), 
+                    color.a = diagonalStripes(  (getTileCoords()*0.999)*floor(STRIPES_SCALE), 
                                                 STRIPES_WIDTH) * STRIPES_ALPHA;
