@@ -69,13 +69,9 @@ styles:
         mix: geometry-matrices
         shaders:
             blocks:
-                position: position.xyz = rotateX3D(clamp(smoothstep(TILT_IN/TILT_MAX_ZOOM,
-                    TILT_OUT/TILT_MAX_ZOOM, max(u_map_position.z/TILT_MAX_ZOOM,0.)*0.9),
-                    0., 1.)*HALF_PI) * position.xyz;
+                position: position.xyz = rotateX3D(TILT) * position.xyz;
             defines:
-                TILT_IN: 15.0
-                TILT_MAX_ZOOM: 20.0
-                TILT_OUT: 20.0
+                TILT: 0
     terrain-base:
         doc:
             author:

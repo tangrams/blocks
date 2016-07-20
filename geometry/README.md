@@ -244,20 +244,16 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **ROTATION_MAX_ZOOM**: ```20.0```
- - **ROTATION_OUT**: ```20.0```
- - **ROTATION_IN**: ```15.0```
- - **ROTATION_MAX_SPEED**: ```0.1```
+ - **ROTATION_AMOUNT**: ```1.0```
+ - **ROTATION_SPEED**: ```0.1```
+ - **ROTATION**: ```PI*sin(u_time*ROTATION_MAX_SPEED)*ROTATION_AMOUNT```
 
 These are the **shader blocks**:
 
 - **position**:
 
 ```glsl
-position.xyz = rotateZ3D(PI*
-                        sin(u_time*ROTATION_MAX_SPEED)*
-                        clamp(smoothstep(ROTATION_IN/ROTATION_MAX_ZOOM, ROTATION_OUT/ROTATION_MAX_ZOOM, max(u_map_position.z/ROTATION_MAX_ZOOM,0.)*0.9), 0., 1.)) * 
-                        position.xyz;
+position.xyz = rotateZ3D(ROTATION) * position.xyz;
 
 ```
 
@@ -299,16 +295,14 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **TILT_MAX_ZOOM**: ```20.0```
- - **TILT_IN**: ```15.0```
- - **TILT_OUT**: ```20.0```
+ - **TILT**: ```0```
 
 These are the **shader blocks**:
 
 - **position**:
 
 ```glsl
-position.xyz = rotateX3D(clamp(smoothstep(TILT_IN/TILT_MAX_ZOOM, TILT_OUT/TILT_MAX_ZOOM, max(u_map_position.z/TILT_MAX_ZOOM,0.)*0.9), 0., 1.)*HALF_PI) * position.xyz;
+position.xyz = rotateX3D(TILT) * position.xyz;
 ```
 
 

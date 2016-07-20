@@ -70,12 +70,10 @@ styles:
         mix: geometry-matrices
         shaders:
             blocks:
-                position: "position.xyz = rotateZ3D(PI*\n                        sin(u_time*ROTATION_MAX_SPEED)*\n\
-                    \                        clamp(smoothstep(ROTATION_IN/ROTATION_MAX_ZOOM,\
-                    \ ROTATION_OUT/ROTATION_MAX_ZOOM, max(u_map_position.z/ROTATION_MAX_ZOOM,0.)*0.9),\
-                    \ 0., 1.)) * \n                        position.xyz;\n"
+                position: 'position.xyz = rotateZ3D(ROTATION) * position.xyz;
+
+                    '
             defines:
-                ROTATION_IN: 15.0
-                ROTATION_MAX_SPEED: 0.1
-                ROTATION_MAX_ZOOM: 20.0
-                ROTATION_OUT: 20.0
+                ROTATION: PI*sin(u_time*ROTATION_MAX_SPEED)*ROTATION_AMOUNT
+                ROTATION_AMOUNT: 1.0
+                ROTATION_SPEED: 0.1
