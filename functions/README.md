@@ -168,6 +168,12 @@ These blocks uses a custom **shader**. These are the **shader blocks**:
 
 #### [functions-zoom](http://tangrams.github.io/blocks/#functions-zoom) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions/zoom.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+How it works?
+Well, you add it like any other block, by `import`ing it and then `mix`ing it to the style.
+Then you set the zooms wher should **start** and **end** the interpolation, setting the `defines`: `ZOOM_START` and `ZOOM_END`.
+Then you use the `zoom()` function... by default this function gives a number between 0 and 1. But you can change it to interpolate any thing (`floats`, `vec2`, `vec3`, `vec4` and even other functions). For that you Just need to change de `defines`: `ZOOM_IN`, and `ZOOM_OUT`.
+Another thing that can be change is the type of interpolation, de default is `linear`, but can be any of the [easing functions](#functions-easing). For it you need to change the s`define` of this block like this: `ZOOM: quadraticInOut`
+
 
 
 To import this block add the following url to your `import` list:
