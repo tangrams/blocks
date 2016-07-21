@@ -136,6 +136,8 @@ These are the **shader blocks**:
 
 #### [functions-pulse](http://tangrams.github.io/blocks/#functions-pulse) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions/pulse.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+This one dimensional shaping function made by Inigo Quiles in [this article](http://www.iquilezles.org/www/articles/functions/functions.htm).
+
 
 
 To import this block add the following url to your `import` list:
@@ -192,7 +194,7 @@ These blocks uses a custom **shader**. These are the defaults **defines**:
  - **ZOOM_IN**: ```0.0```
  - **ZOOM_OUT**: ```1.0```
  - **ZOOM_START**: ```14.0```
- - **ZOOM**: ```linear```
+ - **ZOOM_FNC**: ```linear```
 
 These are the **shader blocks**:
 

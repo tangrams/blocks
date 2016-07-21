@@ -2,7 +2,7 @@ import:
 - ../functions/pulse.yaml
 styles:
     functions-pulse:
-        doct:
+        doc:
             author:
                 name: Inigo Quiles
                 twitter: iquilezles
