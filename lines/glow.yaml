@@ -9,12 +9,13 @@ styles:
         blend: add
         shaders:
             defines:
+                PI: 3.1415926535897932384626433832795
                 GLOW_WIDTH: 0.5
                 GLOW_BRIGHTNESS: .25
-                GLOW_GLOW: .75
+                GLOW: .75
             blocks:
                 color: |
                     vec4 line_color = color;
                     color = vec4(0.0);
-                    color = mix(color, line_color*GLOW_BRIGHTNESS,pulse(.5,GLOW_WIDTH,v_texcoord.x));
-                    color += line_color*GLOW_BRIGHTNESS*GLOW_GLOW*sin(v_texcoord.x*3.145);
+                    color = mix(color, line_color*GLOW_BRIGHTNESS, pulse(.5,GLOW_WIDTH,v_texcoord.x));
+                    color += line_color*(sin(v_texcoord.x*PI)*GLOW);
