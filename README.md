@@ -180,6 +180,9 @@ import:
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
  - **CONTOURS_SCALE**: ```60.0```
+ - **CONTOURS_COLOR**: ```color```
+ - **CONTOURS_BACKGROUND_COLOR**: ```vec4(0.0)```
+ - **CONTOURS_OFFSET**: ```u_time*CONTOURS_SPEED```
  - **CONTOURS_SPEED**: ```-0.1```
 
 These are the **shader blocks**:
@@ -187,10 +190,10 @@ These are the **shader blocks**:
 - **color**:
 
 ```glsl
-color = mix(vec4(0.0),
-            color,
-            aastep( dot(normal,vec3(0.,0.,1.)),
-                    abs(sin(normal_elv_raster.a*3.1415*CONTOURS_SCALE+u_time*CONTOURS_SPEED))));
+color = mix(CONTOURS_BACKGROUND_COLOR,
+            CONTOURS_COLOR,
+            aastep( dot(normal, vec3(0.,0.,1.)),
+                    abs(sin(normal_elv_raster.a*3.1415*CONTOURS_SCALE+CONTOURS_OFFSET))));
 ```
 
 
