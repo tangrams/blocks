@@ -79,7 +79,6 @@ styles:
                 HALF_PI: 1.5707963267948966
                 PI: 3.141592653589793
     functions-zoom:
-        animated: true
         mix:
         - functions-easing
         oc:

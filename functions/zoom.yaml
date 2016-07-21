@@ -17,7 +17,6 @@ styles:
                 Then you use the `zoom()` function... by default this function gives a number between 0 and 1. But you can change it to interpolate any thing (`floats`, `vec2`, `vec3`, `vec4` and even other functions). For that you Just need to change de `defines`: `ZOOM_IN`, and `ZOOM_OUT`.
                 Another thing that can be change is the type of interpolation, de default is `linear`, but can be any of the [easing functions](#functions-easing). For it you need to change the s`define` of this block like this: `ZOOM: quadraticInOut`
         mix: [functions-easing]
-        animated: true
         shaders:
             defines:
                 ZOOM_START: 14.
