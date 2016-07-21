@@ -1,4 +1,5 @@
-import: ../functions/aastep.yaml
+import:
+- ../functions/aastep.yaml
 styles:
     functions-aastep:
         doc:
@@ -44,7 +45,8 @@ styles:
             licence: MIT
             tangram-version: 0.0.7
             version: 0.0.1
-        mix: functions-aastep
+        mix:
+        - functions-aastep
         shaders:
             blocks:
                 color: "color.rgb = mix(color.rgb,\n                OUTLINE_COLOR,\n\

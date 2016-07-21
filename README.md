@@ -1590,19 +1590,18 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **GLOW_WIDTH**: ```0.5```
+ - **GLOW_WIDTH**: ```0.4```
+ - **PI**: ```3.14159265359```
  - **GLOW_BRIGHTNESS**: ```0.25```
- - **GLOW_GLOW**: ```0.75```
 
 These are the **shader blocks**:
 
 - **color**:
 
 ```glsl
-vec4 line_color = color;
-color = vec4(0.0);
-color = mix(color, line_color*GLOW_BRIGHTNESS,pulse(.5,GLOW_WIDTH,v_texcoord.x));
-color += line_color*GLOW_BRIGHTNESS*GLOW_GLOW*sin(v_texcoord.x*3.145);
+vec4 glow_tmp_color = color;
+color = glow_tmp_color*(aastep(GLOW_WIDTH,1.-v_texcoord.x)*aastep(GLOW_WIDTH,v_texcoord.x));
+color += glow_tmp_color*(sin(v_texcoord.x*PI)*GLOW_BRIGHTNESS);
 ```
 
 

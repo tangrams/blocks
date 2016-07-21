@@ -1,4 +1,5 @@
-import: ../functions/aastep.yaml
+import: 
+    - ../functions/aastep.yaml
 
 styles:
     lines-outline:
@@ -21,7 +22,7 @@ styles:
                     img: https://tangrams.github.io/tangram-sandbox/styles/callejas.png
                     lines: 116
         base: lines
-        mix: functions-aastep
+        mix: [functions-aastep]
         texcoords: true
         shaders:
             defines:

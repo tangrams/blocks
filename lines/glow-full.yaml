@@ -1,38 +1,43 @@
 import:
-- ../functions/pulse.yaml
+- ../functions/aastep.yaml
 styles:
-    functions-pulse:
+    functions-aastep:
         doc:
             author:
-                name: Inigo Quiles
-                twitter: iquilezles
-            description: 'This one dimensional shaping function made by Inigo Quiles
-                in [this article](http://www.iquilezles.org/www/articles/functions/functions.htm).
+                name: Matt DesLauriers
+                twitter: mattdesl
+            description: 'AnitAliased ```step()``` function implemented by [Matt DesLauriers](https://twitter.com/mattdesl)
+                in this module <https://github.com/stackgl/glsl-aastep>
 
                 '
+            licence: MIT
             tangram-version: 0.0.7
             version: 0.0.1
         shaders:
             blocks:
-                global: "float pulse (float x, float peak, float width) {\n    x =\
-                    \ abs(x - peak);\n    if (x>width) return 0.0;\n    x /= width;\n\
-                    \    return 1.0 - x*x*(3.0-2.0*x);\n}"
+                global: "// AntiAliased Step function\n//=============================\n\
+                    float aastep(float threshold, float value) {\n    #ifdef TANGRAM_FRAGMENT_SHADER\n\
+                    \        #ifdef TANGRAM_EXTENSION_OES_standard_derivatives\n \
+                    \           float afwidth = length(vec2(dFdx(value), dFdy(value)))\
+                    \ * 0.70710678118654757;\n            return smoothstep(threshold-afwidth,\
+                    \ threshold+afwidth, value);\n        #else\n            return\
+                    \ step(threshold, value);\n        #endif  \n    #else\n     \
+                    \   return step(threshold, value);\n    #endif\n}"
+            extensions: OES_standard_derivatives
     lines-glow:
         base: lines
         blend: add
         mix:
-        - functions-pulse
+        - functions-aastep
         shaders:
             blocks:
-                color: 'vec4 line_color = color;
+                color: 'vec4 glow_tmp_color = color;
 
-                    color = vec4(0.0);
+                    color = glow_tmp_color*(aastep(GLOW_WIDTH,1.-v_texcoord.x)*aastep(GLOW_WIDTH,v_texcoord.x));
 
-                    color = mix(color, line_color*GLOW_BRIGHTNESS,pulse(.5,GLOW_WIDTH,v_texcoord.x));
-
-                    color += line_color*GLOW_BRIGHTNESS*GLOW_GLOW*sin(v_texcoord.x*3.145);'
+                    color += glow_tmp_color*(sin(v_texcoord.x*PI)*GLOW_BRIGHTNESS);'
             defines:
                 GLOW_BRIGHTNESS: 0.25
-                GLOW_GLOW: 0.75
-                GLOW_WIDTH: 0.5
+                GLOW_WIDTH: 0.4
+                PI: 3.141592653589793
         texcoords: true
