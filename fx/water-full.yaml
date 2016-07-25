@@ -104,8 +104,8 @@ styles:
                     \ - 0.85373472095314 * (a0*a0+h*h);\n\n    // Compute final noise\
                     \ value at P\n    vec3 g = vec3(0.0);\n    g.x  = a0.x  * x0.x\
                     \  + h.x  * x0.y;\n    g.yz = a0.yz * vec2(x1.x,x2.x) + h.yz *\
-                    \ vec2(x1.y,x2.y);\n    return 130.0 * dot(m, g);\n}\n\n//\n//\
-                    \ Simplex Noise\n//\nconst float F3 =  0.3333333;\nconst float\
+                    \ vec2(x1.y,x2.y);\n    return 130.0 * dot(m, g);\n}\n\n\n//\n\
+                    // Simplex Noise\n//\nconst float F3 =  0.3333333;\nconst float\
                     \ G3 =  0.1666667;\nfloat snoise (vec3 p) {\n    vec3 s = floor(p\
                     \ + dot(p, vec3(F3)));\n    vec3 x = p - s + dot(s, vec3(G3));\n\
                     \    vec3 e = step(vec3(0.0), x - x.yzx);\n    vec3 i1 = e*(1.0\

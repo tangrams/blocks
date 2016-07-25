@@ -108,11 +108,11 @@ styles:
         shaders:
             blocks:
                 global: "float zoom() {\n    return mix( ZOOM_IN, \n             \
-                    \   ZOOM_OUT, \n                clamp( smoothstep(  ZOOM_START,\
-                    \ \n                                    ZOOM_END, \n         \
-                    \                           u_map_position.z)/ZOOM_MAX, 0., 1.)\
-                    \ );\n}\n\nfloat zoomEase() {\n    return mix( ZOOM_IN, \n   \
-                    \             ZOOM_OUT, \n                ZOOM_FNC( (u_map_position.z-ZOOM_START)/(ZOOM_END-ZOOM_START)\
+                    \   ZOOM_OUT, \n                clamp( smoothstep(  ZOOM_START/ZOOM_MAX,\
+                    \ \n                                    ZOOM_END/ZOOM_MAX, \n\
+                    \                                    max(u_map_position.z/ZOOM_MAX,\
+                    \ 0.)), 0., 1.) );\n}\n\nfloat zoomEase() {\n    return mix( ZOOM_IN,\
+                    \ \n                ZOOM_OUT, \n                ZOOM_FNC( (u_map_position.z-ZOOM_START)/(ZOOM_END-ZOOM_START)\
                     \ ) );\n}"
             defines:
                 ZOOM_END: 20.0
