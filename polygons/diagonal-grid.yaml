@@ -10,7 +10,8 @@ styles:
             defines:
                 GRID_SCALE: 20.
                 GRID_WIDTH: .05
+                GRID_BACKGROUND_COLOR: vec3(0.212,0.302,0.431)
             blocks:
                 color: |
-                    color -= diagonalGrid(  fract(getTileCoords()*GRID_SCALE),
-                                            GRID_WIDTH);
+                    color.rgb = mix(color.rgb, GRID_COLOR, diagonalGrid(  fract(getTileCoords()*GRID_SCALE),
+                                            GRID_WIDTH));

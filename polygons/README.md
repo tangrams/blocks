@@ -24,6 +24,7 @@ import:
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
  - **GRID_SCALE**: ```20.0```
+ - **GRID_BACKGROUND_COLOR**: ```vec3(0.212,0.302,0.431)```
  - **GRID_WIDTH**: ```0.05```
 
 These are the **shader blocks**:
@@ -31,8 +32,8 @@ These are the **shader blocks**:
 - **color**:
 
 ```glsl
-color -= diagonalGrid(  fract(getTileCoords()*GRID_SCALE),
-                        GRID_WIDTH);
+color.rgb = mix(color.rgb, GRID_COLOR, diagonalGrid(  fract(getTileCoords()*GRID_SCALE),
+                        GRID_WIDTH));
 ```
 
 
