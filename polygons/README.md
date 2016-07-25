@@ -32,7 +32,7 @@ These are the **shader blocks**:
 - **color**:
 
 ```glsl
-color.rgb = mix(color.rgb, GRID_COLOR, diagonalGrid(  fract(getTileCoords()*GRID_SCALE),
+color.rgb = mix(color.rgb, GRID_BACKGROUND_COLOR, diagonalGrid(  fract(getTileCoords()*GRID_SCALE),
                         GRID_WIDTH));
 ```
 
