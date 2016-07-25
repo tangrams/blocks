@@ -109,6 +109,10 @@ These blocks uses a custom **shader**. These are the **shader blocks**:
  + `float noise (in float x) `
  + `float noise (vec2 xy) `
  + `float noise (vec3 xyz) `
+ + `vec3 mod289(vec3 x) `
+ + `vec2 mod289(vec2 x) `
+ + `vec3 permute(vec3 x) `
+ + `float snoise(vec2 v) `
  + `float snoise (vec3 p) `
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)

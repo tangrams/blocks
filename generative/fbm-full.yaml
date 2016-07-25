@@ -75,19 +75,57 @@ styles:
                     \                u.x),\n                    mix(random(n + dot(step,\
                     \ vec3(0,1,1))),\n                        random(n + dot(step,\
                     \ vec3(1,1,1))),\n                        u.x),\n            \
-                    \    u.y),\n            u.z);\n}\n//\n// Simplex Noise\n//\nconst\
-                    \ float F3 =  0.3333333;\nconst float G3 =  0.1666667;\nfloat\
-                    \ snoise (vec3 p) {\n    vec3 s = floor(p + dot(p, vec3(F3)));\n\
-                    \    vec3 x = p - s + dot(s, vec3(G3));\n    vec3 e = step(vec3(0.0),\
-                    \ x - x.yzx);\n    vec3 i1 = e*(1.0 - e.zxy);\n    vec3 i2 = 1.0\
-                    \ - e.zxy*(1.0 - e);\n    vec3 x1 = x - i1 + G3;\n    vec3 x2\
-                    \ = x - i2 + 2.0*G3;\n    vec3 x3 = x - 1.0 + 3.0*G3;\n    vec4\
-                    \ w, d;\n    w.x = dot(x, x);\n    w.y = dot(x1, x1);\n    w.z\
-                    \ = dot(x2, x2);\n    w.w = dot(x3, x3);\n    w = max(0.6 - w,\
-                    \ 0.0);\n    d.x = dot(random3(s), x);\n    d.y = dot(random3(s\
-                    \ + i1), x1);\n    d.z = dot(random3(s + i2), x2);\n    d.w =\
-                    \ dot(random3(s + 1.0), x3);\n    w *= w;\n    w *= w;\n    d\
-                    \ *= w;\n    return dot(d, vec4(52.0));\n}"
+                    \    u.y),\n            u.z);\n}\n\n// Description : GLSL 2D simplex\
+                    \ noise function\n//      Author : Ian McEwan, Ashima Arts\n//\
+                    \  Maintainer : ijm\n//     Lastmod : 20110822 (ijm)\n//     License\
+                    \ : \n//  Copyright (C) 2011 Ashima Arts. All rights reserved.\n\
+                    //  Distributed under the MIT License. See LICENSE file.\n// \
+                    \ https://github.com/ashima/webgl-noise\nvec3 mod289(vec3 x) {\
+                    \ return x - floor(x * (1.0 / 289.0)) * 289.0; }\nvec2 mod289(vec2\
+                    \ x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }\nvec3 permute(vec3\
+                    \ x) { return mod289(((x*34.0)+1.0)*x); }\nfloat snoise(vec2 v)\
+                    \ {\n\n    // Precompute values for skewed triangular grid\n \
+                    \   const vec4 C = vec4(0.211324865405187,\n                 \
+                    \       // (3.0-sqrt(3.0))/6.0\n                        0.366025403784439,\
+                    \  \n                        // 0.5*(sqrt(3.0)-1.0)\n        \
+                    \                -0.577350269189626,  \n                     \
+                    \   // -1.0 + 2.0 * C.x\n                        0.024390243902439);\
+                    \ \n                        // 1.0 / 41.0\n\n    // First corner\
+                    \ (x0)\n    vec2 i  = floor(v + dot(v, C.yy));\n    vec2 x0 =\
+                    \ v - i + dot(i, C.xx);\n\n    // Other two corners (x1, x2)\n\
+                    \    vec2 i1 = vec2(0.0);\n    i1 = (x0.x > x0.y)? vec2(1.0, 0.0):vec2(0.0,\
+                    \ 1.0);\n    vec2 x1 = x0.xy + C.xx - i1;\n    vec2 x2 = x0.xy\
+                    \ + C.zz;\n\n    // Do some permutations to avoid\n    // truncation\
+                    \ effects in permutation\n    i = mod289(i);\n    vec3 p = permute(\n\
+                    \            permute( i.y + vec3(0.0, i1.y, 1.0))\n          \
+                    \      + i.x + vec3(0.0, i1.x, 1.0 ));\n\n    vec3 m = max(0.5\
+                    \ - vec3(\n                        dot(x0,x0), \n            \
+                    \            dot(x1,x1), \n                        dot(x2,x2)\n\
+                    \                        ), 0.0);\n\n    m = m*m ;\n    m = m*m\
+                    \ ;\n\n    // Gradients: \n    //  41 pts uniformly over a line,\
+                    \ mapped onto a diamond\n    //  The ring size 17*17 = 289 is\
+                    \ close to a multiple \n    //      of 41 (41*7 = 287)\n\n   \
+                    \ vec3 x = 2.0 * fract(p * C.www) - 1.0;\n    vec3 h = abs(x)\
+                    \ - 0.5;\n    vec3 ox = floor(x + 0.5);\n    vec3 a0 = x - ox;\n\
+                    \n    // Normalise gradients implicitly by scaling m\n    // Approximation\
+                    \ of: m *= inversesqrt(a0*a0 + h*h);\n    m *= 1.79284291400159\
+                    \ - 0.85373472095314 * (a0*a0+h*h);\n\n    // Compute final noise\
+                    \ value at P\n    vec3 g = vec3(0.0);\n    g.x  = a0.x  * x0.x\
+                    \  + h.x  * x0.y;\n    g.yz = a0.yz * vec2(x1.x,x2.x) + h.yz *\
+                    \ vec2(x1.y,x2.y);\n    return 130.0 * dot(m, g);\n}\n\n//\n//\
+                    \ Simplex Noise\n//\nconst float F3 =  0.3333333;\nconst float\
+                    \ G3 =  0.1666667;\nfloat snoise (vec3 p) {\n    vec3 s = floor(p\
+                    \ + dot(p, vec3(F3)));\n    vec3 x = p - s + dot(s, vec3(G3));\n\
+                    \    vec3 e = step(vec3(0.0), x - x.yzx);\n    vec3 i1 = e*(1.0\
+                    \ - e.zxy);\n    vec3 i2 = 1.0 - e.zxy*(1.0 - e);\n    vec3 x1\
+                    \ = x - i1 + G3;\n    vec3 x2 = x - i2 + 2.0*G3;\n    vec3 x3\
+                    \ = x - 1.0 + 3.0*G3;\n    vec4 w, d;\n    w.x = dot(x, x);\n\
+                    \    w.y = dot(x1, x1);\n    w.z = dot(x2, x2);\n    w.w = dot(x3,\
+                    \ x3);\n    w = max(0.6 - w, 0.0);\n    d.x = dot(random3(s),\
+                    \ x);\n    d.y = dot(random3(s + i1), x1);\n    d.z = dot(random3(s\
+                    \ + i2), x2);\n    d.w = dot(random3(s + 1.0), x3);\n    w *=\
+                    \ w;\n    w *= w;\n    d *= w;\n    return dot(d, vec4(52.0));\n\
+                    }"
     generative-random:
         doc:
             author:
