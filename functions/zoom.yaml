@@ -28,9 +28,9 @@ styles:
                     float zoom() {
                         return mix( ZOOM_IN, 
                                     ZOOM_OUT, 
-                                    clamp( smoothstep(  ZOOM_START, 
-                                                        ZOOM_END, 
-                                                        u_map_position.z)/ZOOM_MAX, 0., 1.) );
+                                    clamp( smoothstep(  ZOOM_START/ZOOM_MAX, 
+                                                        ZOOM_END/ZOOM_MAX, 
+                                                        max(u_map_position.z/ZOOM_MAX, 0.)), 0., 1.) );
                     }
 
                     float zoomEase() {

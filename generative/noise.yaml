@@ -130,6 +130,7 @@ styles:
                         return 130.0 * dot(m, g);
                     }
 
+
                     //
                     // Simplex Noise
                     //
