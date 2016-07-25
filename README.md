@@ -45,7 +45,7 @@ To learn basic principles about shaders we recomend reading [The Book of shaders
 
 ## Want to contribute?
 
-If you have made a nice shader style you are proud of and want to share it, send me an email to <patricio@mapzen.com> or a DM to <@patriciogv> and I will be happy to help you make a **block** out of it. 
+If you have made a nice shader style you are proud of and want to share it, send me an email to <patricio@mapzen.com> or a DM to [@patriciogv](https://twitter.com/patriciogv) and I will be happy to help you make a **block** out of it. 
 
 ## Blocks description
 <hr>
