@@ -14,12 +14,17 @@ styles:
                 SHIMMERING_BACKGROUND: vec3(0.000,0.00,0.94)
                 SHIMMERING_SPEED: 0.1
                 SHIMMERING_AMOUNT: 1.
+                SHIMMERING_ANIMATED: true
             blocks:
                 color: |
                     vec2 st = getConstantCoords()*SHIMMERING_SCALE;
                     vec2 s = skew(st);
                     vec2 s_f = fract(s);
+                    #ifdef SHIMMERING_ANIMATED
                     float n = snoise(vec3(floor(s+step(s_f.x,s_f.y)*5.),u_time*SHIMMERING_SPEED));
+                    #else
+                    float n = snoise(floor(s+step(s_f.x,s_f.y)*5.));
+                    #endif
                     color.rgb = mix(color.rgb,
                                     mix(SHIMMERING_BACKGROUND,color.rgb,n),
                                     SHIMMERING_AMOUNT);

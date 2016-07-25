@@ -39,7 +39,9 @@ styles:
                 NUM_OCTAVES: 3
 ```
 
-The rest of the building blocks just provide reusable GLSL functions into the `global` shader block. To learn more about [Shaders inside Tangram read this documentation]. 
+The rest of the building blocks just provide reusable GLSL functions into the `global` shader block. 
+
+To learn basic principles about shaders we recomend reading [The Book of shaders](http://thebookofshaders.com/), if you are interested to learn about [shaders inside Tangram read tangram documentation about that subject](https://mapzen.com/documentation/tangram/Shaders-Overview/).
 
 ## Want to contribute?
 

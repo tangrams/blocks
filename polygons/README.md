@@ -244,9 +244,10 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **SHIMMERING_BACKGROUND**: ```vec3(0.000,0.00,0.94)```
+ - **SHIMMERING_ANIMATED**: ```True```
  - **SHIMMERING_SPEED**: ```0.1```
  - **SHIMMERING_SCALE**: ```10.0```
+ - **SHIMMERING_BACKGROUND**: ```vec3(0.000,0.00,0.94)```
  - **SHIMMERING_AMOUNT**: ```1.0```
 
 These are the **shader blocks**:
@@ -257,7 +258,11 @@ These are the **shader blocks**:
 vec2 st = getConstantCoords()*SHIMMERING_SCALE;
 vec2 s = skew(st);
 vec2 s_f = fract(s);
+#ifdef SHIMMERING_ANIMATED
 float n = snoise(vec3(floor(s+step(s_f.x,s_f.y)*5.),u_time*SHIMMERING_SPEED));
+#else
+float n = snoise(floor(s+step(s_f.x,s_f.y)*5.));
+#endif
 color.rgb = mix(color.rgb,
                 mix(SHIMMERING_BACKGROUND,color.rgb,n),
                 SHIMMERING_AMOUNT);

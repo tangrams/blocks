@@ -39,7 +39,9 @@ styles:
                 NUM_OCTAVES: 3
 ```
 
-The rest of the building blocks just provide reusable GLSL functions into the `global` shader block. To learn more about [Shaders inside Tangram read this documentation]. 
+The rest of the building blocks just provide reusable GLSL functions into the `global` shader block. 
+
+To learn basic principles about shaders we recomend reading [The Book of shaders](http://thebookofshaders.com/), if you are interested to learn about [shaders inside Tangram read tangram documentation about that subject](https://mapzen.com/documentation/tangram/Shaders-Overview/).
 
 ## Want to contribute?
 
@@ -846,11 +848,9 @@ These blocks uses a custom **shader**. These are the **shader blocks**:
 
 #### [functions-zoom](http://tangrams.github.io/blocks/#functions-zoom) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions/zoom.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-How it works?
-Well, you add it like any other block, by `import`ing it and then `mix`ing it to the style.
-Then you set the zooms wher should **start** and **end** the interpolation, setting the `defines`: `ZOOM_START` and `ZOOM_END`.
-Then you use the `zoom()` function... by default this function gives a number between 0 and 1. But you can change it to interpolate any thing (`floats`, `vec2`, `vec3`, `vec4` and even other functions). For that you Just need to change de `defines`: `ZOOM_IN`, and `ZOOM_OUT`.
-Another thing that can be change is the type of interpolation, de default is `linear`, but can be any of the [easing functions](#functions-easing). For it you need to change the s`define` of this block like this: `ZOOM: quadraticInOut`
+when you mix this block to another block you can use the functions `zoom()` or `zoomEase()`. Both will help you to interpolate any values between the zooms `ZOOM_START` and `ZOOM_END`.
+By default `zoom()` and `zoomEase()` will return a `float `number between 0 and 1. But you can change it to interpolate any thing! Like `floats`, `vec2`, `vec3`, `vec4` and even other functions! For that you just need to change de `defines`: `ZOOM_IN`, and `ZOOM_OUT` to what ever you want to interpolate.
+`zoom()` use the cuadratic interpolation of `smoothstep()` but you can use `zoomEase()` to specify what type of **easing interpolation** you prefere. Just change the default `linear` function for any [easing functions describe here](#functions-easing) in the `ZOOM_FNC` define. Ex: `ZOOM_FNC: quadraticInOut`
 
 
 
@@ -884,6 +884,7 @@ These are the **shader blocks**:
 
 - **global**:
  + `float zoom() `
+ + `float zoomEase() `
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
@@ -2338,9 +2339,10 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **SHIMMERING_BACKGROUND**: ```vec3(0.000,0.00,0.94)```
+ - **SHIMMERING_ANIMATED**: ```True```
  - **SHIMMERING_SPEED**: ```0.1```
  - **SHIMMERING_SCALE**: ```10.0```
+ - **SHIMMERING_BACKGROUND**: ```vec3(0.000,0.00,0.94)```
  - **SHIMMERING_AMOUNT**: ```1.0```
 
 These are the **shader blocks**:
@@ -2351,7 +2353,11 @@ These are the **shader blocks**:
 vec2 st = getConstantCoords()*SHIMMERING_SCALE;
 vec2 s = skew(st);
 vec2 s_f = fract(s);
+#ifdef SHIMMERING_ANIMATED
 float n = snoise(vec3(floor(s+step(s_f.x,s_f.y)*5.),u_time*SHIMMERING_SPEED));
+#else
+float n = snoise(floor(s+step(s_f.x,s_f.y)*5.));
+#endif
 color.rgb = mix(color.rgb,
                 mix(SHIMMERING_BACKGROUND,color.rgb,n),
                 SHIMMERING_AMOUNT);
