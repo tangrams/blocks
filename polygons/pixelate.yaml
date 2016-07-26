@@ -6,10 +6,11 @@ styles:
     polygons-pixelate:
         mix: [space-tile, generative-random]
         shaders:
+            defines:
+                PIXELATE_SCALE: 40.
+                PIXELATE_BACKGROUND: color.rgb*.5
             blocks:
                 filter: |
-                    float gridSize = 40.;
-                    float gradDarker = .7;
                     color.rgb = mix(color.rgb,
-                                    color.rgb*gradDarker,
-                                    random(floor(getTileCoords()*gridSize)));
+                                    PIXELATE_BACKGROUND,
+                                    random(floor(getTileCoords()*PIXELATE_SCALE)));
