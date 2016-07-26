@@ -11,7 +11,7 @@ styles:
         shaders:
             defines:
                 SHIMMERING_SCALE: 10.
-                SHIMMERING_BACKGROUND: vec3(0.000,0.00,0.94)
+                SHIMMERING_BACKGROUND: color.rgb*.5
                 SHIMMERING_SPEED: 0.1
                 SHIMMERING_AMOUNT: 1.
                 SHIMMERING_ANIMATED: true

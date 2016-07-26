@@ -140,7 +140,7 @@ styles:
             defines:
                 SHIMMERING_AMOUNT: 1.0
                 SHIMMERING_ANIMATED: true
-                SHIMMERING_BACKGROUND: vec3(0.000,0.00,0.94)
+                SHIMMERING_BACKGROUND: color.rgb*.5
                 SHIMMERING_SCALE: 10.0
                 SHIMMERING_SPEED: 0.1
     space-constant:

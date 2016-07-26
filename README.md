@@ -1473,7 +1473,7 @@ import:
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
  - **CHEVRON_SIZE**: ```1.0```
- - **CHEVRON_COLOR**: ```vec3(1., 0., 0.)```
+ - **CHEVRON_COLOR**: ```color.rgb*.5```
  - **CHEVRON_ALPHA**: ```1.0```
  - **CHEVRON_SCALE**: ```1.0```
 
@@ -1650,7 +1650,7 @@ import:
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
  - **OUTLINE_WIDTH**: ```0.1```
- - **OUTLINE_COLOR**: ```vec3(1.)```
+ - **OUTLINE_COLOR**: ```color.rgb*.5```
 
 These are the **shader blocks**:
 
@@ -2115,7 +2115,7 @@ import:
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
  - **GRID_SCALE**: ```20.0```
- - **GRID_BACKGROUND_COLOR**: ```vec3(0.212,0.302,0.431)```
+ - **GRID_BACKGROUND_COLOR**: ```color.rgb*.5```
  - **GRID_WIDTH**: ```0.05```
 
 These are the **shader blocks**:
@@ -2198,7 +2198,7 @@ import:
 These blocks uses a custom **shader**. These are the defaults **defines**:
  - **DOTS_SIZE**: ```0.41```
  - **DOTS_SCALE**: ```10.0```
- - **DOTS_COLOR**: ```vec3(0.212,0.302,0.431)```
+ - **DOTS_COLOR**: ```color.rgb*.5```
 
 These are the **shader blocks**:
 
@@ -2339,7 +2339,7 @@ These blocks uses a custom **shader**. These are the defaults **defines**:
  - **SHIMMERING_ANIMATED**: ```True```
  - **SHIMMERING_SPEED**: ```0.1```
  - **SHIMMERING_SCALE**: ```10.0```
- - **SHIMMERING_BACKGROUND**: ```vec3(0.000,0.00,0.94)```
+ - **SHIMMERING_BACKGROUND**: ```color.rgb*.5```
  - **SHIMMERING_AMOUNT**: ```1.0```
 
 These are the **shader blocks**:

@@ -26,7 +26,7 @@ import:
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
  - **CHEVRON_SIZE**: ```1.0```
- - **CHEVRON_COLOR**: ```vec3(1., 0., 0.)```
+ - **CHEVRON_COLOR**: ```color.rgb*.5```
  - **CHEVRON_ALPHA**: ```1.0```
  - **CHEVRON_SCALE**: ```1.0```
 
@@ -203,7 +203,7 @@ import:
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
  - **OUTLINE_WIDTH**: ```0.1```
- - **OUTLINE_COLOR**: ```vec3(1.)```
+ - **OUTLINE_COLOR**: ```color.rgb*.5```
 
 These are the **shader blocks**:
 

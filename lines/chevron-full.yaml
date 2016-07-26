@@ -18,7 +18,7 @@ styles:
                     \ * CHEVRON_SCALE)*CHEVRON_SIZE));"
             defines:
                 CHEVRON_ALPHA: 1.0
-                CHEVRON_COLOR: vec3(1., 0., 0.)
+                CHEVRON_COLOR: color.rgb*.5
                 CHEVRON_SCALE: 1.0
                 CHEVRON_SIZE: 1.0
         texcoords: true

@@ -13,7 +13,7 @@ styles:
         texcoords: true
         shaders:
             defines:
-                CHEVRON_COLOR: vec3(1., 0., 0.) 
+                CHEVRON_COLOR: color.rgb*.5
                 CHEVRON_ALPHA: 1. 
                 CHEVRON_SIZE: 1.
                 CHEVRON_SCALE: 1.

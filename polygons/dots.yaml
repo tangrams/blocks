@@ -7,7 +7,7 @@ styles:
         mix: [patterns-dots]
         shaders:
             defines:
-                DOTS_COLOR: vec3(0.212,0.302,0.431)
+                DOTS_COLOR: color.rgb*.5
                 DOTS_SCALE: 10.
                 DOTS_SIZE: 0.41
             blocks:
