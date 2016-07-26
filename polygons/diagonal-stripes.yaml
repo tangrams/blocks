@@ -8,10 +8,10 @@ styles:
         mix: [patterns-stripes, space-tile]
         shaders:
             defines:
-                STRIPES_ALPHA: .5
+                STRIPES_ALPHA: 1.
                 STRIPES_SCALE: 2.
                 STRIPES_WIDTH: .5
             blocks:
                 color: |
-                    color.a = diagonalStripes(  (getTileCoords()*0.999)*floor(STRIPES_SCALE), 
+                    color.a = diagonalStripes( (getTileCoords()*0.999)*floor(STRIPES_SCALE), 
                                                 STRIPES_WIDTH) * STRIPES_ALPHA;
