@@ -31,7 +31,7 @@ styles:
                     \                             6.0)-3.0)-1.0,\n               \
                     \      0.0,\n                     1.0 );\n    rgb = rgb*rgb*(3.0-2.0*rgb);\n\
                     \    return c.z * mix(vec3(1.0), rgb, c.y);\n}"
-    lines-stripes:
+    lines-rainbox:
         base: lines
         doc:
             author:
@@ -40,15 +40,6 @@ styles:
             description: 'Apply a rainbow color pattern to a line
 
                 '
-            examples:
-                crosshatch:
-                    img: https://tangrams.github.io/tangram-sandbox/styles/crosshatch.png
-                    lines: 111
-                    url: https://tangrams.github.io/tangram-sandbox/styles/crosshatch.yaml
-                pericoli:
-                    img: https://tangrams.github.io/tangram-sandbox/styles/pericoli.png
-                    lines: 157
-                    url: https://tangrams.github.io/tangram-sandbox/styles/pericoli.yaml
             licence: MIT
             tangram-version: 0.0.7
             version: 0.0.1

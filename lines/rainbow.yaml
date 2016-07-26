@@ -1,7 +1,7 @@
 import:
     - ../color/conversion.yaml
 styles:
-    lines-stripes:
+    lines-rainbox:
         doc:
             author: 
                 name: Patricio Gonzalez Vivo
@@ -11,15 +11,6 @@ styles:
             licence: MIT
             description: |
                 Apply a rainbow color pattern to a line
-            examples:
-                crosshatch:
-                    url: https://tangrams.github.io/tangram-sandbox/styles/crosshatch.yaml
-                    img: https://tangrams.github.io/tangram-sandbox/styles/crosshatch.png
-                    lines: 111 
-                pericoli:
-                    url: https://tangrams.github.io/tangram-sandbox/styles/pericoli.yaml
-                    img: https://tangrams.github.io/tangram-sandbox/styles/pericoli.png
-                    lines: 157
         base: lines
         mix: [color-conversion]
         texcoords: true
