@@ -1,7 +1,7 @@
 import:
     - ../color/conversion.yaml
 styles:
-    lines-rainbox:
+    lines-rainbow:
         doc:
             author: 
                 name: Patricio Gonzalez Vivo

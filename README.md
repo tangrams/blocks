@@ -1675,7 +1675,7 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [lines-rainbox](http://tangrams.github.io/blocks/#lines-rainbox) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/rainbow.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+#### [lines-rainbow](http://tangrams.github.io/blocks/#lines-rainbow) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/rainbow.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Apply a rainbow color pattern to a line
 

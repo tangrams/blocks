@@ -31,7 +31,7 @@ styles:
                     \                             6.0)-3.0)-1.0,\n               \
                     \      0.0,\n                     1.0 );\n    rgb = rgb*rgb*(3.0-2.0*rgb);\n\
                     \    return c.z * mix(vec3(1.0), rgb, c.y);\n}"
-    lines-rainbox:
+    lines-rainbow:
         base: lines
         doc:
             author:
