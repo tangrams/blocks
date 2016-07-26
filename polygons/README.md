@@ -64,7 +64,7 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **STRIPES_ALPHA**: ```0.5```
+ - **STRIPES_ALPHA**: ```1.0```
  - **STRIPES_SCALE**: ```2.0```
  - **STRIPES_WIDTH**: ```0.5```
 
@@ -73,7 +73,7 @@ These are the **shader blocks**:
 - **color**:
 
 ```glsl
-color.a = diagonalStripes(  (getTileCoords()*0.999)*floor(STRIPES_SCALE), 
+color.a = diagonalStripes( (getTileCoords()*0.999)*floor(STRIPES_SCALE), 
                             STRIPES_WIDTH) * STRIPES_ALPHA;
 ```
 
@@ -205,16 +205,18 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
+ - **PIXELATE_BACKGROUND**: ```color.rgb*.5```
+ - **PIXELATE_SCALE**: ```40.0```
 
-- **filter**:
+These are the **shader blocks**:
+
+- **color**:
 
 ```glsl
-float gridSize = 40.;
-float gradDarker = .7;
 color.rgb = mix(color.rgb,
-                color.rgb*gradDarker,
-                random(floor(getTileCoords()*gridSize)));
+                PIXELATE_BACKGROUND,
+                random(floor(getTileCoords()*PIXELATE_SCALE)));
 ```
 
 

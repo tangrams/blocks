@@ -38,9 +38,11 @@ styles:
         - generative-random
         shaders:
             blocks:
-                filter: "float gridSize = 40.;\nfloat gradDarker = .7;\ncolor.rgb\
-                    \ = mix(color.rgb,\n                color.rgb*gradDarker,\n  \
-                    \              random(floor(getTileCoords()*gridSize)));"
+                color: "color.rgb = mix(color.rgb,\n                PIXELATE_BACKGROUND,\n\
+                    \                random(floor(getTileCoords()*PIXELATE_SCALE)));"
+            defines:
+                PIXELATE_BACKGROUND: color.rgb*.5
+                PIXELATE_SCALE: 40.0
     space-tile:
         doc:
             author:

@@ -164,10 +164,10 @@ styles:
         - space-tile
         shaders:
             blocks:
-                color: "color.a = diagonalStripes(  (getTileCoords()*0.999)*floor(STRIPES_SCALE),\
+                color: "color.a = diagonalStripes( (getTileCoords()*0.999)*floor(STRIPES_SCALE),\
                     \ \n                            STRIPES_WIDTH) * STRIPES_ALPHA;"
             defines:
-                STRIPES_ALPHA: 0.5
+                STRIPES_ALPHA: 1.0
                 STRIPES_SCALE: 2.0
                 STRIPES_WIDTH: 0.5
     space-tile:
