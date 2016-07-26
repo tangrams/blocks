@@ -10,7 +10,7 @@ styles:
                 PIXELATE_SCALE: 40.
                 PIXELATE_BACKGROUND: color.rgb*.5
             blocks:
-                filter: |
+                color: |
                     color.rgb = mix(color.rgb,
                                     PIXELATE_BACKGROUND,
                                     random(floor(getTileCoords()*PIXELATE_SCALE)));
