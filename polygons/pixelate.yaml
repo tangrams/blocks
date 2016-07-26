@@ -4,6 +4,7 @@ import:
 
 styles:
     polygons-pixelate:
+        base: polygons
         mix: [space-tile, generative-random]
         shaders:
             defines:
