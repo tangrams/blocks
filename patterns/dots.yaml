@@ -2,6 +2,7 @@ import:
     - ../tiling/brick.yaml
     - ../space/tile.yaml
     - ../shapes/circle.yaml
+    - ../functions/easing.yaml
     
 styles:
     patterns-dots:
@@ -14,8 +15,10 @@ styles:
             licence: MIT
             description: |  
                 Collection of functions to draw dot patterns that animate between zoom levels. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)    
-        mix: [space-tile, tiling-brick, shapes-circle]
+        mix: [space-tile, tiling-brick, shapes-circle, functions-easing]
         shaders:
+            defines:
+                DOTS_FNC: linear
             blocks: 
                 global: |
                     // Interpolated dot patern between zooms attached to tile coords
@@ -33,7 +36,7 @@ styles:
                             B = min(B, circleDF(vec2(0.5,0.75)-OUT)*5.);
                             B = min(B, circleDF(vec2(0.,0.75)-OUT)*5.);
                             B = min(B, circleDF(vec2(1.,0.75)-OUT)*5.);
-                            d = mix(A, B, pow(fract(u_map_position.z),10.));
+                            d = mix(A, B, linear(fract(u_map_position.z)));
                         } else {
                             d = A;
                         }

@@ -24,7 +24,10 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
+ - **DOTS_FNC**: ```linear```
+
+These are the **shader blocks**:
 
 - **global**:
  + `float TileDots(float scale, float size) `
