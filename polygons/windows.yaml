@@ -1,5 +1,6 @@
 import:
     - ../geometry/normal.yaml
+    - ../generative/random.yaml
 
 styles:
     polygons-windows:
@@ -19,7 +20,7 @@ styles:
                     lines: 128
         texcoords: true
         base: polygons
-        mix: [geometry-normal]
+        mix: [geometry-normal, generative-random]
         material:
             shininess: 1.
             specular: 0.0
