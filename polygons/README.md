@@ -114,7 +114,10 @@ These are the **shader blocks**:
 - **color**:
 
 ```glsl
-color.rgb = mix(color.rgb, DOTS_COLOR, TileDots(DOTS_SCALE, DOTS_SIZE));
+color.rgb = mix(color.rgb, 
+                DOTS_COLOR, 
+                aastep( DOTS_SIZE,
+                        circleDF(vec2(0.5)-brick(getTileCoords()*DOTS_SCALE,2.)));
 ```
 
 

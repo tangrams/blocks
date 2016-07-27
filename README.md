@@ -1840,10 +1840,7 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **DOTS_FNC**: ```linear```
-
-These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **global**:
  + `float TileDots(float scale, float size) `
@@ -2264,7 +2261,10 @@ These are the **shader blocks**:
 - **color**:
 
 ```glsl
-color.rgb = mix(color.rgb, DOTS_COLOR, TileDots(DOTS_SCALE, DOTS_SIZE));
+color.rgb = mix(color.rgb, 
+                DOTS_COLOR, 
+                aastep( DOTS_SIZE,
+                        circleDF(vec2(0.5)-brick(getTileCoords()*DOTS_SCALE,2.)));
 ```
 
 
