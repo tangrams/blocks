@@ -10,13 +10,14 @@ styles:
             licence: MIT
             description: |  
                 Scale geometries in `z` acording to the zoom level
-        mix: functions-map
+        mix: [functions-zoom]
         shaders:
             defines:
                 ZOOM_START: 15.0
                 ZOOM_END: 20.0
-                ZOOM_LINEAR_FACTOR: 2.0
+                HEIGHT: zoom()
+                HEIGHT_MIN: 1.0
+                HEIGHT_MAX: 2.5
             blocks:
                 position: |
-                    float zoom = map(u_map_position.z,ZOOM_START,ZOOM_END,1.,0.);
-                    position.z *= max(1.,.5+ZOOM_LINEAR_FACTOR*zoom);
+                    position.z *= max(HEIGHT_MIN,HEIGHT_MAX*HEIGHT);

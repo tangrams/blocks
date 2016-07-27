@@ -41,13 +41,14 @@ styles:
             licence: MIT
             tangram-version: 0.0.7
             version: 0.0.1
-        mix: functions-map
+        mix:
+        - functions-zoom
         shaders:
             blocks:
-                position: 'float zoom = map(u_map_position.z,ZOOM_START,ZOOM_END,1.,0.);
-
-                    position.z *= max(1.,.5+ZOOM_LINEAR_FACTOR*zoom);'
+                position: position.z *= max(HEIGHT_MIN,HEIGHT_MAX*HEIGHT);
             defines:
+                HEIGHT: zoom()
+                HEIGHT_MAX: 2.5
+                HEIGHT_MIN: 1.0
                 ZOOM_END: 20.0
-                ZOOM_LINEAR_FACTOR: 2.0
                 ZOOM_START: 15.0

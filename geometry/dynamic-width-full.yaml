@@ -17,4 +17,8 @@ styles:
             version: 0.0.1
         shaders:
             blocks:
-                width: width *= 0.2+min(pow(position.z*0.006,2.),.6);
+                width: width *= min(WIDTH_MIN+(position.z*WIDTH_Z_SCALE)*(position.z*WIDTH_Z_SCALE),WIDTH_MAX);
+            defines:
+                WIDTH_MAX: 1.0
+                WIDTH_MIN: 0.2
+                WIDTH_Z_SCALE: 0.006

@@ -1152,17 +1152,18 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **ZOOM_LINEAR_FACTOR**: ```2.0```
  - **ZOOM_START**: ```15.0```
  - **ZOOM_END**: ```20.0```
+ - **HEIGHT_MAX**: ```2.5```
+ - **HEIGHT_MIN**: ```1.0```
+ - **HEIGHT**: ```zoom()```
 
 These are the **shader blocks**:
 
 - **position**:
 
 ```glsl
-float zoom = map(u_map_position.z,ZOOM_START,ZOOM_END,1.,0.);
-position.z *= max(1.,.5+ZOOM_LINEAR_FACTOR*zoom);
+position.z *= max(HEIGHT_MIN,HEIGHT_MAX*HEIGHT);
 ```
 
 
@@ -1194,12 +1195,17 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the defaults **defines**:
+ - **WIDTH_MIN**: ```0.2```
+ - **WIDTH_Z_SCALE**: ```0.006```
+ - **WIDTH_MAX**: ```1.0```
+
+These are the **shader blocks**:
 
 - **width**:
 
 ```glsl
-width *= 0.2+min(pow(position.z*0.006,2.),.6);
+width *= min(WIDTH_MIN+(position.z*WIDTH_Z_SCALE)*(position.z*WIDTH_Z_SCALE),WIDTH_MAX);
 ```
 
 

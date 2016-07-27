@@ -15,6 +15,10 @@ styles:
                     img: https://tangrams.github.io/tangram-sandbox/styles/blueprint.png
                     lines: 7-28
         shaders:
+            defines:
+                WIDTH_MIN: .2
+                WIDTH_MAX: 1.
+                WIDTH_Z_SCALE: 0.006
             blocks:
                 width: |
-                    width *= 0.2+min(pow(position.z*0.006,2.),.6);
+                    width *= min(WIDTH_MIN+(position.z*WIDTH_Z_SCALE)*(position.z*WIDTH_Z_SCALE),WIDTH_MAX);
