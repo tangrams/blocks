@@ -1,0 +1,29 @@
+import:
+    - ../generative/random.yaml
+
+styles:
+    lines-datastream:
+        base: lines
+        mix: [generative-random]
+        texcoords: true
+        shaders:
+            defines:
+                DATASTREAM_SPEED: 20.0 
+                DATASTREAM_ROADS: 5.0 
+                DATASTREAM_MARGIN: 0.4 
+                DATASTREAM_COLOR: vec3(1.)
+                DATASTREAM_AMOUNT: .8
+            blocks:
+                global: |
+                    float datastream_pattern(vec2 st, float v, float t) {
+                        float p = floor(st.y+v);
+                        return step(t, (random(p*.000001)+random(p))*.5 );
+                    }
+                color: |
+                    color.rgb = mix(color.rgb,
+                                    DATASTREAM_COLOR,
+                                    datastream_pattern( v_texcoord.xy, 
+                                                        u_time*(DATASTREAM_SPEED)*(-.5 * random(floor(v_texcoord.x*DATASTREAM_ROADS)) - .5), 
+                                                        DATASTREAM_AMOUNT )* 
+                                    (step(DATASTREAM_MARGIN,1.-fract(v_texcoord.x*DATASTREAM_ROADS))*
+                                     step(DATASTREAM_MARGIN,fract(v_texcoord.x*DATASTREAM_ROADS))));

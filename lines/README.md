@@ -93,6 +93,56 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
+#### [lines-datastream](http://tangrams.github.io/blocks/#lines-datastream) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/datastream.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/datastream.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/datastream-full.yaml
+```
+
+
+These blocks uses a custom **shader**. These are the defaults **defines**:
+ - **DATASTREAM_SPEED**: ```20.0```
+ - **DATASTREAM_ROADS**: ```5.0```
+ - **DATASTREAM_AMOUNT**: ```0.8```
+ - **DATASTREAM_COLOR**: ```vec3(1.)```
+ - **DATASTREAM_MARGIN**: ```0.4```
+
+These are the **shader blocks**:
+
+- **global**:
+ + `float datastream_pattern(vec2 st, float v, float t) `
+- **color**:
+
+```glsl
+color.rgb = mix(color.rgb,
+                DATASTREAM_COLOR,
+                datastream_pattern( v_texcoord.xy, 
+                                    u_time*(DATASTREAM_SPEED)*(-.5 * random(floor(v_texcoord.x*DATASTREAM_ROADS)) - .5), 
+                                    DATASTREAM_AMOUNT )* 
+                (step(DATASTREAM_MARGIN,1.-fract(v_texcoord.x*DATASTREAM_ROADS))*
+                 step(DATASTREAM_MARGIN,fract(v_texcoord.x*DATASTREAM_ROADS))));
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [lines-dots](http://tangrams.github.io/blocks/#lines-dots) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/dots.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Apply a dot pattern to a line
