@@ -32,7 +32,7 @@ styles:
         shaders:
             blocks:
                 color: "color.rgb = mix(color.rgb, \n                DOTS_COLOR, \n\
-                    \                aastep( DOTS_SIZE,\n                        circleDF(vec2(0.5)-brick(getTileCoords()*DOTS_SCALE,2.)));"
+                    \                aastep( DOTS_SIZE,\n                        circleDF(vec2(0.5)-brick(getTileCoords()*DOTS_SCALE,2.))*2.));"
             defines:
                 DOTS_COLOR: color.rgb*.5
                 DOTS_SCALE: 10.0

@@ -2264,7 +2264,7 @@ These are the **shader blocks**:
 color.rgb = mix(color.rgb, 
                 DOTS_COLOR, 
                 aastep( DOTS_SIZE,
-                        circleDF(vec2(0.5)-brick(getTileCoords()*DOTS_SCALE,2.)));
+                        circleDF(vec2(0.5)-brick(getTileCoords()*DOTS_SCALE,2.))*2.));
 ```
 
 
