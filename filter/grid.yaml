@@ -18,6 +18,7 @@ styles:
             GRID_AMOUNT: 
                 type: number
                 label: amount
+                step: 0.01
                 range: 
                     min: 0.
                     max: 1.
