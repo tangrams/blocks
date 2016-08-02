@@ -52,11 +52,13 @@ styles:
                 GRID_BLEND: ADD
         ui:
             GRID_AMOUNT:
+                label: amount
                 range:
                     max: 1.0
                     min: 0.0
-                type: float
+                type: number
             GRID_BLEND:
+                label: blend mode
                 type: dropdown
                 values:
                 - ADD

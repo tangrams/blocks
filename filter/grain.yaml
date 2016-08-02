@@ -20,7 +20,8 @@ styles:
                     lines: 29
         ui:
             GRAIN_AMOUNT: 
-                type: float
+                type: number
+                label: amount
                 range: 
                     min: 0.
                     max: 1.
