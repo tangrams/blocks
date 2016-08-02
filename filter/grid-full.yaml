@@ -21,30 +21,47 @@ styles:
         - patterns-grid
         shaders:
             blocks:
-                filter: '#ifdef GRID_ADD
+                filter: '#if GRID_BLEND == ADD
 
                     color.rgb += tileGrid()*GRID_AMOUNT;
 
                     #endif
 
-                    #ifdef GRID_SUBSTRACT
+                    #if GRID_BLEND == SUB
 
                     color.rgb -= tileGrid()*GRID_AMOUNT;
 
                     #endif
 
-                    #ifdef GRID_MULTIPLY
+                    #if GRID_BLEND == MULT
 
-                    color.rgb *= tileGrid()*GRID_AMOUNT;
+                    color.rgb *= (1.-tileGrid()*GRID_AMOUNT);
 
                     #endif
 
                     '
+                global: '#define ADD 0
+
+                    #define SUB 1
+
+                    #define MULT 2
+
+                    '
             defines:
-                GRID_ADD: true
                 GRID_AMOUNT: 0.2
-                GRID_MULTIPLY: false
-                GRID_SUBSTRACT: false
+                GRID_BLEND: ADD
+        ui:
+            GRID_AMOUNT:
+                range:
+                    max: 1.0
+                    min: 0.0
+                type: float
+            GRID_BLEND:
+                type: dropdown
+                values:
+                - ADD
+                - SUBSTRACT
+                - MULTIPLY
     patterns-grid:
         doc:
             author:

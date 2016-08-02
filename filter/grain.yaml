@@ -18,6 +18,12 @@ styles:
                     url: https://tangrams.github.io/tangram-sandbox/styles/grain.yaml
                     img: https://tangrams.github.io/tangram-sandbox/styles/grain.png
                     lines: 29
+        ui:
+            GRAIN_AMOUNT: 
+                type: float
+                range: 
+                    min: 0.
+                    max: 1.
         shaders:
             defines:
                 GRAIN_AMOUNT: .3

@@ -14,20 +14,32 @@ styles:
                 Apply a grid filter to the syle
                 <p>The amount can be set by the GRID_AMOUNT define [0.0~1.0]</p>
                 <p>Then you should choose between the modes: ```GRID_ADD```, ```GRID_SUBSTRACT``` and ```GRID_MULTIPLY```</p>
+        ui:
+            GRID_AMOUNT: 
+                type: float
+                range: 
+                    min: 0.
+                    max: 1.
+            GRID_BLEND: 
+                type: dropdown
+                values: ['ADD', 'SUBSTRACT', 'MULTIPLY']
         shaders:
             defines:
                 GRID_AMOUNT: .2
-                GRID_ADD: true
-                GRID_SUBSTRACT: false
-                GRID_MULTIPLY: false
+                GRID_BLEND: 'ADD'
             blocks:
+                global: |
+                    #define ADD 0
+                    #define SUB 1
+                    #define MULT 2
+                    
                 filter: |
-                    #ifdef GRID_ADD
+                    #if GRID_BLEND == ADD
                     color.rgb += tileGrid()*GRID_AMOUNT;
                     #endif
-                    #ifdef GRID_SUBSTRACT
+                    #if GRID_BLEND == SUB
                     color.rgb -= tileGrid()*GRID_AMOUNT;
                     #endif
-                    #ifdef GRID_MULTIPLY
-                    color.rgb *= tileGrid()*GRID_AMOUNT;
+                    #if GRID_BLEND == MULT
+                    color.rgb *= (1.-tileGrid()*GRID_AMOUNT);
                     #endif

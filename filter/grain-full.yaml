@@ -35,6 +35,12 @@ styles:
                     \      return 0.0;\n    #endif\n}\n"
             defines:
                 GRAIN_AMOUNT: 0.3
+        ui:
+            GRAIN_AMOUNT:
+                range:
+                    max: 1.0
+                    min: 0.0
+                type: float
     generative-fbm:
         doc:
             author:

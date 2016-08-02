@@ -471,23 +471,22 @@ import:
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
  - **GRID_AMOUNT**: ```0.2```
- - **GRID_SUBSTRACT**: ```False```
- - **GRID_ADD**: ```True```
- - **GRID_MULTIPLY**: ```False```
+ - **GRID_BLEND**: ```ADD```
 
 These are the **shader blocks**:
 
+- **global**:
 - **filter**:
 
 ```glsl
-#ifdef GRID_ADD
+#if GRID_BLEND == ADD
 color.rgb += tileGrid()*GRID_AMOUNT;
 #endif
-#ifdef GRID_SUBSTRACT
+#if GRID_BLEND == SUB
 color.rgb -= tileGrid()*GRID_AMOUNT;
 #endif
-#ifdef GRID_MULTIPLY
-color.rgb *= tileGrid()*GRID_AMOUNT;
+#if GRID_BLEND == MULT
+color.rgb *= (1.-tileGrid()*GRID_AMOUNT);
 #endif
 
 ```
