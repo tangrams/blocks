@@ -61,7 +61,7 @@ styles:
                         return aastep(DOTS_SIZE, x);
                     }
                     float stroke (in float x) {
-                        return aastep(DOTS_SIZE, x+DOTS_STROKE) - aastep(DOTS_SIZE, x);  
+                        return 1.-(aastep(DOTS_SIZE, x+DOTS_STROKE) - aastep(DOTS_SIZE, x));
                     }
                 color: |
                     color.rgb = mix(color.rgb, 

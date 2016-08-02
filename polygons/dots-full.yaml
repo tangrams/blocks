@@ -47,8 +47,8 @@ styles:
                     \                DOTS_TYPE( circleDF(vec2(0.5)-DOTS_TILE_STYLE(getTileCoords()*DOTS_SCALE,2.))*2.)\
                     \ );"
                 global: "float fill (in float x) {\n    return aastep(DOTS_SIZE, x);\n\
-                    }\nfloat stroke (in float x) {\n    return aastep(DOTS_SIZE, x+DOTS_STROKE)\
-                    \ - aastep(DOTS_SIZE, x);  \n}\n"
+                    }\nfloat stroke (in float x) {\n    return 1.-(aastep(DOTS_SIZE,\
+                    \ x+DOTS_STROKE) - aastep(DOTS_SIZE, x));\n}\n"
             defines:
                 DOTS_COLOR: color.rgb*.5
                 DOTS_SCALE: 10.0
