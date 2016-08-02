@@ -24,7 +24,23 @@ styles:
             blocks:
                 filter: '// Apply the grain in the amount defined on GRAIN_AMOUNT
 
+                    #if GRAIN_BLEND == ADD
+
+                    color.rgb += grain()*GRAIN_AMOUNT;
+
+                    #endif
+
+                    #if GRAIN_BLEND == SUBSTRACT
+
                     color.rgb -= grain()*GRAIN_AMOUNT;
+
+                    #endif
+
+                    #if GRAIN_BLEND == MULTIPLY
+
+                    color.rgb *= grain()*GRAIN_AMOUNT;
+
+                    #endif
 
                     '
                 global: "// Grain fractor on screen space with less concetration in\
@@ -34,7 +50,11 @@ styles:
                     \        return dot(st,st)+(fbm(pos*0.6)*0.1);\n    #else\n  \
                     \      return 0.0;\n    #endif\n}\n"
             defines:
+                ADD: '0'
                 GRAIN_AMOUNT: 0.3
+                GRAIN_BLEND: SUBSTRACT
+                MULTIPLY: '2'
+                SUBSTRACT: '1'
         ui:
             GRAIN_AMOUNT:
                 label: amount
@@ -43,6 +63,13 @@ styles:
                     min: 0.0
                     step: 0.01
                 type: number
+            GRAIN_BLEND:
+                label: blend mode
+                type: dropdown
+                values:
+                - ADD
+                - SUBSTRACT
+                - MULTIPLY
     generative-fbm:
         doc:
             author:

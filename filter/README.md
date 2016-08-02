@@ -26,7 +26,11 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
+ - **SUBSTRACT**: ```1```
+ - **MULTIPLY**: ```2```
+ - **ADD**: ```0```
  - **GRAIN_AMOUNT**: ```0.3```
+ - **GRAIN_BLEND**: ```SUBSTRACT```
 
 These are the **shader blocks**:
 
@@ -36,7 +40,15 @@ These are the **shader blocks**:
 
 ```glsl
 // Apply the grain in the amount defined on GRAIN_AMOUNT
+#if GRAIN_BLEND == ADD
+color.rgb += grain()*GRAIN_AMOUNT;
+#endif
+#if GRAIN_BLEND == SUBSTRACT
 color.rgb -= grain()*GRAIN_AMOUNT;
+#endif
+#if GRAIN_BLEND == MULTIPLY
+color.rgb *= grain()*GRAIN_AMOUNT;
+#endif
 
 ```
 
@@ -77,22 +89,24 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
+ - **SUBSTRACT**: ```1```
+ - **MULTIPLY**: ```2```
+ - **ADD**: ```0```
  - **GRID_AMOUNT**: ```0.2```
  - **GRID_BLEND**: ```ADD```
 
 These are the **shader blocks**:
 
-- **global**:
 - **filter**:
 
 ```glsl
 #if GRID_BLEND == ADD
 color.rgb += tileGrid()*GRID_AMOUNT;
 #endif
-#if GRID_BLEND == SUB
+#if GRID_BLEND == SUBSTRACT
 color.rgb -= tileGrid()*GRID_AMOUNT;
 #endif
-#if GRID_BLEND == MULT
+#if GRID_BLEND == MULTIPLY
 color.rgb *= (1.-tileGrid()*GRID_AMOUNT);
 #endif
 

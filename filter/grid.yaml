@@ -28,14 +28,13 @@ styles:
                 values: ['ADD', 'SUBSTRACT', 'MULTIPLY']
         shaders:
             defines:
+                ADD: '0'
+                SUBSTRACT: '1'
+                MULTIPLY: '2'
+                
                 GRID_AMOUNT: .2
                 GRID_BLEND: 'ADD'
-            blocks:
-                global: |
-                    #define ADD 0
-                    #define SUBSTRACT 1
-                    #define MULTIPLY 2
-                    
+            blocks:                    
                 filter: |
                     #if GRID_BLEND == ADD
                     color.rgb += tileGrid()*GRID_AMOUNT;

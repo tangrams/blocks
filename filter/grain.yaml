@@ -26,9 +26,18 @@ styles:
                     min: 0.
                     max: 1.
                     step: 0.01
+            GRAIN_BLEND: 
+                type: dropdown
+                label: 'blend mode'
+                values: ['ADD', 'SUBSTRACT', 'MULTIPLY']
         shaders:
             defines:
+                ADD: '0'
+                SUBSTRACT: '1'
+                MULTIPLY: '2'
+
                 GRAIN_AMOUNT: .3
+                GRAIN_BLEND: 'SUBSTRACT'
             blocks:
                 global: |
                     // Grain fractor on screen space with less concetration in the center
@@ -44,4 +53,12 @@ styles:
                     }
                 filter: |
                     // Apply the grain in the amount defined on GRAIN_AMOUNT
+                    #if GRAIN_BLEND == ADD
+                    color.rgb += grain()*GRAIN_AMOUNT;
+                    #endif
+                    #if GRAIN_BLEND == SUBSTRACT
                     color.rgb -= grain()*GRAIN_AMOUNT;
+                    #endif
+                    #if GRAIN_BLEND == MULTIPLY
+                    color.rgb *= grain()*GRAIN_AMOUNT;
+                    #endif

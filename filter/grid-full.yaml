@@ -27,29 +27,25 @@ styles:
 
                     #endif
 
-                    #if GRID_BLEND == SUB
+                    #if GRID_BLEND == SUBSTRACT
 
                     color.rgb -= tileGrid()*GRID_AMOUNT;
 
                     #endif
 
-                    #if GRID_BLEND == MULT
+                    #if GRID_BLEND == MULTIPLY
 
                     color.rgb *= (1.-tileGrid()*GRID_AMOUNT);
 
                     #endif
 
                     '
-                global: '#define ADD 0
-
-                    #define SUBSTRACT 1
-
-                    #define MULTIPLY 2
-
-                    '
             defines:
+                ADD: '0'
                 GRID_AMOUNT: 0.2
                 GRID_BLEND: ADD
+                MULTIPLY: '2'
+                SUBSTRACT: '1'
         ui:
             GRID_AMOUNT:
                 label: amount
