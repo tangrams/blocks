@@ -25,18 +25,71 @@ styles:
             extensions: OES_standard_derivatives
     polygons-dots:
         base: polygons
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Apply dot patterns to a polygon. To learn more about patterns
+                check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
         mix:
         - space-tile
         - tiling-brick
+        - tiling-tile
         - shapes-circle
         shaders:
             blocks:
                 color: "color.rgb = mix(color.rgb, \n                DOTS_COLOR, \n\
-                    \                aastep( DOTS_SIZE,\n                        circleDF(vec2(0.5)-brick(getTileCoords()*DOTS_SCALE,2.))*2.));"
+                    \                DOTS_TYPE( circleDF(vec2(0.5)-DOTS_TILE_STYLE(getTileCoords()*DOTS_SCALE,2.))*2.)\
+                    \ );"
+                global: "float fill (in float x) {\n    return aastep(DOTS_SIZE, x);\n\
+                    }\nfloat stroke (in float x) {\n    return aastep(DOTS_SIZE, x+DOTS_STROKE)\
+                    \ - aastep(DOTS_SIZE, x);  \n}\n"
             defines:
                 DOTS_COLOR: color.rgb*.5
                 DOTS_SCALE: 10.0
                 DOTS_SIZE: 0.41
+                DOTS_STROKE: 0.15
+                DOTS_TILE_STYLE: brick
+                DOTS_TYPE: fill
+        ui:
+            DOTS_SCALE:
+                label: Scale
+                range:
+                    max: 1000.0
+                    min: 1.0
+                    step: 1.0
+                type: number
+            DOTS_SIZE:
+                label: Size
+                range:
+                    max: 1.0
+                    min: 0.0
+                    step: 0.01
+                type: number
+            DOTS_STROKE:
+                label: Stroke
+                range:
+                    max: 1.0
+                    min: 0.0
+                    step: 0.01
+                type: number
+            DOTS_TILE_STYLE:
+                label: Tile type
+                type: dropdown
+                values:
+                - tile
+                - brick
+            DOTS_TYPE:
+                label: Type
+                type: dropdown
+                values:
+                - fill
+                - stroke
     shapes-circle:
         doc:
             author:
@@ -120,3 +173,21 @@ styles:
                 global: "vec2 brick (vec2 st, float zoom) {\n    st *= zoom;\n   \
                     \ // Here is where the offset is happening\n    st.x += step(1.,\
                     \ mod(st.y,2.0)) * 0.5;\n    return fract(st);\n}"
+    tiling-tile:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Repeats a coordinate space (`vec2 st`) in diferent brick-like
+                tiles N times (`float zoom`). For more information about tilling patterns
+                read [this chapter of The Book of Shaders](https://thebookofshaders.com/09/)
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// Repeats a coordinate space (st) in diferent tiles\n//\
+                    \ ================================\nvec2 tile (vec2 st, float\
+                    \ zoom) {\n    st *= zoom;\n    return fract(st);\n}"

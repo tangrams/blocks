@@ -2244,6 +2244,8 @@ color.a = diagonalStripes( (getTileCoords()*0.999)*floor(STRIPES_SCALE),
 
 #### [polygons-dots](http://tangrams.github.io/blocks/#polygons-dots) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/dots.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Apply dot patterns to a polygon. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)
+
 
 
 To import this block add the following url to your `import` list:
@@ -2265,19 +2267,24 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
+ - **DOTS_STROKE**: ```0.15```
  - **DOTS_SIZE**: ```0.41```
+ - **DOTS_TYPE**: ```fill```
  - **DOTS_SCALE**: ```10.0```
+ - **DOTS_TILE_STYLE**: ```brick```
  - **DOTS_COLOR**: ```color.rgb*.5```
 
 These are the **shader blocks**:
 
+- **global**:
+ + `float fill (in float x) `
+ + `float stroke (in float x) `
 - **color**:
 
 ```glsl
 color.rgb = mix(color.rgb, 
                 DOTS_COLOR, 
-                aastep( DOTS_SIZE,
-                        circleDF(vec2(0.5)-brick(getTileCoords()*DOTS_SCALE,2.))*2.));
+                DOTS_TYPE( circleDF(vec2(0.5)-DOTS_TILE_STYLE(getTileCoords()*DOTS_SCALE,2.))*2.) );
 ```
 
 
