@@ -22,10 +22,10 @@ styles:
             GRAIN_AMOUNT: 
                 type: number
                 label: amount
-                step: 0.01
                 range: 
                     min: 0.
                     max: 1.
+                    step: 0.01
         shaders:
             defines:
                 GRAIN_AMOUNT: .3
