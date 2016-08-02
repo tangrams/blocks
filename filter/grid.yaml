@@ -40,9 +40,9 @@ styles:
                     #if GRID_BLEND == ADD
                     color.rgb += tileGrid()*GRID_AMOUNT;
                     #endif
-                    #if GRID_BLEND == SUB
+                    #if GRID_BLEND == SUBSTRACT
                     color.rgb -= tileGrid()*GRID_AMOUNT;
                     #endif
-                    #if GRID_BLEND == MULT
+                    #if GRID_BLEND == MULTIPLY
                     color.rgb *= (1.-tileGrid()*GRID_AMOUNT);
                     #endif
