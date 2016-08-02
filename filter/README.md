@@ -54,7 +54,7 @@ Examples:
 
 Apply a grid filter to the syle
 <p>The amount can be set by the GRID_AMOUNT define [0.0~1.0]</p>
-<p>Then you should choose between the modes: ```GRID_ADD```, ```GRID_SUBSTRACT``` and ```GRID_MULTIPLY```</p>
+<p>Then you should choose a GRID_BLEND mode: ```ADD```, ```SUBSTRACT``` and ```MULTIPLY```</p>
 
 
 

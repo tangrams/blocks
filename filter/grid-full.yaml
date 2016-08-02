@@ -10,8 +10,8 @@ styles:
 
                 <p>The amount can be set by the GRID_AMOUNT define [0.0~1.0]</p>
 
-                <p>Then you should choose between the modes: ```GRID_ADD```, ```GRID_SUBSTRACT```
-                and ```GRID_MULTIPLY```</p>
+                <p>Then you should choose a GRID_BLEND mode: ```ADD```, ```SUBSTRACT```
+                and ```MULTIPLY```</p>
 
                 '
             licence: MIT
@@ -42,9 +42,9 @@ styles:
                     '
                 global: '#define ADD 0
 
-                    #define SUB 1
+                    #define SUBSTRACT 1
 
-                    #define MULT 2
+                    #define MULTIPLY 2
 
                     '
             defines:
@@ -56,6 +56,7 @@ styles:
                 range:
                     max: 1.0
                     min: 0.0
+                    step: 0.01
                 type: number
             GRID_BLEND:
                 label: blend mode
