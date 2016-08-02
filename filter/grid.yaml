@@ -25,7 +25,7 @@ styles:
             GRID_BLEND: 
                 type: dropdown
                 label: 'blend mode'
-                values: ["'ADD'", "'SUBSTRACT'", "'MULTIPLY'"]
+                values: ['ADD', 'SUBSTRACT', 'MULTIPLY']
         shaders:
             defines:
                 GRID_AMOUNT: .2
