@@ -1,14 +1,19 @@
 import:
 - random.yaml
 styles:
+    block:
+        shaders:
+            defines:
+                ADD: '0'
+                MULTIPLY: '2'
+                PI: 3.141592653589793
+                SUBSTRACT: '1'
     filter-grain:
         doc:
             author:
                 name: Patricio Gonzalez Vivo
                 twitter: patriciogv
             description: 'Apply a lens grain effect to the scene.
-
-                The amount can be set by the GRAIN_AMOUNT define [0.0~1.0]
 
                 '
             examples:
@@ -19,7 +24,9 @@ styles:
             licence: MIT
             tangram-version: 0.0.7
             version: 0.0.1
-        mix: generative-fbm
+        mix:
+        - block
+        - generative-fbm
         shaders:
             blocks:
                 filter: '// Apply the grain in the amount defined on GRAIN_AMOUNT
@@ -43,33 +50,29 @@ styles:
                     #endif
 
                     '
-                global: "// Grain fractor on screen space with less concetration in\
-                    \ the center\n// ================================\nfloat grain\
-                    \ () {\n    #ifdef TANGRAM_FRAGMENT_SHADER\n        vec2 pos =\
-                    \ gl_FragCoord.xy;\n        vec2 st = pos/u_resolution.xy-vec2(.5);\n\
-                    \        return dot(st,st)+(fbm(pos*0.6)*0.1);\n    #else\n  \
-                    \      return 0.0;\n    #endif\n}\n"
+                global: "#ifdef TANGRAM_FRAGMENT_SHADER\nfloat grain () {\n    vec2\
+                    \ pos = gl_FragCoord.xy;\n    vec2 st = pos/u_resolution.xy-vec2(.5);\n\
+                    \    return dot(st,st)+(fbm(pos*0.6)*0.1);\n}\n#endif\n"
             defines:
-                ADD: '0'
                 GRAIN_AMOUNT: 0.3
                 GRAIN_BLEND: SUBSTRACT
-                MULTIPLY: '2'
-                SUBSTRACT: '1'
         ui:
-            GRAIN_AMOUNT:
-                label: amount
-                range:
-                    max: 1.0
-                    min: 0.0
-                    step: 0.01
-                type: number
-            GRAIN_BLEND:
-                label: blend mode
-                type: dropdown
-                values:
-                - ADD
-                - SUBSTRACT
-                - MULTIPLY
+            shaders:
+                defines:
+                    GRAIN_AMOUNT:
+                        label: Amount
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
+                    GRAIN_BLEND:
+                        label: Blend mode
+                        type: dropdown
+                        values:
+                        - ADD
+                        - SUBSTRACT
+                        - MULTIPLY
     generative-fbm:
         doc:
             author:

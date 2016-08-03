@@ -1,23 +1,26 @@
 import:
 - ../space/tile.yaml
 styles:
+    block:
+        shaders:
+            defines:
+                ADD: '0'
+                MULTIPLY: '2'
+                PI: 3.141592653589793
+                SUBSTRACT: '1'
     filter-grid:
         doc:
             author:
                 name: Patricio Gonzalez Vivo
                 twitter: patriciogv
-            description: 'Apply a grid filter to the syle
-
-                <p>The amount can be set by the GRID_AMOUNT define [0.0~1.0]</p>
-
-                <p>Then you should choose a GRID_BLEND mode: ```ADD```, ```SUBSTRACT```
-                and ```MULTIPLY```</p>
+            description: 'Apply a grid filter to the syle.
 
                 '
             licence: MIT
             tangram-version: 0.0.7
             version: 0.0.1
         mix:
+        - block
         - patterns-grid
         shaders:
             blocks:
@@ -41,26 +44,25 @@ styles:
 
                     '
             defines:
-                ADD: '0'
                 GRID_AMOUNT: 0.2
                 GRID_BLEND: ADD
-                MULTIPLY: '2'
-                SUBSTRACT: '1'
         ui:
-            GRID_AMOUNT:
-                label: amount
-                range:
-                    max: 1.0
-                    min: 0.0
-                    step: 0.01
-                type: number
-            GRID_BLEND:
-                label: blend mode
-                type: dropdown
-                values:
-                - ADD
-                - SUBSTRACT
-                - MULTIPLY
+            shaders:
+                defines:
+                    GRID_AMOUNT:
+                        label: amount
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
+                    GRID_BLEND:
+                        label: blend mode
+                        type: dropdown
+                        values:
+                        - ADD
+                        - SUBSTRACT
+                        - MULTIPLY
     patterns-grid:
         doc:
             author:

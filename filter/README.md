@@ -3,7 +3,6 @@
 #### [filter-grain](http://tangrams.github.io/blocks/#filter-grain) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/grain.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Apply a lens grain effect to the scene.
-The amount can be set by the GRAIN_AMOUNT define [0.0~1.0]
 
 
 
@@ -26,9 +25,6 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **SUBSTRACT**: ```1```
- - **MULTIPLY**: ```2```
- - **ADD**: ```0```
  - **GRAIN_AMOUNT**: ```0.3```
  - **GRAIN_BLEND**: ```SUBSTRACT```
 
@@ -64,9 +60,7 @@ Examples:
 
 #### [filter-grid](http://tangrams.github.io/blocks/#filter-grid) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/grid.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-Apply a grid filter to the syle
-<p>The amount can be set by the GRID_AMOUNT define [0.0~1.0]</p>
-<p>Then you should choose a GRID_BLEND mode: ```ADD```, ```SUBSTRACT``` and ```MULTIPLY```</p>
+Apply a grid filter to the syle.
 
 
 
@@ -89,9 +83,6 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **SUBSTRACT**: ```1```
- - **MULTIPLY**: ```2```
- - **ADD**: ```0```
  - **GRID_AMOUNT**: ```0.2```
  - **GRID_BLEND**: ```ADD```
 

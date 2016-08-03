@@ -135,12 +135,13 @@ styles:
                     \ skew(st);\nvec2 s_f = fract(s);\n#ifdef SHIMMERING_ANIMATED\n\
                     float n = snoise(vec3(floor(s+step(s_f.x,s_f.y)*5.),u_time*SHIMMERING_SPEED));\n\
                     #else\nfloat n = snoise(floor(s+step(s_f.x,s_f.y)*5.));\n#endif\n\
-                    color.rgb = mix(color.rgb,\n                mix(SHIMMERING_BACKGROUND,color.rgb,n),\n\
+                    color.rgb = mix(SHIMMERING_COLOR,\n                mix(SHIMMERING_BACKGROUND_COLOR,SHIMMERING_COLOR,n),\n\
                     \                SHIMMERING_AMOUNT);"
             defines:
                 SHIMMERING_AMOUNT: 1.0
                 SHIMMERING_ANIMATED: true
-                SHIMMERING_BACKGROUND: color.rgb*.5
+                SHIMMERING_BACKGROUND_COLOR: color.rgb*.5
+                SHIMMERING_COLOR: color.rgb
                 SHIMMERING_SCALE: 10.0
                 SHIMMERING_SPEED: 0.1
     space-constant:

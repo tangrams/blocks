@@ -39,10 +39,11 @@ styles:
         - generative-random
         shaders:
             blocks:
-                color: "color.rgb = mix(color.rgb,\n                PIXELATE_BACKGROUND,\n\
-                    \                random(floor(getTileCoords()*PIXELATE_SCALE)));"
+                color: "color.rgb = mix(PIXELATE_BACKGROUND_COLOR,\n             \
+                    \   PIXELATE_COLOR,\n                random(floor(getTileCoords()*PIXELATE_SCALE)));"
             defines:
-                PIXELATE_BACKGROUND: color.rgb*.5
+                PIXELATE_BACKGROUND_COLOR: color.rgb*.5
+                PIXELATE_COLOR: color.rgb*.5
                 PIXELATE_SCALE: 40.0
     space-tile:
         doc:

@@ -10,8 +10,11 @@ styles:
             defines:
                 GRID_SCALE: 20.
                 GRID_WIDTH: .05
+                GRID_COLOR: color.rgb
                 GRID_BACKGROUND_COLOR: color.rgb*.5
             blocks:
                 color: |
-                    color.rgb = mix(color.rgb, GRID_BACKGROUND_COLOR, diagonalGrid(  fract(getTileCoords()*GRID_SCALE),
-                                            GRID_WIDTH));
+                    color.rgb = mix(GRID_COLOR, 
+                                    GRID_BACKGROUND_COLOR, 
+                                    diagonalGrid(   fract(getTileCoords()*GRID_SCALE),
+                                                    GRID_WIDTH));

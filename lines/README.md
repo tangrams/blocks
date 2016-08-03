@@ -29,13 +29,15 @@ These blocks uses a custom **shader**. These are the defaults **defines**:
  - **CHEVRON_COLOR**: ```color.rgb*.5```
  - **CHEVRON_ALPHA**: ```1.0```
  - **CHEVRON_SCALE**: ```1.0```
+ - **CHEVRON_BACKGROUND_COLOR**: ```color.rgb```
+ - **CHEVRON_BACKGROUND_ALPHA**: ```color.a```
 
 These are the **shader blocks**:
 
 - **color**:
 
 ```glsl
-color = mix(color,
+color = mix(vec4(CHEVRON_BACKGROUND_COLOR, CHEVRON_BACKGROUND_ALPHA),
             vec4(CHEVRON_COLOR, CHEVRON_ALPHA),
             step(.5,fract((v_texcoord.y+abs(v_texcoord.x-.5)) * CHEVRON_SCALE)*CHEVRON_SIZE));
 ```
@@ -117,10 +119,11 @@ import:
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
  - **DATASTREAM_SPEED**: ```20.0```
- - **DATASTREAM_ROADS**: ```5.0```
- - **DATASTREAM_AMOUNT**: ```0.8```
- - **DATASTREAM_COLOR**: ```vec3(1.)```
  - **DATASTREAM_MARGIN**: ```0.4```
+ - **DATASTREAM_AMOUNT**: ```0.8```
+ - **DATASTREAM_ROADS**: ```5.0```
+ - **DATASTREAM_COLOR**: ```vec3(1.)```
+ - **DATASTREAM_BACKGROUND_COLOR**: ```color.rgb```
 
 These are the **shader blocks**:
 
@@ -129,7 +132,7 @@ These are the **shader blocks**:
 - **color**:
 
 ```glsl
-color.rgb = mix(color.rgb,
+color.rgb = mix(DATASTREAM_BACKGROUND_COLOR,
                 DATASTREAM_COLOR,
                 datastream_pattern( v_texcoord.xy, 
                                     u_time*(DATASTREAM_SPEED)*(-.5 * random(floor(v_texcoord.x*DATASTREAM_ROADS)) - .5), 
@@ -175,8 +178,7 @@ These are the **shader blocks**:
 - **color**:
 
 ```glsl
-vec2 st = fract(v_texcoord.xy);
-st -= .5;
+vec2 st = fract(v_texcoord.xy)-.5;
 color.a = 1.- step(DOT_SIZE, dot(st,st)*2.);
 ```
 

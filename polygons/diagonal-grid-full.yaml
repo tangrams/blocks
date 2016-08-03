@@ -48,11 +48,12 @@ styles:
         - patterns-grid
         shaders:
             blocks:
-                color: "color.rgb = mix(color.rgb, GRID_BACKGROUND_COLOR, diagonalGrid(\
-                    \  fract(getTileCoords()*GRID_SCALE),\n                      \
-                    \  GRID_WIDTH));"
+                color: "color.rgb = mix(GRID_COLOR, \n                GRID_BACKGROUND_COLOR,\
+                    \ \n                diagonalGrid(   fract(getTileCoords()*GRID_SCALE),\n\
+                    \                                GRID_WIDTH));"
             defines:
                 GRID_BACKGROUND_COLOR: color.rgb*.5
+                GRID_COLOR: color.rgb
                 GRID_SCALE: 20.0
                 GRID_WIDTH: 0.05
     space-tile:

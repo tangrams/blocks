@@ -1,8 +1,10 @@
-import: ../generative/fbm.yaml
+import: 
+    - ../block.yaml
+    - ../generative/fbm.yaml
 
 styles:
     filter-grain:
-        mix: generative-fbm
+        mix: [block, generative-fbm]
         doc:
             author: 
                 name: Patricio Gonzalez Vivo
@@ -12,45 +14,38 @@ styles:
             licence: MIT
             description: |
                 Apply a lens grain effect to the scene.
-                The amount can be set by the GRAIN_AMOUNT define [0.0~1.0]
             examples:
                 grain:
                     url: https://tangrams.github.io/tangram-sandbox/styles/grain.yaml
                     img: https://tangrams.github.io/tangram-sandbox/styles/grain.png
                     lines: 29
         ui:
-            GRAIN_AMOUNT: 
-                type: number
-                label: amount
-                range: 
-                    min: 0.
-                    max: 1.
-                    step: 0.01
-            GRAIN_BLEND: 
-                type: dropdown
-                label: 'blend mode'
-                values: ['ADD', 'SUBSTRACT', 'MULTIPLY']
+            shaders:
+                defines:
+                    GRAIN_AMOUNT: 
+                        type: number
+                        label: Amount
+                        range: 
+                            min: 0.
+                            max: 1.
+                            step: 0.01
+                    GRAIN_BLEND: 
+                        type: dropdown
+                        label: 'Blend mode'
+                        values: ['ADD', 'SUBSTRACT', 'MULTIPLY']
         shaders:
             defines:
-                ADD: '0'
-                SUBSTRACT: '1'
-                MULTIPLY: '2'
-
                 GRAIN_AMOUNT: .3
                 GRAIN_BLEND: 'SUBSTRACT'
             blocks:
                 global: |
-                    // Grain fractor on screen space with less concetration in the center
-                    // ================================
+                    #ifdef TANGRAM_FRAGMENT_SHADER
                     float grain () {
-                        #ifdef TANGRAM_FRAGMENT_SHADER
-                            vec2 pos = gl_FragCoord.xy;
-                            vec2 st = pos/u_resolution.xy-vec2(.5);
-                            return dot(st,st)+(fbm(pos*0.6)*0.1);
-                        #else
-                            return 0.0;
-                        #endif
+                        vec2 pos = gl_FragCoord.xy;
+                        vec2 st = pos/u_resolution.xy-vec2(.5);
+                        return dot(st,st)+(fbm(pos*0.6)*0.1);
                     }
+                    #endif
                 filter: |
                     // Apply the grain in the amount defined on GRAIN_AMOUNT
                     #if GRAIN_BLEND == ADD

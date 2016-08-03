@@ -44,7 +44,7 @@ styles:
         shaders:
             blocks:
                 color: "color.rgb = mix(DOTS_BACKGROUND_COLOR, \n                DOTS_COLOR,\
-                    \ \n                DOTS_TYPE( circleDF(vec2(0.5)-DOTS_TILE_STYLE(getTileCoords()*DOTS_SCALE,2.))*2.)\
+                    \ \n                DOTS_TYPE( circleDF(vec2(0.5)- DOTS_TILE_STYLE(getTileCoords()*DOTS_SCALE,2.))*2.)\
                     \ );"
                 global: "float fill (in float x) {\n    return 1.-aastep(DOTS_SIZE,\
                     \ x);\n}\nfloat stroke (in float x) {\n    return aastep(DOTS_SIZE,\
@@ -58,6 +58,12 @@ styles:
                 DOTS_TILE_STYLE: brick
                 DOTS_TYPE: fill
         ui:
+            DOTS_BACKGROUND_COLOR:
+                label: Background color
+                type: color
+            DOTS_COLOR:
+                label: Color
+                type: color
             DOTS_SCALE:
                 label: Scale
                 range:

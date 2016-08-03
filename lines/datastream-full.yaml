@@ -37,18 +37,19 @@ styles:
         - generative-random
         shaders:
             blocks:
-                color: "color.rgb = mix(color.rgb,\n                DATASTREAM_COLOR,\n\
-                    \                datastream_pattern( v_texcoord.xy, \n       \
-                    \                             u_time*(DATASTREAM_SPEED)*(-.5 *\
-                    \ random(floor(v_texcoord.x*DATASTREAM_ROADS)) - .5), \n     \
-                    \                               DATASTREAM_AMOUNT )* \n      \
-                    \          (step(DATASTREAM_MARGIN,1.-fract(v_texcoord.x*DATASTREAM_ROADS))*\n\
+                color: "color.rgb = mix(DATASTREAM_BACKGROUND_COLOR,\n           \
+                    \     DATASTREAM_COLOR,\n                datastream_pattern( v_texcoord.xy,\
+                    \ \n                                    u_time*(DATASTREAM_SPEED)*(-.5\
+                    \ * random(floor(v_texcoord.x*DATASTREAM_ROADS)) - .5), \n   \
+                    \                                 DATASTREAM_AMOUNT )* \n    \
+                    \            (step(DATASTREAM_MARGIN,1.-fract(v_texcoord.x*DATASTREAM_ROADS))*\n\
                     \                 step(DATASTREAM_MARGIN,fract(v_texcoord.x*DATASTREAM_ROADS))));"
                 global: "float datastream_pattern(vec2 st, float v, float t) {\n \
                     \   float p = floor(st.y+v);\n    return step(t, (random(p*.000001)+random(p))*.5\
                     \ );\n}\n"
             defines:
                 DATASTREAM_AMOUNT: 0.8
+                DATASTREAM_BACKGROUND_COLOR: color.rgb
                 DATASTREAM_COLOR: vec3(1.)
                 DATASTREAM_MARGIN: 0.4
                 DATASTREAM_ROADS: 5.0

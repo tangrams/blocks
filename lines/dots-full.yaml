@@ -14,9 +14,7 @@ styles:
             version: 0.0.1
         shaders:
             blocks:
-                color: 'vec2 st = fract(v_texcoord.xy);
-
-                    st -= .5;
+                color: 'vec2 st = fract(v_texcoord.xy)-.5;
 
                     color.a = 1.- step(DOT_SIZE, dot(st,st)*2.);'
             defines:

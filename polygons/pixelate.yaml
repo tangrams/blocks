@@ -9,9 +9,10 @@ styles:
         shaders:
             defines:
                 PIXELATE_SCALE: 40.
-                PIXELATE_BACKGROUND: color.rgb*.5
+                PIXELATE_COLOR: color.rgb*.5
+                PIXELATE_BACKGROUND_COLOR: color.rgb*.5
             blocks:
                 color: |
-                    color.rgb = mix(color.rgb,
-                                    PIXELATE_BACKGROUND,
+                    color.rgb = mix(PIXELATE_BACKGROUND_COLOR,
+                                    PIXELATE_COLOR,
                                     random(floor(getTileCoords()*PIXELATE_SCALE)));

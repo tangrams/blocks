@@ -13,11 +13,13 @@ styles:
             version: 0.0.1
         shaders:
             blocks:
-                color: "color = mix(color,\n            vec4(CHEVRON_COLOR, CHEVRON_ALPHA),\n\
-                    \            step(.5,fract((v_texcoord.y+abs(v_texcoord.x-.5))\
-                    \ * CHEVRON_SCALE)*CHEVRON_SIZE));"
+                color: "color = mix(vec4(CHEVRON_BACKGROUND_COLOR, CHEVRON_BACKGROUND_ALPHA),\n\
+                    \            vec4(CHEVRON_COLOR, CHEVRON_ALPHA),\n           \
+                    \ step(.5,fract((v_texcoord.y+abs(v_texcoord.x-.5)) * CHEVRON_SCALE)*CHEVRON_SIZE));"
             defines:
                 CHEVRON_ALPHA: 1.0
+                CHEVRON_BACKGROUND_ALPHA: color.a
+                CHEVRON_BACKGROUND_COLOR: color.rgb
                 CHEVRON_COLOR: color.rgb*.5
                 CHEVRON_SCALE: 1.0
                 CHEVRON_SIZE: 1.0

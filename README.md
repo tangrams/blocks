@@ -396,7 +396,6 @@ Examples:
 #### [filter-grain](http://tangrams.github.io/blocks/#filter-grain) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/grain.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Apply a lens grain effect to the scene.
-The amount can be set by the GRAIN_AMOUNT define [0.0~1.0]
 
 
 
@@ -419,9 +418,6 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **SUBSTRACT**: ```1```
- - **MULTIPLY**: ```2```
- - **ADD**: ```0```
  - **GRAIN_AMOUNT**: ```0.3```
  - **GRAIN_BLEND**: ```SUBSTRACT```
 
@@ -457,9 +453,7 @@ Examples:
 
 #### [filter-grid](http://tangrams.github.io/blocks/#filter-grid) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/grid.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-Apply a grid filter to the syle
-<p>The amount can be set by the GRID_AMOUNT define [0.0~1.0]</p>
-<p>Then you should choose a GRID_BLEND mode: ```ADD```, ```SUBSTRACT``` and ```MULTIPLY```</p>
+Apply a grid filter to the syle.
 
 
 
@@ -482,9 +476,6 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **SUBSTRACT**: ```1```
- - **MULTIPLY**: ```2```
- - **ADD**: ```0```
  - **GRID_AMOUNT**: ```0.2```
  - **GRID_BLEND**: ```ADD```
 
@@ -1495,13 +1486,15 @@ These blocks uses a custom **shader**. These are the defaults **defines**:
  - **CHEVRON_COLOR**: ```color.rgb*.5```
  - **CHEVRON_ALPHA**: ```1.0```
  - **CHEVRON_SCALE**: ```1.0```
+ - **CHEVRON_BACKGROUND_COLOR**: ```color.rgb```
+ - **CHEVRON_BACKGROUND_ALPHA**: ```color.a```
 
 These are the **shader blocks**:
 
 - **color**:
 
 ```glsl
-color = mix(color,
+color = mix(vec4(CHEVRON_BACKGROUND_COLOR, CHEVRON_BACKGROUND_ALPHA),
             vec4(CHEVRON_COLOR, CHEVRON_ALPHA),
             step(.5,fract((v_texcoord.y+abs(v_texcoord.x-.5)) * CHEVRON_SCALE)*CHEVRON_SIZE));
 ```
@@ -1583,10 +1576,11 @@ import:
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
  - **DATASTREAM_SPEED**: ```20.0```
- - **DATASTREAM_ROADS**: ```5.0```
- - **DATASTREAM_AMOUNT**: ```0.8```
- - **DATASTREAM_COLOR**: ```vec3(1.)```
  - **DATASTREAM_MARGIN**: ```0.4```
+ - **DATASTREAM_AMOUNT**: ```0.8```
+ - **DATASTREAM_ROADS**: ```5.0```
+ - **DATASTREAM_COLOR**: ```vec3(1.)```
+ - **DATASTREAM_BACKGROUND_COLOR**: ```color.rgb```
 
 These are the **shader blocks**:
 
@@ -1595,7 +1589,7 @@ These are the **shader blocks**:
 - **color**:
 
 ```glsl
-color.rgb = mix(color.rgb,
+color.rgb = mix(DATASTREAM_BACKGROUND_COLOR,
                 DATASTREAM_COLOR,
                 datastream_pattern( v_texcoord.xy, 
                                     u_time*(DATASTREAM_SPEED)*(-.5 * random(floor(v_texcoord.x*DATASTREAM_ROADS)) - .5), 
@@ -1641,8 +1635,7 @@ These are the **shader blocks**:
 - **color**:
 
 ```glsl
-vec2 st = fract(v_texcoord.xy);
-st -= .5;
+vec2 st = fract(v_texcoord.xy)-.5;
 color.a = 1.- step(DOT_SIZE, dot(st,st)*2.);
 ```
 
@@ -2184,6 +2177,7 @@ import:
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
  - **GRID_SCALE**: ```20.0```
+ - **GRID_COLOR**: ```color.rgb```
  - **GRID_BACKGROUND_COLOR**: ```color.rgb*.5```
  - **GRID_WIDTH**: ```0.05```
 
@@ -2192,8 +2186,10 @@ These are the **shader blocks**:
 - **color**:
 
 ```glsl
-color.rgb = mix(color.rgb, GRID_BACKGROUND_COLOR, diagonalGrid(  fract(getTileCoords()*GRID_SCALE),
-                        GRID_WIDTH));
+color.rgb = mix(GRID_COLOR, 
+                GRID_BACKGROUND_COLOR, 
+                diagonalGrid(   fract(getTileCoords()*GRID_SCALE),
+                                GRID_WIDTH));
 ```
 
 
@@ -2285,7 +2281,7 @@ These are the **shader blocks**:
 ```glsl
 color.rgb = mix(DOTS_BACKGROUND_COLOR, 
                 DOTS_COLOR, 
-                DOTS_TYPE( circleDF(vec2(0.5)-DOTS_TILE_STYLE(getTileCoords()*DOTS_SCALE,2.))*2.) );
+                DOTS_TYPE( circleDF(vec2(0.5)- DOTS_TILE_STYLE(getTileCoords()*DOTS_SCALE,2.))*2.) );
 ```
 
 
@@ -2377,16 +2373,17 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **PIXELATE_BACKGROUND**: ```color.rgb*.5```
+ - **PIXELATE_BACKGROUND_COLOR**: ```color.rgb*.5```
  - **PIXELATE_SCALE**: ```40.0```
+ - **PIXELATE_COLOR**: ```color.rgb*.5```
 
 These are the **shader blocks**:
 
 - **color**:
 
 ```glsl
-color.rgb = mix(color.rgb,
-                PIXELATE_BACKGROUND,
+color.rgb = mix(PIXELATE_BACKGROUND_COLOR,
+                PIXELATE_COLOR,
                 random(floor(getTileCoords()*PIXELATE_SCALE)));
 ```
 
@@ -2418,10 +2415,11 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **SHIMMERING_ANIMATED**: ```True```
  - **SHIMMERING_SPEED**: ```0.1```
+ - **SHIMMERING_COLOR**: ```color.rgb```
+ - **SHIMMERING_ANIMATED**: ```True```
  - **SHIMMERING_SCALE**: ```10.0```
- - **SHIMMERING_BACKGROUND**: ```color.rgb*.5```
+ - **SHIMMERING_BACKGROUND_COLOR**: ```color.rgb*.5```
  - **SHIMMERING_AMOUNT**: ```1.0```
 
 These are the **shader blocks**:
@@ -2437,8 +2435,8 @@ float n = snoise(vec3(floor(s+step(s_f.x,s_f.y)*5.),u_time*SHIMMERING_SPEED));
 #else
 float n = snoise(floor(s+step(s_f.x,s_f.y)*5.));
 #endif
-color.rgb = mix(color.rgb,
-                mix(SHIMMERING_BACKGROUND,color.rgb,n),
+color.rgb = mix(SHIMMERING_COLOR,
+                mix(SHIMMERING_BACKGROUND_COLOR,SHIMMERING_COLOR,n),
                 SHIMMERING_AMOUNT);
 ```
 

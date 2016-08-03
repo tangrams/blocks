@@ -11,7 +11,8 @@ styles:
         shaders:
             defines:
                 SHIMMERING_SCALE: 10.
-                SHIMMERING_BACKGROUND: color.rgb*.5
+                SHIMMERING_COLOR: color.rgb
+                SHIMMERING_BACKGROUND_COLOR: color.rgb*.5
                 SHIMMERING_SPEED: 0.1
                 SHIMMERING_AMOUNT: 1.
                 SHIMMERING_ANIMATED: true
@@ -25,6 +26,6 @@ styles:
                     #else
                     float n = snoise(floor(s+step(s_f.x,s_f.y)*5.));
                     #endif
-                    color.rgb = mix(color.rgb,
-                                    mix(SHIMMERING_BACKGROUND,color.rgb,n),
+                    color.rgb = mix(SHIMMERING_COLOR,
+                                    mix(SHIMMERING_BACKGROUND_COLOR,SHIMMERING_COLOR,n),
                                     SHIMMERING_AMOUNT);
