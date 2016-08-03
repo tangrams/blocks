@@ -34,7 +34,7 @@ styles:
                             Brannan: 'https://tangrams.github.io/blocks/filter/imgs/lut-0013.png'
         shaders:
             uniforms:
-                u_lut: imgs/lut-0001.png
+                u_lut: https://tangrams.github.io/blocks/filter/imgs/lut-0001.png
             blocks:
                 global: |
                     // Apply Look up table on a color
