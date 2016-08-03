@@ -34,4 +34,4 @@ styles:
                 GRID_BLEND: 'ADD'
             blocks:                    
                 filter: |
-                    color.rgb = color.rgb GRID_BLEND tileGrid()*GRID_AMOUNT;
+                    color.rgb = color.rgb GRID_BLEND (tileGrid()*GRID_AMOUNT);

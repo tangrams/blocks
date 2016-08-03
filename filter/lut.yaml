@@ -15,6 +15,14 @@ styles:
                     img: https://tangrams.github.io/tangram-sandbox/styles/sandbox-lut.png
         ui:
             shaders:
+                defines:
+                    LUT_AMOUNT: 
+                        type: number
+                        label: Amount
+                        range: 
+                            min: 0.
+                            max: 1.
+                            step: 0.01
                 uniforms:
                     u_lut: 
                         type: dropdownList
@@ -33,6 +41,8 @@ styles:
                             EarlyBird: 'https://tangrams.github.io/blocks/filter/imgs/lut-0011.png'
                             Brannan: 'https://tangrams.github.io/blocks/filter/imgs/lut-0013.png'
         shaders:
+            defines:
+                LUT_AMOUNT: .5
             uniforms:
                 u_lut: https://tangrams.github.io/blocks/filter/imgs/lut-0001.png
             blocks:
@@ -74,4 +84,6 @@ styles:
                         return getLut(textureColor.rgb, u_lut);
                     }
                 filter: |
-                    color = getLut(color);
+                    color = mix(color,
+                                getLut(color)
+                                LUT_AMOUNT);

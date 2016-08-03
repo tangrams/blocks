@@ -430,7 +430,7 @@ These are the **shader blocks**:
 
 ```glsl
 // Apply the grain in the amount defined on GRAIN_AMOUNT
-color.rgb = color.rgb GRAIN_BLEND grain()*GRAIN_AMOUNT;
+color.rgb = color.rgb GRAIN_BLEND (grain()*GRAIN_AMOUNT);
 
 ```
 
@@ -477,7 +477,7 @@ These are the **shader blocks**:
 - **filter**:
 
 ```glsl
-color.rgb = color.rgb GRID_BLEND tileGrid()*GRID_AMOUNT;
+color.rgb = color.rgb GRID_BLEND (tileGrid()*GRID_AMOUNT);
 
 ```
 
@@ -598,6 +598,9 @@ import:
 These blocks uses a custom **shader**. These are the **uniforms**:
  - **u_lut**: ```https://tangrams.github.io/blocks/filter/imgs/lut-0001.png```
 
+These are the defaults **defines**:
+ - **LUT_AMOUNT**: ```0.5```
+
 These are the **shader blocks**:
 
 - **global**:
@@ -608,7 +611,9 @@ These are the **shader blocks**:
 - **filter**:
 
 ```glsl
-color = getLut(color);
+color = mix(color,
+            getLut(color)
+            LUT_AMOUNT);
 ```
 
 
@@ -648,6 +653,7 @@ import:
 These blocks uses a custom **shader**. These are the defaults **defines**:
  - **TV_FREQ**: ```1.2```
  - **TV_SPEED**: ```5.0```
+ - **TV_AMOUNT**: ```0.5```
  - **TV_BLEND**: ```MULTIPLY```
 
 These are the **shader blocks**:
@@ -655,7 +661,7 @@ These are the **shader blocks**:
 - **filter**:
 
 ```glsl
-color = color TV_BLEND abs(cos((gl_FragCoord.y*TV_FREQ+u_time*TV_SPEED)));
+color = color TV_BLEND (abs(cos((gl_FragCoord.y*TV_FREQ+u_time*TV_SPEED)))*TV_AMOUNT);
 
 ```
 

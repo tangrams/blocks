@@ -37,7 +37,7 @@ styles:
             blocks:
                 filter: '// Apply the grain in the amount defined on GRAIN_AMOUNT
 
-                    color.rgb = color.rgb GRAIN_BLEND grain()*GRAIN_AMOUNT;
+                    color.rgb = color.rgb GRAIN_BLEND (grain()*GRAIN_AMOUNT);
 
                     '
                 global: "#ifdef TANGRAM_FRAGMENT_SHADER\nfloat grain () {\n    vec2\

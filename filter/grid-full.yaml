@@ -30,7 +30,7 @@ styles:
         - patterns-grid
         shaders:
             blocks:
-                filter: 'color.rgb = color.rgb GRID_BLEND tileGrid()*GRID_AMOUNT;
+                filter: 'color.rgb = color.rgb GRID_BLEND (tileGrid()*GRID_AMOUNT);
 
                     '
             defines:

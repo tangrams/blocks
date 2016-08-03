@@ -48,4 +48,4 @@ styles:
                     #endif
                 filter: |
                     // Apply the grain in the amount defined on GRAIN_AMOUNT
-                    color.rgb = color.rgb GRAIN_BLEND grain()*GRAIN_AMOUNT;
+                    color.rgb = color.rgb GRAIN_BLEND (grain()*GRAIN_AMOUNT);

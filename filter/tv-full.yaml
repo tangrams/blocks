@@ -33,16 +33,24 @@ styles:
         - block
         shaders:
             blocks:
-                filter: 'color = color TV_BLEND abs(cos((gl_FragCoord.y*TV_FREQ+u_time*TV_SPEED)));
+                filter: 'color = color TV_BLEND (abs(cos((gl_FragCoord.y*TV_FREQ+u_time*TV_SPEED)))*TV_AMOUNT);
 
                     '
             defines:
+                TV_AMOUNT: 0.5
                 TV_BLEND: MULTIPLY
                 TV_FREQ: 1.2
                 TV_SPEED: 5.0
         ui:
             shaders:
                 defines:
+                    TV_AMOUNT:
+                        label: amount
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
                     TV_BLEND:
                         label: blend mode
                         type: dropdownArray
@@ -51,14 +59,14 @@ styles:
                         - SUBTRACT
                         - MULTIPLY
                     TV_FREQ:
-                        label: amount
+                        label: Frequency
                         range:
                             max: 10.0
                             min: 0.0
                             step: 0.1
                         type: number
                     TV_SPEED:
-                        label: amount
+                        label: Speed
                         range:
                             max: 10.0
                             min: 0.0

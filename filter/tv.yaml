@@ -22,28 +22,36 @@ styles:
                 defines:
                     TV_FREQ: 
                         type: number
-                        label: amount
+                        label: Frequency
                         range: 
                             min: 0.
                             max: 10.
                             step: 0.1
                     TV_SPEED: 
                         type: number
-                        label: amount
+                        label: Speed
                         range: 
                             min: 0.
                             max: 10.
                             step: 0.1
+                    TV_AMOUNT: 
+                        type: number
+                        label: amount
+                        range: 
+                            min: 0.
+                            max: 1.
+                            step: 0.01
                     TV_BLEND: 
                         type: dropdownArray
                         label: 'blend mode'
                         values: ['ADD', 'SUBTRACT', 'MULTIPLY']
         shaders:
             defines:
+                TV_AMOUNT: .5
                 TV_FREQ: 1.2
                 TV_SPEED: 5.
                 TV_BLEND: 'MULTIPLY'
             blocks: 
                 filter: |
-                    color = color TV_BLEND abs(cos((gl_FragCoord.y*TV_FREQ+u_time*TV_SPEED)));
+                    color = color TV_BLEND (abs(cos((gl_FragCoord.y*TV_FREQ+u_time*TV_SPEED)))*TV_AMOUNT);
 
