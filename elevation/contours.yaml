@@ -13,8 +13,10 @@ styles:
         blend: add
         shaders:
             defines:
-                CONTOURS_COLOR: color
-                CONTOURS_BACKGROUND_COLOR: vec4(0.0)
+                CONTOURS_COLOR: color.rgb
+                CONTOURS_ALPHA: color.a
+                CONTOURS_BACKGROUND_COLOR: vec3(0.0)
+                CONTOURS_BACKGROUND_ALPHA: 1.0
                 CONTOURS_SCALE: 60.
                 CONTOURS_SPEED: -0.1
                 CONTOURS_OFFSET: u_time*CONTOURS_SPEED

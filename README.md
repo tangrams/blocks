@@ -182,9 +182,11 @@ import:
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
  - **CONTOURS_SCALE**: ```60.0```
- - **CONTOURS_COLOR**: ```color```
- - **CONTOURS_BACKGROUND_COLOR**: ```vec4(0.0)```
  - **CONTOURS_OFFSET**: ```u_time*CONTOURS_SPEED```
+ - **CONTOURS_ALPHA**: ```color.a```
+ - **CONTOURS_COLOR**: ```color.rgb```
+ - **CONTOURS_BACKGROUND_ALPHA**: ```1.0```
+ - **CONTOURS_BACKGROUND_COLOR**: ```vec3(0.0)```
  - **CONTOURS_SPEED**: ```-0.1```
 
 These are the **shader blocks**:

@@ -32,8 +32,10 @@ styles:
                     \          abs(sin((normal_elv_raster.a*PI)*CONTOURS_SCALE+CONTOURS_OFFSET))\
                     \ ) );"
             defines:
-                CONTOURS_BACKGROUND_COLOR: vec4(0.0)
-                CONTOURS_COLOR: color
+                CONTOURS_ALPHA: color.a
+                CONTOURS_BACKGROUND_ALPHA: 1.0
+                CONTOURS_BACKGROUND_COLOR: vec3(0.0)
+                CONTOURS_COLOR: color.rgb
                 CONTOURS_OFFSET: u_time*CONTOURS_SPEED
                 CONTOURS_SCALE: 60.0
                 CONTOURS_SPEED: -0.1
