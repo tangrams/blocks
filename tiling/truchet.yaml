@@ -1,4 +1,5 @@
-import: ../geometry/matrices.yaml
+import: 
+    - ../geometry/matrices.yaml
 styles:
     tiling-truchet:
         doc:
