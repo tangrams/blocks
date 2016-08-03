@@ -85,5 +85,5 @@ styles:
                     }
                 filter: |
                     color = mix(color,
-                                getLut(color)
+                                getLut(color),
                                 LUT_AMOUNT);
