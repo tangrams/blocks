@@ -25,9 +25,8 @@ import:
 These blocks uses a custom **shader**. These are the defaults **defines**:
  - **CONTOURS_SCALE**: ```60.0```
  - **CONTOURS_COLOR**: ```color```
- - **CONTOURS_OFFSET**: ```u_time*CONTOURS_SPEED```
- - **PI**: ```3.14159265359```
  - **CONTOURS_BACKGROUND_COLOR**: ```vec4(0.0)```
+ - **CONTOURS_OFFSET**: ```u_time*CONTOURS_SPEED```
  - **CONTOURS_SPEED**: ```-0.1```
 
 These are the **shader blocks**:
@@ -174,7 +173,7 @@ These are the **shader blocks**:
 - **color**:
 
 ```glsl
-color = texture2D(u_ramp,vec2((1.-normal_elv_raster.a),.5));
+color = texture2D(u_ramp, vec2((1.-normal_elv_raster.a),.5));
 ```
 
 

@@ -1,5 +1,9 @@
+import:
+    - ../block.yaml
+    
 styles:
     filter-tv:
+        mix: [block]
         doc:
             author: 
                 name: Patricio Gonzalez Vivo

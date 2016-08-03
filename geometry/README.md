@@ -115,12 +115,7 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **HALF_PI**: ```1.57079632679```
- - **TWO_PI**: ```6.28318530718```
- - **PI**: ```3.14159265359```
-
-These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **global**:
  + `mat2 rotate2D (float angle) `
@@ -194,12 +189,7 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **PI**: ```3.14159265359```
- - **HALF_PI**: ```1.57079632679```
  - **EARTH_RADIUS**: ```6378137.0```
- - **deg2rad(d)**: ```(((d)*3.14159265358979323846)/180.0)```
- - **QUATER_PI**: ```0.785398163```
- - **rad2deg(d)**: ```(((d)*180.0)/3.14159265358979323846)```
 
 These are the **shader blocks**:
 

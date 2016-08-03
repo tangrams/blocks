@@ -183,9 +183,8 @@ import:
 These blocks uses a custom **shader**. These are the defaults **defines**:
  - **CONTOURS_SCALE**: ```60.0```
  - **CONTOURS_COLOR**: ```color```
- - **CONTOURS_OFFSET**: ```u_time*CONTOURS_SPEED```
- - **PI**: ```3.14159265359```
  - **CONTOURS_BACKGROUND_COLOR**: ```vec4(0.0)```
+ - **CONTOURS_OFFSET**: ```u_time*CONTOURS_SPEED```
  - **CONTOURS_SPEED**: ```-0.1```
 
 These are the **shader blocks**:
@@ -332,7 +331,7 @@ These are the **shader blocks**:
 - **color**:
 
 ```glsl
-color = texture2D(u_ramp,vec2((1.-normal_elv_raster.a),.5));
+color = texture2D(u_ramp, vec2((1.-normal_elv_raster.a),.5));
 ```
 
 
@@ -1232,12 +1231,7 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **HALF_PI**: ```1.57079632679```
- - **TWO_PI**: ```6.28318530718```
- - **PI**: ```3.14159265359```
-
-These are the **shader blocks**:
+These blocks uses a custom **shader**. These are the **shader blocks**:
 
 - **global**:
  + `mat2 rotate2D (float angle) `
@@ -1311,12 +1305,7 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **PI**: ```3.14159265359```
- - **HALF_PI**: ```1.57079632679```
  - **EARTH_RADIUS**: ```6378137.0```
- - **deg2rad(d)**: ```(((d)*3.14159265358979323846)/180.0)```
- - **QUATER_PI**: ```0.785398163```
- - **rad2deg(d)**: ```(((d)*180.0)/3.14159265358979323846)```
 
 These are the **shader blocks**:
 
@@ -1785,15 +1774,18 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **STRIPES_INTENSITY**: ```0.1```
  - **STRIPES_WIDTH**: ```0.1```
+ - **STRIPES_COLOR**: ```color.rgb*.5```
+ - **STRIPES_BACKGROUND_COLOR**: ```color.rgb```
 
 These are the **shader blocks**:
 
 - **color**:
 
 ```glsl
-color.rgb += step(STRIPES_WIDTH, sin((fract(v_texcoord).x+fract(v_texcoord).y) * 6.283)) * STRIPES_INTENSITY;
+color.rgb = mix(STRIPES_BACKGROUND_COLOR,
+                STRIPES_COLOR,
+                step(STRIPES_WIDTH, sin((fract(v_texcoord).x+fract(v_texcoord).y) * 6.283)));
 ```
 
 

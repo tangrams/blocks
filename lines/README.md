@@ -342,15 +342,18 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **STRIPES_INTENSITY**: ```0.1```
  - **STRIPES_WIDTH**: ```0.1```
+ - **STRIPES_COLOR**: ```color.rgb*.5```
+ - **STRIPES_BACKGROUND_COLOR**: ```color.rgb```
 
 These are the **shader blocks**:
 
 - **color**:
 
 ```glsl
-color.rgb += step(STRIPES_WIDTH, sin((fract(v_texcoord).x+fract(v_texcoord).y) * 6.283)) * STRIPES_INTENSITY;
+color.rgb = mix(STRIPES_BACKGROUND_COLOR,
+                STRIPES_COLOR,
+                step(STRIPES_WIDTH, sin((fract(v_texcoord).x+fract(v_texcoord).y) * 6.283)));
 ```
 
 

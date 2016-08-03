@@ -1,13 +1,27 @@
 import:
+- ../block.yaml
 - normal.yaml
 - ../functions/aastep.yaml
 styles:
+    block:
+        shaders:
+            defines:
+                ADD: +
+                HALF_PI: 1.5707963267948966
+                MULTIPLY: '*'
+                PI: 3.141592653589793
+                QUATER_PI: 0.785398163
+                SUBTRACT: '-'
+                TWO_PI: 6.283185307179586
+                deg2rad(d): (((d)*3.1415926535897932384626433832795)/180.0)
+                rad2deg(d): (((d)*180.0)/3.1415926535897932384626433832795)
     elevation-contours:
         animated: true
         base: polygons
         blend: add
         lighting: false
         mix:
+        - block
         - elevation-normal
         - functions-aastep
         raster: custom
@@ -23,7 +37,6 @@ styles:
                 CONTOURS_OFFSET: u_time*CONTOURS_SPEED
                 CONTOURS_SCALE: 60.0
                 CONTOURS_SPEED: -0.1
-                PI: 3.141592653589793
     elevation-normal:
         doc:
             author:

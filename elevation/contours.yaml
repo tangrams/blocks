@@ -1,20 +1,20 @@
 import:
+    - ../block.yaml
     - normal.yaml
     - ../functions/aastep.yaml
 
 styles:
     elevation-contours:
         base: polygons
-        mix: [elevation-normal, functions-aastep]
+        mix: [block, elevation-normal, functions-aastep]
         lighting: false
         raster: custom
         animated: true
         blend: add
         shaders:
             defines:
-                PI: 3.1415926535897932384626433832795
-                CONTOURS_BACKGROUND_COLOR: vec4(0.0)
                 CONTOURS_COLOR: color
+                CONTOURS_BACKGROUND_COLOR: vec4(0.0)
                 CONTOURS_SCALE: 60.
                 CONTOURS_SPEED: -0.1
                 CONTOURS_OFFSET: u_time*CONTOURS_SPEED

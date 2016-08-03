@@ -1,4 +1,6 @@
-import: ../functions/map.yaml
+import: 
+    - ../functions/map.yaml
+
 styles:
     geometry-dynamic-height:
         doc:

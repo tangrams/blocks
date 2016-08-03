@@ -5,9 +5,14 @@ styles:
         shaders:
             defines:
                 ADD: +
+                HALF_PI: 1.5707963267948966
                 MULTIPLY: '*'
                 PI: 3.141592653589793
+                QUATER_PI: 0.785398163
                 SUBTRACT: '-'
+                TWO_PI: 6.283185307179586
+                deg2rad(d): (((d)*3.1415926535897932384626433832795)/180.0)
+                rad2deg(d): (((d)*180.0)/3.1415926535897932384626433832795)
     filter-grain:
         doc:
             author:

@@ -18,9 +18,11 @@ styles:
             version: 0.0.1
         shaders:
             blocks:
-                color: color.rgb += step(STRIPES_WIDTH, sin((fract(v_texcoord).x+fract(v_texcoord).y)
-                    * 6.283)) * STRIPES_INTENSITY;
+                color: "color.rgb = mix(STRIPES_BACKGROUND_COLOR,\n              \
+                    \  STRIPES_COLOR,\n                step(STRIPES_WIDTH, sin((fract(v_texcoord).x+fract(v_texcoord).y)\
+                    \ * 6.283)));"
             defines:
-                STRIPES_INTENSITY: 0.1
+                STRIPES_BACKGROUND_COLOR: color.rgb
+                STRIPES_COLOR: color.rgb*.5
                 STRIPES_WIDTH: 0.1
         texcoords: true

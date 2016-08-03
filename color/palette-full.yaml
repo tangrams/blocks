@@ -14,8 +14,5 @@ styles:
             version: 0.0.1
         shaders:
             blocks:
-                global: "// Cosine based palette, 4 vec3 params\n// by Inigo Quiles\
-                    \ ( http://www.iquilezles.org/www/articles/palettes/palettes.htm\
-                    \ )\n// ================================\nvec3 palette (float\
-                    \ t, vec3 a, vec3 b, vec3 c, vec3 d) {\n    return a + b*cos(\
-                    \ 6.28318*(c*t+d) );\n}"
+                global: "vec3 palette (float t, vec3 a, vec3 b, vec3 c, vec3 d) {\n\
+                    \    return a + b*cos( 6.28318*(c*t+d) );\n}"

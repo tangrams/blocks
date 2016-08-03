@@ -1,4 +1,5 @@
-import: ../functions/map.yaml
+import:
+- ../functions/map.yaml
 styles:
     functions-map:
         doc:

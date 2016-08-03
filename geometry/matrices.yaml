@@ -1,5 +1,9 @@
+import:
+    - ../block.yaml
+
 styles:
     geometry-matrices:
+        mix: [blocks]
         doc:
             author: 
                 name: Patricio Gonzalez Vivo
@@ -10,10 +14,6 @@ styles:
             description: |  
                 Useful set of functions to construct scale, rotation and translation of 2, 3 or 4 dimensions. For more information about matrices read [this chapter from The Book of Shaders](http://thebookofshaders.com/08/)
         shaders:
-            defines:
-                TWO_PI: 6.2831853071795864769252867665590
-                PI: 3.1415926535897932384626433832795
-                HALF_PI: 1.5707963267948966192313216916398
             blocks:
                 global: |
                     // Rotate in 2, 3 and 4 dimensions

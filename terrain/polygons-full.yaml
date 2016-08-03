@@ -1,5 +1,18 @@
-import: matrices.yaml
+import:
+- ../block.yaml
 styles:
+    block:
+        shaders:
+            defines:
+                ADD: +
+                HALF_PI: 1.5707963267948966
+                MULTIPLY: '*'
+                PI: 3.141592653589793
+                QUATER_PI: 0.785398163
+                SUBTRACT: '-'
+                TWO_PI: 6.283185307179586
+                deg2rad(d): (((d)*3.1415926535897932384626433832795)/180.0)
+                rad2deg(d): (((d)*180.0)/3.1415926535897932384626433832795)
     geometry-matrices:
         doc:
             author:
@@ -13,6 +26,8 @@ styles:
             licence: MIT
             tangram-version: 0.0.7
             version: 0.0.1
+        mix:
+        - blocks
         shaders:
             blocks:
                 global: "// Rotate in 2, 3 and 4 dimensions\n// ================================\n\
@@ -41,10 +56,6 @@ styles:
                     \ float y, float z) {\n    return mat4(\n        vec4(1.0, 0.0,\
                     \ 0.0, 0.0),\n        vec4(0.0, 1.0, 0.0, 0.0),\n        vec4(0.0,\
                     \ 0.0, 1.0, 0.0),\n        vec4(x,   y,   z,   1.0)\n    );\n}"
-            defines:
-                HALF_PI: 1.5707963267948966
-                PI: 3.141592653589793
-                TWO_PI: 6.283185307179586
     geometry-tilt:
         animated: true
         doc:
