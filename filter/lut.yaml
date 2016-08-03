@@ -13,6 +13,25 @@ styles:
                 sandbox-lut:
                     url: https://tangrams.github.io/tangram-sandbox/styles/sandbox-lut.yaml
                     img: https://tangrams.github.io/tangram-sandbox/styles/sandbox-lut.png
+        ui:
+            shaders:
+                uniforms:
+                    u_lut: 
+                        type: dropdownList
+                        label: Filter
+                        values:
+                            XPro: 'https://tangrams.github.io/blocks/filter/imgs/lut-0001.png'
+                            Walden: 'https://tangrams.github.io/blocks/filter/imgs/lut-0002.png'
+                            Toaster: 'https://tangrams.github.io/blocks/filter/imgs/lut-0003.png'
+                            Sutro: 'https://tangrams.github.io/blocks/filter/imgs/lut-0004.png'
+                            Nashville: 'https://tangrams.github.io/blocks/filter/imgs/lut-0005.png'
+                            LordKelvin: 'https://tangrams.github.io/blocks/filter/imgs/lut-0006.png'
+                            LomoFi: 'https://tangrams.github.io/blocks/filter/imgs/lut-0007.png'
+                            InkWell: 'https://tangrams.github.io/blocks/filter/imgs/lut-0008.png'
+                            Hefe: 'https://tangrams.github.io/blocks/filter/imgs/lut-0009.png'
+                            Gotham: 'https://tangrams.github.io/blocks/filter/imgs/lut-0010.png'
+                            EarlyBird: 'https://tangrams.github.io/blocks/filter/imgs/lut-0011.png'
+                            Brannan: 'https://tangrams.github.io/blocks/filter/imgs/lut-0013.png'
         shaders:
             uniforms:
                 u_lut: imgs/lut-0001.png
