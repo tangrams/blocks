@@ -612,7 +612,7 @@ These are the **shader blocks**:
 
 ```glsl
 color = mix(color,
-            getLut(color)
+            getLut(color),
             LUT_AMOUNT);
 ```
 
@@ -651,9 +651,9 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **TV_FREQ**: ```1.2```
+ - **TV_FREQ**: ```2.7```
  - **TV_SPEED**: ```5.0```
- - **TV_AMOUNT**: ```0.5```
+ - **TV_AMOUNT**: ```1.0```
  - **TV_BLEND**: ```MULTIPLY```
 
 These are the **shader blocks**:
@@ -661,7 +661,7 @@ These are the **shader blocks**:
 - **filter**:
 
 ```glsl
-color = color TV_BLEND (abs(cos((gl_FragCoord.y*TV_FREQ+u_time*TV_SPEED)))*TV_AMOUNT);
+color = color TV_BLEND (abs(cos((gl_FragCoord.y*(TV_FREQ/u_device_pixel_ratio)+u_time*TV_SPEED)))*TV_AMOUNT);
 
 ```
 

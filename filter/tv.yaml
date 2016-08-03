@@ -47,11 +47,11 @@ styles:
                         values: ['ADD', 'SUBTRACT', 'MULTIPLY']
         shaders:
             defines:
-                TV_AMOUNT: .5
-                TV_FREQ: 1.2
+                TV_AMOUNT: 1.
+                TV_FREQ: 2.7
                 TV_SPEED: 5.
                 TV_BLEND: 'MULTIPLY'
             blocks: 
                 filter: |
-                    color = color TV_BLEND (abs(cos((gl_FragCoord.y*TV_FREQ+u_time*TV_SPEED)))*TV_AMOUNT);
+                    color = color TV_BLEND (abs(cos((gl_FragCoord.y*(TV_FREQ/u_device_pixel_ratio)+u_time*TV_SPEED)))*TV_AMOUNT);
 

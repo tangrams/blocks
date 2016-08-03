@@ -33,13 +33,13 @@ styles:
         - block
         shaders:
             blocks:
-                filter: 'color = color TV_BLEND (abs(cos((gl_FragCoord.y*TV_FREQ+u_time*TV_SPEED)))*TV_AMOUNT);
+                filter: 'color = color TV_BLEND (abs(cos((gl_FragCoord.y*(TV_FREQ/u_device_pixel_ratio)+u_time*TV_SPEED)))*TV_AMOUNT);
 
                     '
             defines:
-                TV_AMOUNT: 0.5
+                TV_AMOUNT: 1.0
                 TV_BLEND: MULTIPLY
-                TV_FREQ: 1.2
+                TV_FREQ: 2.7
                 TV_SPEED: 5.0
         ui:
             shaders:

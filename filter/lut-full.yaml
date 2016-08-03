@@ -18,8 +18,8 @@ styles:
             version: 0.0.1
         shaders:
             blocks:
-                filter: "color = mix(color,\n            getLut(color)\n         \
-                    \   LUT_AMOUNT);"
+                filter: "color = mix(color,\n            getLut(color),\n        \
+                    \    LUT_AMOUNT);"
                 global: "// Apply Look up table on a color\n// The user need to provide\
                     \ a valid url to the uniform \"u_lut\"\n// ================================\n\
                     vec4 getLut (vec3 textureColor, sampler2D lookupTable) {\n   \
