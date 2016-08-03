@@ -221,7 +221,7 @@ import:
 
 These blocks uses a custom **shader**.
 These are the **defines**:
- -  **PIXELATE_BACKGROUND_COLOR**:  The *default value* is ```color.rgb*.5```. 
+ -  **PIXELATE_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
  -  **PIXELATE_SCALE**:  The *default value* is ```40.0```. 
  -  **PIXELATE_COLOR**:  The *default value* is ```color.rgb*.5```. 
 

@@ -10,7 +10,7 @@ styles:
             defines:
                 PIXELATE_SCALE: 40.
                 PIXELATE_COLOR: color.rgb*.5
-                PIXELATE_BACKGROUND_COLOR: color.rgb*.5
+                PIXELATE_BACKGROUND_COLOR: color.rgb
             blocks:
                 color: |
                     color.rgb = mix(PIXELATE_BACKGROUND_COLOR,
