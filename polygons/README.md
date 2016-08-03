@@ -111,8 +111,9 @@ These blocks uses a custom **shader**. These are the defaults **defines**:
  - **DOTS_SIZE**: ```0.41```
  - **DOTS_TYPE**: ```fill```
  - **DOTS_SCALE**: ```10.0```
- - **DOTS_TILE_STYLE**: ```brick```
  - **DOTS_COLOR**: ```color.rgb*.5```
+ - **DOTS_BACKGROUND_COLOR**: ```color.rgb```
+ - **DOTS_TILE_STYLE**: ```brick```
 
 These are the **shader blocks**:
 
@@ -122,7 +123,7 @@ These are the **shader blocks**:
 - **color**:
 
 ```glsl
-color.rgb = mix(color.rgb, 
+color.rgb = mix(DOTS_BACKGROUND_COLOR, 
                 DOTS_COLOR, 
                 DOTS_TYPE( circleDF(vec2(0.5)-DOTS_TILE_STYLE(getTileCoords()*DOTS_SCALE,2.))*2.) );
 ```
