@@ -48,7 +48,7 @@ styles:
                         type: number
                     GRID_BLEND:
                         label: blend mode
-                        type: dropdown
+                        type: dropdownArray
                         values:
                         - ADD
                         - SUBTRACT

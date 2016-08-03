@@ -58,7 +58,7 @@ styles:
                         type: number
                     GRAIN_BLEND:
                         label: Blend mode
-                        type: dropdown
+                        type: dropdownArray
                         values:
                         - ADD
                         - SUBTRACT

@@ -125,7 +125,7 @@ styles:
         shaders:
             blocks:
                 global: "// get distance field of a Circle\n// ================================\n\
-                    float circleDF (vec2 st) {\n    return dot(st,st)*2.;\n}\n//\n\
+                    float circleDF (vec2 st) {\n    return dot(st,st)*3.03;\n}\n//\n\
                     // Draw a circle in the middle of the ST space\n// ================================\n\
                     float circle (vec2 st, float radius) {\n    return fill(radius,\
                     \ circleDF(st-vec2(0.5)));\n}\n\n//\n// Draw a circle in the middle\

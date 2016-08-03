@@ -40,3 +40,27 @@ styles:
                 TV_BLEND: MULTIPLY
                 TV_FREQ: 1.2
                 TV_SPEED: 5.0
+        ui:
+            shaders:
+                defines:
+                    TV_BLEND:
+                        label: blend mode
+                        type: dropdownArray
+                        values:
+                        - ADD
+                        - SUBTRACT
+                        - MULTIPLY
+                    TV_FREQ:
+                        label: amount
+                        range:
+                            max: 10.0
+                            min: 0.0
+                            step: 0.1
+                        type: number
+                    TV_SPEED:
+                        label: amount
+                        range:
+                            max: 10.0
+                            min: 0.0
+                            step: 0.1
+                        type: number

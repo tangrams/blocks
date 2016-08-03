@@ -596,7 +596,7 @@ import:
 
 
 These blocks uses a custom **shader**. These are the **uniforms**:
- - **u_lut**: ```imgs/lut-0001.png```
+ - **u_lut**: ```https://tangrams.github.io/blocks/filter/imgs/lut-0001.png```
 
 These are the **shader blocks**:
 

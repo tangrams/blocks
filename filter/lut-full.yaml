@@ -43,4 +43,23 @@ styles:
                     vec4 getLut (vec4 textureColor) {\n    return getLut(textureColor.rgb,\
                     \ u_lut);\n}\n"
             uniforms:
-                u_lut: imgs/lut-0001.png
+                u_lut: https://tangrams.github.io/blocks/filter/imgs/lut-0001.png
+        ui:
+            shaders:
+                uniforms:
+                    u_lut:
+                        label: Filter
+                        type: dropdownList
+                        values:
+                            Brannan: https://tangrams.github.io/blocks/filter/imgs/lut-0013.png
+                            EarlyBird: https://tangrams.github.io/blocks/filter/imgs/lut-0011.png
+                            Gotham: https://tangrams.github.io/blocks/filter/imgs/lut-0010.png
+                            Hefe: https://tangrams.github.io/blocks/filter/imgs/lut-0009.png
+                            InkWell: https://tangrams.github.io/blocks/filter/imgs/lut-0008.png
+                            LomoFi: https://tangrams.github.io/blocks/filter/imgs/lut-0007.png
+                            LordKelvin: https://tangrams.github.io/blocks/filter/imgs/lut-0006.png
+                            Nashville: https://tangrams.github.io/blocks/filter/imgs/lut-0005.png
+                            Sutro: https://tangrams.github.io/blocks/filter/imgs/lut-0004.png
+                            Toaster: https://tangrams.github.io/blocks/filter/imgs/lut-0003.png
+                            Walden: https://tangrams.github.io/blocks/filter/imgs/lut-0002.png
+                            XPro: https://tangrams.github.io/blocks/filter/imgs/lut-0001.png
