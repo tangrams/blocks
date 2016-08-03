@@ -17,6 +17,27 @@ styles:
                 9845C:
                     url: https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml
                     img: https://tangrams.github.io/tangram-sandbox/styles/9845C.png
+        ui:
+            shaders:
+                defines:
+                    TV_FREQ: 
+                        type: number
+                        label: amount
+                        range: 
+                            min: 0.
+                            max: 10.
+                            step: 0.1
+                    TV_SPEED: 
+                        type: number
+                        label: amount
+                        range: 
+                            min: 0.
+                            max: 10.
+                            step: 0.1
+                    TV_BLEND: 
+                        type: dropdownArray
+                        label: 'blend mode'
+                        values: ['ADD', 'SUBTRACT', 'MULTIPLY']
         shaders:
             defines:
                 TV_FREQ: 1.2
