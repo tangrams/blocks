@@ -50,7 +50,7 @@ styles:
                     // Apply Look up table on a color
                     // The user need to provide a valid url to the uniform "u_lut"
                     // ================================
-                    vec4 getLut (vec3 textureColor, sampler2D lookupTable) {
+                    vec3 getLut (vec3 textureColor, sampler2D lookupTable) {
                         textureColor.g = 1.-textureColor.g;
                         textureColor = clamp(textureColor, 0.0, 1.0);
                         float blueColor = textureColor.b * 63.0;
@@ -66,24 +66,16 @@ styles:
                         vec2 texPos2 = vec2(0.0);
                         texPos2.x = (quad2.x * 0.125) + 0.5/512.0 + ((0.125 - 1.0/512.0) * textureColor.r);
                         texPos2.y = (quad2.y * 0.125) + 0.5/512.0 + ((0.125 - 1.0/512.0) * textureColor.g);
-                        vec4 newColor1 = texture2D(lookupTable, texPos1);
-                        vec4 newColor2 = texture2D(lookupTable, texPos2);
-                        vec4 newColor = mix(newColor1, newColor2, fract(blueColor));
+                        vec3 newColor1 = texture2D(lookupTable, texPos1).rgb;
+                        vec3 newColor2 = texture2D(lookupTable, texPos2).rgb;
+                        vec3 newColor = mix(newColor1, newColor2, fract(blueColor));
                         return newColor;
                     }
                     //
-                    vec4 getLut (vec3 textureColor) {
+                    vec3 getLut (vec3 textureColor) {
                         return getLut(textureColor, u_lut);
                     }
-                    //
-                    vec4 getLut (vec4 textureColor, sampler2D lookupTable) {
-                        return getLut(textureColor.rgb, lookupTable);
-                    }
-                    //
-                    vec4 getLut (vec4 textureColor) {
-                        return getLut(textureColor.rgb, u_lut);
-                    }
                 filter: |
-                    color = mix(color,
-                                getLut(color),
-                                LUT_AMOUNT);
+                    color.rgb = mix(color.rgb,
+                                    getLut(color.rgb),
+                                    LUT_AMOUNT);
