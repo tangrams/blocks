@@ -215,16 +215,14 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `vec4 getLut (vec3 textureColor, sampler2D lookupTable) `
- + `vec4 getLut (vec3 textureColor) `
- + `vec4 getLut (vec4 textureColor, sampler2D lookupTable) `
- + `vec4 getLut (vec4 textureColor) `
+ + `vec3 getLut (vec3 textureColor, sampler2D lookupTable) `
+ + `vec3 getLut (vec3 textureColor) `
 - **filter**:
 
 ```glsl
-color = mix(color,
-            getLut(color),
-            LUT_AMOUNT);
+color.rgb = mix(color.rgb,
+                getLut(color.rgb),
+                LUT_AMOUNT);
 ```
 
 
