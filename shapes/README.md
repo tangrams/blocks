@@ -24,7 +24,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float circleDF (vec2 st) `
@@ -69,7 +70,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float cross (vec2 st, float size, float width) `
@@ -117,10 +119,11 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **CHAR_DECIMAL_POINT**: ```10.0```
- - **CHAR_MINUS**: ```11.0```
- - **CHAR_BLANK**: ```12.0```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **CHAR_DECIMAL_POINT**:  The *default value* is ```10.0```. 
+ -  **CHAR_MINUS**:  The *default value* is ```11.0```. 
+ -  **CHAR_BLANK**:  The *default value* is ```12.0```. 
 
 These are the **shader blocks**:
 
@@ -156,7 +159,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float shapeDF (vec2 st, int N) `
@@ -195,7 +199,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float rectDF (in vec2 st, in vec2 size) `
@@ -232,7 +237,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float warp (vec3 S) `
@@ -270,8 +276,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **STROKE**: ```0.15```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **STROKE**:  The *default value* is ```0.15```. 
 
 These are the **shader blocks**:
 

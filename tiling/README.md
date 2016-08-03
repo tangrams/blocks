@@ -24,7 +24,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `vec2 brick (vec2 st, float zoom) `
@@ -64,7 +65,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `vec2 skew (vec2 st) `
@@ -99,7 +101,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `vec2 tile (vec2 st, float zoom) `
@@ -132,8 +135,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **PI**: ```3.14159265359```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **PI**:  The *default value* is ```3.14159265359```. 
 
 These are the **shader blocks**:
 

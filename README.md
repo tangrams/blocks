@@ -78,7 +78,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `vec3 rgb2hsb (vec3 c) `
@@ -112,7 +113,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `vec3 palette (float t, vec3 a, vec3 b, vec3 c, vec3 d) `
@@ -145,7 +147,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float getIntensity (vec3 c) `
@@ -180,14 +183,15 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **CONTOURS_SCALE**: ```60.0```
- - **CONTOURS_OFFSET**: ```u_time*CONTOURS_SPEED```
- - **CONTOURS_ALPHA**: ```color.a```
- - **CONTOURS_COLOR**: ```color.rgb```
- - **CONTOURS_BACKGROUND_ALPHA**: ```1.0```
- - **CONTOURS_BACKGROUND_COLOR**: ```vec3(0.0)```
- - **CONTOURS_SPEED**: ```-0.1```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **CONTOURS_SCALE**:  The *default value* is ```60.0```. 
+ -  **CONTOURS_OFFSET**:  The *default value* is ```u_time*CONTOURS_SPEED```. 
+ -  **CONTOURS_ALPHA**:  The *default value* is ```color.a```. 
+ -  **CONTOURS_COLOR**:  The *default value* is ```color.rgb```. 
+ -  **CONTOURS_BACKGROUND_ALPHA**:  The *default value* is ```1.0```. 
+ -  **CONTOURS_BACKGROUND_COLOR**:  The *default value* is ```vec3(0.0)```. 
+ -  **CONTOURS_SPEED**:  The *default value* is ```-0.1```. 
 
 These are the **shader blocks**:
 
@@ -236,8 +240,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **NORMAL_TEXTURE_INDEX**: ```0```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **NORMAL_TEXTURE_INDEX**:  The *default value* is ```0```. 
 
 These are the **shader blocks**:
 
@@ -280,8 +285,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **RAINBOW_SPEED**: ```-0.5```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **RAINBOW_SPEED**:  The *default value* is ```-0.5```. 
 
 These are the **shader blocks**:
 
@@ -325,8 +331,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **uniforms**:
- - **u_ramp**: ```data:image/png;base64,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```
+These blocks uses a custom **shader**.
+These are the **uniforms**:
+ -  **u_ramp**:  The *default value* is ```data:image/png;base64,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```. 
 
 These are the **shader blocks**:
 
@@ -370,18 +377,19 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **NORMAL_TEXTURE_INDEX**: ```0```
- - **STRIPES_SCALE**: ```20.0```
- - **ZOOM_IN**: ```0.0```
- - **ZOOM_OUT**: ```1.0```
- - **STRIPES_WIDTH**: ```dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2., STRIPES_DIR)*STRIPES_PCT```
- - **ZOOM**: ```linear```
- - **STRIPES_DIR**: ```vec3(-0.600,-0.420,0.600)```
- - **STRIPES_PCT**: ```1.8```
- - **ZOOM_END**: ```13.0```
- - **STRIPES_ALPHA**: ```0.5```
- - **ZOOM_START**: ```0.0```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **NORMAL_TEXTURE_INDEX**:  The *default value* is ```0```. 
+ -  **STRIPES_SCALE**:  The *default value* is ```20.0```. 
+ -  **ZOOM_IN**:  The *default value* is ```0.0```. 
+ -  **ZOOM_OUT**:  The *default value* is ```1.0```. 
+ -  **STRIPES_WIDTH**:  The *default value* is ```dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2., STRIPES_DIR)*STRIPES_PCT```. 
+ -  **ZOOM**:  The *default value* is ```linear```. 
+ -  **STRIPES_DIR**:  The *default value* is ```vec3(-0.600,-0.420,0.600)```. 
+ -  **STRIPES_PCT**:  The *default value* is ```1.8```. 
+ -  **ZOOM_END**:  The *default value* is ```13.0```. 
+ -  **STRIPES_ALPHA**:  The *default value* is ```0.5```. 
+ -  **ZOOM_START**:  The *default value* is ```0.0```. 
 
 
 Examples:
@@ -418,9 +426,10 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **GRAIN_AMOUNT**: ```0.3```
- - **GRAIN_BLEND**: ```SUBTRACT```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **GRAIN_AMOUNT**:  number between ```0.0``` and ```1.0``` that control the *amount*. The *default value* is ```0.3```. 
+ -  **GRAIN_BLEND**:  variable that control the *blend mode* with one of the following values: ```ADD, SUBTRACT, MULTIPLY```. The *default value* is ```SUBTRACT```. 
 
 These are the **shader blocks**:
 
@@ -468,9 +477,10 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **GRID_AMOUNT**: ```0.2```
- - **GRID_BLEND**: ```ADD```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **GRID_AMOUNT**:  number between ```0.0``` and ```1.0``` that control the *amount*. The *default value* is ```0.2```. 
+ -  **GRID_BLEND**:  variable that control the *blend mode* with one of the following values: ```ADD, SUBTRACT, MULTIPLY```. The *default value* is ```ADD```. 
 
 These are the **shader blocks**:
 
@@ -510,8 +520,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **uniforms**:
- - **u_hatchmap**: ```imgs/hatch.png```
+These blocks uses a custom **shader**.
+These are the **uniforms**:
+ -  **u_hatchmap**:  The *default value* is ```imgs/hatch.png```. 
 
 These are the **shader blocks**:
 
@@ -553,7 +564,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **color**:
 
@@ -595,11 +607,12 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **uniforms**:
- - **u_lut**: ```https://tangrams.github.io/blocks/filter/imgs/lut-0001.png```
+These blocks uses a custom **shader**.
+These are the **uniforms**:
+ -  **u_lut**:  variable that control the *filter* with one of the following values: ```https://tangrams.github.io/blocks/filter/imgs/lut-0005.png``` ( *Nashville* ), ```https://tangrams.github.io/blocks/filter/imgs/lut-0001.png``` ( *XPro* ), ```https://tangrams.github.io/blocks/filter/imgs/lut-0003.png``` ( *Toaster* ), ```https://tangrams.github.io/blocks/filter/imgs/lut-0004.png``` ( *Sutro* ), ```https://tangrams.github.io/blocks/filter/imgs/lut-0009.png``` ( *Hefe* ), ```https://tangrams.github.io/blocks/filter/imgs/lut-0008.png``` ( *InkWell* ), ```https://tangrams.github.io/blocks/filter/imgs/lut-0010.png``` ( *Gotham* ), ```https://tangrams.github.io/blocks/filter/imgs/lut-0002.png``` ( *Walden* ), ```https://tangrams.github.io/blocks/filter/imgs/lut-0013.png``` ( *Brannan* ), ```https://tangrams.github.io/blocks/filter/imgs/lut-0011.png``` ( *EarlyBird* ), ```https://tangrams.github.io/blocks/filter/imgs/lut-0007.png``` ( *LomoFi* ), ```https://tangrams.github.io/blocks/filter/imgs/lut-0006.png``` ( *LordKelvin* ). The *default value* is ```https://tangrams.github.io/blocks/filter/imgs/lut-0001.png```. 
 
-These are the defaults **defines**:
- - **LUT_AMOUNT**: ```0.5```
+These are the **defines**:
+ -  **LUT_AMOUNT**:  number between ```0.0``` and ```1.0``` that control the *amount*. The *default value* is ```0.5```. 
 
 These are the **shader blocks**:
 
@@ -650,11 +663,12 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **TV_FREQ**: ```2.7```
- - **TV_SPEED**: ```5.0```
- - **TV_AMOUNT**: ```1.0```
- - **TV_BLEND**: ```MULTIPLY```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **TV_FREQ**:  number between ```0.0``` and ```10.0``` that control the *frequency*. The *default value* is ```2.7```. 
+ -  **TV_SPEED**:  number between ```0.0``` and ```10.0``` that control the *speed*. The *default value* is ```5.0```. 
+ -  **TV_AMOUNT**:  number between ```0.0``` and ```1.0``` that control the *amount*. The *default value* is ```1.0```. 
+ -  **TV_BLEND**:  variable that control the *blend mode* with one of the following values: ```ADD, SUBTRACT, MULTIPLY```. The *default value* is ```MULTIPLY```. 
 
 These are the **shader blocks**:
 
@@ -701,7 +715,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float aastep(float threshold, float value) `
@@ -733,9 +748,10 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **HALF_PI**: ```1.57079632679```
- - **PI**: ```3.14159265359```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **HALF_PI**:  The *default value* is ```1.57079632679```. 
+ -  **PI**:  The *default value* is ```3.14159265359```. 
 
 These are the **shader blocks**:
 
@@ -799,8 +815,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **EPSILON**: ```1e-07```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **EPSILON**:  The *default value* is ```1e-07```. 
 
 These are the **shader blocks**:
 
@@ -835,7 +852,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float pulse (float x, float peak, float width) `
@@ -869,13 +887,14 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **ZOOM_END**: ```20.0```
- - **ZOOM_MAX**: ```max(ZOOM_START, ZOOM_END)```
- - **ZOOM_IN**: ```0.0```
- - **ZOOM_OUT**: ```1.0```
- - **ZOOM_START**: ```14.0```
- - **ZOOM_FNC**: ```linear```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **ZOOM_END**:  The *default value* is ```20.0```. 
+ -  **ZOOM_MAX**:  The *default value* is ```max(ZOOM_START, ZOOM_END)```. 
+ -  **ZOOM_IN**:  The *default value* is ```0.0```. 
+ -  **ZOOM_OUT**:  The *default value* is ```1.0```. 
+ -  **ZOOM_START**:  The *default value* is ```14.0```. 
+ -  **ZOOM_FNC**:  The *default value* is ```linear```. 
 
 These are the **shader blocks**:
 
@@ -913,7 +932,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **normal**:
 
@@ -957,9 +977,10 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **TAU**: ```6.28318530718```
- - **CAUSTIC_ITERATIONS**: ```3```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **TAU**:  The *default value* is ```6.28318530718```. 
+ -  **CAUSTIC_ITERATIONS**:  The *default value* is ```3```. 
 
 These are the **shader blocks**:
 
@@ -995,8 +1016,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **NUM_OCTAVES**: ```5```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **NUM_OCTAVES**:  The *default value* is ```5```. 
 
 These are the **shader blocks**:
 
@@ -1036,7 +1058,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float noise (in float x) `
@@ -1076,7 +1099,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float random (float x) `
@@ -1114,7 +1138,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `vec3 voronoi (vec2 st) `
@@ -1148,12 +1173,13 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **ZOOM_START**: ```15.0```
- - **ZOOM_END**: ```20.0```
- - **HEIGHT_MAX**: ```2.5```
- - **HEIGHT_MIN**: ```1.0```
- - **HEIGHT**: ```zoom()```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **ZOOM_START**:  The *default value* is ```15.0```. 
+ -  **ZOOM_END**:  The *default value* is ```20.0```. 
+ -  **HEIGHT_MAX**:  The *default value* is ```2.5```. 
+ -  **HEIGHT_MIN**:  The *default value* is ```1.0```. 
+ -  **HEIGHT**:  The *default value* is ```zoom()```. 
 
 These are the **shader blocks**:
 
@@ -1192,10 +1218,11 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **WIDTH_MIN**: ```0.2```
- - **WIDTH_Z_SCALE**: ```0.006```
- - **WIDTH_MAX**: ```1.0```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **WIDTH_MIN**:  The *default value* is ```0.2```. 
+ -  **WIDTH_Z_SCALE**:  The *default value* is ```0.006```. 
+ -  **WIDTH_MAX**:  The *default value* is ```1.0```. 
 
 These are the **shader blocks**:
 
@@ -1239,7 +1266,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `mat2 rotate2D (float angle) `
@@ -1279,7 +1307,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `bool isWall () `
@@ -1312,8 +1341,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **EARTH_RADIUS**: ```6378137.0```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **EARTH_RADIUS**:  The *default value* is ```6378137.0```. 
 
 These are the **shader blocks**:
 
@@ -1363,10 +1393,11 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **ROTATION**: ```sin(u_time*ROTATION_SPEED)*ROTATION_RANGE```
- - **ROTATION_SPEED**: ```0.1```
- - **ROTATION_RANGE**: ```PI```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **ROTATION**:  The *default value* is ```sin(u_time*ROTATION_SPEED)*ROTATION_RANGE```. 
+ -  **ROTATION_SPEED**:  The *default value* is ```0.1```. 
+ -  **ROTATION_RANGE**:  The *default value* is ```PI```. 
 
 These are the **shader blocks**:
 
@@ -1414,8 +1445,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **TILT**: ```0```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **TILT**:  The *default value* is ```0```. 
 
 These are the **shader blocks**:
 
@@ -1464,13 +1496,14 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **CHEVRON_SIZE**: ```1.0```
- - **CHEVRON_COLOR**: ```color.rgb*.5```
- - **CHEVRON_ALPHA**: ```1.0```
- - **CHEVRON_SCALE**: ```1.0```
- - **CHEVRON_BACKGROUND_COLOR**: ```color.rgb```
- - **CHEVRON_BACKGROUND_ALPHA**: ```color.a```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **CHEVRON_SIZE**:  The *default value* is ```1.0```. 
+ -  **CHEVRON_COLOR**:  The *default value* is ```color.rgb*.5```. 
+ -  **CHEVRON_ALPHA**:  The *default value* is ```1.0```. 
+ -  **CHEVRON_SCALE**:  The *default value* is ```1.0```. 
+ -  **CHEVRON_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
+ -  **CHEVRON_BACKGROUND_ALPHA**:  The *default value* is ```color.a```. 
 
 These are the **shader blocks**:
 
@@ -1511,9 +1544,10 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **DASH_SIZE**: ```0.5```
- - **DASH_SCALE**: ```0.1```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **DASH_SIZE**:  The *default value* is ```0.5```. 
+ -  **DASH_SCALE**:  The *default value* is ```0.1```. 
 
 These are the **shader blocks**:
 
@@ -1557,13 +1591,14 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **DATASTREAM_SPEED**: ```20.0```
- - **DATASTREAM_MARGIN**: ```0.4```
- - **DATASTREAM_AMOUNT**: ```0.8```
- - **DATASTREAM_ROADS**: ```5.0```
- - **DATASTREAM_COLOR**: ```vec3(1.)```
- - **DATASTREAM_BACKGROUND_COLOR**: ```color.rgb```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **DATASTREAM_SPEED**:  The *default value* is ```20.0```. 
+ -  **DATASTREAM_MARGIN**:  The *default value* is ```0.4```. 
+ -  **DATASTREAM_AMOUNT**:  The *default value* is ```0.8```. 
+ -  **DATASTREAM_ROADS**:  The *default value* is ```5.0```. 
+ -  **DATASTREAM_COLOR**:  The *default value* is ```vec3(1.)```. 
+ -  **DATASTREAM_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
 
 These are the **shader blocks**:
 
@@ -1610,8 +1645,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **DOT_SIZE**: ```0.05```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **DOT_SIZE**:  The *default value* is ```0.05```. 
 
 These are the **shader blocks**:
 
@@ -1649,10 +1685,11 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **GLOW_WIDTH**: ```0.4```
- - **PI**: ```3.14159265359```
- - **GLOW_BRIGHTNESS**: ```0.25```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **GLOW_WIDTH**:  The *default value* is ```0.4```. 
+ -  **PI**:  The *default value* is ```3.14159265359```. 
+ -  **GLOW_BRIGHTNESS**:  The *default value* is ```0.25```. 
 
 These are the **shader blocks**:
 
@@ -1693,9 +1730,10 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **OUTLINE_WIDTH**: ```0.1```
- - **OUTLINE_COLOR**: ```color.rgb*.5```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **OUTLINE_WIDTH**:  The *default value* is ```0.1```. 
+ -  **OUTLINE_COLOR**:  The *default value* is ```color.rgb*.5```. 
 
 These are the **shader blocks**:
 
@@ -1744,7 +1782,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **color**:
 
@@ -1781,10 +1820,11 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **STRIPES_WIDTH**: ```0.1```
- - **STRIPES_COLOR**: ```color.rgb*.5```
- - **STRIPES_BACKGROUND_COLOR**: ```color.rgb```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **STRIPES_WIDTH**:  The *default value* is ```0.1```. 
+ -  **STRIPES_COLOR**:  The *default value* is ```color.rgb*.5```. 
+ -  **STRIPES_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
 
 These are the **shader blocks**:
 
@@ -1832,7 +1872,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float TileDots(float scale, float size) `
@@ -1864,7 +1905,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `bool grid (vec2 st, float res, float press) `
@@ -1907,8 +1949,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **PI**: ```3.14159265359```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **PI**:  The *default value* is ```3.14159265359```. 
 
 These are the **shader blocks**:
 
@@ -1957,7 +2000,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float wavesDF (vec2 st, float freq, float amp) `
@@ -1990,7 +2034,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float zigzagDF (vec2 st, float freq) `
@@ -2025,8 +2070,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **CROSS_ALPHA**: ```0.75```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **CROSS_ALPHA**:  The *default value* is ```0.75```. 
 
 These are the **shader blocks**:
 
@@ -2069,7 +2115,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **filter**:
 
@@ -2108,12 +2155,13 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **SHAPE_ALPHA**: ```1.0```
- - **SHAPE_BORDER_WIDTH**: ```0.15```
- - **SHAPE_SIDES**: ```3```
- - **SHAPE_BORDER_COLOR**: ```vec3(1.)```
- - **SHAPE_SIZE**: ```1.0```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **SHAPE_ALPHA**:  The *default value* is ```1.0```. 
+ -  **SHAPE_BORDER_WIDTH**:  The *default value* is ```0.15```. 
+ -  **SHAPE_SIDES**:  The *default value* is ```3```. 
+ -  **SHAPE_BORDER_COLOR**:  The *default value* is ```vec3(1.)```. 
+ -  **SHAPE_SIZE**:  The *default value* is ```1.0```. 
 
 These are the **shader blocks**:
 
@@ -2161,11 +2209,12 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **GRID_SCALE**: ```20.0```
- - **GRID_COLOR**: ```color.rgb```
- - **GRID_BACKGROUND_COLOR**: ```color.rgb*.5```
- - **GRID_WIDTH**: ```0.05```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **GRID_SCALE**:  The *default value* is ```20.0```. 
+ -  **GRID_COLOR**:  The *default value* is ```color.rgb```. 
+ -  **GRID_BACKGROUND_COLOR**:  The *default value* is ```color.rgb*.5```. 
+ -  **GRID_WIDTH**:  The *default value* is ```0.05```. 
 
 These are the **shader blocks**:
 
@@ -2205,10 +2254,11 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **STRIPES_ALPHA**: ```1.0```
- - **STRIPES_SCALE**: ```2.0```
- - **STRIPES_WIDTH**: ```0.5```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **STRIPES_ALPHA**:  The *default value* is ```1.0```. 
+ -  **STRIPES_SCALE**:  The *default value* is ```2.0```. 
+ -  **STRIPES_WIDTH**:  The *default value* is ```0.5```. 
 
 These are the **shader blocks**:
 
@@ -2248,13 +2298,14 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **DOTS_SIZE**: ```0.41```
- - **DOTS_TYPE**: ```fill```
- - **DOTS_TILE_STYLE**: ```brick```
- - **DOTS_SCALE**: ```10.0```
- - **DOTS_BACKGROUND_COLOR**: ```color.rgb```
- - **DOTS_COLOR**: ```color.rgb*.5```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **DOTS_SIZE**:  The *default value* is ```0.41```. 
+ -  **DOTS_TYPE**:  The *default value* is ```fill```. 
+ -  **DOTS_TILE_STYLE**:  The *default value* is ```brick```. 
+ -  **DOTS_SCALE**:  The *default value* is ```10.0```. 
+ -  **DOTS_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
+ -  **DOTS_COLOR**:  The *default value* is ```color.rgb*.5```. 
 
 These are the **shader blocks**:
 
@@ -2295,7 +2346,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **color**:
 
@@ -2354,10 +2406,11 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **PIXELATE_BACKGROUND_COLOR**: ```color.rgb*.5```
- - **PIXELATE_SCALE**: ```40.0```
- - **PIXELATE_COLOR**: ```color.rgb*.5```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **PIXELATE_BACKGROUND_COLOR**:  The *default value* is ```color.rgb*.5```. 
+ -  **PIXELATE_SCALE**:  The *default value* is ```40.0```. 
+ -  **PIXELATE_COLOR**:  The *default value* is ```color.rgb*.5```. 
 
 These are the **shader blocks**:
 
@@ -2396,13 +2449,14 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **SHIMMERING_SPEED**: ```0.1```
- - **SHIMMERING_COLOR**: ```color.rgb```
- - **SHIMMERING_ANIMATED**: ```True```
- - **SHIMMERING_SCALE**: ```10.0```
- - **SHIMMERING_BACKGROUND_COLOR**: ```color.rgb*.5```
- - **SHIMMERING_AMOUNT**: ```1.0```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **SHIMMERING_SPEED**:  The *default value* is ```0.1```. 
+ -  **SHIMMERING_COLOR**:  The *default value* is ```color.rgb```. 
+ -  **SHIMMERING_ANIMATED**:  The *default value* is ```True```. 
+ -  **SHIMMERING_SCALE**:  The *default value* is ```10.0```. 
+ -  **SHIMMERING_BACKGROUND_COLOR**:  The *default value* is ```color.rgb*.5```. 
+ -  **SHIMMERING_AMOUNT**:  The *default value* is ```1.0```. 
 
 These are the **shader blocks**:
 
@@ -2449,11 +2503,12 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **STRIPES_WIDTH**: ```0.5```
- - **STRIPES_ANGLE**: ```PI*0.25```
- - **STRIPES_SCALE**: ```2.0```
- - **STRIPES_ALPHA**: ```0.5```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **STRIPES_WIDTH**:  The *default value* is ```0.5```. 
+ -  **STRIPES_ANGLE**:  The *default value* is ```PI*0.25```. 
+ -  **STRIPES_SCALE**:  The *default value* is ```2.0```. 
+ -  **STRIPES_ALPHA**:  The *default value* is ```0.5```. 
 
 These are the **shader blocks**:
 
@@ -2494,7 +2549,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **color**:
 
@@ -2556,7 +2612,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float circleDF (vec2 st) `
@@ -2601,7 +2658,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float cross (vec2 st, float size, float width) `
@@ -2649,10 +2707,11 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **CHAR_DECIMAL_POINT**: ```10.0```
- - **CHAR_MINUS**: ```11.0```
- - **CHAR_BLANK**: ```12.0```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **CHAR_DECIMAL_POINT**:  The *default value* is ```10.0```. 
+ -  **CHAR_MINUS**:  The *default value* is ```11.0```. 
+ -  **CHAR_BLANK**:  The *default value* is ```12.0```. 
 
 These are the **shader blocks**:
 
@@ -2688,7 +2747,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float shapeDF (vec2 st, int N) `
@@ -2727,7 +2787,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float rectDF (in vec2 st, in vec2 size) `
@@ -2764,7 +2825,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float warp (vec3 S) `
@@ -2802,8 +2864,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **STROKE**: ```0.15```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **STROKE**:  The *default value* is ```0.15```. 
 
 These are the **shader blocks**:
 
@@ -2840,7 +2903,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `vec2 getConstantCoords () `
@@ -2877,7 +2941,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `vec2 getScreenCoords () `
@@ -2918,7 +2983,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `vec2 getTexCoords () `
@@ -2950,7 +3016,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `vec2 getTileCoords() `
@@ -2990,7 +3057,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `vec2 getUZCoords () `
@@ -3048,9 +3116,10 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **TERRAIN_TEXTURE_INDEX**: ```0```
- - **TERRAIN_ZOFFSET**: ```0.0```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **TERRAIN_TEXTURE_INDEX**:  The *default value* is ```0```. 
+ -  **TERRAIN_ZOFFSET**:  The *default value* is ```0.0```. 
 
 These are the **shader blocks**:
 
@@ -3090,8 +3159,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **TERRAIN_ZOFFSET**: ```1.5```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **TERRAIN_ZOFFSET**:  The *default value* is ```1.5```. 
 
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
@@ -3119,8 +3189,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **TERRAIN_ZOFFSET**: ```1.0```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **TERRAIN_ZOFFSET**:  The *default value* is ```1.0```. 
 
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
@@ -3176,7 +3247,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `vec4 NonRepetitiveTexture (sampler2D tex, vec2 x, float v) `
@@ -3208,7 +3280,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `vec4 TileTexture (sampler2D tex, float scale) `
@@ -3250,7 +3323,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `vec2 brick (vec2 st, float zoom) `
@@ -3290,7 +3364,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `vec2 skew (vec2 st) `
@@ -3325,7 +3400,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `vec2 tile (vec2 st, float zoom) `
@@ -3358,8 +3434,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **PI**: ```3.14159265359```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **PI**:  The *default value* is ```3.14159265359```. 
 
 These are the **shader blocks**:
 

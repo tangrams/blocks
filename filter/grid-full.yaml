@@ -40,14 +40,14 @@ styles:
             shaders:
                 defines:
                     GRID_AMOUNT:
-                        label: amount
+                        label: Amount
                         range:
                             max: 1.0
                             min: 0.0
                             step: 0.01
                         type: number
                     GRID_BLEND:
-                        label: blend mode
+                        label: Blend mode
                         type: dropdownArray
                         values:
                         - ADD

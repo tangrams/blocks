@@ -24,7 +24,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float TileDots(float scale, float size) `
@@ -56,7 +57,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `bool grid (vec2 st, float res, float press) `
@@ -99,8 +101,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **PI**: ```3.14159265359```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **PI**:  The *default value* is ```3.14159265359```. 
 
 These are the **shader blocks**:
 
@@ -149,7 +152,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float wavesDF (vec2 st, float freq, float amp) `
@@ -182,7 +186,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float zigzagDF (vec2 st, float freq) `

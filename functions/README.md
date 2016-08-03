@@ -24,7 +24,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float aastep(float threshold, float value) `
@@ -56,9 +57,10 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **HALF_PI**: ```1.57079632679```
- - **PI**: ```3.14159265359```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **HALF_PI**:  The *default value* is ```1.57079632679```. 
+ -  **PI**:  The *default value* is ```3.14159265359```. 
 
 These are the **shader blocks**:
 
@@ -122,8 +124,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **EPSILON**: ```1e-07```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **EPSILON**:  The *default value* is ```1e-07```. 
 
 These are the **shader blocks**:
 
@@ -158,7 +161,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `float pulse (float x, float peak, float width) `
@@ -192,13 +196,14 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **ZOOM_END**: ```20.0```
- - **ZOOM_MAX**: ```max(ZOOM_START, ZOOM_END)```
- - **ZOOM_IN**: ```0.0```
- - **ZOOM_OUT**: ```1.0```
- - **ZOOM_START**: ```14.0```
- - **ZOOM_FNC**: ```linear```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **ZOOM_END**:  The *default value* is ```20.0```. 
+ -  **ZOOM_MAX**:  The *default value* is ```max(ZOOM_START, ZOOM_END)```. 
+ -  **ZOOM_IN**:  The *default value* is ```0.0```. 
+ -  **ZOOM_OUT**:  The *default value* is ```1.0```. 
+ -  **ZOOM_START**:  The *default value* is ```14.0```. 
+ -  **ZOOM_FNC**:  The *default value* is ```linear```. 
 
 These are the **shader blocks**:
 

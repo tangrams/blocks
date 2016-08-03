@@ -48,9 +48,10 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **TERRAIN_TEXTURE_INDEX**: ```0```
- - **TERRAIN_ZOFFSET**: ```0.0```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **TERRAIN_TEXTURE_INDEX**:  The *default value* is ```0```. 
+ -  **TERRAIN_ZOFFSET**:  The *default value* is ```0.0```. 
 
 These are the **shader blocks**:
 
@@ -90,8 +91,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **TERRAIN_ZOFFSET**: ```1.5```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **TERRAIN_ZOFFSET**:  The *default value* is ```1.5```. 
 
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
@@ -119,8 +121,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **TERRAIN_ZOFFSET**: ```1.0```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **TERRAIN_ZOFFSET**:  The *default value* is ```1.0```. 
 
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)

@@ -24,9 +24,10 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **GRAIN_AMOUNT**: ```0.3```
- - **GRAIN_BLEND**: ```SUBTRACT```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **GRAIN_AMOUNT**:  number between ```0.0``` and ```1.0``` that control the *amount*. The *default value* is ```0.3```. 
+ -  **GRAIN_BLEND**:  variable that control the *blend mode* with one of the following values: ```ADD, SUBTRACT, MULTIPLY```. The *default value* is ```SUBTRACT```. 
 
 These are the **shader blocks**:
 
@@ -74,9 +75,10 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **GRID_AMOUNT**: ```0.2```
- - **GRID_BLEND**: ```ADD```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **GRID_AMOUNT**:  number between ```0.0``` and ```1.0``` that control the *amount*. The *default value* is ```0.2```. 
+ -  **GRID_BLEND**:  variable that control the *blend mode* with one of the following values: ```ADD, SUBTRACT, MULTIPLY```. The *default value* is ```ADD```. 
 
 These are the **shader blocks**:
 
@@ -116,8 +118,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **uniforms**:
- - **u_hatchmap**: ```imgs/hatch.png```
+These blocks uses a custom **shader**.
+These are the **uniforms**:
+ -  **u_hatchmap**:  The *default value* is ```imgs/hatch.png```. 
 
 These are the **shader blocks**:
 
@@ -159,7 +162,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **color**:
 
@@ -201,11 +205,12 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **uniforms**:
- - **u_lut**: ```https://tangrams.github.io/blocks/filter/imgs/lut-0001.png```
+These blocks uses a custom **shader**.
+These are the **uniforms**:
+ -  **u_lut**:  variable that control the *filter* with one of the following values: ```https://tangrams.github.io/blocks/filter/imgs/lut-0005.png``` ( *Nashville* ), ```https://tangrams.github.io/blocks/filter/imgs/lut-0001.png``` ( *XPro* ), ```https://tangrams.github.io/blocks/filter/imgs/lut-0003.png``` ( *Toaster* ), ```https://tangrams.github.io/blocks/filter/imgs/lut-0004.png``` ( *Sutro* ), ```https://tangrams.github.io/blocks/filter/imgs/lut-0009.png``` ( *Hefe* ), ```https://tangrams.github.io/blocks/filter/imgs/lut-0008.png``` ( *InkWell* ), ```https://tangrams.github.io/blocks/filter/imgs/lut-0010.png``` ( *Gotham* ), ```https://tangrams.github.io/blocks/filter/imgs/lut-0002.png``` ( *Walden* ), ```https://tangrams.github.io/blocks/filter/imgs/lut-0013.png``` ( *Brannan* ), ```https://tangrams.github.io/blocks/filter/imgs/lut-0011.png``` ( *EarlyBird* ), ```https://tangrams.github.io/blocks/filter/imgs/lut-0007.png``` ( *LomoFi* ), ```https://tangrams.github.io/blocks/filter/imgs/lut-0006.png``` ( *LordKelvin* ). The *default value* is ```https://tangrams.github.io/blocks/filter/imgs/lut-0001.png```. 
 
-These are the defaults **defines**:
- - **LUT_AMOUNT**: ```0.5```
+These are the **defines**:
+ -  **LUT_AMOUNT**:  number between ```0.0``` and ```1.0``` that control the *amount*. The *default value* is ```0.5```. 
 
 These are the **shader blocks**:
 
@@ -256,11 +261,12 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **TV_FREQ**: ```2.7```
- - **TV_SPEED**: ```5.0```
- - **TV_AMOUNT**: ```1.0```
- - **TV_BLEND**: ```MULTIPLY```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **TV_FREQ**:  number between ```0.0``` and ```10.0``` that control the *frequency*. The *default value* is ```2.7```. 
+ -  **TV_SPEED**:  number between ```0.0``` and ```10.0``` that control the *speed*. The *default value* is ```5.0```. 
+ -  **TV_AMOUNT**:  number between ```0.0``` and ```1.0``` that control the *amount*. The *default value* is ```1.0```. 
+ -  **TV_BLEND**:  variable that control the *blend mode* with one of the following values: ```ADD, SUBTRACT, MULTIPLY```. The *default value* is ```MULTIPLY```. 
 
 These are the **shader blocks**:
 

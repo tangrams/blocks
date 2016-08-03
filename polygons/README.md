@@ -22,11 +22,12 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **GRID_SCALE**: ```20.0```
- - **GRID_COLOR**: ```color.rgb```
- - **GRID_BACKGROUND_COLOR**: ```color.rgb*.5```
- - **GRID_WIDTH**: ```0.05```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **GRID_SCALE**:  The *default value* is ```20.0```. 
+ -  **GRID_COLOR**:  The *default value* is ```color.rgb```. 
+ -  **GRID_BACKGROUND_COLOR**:  The *default value* is ```color.rgb*.5```. 
+ -  **GRID_WIDTH**:  The *default value* is ```0.05```. 
 
 These are the **shader blocks**:
 
@@ -66,10 +67,11 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **STRIPES_ALPHA**: ```1.0```
- - **STRIPES_SCALE**: ```2.0```
- - **STRIPES_WIDTH**: ```0.5```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **STRIPES_ALPHA**:  The *default value* is ```1.0```. 
+ -  **STRIPES_SCALE**:  The *default value* is ```2.0```. 
+ -  **STRIPES_WIDTH**:  The *default value* is ```0.5```. 
 
 These are the **shader blocks**:
 
@@ -109,13 +111,14 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **DOTS_SIZE**: ```0.41```
- - **DOTS_TYPE**: ```fill```
- - **DOTS_TILE_STYLE**: ```brick```
- - **DOTS_SCALE**: ```10.0```
- - **DOTS_BACKGROUND_COLOR**: ```color.rgb```
- - **DOTS_COLOR**: ```color.rgb*.5```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **DOTS_SIZE**:  The *default value* is ```0.41```. 
+ -  **DOTS_TYPE**:  The *default value* is ```fill```. 
+ -  **DOTS_TILE_STYLE**:  The *default value* is ```brick```. 
+ -  **DOTS_SCALE**:  The *default value* is ```10.0```. 
+ -  **DOTS_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
+ -  **DOTS_COLOR**:  The *default value* is ```color.rgb*.5```. 
 
 These are the **shader blocks**:
 
@@ -156,7 +159,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **color**:
 
@@ -215,10 +219,11 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **PIXELATE_BACKGROUND_COLOR**: ```color.rgb*.5```
- - **PIXELATE_SCALE**: ```40.0```
- - **PIXELATE_COLOR**: ```color.rgb*.5```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **PIXELATE_BACKGROUND_COLOR**:  The *default value* is ```color.rgb*.5```. 
+ -  **PIXELATE_SCALE**:  The *default value* is ```40.0```. 
+ -  **PIXELATE_COLOR**:  The *default value* is ```color.rgb*.5```. 
 
 These are the **shader blocks**:
 
@@ -257,13 +262,14 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **SHIMMERING_SPEED**: ```0.1```
- - **SHIMMERING_COLOR**: ```color.rgb```
- - **SHIMMERING_ANIMATED**: ```True```
- - **SHIMMERING_SCALE**: ```10.0```
- - **SHIMMERING_BACKGROUND_COLOR**: ```color.rgb*.5```
- - **SHIMMERING_AMOUNT**: ```1.0```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **SHIMMERING_SPEED**:  The *default value* is ```0.1```. 
+ -  **SHIMMERING_COLOR**:  The *default value* is ```color.rgb```. 
+ -  **SHIMMERING_ANIMATED**:  The *default value* is ```True```. 
+ -  **SHIMMERING_SCALE**:  The *default value* is ```10.0```. 
+ -  **SHIMMERING_BACKGROUND_COLOR**:  The *default value* is ```color.rgb*.5```. 
+ -  **SHIMMERING_AMOUNT**:  The *default value* is ```1.0```. 
 
 These are the **shader blocks**:
 
@@ -310,11 +316,12 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **STRIPES_WIDTH**: ```0.5```
- - **STRIPES_ANGLE**: ```PI*0.25```
- - **STRIPES_SCALE**: ```2.0```
- - **STRIPES_ALPHA**: ```0.5```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **STRIPES_WIDTH**:  The *default value* is ```0.5```. 
+ -  **STRIPES_ANGLE**:  The *default value* is ```PI*0.25```. 
+ -  **STRIPES_SCALE**:  The *default value* is ```2.0```. 
+ -  **STRIPES_ALPHA**:  The *default value* is ```0.5```. 
 
 These are the **shader blocks**:
 
@@ -355,7 +362,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **color**:
 

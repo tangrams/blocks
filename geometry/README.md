@@ -24,12 +24,13 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **ZOOM_START**: ```15.0```
- - **ZOOM_END**: ```20.0```
- - **HEIGHT_MAX**: ```2.5```
- - **HEIGHT_MIN**: ```1.0```
- - **HEIGHT**: ```zoom()```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **ZOOM_START**:  The *default value* is ```15.0```. 
+ -  **ZOOM_END**:  The *default value* is ```20.0```. 
+ -  **HEIGHT_MAX**:  The *default value* is ```2.5```. 
+ -  **HEIGHT_MIN**:  The *default value* is ```1.0```. 
+ -  **HEIGHT**:  The *default value* is ```zoom()```. 
 
 These are the **shader blocks**:
 
@@ -68,10 +69,11 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **WIDTH_MIN**: ```0.2```
- - **WIDTH_Z_SCALE**: ```0.006```
- - **WIDTH_MAX**: ```1.0```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **WIDTH_MIN**:  The *default value* is ```0.2```. 
+ -  **WIDTH_Z_SCALE**:  The *default value* is ```0.006```. 
+ -  **WIDTH_MAX**:  The *default value* is ```1.0```. 
 
 These are the **shader blocks**:
 
@@ -115,7 +117,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `mat2 rotate2D (float angle) `
@@ -155,7 +158,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **global**:
  + `bool isWall () `
@@ -188,8 +192,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **EARTH_RADIUS**: ```6378137.0```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **EARTH_RADIUS**:  The *default value* is ```6378137.0```. 
 
 These are the **shader blocks**:
 
@@ -239,10 +244,11 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **ROTATION**: ```sin(u_time*ROTATION_SPEED)*ROTATION_RANGE```
- - **ROTATION_SPEED**: ```0.1```
- - **ROTATION_RANGE**: ```PI```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **ROTATION**:  The *default value* is ```sin(u_time*ROTATION_SPEED)*ROTATION_RANGE```. 
+ -  **ROTATION_SPEED**:  The *default value* is ```0.1```. 
+ -  **ROTATION_RANGE**:  The *default value* is ```PI```. 
 
 These are the **shader blocks**:
 
@@ -290,8 +296,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **TILT**: ```0```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **TILT**:  The *default value* is ```0```. 
 
 These are the **shader blocks**:
 

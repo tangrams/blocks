@@ -24,13 +24,14 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **CHEVRON_SIZE**: ```1.0```
- - **CHEVRON_COLOR**: ```color.rgb*.5```
- - **CHEVRON_ALPHA**: ```1.0```
- - **CHEVRON_SCALE**: ```1.0```
- - **CHEVRON_BACKGROUND_COLOR**: ```color.rgb```
- - **CHEVRON_BACKGROUND_ALPHA**: ```color.a```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **CHEVRON_SIZE**:  The *default value* is ```1.0```. 
+ -  **CHEVRON_COLOR**:  The *default value* is ```color.rgb*.5```. 
+ -  **CHEVRON_ALPHA**:  The *default value* is ```1.0```. 
+ -  **CHEVRON_SCALE**:  The *default value* is ```1.0```. 
+ -  **CHEVRON_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
+ -  **CHEVRON_BACKGROUND_ALPHA**:  The *default value* is ```color.a```. 
 
 These are the **shader blocks**:
 
@@ -71,9 +72,10 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **DASH_SIZE**: ```0.5```
- - **DASH_SCALE**: ```0.1```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **DASH_SIZE**:  The *default value* is ```0.5```. 
+ -  **DASH_SCALE**:  The *default value* is ```0.1```. 
 
 These are the **shader blocks**:
 
@@ -117,13 +119,14 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **DATASTREAM_SPEED**: ```20.0```
- - **DATASTREAM_MARGIN**: ```0.4```
- - **DATASTREAM_AMOUNT**: ```0.8```
- - **DATASTREAM_ROADS**: ```5.0```
- - **DATASTREAM_COLOR**: ```vec3(1.)```
- - **DATASTREAM_BACKGROUND_COLOR**: ```color.rgb```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **DATASTREAM_SPEED**:  The *default value* is ```20.0```. 
+ -  **DATASTREAM_MARGIN**:  The *default value* is ```0.4```. 
+ -  **DATASTREAM_AMOUNT**:  The *default value* is ```0.8```. 
+ -  **DATASTREAM_ROADS**:  The *default value* is ```5.0```. 
+ -  **DATASTREAM_COLOR**:  The *default value* is ```vec3(1.)```. 
+ -  **DATASTREAM_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
 
 These are the **shader blocks**:
 
@@ -170,8 +173,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **DOT_SIZE**: ```0.05```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **DOT_SIZE**:  The *default value* is ```0.05```. 
 
 These are the **shader blocks**:
 
@@ -209,10 +213,11 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **GLOW_WIDTH**: ```0.4```
- - **PI**: ```3.14159265359```
- - **GLOW_BRIGHTNESS**: ```0.25```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **GLOW_WIDTH**:  The *default value* is ```0.4```. 
+ -  **PI**:  The *default value* is ```3.14159265359```. 
+ -  **GLOW_BRIGHTNESS**:  The *default value* is ```0.25```. 
 
 These are the **shader blocks**:
 
@@ -253,9 +258,10 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **OUTLINE_WIDTH**: ```0.1```
- - **OUTLINE_COLOR**: ```color.rgb*.5```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **OUTLINE_WIDTH**:  The *default value* is ```0.1```. 
+ -  **OUTLINE_COLOR**:  The *default value* is ```color.rgb*.5```. 
 
 These are the **shader blocks**:
 
@@ -304,7 +310,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **color**:
 
@@ -341,10 +348,11 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **STRIPES_WIDTH**: ```0.1```
- - **STRIPES_COLOR**: ```color.rgb*.5```
- - **STRIPES_BACKGROUND_COLOR**: ```color.rgb```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **STRIPES_WIDTH**:  The *default value* is ```0.1```. 
+ -  **STRIPES_COLOR**:  The *default value* is ```color.rgb*.5```. 
+ -  **STRIPES_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
 
 These are the **shader blocks**:
 

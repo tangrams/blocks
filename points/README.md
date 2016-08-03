@@ -24,8 +24,9 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **CROSS_ALPHA**: ```0.75```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **CROSS_ALPHA**:  The *default value* is ```0.75```. 
 
 These are the **shader blocks**:
 
@@ -68,7 +69,8 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the **shader blocks**:
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
 
 - **filter**:
 
@@ -107,12 +109,13 @@ import:
 ```
 
 
-These blocks uses a custom **shader**. These are the defaults **defines**:
- - **SHAPE_ALPHA**: ```1.0```
- - **SHAPE_BORDER_WIDTH**: ```0.15```
- - **SHAPE_SIDES**: ```3```
- - **SHAPE_BORDER_COLOR**: ```vec3(1.)```
- - **SHAPE_SIZE**: ```1.0```
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **SHAPE_ALPHA**:  The *default value* is ```1.0```. 
+ -  **SHAPE_BORDER_WIDTH**:  The *default value* is ```0.15```. 
+ -  **SHAPE_SIDES**:  The *default value* is ```3```. 
+ -  **SHAPE_BORDER_COLOR**:  The *default value* is ```vec3(1.)```. 
+ -  **SHAPE_SIZE**:  The *default value* is ```1.0```. 
 
 These are the **shader blocks**:
 

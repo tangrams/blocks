@@ -42,20 +42,78 @@ def appendDocumentation(readme_file, filename, counter):
                             '```\n\n\n')
 
         if 'shaders' in yaml_file['styles'][name_block]:
-            readme_file.write('These blocks uses a custom **shader**. ');
+            readme_file.write('These blocks uses a custom **shader**.\n');
 
             # Add a list of uniforms
             if 'uniforms' in yaml_file['styles'][name_block]['shaders']:
                 readme_file.write('These are the **uniforms**:\n')
                 for uniform in yaml_file['styles'][name_block]['shaders']['uniforms'].keys():
-                    readme_file.write(' - **' + uniform + '**: ```' + str(yaml_file['styles'][name_block]['shaders']['uniforms'][uniform]) + '```\n')
+                    uniform_doc = ' **' + uniform + '**: '
+                    
+                    # Add extra information from the UI 
+                    if 'ui' in yaml_file['styles'][name_block]:
+                        if 'shaders' in yaml_file['styles'][name_block]['ui']:
+                            if 'uniforms' in yaml_file['styles'][name_block]['ui']['shaders']:
+                                if uniform in yaml_file['styles'][name_block]['ui']['shaders']['uniforms']:
+                                    if yaml_file['styles'][name_block]['ui']['shaders']['uniforms'][uniform]['type'] == 'number':
+                                        uniform_min = yaml_file['styles'][name_block]['ui']['shaders']['uniforms'][uniform]['range']['min']
+                                        uniform_max = yaml_file['styles'][name_block]['ui']['shaders']['uniforms'][uniform]['range']['max']
+                                        uniform_label = yaml_file['styles'][name_block]['ui']['shaders']['uniforms'][uniform]['label'].lower()
+                                        uniform_doc += ' number between ```' + str(uniform_min) + '``` and ```' + str(uniform_max) + '``` that control the *' + uniform_label + '*.'
+                                    
+                                    elif yaml_file['styles'][name_block]['ui']['shaders']['uniforms'][uniform]['type'] == 'dropdownArray':
+                                        uniform_label = yaml_file['styles'][name_block]['ui']['shaders']['uniforms'][uniform]['label'].lower()
+                                        uniform_doc += ' variable that control the *' + uniform_label + '* with one of the following values: ```'
+                                        uniform_doc += ', '.join(yaml_file['styles'][name_block]['ui']['shaders']['uniforms'][uniform]['values']) + '```.'
+
+                                    elif yaml_file['styles'][name_block]['ui']['shaders']['uniforms'][uniform]['type'] == 'dropdownList':
+                                        uniform_label = yaml_file['styles'][name_block]['ui']['shaders']['uniforms'][uniform]['label'].lower()
+                                        uniform_doc += ' variable that control the *' + uniform_label + '* with one of the following values: '
+                                        uniform_values = []
+                                        for key, value in yaml_file['styles'][name_block]['ui']['shaders']['uniforms'][uniform]['values'].iteritems():
+                                            uniform_values.append('```'+value+'``` ( *' + key + '* )')
+
+                                        uniform_doc += ', '.join(uniform_values) + '.'
+
+                    uniform_doc += ' The *default value* is ```' + str(yaml_file['styles'][name_block]['shaders']['uniforms'][uniform]) + '```. '
+
+                    readme_file.write(' - ' + uniform_doc + '\n')
                 readme_file.write('\n')
 
             # Add a list of defines
             if 'defines' in yaml_file['styles'][name_block]['shaders']:
-                readme_file.write('These are the defaults **defines**:\n')
+                readme_file.write('These are the **defines**:\n')
                 for define in yaml_file['styles'][name_block]['shaders']['defines'].keys():
-                    readme_file.write(' - **' + define + '**: ```' + str(yaml_file['styles'][name_block]['shaders']['defines'][define]) + '```\n')
+                    define_doc = ' **' + define + '**: ' # name
+                    
+                    # Add extra information from the UI 
+                    if 'ui' in yaml_file['styles'][name_block]:
+                        if 'shaders' in yaml_file['styles'][name_block]['ui']:
+                            if 'defines' in yaml_file['styles'][name_block]['ui']['shaders']:
+                                if define in yaml_file['styles'][name_block]['ui']['shaders']['defines']:
+                                    if yaml_file['styles'][name_block]['ui']['shaders']['defines'][define]['type'] == 'number':
+                                        define_min = yaml_file['styles'][name_block]['ui']['shaders']['defines'][define]['range']['min']
+                                        define_max = yaml_file['styles'][name_block]['ui']['shaders']['defines'][define]['range']['max']
+                                        define_label = yaml_file['styles'][name_block]['ui']['shaders']['defines'][define]['label'].lower()
+                                        define_doc += ' number between ```' + str(define_min) + '``` and ```' + str(define_max) + '``` that control the *' + define_label + '*.'
+                                    
+                                    elif yaml_file['styles'][name_block]['ui']['shaders']['defines'][define]['type'] == 'dropdownArray':
+                                        define_label = yaml_file['styles'][name_block]['ui']['shaders']['defines'][define]['label'].lower()
+                                        define_doc += ' variable that control the *' + define_label + '* with one of the following values: ```'
+                                        define_doc += ', '.join(yaml_file['styles'][name_block]['ui']['shaders']['defines'][define]['values']) + '```.'
+                                    
+                                    elif yaml_file['styles'][name_block]['ui']['shaders']['uniforms'][define]['type'] == 'dropdownList':
+                                        define_label = yaml_file['styles'][name_block]['ui']['shaders']['defines'][define]['label'].lower()
+                                        define_doc += ' variable that control the *' + define_label + '* with one of the following values: '
+                                        define_values = []
+                                        for key, value in yaml_file['styles'][name_block]['ui']['shaders']['defines'][define]['values'].iteritems():
+                                            define_values.append('```'+value+'``` ( *' + key + '* )')
+
+                                        define_doc += ', '.join(define_values) + '.'
+                
+                    define_doc += ' The *default value* is ```' + str(yaml_file['styles'][name_block]['shaders']['defines'][define]) + '```. '
+
+                    readme_file.write(' - ' + define_doc + '\n')
                 readme_file.write('\n')
 
             # Add a list of blocks
