@@ -32,7 +32,7 @@ styles:
                     // get distance field of a Circle
                     // ================================
                     float circleDF (vec2 st) {
-                        return dot(st,st)*3.141592;
+                        return dot(st,st)*3.03;
                     }
                     //
                     // Draw a circle in the middle of the ST space
