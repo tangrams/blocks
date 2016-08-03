@@ -419,7 +419,7 @@ import:
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
  - **GRAIN_AMOUNT**: ```0.3```
- - **GRAIN_BLEND**: ```SUBSTRACT```
+ - **GRAIN_BLEND**: ```SUBTRACT```
 
 These are the **shader blocks**:
 
@@ -429,15 +429,7 @@ These are the **shader blocks**:
 
 ```glsl
 // Apply the grain in the amount defined on GRAIN_AMOUNT
-#if GRAIN_BLEND == ADD
-color.rgb += grain()*GRAIN_AMOUNT;
-#endif
-#if GRAIN_BLEND == SUBSTRACT
-color.rgb -= grain()*GRAIN_AMOUNT;
-#endif
-#if GRAIN_BLEND == MULTIPLY
-color.rgb *= grain()*GRAIN_AMOUNT;
-#endif
+color.rgb = color.rgb GRAIN_BLEND grain()*GRAIN_AMOUNT;
 
 ```
 
@@ -484,15 +476,7 @@ These are the **shader blocks**:
 - **filter**:
 
 ```glsl
-#if GRID_BLEND == ADD
-color.rgb += tileGrid()*GRID_AMOUNT;
-#endif
-#if GRID_BLEND == SUBSTRACT
-color.rgb -= tileGrid()*GRID_AMOUNT;
-#endif
-#if GRID_BLEND == MULTIPLY
-color.rgb *= (1.-tileGrid()*GRID_AMOUNT);
-#endif
+color.rgb = color.rgb GRID_BLEND tileGrid()*GRID_AMOUNT;
 
 ```
 
@@ -662,13 +646,15 @@ import:
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
  - **TV_FREQ**: ```1.2```
+ - **TV_SPEED**: ```5.0```
+ - **TV_BLEND**: ```MULTIPLY```
 
 These are the **shader blocks**:
 
 - **filter**:
 
 ```glsl
-color *= abs(cos((gl_FragCoord.y*TV_FREQ+u_time*5.)));
+color = color TV_BLEND abs(cos((gl_FragCoord.y*TV_FREQ+u_time*TV_SPEED)));
 
 ```
 

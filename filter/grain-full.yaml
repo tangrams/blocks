@@ -4,10 +4,10 @@ styles:
     block:
         shaders:
             defines:
-                ADD: '0'
-                MULTIPLY: '2'
+                ADD: +
+                MULTIPLY: '*'
                 PI: 3.141592653589793
-                SUBSTRACT: '1'
+                SUBTRACT: '-'
     filter-grain:
         doc:
             author:
@@ -31,23 +31,7 @@ styles:
             blocks:
                 filter: '// Apply the grain in the amount defined on GRAIN_AMOUNT
 
-                    #if GRAIN_BLEND == ADD
-
-                    color.rgb += grain()*GRAIN_AMOUNT;
-
-                    #endif
-
-                    #if GRAIN_BLEND == SUBSTRACT
-
-                    color.rgb -= grain()*GRAIN_AMOUNT;
-
-                    #endif
-
-                    #if GRAIN_BLEND == MULTIPLY
-
-                    color.rgb *= grain()*GRAIN_AMOUNT;
-
-                    #endif
+                    color.rgb = color.rgb GRAIN_BLEND grain()*GRAIN_AMOUNT;
 
                     '
                 global: "#ifdef TANGRAM_FRAGMENT_SHADER\nfloat grain () {\n    vec2\
@@ -55,7 +39,7 @@ styles:
                     \    return dot(st,st)+(fbm(pos*0.6)*0.1);\n}\n#endif\n"
             defines:
                 GRAIN_AMOUNT: 0.3
-                GRAIN_BLEND: SUBSTRACT
+                GRAIN_BLEND: SUBTRACT
         ui:
             shaders:
                 defines:
@@ -71,7 +55,7 @@ styles:
                         type: dropdown
                         values:
                         - ADD
-                        - SUBSTRACT
+                        - SUBTRACT
                         - MULTIPLY
     generative-fbm:
         doc:

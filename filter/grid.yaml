@@ -27,19 +27,11 @@ styles:
                     GRID_BLEND: 
                         type: dropdown
                         label: 'blend mode'
-                        values: ['ADD', 'SUBSTRACT', 'MULTIPLY']
+                        values: ['ADD', 'SUBTRACT', 'MULTIPLY']
         shaders:
             defines:
                 GRID_AMOUNT: .2
                 GRID_BLEND: 'ADD'
             blocks:                    
                 filter: |
-                    #if GRID_BLEND == ADD
-                    color.rgb += tileGrid()*GRID_AMOUNT;
-                    #endif
-                    #if GRID_BLEND == SUBSTRACT
-                    color.rgb -= tileGrid()*GRID_AMOUNT;
-                    #endif
-                    #if GRID_BLEND == MULTIPLY
-                    color.rgb *= (1.-tileGrid()*GRID_AMOUNT);
-                    #endif
+                    color.rgb = color.rgb GRID_BLEND tileGrid()*GRID_AMOUNT;

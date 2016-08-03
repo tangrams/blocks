@@ -4,10 +4,10 @@ styles:
     block:
         shaders:
             defines:
-                ADD: '0'
-                MULTIPLY: '2'
+                ADD: +
+                MULTIPLY: '*'
                 PI: 3.141592653589793
-                SUBSTRACT: '1'
+                SUBTRACT: '-'
     filter-grid:
         doc:
             author:
@@ -24,23 +24,7 @@ styles:
         - patterns-grid
         shaders:
             blocks:
-                filter: '#if GRID_BLEND == ADD
-
-                    color.rgb += tileGrid()*GRID_AMOUNT;
-
-                    #endif
-
-                    #if GRID_BLEND == SUBSTRACT
-
-                    color.rgb -= tileGrid()*GRID_AMOUNT;
-
-                    #endif
-
-                    #if GRID_BLEND == MULTIPLY
-
-                    color.rgb *= (1.-tileGrid()*GRID_AMOUNT);
-
-                    #endif
+                filter: 'color.rgb = color.rgb GRID_BLEND tileGrid()*GRID_AMOUNT;
 
                     '
             defines:
@@ -61,7 +45,7 @@ styles:
                         type: dropdown
                         values:
                         - ADD
-                        - SUBSTRACT
+                        - SUBTRACT
                         - MULTIPLY
     patterns-grid:
         doc:

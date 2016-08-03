@@ -32,11 +32,11 @@ styles:
                     GRAIN_BLEND: 
                         type: dropdown
                         label: 'Blend mode'
-                        values: ['ADD', 'SUBSTRACT', 'MULTIPLY']
+                        values: ['ADD', 'SUBTRACT', 'MULTIPLY']
         shaders:
             defines:
                 GRAIN_AMOUNT: .3
-                GRAIN_BLEND: 'SUBSTRACT'
+                GRAIN_BLEND: 'SUBTRACT'
             blocks:
                 global: |
                     #ifdef TANGRAM_FRAGMENT_SHADER
@@ -48,12 +48,4 @@ styles:
                     #endif
                 filter: |
                     // Apply the grain in the amount defined on GRAIN_AMOUNT
-                    #if GRAIN_BLEND == ADD
-                    color.rgb += grain()*GRAIN_AMOUNT;
-                    #endif
-                    #if GRAIN_BLEND == SUBSTRACT
-                    color.rgb -= grain()*GRAIN_AMOUNT;
-                    #endif
-                    #if GRAIN_BLEND == MULTIPLY
-                    color.rgb *= grain()*GRAIN_AMOUNT;
-                    #endif
+                    color.rgb = color.rgb GRAIN_BLEND grain()*GRAIN_AMOUNT;

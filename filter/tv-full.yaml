@@ -16,8 +16,10 @@ styles:
             version: 0.0.1
         shaders:
             blocks:
-                filter: 'color *= abs(cos((gl_FragCoord.y*TV_FREQ+u_time*5.)));
+                filter: 'color = color TV_BLEND abs(cos((gl_FragCoord.y*TV_FREQ+u_time*TV_SPEED)));
 
                     '
             defines:
+                TV_BLEND: MULTIPLY
                 TV_FREQ: 1.2
+                TV_SPEED: 5.0

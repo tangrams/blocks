@@ -2,8 +2,8 @@ styles:
     block:
         shaders:
             defines:
-                ADD: '0'
-                SUBSTRACT: '1'
-                MULTIPLY: '2'
+                ADD: '+'
+                SUBTRACT: '-'
+                MULTIPLY: '*'
 
                 PI: 3.1415926535897932384626433832795
