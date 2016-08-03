@@ -1,0 +1,14 @@
+import: 
+    - ../functions/aastep.yaml
+
+styles:
+    shapes-stroke:
+        mix: [functions-aastep]
+        shaders:
+            defines:
+                STROKE: 0.15
+            blocks:
+                global: |
+                    float stroke (in float size, in float x) {
+                        return aastep(size, x+STROKE) - aastep(size, x);
+                    }

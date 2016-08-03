@@ -110,25 +110,21 @@ import:
 
 
 These blocks uses a custom **shader**. These are the defaults **defines**:
- - **DOTS_STROKE**: ```0.15```
  - **DOTS_SIZE**: ```0.41```
  - **DOTS_TYPE**: ```fill```
- - **DOTS_SCALE**: ```10.0```
- - **DOTS_COLOR**: ```color.rgb*.5```
- - **DOTS_BACKGROUND_COLOR**: ```color.rgb```
  - **DOTS_TILE_STYLE**: ```brick```
+ - **DOTS_SCALE**: ```10.0```
+ - **DOTS_BACKGROUND_COLOR**: ```color.rgb```
+ - **DOTS_COLOR**: ```color.rgb*.5```
 
 These are the **shader blocks**:
 
-- **global**:
- + `float fill (in float x) `
- + `float stroke (in float x) `
 - **color**:
 
 ```glsl
 color.rgb = mix(DOTS_BACKGROUND_COLOR, 
                 DOTS_COLOR, 
-                DOTS_TYPE( circleDF(vec2(0.5)- DOTS_TILE_STYLE(getTileCoords()*DOTS_SCALE,2.))*2.) );
+                DOTS_TYPE( DOTS_SIZE, circleDF(vec2(0.5)-DOTS_TILE_STYLE(getTileCoords()*DOTS_SCALE,2.))) );
 ```
 
 

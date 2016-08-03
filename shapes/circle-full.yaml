@@ -1,4 +1,5 @@
-import: ../functions/aastep.yaml
+import:
+- ../functions/aastep.yaml
 styles:
     functions-aastep:
         doc:
@@ -49,13 +50,32 @@ styles:
             licence: MIT
             tangram-version: 0.0.7
             version: 0.0.1
-        mix: functions-aastep
+        mix:
+        - shapes-fill
+        - shapes-stroke
         shaders:
             blocks:
                 global: "// get distance field of a Circle\n// ================================\n\
-                    float circleDF (vec2 st) {\n    return dot(st,st);\n}\n//\n//\
-                    \ Draw a circle in the middle of the ST space\n// ================================\n\
-                    float circle (vec2 st, float radius) {\n    return 1.-aastep(radius,\
-                    \ circleDF(st-vec2(0.5))*PI);\n}"
+                    float circleDF (vec2 st) {\n    return dot(st,st)*2.;\n}\n//\n\
+                    // Draw a circle in the middle of the ST space\n// ================================\n\
+                    float circle (vec2 st, float radius) {\n    return fill(radius,\
+                    \ circleDF(st-vec2(0.5)));\n}\n\n//\n// Draw a circle in the middle\
+                    \ of the ST space\n// ================================\nfloat\
+                    \ circleBorder (vec2 st, float radius) {\n    return stroke(radius,\
+                    \ circleDF(st-vec2(0.5)));\n}"
+    shapes-fill:
+        mix:
+        - functions-aastep
+        shaders:
+            blocks:
+                global: "float fill (in float size, in float x) {\n    return 1.-aastep(size,\
+                    \ x);\n}\n"
+    shapes-stroke:
+        mix:
+        - functions-aastep
+        shaders:
+            blocks:
+                global: "float stroke (in float size, in float x) {\n    return aastep(size,\
+                    \ x+STROKE) - aastep(size, x);\n}"
             defines:
-                PI: 3.141592653589793
+                STROKE: 0.15

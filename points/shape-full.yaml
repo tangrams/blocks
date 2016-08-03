@@ -1,5 +1,19 @@
-import: ../functions/aastep.yaml
+import:
+- ../functions/aastep.yaml
 styles:
+    block:
+        shaders:
+            defines:
+                ADD: +
+                EPSILON: 1.0e-07
+                HALF_PI: 1.5707963267948966
+                MULTIPLY: '*'
+                PI: 3.141592653589793
+                QUATER_PI: 0.785398163
+                SUBTRACT: '-'
+                TWO_PI: 6.283185307179586
+                deg2rad(d): (((d)*3.1415926535897932384626433832795)/180.0)
+                rad2deg(d): (((d)*180.0)/3.1415926535897932384626433832795)
     functions-aastep:
         doc:
             author:
@@ -57,6 +71,13 @@ styles:
                 SHAPE_SIDES: 3
                 SHAPE_SIZE: 1.0
         texcoord: true
+    shapes-fill:
+        mix:
+        - functions-aastep
+        shaders:
+            blocks:
+                global: "float fill (in float size, in float x) {\n    return 1.-aastep(size,\
+                    \ x);\n}\n"
     shapes-polygons:
         doc:
             description: 'Collection of functions to draw polygons. To learn more
@@ -70,7 +91,8 @@ styles:
                     lines: 153
                     url: https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml
         mix:
-        - functions-aastep
+        - shapes-fill
+        - shapes-stroke
         shaders:
             blocks:
                 global: "// get distance field of a polygon in the center\n// where\
@@ -79,8 +101,17 @@ styles:
                     \ a = atan(st.x,st.y)+PI;\n    float r = TWO_PI/float(N);\n  \
                     \  return cos(floor(.5+a/r)*r-a)*length(st);\n}\n\n// draw a polygon\
                     \ in the center\n// where N is the number of sides of it\n// ================================\n\
-                    float shape (vec2 st, int N, float width) {\n    return 1.0-aastep(width,shapeDF(st,N));\n\
-                    }"
+                    float shape (vec2 st, int N, float width) {\n    return fill(width,\
+                    \ shapeDF(st,N));\n}\n\n// draw a polygon border in the center\n\
+                    // where N is the number of sides of it\n// ================================\n\
+                    float shapeBorder (vec2 st, int N, float width) {\n    return\
+                    \ stroke(width, shapeDF(st,N));\n}"
+    shapes-stroke:
+        mix:
+        - functions-aastep
+        shaders:
+            blocks:
+                global: "float stroke (in float size, in float x) {\n    return aastep(size,\
+                    \ x+STROKE) - aastep(size, x);\n}"
             defines:
-                PI: 3.141592653589793
-                TWO_PI: 6.283185307
+                STROKE: 0.15

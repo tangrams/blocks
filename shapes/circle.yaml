@@ -1,4 +1,6 @@
-import: ../functions/aastep.yaml
+import: 
+    - fill.yaml
+    - stroke.yaml
 
 styles:
     shapes-circle:
@@ -24,20 +26,25 @@ styles:
                     url: https://tangrams.github.io/tangram-sandbox/styles/nursery.yaml
                     img: https://tangrams.github.io/tangram-sandbox/styles/nursery.png
                     lines: 146
-        mix: functions-aastep
+        mix: [shapes-fill, shapes-stroke]
         shaders:
-            defines:
-                PI: 3.14159265358979323846
             blocks:
                 global: |
                     // get distance field of a Circle
                     // ================================
                     float circleDF (vec2 st) {
-                        return dot(st,st);
+                        return dot(st,st)*2.;
                     }
                     //
                     // Draw a circle in the middle of the ST space
                     // ================================
                     float circle (vec2 st, float radius) {
-                        return 1.-aastep(radius, circleDF(st-vec2(0.5))*PI);
+                        return fill(radius, circleDF(st-vec2(0.5)));
+                    }
+
+                    //
+                    // Draw a circle in the middle of the ST space
+                    // ================================
+                    float circleBorder (vec2 st, float radius) {
+                        return stroke(radius, circleDF(st-vec2(0.5)));
                     }

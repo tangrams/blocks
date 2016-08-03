@@ -1,4 +1,36 @@
+import:
+- ../functions/aastep.yaml
 styles:
+    functions-aastep:
+        doc:
+            author:
+                name: Matt DesLauriers
+                twitter: mattdesl
+            description: 'AnitAliased ```step()``` function implemented by [Matt DesLauriers](https://twitter.com/mattdesl)
+                in this module <https://github.com/stackgl/glsl-aastep>
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// AntiAliased Step function\n//=============================\n\
+                    float aastep(float threshold, float value) {\n    #ifdef TANGRAM_FRAGMENT_SHADER\n\
+                    \        #ifdef TANGRAM_EXTENSION_OES_standard_derivatives\n \
+                    \           float afwidth = length(vec2(dFdx(value), dFdy(value)))\
+                    \ * 0.70710678118654757;\n            return smoothstep(threshold-afwidth,\
+                    \ threshold+afwidth, value);\n        #else\n            return\
+                    \ step(threshold, value);\n        #endif  \n    #else\n     \
+                    \   return step(threshold, value);\n    #endif\n}"
+            extensions: OES_standard_derivatives
+    shapes-fill:
+        mix:
+        - functions-aastep
+        shaders:
+            blocks:
+                global: "float fill (in float size, in float x) {\n    return 1.-aastep(size,\
+                    \ x);\n}\n"
     shapes-rect:
         doc:
             author:
@@ -12,20 +44,36 @@ styles:
             licence: MIT
             tangram-version: 0.0.7
             version: 0.0.1
+        mix:
+        - shapes-fill
+        - shapes-stroke
         shaders:
             blocks:
                 global: "// get distance field of a rectangle in the center\n// ================================\n\
-                    float rectDF (vec2 st, vec2 size) {\n    //float aspect = u_resolution.x/u_resolution.y;\n\
-                    \    st = st*2.-1.;\n    //st.x *= aspect;\n    return length(max(abs(st)-size,.0));\n\
-                    }\nfloat rectDF (vec2 st, float size) {\n    //float aspect =\
-                    \ u_resolution.x/u_resolution.y;\n    st = st*2.-1.;\n    //st.x\
-                    \ *= aspect;\n    return length(max(abs(st)-size,.0));\n}\n\n\
-                    // Draw a round corners rectangle in the center\n// ================================\n\
-                    float rect (vec2 st, vec2 size, float radio) {\n    radio = max(.000001,\
-                    \ radio);\n    return 1.0-step(radio, rectDF(st, size-radio));\n\
+                    float rectDF (in vec2 st, in vec2 size) {\n    st = st*2.-1.;\n\
+                    \    return length(max(abs(st)-size,.0));\n}\nfloat rectDF (in\
+                    \ vec2 st, in float size) {\n    return rectDF(st, vec2(size));\n\
+                    }\n\n// Draw a round corners rectangle in the center\n// ================================\n\
+                    float rect (in vec2 st, in vec2 size, in float radio) {\n    radio\
+                    \ = max(.000001, radio);\n    return fill(radio, rectDF(st, size-radio));\n\
                     }\n\nfloat rect (vec2 st, float size, float radio) {\n    return\
-                    \ rect(st,vec2(size),radio);\n}\n\n// Draw a rectangle in the\
-                    \ center\n// ================================\nfloat rect (vec2\
-                    \ st, vec2 size){\n    size = .25-size*.125;\n    vec2 uv = step(size,st*(1.0-st));\n\
-                    \    return (uv.x*uv.y);\n}\n\nfloat rect (vec2 st, float size){\n\
-                    \    return rect(st,vec2(size));\n}\n"
+                    \ rect(st,vec2(size),radio);\n}\n\n// Draw a round corners rectangle\
+                    \ border in the center\n// ================================\n\
+                    float rectBorder (in vec2 st, in vec2 size, in float radio) {\n\
+                    \    radio = max(.000001, radio);\n    return stroke(radio, rectDF(st,\
+                    \ size-radio));\n}\n\nfloat rectBorder (vec2 st, float size, float\
+                    \ radio) {\n    return rect(st,vec2(size),radio);\n}\n\n// Draw\
+                    \ a rectangle in the center\n// ================================\n\
+                    float rect (vec2 st, vec2 size){\n    size = .25-size*.125;\n\
+                    \    vec2 uv = step(size,st*(1.0-st));\n    return (uv.x*uv.y);\n\
+                    }\n\nfloat rect (vec2 st, float size){\n    return rect(st, vec2(size));\n\
+                    }\n"
+    shapes-stroke:
+        mix:
+        - functions-aastep
+        shaders:
+            blocks:
+                global: "float stroke (in float size, in float x) {\n    return aastep(size,\
+                    \ x+STROKE) - aastep(size, x);\n}"
+            defines:
+                STROKE: 0.15
