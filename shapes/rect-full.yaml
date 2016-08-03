@@ -24,13 +24,6 @@ styles:
                     \ step(threshold, value);\n        #endif  \n    #else\n     \
                     \   return step(threshold, value);\n    #endif\n}"
             extensions: OES_standard_derivatives
-    shapes-fill:
-        mix:
-        - functions-aastep
-        shaders:
-            blocks:
-                global: "float fill (in float size, in float x) {\n    return 1.-aastep(size,\
-                    \ x);\n}\n"
     shapes-rect:
         doc:
             author:
@@ -45,8 +38,7 @@ styles:
             tangram-version: 0.0.7
             version: 0.0.1
         mix:
-        - shapes-fill
-        - shapes-stroke
+        - shapes-type
         shaders:
             blocks:
                 global: "// get distance field of a rectangle in the center\n// ================================\n\
@@ -68,12 +60,25 @@ styles:
                     \    vec2 uv = step(size,st*(1.0-st));\n    return (uv.x*uv.y);\n\
                     }\n\nfloat rect (vec2 st, float size){\n    return rect(st, vec2(size));\n\
                     }\n"
-    shapes-stroke:
+    shapes-type:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: "This block provides to functions `fill` and `stroke`. Each\
+                \ one transform a SDF to a fill shape or a stroke shape (border).\
+                \ The stroke width can be control with the define `STROKE`. \nTo learn\
+                \ more about how to make shapes on shaders go to From check [this\
+                \ chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)\n"
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
         mix:
         - functions-aastep
         shaders:
             blocks:
-                global: "float stroke (in float size, in float x) {\n    return aastep(size,\
-                    \ x+STROKE) - aastep(size, x);\n}"
+                global: "float fill (in float size, in float x) {\n    return 1.-aastep(size,\
+                    \ x);\n}\n\nfloat stroke (in float size, in float x) {\n    return\
+                    \ aastep(size, x+STROKE) - aastep(size, x);\n}"
             defines:
                 STROKE: 0.15

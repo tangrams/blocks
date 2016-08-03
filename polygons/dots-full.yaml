@@ -121,8 +121,7 @@ styles:
             tangram-version: 0.0.7
             version: 0.0.1
         mix:
-        - shapes-fill
-        - shapes-stroke
+        - shapes-type
         shaders:
             blocks:
                 global: "// get distance field of a Circle\n// ================================\n\
@@ -133,20 +132,26 @@ styles:
                     \ of the ST space\n// ================================\nfloat\
                     \ circleBorder (vec2 st, float radius) {\n    return stroke(radius,\
                     \ circleDF(st-vec2(0.5)));\n}"
-    shapes-fill:
+    shapes-type:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: "This block provides to functions `fill` and `stroke`. Each\
+                \ one transform a SDF to a fill shape or a stroke shape (border).\
+                \ The stroke width can be control with the define `STROKE`. \nTo learn\
+                \ more about how to make shapes on shaders go to From check [this\
+                \ chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)\n"
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
         mix:
         - functions-aastep
         shaders:
             blocks:
                 global: "float fill (in float size, in float x) {\n    return 1.-aastep(size,\
-                    \ x);\n}\n"
-    shapes-stroke:
-        mix:
-        - functions-aastep
-        shaders:
-            blocks:
-                global: "float stroke (in float size, in float x) {\n    return aastep(size,\
-                    \ x+STROKE) - aastep(size, x);\n}"
+                    \ x);\n}\n\nfloat stroke (in float size, in float x) {\n    return\
+                    \ aastep(size, x+STROKE) - aastep(size, x);\n}"
             defines:
                 STROKE: 0.15
     space-tile:

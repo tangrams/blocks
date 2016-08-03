@@ -28,9 +28,9 @@ styles:
         raster: custom
         shaders:
             blocks:
-                color: "color = mix(CONTOURS_BACKGROUND_COLOR,\n            CONTOURS_COLOR,\n\
-                    \            aastep( dot(normal, vec3(0.,0.,1.)),\n          \
-                    \          abs(sin((normal_elv_raster.a*PI)*CONTOURS_SCALE+CONTOURS_OFFSET))\
+                color: "color = mix(vec4(CONTOURS_BACKGROUND_COLOR,CONTOURS_BACKGROUND_ALPHA),\n\
+                    \            vec4(CONTOURS_COLOR,CONTOURS_ALPHA),\n          \
+                    \  aastep( dot(normal, vec3(0.,0.,1.)),\n                    abs(sin((normal_elv_raster.a*PI)*CONTOURS_SCALE+CONTOURS_OFFSET))\
                     \ ) );"
             defines:
                 CONTOURS_ALPHA: color.a

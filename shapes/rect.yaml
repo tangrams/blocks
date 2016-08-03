@@ -1,6 +1,5 @@
 import:
-    - fill.yaml
-    - stroke.yaml
+    - type.yaml
 
 styles:
     shapes-rect:
@@ -13,7 +12,7 @@ styles:
             licence: MIT
             description: |  
                 Collection of functions to draw rectangles. To learn more about how to make shapes on shaders go to From check [this chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
-        mix: [shapes-fill, shapes-stroke]
+        mix: [shapes-type]
         shaders:
             blocks:
                 global: |

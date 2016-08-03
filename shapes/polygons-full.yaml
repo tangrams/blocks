@@ -37,13 +37,6 @@ styles:
                     \ step(threshold, value);\n        #endif  \n    #else\n     \
                     \   return step(threshold, value);\n    #endif\n}"
             extensions: OES_standard_derivatives
-    shapes-fill:
-        mix:
-        - functions-aastep
-        shaders:
-            blocks:
-                global: "float fill (in float size, in float x) {\n    return 1.-aastep(size,\
-                    \ x);\n}\n"
     shapes-polygons:
         doc:
             description: 'Collection of functions to draw polygons. To learn more
@@ -57,8 +50,7 @@ styles:
                     lines: 153
                     url: https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml
         mix:
-        - shapes-fill
-        - shapes-stroke
+        - shapes-type
         shaders:
             blocks:
                 global: "// get distance field of a polygon in the center\n// where\
@@ -72,12 +64,25 @@ styles:
                     // where N is the number of sides of it\n// ================================\n\
                     float shapeBorder (vec2 st, int N, float width) {\n    return\
                     \ stroke(width, shapeDF(st,N));\n}"
-    shapes-stroke:
+    shapes-type:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: "This block provides to functions `fill` and `stroke`. Each\
+                \ one transform a SDF to a fill shape or a stroke shape (border).\
+                \ The stroke width can be control with the define `STROKE`. \nTo learn\
+                \ more about how to make shapes on shaders go to From check [this\
+                \ chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)\n"
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
         mix:
         - functions-aastep
         shaders:
             blocks:
-                global: "float stroke (in float size, in float x) {\n    return aastep(size,\
-                    \ x+STROKE) - aastep(size, x);\n}"
+                global: "float fill (in float size, in float x) {\n    return 1.-aastep(size,\
+                    \ x);\n}\n\nfloat stroke (in float size, in float x) {\n    return\
+                    \ aastep(size, x+STROKE) - aastep(size, x);\n}"
             defines:
                 STROKE: 0.15

@@ -1,6 +1,5 @@
 import: 
-    - fill.yaml
-    - stroke.yaml
+    - type.yaml
 
 styles:
     shapes-circle:
@@ -26,7 +25,7 @@ styles:
                     url: https://tangrams.github.io/tangram-sandbox/styles/nursery.yaml
                     img: https://tangrams.github.io/tangram-sandbox/styles/nursery.png
                     lines: 146
-        mix: [shapes-fill, shapes-stroke]
+        mix: [shapes-type]
         shaders:
             blocks:
                 global: |

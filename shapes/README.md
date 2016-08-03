@@ -132,36 +132,6 @@ These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [shapes-fill](http://tangrams.github.io/blocks/#shapes-fill) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/fill.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/shapes/fill.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/shapes/fill-full.yaml
-```
-
-
-These blocks uses a custom **shader**. These are the **shader blocks**:
-
-- **global**:
- + `float fill (in float size, in float x) `
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
 #### [shapes-polygons](http://tangrams.github.io/blocks/#shapes-polygons) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/polygons.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Collection of functions to draw polygons. To learn more about how to make shapes on shaders go to From check [this chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
@@ -275,7 +245,10 @@ These blocks uses a custom **shader**. These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [shapes-stroke](http://tangrams.github.io/blocks/#shapes-stroke) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/stroke.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+#### [shapes-type](http://tangrams.github.io/blocks/#shapes-type) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/type.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+This block provides to functions `fill` and `stroke`. Each one transform a SDF to a fill shape or a stroke shape (border). The stroke width can be control with the define `STROKE`. 
+To learn more about how to make shapes on shaders go to From check [this chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
 
 
 
@@ -283,7 +256,7 @@ To import this block add the following url to your `import` list:
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/shapes/stroke.yaml
+    - https://tangrams.github.io/blocks/shapes/type.yaml
 ```
 
 
@@ -293,7 +266,7 @@ If you want to import this block together **with their dependencies** use this o
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/shapes/stroke-full.yaml
+    - https://tangrams.github.io/blocks/shapes/type-full.yaml
 ```
 
 
@@ -303,4 +276,5 @@ These blocks uses a custom **shader**. These are the defaults **defines**:
 These are the **shader blocks**:
 
 - **global**:
+ + `float fill (in float size, in float x) `
  + `float stroke (in float size, in float x) `

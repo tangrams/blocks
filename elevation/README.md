@@ -36,8 +36,8 @@ These are the **shader blocks**:
 - **color**:
 
 ```glsl
-color = mix(CONTOURS_BACKGROUND_COLOR,
-            CONTOURS_COLOR,
+color = mix(vec4(CONTOURS_BACKGROUND_COLOR,CONTOURS_BACKGROUND_ALPHA),
+            vec4(CONTOURS_COLOR,CONTOURS_ALPHA),
             aastep( dot(normal, vec3(0.,0.,1.)),
                     abs(sin((normal_elv_raster.a*PI)*CONTOURS_SCALE+CONTOURS_OFFSET)) ) );
 ```
