@@ -26,10 +26,10 @@ import:
 
 These blocks uses a custom **shader**.
 These are the **defines**:
- -  **CHEVRON_SIZE**:  number between ```0.0``` and ```1.0``` that control the *size*. The *default value* is ```1.0```. 
+ -  **CHEVRON_SIZE**:  number between ```0.0``` and ```10.0``` that control the *size*. The *default value* is ```1.0```. 
  -  **CHEVRON_COLOR**:  The *default value* is ```color.rgb*.5```. 
  -  **CHEVRON_ALPHA**:  number between ```0.0``` and ```1.0``` that control the *alpha*. The *default value* is ```1.0```. 
- -  **CHEVRON_SCALE**:  number between ```1.0``` and ```1000.0``` that control the *scale*. The *default value* is ```1.0```. 
+ -  **CHEVRON_SCALE**:  number between ```0.0``` and ```10.0``` that control the *scale*. The *default value* is ```1.0```. 
  -  **CHEVRON_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
  -  **CHEVRON_BACKGROUND_ALPHA**:  number between ```0.0``` and ```1.0``` that control the *background alpha*. The *default value* is ```color.a```. 
 
