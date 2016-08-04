@@ -169,6 +169,17 @@ styles:
                 PI: 3.141592653589793
     polygons-diagonal-stripes:
         base: polygons
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Apply a diagonal stripe pattern to the polygon style. To
+                learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
         mix:
         - patterns-stripes
         - space-tile
@@ -180,6 +191,30 @@ styles:
                 STRIPES_ALPHA: 1.0
                 STRIPES_SCALE: 2.0
                 STRIPES_WIDTH: 0.5
+        ui:
+            shaders:
+                defines:
+                    STRIPES_ALPHA:
+                        label: Alpha
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
+                    STRIPES_SCALE:
+                        label: Scale
+                        range:
+                            max: 1000.0
+                            min: 1.0
+                            step: 1.0
+                        type: number
+                    STRIPES_WIDTH:
+                        label: Alpha
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
     space-tile:
         doc:
             author:

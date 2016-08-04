@@ -125,6 +125,18 @@ styles:
     polygons-shimmering:
         animated: true
         base: polygons
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Apply a shimmering radom pattern of simplex grid triangles
+                to the polygon style. To learn more about noise and simplex grid check
+                [this chapter from the Book of Shaders](https://thebookofshaders.com/11/)
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
         mix:
         - tiling-simplex
         - generative-noise
@@ -144,6 +156,39 @@ styles:
                 SHIMMERING_COLOR: color.rgb
                 SHIMMERING_SCALE: 10.0
                 SHIMMERING_SPEED: 0.1
+        ui:
+            shaders:
+                defines:
+                    SHIMMERING_AMOUNT:
+                        label: Amount
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
+                    SHIMMERING_ANIMATED:
+                        label: Animate
+                        type: boolean
+                    SHIMMERING_BACKGROUND_COLOR:
+                        label: Background color
+                        type: color
+                    SHIMMERING_COLOR:
+                        label: Color
+                        type: color
+                    SHIMMERING_SCALE:
+                        label: Scale
+                        range:
+                            max: 1000.0
+                            min: 1.0
+                            step: 1.0
+                        type: number
+                    SHIMMERING_SPEED:
+                        label: Speed
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
     space-constant:
         doc:
             author:

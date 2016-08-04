@@ -2,6 +2,8 @@
 
 #### [polygons-diagonal-grid](http://tangrams.github.io/blocks/#polygons-diagonal-grid) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/diagonal-grid.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Apply a diagonal grid pattern to the polygon style. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)
+
 
 
 To import this block add the following url to your `import` list:
@@ -24,10 +26,10 @@ import:
 
 These blocks uses a custom **shader**.
 These are the **defines**:
- -  **GRID_SCALE**:  The *default value* is ```20.0```. 
+ -  **GRID_SCALE**:  number between ```1.0``` and ```1000.0``` that control the *scale*. The *default value* is ```20.0```. 
  -  **GRID_COLOR**:  The *default value* is ```color.rgb```. 
  -  **GRID_BACKGROUND_COLOR**:  The *default value* is ```color.rgb*.5```. 
- -  **GRID_WIDTH**:  The *default value* is ```0.05```. 
+ -  **GRID_WIDTH**:  number between ```0.0``` and ```1.0``` that control the *width*. The *default value* is ```0.05```. 
 
 These are the **shader blocks**:
 
@@ -46,6 +48,8 @@ color.rgb = mix(GRID_COLOR,
 
 
 #### [polygons-diagonal-stripes](http://tangrams.github.io/blocks/#polygons-diagonal-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/diagonal-stripes.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Apply a diagonal stripe pattern to the polygon style. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)
 
 
 
@@ -69,9 +73,9 @@ import:
 
 These blocks uses a custom **shader**.
 These are the **defines**:
- -  **STRIPES_ALPHA**:  The *default value* is ```1.0```. 
- -  **STRIPES_SCALE**:  The *default value* is ```2.0```. 
- -  **STRIPES_WIDTH**:  The *default value* is ```0.5```. 
+ -  **STRIPES_ALPHA**:  number between ```0.0``` and ```1.0``` that control the *alpha*. The *default value* is ```1.0```. 
+ -  **STRIPES_SCALE**:  number between ```1.0``` and ```1000.0``` that control the *scale*. The *default value* is ```2.0```. 
+ -  **STRIPES_WIDTH**:  number between ```0.0``` and ```1.0``` that control the *alpha*. The *default value* is ```0.5```. 
 
 These are the **shader blocks**:
 
@@ -199,6 +203,8 @@ Examples:
 
 #### [polygons-pixelate](http://tangrams.github.io/blocks/#polygons-pixelate) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/pixelate.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Apply a random pixelated pattern to the polygon style. To learn more about patterns or random check [this chapter](https://thebookofshaders.com/09/) or  [this other chapter from the Book of Shaders](https://thebookofshaders.com/10/)
+
 
 
 To import this block add the following url to your `import` list:
@@ -222,7 +228,7 @@ import:
 These blocks uses a custom **shader**.
 These are the **defines**:
  -  **PIXELATE_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
- -  **PIXELATE_SCALE**:  The *default value* is ```40.0```. 
+ -  **PIXELATE_SCALE**:  number between ```1.0``` and ```1000.0``` that control the *scale*. The *default value* is ```40.0```. 
  -  **PIXELATE_COLOR**:  The *default value* is ```color.rgb*.5```. 
 
 These are the **shader blocks**:
@@ -241,6 +247,8 @@ color.rgb = mix(PIXELATE_BACKGROUND_COLOR,
 
 
 #### [polygons-shimmering](http://tangrams.github.io/blocks/#polygons-shimmering) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/shimmering.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Apply a shimmering radom pattern of simplex grid triangles to the polygon style. To learn more about noise and simplex grid check [this chapter from the Book of Shaders](https://thebookofshaders.com/11/)
 
 
 
@@ -264,12 +272,12 @@ import:
 
 These blocks uses a custom **shader**.
 These are the **defines**:
- -  **SHIMMERING_SPEED**:  The *default value* is ```0.1```. 
+ -  **SHIMMERING_SPEED**:  number between ```0.0``` and ```1.0``` that control the *speed*. The *default value* is ```0.1```. 
  -  **SHIMMERING_COLOR**:  The *default value* is ```color.rgb```. 
  -  **SHIMMERING_ANIMATED**:  The *default value* is ```True```. 
- -  **SHIMMERING_SCALE**:  The *default value* is ```10.0```. 
+ -  **SHIMMERING_SCALE**:  number between ```1.0``` and ```1000.0``` that control the *scale*. The *default value* is ```10.0```. 
  -  **SHIMMERING_BACKGROUND_COLOR**:  The *default value* is ```color.rgb*.5```. 
- -  **SHIMMERING_AMOUNT**:  The *default value* is ```1.0```. 
+ -  **SHIMMERING_AMOUNT**:  number between ```0.0``` and ```1.0``` that control the *amount*. The *default value* is ```1.0```. 
 
 These are the **shader blocks**:
 
@@ -296,6 +304,8 @@ color.rgb = mix(SHIMMERING_COLOR,
 
 #### [polygons-stripes](http://tangrams.github.io/blocks/#polygons-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/stripes.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Apply stripe pattern to the polygon style. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)
+
 
 
 To import this block add the following url to your `import` list:
@@ -318,10 +328,10 @@ import:
 
 These blocks uses a custom **shader**.
 These are the **defines**:
- -  **STRIPES_WIDTH**:  The *default value* is ```0.5```. 
- -  **STRIPES_ANGLE**:  The *default value* is ```PI*0.25```. 
- -  **STRIPES_SCALE**:  The *default value* is ```2.0```. 
- -  **STRIPES_ALPHA**:  The *default value* is ```0.5```. 
+ -  **STRIPES_WIDTH**:  number between ```0.0``` and ```1.0``` that control the *width*. The *default value* is ```0.5```. 
+ -  **STRIPES_ANGLE**:  number between ```0.0``` and ```3.1415``` that control the *angle (radiants)*. The *default value* is ```PI*0.25```. 
+ -  **STRIPES_SCALE**:  number between ```1.0``` and ```1000.0``` that control the *scale*. The *default value* is ```2.0```. 
+ -  **STRIPES_ALPHA**:  number between ```0.0``` and ```1.0``` that control the *amount*. The *default value* is ```0.5```. 
 
 These are the **shader blocks**:
 

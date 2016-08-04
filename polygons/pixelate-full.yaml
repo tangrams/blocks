@@ -34,6 +34,18 @@ styles:
                     \ = fract(512.0*j);\n    return r-0.5;\n}"
     polygons-pixelate:
         base: polygons
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Apply a random pixelated pattern to the polygon style. To
+                learn more about patterns or random check [this chapter](https://thebookofshaders.com/09/)
+                or  [this other chapter from the Book of Shaders](https://thebookofshaders.com/10/)
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
         mix:
         - space-tile
         - generative-random
@@ -45,6 +57,22 @@ styles:
                 PIXELATE_BACKGROUND_COLOR: color.rgb
                 PIXELATE_COLOR: color.rgb*.5
                 PIXELATE_SCALE: 40.0
+        ui:
+            shaders:
+                defines:
+                    PIXELATE_BACKGROUND_COLOR:
+                        label: Background color
+                        type: color
+                    PIXELATE_COLOR:
+                        label: Color
+                        type: color
+                    PIXELATE_SCALE:
+                        label: Scale
+                        range:
+                            max: 1000.0
+                            min: 1.0
+                            step: 1.0
+                        type: number
     space-tile:
         doc:
             author:

@@ -6,8 +6,6 @@ import:
 
 styles:
     polygons-dots:
-        base: polygons
-        mix: [space-tile, tiling-brick, tiling-tile, shapes-circle]
         doc:
             author: 
                 name: Patricio Gonzalez Vivo
@@ -56,6 +54,9 @@ styles:
                     DOTS_BACKGROUND_COLOR: 
                         type: color
                         label: 'Background color'
+
+        base: polygons
+        mix: [space-tile, tiling-brick, tiling-tile, shapes-circle]
         shaders:
             defines:
                 DOTS_COLOR: color.rgb*.5

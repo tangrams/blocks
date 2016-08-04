@@ -4,6 +4,32 @@ import:
 
 styles:
     polygons-pixelate:
+        doc:
+            author: 
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: MIT
+            description: |  
+                Apply a random pixelated pattern to the polygon style. To learn more about patterns or random check [this chapter](https://thebookofshaders.com/09/) or  [this other chapter from the Book of Shaders](https://thebookofshaders.com/10/)
+        ui:
+            shaders:
+                defines:
+                    PIXELATE_SCALE:
+                        type: number
+                        label: Scale
+                        range: 
+                            min: 1.
+                            max: 1000.
+                            step: 1.
+                    PIXELATE_COLOR: 
+                        type: color
+                        label: Color
+                    PIXELATE_BACKGROUND_COLOR: 
+                        type: color
+                        label: 'Background color'
+
         base: polygons
         mix: [space-tile, generative-random]
         shaders:

@@ -5,6 +5,49 @@ import:
 
 styles:
     polygons-shimmering:
+        doc:
+            author: 
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: MIT
+            description: |  
+                Apply a shimmering radom pattern of simplex grid triangles to the polygon style. To learn more about noise and simplex grid check [this chapter from the Book of Shaders](https://thebookofshaders.com/11/)
+        ui:
+            shaders:
+                defines:
+                    SHIMMERING_SCALE:
+                        type: number
+                        label: Scale
+                        range: 
+                            min: 1.
+                            max: 1000.
+                            step: 1.
+                    SHIMMERING_SPEED:
+                        type: number
+                        label: Speed
+                        range: 
+                            min: 0.
+                            max: 1.
+                            step: 0.01
+                    SHIMMERING_AMOUNT:
+                        type: number
+                        label: Amount
+                        range: 
+                            min: 0.
+                            max: 1.
+                            step: 0.01
+                    SHIMMERING_COLOR: 
+                        type: color
+                        label: Color
+                    SHIMMERING_BACKGROUND_COLOR: 
+                        type: color
+                        label: 'Background color'
+                    SHIMMERING_ANIMATED:
+                        type: boolean
+                        label: Animate
+
         base: polygons
         mix: [tiling-simplex, generative-noise, space-constant]
         animated: true
