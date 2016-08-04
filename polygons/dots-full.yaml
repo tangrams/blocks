@@ -55,45 +55,47 @@ styles:
                 DOTS_TILE_STYLE: brick
                 DOTS_TYPE: fill
         ui:
-            DOTS_BACKGROUND_COLOR:
-                label: Background color
-                type: color
-            DOTS_COLOR:
-                label: Color
-                type: color
-            DOTS_SCALE:
-                label: Scale
-                range:
-                    max: 1000.0
-                    min: 1.0
-                    step: 1.0
-                type: number
-            DOTS_SIZE:
-                label: Size
-                range:
-                    max: 1.0
-                    min: 0.0
-                    step: 0.01
-                type: number
-            DOTS_STROKE:
-                label: Stroke
-                range:
-                    max: 1.0
-                    min: 0.0
-                    step: 0.01
-                type: number
-            DOTS_TILE_STYLE:
-                label: Tile type
-                type: dropdown
-                values:
-                - tile
-                - brick
-            DOTS_TYPE:
-                label: Type
-                type: dropdown
-                values:
-                - fill
-                - stroke
+            shaders:
+                defines:
+                    DOTS_BACKGROUND_COLOR:
+                        label: Background color
+                        type: color
+                    DOTS_COLOR:
+                        label: Color
+                        type: color
+                    DOTS_SCALE:
+                        label: Scale
+                        range:
+                            max: 1000.0
+                            min: 1.0
+                            step: 1.0
+                        type: number
+                    DOTS_SIZE:
+                        label: Size
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
+                    DOTS_STROKE:
+                        label: Stroke
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
+                    DOTS_TILE_STYLE:
+                        label: Tile type
+                        type: dropdownArray
+                        values:
+                        - tile
+                        - brick
+                    DOTS_TYPE:
+                        label: Type
+                        type: dropdownArray
+                        values:
+                        - fill
+                        - stroke
     shapes-circle:
         doc:
             author:

@@ -102,7 +102,7 @@ def appendDocumentation(readme_file, filename, counter):
                                         define_doc += ' variable that control the *' + define_label + '* with one of the following values: ```'
                                         define_doc += ', '.join(yaml_file['styles'][name_block]['ui']['shaders']['defines'][define]['values']) + '```.'
                                     
-                                    elif yaml_file['styles'][name_block]['ui']['shaders']['uniforms'][define]['type'] == 'dropdownList':
+                                    elif yaml_file['styles'][name_block]['ui']['shaders']['defines'][define]['type'] == 'dropdownList':
                                         define_label = yaml_file['styles'][name_block]['ui']['shaders']['defines'][define]['label'].lower()
                                         define_doc += ' variable that control the *' + define_label + '* with one of the following values: '
                                         define_values = []

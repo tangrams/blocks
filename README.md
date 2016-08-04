@@ -2298,10 +2298,10 @@ import:
 
 These blocks uses a custom **shader**.
 These are the **defines**:
- -  **DOTS_SIZE**:  The *default value* is ```0.41```. 
- -  **DOTS_TYPE**:  The *default value* is ```fill```. 
- -  **DOTS_TILE_STYLE**:  The *default value* is ```brick```. 
- -  **DOTS_SCALE**:  The *default value* is ```10.0```. 
+ -  **DOTS_SIZE**:  number between ```0.0``` and ```1.0``` that control the *size*. The *default value* is ```0.41```. 
+ -  **DOTS_TYPE**:  variable that control the *type* with one of the following values: ```fill, stroke```. The *default value* is ```fill```. 
+ -  **DOTS_TILE_STYLE**:  variable that control the *tile type* with one of the following values: ```tile, brick```. The *default value* is ```brick```. 
+ -  **DOTS_SCALE**:  number between ```1.0``` and ```1000.0``` that control the *scale*. The *default value* is ```10.0```. 
  -  **DOTS_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
  -  **DOTS_COLOR**:  The *default value* is ```color.rgb*.5```. 
 
