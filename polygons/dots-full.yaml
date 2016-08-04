@@ -77,13 +77,6 @@ styles:
                             min: 0.0
                             step: 0.01
                         type: number
-                    DOTS_STROKE:
-                        label: Stroke
-                        range:
-                            max: 1.0
-                            min: 0.0
-                            step: 0.01
-                        type: number
                     DOTS_TILE_STYLE:
                         label: Tile type
                         type: dropdownArray
@@ -96,6 +89,13 @@ styles:
                         values:
                         - fill
                         - stroke
+                    STROKE:
+                        label: Stroke
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
     shapes-circle:
         doc:
             author:

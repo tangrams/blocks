@@ -7,8 +7,9 @@ styles:
             version: 0.0.1
             tangram-version: 0.0.7
             licence: MIT
-            description: |  
-                Add a look up table filter defined on the uniform ```u_lut``` to the current style. This look up tables are hable to produce similar effects to instagram filters.
+            description: |
+                Maybe you don't know what a LUT is but I am sure you have use it. For example in instagram. Look Up Tables is a fast and cheap way to style an image using another image as a reference. Yes, like filters. Like Instagram filters. 
+                The reference image needs to have a particular structure and is pass as uniform texture (```u_lut```).
             examples:
                 sandbox-lut:
                     url: https://tangrams.github.io/tangram-sandbox/styles/sandbox-lut.yaml
@@ -26,7 +27,7 @@ styles:
                 uniforms:
                     u_lut: 
                         type: dropdownList
-                        label: Filter
+                        label: 'Filter type'
                         values:
                             XPro: 'https://tangrams.github.io/blocks/filter/imgs/lut-0001.png'
                             Walden: 'https://tangrams.github.io/blocks/filter/imgs/lut-0002.png'
