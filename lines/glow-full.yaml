@@ -52,6 +52,7 @@ styles:
             tangram-version: 0.0.7
             version: 0.0.1
         mix:
+        - block
         - functions-aastep
         shaders:
             blocks:
