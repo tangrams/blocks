@@ -1497,12 +1497,12 @@ import:
 
 These blocks uses a custom **shader**.
 These are the **defines**:
- -  **CHEVRON_SIZE**:  The *default value* is ```1.0```. 
+ -  **CHEVRON_SIZE**:  number between ```0.0``` and ```1.0``` that control the *size*. The *default value* is ```1.0```. 
  -  **CHEVRON_COLOR**:  The *default value* is ```color.rgb*.5```. 
- -  **CHEVRON_ALPHA**:  The *default value* is ```1.0```. 
- -  **CHEVRON_SCALE**:  The *default value* is ```1.0```. 
+ -  **CHEVRON_ALPHA**:  number between ```0.0``` and ```1.0``` that control the *alpha*. The *default value* is ```1.0```. 
+ -  **CHEVRON_SCALE**:  number between ```1.0``` and ```1000.0``` that control the *scale*. The *default value* is ```1.0```. 
  -  **CHEVRON_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
- -  **CHEVRON_BACKGROUND_ALPHA**:  The *default value* is ```color.a```. 
+ -  **CHEVRON_BACKGROUND_ALPHA**:  number between ```0.0``` and ```1.0``` that control the *background alpha*. The *default value* is ```color.a```. 
 
 These are the **shader blocks**:
 
@@ -1545,8 +1545,8 @@ import:
 
 These blocks uses a custom **shader**.
 These are the **defines**:
- -  **DASH_SIZE**:  The *default value* is ```0.5```. 
- -  **DASH_SCALE**:  The *default value* is ```0.1```. 
+ -  **DASH_SIZE**:  number between ```0.0``` and ```1.0``` that control the *size*. The *default value* is ```0.5```. 
+ -  **DASH_SCALE**:  number between ```1.0``` and ```1000.0``` that control the *scale*. The *default value* is ```0.1```. 
 
 These are the **shader blocks**:
 
@@ -1570,6 +1570,8 @@ Examples:
 
 #### [lines-datastream](http://tangrams.github.io/blocks/#lines-datastream) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/datastream.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Apply some stream of random lines to your lines
+
 
 
 To import this block add the following url to your `import` list:
@@ -1592,10 +1594,10 @@ import:
 
 These blocks uses a custom **shader**.
 These are the **defines**:
- -  **DATASTREAM_SPEED**:  The *default value* is ```20.0```. 
- -  **DATASTREAM_MARGIN**:  The *default value* is ```0.4```. 
- -  **DATASTREAM_AMOUNT**:  The *default value* is ```0.8```. 
- -  **DATASTREAM_ROADS**:  The *default value* is ```5.0```. 
+ -  **DATASTREAM_SPEED**:  number between ```0.0``` and ```1000.0``` that control the *speed*. The *default value* is ```20.0```. 
+ -  **DATASTREAM_MARGIN**:  number between ```0.0``` and ```1.0``` that control the *lines margins*. The *default value* is ```0.4```. 
+ -  **DATASTREAM_AMOUNT**:  number between ```0.0``` and ```1.0``` that control the *amount*. The *default value* is ```0.8```. 
+ -  **DATASTREAM_ROADS**:  number between ```0.0``` and ```10.0``` that control the *number of roads*. The *default value* is ```5.0```. 
  -  **DATASTREAM_COLOR**:  The *default value* is ```vec3(1.)```. 
  -  **DATASTREAM_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
 
@@ -1664,6 +1666,8 @@ color.a = 1.- step(DOT_SIZE, dot(st,st)*2.);
 
 #### [lines-glow](http://tangrams.github.io/blocks/#lines-glow) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/glow.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+Add an exciting glow effect to your
+
 
 
 To import this block add the following url to your `import` list:
@@ -1686,9 +1690,8 @@ import:
 
 These blocks uses a custom **shader**.
 These are the **defines**:
- -  **GLOW_WIDTH**:  The *default value* is ```0.4```. 
- -  **PI**:  The *default value* is ```3.14159265359```. 
- -  **GLOW_BRIGHTNESS**:  The *default value* is ```0.25```. 
+ -  **GLOW_WIDTH**:  number between ```0.0``` and ```1.0``` that control the *solid width*. The *default value* is ```0.4```. 
+ -  **GLOW_BRIGHTNESS**:  number between ```0.0``` and ```1.0``` that control the *glow brightness*. The *default value* is ```0.25```. 
 
 These are the **shader blocks**:
 
@@ -1731,7 +1734,7 @@ import:
 
 These blocks uses a custom **shader**.
 These are the **defines**:
- -  **OUTLINE_WIDTH**:  The *default value* is ```0.1```. 
+ -  **OUTLINE_WIDTH**:  number between ```0.0``` and ```1.0``` that control the *width*. The *default value* is ```0.1```. 
  -  **OUTLINE_COLOR**:  The *default value* is ```color.rgb*.5```. 
 
 These are the **shader blocks**:
@@ -1821,7 +1824,7 @@ import:
 
 These blocks uses a custom **shader**.
 These are the **defines**:
- -  **STRIPES_WIDTH**:  The *default value* is ```0.1```. 
+ -  **STRIPES_WIDTH**:  number between ```0.0``` and ```1.0``` that control the *width*. The *default value* is ```0.1```. 
  -  **STRIPES_COLOR**:  The *default value* is ```color.rgb*.5```. 
  -  **STRIPES_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
 
@@ -2071,7 +2074,7 @@ import:
 
 These blocks uses a custom **shader**.
 These are the **defines**:
- -  **CROSS_ALPHA**:  The *default value* is ```0.75```. 
+ -  **CROSS_ALPHA**:  number between ```0.0``` and ```1.0``` that control the *alpha*. The *default value* is ```0.75```. 
 
 These are the **shader blocks**:
 
@@ -2156,11 +2159,11 @@ import:
 
 These blocks uses a custom **shader**.
 These are the **defines**:
- -  **SHAPE_ALPHA**:  The *default value* is ```1.0```. 
- -  **SHAPE_BORDER_WIDTH**:  The *default value* is ```0.15```. 
- -  **SHAPE_SIDES**:  The *default value* is ```3```. 
+ -  **SHAPE_ALPHA**:  number between ```0.0``` and ```1.0``` that control the *alpha*. The *default value* is ```1.0```. 
+ -  **SHAPE_BORDER_WIDTH**:  number between ```0.0``` and ```1.0``` that control the *size*. The *default value* is ```0.15```. 
+ -  **SHAPE_SIDES**:  number between ```1.0``` and ```6.0``` that control the *corners*. The *default value* is ```3```. 
  -  **SHAPE_BORDER_COLOR**:  The *default value* is ```vec3(1.)```. 
- -  **SHAPE_SIZE**:  The *default value* is ```1.0```. 
+ -  **SHAPE_SIZE**:  number between ```0.0``` and ```1.0``` that control the *size*. The *default value* is ```1.0```. 
 
 These are the **shader blocks**:
 

@@ -33,6 +33,16 @@ styles:
                     \ = fract(512.0*j);\n    return r-0.5;\n}"
     lines-datastream:
         base: lines
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Apply some stream of random lines to your lines
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
         mix:
         - generative-random
         shaders:
@@ -55,3 +65,40 @@ styles:
                 DATASTREAM_ROADS: 5.0
                 DATASTREAM_SPEED: 20.0
         texcoords: true
+        ui:
+            shaders:
+                defines:
+                    DATASTREAM_AMOUNT:
+                        label: Amount
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
+                    DATASTREAM_BACKGROUND_COLOR:
+                        label: Background color
+                        type: color
+                    DATASTREAM_COLOR:
+                        label: Color
+                        type: color
+                    DATASTREAM_MARGIN:
+                        label: Lines margins
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
+                    DATASTREAM_ROADS:
+                        label: Number of roads
+                        range:
+                            max: 10.0
+                            min: 0.0
+                            step: 1.0
+                        type: number
+                    DATASTREAM_SPEED:
+                        label: Speed
+                        range:
+                            max: 1000.0
+                            min: 0.0
+                            step: 0.5
+                        type: number

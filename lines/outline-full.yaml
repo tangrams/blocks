@@ -55,3 +55,16 @@ styles:
                 OUTLINE_COLOR: color.rgb*.5
                 OUTLINE_WIDTH: 0.1
         texcoords: true
+        ui:
+            shaders:
+                defines:
+                    OUTLINE_COLOR:
+                        label: Color
+                        type: color
+                    OUTLINE_WIDTH:
+                        label: Width
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number

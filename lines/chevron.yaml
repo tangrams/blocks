@@ -9,6 +9,46 @@ styles:
             licence: MIT
             description: |
                 Apply a chevron pattern to a line
+
+        ui:
+            shaders:
+                defines:
+                    CHEVRON_SCALE:
+                        type: number
+                        label: Scale
+                        range: 
+                            min: 1.
+                            max: 1000.
+                            step: 1.
+                    CHEVRON_SIZE:
+                        type: number
+                        label: Size
+                        range: 
+                            min: 0.
+                            max: 1.
+                            step: 0.01
+                    CHEVRON_COLOR: 
+                        type: color
+                        label: Color
+                    CHEVRON_ALPHA:
+                        type: number
+                        label: Alpha
+                        range: 
+                            min: 0.
+                            max: 1.
+                            step: 0.01
+                    CHEVRON_BACKGROUND_COLOR: 
+                        type: color
+                        label: 'Background color'
+                    CHEVRON_BACKGROUND_ALPHA:
+                        type: number
+                        label: Background alpha
+                        range: 
+                            min: 0.
+                            max: 1.
+                            step: 0.01
+                    
+
         base: lines
         texcoords: true
         shaders:

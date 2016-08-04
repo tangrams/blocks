@@ -21,6 +21,20 @@ styles:
                     url: https://tangrams.github.io/tangram-sandbox/styles/callejas.yaml
                     img: https://tangrams.github.io/tangram-sandbox/styles/callejas.png
                     lines: 116
+
+        ui:
+            shaders:
+                defines:
+                    OUTLINE_WIDTH:
+                        type: number
+                        label: Width
+                        range: 
+                            min: 0.
+                            max: 1.
+                            step: 0.01
+                    OUTLINE_COLOR: 
+                        type: color
+                        label: Color
         base: lines
         mix: [functions-aastep]
         texcoords: true

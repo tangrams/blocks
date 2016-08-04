@@ -24,3 +24,20 @@ styles:
                 DASH_SCALE: 0.1
                 DASH_SIZE: 0.5
         texcoords: true
+        ui:
+            shaders:
+                defines:
+                    DASH_SCALE:
+                        label: Scale
+                        range:
+                            max: 1000.0
+                            min: 1.0
+                            step: 1.0
+                        type: number
+                    DASH_SIZE:
+                        label: Size
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number

@@ -71,6 +71,40 @@ styles:
                 SHAPE_SIDES: 3
                 SHAPE_SIZE: 1.0
         texcoord: true
+        ui:
+            shaders:
+                defines:
+                    SHAPE_ALPHA:
+                        label: Alpha
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
+                    SHAPE_BORDER_COLOR:
+                        label: Color
+                        type: color
+                    SHAPE_BORDER_WIDTH:
+                        label: Size
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
+                    SHAPE_SIDES:
+                        label: Corners
+                        range:
+                            max: 6.0
+                            min: 1.0
+                            step: 1.0
+                        type: number
+                    SHAPE_SIZE:
+                        label: Size
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
     shapes-polygons:
         doc:
             description: 'Collection of functions to draw polygons. To learn more

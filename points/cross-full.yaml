@@ -52,6 +52,16 @@ styles:
             defines:
                 CROSS_ALPHA: 0.75
         texcoord: true
+        ui:
+            shaders:
+                defines:
+                    CROSS_ALPHA:
+                        label: Alpha
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
     shapes-cross:
         doc:
             author:

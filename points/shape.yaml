@@ -17,6 +17,40 @@ styles:
                     url: https://tangrams.github.io/tangram-sandbox/styles/elevation-places.yaml
                     img: https://tangrams.github.io/tangram-sandbox/styles/elevation-places.png
                     lines: 29-36
+        ui:
+            shaders:
+                defines:
+                    SHAPE_SIDES:
+                        type: number
+                        label: Corners
+                        range: 
+                            min: 1.
+                            max: 6.
+                            step: 1.
+                    SHAPE_SIZE:
+                        type: number
+                        label: Size
+                        range: 
+                            min: 0.
+                            max: 1.
+                            step: 0.01
+                    SHAPE_BORDER_WIDTH:
+                        type: number
+                        label: Size
+                        range: 
+                            min: 0.
+                            max: 1.
+                            step: 0.01
+                    SHAPE_BORDER_COLOR: 
+                        type: color
+                        label: Color
+                    SHAPE_ALPHA:
+                        type: number
+                        label: Alpha
+                        range: 
+                            min: 0.
+                            max: 1.
+                            step: 0.01
         base: points
         mix: [shapes-polygons]
         texcoord: true

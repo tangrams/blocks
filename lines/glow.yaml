@@ -1,15 +1,41 @@
 import:
+    - ../block.yaml
     - ../functions/aastep.yaml
 
 styles:
     lines-glow:
+        doc:
+            author: 
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: MIT
+            description: |  
+                Add an exciting glow effect to your
+        ui:
+            shaders:
+                defines:
+                    GLOW_WIDTH:
+                        type: number
+                        label: Solid width
+                        range: 
+                            min: 0.
+                            max: 1.
+                            step: 0.01
+                    GLOW_BRIGHTNESS:
+                        type: number
+                        label: Glow Brightness
+                        range: 
+                            min: 0.
+                            max: 1.
+                            step: 0.01
         base: lines
         mix: [functions-aastep]
         texcoords: true
         blend: add
         shaders:
             defines:
-                PI: 3.1415926535897932384626433832795
                 GLOW_WIDTH: 0.4
                 GLOW_BRIGHTNESS: .25
             blocks:

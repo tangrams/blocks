@@ -24,3 +24,40 @@ styles:
                 CHEVRON_SCALE: 1.0
                 CHEVRON_SIZE: 1.0
         texcoords: true
+        ui:
+            shaders:
+                defines:
+                    CHEVRON_ALPHA:
+                        label: Alpha
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
+                    CHEVRON_BACKGROUND_ALPHA:
+                        label: Background alpha
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
+                    CHEVRON_BACKGROUND_COLOR:
+                        label: Background color
+                        type: color
+                    CHEVRON_COLOR:
+                        label: Color
+                        type: color
+                    CHEVRON_SCALE:
+                        label: Scale
+                        range:
+                            max: 1000.0
+                            min: 1.0
+                            step: 1.0
+                        type: number
+                    CHEVRON_SIZE:
+                        label: Size
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
