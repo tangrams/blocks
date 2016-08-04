@@ -37,6 +37,7 @@ styles:
                     STROKE:
                         type: number
                         label: Stroke
+                        default_value: 0.15
                         range: 
                             min: 0.
                             max: 1.

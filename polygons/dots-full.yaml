@@ -90,6 +90,7 @@ styles:
                         - fill
                         - stroke
                     STROKE:
+                        default_value: 0.15
                         label: Stroke
                         range:
                             max: 1.0
