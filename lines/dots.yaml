@@ -24,8 +24,8 @@ styles:
         blend: overlay
         shaders:
             defines:
-                DOT_SIZE: .05
+                DOTS_SIZE: .05
             blocks:
                 color: |
                     vec2 st = fract(v_texcoord.xy)-.5;
-                    color.a = 1.- step(DOT_SIZE, dot(st,st)*2.);
+                    color.a = 1.- step(DOTS_SIZE, dot(st,st)*2.);
