@@ -1648,7 +1648,7 @@ import:
 
 These blocks uses a custom **shader**.
 These are the **defines**:
- -  **DOT_SIZE**:  The *default value* is ```0.05```. 
+ -  **DOTS_SIZE**:  number between ```0.0``` and ```1.0``` that control the *size*. The *default value* is ```0.05```. 
 
 These are the **shader blocks**:
 
@@ -1656,7 +1656,7 @@ These are the **shader blocks**:
 
 ```glsl
 vec2 st = fract(v_texcoord.xy)-.5;
-color.a = 1.- step(DOT_SIZE, dot(st,st)*2.);
+color.a = 1.- step(DOTS_SIZE, dot(st,st)*2.);
 ```
 
 
