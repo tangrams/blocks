@@ -1,10 +1,5 @@
 import:
 - ../block.yaml
-sources:
-    normals-elevation:
-        max_zoom: 15
-        type: Raster
-        url: https://s3.amazonaws.com/elevation-tiles-prod/normal/{z}/{x}/{y}.png
 styles:
     block:
         shaders:

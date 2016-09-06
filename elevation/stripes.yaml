@@ -1,5 +1,4 @@
 import:
-    - ../source-elevation.yaml
     - ../space/tile.yaml
     - ../polygons/diagonal-stripes.yaml
 
