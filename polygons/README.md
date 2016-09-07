@@ -82,7 +82,7 @@ These are the **shader blocks**:
 - **color**:
 
 ```glsl
-color.a = diagonalStripes( (getTileCoords()*0.999)*floor(STRIPES_SCALE), 
+color.a = diagonalStripes( (getTileCoords()*0.9999)*floor(STRIPES_SCALE), 
                             STRIPES_WIDTH) * STRIPES_ALPHA;
 ```
 
