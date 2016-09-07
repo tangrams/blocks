@@ -1,0 +1,30 @@
+styles:
+    lines-dots-glow:
+        base: lines
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Apply a dot pattern to a line with some glow
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        ui:
+            animated: true
+            blend: overlay
+            shaders:
+                blocks:
+                    color: 'vec2 st = (fract(v_texcoord.xy)-.5)*DOTS_SCALE;
+
+                        float df = dot(st,st);
+
+                        color.a = 1.-step(DOTS_SIZE, df);
+
+                        color.a += smoothstep(1.,0.,df)*(DOTS_GLOW);'
+                defines:
+                    DOTS_GLOW: 0.5
+                    DOTS_SCALE: 2.0
+                    DOTS_SIZE: 0.15
+            texcoords: true

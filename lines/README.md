@@ -151,6 +151,34 @@ color.rgb = mix(DATASTREAM_BACKGROUND_COLOR,
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
+#### [lines-dots-glow](http://tangrams.github.io/blocks/#lines-dots-glow) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/dots-glow.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Apply a dot pattern to a line with some glow
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/dots-glow.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/dots-glow-full.yaml
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [lines-dots](http://tangrams.github.io/blocks/#lines-dots) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/dots.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Apply a dot pattern to a line
