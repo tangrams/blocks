@@ -1,5 +1,4 @@
 import:
-    - ../space/tile.yaml
     - ../polygons/diagonal-stripes.yaml
 
 styles:
@@ -18,18 +17,12 @@ styles:
                     url: https://tangrams.github.io/tangram-sandbox/styles/elevation-stripes.yaml
                     img: https://tangrams.github.io/tangram-sandbox/styles/elevation-stripes.png
         base: polygons
-        mix: [polygons-diagonal-stripes, patterns-stripes, space-tile]
+        mix: [polygons-diagonal-stripes]
         blend: inlay
         lighting: false
         raster: custom
         shaders: 
             defines:
-                ZOOM_START: 0.
-                ZOOM_END: 13.
-                ZOOM: linear
-                ZOOM_IN: 0.
-                ZOOM_OUT: 1.
-
                 STRIPES_ALPHA: .5
                 STRIPES_SCALE: 20.
                 STRIPES_PCT: 1.8

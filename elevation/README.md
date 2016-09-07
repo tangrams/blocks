@@ -48,6 +48,57 @@ color = mix(vec4(CONTOURS_BACKGROUND_COLOR,CONTOURS_BACKGROUND_ALPHA),
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
+#### [elevation-dash](http://tangrams.github.io/blocks/#elevation-dash) <a href="https://github.com/tangrams/blocks/blob/gh-pages/elevation/dash.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Perfect for the `landuse` layer on your elevation maps, the `elevation-dash` modules use the color of the layer to draw a dash pattern that changes width based on the surface of the terrain.
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/elevation/dash.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/elevation/dash-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **NORMAL_TEXTURE_INDEX**:  The *default value* is ```0```. 
+ -  **DASH_SIZE**:  The *default value* is ```shade```. 
+ -  **DASH_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
+ -  **DASH_TYPE**:  The *default value* is ```fill```. 
+ -  **DASH_TILE_STYLE**:  The *default value* is ```tile```. 
+ -  **DASH_DIR**:  The *default value* is ```vec3(-0.600,-0.420,0.560)```. 
+ -  **DASH_SCALE**:  The *default value* is ```10.0```. 
+ -  **DASH_MAX_SIZE**:  The *default value* is ```1.0```. 
+ -  **DASH_MIN_SIZE**:  The *default value* is ```0.8```. 
+ -  **DASH_COLOR**:  The *default value* is ```color.rgb*.5```. 
+
+These are the **shader blocks**:
+
+- **normal**:
+
+```glsl
+float shade = dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2., DASH_DIR);
+shade = mix(DASH_MIN_SIZE, DASH_MAX_SIZE, (shade*shade*shade)*4.);
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [elevation-normal](http://tangrams.github.io/blocks/#elevation-normal) <a href="https://github.com/tangrams/blocks/blob/gh-pages/elevation/normal.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 The raster normal map tiles needs to be load like this:
@@ -219,16 +270,11 @@ import:
 These blocks uses a custom **shader**.
 These are the **defines**:
  -  **NORMAL_TEXTURE_INDEX**:  The *default value* is ```0```. 
- -  **STRIPES_SCALE**:  The *default value* is ```20.0```. 
- -  **ZOOM_IN**:  The *default value* is ```0.0```. 
- -  **ZOOM_OUT**:  The *default value* is ```1.0```. 
- -  **STRIPES_WIDTH**:  The *default value* is ```dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2., STRIPES_DIR)*STRIPES_PCT```. 
- -  **ZOOM**:  The *default value* is ```linear```. 
- -  **STRIPES_DIR**:  The *default value* is ```vec3(-0.600,-0.420,0.600)```. 
  -  **STRIPES_PCT**:  The *default value* is ```1.8```. 
- -  **ZOOM_END**:  The *default value* is ```13.0```. 
+ -  **STRIPES_SCALE**:  The *default value* is ```20.0```. 
+ -  **STRIPES_WIDTH**:  The *default value* is ```dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2., STRIPES_DIR)*STRIPES_PCT```. 
  -  **STRIPES_ALPHA**:  The *default value* is ```0.5```. 
- -  **ZOOM_START**:  The *default value* is ```0.0```. 
+ -  **STRIPES_DIR**:  The *default value* is ```vec3(-0.600,-0.420,0.600)```. 
 
 
 Examples:

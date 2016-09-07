@@ -36,8 +36,6 @@ styles:
         lighting: false
         mix:
         - polygons-diagonal-stripes
-        - patterns-stripes
-        - space-tile
         raster: custom
         shaders:
             defines:
@@ -48,11 +46,6 @@ styles:
                 STRIPES_SCALE: 20.0
                 STRIPES_WIDTH: dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2.,
                     STRIPES_DIR)*STRIPES_PCT
-                ZOOM: linear
-                ZOOM_END: 13.0
-                ZOOM_IN: 0.0
-                ZOOM_OUT: 1.0
-                ZOOM_START: 0.0
     functions-aastep:
         doc:
             author:

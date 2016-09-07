@@ -1,5 +1,55 @@
 
 
+#### [polygons-diagonal-dash](http://tangrams.github.io/blocks/#polygons-diagonal-dash) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/diagonal-dash.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Apply a diagonal dash pattern to the polygon style. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/diagonal-dash.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/diagonal-dash-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **DASH_SIZE**:  number between ```0.0``` and ```1.0``` that control the *alpha*. The *default value* is ```0.9```. 
+ -  **DASH_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
+ -  **DASH_SCALE**:  number between ```1.0``` and ```1000.0``` that control the *scale*. The *default value* is ```10.0```. 
+ -  **DASH_COLOR**:  The *default value* is ```color.rgb*.5```. 
+ -  **DASH_TYPE**:  variable that control the *type* with one of the following values: ```fill, stroke```. The *default value* is ```fill```. 
+ -  **DASH_TILE_STYLE**:  variable that control the *tile type* with one of the following values: ```tile, brick```. The *default value* is ```tile```. 
+
+These are the **shader blocks**:
+
+- **global**:
+ + `float dashDF(vec2 st) `
+- **color**:
+
+```glsl
+color.rgb = mix(DASH_BACKGROUND_COLOR, 
+                DASH_COLOR, 
+                DASH_TYPE( DASH_SIZE, dashDF(DASH_TILE_STYLE(getTileCoords()*DASH_SCALE,3.))) );
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [polygons-diagonal-grid](http://tangrams.github.io/blocks/#polygons-diagonal-grid) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/diagonal-grid.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Apply a diagonal grid pattern to the polygon style. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)

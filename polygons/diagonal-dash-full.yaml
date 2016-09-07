@@ -1,0 +1,201 @@
+import:
+- ../functions/aastep.yaml
+styles:
+    block:
+        shaders:
+            defines:
+                ADD: +
+                EPSILON: 1.0e-07
+                HALF_PI: 1.5707963267948966
+                MULTIPLY: '*'
+                PI: 3.141592653589793
+                QUATER_PI: 0.785398163
+                SUBTRACT: '-'
+                TWO_PI: 6.283185307179586
+                deg2rad(d): (((d)*3.1415926535897932384626433832795)/180.0)
+                rad2deg(d): (((d)*180.0)/3.1415926535897932384626433832795)
+    functions-aastep:
+        doc:
+            author:
+                name: Matt DesLauriers
+                twitter: mattdesl
+            description: 'AnitAliased ```step()``` function implemented by [Matt DesLauriers](https://twitter.com/mattdesl)
+                in this module <https://github.com/stackgl/glsl-aastep>
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// AntiAliased Step function\n//=============================\n\
+                    float aastep(float threshold, float value) {\n    #ifdef TANGRAM_FRAGMENT_SHADER\n\
+                    \        #ifdef TANGRAM_EXTENSION_OES_standard_derivatives\n \
+                    \           float afwidth = length(vec2(dFdx(value), dFdy(value)))\
+                    \ * 0.70710678118654757;\n            return smoothstep(threshold-afwidth,\
+                    \ threshold+afwidth, value);\n        #else\n            return\
+                    \ step(threshold, value);\n        #endif  \n    #else\n     \
+                    \   return step(threshold, value);\n    #endif\n}"
+            extensions: OES_standard_derivatives
+    polygons-diagonal-dash:
+        base: polygons
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Apply a diagonal dash pattern to the polygon style. To learn
+                more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        mix:
+        - block
+        - space-tile
+        - tiling-brick
+        - tiling-tile
+        - shapes-type
+        shaders:
+            blocks:
+                color: "color.rgb = mix(DASH_BACKGROUND_COLOR, \n                DASH_COLOR,\
+                    \ \n                DASH_TYPE( DASH_SIZE, dashDF(DASH_TILE_STYLE(getTileCoords()*DASH_SCALE,3.)))\
+                    \ );"
+                global: "float dashDF(vec2 st) {\n    return min(cos((st.x-st.y)*PI),-cos((st.x+st.y+.5)*PI*.6666)*5.);\n\
+                    }\n"
+            defines:
+                DASH_BACKGROUND_COLOR: color.rgb
+                DASH_COLOR: color.rgb*.5
+                DASH_SCALE: 10.0
+                DASH_SIZE: 0.9
+                DASH_TILE_STYLE: tile
+                DASH_TYPE: fill
+        ui:
+            shaders:
+                defines:
+                    DASH_BACKGROUND_COLOR:
+                        label: Background color
+                        type: color
+                    DASH_COLOR:
+                        label: Color
+                        type: color
+                    DASH_SCALE:
+                        label: Scale
+                        range:
+                            max: 1000.0
+                            min: 1.0
+                            step: 1.0
+                        type: number
+                    DASH_SIZE:
+                        label: Alpha
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
+                    DASH_TILE_STYLE:
+                        label: Tile type
+                        type: dropdownArray
+                        values:
+                        - tile
+                        - brick
+                    DASH_TYPE:
+                        label: Type
+                        type: dropdownArray
+                        values:
+                        - fill
+                        - stroke
+                    STRIPES_ALPHA:
+                        label: Alpha
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
+    shapes-type:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: "This block provides to functions `fill` and `stroke`. Each\
+                \ one transform a SDF to a fill shape or a stroke shape (border).\
+                \ The stroke width can be control with the define `STROKE`. \nTo learn\
+                \ more about how to make shapes on shaders go to From check [this\
+                \ chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)\n"
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        mix:
+        - functions-aastep
+        shaders:
+            blocks:
+                global: "float fill (in float size, in float x) {\n    return 1.-aastep(size,\
+                    \ x);\n}\n\nfloat stroke (in float size, in float x) {\n    return\
+                    \ aastep(size, x+STROKE) - aastep(size, x);\n}"
+            defines:
+                STROKE: 0.15
+    space-tile:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Get the position on the tile
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// Variant to be add to both vertex and fragments shaders\n\
+                    varying vec3 v_pos;\n//\n// Get the coordinates in tile space\n\
+                    // ================================\nvec2 getTileCoords() {\n\
+                    \    return fract(v_pos.xy);\n}\n"
+                position: '// Normalize the attribute position of a vertex
+
+                    v_pos = modelPosition().xyz;'
+    tiling-brick:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Repeats a coordinate space (`vec2 st`) in diferent brick-like
+                tiles N times (`float zoom`). For more information about tilling patterns
+                read [this chapter of The Book of Shaders](https://thebookofshaders.com/09/)
+
+                '
+            examples:
+                nursery:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/nursery.png
+                    lines: 99
+                    url: https://tangrams.github.io/tangram-sandbox/styles/nursery.yaml
+                patterns:
+                    img: https://tangrams.github.io/tangram-sandbox/styles/patterns.png
+                    lines: 130
+                    url: https://tangrams.github.io/tangram-sandbox/styles/patterns.yaml
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "vec2 brick (vec2 st, float zoom) {\n    st *= zoom;\n   \
+                    \ // Here is where the offset is happening\n    st.x += step(1.,\
+                    \ mod(st.y,2.0)) * 0.5;\n    return fract(st);\n}"
+    tiling-tile:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Repeats a coordinate space (`vec2 st`) in diferent brick-like
+                tiles N times (`float zoom`). For more information about tilling patterns
+                read [this chapter of The Book of Shaders](https://thebookofshaders.com/09/)
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// Repeats a coordinate space (st) in diferent tiles\n//\
+                    \ ================================\nvec2 tile (vec2 st, float\
+                    \ zoom) {\n    st *= zoom;\n    return fract(st);\n}"
