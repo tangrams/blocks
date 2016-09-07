@@ -1692,6 +1692,24 @@ import:
 ```
 
 
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **DOTS_SIZE**:  number between ```0.0``` and ```1.0``` that control the *size*. The *default value* is ```0.15```. 
+ -  **DOTS_SCALE**:  number between ```0.0``` and ```2.0``` that control the *scale*. The *default value* is ```2.0```. 
+ -  **DOTS_GLOW**:  number between ```0.0``` and ```1.0``` that control the *glow amount*. The *default value* is ```0.5```. 
+
+These are the **shader blocks**:
+
+- **color**:
+
+```glsl
+vec2 st = (fract(v_texcoord.xy)-.5)*DOTS_SCALE;
+float df = dot(st,st);
+color.a = 1.-step(DOTS_SIZE, df);
+color.a += smoothstep(1.,0.,df)*(DOTS_GLOW);
+```
+
+
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 

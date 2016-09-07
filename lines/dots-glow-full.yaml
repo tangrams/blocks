@@ -1,6 +1,8 @@
 styles:
     lines-dots-glow:
+        animated: true
         base: lines
+        blend: overlay
         doc:
             author:
                 name: Patricio Gonzalez Vivo
@@ -11,20 +13,41 @@ styles:
             licence: MIT
             tangram-version: 0.0.7
             version: 0.0.1
+        shaders:
+            blocks:
+                color: 'vec2 st = (fract(v_texcoord.xy)-.5)*DOTS_SCALE;
+
+                    float df = dot(st,st);
+
+                    color.a = 1.-step(DOTS_SIZE, df);
+
+                    color.a += smoothstep(1.,0.,df)*(DOTS_GLOW);'
+            defines:
+                DOTS_GLOW: 0.5
+                DOTS_SCALE: 2.0
+                DOTS_SIZE: 0.15
+        texcoords: true
         ui:
-            animated: true
-            blend: overlay
             shaders:
-                blocks:
-                    color: 'vec2 st = (fract(v_texcoord.xy)-.5)*DOTS_SCALE;
-
-                        float df = dot(st,st);
-
-                        color.a = 1.-step(DOTS_SIZE, df);
-
-                        color.a += smoothstep(1.,0.,df)*(DOTS_GLOW);'
                 defines:
-                    DOTS_GLOW: 0.5
-                    DOTS_SCALE: 2.0
-                    DOTS_SIZE: 0.15
-            texcoords: true
+                    DOTS_GLOW:
+                        label: Glow amount
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
+                    DOTS_SCALE:
+                        label: Scale
+                        range:
+                            max: 2.0
+                            min: 0.0
+                            step: 0.1
+                        type: number
+                    DOTS_SIZE:
+                        label: Size
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
