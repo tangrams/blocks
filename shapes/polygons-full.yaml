@@ -50,6 +50,7 @@ styles:
                     lines: 153
                     url: https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml
         mix:
+        - block
         - shapes-type
         shaders:
             blocks:

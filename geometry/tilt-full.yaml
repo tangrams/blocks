@@ -28,7 +28,7 @@ styles:
             tangram-version: 0.0.7
             version: 0.0.1
         mix:
-        - blocks
+        - block
         shaders:
             blocks:
                 global: "// Rotate in 2, 3 and 4 dimensions\n// ================================\n\
@@ -56,7 +56,8 @@ styles:
                     }\n//\n// Translate in 4 dimensions\nmat4 translate4D (float x,\
                     \ float y, float z) {\n    return mat4(\n        vec4(1.0, 0.0,\
                     \ 0.0, 0.0),\n        vec4(0.0, 1.0, 0.0, 0.0),\n        vec4(0.0,\
-                    \ 0.0, 1.0, 0.0),\n        vec4(x,   y,   z,   1.0)\n    );\n}"
+                    \ 0.0, 1.0, 0.0),\n        vec4(x,   y,   z,   1.0)\n    );\n\
+                    }\n"
     geometry-tilt:
         animated: true
         doc:

@@ -3,7 +3,7 @@ import:
 
 styles:
     geometry-matrices:
-        mix: [blocks]
+        mix: [block]
         doc:
             author: 
                 name: Patricio Gonzalez Vivo
