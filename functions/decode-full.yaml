@@ -33,7 +33,7 @@ styles:
                     \ getElements(tex, getCoord(res,col,row));\n    return elements.x\
                     \ * pow(10.,-floor(elements.y)) * elements.z;\n}\n\nvec2 getPosition(sampler2D\
                     \ tex, vec2 res, float col, float row) {\n    highp vec4 value\
-                    \ = texture2D(tex, getCoord(res, col, row));\n    float x = (value.r*255+value.g*65025.)/65025.;\n\
+                    \ = texture2D(tex, getCoord(res, col, row));\n    float x = (value.r*255.+value.g*65025.)/65025.;\n\
                     \    float y = (value.b*255.+value.a*65025.)/65025.;\n    return\
                     \ vec2(x,y);\n}\n\nvec4 getColor(sampler2D tex, vec2 res, float\
                     \ col, float row) {\n    return texture2D(tex, getCoord(res, col,\

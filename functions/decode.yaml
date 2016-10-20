@@ -50,7 +50,7 @@ styles:
 
                     vec2 getPosition(sampler2D tex, vec2 res, float col, float row) {
                         highp vec4 value = texture2D(tex, getCoord(res, col, row));
-                        float x = (value.r*255+value.g*65025.)/65025.;
+                        float x = (value.r*255.+value.g*65025.)/65025.;
                         float y = (value.b*255.+value.a*65025.)/65025.;
                         return vec2(x,y);
                     }
