@@ -33,6 +33,47 @@ These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
+#### [functions-decode](http://tangrams.github.io/blocks/#functions-decode) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions/decode.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+This is a set of functions that helps you decode data hided in color by the project [data2images](https://github.com/tangrams/data2image)
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/functions/decode.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/functions/decode-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
+
+- **global**:
+ + `vec2 getCoord(vec2 res, float col, float row) `
+ + `float getUInt(sampler2D tex, vec2 res, float col, float row) `
+ + `float getInt(sampler2D tex, vec2 res, float col, float row) `
+ + `float getUFloat(sampler2D tex, vec2 res, float col, float row) `
+ + `float getFloat(sampler2D tex, vec2 res, float col, float row) `
+ + `vec3 getElements(sampler2D tex, vec2 coord) `
+ + `float getNumber(sampler2D tex, vec2 res, float col, float row) `
+ + `vec2 getPosition(sampler2D tex, vec2 res, float col, float row) `
+ + `vec4 getColor(sampler2D tex, vec2 res, float col, float row) `
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [functions-easing](http://tangrams.github.io/blocks/#functions-easing) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions/easing.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Easing functions originally develop by Robert Penner's and transformed to GLSL by [StackGL](http://stack.gl/) in this repo: <https://github.com/stackgl/glsl-easings>

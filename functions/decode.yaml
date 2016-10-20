@@ -1,0 +1,60 @@
+styles:
+    functions-decode:
+        doc:
+            author: 
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: MIT
+            description: |
+                This is a set of functions that helps you decode data hided in color by the project [data2images](https://github.com/tangrams/data2image)
+        shaders:
+            blocks:
+                global: |
+                    vec2 getCoord(vec2 res, float col, float row) {
+                        vec2 st = fract(vec2(col,row)/res);
+                        st.y = 1.-st.y;
+                        return st+(vec2(.5)/res);
+                    }
+                    
+                    float getUInt(sampler2D tex, vec2 res, float col, float row) {
+                        highp vec4 value = texture2D(tex, getCoord(res,col,row));
+                        return (value.x*255.)+(value.y*65025.)+(value.z*16581375.);
+                    }
+
+                    float getInt(sampler2D tex, vec2 res, float col, float row) {
+                        return getUInt(tex,res,col,row)-8290688.;
+                    }
+
+                    float getUFloat(sampler2D tex, vec2 res, float col, float row) {
+                        highp vec4 value = texture2D(tex, getCoord(res,col,row));
+                        return ((value.x*255.)+(value.y*65025.)+(value.z*16581375.))/16581375.;
+                    }
+
+                    float getFloat(sampler2D tex, vec2 res, float col, float row) {
+                        return (getUFloat(tex,res,col,row)-.5)*2.;
+                    }
+
+                    vec3 getElements(sampler2D tex, vec2 coord) {
+                        highp vec4 value = texture2D(tex, coord);
+                        highp float uint = (value.x*255.)+(value.y*65025.)+(value.z*16581375.);
+                        float press = ceil(value.a*255.)-244.;
+                        return vec3(uint, abs(press), sign(press));
+                    }
+
+                    float getNumber(sampler2D tex, vec2 res, float col, float row) {
+                        highp vec3 elements = getElements(tex, getCoord(res,col,row));
+                        return elements.x * pow(10.,-floor(elements.y)) * elements.z;
+                    }
+
+                    vec2 getPosition(sampler2D tex, vec2 res, float col, float row) {
+                        highp vec4 value = texture2D(tex, getCoord(res, col, row));
+                        float x = (value.r*255+value.g*65025.)/65025.;
+                        float y = (value.b*255.+value.a*65025.)/65025.;
+                        return vec2(x,y);
+                    }
+
+                    vec4 getColor(sampler2D tex, vec2 res, float col, float row) {
+                        return texture2D(tex, getCoord(res, col, row));
+                    }
