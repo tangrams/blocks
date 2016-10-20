@@ -1,0 +1,40 @@
+styles:
+    functions-decode:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'This is a set of functions that helps you decode data hided
+                in color by the project [data2images](https://github.com/tangrams/data2image)
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "vec2 getCoord(vec2 res, float col, float row) {\n    vec2\
+                    \ st = fract(vec2(col,row)/res);\n    st.y = 1.-st.y;\n    return\
+                    \ st+(vec2(.5)/res);\n}\n\nfloat getUInt(sampler2D tex, vec2 res,\
+                    \ float col, float row) {\n    highp vec4 value = texture2D(tex,\
+                    \ getCoord(res,col,row));\n    return (value.x*255.)+(value.y*65025.)+(value.z*16581375.);\n\
+                    }\n\nfloat getInt(sampler2D tex, vec2 res, float col, float row)\
+                    \ {\n    return getUInt(tex,res,col,row)-8290688.;\n}\n\nfloat\
+                    \ getUFloat(sampler2D tex, vec2 res, float col, float row) {\n\
+                    \    highp vec4 value = texture2D(tex, getCoord(res,col,row));\n\
+                    \    return ((value.x*255.)+(value.y*65025.)+(value.z*16581375.))/16581375.;\n\
+                    }\n\nfloat getFloat(sampler2D tex, vec2 res, float col, float\
+                    \ row) {\n    return (getUFloat(tex,res,col,row)-.5)*2.;\n}\n\n\
+                    vec3 getElements(sampler2D tex, vec2 coord) {\n    highp vec4\
+                    \ value = texture2D(tex, coord);\n    highp float uint = (value.x*255.)+(value.y*65025.)+(value.z*16581375.);\n\
+                    \    float press = ceil(value.a*255.)-244.;\n    return vec3(uint,\
+                    \ abs(press), sign(press));\n}\n\nfloat getNumber(sampler2D tex,\
+                    \ vec2 res, float col, float row) {\n    highp vec3 elements =\
+                    \ getElements(tex, getCoord(res,col,row));\n    return elements.x\
+                    \ * pow(10.,-floor(elements.y)) * elements.z;\n}\n\nvec2 getPosition(sampler2D\
+                    \ tex, vec2 res, float col, float row) {\n    highp vec4 value\
+                    \ = texture2D(tex, getCoord(res, col, row));\n    float x = (value.r*255+value.g*65025.)/65025.;\n\
+                    \    float y = (value.b*255.+value.a*65025.)/65025.;\n    return\
+                    \ vec2(x,y);\n}\n\nvec4 getColor(sampler2D tex, vec2 res, float\
+                    \ col, float row) {\n    return texture2D(tex, getCoord(res, col,\
+                    \ row));\n}\n"
