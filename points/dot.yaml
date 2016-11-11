@@ -1,0 +1,42 @@
+import:
+    - ../shapes/type.yaml
+    
+styles:
+    points-dot:
+        doc:
+            author: 
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            version: 0.0.1
+            tangram-version: 0.0.7
+            licence: MIT
+            description: |
+                Draws a dot with an `DOT_OFFSET` border. To learn more about shapes on shaders read [this chapter from The Book of Shader](http://thebookofshaders.com/07/)
+        ui:
+            shaders:
+                defines:
+                    STROKE:
+                        type: number
+                        label: Width of the offset
+                        range: 
+                            min: 0.
+                            max: 1.
+                            step: 0.01
+                    DOT_OFFSET:
+                        type: number
+                        label: Offset
+                        range: 
+                            min: 0.
+                            max: 1.
+                            step: 0.01
+        base: points
+        mix: [shapes-type]
+        texcoord: true
+        shaders:
+            defines:
+                STROKE: .15
+                DOT_OFFSET: .35
+            blocks:
+                color: |
+                    float sdf = dot(v_texcoord.xy-.5,v_texcoord.xy-.5)*2.;
+                    color.a = fill(.5,sdf) - stroke(DOT_OFFSET,sdf);

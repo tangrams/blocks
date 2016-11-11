@@ -45,7 +45,7 @@ styles:
                 twitter: patriciogv
             description: 'Draws shape with N amount of sides (`SHAPE_SIDES`), a colored
                 border (`SHAPE_BORDER_WIDTH` & `SHAPE_BORDER_COLOR`). To learn more
-                about shapes on shaders read [this chapter from The Nook of Shader](http://thebookofshaders.com/07/)
+                about shapes on shaders read [this chapter from The Book of Shader](http://thebookofshaders.com/07/)
 
                 '
             examples:

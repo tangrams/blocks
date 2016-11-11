@@ -2228,6 +2228,49 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
+#### [points-dot](http://tangrams.github.io/blocks/#points-dot) <a href="https://github.com/tangrams/blocks/blob/gh-pages/points/dot.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Draws a dot with an `DOT_OFFSET` border. To learn more about shapes on shaders read [this chapter from The Book of Shader](http://thebookofshaders.com/07/)
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/points/dot.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/points/dot-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **STROKE**:  number between ```0.0``` and ```1.0``` that control the *width of the offset*. The *default value* is ```0.15```. 
+ -  **DOT_OFFSET**:  number between ```0.0``` and ```1.0``` that control the *offset*. The *default value* is ```0.35```. 
+
+These are the **shader blocks**:
+
+- **color**:
+
+```glsl
+float sdf = dot(v_texcoord.xy-.5,v_texcoord.xy-.5)*2.;
+color.a = fill(.5,sdf) - stroke(DOT_OFFSET,sdf);
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [points-glow](http://tangrams.github.io/blocks/#points-glow) <a href="https://github.com/tangrams/blocks/blob/gh-pages/points/glow.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
@@ -2268,7 +2311,7 @@ color = mix(v_color*color.a,vec4(0.),b*b);
 
 #### [points-shape](http://tangrams.github.io/blocks/#points-shape) <a href="https://github.com/tangrams/blocks/blob/gh-pages/points/shape.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-Draws shape with N amount of sides (`SHAPE_SIDES`), a colored border (`SHAPE_BORDER_WIDTH` & `SHAPE_BORDER_COLOR`). To learn more about shapes on shaders read [this chapter from The Nook of Shader](http://thebookofshaders.com/07/)
+Draws shape with N amount of sides (`SHAPE_SIDES`), a colored border (`SHAPE_BORDER_WIDTH` & `SHAPE_BORDER_COLOR`). To learn more about shapes on shaders read [this chapter from The Book of Shader](http://thebookofshaders.com/07/)
 
 
 

@@ -1,0 +1,89 @@
+import:
+- ../functions/aastep.yaml
+styles:
+    functions-aastep:
+        doc:
+            author:
+                name: Matt DesLauriers
+                twitter: mattdesl
+            description: 'AnitAliased ```step()``` function implemented by [Matt DesLauriers](https://twitter.com/mattdesl)
+                in this module <https://github.com/stackgl/glsl-aastep>
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                global: "// AntiAliased Step function\n//=============================\n\
+                    float aastep(float threshold, float value) {\n    #ifdef TANGRAM_FRAGMENT_SHADER\n\
+                    \        #ifdef TANGRAM_EXTENSION_OES_standard_derivatives\n \
+                    \           float afwidth = length(vec2(dFdx(value), dFdy(value)))\
+                    \ * 0.70710678118654757;\n            return smoothstep(threshold-afwidth,\
+                    \ threshold+afwidth, value);\n        #else\n            return\
+                    \ step(threshold, value);\n        #endif  \n    #else\n     \
+                    \   return step(threshold, value);\n    #endif\n}"
+            extensions: OES_standard_derivatives
+    points-dot:
+        base: points
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: 'Draws a dot with an `DOT_OFFSET` border. To learn more about
+                shapes on shaders read [this chapter from The Book of Shader](http://thebookofshaders.com/07/)
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        mix:
+        - shapes-type
+        shaders:
+            blocks:
+                color: 'float sdf = dot(v_texcoord.xy-.5,v_texcoord.xy-.5)*2.;
+
+                    color.a = fill(.5,sdf) - stroke(DOT_OFFSET,sdf);'
+            defines:
+                DOT_OFFSET: 0.35
+                STROKE: 0.15
+        texcoord: true
+        ui:
+            shaders:
+                defines:
+                    DOT_OFFSET:
+                        label: Offset
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
+                    STROKE:
+                        label: Width of the offset
+                        range:
+                            max: 1.0
+                            min: 0.0
+                            step: 0.01
+                        type: number
+    shapes-type:
+        doc:
+            author:
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            description: "This block provides to functions `fill` and `stroke`. Each\
+                \ one transform a SDF to a fill shape or a stroke shape (border).\
+                \ The stroke width can be control with the define `STROKE`. \nTo learn\
+                \ more about how to make shapes on shaders go to From check [this\
+                \ chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)\n"
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        mix:
+        - functions-aastep
+        shaders:
+            blocks:
+                global: "float fill (in float size, in float x) {\n    return 1.-aastep(size,\
+                    \ x);\n}\n\nfloat stroke (in float size, in float x) {\n    return\
+                    \ aastep(size, x+STROKE) - aastep(size, x);\n}"
+            defines:
+                STROKE: 0.15
