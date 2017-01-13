@@ -125,7 +125,7 @@ def appendDoc2README(readme_file, filename, counter):
             if isShaderBlocksIn(block):
                 readme_file.write('These are the **shader blocks**:\n');
 
-                global_fncs = getGlobalFunctions(block)
+                global_fncs = getGlobalFunctionsIn(block)
                 if len(global_fncs):
                     readme_file.write('\n- **global**:')
                     for function in global_fncs:

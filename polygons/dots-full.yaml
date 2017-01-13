@@ -135,6 +135,10 @@ styles:
                     \ of the ST space\n// ================================\nfloat\
                     \ circleBorder (vec2 st, float radius) {\n    return stroke(radius,\
                     \ circleDF(st-vec2(0.5)));\n}"
+        test:
+            circle: color.rgb += circle(st,.5);
+            circleBorder: color.rgb += circleBorder(st,.5);
+            circleDF: color.rgb += circleDF(st-.5);
     shapes-type:
         doc:
             author:

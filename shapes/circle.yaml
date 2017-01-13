@@ -25,6 +25,11 @@ styles:
                     url: https://tangrams.github.io/tangram-sandbox/styles/nursery.yaml
                     img: https://tangrams.github.io/tangram-sandbox/styles/nursery.png
                     lines: 146
+        test:
+            circleDF: color.rgb += circleDF(st-.5);
+            circle: color.rgb += circle(st,.5);
+            circleBorder: color.rgb += circleBorder(st,.5);
+
         mix: [shapes-type]
         shaders:
             blocks:

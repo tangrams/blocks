@@ -3,7 +3,7 @@
 import sys, glob, os, re, json, yaml
 from tools import *
 from docs import *
-import glslViewer
+from benchmark import *
 
 # ================================== Main functions
 # local folder
@@ -33,9 +33,10 @@ def benchmarks():
             # For each style ('styles') in this yaml_file 
             for block_name in yaml_file['styles']:
                 block = yaml_file['styles'][block_name]
-                global_fncs = getGlobalFunctions(block)
-                for fnc,fnc_rtn,fnc_name,spc in global_fncs:
-                    print fnc
+                
+                if isTestIn(block):
+                    for test_name in block['test']:
+                        benchmark(filename, block_name, block, test_name)
 
 # Generate *-full.yaml files... which are blocks that contain their dependencies
 def standaloneBlocks():
@@ -118,6 +119,7 @@ if len(sys.argv) > 1:
     elif sys.argv[1] == 'benchmarks':
         benchmarks()
 else:
+    standaloneBlocks()
     benchmarks()
     document()
-    standaloneBlocks()
+    

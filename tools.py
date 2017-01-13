@@ -1,8 +1,7 @@
 import os, re, yaml
 
 def extractFunctions(searchText):
-    # return re.findall("((void|bool|int|float|vec\\d|mat\\d)+\\s.*\\(.*\\)\\s+\\{)", searchText)
-    return re.findall("((void|bool|int|float|vec\\d|mat\\d)\\s(((?!=).)*)\\(.*\\))", searchText)
+    return re.findall("((void|bool|int|float|vec\\d|mat\\d)\\s(((?!=).)*)(\\(.*\\)))", searchText)
 
 def isDocumentationIn(yaml_block):
     return 'doc' in yaml_block
@@ -30,16 +29,24 @@ def isGlobalBlockIn(yaml_block):
     if isShaderBlocksIn(yaml_block):
         return 'global' in yaml_block['shaders']['blocks']
 
-def getGlobalFunctions(yaml_block):
+def getGlobalBlockIn(yaml_block):
     if isGlobalBlockIn(yaml_block):
-        return extractFunctions(yaml_block['shaders']['blocks']['global'])
-    return []
+        return "\n"+yaml_block['shaders']['blocks']['global']
+    return ""
+
+def getGlobalFunctionsIn(yaml_block):
+    return extractFunctions(getGlobalBlockIn(yaml_block))
 
 def isUniformsIn(yaml_block):
     return 'uniforms' in yaml_block['shaders']
 
 def isDefinesIn(yaml_block):
     return 'defines' in yaml_block['shaders']
+
+def getDefinesIn(yaml_block):
+    if isDefinesIn(yaml_block):
+        return yaml_block['shaders']['defines'].keys()
+    return []
 
 def uniformHaveMetadata(uniform_name, yaml_block):
     if 'ui' in yaml_block:
@@ -57,12 +64,42 @@ def defineHaveMetadata(define_name, yaml_block):
                     return True
     return False
 
+def isTestIn(yaml_block):
+    return 'test' in yaml_block
 
+def getTest(test_name, yaml_block):
+    return yaml_block['test'][test_name]
 
 def isExamplesIn(yaml_block):
     if isDocumentationIn(yaml_block):
         return 'examples' in yaml_block['doc']
     return False
+
+def isDependenceIn(yaml_block):
+    return 'mix' in yaml_block
+
+def getDependencesIn(yaml_block):
+    if isDependenceIn(yaml_block):
+        return yaml_block['mix']
+    return []
+
+def collectDefines(yaml_file, block_name, defines_dict):
+    block = yaml_file['styles'][block_name]
+    depts = getDependencesIn(block)
+    for dep_block_name in depts:
+        collectDefines(yaml_file, dep_block_name, defines_dict)
+
+    defines = getDefinesIn(block)
+    for define_name in defines:
+        defines_dict[define_name] = block['shaders']['defines'][define_name]
+
+def getAllGlobals(yaml_file, block_name):
+    rta = ""
+    depts = getDependencesIn(yaml_file['styles'][block_name])
+    for dep_block_name in depts:
+        rta += getAllGlobals(yaml_file, dep_block_name)
+    rta += getGlobalBlockIn(yaml_file['styles'][block_name])
+    return rta
 
 # Recursive dict merge (From https://gist.github.com/angstwad/bf22d1822c38a92ec0a9)
 def dict_merge(dct, merge_dct):
