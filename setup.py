@@ -2,7 +2,7 @@
 
 import sys, glob, os, re, json, yaml
 from tools import extractFunctions, appendDependencies
-import shader
+import glslViewer
 from docs import appendDoc2README, mainREADME
 
 # ================================== Main functions
@@ -12,6 +12,31 @@ d='.'
 # Sorted list of folders 
 folders = [os.path.join(d,o) for o in os.listdir(d) if os.path.isdir(os.path.join(d,o))];
 folders.sort()
+
+def benchmarks():
+    #   Iterate through all the folders
+    for folder in folders:
+
+        # Skip hidden folders (ex.: .git)
+        if (folder.startswith('./.')):
+            continue
+
+        # That contatin the documentation of all the *.yaml files inside
+        for filename in glob.glob(folder+'/*.yaml'):
+            block = os.path.splitext(os.path.basename(filename))[0]
+
+            # Skip *-full.yaml
+            if block.endswith('-full'):
+                continue
+
+            yaml_file = yaml.safe_load(open(filename))
+
+            # For each style ('styles') in this yaml_file 
+            for name_block in yaml_file['styles']:
+                if 'shaders' in yaml_file['styles'][name_block]:
+                    print name_block
+
+
 
 # Generate *-full.yaml files... which are blocks that contain their dependencies
 def standaloneBlocks():
@@ -87,10 +112,13 @@ def document():
 
 
 if len(sys.argv) > 1:
-    if sys.argv[1] == 'doc':
+    if sys.argv[1] == 'docs':
         document()
-    elif sys.argv[1] == 'fulls':
+    elif sys.argv[1] == 'standalones':
         standaloneBlocks()
+    elif sys.argv[1] == 'benchmarks':
+        benchmarks()
 else:
-    standaloneBlocks()
+    benchmarks()
     document()
+    standaloneBlocks()

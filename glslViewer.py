@@ -7,7 +7,7 @@ from time import sleep
 from fcntl import fcntl, F_GETFL, F_SETFL
 from os import O_NONBLOCK, read
 
-class Shader:
+class glslViewer:
     COMMAND='glslViewer'
     process = {}
     cout = {}

@@ -1,5 +1,5 @@
 import os, yaml
-from tools import extractFunctions
+from tools import *
 
 URL = 'http://tangrams.github.io/blocks/'
 
@@ -40,10 +40,11 @@ def appendDoc2README(readme_file, filename, counter):
 
         blocks.append(name_block)
 
+        block = yaml_file['styles'][name_block]
+
         # Add a description if it have
-        if 'doc' in yaml_file['styles'][name_block]:
-            if 'description' in yaml_file['styles'][name_block]['doc']:
-                readme_file.write(yaml_file['styles'][name_block]['doc']['description']+'\n')
+        if isDocumentationIn(block):
+            readme_file.write(getDescriptionOf(block))
 
         # Add an explanation of how to import this block
         readme_file.write(  '\n\nTo import this block add the following url to your `import` list:\n\n' +
@@ -59,113 +60,109 @@ def appendDoc2README(readme_file, filename, counter):
                             '    - https://tangrams.github.io/blocks/' + filename[2:-5] + '-full.yaml\n' +
                             '```\n\n\n')
 
-        if 'shaders' in yaml_file['styles'][name_block]:
+        if isShaderIn(block):
             readme_file.write('These blocks uses a custom **shader**.\n');
+            shader = block['shaders']
 
             # Add a list of uniforms
-            if 'uniforms' in yaml_file['styles'][name_block]['shaders']:
+            if isUniformsIn(block):
                 readme_file.write('These are the **uniforms**:\n')
-                for uniform in yaml_file['styles'][name_block]['shaders']['uniforms'].keys():
-                    uniform_doc = ' **' + uniform + '**: '
+                for uniform_name in shader['uniforms'].keys():
+                    uniform_doc = ' **' + uniform_name + '**: '
                     
                     # Add extra information from the UI 
-                    if 'ui' in yaml_file['styles'][name_block]:
-                        if 'shaders' in yaml_file['styles'][name_block]['ui']:
-                            if 'uniforms' in yaml_file['styles'][name_block]['ui']['shaders']:
-                                if uniform in yaml_file['styles'][name_block]['ui']['shaders']['uniforms']:
-                                    if yaml_file['styles'][name_block]['ui']['shaders']['uniforms'][uniform]['type'] == 'number':
-                                        uniform_min = yaml_file['styles'][name_block]['ui']['shaders']['uniforms'][uniform]['range']['min']
-                                        uniform_max = yaml_file['styles'][name_block]['ui']['shaders']['uniforms'][uniform]['range']['max']
-                                        uniform_label = yaml_file['styles'][name_block]['ui']['shaders']['uniforms'][uniform]['label'].lower()
-                                        uniform_doc += ' number between ```' + str(uniform_min) + '``` and ```' + str(uniform_max) + '``` that control the *' + uniform_label + '*.'
-                                    
-                                    elif yaml_file['styles'][name_block]['ui']['shaders']['uniforms'][uniform]['type'] == 'dropdownArray':
-                                        uniform_label = yaml_file['styles'][name_block]['ui']['shaders']['uniforms'][uniform]['label'].lower()
-                                        uniform_doc += ' variable that control the *' + uniform_label + '* with one of the following values: ```'
-                                        uniform_doc += ', '.join(yaml_file['styles'][name_block]['ui']['shaders']['uniforms'][uniform]['values']) + '```.'
+                    if uniformHaveMetadata(uniform_name, block):
+                        uniform_metadata = block['ui']['shaders']['uniforms'][uniform_name]
 
-                                    elif yaml_file['styles'][name_block]['ui']['shaders']['uniforms'][uniform]['type'] == 'dropdownList':
-                                        uniform_label = yaml_file['styles'][name_block]['ui']['shaders']['uniforms'][uniform]['label'].lower()
-                                        uniform_doc += ' variable that control the *' + uniform_label + '* with one of the following values: '
-                                        uniform_values = []
-                                        for key, value in yaml_file['styles'][name_block]['ui']['shaders']['uniforms'][uniform]['values'].iteritems():
-                                            uniform_values.append('```'+value+'``` ( *' + key + '* )')
+                        if uniform_metadata['type'] == 'number':
+                            uniform_min = uniform_metadata['range']['min']
+                            uniform_max = uniform_metadata['range']['max']
+                            uniform_label = uniform_metadata['label'].lower()
+                            uniform_doc += ' number between ```' + str(uniform_min) + '``` and ```' + str(uniform_max) + '``` that control the *' + uniform_label + '*.'
+                        
+                        elif uniform_metadata['type'] == 'dropdownArray':
+                            uniform_label = uniform_metadata['label'].lower()
+                            uniform_doc += ' variable that control the *' + uniform_label + '* with one of the following values: ```'
+                            uniform_doc += ', '.join(uniform_metadata['values']) + '```.'
 
-                                        uniform_doc += ', '.join(uniform_values) + '.'
+                        elif uniform_metadata['type'] == 'dropdownList':
+                            uniform_label = uniform_metadata['label'].lower()
+                            uniform_doc += ' variable that control the *' + uniform_label + '* with one of the following values: '
+                            uniform_values = []
+                            for key, value in uniform_metadata['values'].iteritems():
+                                uniform_values.append('```'+value+'``` ( *' + key + '* )')
 
-                    uniform_doc += ' The *default value* is ```' + str(yaml_file['styles'][name_block]['shaders']['uniforms'][uniform]) + '```. '
+                            uniform_doc += ', '.join(uniform_values) + '.'
+
+                    uniform_doc += ' The *default value* is ```' + str(shader['uniforms'][uniform_name]) + '```. '
 
                     readme_file.write(' - ' + uniform_doc + '\n')
                 readme_file.write('\n')
 
             # Add a list of defines
-            if 'defines' in yaml_file['styles'][name_block]['shaders']:
+            if isDefinesIn(block):
                 readme_file.write('These are the **defines**:\n')
-                for define in yaml_file['styles'][name_block]['shaders']['defines'].keys():
+                for define in shader['defines'].keys():
                     define_doc = ' **' + define + '**: ' # name
                     
                     # Add extra information from the UI 
-                    if 'ui' in yaml_file['styles'][name_block]:
-                        if 'shaders' in yaml_file['styles'][name_block]['ui']:
-                            if 'defines' in yaml_file['styles'][name_block]['ui']['shaders']:
-                                if define in yaml_file['styles'][name_block]['ui']['shaders']['defines']:
-                                    if yaml_file['styles'][name_block]['ui']['shaders']['defines'][define]['type'] == 'number':
-                                        define_min = yaml_file['styles'][name_block]['ui']['shaders']['defines'][define]['range']['min']
-                                        define_max = yaml_file['styles'][name_block]['ui']['shaders']['defines'][define]['range']['max']
-                                        define_label = yaml_file['styles'][name_block]['ui']['shaders']['defines'][define]['label'].lower()
-                                        define_doc += ' number between ```' + str(define_min) + '``` and ```' + str(define_max) + '``` that control the *' + define_label + '*.'
-                                    
-                                    elif yaml_file['styles'][name_block]['ui']['shaders']['defines'][define]['type'] == 'dropdownArray':
-                                        define_label = yaml_file['styles'][name_block]['ui']['shaders']['defines'][define]['label'].lower()
-                                        define_doc += ' variable that control the *' + define_label + '* with one of the following values: ```'
-                                        define_doc += ', '.join(yaml_file['styles'][name_block]['ui']['shaders']['defines'][define]['values']) + '```.'
-                                    
-                                    elif yaml_file['styles'][name_block]['ui']['shaders']['defines'][define]['type'] == 'dropdownList':
-                                        define_label = yaml_file['styles'][name_block]['ui']['shaders']['defines'][define]['label'].lower()
-                                        define_doc += ' variable that control the *' + define_label + '* with one of the following values: '
-                                        define_values = []
-                                        for key, value in yaml_file['styles'][name_block]['ui']['shaders']['defines'][define]['values'].iteritems():
-                                            define_values.append('```'+value+'``` ( *' + key + '* )')
+                    if defineHaveMetadata(define, block):
+                        if block['ui']['shaders']['defines'][define]['type'] == 'number':
+                            define_min = block['ui']['shaders']['defines'][define]['range']['min']
+                            define_max = block['ui']['shaders']['defines'][define]['range']['max']
+                            define_label = block['ui']['shaders']['defines'][define]['label'].lower()
+                            define_doc += ' number between ```' + str(define_min) + '``` and ```' + str(define_max) + '``` that control the *' + define_label + '*.'
+                        
+                        elif block['ui']['shaders']['defines'][define]['type'] == 'dropdownArray':
+                            define_label = block['ui']['shaders']['defines'][define]['label'].lower()
+                            define_doc += ' variable that control the *' + define_label + '* with one of the following values: ```'
+                            define_doc += ', '.join(block['ui']['shaders']['defines'][define]['values']) + '```.'
+                        
+                        elif block['ui']['shaders']['defines'][define]['type'] == 'dropdownList':
+                            define_label = block['ui']['shaders']['defines'][define]['label'].lower()
+                            define_doc += ' variable that control the *' + define_label + '* with one of the following values: '
+                            define_values = []
+                            for key, value in block['ui']['shaders']['defines'][define]['values'].iteritems():
+                                define_values.append('```'+value+'``` ( *' + key + '* )')
 
-                                        define_doc += ', '.join(define_values) + '.'
+                            define_doc += ', '.join(define_values) + '.'
                 
-                    define_doc += ' The *default value* is ```' + str(yaml_file['styles'][name_block]['shaders']['defines'][define]) + '```. '
+                    define_doc += ' The *default value* is ```' + str(shader['defines'][define]) + '```. '
 
                     readme_file.write(' - ' + define_doc + '\n')
                 readme_file.write('\n')
 
             # Add a list of blocks
-            if 'blocks' in yaml_file['styles'][name_block]['shaders']:
+            if 'blocks' in block['shaders']:
                 readme_file.write('These are the **shader blocks**:\n');
 
-                if 'global' in yaml_file['styles'][name_block]['shaders']['blocks']:
+                if 'global' in block['shaders']['blocks']:
                     readme_file.write('\n- **global**:')
-                    functions = extractFunctions(yaml_file['styles'][name_block]['shaders']['blocks']['global'])
+                    functions = extractFunctions(block['shaders']['blocks']['global'])
                     for function in functions:
                         readme_file.write('\n + `' + function[0][:-1] + '`')
 
-                for block in yaml_file['styles'][name_block]['shaders']['blocks'].keys():
+                for block_name in block['shaders']['blocks'].keys():
                     # In case of a 'global' block... just list the functions it contain
-                    if block != 'global':
-                        readme_file.write('\n- **' + block + '**:')
+                    if block_name != 'global':
+                        readme_file.write('\n- **' + block_name + '**:')
                         readme_file.write(  '\n\n```glsl\n' + 
-                                            yaml_file['styles'][name_block]['shaders']['blocks'][block] +
+                                            block['shaders']['blocks'][block_name] +
                                             '\n```\n\n')
                 readme_file.write('\n')
 
         # Add a list of examples
-        if 'doc' in yaml_file['styles'][name_block]:
-            if 'examples' in yaml_file['styles'][name_block]['doc']:
-                readme_file.write('\nExamples:\n');
-                for example in yaml_file['styles'][name_block]['doc']['examples']:
-                    if 'url' in yaml_file['styles'][name_block]['doc']['examples'][example]:
-                        url = 'https://mapzen.com/tangram/play/?scene=' + yaml_file['styles'][name_block]['doc']['examples'][example]['url']
-                        if 'lines' in yaml_file['styles'][name_block]['doc']['examples'][example]:
-                            url = url + '&lines=' + str(yaml_file['styles'][name_block]['doc']['examples'][example]['lines'])
-                        if 'img' in yaml_file['styles'][name_block]['doc']['examples'][example]:
-                            readme_file.write('<a href="'+url+'" target="_blank">\n<img src="'+yaml_file['styles'][name_block]['doc']['examples'][example]['img']+'" style="width: 100%; height: 100px; object-fit: cover;">\n</a>\n')
+        if isExamplesIn(block):
+            readme_file.write('\nExamples:\n');
+            for example in block['doc']['examples']:
+                if 'url' in block['doc']['examples'][example]:
+                    url = 'https://mapzen.com/tangram/play/?scene=' + block['doc']['examples'][example]['url']
+                    if 'lines' in block['doc']['examples'][example]:
+                        url = url + '&lines=' + str(block['doc']['examples'][example]['lines'])
+                    if 'img' in block['doc']['examples'][example]:
+                        readme_file.write('<a href="'+url+'" target="_blank">\n<img src="'+block['doc']['examples'][example]['img']+'" style="width: 100%; height: 100px; object-fit: cover;">\n</a>\n')
 
-                        else:
-                            readme_file.write('<a href="'+url+'" target="_blank">'+example+'</a>\n')
+                    else:
+                        readme_file.write('<a href="'+url+'" target="_blank">'+example+'</a>\n')
 
     return blocks

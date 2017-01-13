@@ -1,16 +1,25 @@
 default: all
 
-clean: clean-readmes clean-fulls
+clean: clean-docs clean-standalones clean-benchmarks
 
-clean-fulls:
+clean-standalones:
 	rm -R */*-full.yaml
 
-clean-readmes:
+clean-docs:
 	rm -R */README.md
 	rm README.md
 
-clean-shaders:
+clean-benchmarks:
 	rm -R */*.frag
+
+standalones:
+	python setup.py standalones
+
+benchmarks:
+	python setup.py benchmarks
+
+docs:
+	python setup.py docs
 
 all:
 	python setup.py

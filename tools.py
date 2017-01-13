@@ -3,6 +3,50 @@ import os, re, yaml
 def extractFunctions(searchText):
     return re.findall("((void|bool|int|float|vec\\d|mat\\d)+\\s.*\\(.*\\)\\s+\\{)", searchText)
 
+def isShaderIn(yaml_block):
+    return 'shaders' in yaml_block
+
+def isDocumentationIn(yaml_block):
+    return 'doc' in yaml_block
+
+def isDescriptionIn(yaml_block):
+    if isDocumentationIn(yaml_block):
+        return 'description' in yaml_block['doc']
+    return False
+
+def isExamplesIn(yaml_block):
+    if isDocumentationIn(yaml_block):
+        return 'examples' in yaml_block['doc']
+    return False
+
+def isUniformsIn(yaml_block):
+    return 'uniforms' in yaml_block['shaders']
+
+def isDefinesIn(yaml_block):
+    return 'defines' in yaml_block['shaders']
+
+def uniformHaveMetadata(uniform_name, yaml_block):
+    if 'ui' in yaml_block:
+        if 'shaders' in yaml_block['ui']:
+            if 'uniforms' in yaml_block['ui']['shaders']:
+                if uniform_name in yaml_block['ui']['shaders']['uniforms']:
+                    return True
+    return False
+
+def defineHaveMetadata(define_name, yaml_block):
+    if 'ui' in yaml_block:
+        if 'shaders' in yaml_block['ui']:
+            if 'defines' in yaml_block['ui']['shaders']:
+                if define_name in yaml_block['ui']['shaders']['defines']:
+                    return True
+    return False
+
+def getDescriptionOf(yaml_block):
+    if isDescriptionIn(yaml_block):
+        return yaml_block['doc']['description'] + '\n'
+    else:
+        return ''
+
 # Recursive dict merge (From https://gist.github.com/angstwad/bf22d1822c38a92ec0a9)
 def dict_merge(dct, merge_dct):
     """ Recursive dict merge. Inspired by :meth:``dict.update()``, instead of
