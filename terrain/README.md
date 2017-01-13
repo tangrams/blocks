@@ -56,7 +56,7 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float getHeight() `
+ + `float getHeight()`
 - **position**:
 
 ```glsl

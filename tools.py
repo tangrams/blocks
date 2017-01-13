@@ -1,7 +1,8 @@
 import os, re, yaml
 
 def extractFunctions(searchText):
-    return re.findall("((void|bool|int|float|vec\\d|mat\\d)+\\s.*\\(.*\\)\\s+\\{)", searchText)
+    # return re.findall("((void|bool|int|float|vec\\d|mat\\d)+\\s.*\\(.*\\)\\s+\\{)", searchText)
+    return re.findall("((void|bool|int|float|vec\\d|mat\\d)\\s(((?!=).)*)\\(.*\\))", searchText)
 
 def isDocumentationIn(yaml_block):
     return 'doc' in yaml_block

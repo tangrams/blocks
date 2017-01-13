@@ -32,7 +32,7 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float grain () `
+ + `float grain ()`
 - **filter**:
 
 ```glsl
@@ -125,7 +125,7 @@ These are the **uniforms**:
 These are the **shader blocks**:
 
 - **global**:
- + `float getHatch (vec2 st, float brightness) `
+ + `float getHatch (vec2 st, float brightness)`
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/crosshatch.yaml&lines=111" target="_blank">
@@ -216,8 +216,8 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `vec3 getLut (vec3 textureColor, sampler2D lookupTable) `
- + `vec3 getLut (vec3 textureColor) `
+ + `vec3 getLut (vec3 textureColor, sampler2D lookupTable)`
+ + `vec3 getLut (vec3 textureColor)`
 - **filter**:
 
 ```glsl

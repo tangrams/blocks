@@ -28,7 +28,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float TileDots(float scale, float size) `
+ + `float TileDots(float scale, float size)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -61,10 +61,11 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `bool grid (vec2 st, float res, float press) `
- + `bool grid (vec2 st, float res) `
- + `float tileGrid (float res) `
- + `float tileGrid() `
+ + `bool grid (vec2 st, float res, float press)`
+ + `bool grid (vec2 st, float res)`
+ + `float diagonalGrid(vec2 st, float width)`
+ + `float tileGrid (float res)`
+ + `float tileGrid()`
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/blueprint.yaml&lines=75-76" target="_blank">
@@ -108,11 +109,11 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float stripesDF (vec2 st) `
- + `float stripes (vec2 st, float width) `
- + `float stripes (vec2 st, float width, float angle) `
- + `float diagonalStripes (vec2 st) `
- + `float diagonalStripes (vec2 st, float width) `
+ + `float stripesDF (vec2 st)`
+ + `float stripes (vec2 st, float width)`
+ + `float stripes (vec2 st, float width, float angle)`
+ + `float diagonalStripes (vec2 st)`
+ + `float diagonalStripes (vec2 st, float width)`
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/press.yaml&lines=150" target="_blank">
@@ -156,8 +157,8 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float wavesDF (vec2 st, float freq, float amp) `
- + `float waves (vec2 st, float freq, float amp, float width) `
+ + `float wavesDF (vec2 st, float freq, float amp)`
+ + `float waves (vec2 st, float freq, float amp, float width)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -190,5 +191,5 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float zigzagDF (vec2 st, float freq) `
- + `float zigzag (vec2 st, float freq, float width) `
+ + `float zigzagDF (vec2 st, float freq)`
+ + `float zigzag (vec2 st, float freq, float width)`

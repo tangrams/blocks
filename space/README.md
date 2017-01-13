@@ -28,7 +28,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec2 getConstantCoords () `
+ + `vec2 getConstantCoords ()`
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/grain-area.yaml&lines=26" target="_blank">
@@ -66,8 +66,8 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec2 getScreenCoords () `
- + `vec2 getScreenNonStretchCoords () `
+ + `vec2 getScreenCoords ()`
+ + `vec2 getScreenNonStretchCoords ()`
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/press.yaml&lines=136-145" target="_blank">
@@ -108,7 +108,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec2 getTexCoords () `
+ + `vec2 getTexCoords ()`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -141,7 +141,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec2 getTileCoords() `
+ + `vec2 getTileCoords()`
 - **position**:
 
 ```glsl
@@ -182,4 +182,4 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec2 getUZCoords () `
+ + `vec2 getUZCoords ()`

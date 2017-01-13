@@ -26,21 +26,19 @@ def mainREADME(readmes):
                 outfile.write(infile.read())
 
 def appendDoc2README(readme_file, filename, counter):
-    blocks = []
+    toc_of_blocks = []
     yaml_file = yaml.safe_load(open(filename))
 
     # For each style ('styles') in this yaml_file 
-    for name_block in yaml_file['styles']:
+    for block_name in yaml_file['styles']:
+        block = yaml_file['styles'][block_name]
 
         if counter != 0:
             readme_file.write('\n![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)\n')
 
         # Add a title that points to github
-        readme_file.write('\n\n#### [' + name_block + ']('+URL+'#'+name_block+') <a href="https://github.com/tangrams/blocks/blob/gh-pages'+filename[1:]+'" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>\n\n');
-
-        blocks.append(name_block)
-
-        block = yaml_file['styles'][name_block]
+        readme_file.write('\n\n#### [' + block_name + ']('+URL+'#'+block_name+') <a href="https://github.com/tangrams/blocks/blob/gh-pages'+filename[1:]+'" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>\n\n');
+        toc_of_blocks.append(block_name) 
 
         # Add a description if it have
         if isDocumentationIn(block):
@@ -131,7 +129,7 @@ def appendDoc2README(readme_file, filename, counter):
                 if len(global_fncs):
                     readme_file.write('\n- **global**:')
                     for function in global_fncs:
-                        readme_file.write('\n + `' + function[0][:-1] + '`')
+                        readme_file.write('\n + `' + function[0]+ '`')
 
                 for block_type in block['shaders']['blocks'].keys():
                     # In case of a 'global' block... just list the functions it contain
@@ -156,4 +154,4 @@ def appendDoc2README(readme_file, filename, counter):
                     else:
                         readme_file.write('<a href="'+url+'" target="_blank">'+example+'</a>\n')
 
-    return blocks
+    return toc_of_blocks

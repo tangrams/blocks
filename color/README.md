@@ -29,9 +29,9 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec3 rgb2hsb (vec3 c) `
- + `vec3 rgb2hsb (vec4 c) `
- + `vec3 hsb2rgb (vec3 c) `
+ + `vec3 rgb2hsb (vec3 c)`
+ + `vec3 rgb2hsb (vec4 c)`
+ + `vec3 hsb2rgb (vec3 c)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -64,7 +64,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec3 palette (float t, vec3 a, vec3 b, vec3 c, vec3 d) `
+ + `vec3 palette (float t, vec3 a, vec3 b, vec3 c, vec3 d)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -98,7 +98,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float getIntensity (vec3 c) `
- + `float getIntensity (vec4 c) `
- + `float getBrightness (vec3 c) `
- + `float getBrightness (vec4 c) `
+ + `float getIntensity (vec3 c)`
+ + `float getIntensity (vec4 c)`
+ + `float getBrightness (vec3 c)`
+ + `float getBrightness (vec4 c)`

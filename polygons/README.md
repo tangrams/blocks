@@ -36,7 +36,7 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float dashDF(vec2 st) `
+ + `float dashDF(vec2 st)`
 - **color**:
 
 ```glsl

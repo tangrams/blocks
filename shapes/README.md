@@ -28,9 +28,9 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float circleDF (vec2 st) `
- + `float circle (vec2 st, float radius) `
- + `float circleBorder (vec2 st, float radius) `
+ + `float circleDF (vec2 st)`
+ + `float circle (vec2 st, float radius)`
+ + `float circleBorder (vec2 st, float radius)`
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/patterns.yaml&lines=146" target="_blank">
@@ -74,9 +74,9 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float cross (vec2 st, float size, float width) `
- + `float cross (in vec2 st, float _size) `
- + `float cross (in vec2 st, vec2 _size) `
+ + `float cross (vec2 st, float size, float width)`
+ + `float cross (in vec2 st, float _size)`
+ + `float cross (in vec2 st, vec2 _size)`
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml&lines=181-183" target="_blank">
@@ -128,9 +128,9 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float SampleDigit (const in float fDigit, const in vec2 vUV) `
- + `float PrintValue (const in vec2 vStringCharCoords, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces) `
- + `float PrintValue (in vec2 fragCoord, const in vec2 vPixelCoords, const in vec2 vFontSize, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces) `
+ + `float SampleDigit (const in float fDigit, const in vec2 vUV)`
+ + `float PrintValue (const in vec2 vStringCharCoords, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces)`
+ + `float PrintValue (in vec2 fragCoord, const in vec2 vPixelCoords, const in vec2 vFontSize, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -163,9 +163,9 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float shapeDF (vec2 st, int N) `
- + `float shape (vec2 st, int N, float width) `
- + `float shapeBorder (vec2 st, int N, float width) `
+ + `float shapeDF (vec2 st, int N)`
+ + `float shape (vec2 st, int N, float width)`
+ + `float shapeBorder (vec2 st, int N, float width)`
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml&lines=153" target="_blank">
@@ -203,12 +203,14 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float rectDF (in vec2 st, in vec2 size) `
- + `float rectDF (in vec2 st, in float size) `
- + `float rect (in vec2 st, in vec2 size, in float radio) `
- + `float rect (vec2 st, float size, float radio) `
- + `float rectBorder (in vec2 st, in vec2 size, in float radio) `
- + `float rectBorder (vec2 st, float size, float radio) `
+ + `float rectDF (in vec2 st, in vec2 size)`
+ + `float rectDF (in vec2 st, in float size)`
+ + `float rect (in vec2 st, in vec2 size, in float radio)`
+ + `float rect (vec2 st, float size, float radio)`
+ + `float rectBorder (in vec2 st, in vec2 size, in float radio)`
+ + `float rectBorder (vec2 st, float size, float radio)`
+ + `float rect (vec2 st, vec2 size)`
+ + `float rect (vec2 st, float size)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -241,12 +243,12 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float warp (vec3 S) `
- + `float circle (vec3 S) `
- + `float triangle (vec3 S) `
- + `vec3 star (vec3 S) `
- + `vec3 sakura (vec3 S) `
- + `float lotus (vec3 S, float petals_size, float roundness) `
+ + `float warp (vec3 S)`
+ + `float circle (vec3 S)`
+ + `float triangle (vec3 S)`
+ + `vec3 star (vec3 S)`
+ + `vec3 sakura (vec3 S)`
+ + `float lotus (vec3 S, float petals_size, float roundness)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -283,5 +285,5 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float fill (in float size, in float x) `
- + `float stroke (in float size, in float x) `
+ + `float fill (in float size, in float x)`
+ + `float stroke (in float size, in float x)`

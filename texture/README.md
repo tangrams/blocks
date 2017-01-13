@@ -26,7 +26,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec4 NonRepetitiveTexture (sampler2D tex, vec2 x, float v) `
+ + `vec4 NonRepetitiveTexture (sampler2D tex, vec2 x, float v)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -59,7 +59,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec4 TileTexture (sampler2D tex, float scale) `
+ + `vec4 TileTexture (sampler2D tex, float scale)`
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/crosshatch.yaml&lines=76" target="_blank">

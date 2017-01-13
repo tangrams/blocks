@@ -28,7 +28,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float aastep(float threshold, float value) `
+ + `float aastep(float threshold, float value)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -61,15 +61,15 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec2 getCoord(vec2 res, float col, float row) `
- + `float getUInt(sampler2D tex, vec2 res, float col, float row) `
- + `float getInt(sampler2D tex, vec2 res, float col, float row) `
- + `float getUFloat(sampler2D tex, vec2 res, float col, float row) `
- + `float getFloat(sampler2D tex, vec2 res, float col, float row) `
- + `vec3 getElements(sampler2D tex, vec2 coord) `
- + `float getNumber(sampler2D tex, vec2 res, float col, float row) `
- + `vec2 getPosition(sampler2D tex, vec2 res, float col, float row) `
- + `vec4 getColor(sampler2D tex, vec2 res, float col, float row) `
+ + `vec2 getCoord(vec2 res, float col, float row)`
+ + `float getUInt(sampler2D tex, vec2 res, float col, float row)`
+ + `float getInt(sampler2D tex, vec2 res, float col, float row)`
+ + `float getUFloat(sampler2D tex, vec2 res, float col, float row)`
+ + `float getFloat(sampler2D tex, vec2 res, float col, float row)`
+ + `vec3 getElements(sampler2D tex, vec2 coord)`
+ + `float getNumber(sampler2D tex, vec2 res, float col, float row)`
+ + `vec2 getPosition(sampler2D tex, vec2 res, float col, float row)`
+ + `vec4 getColor(sampler2D tex, vec2 res, float col, float row)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -106,37 +106,37 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float linear (in float t) `
- + `float exponentialIn (in float t) `
- + `float exponentialOut (in float t) `
- + `float exponentialInOut (in float t) `
- + `float sineIn (in float t) `
- + `float sineOut (in float t) `
- + `float sineInOut (in float t) `
- + `float qinticIn (in float t) `
- + `float qinticOut (in float t) `
- + `float qinticInOut (in float t) `
- + `float quarticIn (in float t) `
- + `float quarticOut (in float t) `
- + `float quarticInOut (in float t) `
- + `float quadraticInOut (in float t) `
- + `float quadraticIn (in float t) `
- + `float quadraticOut (in float t) `
- + `float cubicIn (in float t) `
- + `float cubicOut (in float t) `
- + `float cubicInOut (in float t) `
- + `float elasticIn (in float t) `
- + `float elasticOut (in float t) `
- + `float elasticInOut (in float t) `
- + `float circularIn (in float t) `
- + `float circularOut (in float t) `
- + `float circularInOut (in float t) `
- + `float bounceOut (in float t) `
- + `float bounceIn (in float t) `
- + `float bounceInOut (in float t) `
- + `float backIn (in float t) `
- + `float backOut (in float t) `
- + `float backInOut (in float t) `
+ + `float linear (in float t)`
+ + `float exponentialIn (in float t)`
+ + `float exponentialOut (in float t)`
+ + `float exponentialInOut (in float t)`
+ + `float sineIn (in float t)`
+ + `float sineOut (in float t)`
+ + `float sineInOut (in float t)`
+ + `float qinticIn (in float t)`
+ + `float qinticOut (in float t)`
+ + `float qinticInOut (in float t)`
+ + `float quarticIn (in float t)`
+ + `float quarticOut (in float t)`
+ + `float quarticInOut (in float t)`
+ + `float quadraticInOut (in float t)`
+ + `float quadraticIn (in float t)`
+ + `float quadraticOut (in float t)`
+ + `float cubicIn (in float t)`
+ + `float cubicOut (in float t)`
+ + `float cubicInOut (in float t)`
+ + `float elasticIn (in float t)`
+ + `float elasticOut (in float t)`
+ + `float elasticInOut (in float t)`
+ + `float circularIn (in float t)`
+ + `float circularOut (in float t)`
+ + `float circularInOut (in float t)`
+ + `float bounceOut (in float t)`
+ + `float bounceIn (in float t)`
+ + `float bounceInOut (in float t)`
+ + `float backIn (in float t)`
+ + `float backOut (in float t)`
+ + `float backInOut (in float t)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -172,8 +172,8 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax, bool clamp) `
- + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax) `
+ + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax, bool clamp)`
+ + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -206,7 +206,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float pulse (float x, float peak, float width) `
+ + `float pulse (float x, float peak, float width)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -249,5 +249,5 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float zoom() `
- + `float zoomEase() `
+ + `float zoom()`
+ + `float zoomEase()`

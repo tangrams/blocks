@@ -82,9 +82,9 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec3 rgb2hsb (vec3 c) `
- + `vec3 rgb2hsb (vec4 c) `
- + `vec3 hsb2rgb (vec3 c) `
+ + `vec3 rgb2hsb (vec3 c)`
+ + `vec3 rgb2hsb (vec4 c)`
+ + `vec3 hsb2rgb (vec3 c)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -117,7 +117,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec3 palette (float t, vec3 a, vec3 b, vec3 c, vec3 d) `
+ + `vec3 palette (float t, vec3 a, vec3 b, vec3 c, vec3 d)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -151,10 +151,10 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float getIntensity (vec3 c) `
- + `float getIntensity (vec4 c) `
- + `float getBrightness (vec3 c) `
- + `float getBrightness (vec4 c) `
+ + `float getIntensity (vec3 c)`
+ + `float getIntensity (vec4 c)`
+ + `float getBrightness (vec3 c)`
+ + `float getBrightness (vec4 c)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
@@ -480,7 +480,7 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float grain () `
+ + `float grain ()`
 - **filter**:
 
 ```glsl
@@ -573,7 +573,7 @@ These are the **uniforms**:
 These are the **shader blocks**:
 
 - **global**:
- + `float getHatch (vec2 st, float brightness) `
+ + `float getHatch (vec2 st, float brightness)`
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/crosshatch.yaml&lines=111" target="_blank">
@@ -664,8 +664,8 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `vec3 getLut (vec3 textureColor, sampler2D lookupTable) `
- + `vec3 getLut (vec3 textureColor) `
+ + `vec3 getLut (vec3 textureColor, sampler2D lookupTable)`
+ + `vec3 getLut (vec3 textureColor)`
 - **filter**:
 
 ```glsl
@@ -764,7 +764,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float aastep(float threshold, float value) `
+ + `float aastep(float threshold, float value)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -797,15 +797,15 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec2 getCoord(vec2 res, float col, float row) `
- + `float getUInt(sampler2D tex, vec2 res, float col, float row) `
- + `float getInt(sampler2D tex, vec2 res, float col, float row) `
- + `float getUFloat(sampler2D tex, vec2 res, float col, float row) `
- + `float getFloat(sampler2D tex, vec2 res, float col, float row) `
- + `vec3 getElements(sampler2D tex, vec2 coord) `
- + `float getNumber(sampler2D tex, vec2 res, float col, float row) `
- + `vec2 getPosition(sampler2D tex, vec2 res, float col, float row) `
- + `vec4 getColor(sampler2D tex, vec2 res, float col, float row) `
+ + `vec2 getCoord(vec2 res, float col, float row)`
+ + `float getUInt(sampler2D tex, vec2 res, float col, float row)`
+ + `float getInt(sampler2D tex, vec2 res, float col, float row)`
+ + `float getUFloat(sampler2D tex, vec2 res, float col, float row)`
+ + `float getFloat(sampler2D tex, vec2 res, float col, float row)`
+ + `vec3 getElements(sampler2D tex, vec2 coord)`
+ + `float getNumber(sampler2D tex, vec2 res, float col, float row)`
+ + `vec2 getPosition(sampler2D tex, vec2 res, float col, float row)`
+ + `vec4 getColor(sampler2D tex, vec2 res, float col, float row)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -842,37 +842,37 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float linear (in float t) `
- + `float exponentialIn (in float t) `
- + `float exponentialOut (in float t) `
- + `float exponentialInOut (in float t) `
- + `float sineIn (in float t) `
- + `float sineOut (in float t) `
- + `float sineInOut (in float t) `
- + `float qinticIn (in float t) `
- + `float qinticOut (in float t) `
- + `float qinticInOut (in float t) `
- + `float quarticIn (in float t) `
- + `float quarticOut (in float t) `
- + `float quarticInOut (in float t) `
- + `float quadraticInOut (in float t) `
- + `float quadraticIn (in float t) `
- + `float quadraticOut (in float t) `
- + `float cubicIn (in float t) `
- + `float cubicOut (in float t) `
- + `float cubicInOut (in float t) `
- + `float elasticIn (in float t) `
- + `float elasticOut (in float t) `
- + `float elasticInOut (in float t) `
- + `float circularIn (in float t) `
- + `float circularOut (in float t) `
- + `float circularInOut (in float t) `
- + `float bounceOut (in float t) `
- + `float bounceIn (in float t) `
- + `float bounceInOut (in float t) `
- + `float backIn (in float t) `
- + `float backOut (in float t) `
- + `float backInOut (in float t) `
+ + `float linear (in float t)`
+ + `float exponentialIn (in float t)`
+ + `float exponentialOut (in float t)`
+ + `float exponentialInOut (in float t)`
+ + `float sineIn (in float t)`
+ + `float sineOut (in float t)`
+ + `float sineInOut (in float t)`
+ + `float qinticIn (in float t)`
+ + `float qinticOut (in float t)`
+ + `float qinticInOut (in float t)`
+ + `float quarticIn (in float t)`
+ + `float quarticOut (in float t)`
+ + `float quarticInOut (in float t)`
+ + `float quadraticInOut (in float t)`
+ + `float quadraticIn (in float t)`
+ + `float quadraticOut (in float t)`
+ + `float cubicIn (in float t)`
+ + `float cubicOut (in float t)`
+ + `float cubicInOut (in float t)`
+ + `float elasticIn (in float t)`
+ + `float elasticOut (in float t)`
+ + `float elasticInOut (in float t)`
+ + `float circularIn (in float t)`
+ + `float circularOut (in float t)`
+ + `float circularInOut (in float t)`
+ + `float bounceOut (in float t)`
+ + `float bounceIn (in float t)`
+ + `float bounceInOut (in float t)`
+ + `float backIn (in float t)`
+ + `float backOut (in float t)`
+ + `float backInOut (in float t)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -908,8 +908,8 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax, bool clamp) `
- + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax) `
+ + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax, bool clamp)`
+ + `float map (in float value, in float inputMin, in float inputMax, in float outputMin, in float outputMax)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -942,7 +942,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float pulse (float x, float peak, float width) `
+ + `float pulse (float x, float peak, float width)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -985,8 +985,8 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float zoom() `
- + `float zoomEase() `
+ + `float zoom()`
+ + `float zoomEase()`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
@@ -1071,8 +1071,7 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `vec3 getCaustic (vec2 uv) `
- + `int n = 0; n < int(CAUSTIC_ITERATIONS); n++) `
+ + `vec3 getCaustic (vec2 uv)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -1109,12 +1108,9 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float fbm (in float x) `
- + `int i = 0; i < int(NUM_OCTAVES); ++i) `
- + `float fbm (in vec2 xy) `
- + `int i = 0; i < int(NUM_OCTAVES); ++i) `
- + `float fbm (in vec3 xyz) `
- + `int i = 0; i < int(NUM_OCTAVES); ++i) `
+ + `float fbm (in float x)`
+ + `float fbm (in vec2 xy)`
+ + `float fbm (in vec3 xyz)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -1148,14 +1144,14 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float noise (in float x) `
- + `float noise (vec2 xy) `
- + `float noise (vec3 xyz) `
- + `vec3 mod289(vec3 x) `
- + `vec2 mod289(vec2 x) `
- + `vec3 permute(vec3 x) `
- + `float snoise(vec2 v) `
- + `float snoise (vec3 p) `
+ + `float noise (in float x)`
+ + `float noise (vec2 xy)`
+ + `float noise (vec3 xyz)`
+ + `vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0))`
+ + `vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0))`
+ + `vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x)`
+ + `float snoise(vec2 v)`
+ + `float snoise (vec3 p)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -1189,12 +1185,12 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float random (float x) `
- + `float random (vec2 p) `
- + `float random (vec3 p) `
- + `vec2 random2 (vec2 xy) `
- + `vec3 random3 (vec2 xy) `
- + `vec3 random3 (vec3 c) `
+ + `float random (float x) { return fract(sin(x)*43758.5453)`
+ + `float random (vec2 p) { return fract(1e4 * sin(17.0 * p.x + p.y * 0.1) * (0.1 + abs(sin(p.y * 13.0 + p.x))))`
+ + `float random (vec3 p) { return fract(sin(dot(p.xyz, vec3(70.9898,78.233,32.4355)))* 43758.5453123)`
+ + `vec2 random2 (vec2 xy) { return fract(sin(vec2(dot(xy,vec2(127.1,311.7)),dot(xy,vec2(269.5,183.3))))*43758.5453)`
+ + `vec3 random3 (vec2 xy) { return fract(sin(vec3( dot(xy,vec2(127.1,311.7)), dot(xy,vec2(269.5,183.3)), dot(xy,vec2(419.2,371.9)) ))*43758.5453)`
+ + `vec3 random3 (vec3 c)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -1228,7 +1224,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec3 voronoi (vec2 st) `
+ + `vec3 voronoi (vec2 st)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
@@ -1356,15 +1352,15 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `mat2 rotate2D (float angle) `
- + `mat3 rotateX3D (float phi) `
- + `mat4 rotateX4D (float phi) `
- + `mat3 rotateY3D (float theta) `
- + `mat4 rotateY4D (float theta) `
- + `mat3 rotateZ3D (float psi) `
- + `mat4 rotateZ4D (float psi) `
- + `mat4 scale4D (float x, float y, float z) `
- + `mat4 translate4D (float x, float y, float z) `
+ + `mat2 rotate2D (float angle)`
+ + `mat3 rotateX3D (float phi)`
+ + `mat4 rotateX4D (float phi)`
+ + `mat3 rotateY3D (float theta)`
+ + `mat4 rotateY4D (float theta)`
+ + `mat3 rotateZ3D (float psi)`
+ + `mat4 rotateZ4D (float psi)`
+ + `mat4 scale4D (float x, float y, float z)`
+ + `mat4 translate4D (float x, float y, float z)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -1397,8 +1393,8 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `bool isWall () `
- + `bool isRoof () `
+ + `bool isWall ()`
+ + `bool isRoof ()`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -1434,23 +1430,23 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float y2lat_d (float y) `
- + `float x2lon_d (float x) `
- + `float lat2y_d (float lat) `
- + `float lon2x_d (float lon) `
- + `float y2lat_m (float y) `
- + `float x2lon_m (float x) `
- + `float lat2y_m (float lat) `
- + `float lon2x_m (float lon) `
- + `vec2 latlon2albers (float lat, float lon, float lat0, float lng0, float phi1, float phi2 ) `
- + `vec2 latlon2albers (float lat, float lon, float delta_phi1, float delta_phi2) `
- + `vec2 latlon2albers (float lat, float lon, float width) `
- + `vec2 latlon2albers (float lat, float lon) `
- + `vec2 latlon2USalbers (float lat, float lon) `
- + `vec2 latlon2azimuthal (float lat, float lon, float phi1, float lambda0) `
- + `vec2 azimuthal(float lat, float lon) `
- + `vec2 azimuthalNorth(float lat, float lon) `
- + `vec2 azimuthalSouth(float lat, float lon) `
+ + `float y2lat_d (float y)`
+ + `float x2lon_d (float x)`
+ + `float lat2y_d (float lat)`
+ + `float lon2x_d (float lon)`
+ + `float y2lat_m (float y)`
+ + `float x2lon_m (float x)`
+ + `float lat2y_m (float lat)`
+ + `float lon2x_m (float lon)`
+ + `vec2 latlon2albers (float lat, float lon, float lat0, float lng0, float phi1, float phi2 )`
+ + `vec2 latlon2albers (float lat, float lon, float delta_phi1, float delta_phi2)`
+ + `vec2 latlon2albers (float lat, float lon, float width)`
+ + `vec2 latlon2albers (float lat, float lon)`
+ + `vec2 latlon2USalbers (float lat, float lon)`
+ + `vec2 latlon2azimuthal (float lat, float lon, float phi1, float lambda0)`
+ + `vec2 azimuthal(float lat, float lon)`
+ + `vec2 azimuthalNorth(float lat, float lon)`
+ + `vec2 azimuthalSouth(float lat, float lon)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -1691,7 +1687,7 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float datastream_pattern(vec2 st, float v, float t) `
+ + `float datastream_pattern(vec2 st, float v, float t)`
 - **color**:
 
 ```glsl
@@ -2011,7 +2007,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float TileDots(float scale, float size) `
+ + `float TileDots(float scale, float size)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -2044,10 +2040,11 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `bool grid (vec2 st, float res, float press) `
- + `bool grid (vec2 st, float res) `
- + `float tileGrid (float res) `
- + `float tileGrid() `
+ + `bool grid (vec2 st, float res, float press)`
+ + `bool grid (vec2 st, float res)`
+ + `float diagonalGrid(vec2 st, float width)`
+ + `float tileGrid (float res)`
+ + `float tileGrid()`
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/blueprint.yaml&lines=75-76" target="_blank">
@@ -2091,11 +2088,11 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float stripesDF (vec2 st) `
- + `float stripes (vec2 st, float width) `
- + `float stripes (vec2 st, float width, float angle) `
- + `float diagonalStripes (vec2 st) `
- + `float diagonalStripes (vec2 st, float width) `
+ + `float stripesDF (vec2 st)`
+ + `float stripes (vec2 st, float width)`
+ + `float stripes (vec2 st, float width, float angle)`
+ + `float diagonalStripes (vec2 st)`
+ + `float diagonalStripes (vec2 st, float width)`
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/press.yaml&lines=150" target="_blank">
@@ -2139,8 +2136,8 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float wavesDF (vec2 st, float freq, float amp) `
- + `float waves (vec2 st, float freq, float amp, float width) `
+ + `float wavesDF (vec2 st, float freq, float amp)`
+ + `float waves (vec2 st, float freq, float amp, float width)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -2173,8 +2170,8 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float zigzagDF (vec2 st, float freq) `
- + `float zigzag (vec2 st, float freq, float width) `
+ + `float zigzagDF (vec2 st, float freq)`
+ + `float zigzag (vec2 st, float freq, float width)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
@@ -2401,7 +2398,7 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float dashDF(vec2 st) `
+ + `float dashDF(vec2 st)`
 - **color**:
 
 ```glsl
@@ -2854,9 +2851,9 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float circleDF (vec2 st) `
- + `float circle (vec2 st, float radius) `
- + `float circleBorder (vec2 st, float radius) `
+ + `float circleDF (vec2 st)`
+ + `float circle (vec2 st, float radius)`
+ + `float circleBorder (vec2 st, float radius)`
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/patterns.yaml&lines=146" target="_blank">
@@ -2900,9 +2897,9 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float cross (vec2 st, float size, float width) `
- + `float cross (in vec2 st, float _size) `
- + `float cross (in vec2 st, vec2 _size) `
+ + `float cross (vec2 st, float size, float width)`
+ + `float cross (in vec2 st, float _size)`
+ + `float cross (in vec2 st, vec2 _size)`
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml&lines=181-183" target="_blank">
@@ -2954,9 +2951,9 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float SampleDigit (const in float fDigit, const in vec2 vUV) `
- + `float PrintValue (const in vec2 vStringCharCoords, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces) `
- + `float PrintValue (in vec2 fragCoord, const in vec2 vPixelCoords, const in vec2 vFontSize, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces) `
+ + `float SampleDigit (const in float fDigit, const in vec2 vUV)`
+ + `float PrintValue (const in vec2 vStringCharCoords, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces)`
+ + `float PrintValue (in vec2 fragCoord, const in vec2 vPixelCoords, const in vec2 vFontSize, const in float fValue, const in float fMaxDigits, const in float fDecimalPlaces)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -2989,9 +2986,9 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float shapeDF (vec2 st, int N) `
- + `float shape (vec2 st, int N, float width) `
- + `float shapeBorder (vec2 st, int N, float width) `
+ + `float shapeDF (vec2 st, int N)`
+ + `float shape (vec2 st, int N, float width)`
+ + `float shapeBorder (vec2 st, int N, float width)`
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml&lines=153" target="_blank">
@@ -3029,12 +3026,14 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float rectDF (in vec2 st, in vec2 size) `
- + `float rectDF (in vec2 st, in float size) `
- + `float rect (in vec2 st, in vec2 size, in float radio) `
- + `float rect (vec2 st, float size, float radio) `
- + `float rectBorder (in vec2 st, in vec2 size, in float radio) `
- + `float rectBorder (vec2 st, float size, float radio) `
+ + `float rectDF (in vec2 st, in vec2 size)`
+ + `float rectDF (in vec2 st, in float size)`
+ + `float rect (in vec2 st, in vec2 size, in float radio)`
+ + `float rect (vec2 st, float size, float radio)`
+ + `float rectBorder (in vec2 st, in vec2 size, in float radio)`
+ + `float rectBorder (vec2 st, float size, float radio)`
+ + `float rect (vec2 st, vec2 size)`
+ + `float rect (vec2 st, float size)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -3067,12 +3066,12 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float warp (vec3 S) `
- + `float circle (vec3 S) `
- + `float triangle (vec3 S) `
- + `vec3 star (vec3 S) `
- + `vec3 sakura (vec3 S) `
- + `float lotus (vec3 S, float petals_size, float roundness) `
+ + `float warp (vec3 S)`
+ + `float circle (vec3 S)`
+ + `float triangle (vec3 S)`
+ + `vec3 star (vec3 S)`
+ + `vec3 sakura (vec3 S)`
+ + `float lotus (vec3 S, float petals_size, float roundness)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -3109,8 +3108,8 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float fill (in float size, in float x) `
- + `float stroke (in float size, in float x) `
+ + `float fill (in float size, in float x)`
+ + `float stroke (in float size, in float x)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
@@ -3145,7 +3144,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec2 getConstantCoords () `
+ + `vec2 getConstantCoords ()`
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/grain-area.yaml&lines=26" target="_blank">
@@ -3183,8 +3182,8 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec2 getScreenCoords () `
- + `vec2 getScreenNonStretchCoords () `
+ + `vec2 getScreenCoords ()`
+ + `vec2 getScreenNonStretchCoords ()`
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/press.yaml&lines=136-145" target="_blank">
@@ -3225,7 +3224,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec2 getTexCoords () `
+ + `vec2 getTexCoords ()`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -3258,7 +3257,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec2 getTileCoords() `
+ + `vec2 getTileCoords()`
 - **position**:
 
 ```glsl
@@ -3299,7 +3298,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec2 getUZCoords () `
+ + `vec2 getUZCoords ()`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
@@ -3362,7 +3361,7 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float getHeight() `
+ + `float getHeight()`
 - **position**:
 
 ```glsl
@@ -3489,7 +3488,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec4 NonRepetitiveTexture (sampler2D tex, vec2 x, float v) `
+ + `vec4 NonRepetitiveTexture (sampler2D tex, vec2 x, float v)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -3522,7 +3521,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec4 TileTexture (sampler2D tex, float scale) `
+ + `vec4 TileTexture (sampler2D tex, float scale)`
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/crosshatch.yaml&lines=76" target="_blank">
@@ -3565,7 +3564,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec2 brick (vec2 st, float zoom) `
+ + `vec2 brick (vec2 st, float zoom)`
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/patterns.yaml&lines=130" target="_blank">
@@ -3606,10 +3605,10 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec2 skew (vec2 st) `
- + `vec3 simplexCoord (vec2 st, float td) `
- + `vec3 simplexGrid (vec2 st) `
- + `vec3 simplexRotatedGrid (vec2 st) `
+ + `vec2 skew (vec2 st)`
+ + `vec3 simplexCoord (vec2 st, float td)`
+ + `vec3 simplexGrid (vec2 st)`
+ + `vec3 simplexRotatedGrid (vec2 st)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -3642,7 +3641,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec2 tile (vec2 st, float zoom) `
+ + `vec2 tile (vec2 st, float zoom)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -3679,8 +3678,8 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `vec2 truchetMirror (vec2 st) `
- + `vec2 truchetRotate (vec2 st) `
+ + `vec2 truchetMirror (vec2 st)`
+ + `vec2 truchetRotate (vec2 st)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 ### The MIT License (MIT)

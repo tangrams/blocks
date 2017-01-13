@@ -133,7 +133,7 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float datastream_pattern(vec2 st, float v, float t) `
+ + `float datastream_pattern(vec2 st, float v, float t)`
 - **color**:
 
 ```glsl

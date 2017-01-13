@@ -32,8 +32,7 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `vec3 getCaustic (vec2 uv) `
- + `int n = 0; n < int(CAUSTIC_ITERATIONS); n++) `
+ + `vec3 getCaustic (vec2 uv)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -70,12 +69,9 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float fbm (in float x) `
- + `int i = 0; i < int(NUM_OCTAVES); ++i) `
- + `float fbm (in vec2 xy) `
- + `int i = 0; i < int(NUM_OCTAVES); ++i) `
- + `float fbm (in vec3 xyz) `
- + `int i = 0; i < int(NUM_OCTAVES); ++i) `
+ + `float fbm (in float x)`
+ + `float fbm (in vec2 xy)`
+ + `float fbm (in vec3 xyz)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -109,14 +105,14 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float noise (in float x) `
- + `float noise (vec2 xy) `
- + `float noise (vec3 xyz) `
- + `vec3 mod289(vec3 x) `
- + `vec2 mod289(vec2 x) `
- + `vec3 permute(vec3 x) `
- + `float snoise(vec2 v) `
- + `float snoise (vec3 p) `
+ + `float noise (in float x)`
+ + `float noise (vec2 xy)`
+ + `float noise (vec3 xyz)`
+ + `vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0))`
+ + `vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0))`
+ + `vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x)`
+ + `float snoise(vec2 v)`
+ + `float snoise (vec3 p)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -150,12 +146,12 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float random (float x) `
- + `float random (vec2 p) `
- + `float random (vec3 p) `
- + `vec2 random2 (vec2 xy) `
- + `vec3 random3 (vec2 xy) `
- + `vec3 random3 (vec3 c) `
+ + `float random (float x) { return fract(sin(x)*43758.5453)`
+ + `float random (vec2 p) { return fract(1e4 * sin(17.0 * p.x + p.y * 0.1) * (0.1 + abs(sin(p.y * 13.0 + p.x))))`
+ + `float random (vec3 p) { return fract(sin(dot(p.xyz, vec3(70.9898,78.233,32.4355)))* 43758.5453123)`
+ + `vec2 random2 (vec2 xy) { return fract(sin(vec2(dot(xy,vec2(127.1,311.7)),dot(xy,vec2(269.5,183.3))))*43758.5453)`
+ + `vec3 random3 (vec2 xy) { return fract(sin(vec3( dot(xy,vec2(127.1,311.7)), dot(xy,vec2(269.5,183.3)), dot(xy,vec2(419.2,371.9)) ))*43758.5453)`
+ + `vec3 random3 (vec3 c)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -189,4 +185,4 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec3 voronoi (vec2 st) `
+ + `vec3 voronoi (vec2 st)`

@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
 import sys, glob, os, re, json, yaml
-from tools import extractFunctions, appendDependencies
+from tools import *
+from docs import *
 import glslViewer
-from docs import appendDoc2README, mainREADME
 
 # ================================== Main functions
 # local folder
@@ -30,13 +30,12 @@ def benchmarks():
                 continue
 
             yaml_file = yaml.safe_load(open(filename))
-
             # For each style ('styles') in this yaml_file 
-            for name_block in yaml_file['styles']:
-                if 'shaders' in yaml_file['styles'][name_block]:
-                    print name_block
-
-
+            for block_name in yaml_file['styles']:
+                block = yaml_file['styles'][block_name]
+                global_fncs = getGlobalFunctions(block)
+                for fnc,fnc_rtn,fnc_name,spc in global_fncs:
+                    print fnc
 
 # Generate *-full.yaml files... which are blocks that contain their dependencies
 def standaloneBlocks():

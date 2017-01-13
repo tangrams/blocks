@@ -28,7 +28,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec2 brick (vec2 st, float zoom) `
+ + `vec2 brick (vec2 st, float zoom)`
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/patterns.yaml&lines=130" target="_blank">
@@ -69,10 +69,10 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec2 skew (vec2 st) `
- + `vec3 simplexCoord (vec2 st, float td) `
- + `vec3 simplexGrid (vec2 st) `
- + `vec3 simplexRotatedGrid (vec2 st) `
+ + `vec2 skew (vec2 st)`
+ + `vec3 simplexCoord (vec2 st, float td)`
+ + `vec3 simplexGrid (vec2 st)`
+ + `vec3 simplexRotatedGrid (vec2 st)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -105,7 +105,7 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec2 tile (vec2 st, float zoom) `
+ + `vec2 tile (vec2 st, float zoom)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -142,5 +142,5 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `vec2 truchetMirror (vec2 st) `
- + `vec2 truchetRotate (vec2 st) `
+ + `vec2 truchetMirror (vec2 st)`
+ + `vec2 truchetRotate (vec2 st)`

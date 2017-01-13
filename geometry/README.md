@@ -121,15 +121,15 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `mat2 rotate2D (float angle) `
- + `mat3 rotateX3D (float phi) `
- + `mat4 rotateX4D (float phi) `
- + `mat3 rotateY3D (float theta) `
- + `mat4 rotateY4D (float theta) `
- + `mat3 rotateZ3D (float psi) `
- + `mat4 rotateZ4D (float psi) `
- + `mat4 scale4D (float x, float y, float z) `
- + `mat4 translate4D (float x, float y, float z) `
+ + `mat2 rotate2D (float angle)`
+ + `mat3 rotateX3D (float phi)`
+ + `mat4 rotateX4D (float phi)`
+ + `mat3 rotateY3D (float theta)`
+ + `mat4 rotateY4D (float theta)`
+ + `mat3 rotateZ3D (float psi)`
+ + `mat4 rotateZ4D (float psi)`
+ + `mat4 scale4D (float x, float y, float z)`
+ + `mat4 translate4D (float x, float y, float z)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -162,8 +162,8 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `bool isWall () `
- + `bool isRoof () `
+ + `bool isWall ()`
+ + `bool isRoof ()`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -199,23 +199,23 @@ These are the **defines**:
 These are the **shader blocks**:
 
 - **global**:
- + `float y2lat_d (float y) `
- + `float x2lon_d (float x) `
- + `float lat2y_d (float lat) `
- + `float lon2x_d (float lon) `
- + `float y2lat_m (float y) `
- + `float x2lon_m (float x) `
- + `float lat2y_m (float lat) `
- + `float lon2x_m (float lon) `
- + `vec2 latlon2albers (float lat, float lon, float lat0, float lng0, float phi1, float phi2 ) `
- + `vec2 latlon2albers (float lat, float lon, float delta_phi1, float delta_phi2) `
- + `vec2 latlon2albers (float lat, float lon, float width) `
- + `vec2 latlon2albers (float lat, float lon) `
- + `vec2 latlon2USalbers (float lat, float lon) `
- + `vec2 latlon2azimuthal (float lat, float lon, float phi1, float lambda0) `
- + `vec2 azimuthal(float lat, float lon) `
- + `vec2 azimuthalNorth(float lat, float lon) `
- + `vec2 azimuthalSouth(float lat, float lon) `
+ + `float y2lat_d (float y)`
+ + `float x2lon_d (float x)`
+ + `float lat2y_d (float lat)`
+ + `float lon2x_d (float lon)`
+ + `float y2lat_m (float y)`
+ + `float x2lon_m (float x)`
+ + `float lat2y_m (float lat)`
+ + `float lon2x_m (float lon)`
+ + `vec2 latlon2albers (float lat, float lon, float lat0, float lng0, float phi1, float phi2 )`
+ + `vec2 latlon2albers (float lat, float lon, float delta_phi1, float delta_phi2)`
+ + `vec2 latlon2albers (float lat, float lon, float width)`
+ + `vec2 latlon2albers (float lat, float lon)`
+ + `vec2 latlon2USalbers (float lat, float lon)`
+ + `vec2 latlon2azimuthal (float lat, float lon, float phi1, float lambda0)`
+ + `vec2 azimuthal(float lat, float lon)`
+ + `vec2 azimuthalNorth(float lat, float lon)`
+ + `vec2 azimuthalSouth(float lat, float lon)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
