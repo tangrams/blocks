@@ -23,20 +23,28 @@ def benchmarks():
 
         # That contatin the documentation of all the *.yaml files inside
         for filename in glob.glob(folder+'/*.yaml'):
-            block = os.path.splitext(os.path.basename(filename))[0]
+            block_name = os.path.splitext(os.path.basename(filename))[0]
 
             # Skip *-full.yaml
-            if block.endswith('-full'):
+            if block_name.endswith('-full'):
                 continue
 
             yaml_file = yaml.safe_load(open(filename))
+            logs = dict()
             # For each style ('styles') in this yaml_file 
             for block_name in yaml_file['styles']:
                 block = yaml_file['styles'][block_name]
-                
+
                 if isTestIn(block):
                     for test_name in block['test']:
-                        benchmark(filename, block_name, block, test_name)
+                        if not logs.has_key(block_name):
+                            logs[block_name] = dict()
+                        logs[block_name][test_name] = benchmark(filename, block_name, block, test_name)
+
+            # If there is benchmarks save them in json
+            if len(logs.keys()):
+                with open(folder+'/'+block_name+'.json', 'w') as outfile:
+                    json.dump(logs, outfile)
 
 # Generate *-full.yaml files... which are blocks that contain their dependencies
 def standaloneBlocks():

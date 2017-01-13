@@ -10,6 +10,7 @@ clean-docs:
 	rm README.md
 
 clean-benchmarks:
+	rm -R */*.json
 	rm -R */*.frag
 
 standalones:

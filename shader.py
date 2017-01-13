@@ -7,7 +7,7 @@ from time import sleep
 from fcntl import fcntl, F_GETFL, F_SETFL
 from os import O_NONBLOCK, read
 
-class glslViewer:
+class Shader:
     COMMAND='glslViewer'
     process = {}
     cout = {}
@@ -19,14 +19,21 @@ class glslViewer:
     def __init__(self, filename, options = {}):
         cmd = [self.COMMAND]
 
-        if options.has_key("width"):
-            cmd.append('-w '+ str(options["width"]))
-        if options.has_key("height"):
-            cmd.append('-h '+ str(options["height"]))
+        if options.has_key("scale"):
+            cmd.append('-w '+ str(options["scale"]))
+            cmd.append('-h '+ str(options["scale"]))
+        else:
+            cmd.append('-w 5000')
+            cmd.append('-h 5000')
 
         if options.has_key("visible"):
             if not options["visible"]:
                 cmd.append('--headless')
+        else:
+            cmd.append('--headless')
+
+        if options.has_key('output'):
+            cmd.append('-o '+options["output"])
 
         cmd.append(filename)
         self.process = Popen(cmd, stdin=PIPE, stdout=PIPE, stderr = PIPE, shell=False)
@@ -43,7 +50,7 @@ class glslViewer:
 
     def isFinish(self):
         return self.process.poll() is not None
-        
+
     def getTime(self):
         self.process.stdin.write('time\n')
         sleep(self.wait_time)
@@ -73,4 +80,6 @@ class glslViewer:
         return self.fps
 
     def stop(self):
+        self.process.stdin.write('q\n')
+        sleep(1)
         self.process.kill()
