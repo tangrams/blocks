@@ -74,80 +74,71 @@ def appendDoc2README(readme_file, filename, counter):
                     if uniformHaveMetadata(uniform_name, block):
                         uniform_metadata = block['ui']['shaders']['uniforms'][uniform_name]
 
+                        uniform_label = uniform_metadata['label'].lower()
                         if uniform_metadata['type'] == 'number':
-                            uniform_min = uniform_metadata['range']['min']
-                            uniform_max = uniform_metadata['range']['max']
-                            uniform_label = uniform_metadata['label'].lower()
-                            uniform_doc += ' number between ```' + str(uniform_min) + '``` and ```' + str(uniform_max) + '``` that control the *' + uniform_label + '*.'
+                            uniform_doc += ' number between ```' + str(uniform_metadata['range']['min']) + '``` and ```' + str(uniform_metadata['range']['max']) + '``` that control the *' + uniform_label + '*.'
                         
                         elif uniform_metadata['type'] == 'dropdownArray':
-                            uniform_label = uniform_metadata['label'].lower()
                             uniform_doc += ' variable that control the *' + uniform_label + '* with one of the following values: ```'
                             uniform_doc += ', '.join(uniform_metadata['values']) + '```.'
 
                         elif uniform_metadata['type'] == 'dropdownList':
-                            uniform_label = uniform_metadata['label'].lower()
                             uniform_doc += ' variable that control the *' + uniform_label + '* with one of the following values: '
                             uniform_values = []
                             for key, value in uniform_metadata['values'].iteritems():
                                 uniform_values.append('```'+value+'``` ( *' + key + '* )')
-
                             uniform_doc += ', '.join(uniform_values) + '.'
 
                     uniform_doc += ' The *default value* is ```' + str(shader['uniforms'][uniform_name]) + '```. '
-
                     readme_file.write(' - ' + uniform_doc + '\n')
+
                 readme_file.write('\n')
 
             # Add a list of defines
             if isDefinesIn(block):
                 readme_file.write('These are the **defines**:\n')
-                for define in shader['defines'].keys():
-                    define_doc = ' **' + define + '**: ' # name
+                for define_name in shader['defines'].keys():
+                    define_doc = ' **' + define_name + '**: ' # name
                     
                     # Add extra information from the UI 
-                    if defineHaveMetadata(define, block):
-                        if block['ui']['shaders']['defines'][define]['type'] == 'number':
-                            define_min = block['ui']['shaders']['defines'][define]['range']['min']
-                            define_max = block['ui']['shaders']['defines'][define]['range']['max']
-                            define_label = block['ui']['shaders']['defines'][define]['label'].lower()
-                            define_doc += ' number between ```' + str(define_min) + '``` and ```' + str(define_max) + '``` that control the *' + define_label + '*.'
+                    if defineHaveMetadata(define_name, block):
+                        define_metadata = block['ui']['shaders']['defines'][define_name]
+                        define_label = define_metadata['label'].lower()
+                        if define_metadata['type'] == 'number':
+                            define_doc += ' number between ```' + str(define_metadata['range']['min']) + '``` and ```' + str(define_metadata['range']['max']) + '``` that control the *' + define_label + '*.'
                         
-                        elif block['ui']['shaders']['defines'][define]['type'] == 'dropdownArray':
-                            define_label = block['ui']['shaders']['defines'][define]['label'].lower()
+                        elif define_metadata['type'] == 'dropdownArray':
                             define_doc += ' variable that control the *' + define_label + '* with one of the following values: ```'
-                            define_doc += ', '.join(block['ui']['shaders']['defines'][define]['values']) + '```.'
+                            define_doc += ', '.join(define_metadata['values']) + '```.'
                         
-                        elif block['ui']['shaders']['defines'][define]['type'] == 'dropdownList':
-                            define_label = block['ui']['shaders']['defines'][define]['label'].lower()
+                        elif define_metadata['type'] == 'dropdownList':
                             define_doc += ' variable that control the *' + define_label + '* with one of the following values: '
                             define_values = []
-                            for key, value in block['ui']['shaders']['defines'][define]['values'].iteritems():
+                            for key, value in define_metadata['values'].iteritems():
                                 define_values.append('```'+value+'``` ( *' + key + '* )')
-
                             define_doc += ', '.join(define_values) + '.'
                 
-                    define_doc += ' The *default value* is ```' + str(shader['defines'][define]) + '```. '
-
+                    define_doc += ' The *default value* is ```' + str(shader['defines'][define_name]) + '```. '
                     readme_file.write(' - ' + define_doc + '\n')
+
                 readme_file.write('\n')
 
             # Add a list of blocks
-            if 'blocks' in block['shaders']:
+            if isShaderBlocksIn(block):
                 readme_file.write('These are the **shader blocks**:\n');
 
-                if 'global' in block['shaders']['blocks']:
+                global_fncs = getGlobalFunctions(block)
+                if len(global_fncs):
                     readme_file.write('\n- **global**:')
-                    functions = extractFunctions(block['shaders']['blocks']['global'])
-                    for function in functions:
+                    for function in global_fncs:
                         readme_file.write('\n + `' + function[0][:-1] + '`')
 
-                for block_name in block['shaders']['blocks'].keys():
+                for block_type in block['shaders']['blocks'].keys():
                     # In case of a 'global' block... just list the functions it contain
-                    if block_name != 'global':
-                        readme_file.write('\n- **' + block_name + '**:')
+                    if block_type != 'global':
+                        readme_file.write('\n- **' + block_type + '**:')
                         readme_file.write(  '\n\n```glsl\n' + 
-                                            block['shaders']['blocks'][block_name] +
+                                            block['shaders']['blocks'][block_type] +
                                             '\n```\n\n')
                 readme_file.write('\n')
 
