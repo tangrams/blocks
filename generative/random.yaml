@@ -10,6 +10,13 @@ styles:
             description: |
                 Set of functions about random.
                 For more information on this theme read [this chapter of The Book of Shaders about Random](http://thebookofshaders.com/10/).
+        test:
+            random_float: { blocks: { color: color.rgb += random(v_texcoord.x); } }
+            random_vec2: { blocks: { color: color.rgb += random(v_texcoord); } }
+            random_vec3: { blocks: { color: color.rgb += random(vec3(v_texcoord,u_time); } }
+            random2_vec2: { blocks: { color: color.rg += random2(v_texcoord); } }
+            random3_vec2: { blocks: { color: color.rgb += random3(v_texcoord); } }
+            random3_vec3: { blocks: { color: color.rgb += random3(vec3(v_texcoord,u_time); } }
         shaders:
             blocks:
                 global: |

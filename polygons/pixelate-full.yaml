@@ -32,6 +32,27 @@ styles:
                     \ 59.4, 15.0)));\n    vec3 r;\n    r.z = fract(512.0*j);\n   \
                     \ j *= .125;\n    r.x = fract(512.0*j);\n    j *= .125;\n    r.y\
                     \ = fract(512.0*j);\n    return r-0.5;\n}"
+        test:
+            random2_vec2:
+                blocks:
+                    color: color.rg += random2(v_texcoord);
+            random3_vec2:
+                blocks:
+                    color: color.rgb += random3(v_texcoord);
+            random3_vec3:
+                blocks:
+                    color: color.rgb += random3(vec3(v_texcoord
+                    u_time);: null
+            random_float:
+                blocks:
+                    color: color.rgb += random(v_texcoord.x);
+            random_vec2:
+                blocks:
+                    color: color.rgb += random(v_texcoord);
+            random_vec3:
+                blocks:
+                    color: color.rgb += random(vec3(v_texcoord
+                    u_time);: null
     polygons-pixelate:
         base: polygons
         doc:

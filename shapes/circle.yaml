@@ -26,9 +26,9 @@ styles:
                     img: https://tangrams.github.io/tangram-sandbox/styles/nursery.png
                     lines: 146
         test:
-            circleDF: color.rgb += circleDF(st-.5);
-            circle: color.rgb += circle(st,.5);
-            circleBorder: color.rgb += circleBorder(st,.5);
+            circleDF: { blocks: { color: color.rgb += circleDF(v_texcoord-.5); } }
+            circle: { blocks: { color: color.rgb += circle(v_texcoord,.5); } } 
+            circleBorder: { blocks: { color: color.rgb += circleBorder(v_texcoord,.5); } }
 
         mix: [shapes-type]
         shaders:

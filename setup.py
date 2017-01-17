@@ -5,6 +5,10 @@ from tools import *
 from docs import *
 from benchmark import *
 
+import matplotlib as mpl
+mpl.use('Agg')
+import matplotlib.pyplot as plt
+
 # ================================== Main functions
 # local folder
 d='.'
@@ -23,10 +27,10 @@ def benchmarks():
 
         # That contatin the documentation of all the *.yaml files inside
         for filename in glob.glob(folder+'/*.yaml'):
-            block_name = os.path.splitext(os.path.basename(filename))[0]
+            block_filename = os.path.splitext(os.path.basename(filename))[0]
 
             # Skip *-full.yaml
-            if block_name.endswith('-full'):
+            if block_filename.endswith('-full'):
                 continue
 
             yaml_file = yaml.safe_load(open(filename))
@@ -39,12 +43,26 @@ def benchmarks():
                     for test_name in block['test']:
                         if not logs.has_key(block_name):
                             logs[block_name] = dict()
+
                         logs[block_name][test_name] = benchmark(filename, block_name, block, test_name)
 
-            # If there is benchmarks save them in json
-            if len(logs.keys()):
-                with open(folder+'/'+block_name+'.json', 'w') as outfile:
-                    json.dump(logs, outfile)
+                # If there is benchmarks save them in json
+                if len(logs.keys()):
+                    with open(folder+'/'+block_name+'.json', 'w') as outfile:
+                        json.dump(logs, outfile)
+
+                    # Make a chart
+                    fig, ax = plt.subplots(nrows=1, ncols=1)
+                    legends = []
+                    for block_name in yaml_file['styles']:
+                        for log_name in logs[block_name]:
+                            legends.append(log_name)
+                            ax.plot(logs[block_name][log_name]['samples'], 
+                                    logs[block_name][log_name]['values'])
+
+                    plt.legend(legends, loc='upper left')
+                    fig.savefig(folder+'/'+block_name+'.png')   # save the figure to file
+                    plt.close(fig)
 
 # Generate *-full.yaml files... which are blocks that contain their dependencies
 def standaloneBlocks():
@@ -129,5 +147,5 @@ if len(sys.argv) > 1:
 else:
     standaloneBlocks()
     benchmarks()
-    document()
+    # document()
     

@@ -15,8 +15,30 @@ class Shader:
     time = 0.
     delta = 0.
     fps = 0
+    generated_file = ''
 
     def __init__(self, filename, options = {}):
+        # Compose a shader file
+        
+        if 'template' in options:
+            self.generated_file = filename
+            shader_file = open(filename, "w")
+            with open(options['template']) as f:
+                if 'pragmas' in options:
+                    for line in f:
+                        matches = re.findall("\\#pragma tangram:\\s+([\\w|]*)\\n", line)
+                        if len(matches):
+                            if options['pragmas'].has_key(matches[0]):
+                                shader_file.write(options['pragmas'][matches[0]])
+                        else:
+                            shader_file.write(line)
+                else:
+                    # TODO: make sense of this case
+                    for line in f:
+                        shader_file.write(line)
+            shader_file.close()
+
+        # compose and excecute a glslViewer command
         cmd = [self.COMMAND]
 
         if options.has_key("scale"):
@@ -83,3 +105,5 @@ class Shader:
         self.process.stdin.write('q\n')
         sleep(1)
         self.process.kill()
+        if len(self.generated_file):
+            os.remove(self.generated_file)

@@ -93,9 +93,17 @@ styles:
                     \ circleBorder (vec2 st, float radius) {\n    return stroke(radius,\
                     \ circleDF(st-vec2(0.5)));\n}"
         test:
-            circle: color.rgb += circle(st,.5);
-            circleBorder: color.rgb += circleBorder(st,.5);
-            circleDF: color.rgb += circleDF(st-.5);
+            circle:
+                blocks:
+                    .5);: null
+                    color: color.rgb += circle(v_texcoord
+            circleBorder:
+                blocks:
+                    .5);: null
+                    color: color.rgb += circleBorder(v_texcoord
+            circleDF:
+                blocks:
+                    color: color.rgb += circleDF(v_texcoord-.5);
     shapes-type:
         doc:
             author:

@@ -37,6 +37,33 @@ def getGlobalBlockIn(yaml_block):
 def getGlobalFunctionsIn(yaml_block):
     return extractFunctions(getGlobalBlockIn(yaml_block))
 
+def isNormalBlockIn(yaml_block):
+    if isShaderBlocksIn(yaml_block):
+        return 'global' in yaml_block['shaders']['normal']
+
+def getNormalBlockIn(yaml_block):
+    if isNormalBlockIn(yaml_block):
+        return "\n"+yaml_block['shaders']['blocks']['normal']
+    return ""
+
+def isColorBlockIn(yaml_block):
+    if isShaderBlocksIn(yaml_block):
+        return 'global' in yaml_block['shaders']['color']
+
+def getColorBlockIn(yaml_block):
+    if isColorBlockIn(yaml_block):
+        return "\n"+yaml_block['shaders']['blocks']['color']
+    return ""
+
+def isFilterBlockIn(yaml_block):
+    if isShaderBlocksIn(yaml_block):
+        return 'global' in yaml_block['shaders']['filter']
+
+def getFilterBlockIn(yaml_block):
+    if isFilterBlockIn(yaml_block):
+        return "\n"+yaml_block['shaders']['blocks']['filter']
+    return ""
+
 def isUniformsIn(yaml_block):
     return 'uniforms' in yaml_block['shaders']
 
@@ -46,6 +73,14 @@ def isDefinesIn(yaml_block):
 def getDefinesIn(yaml_block):
     if isDefinesIn(yaml_block):
         return yaml_block['shaders']['defines'].keys()
+    return []
+
+def isUniformsIn(yaml_block):
+    return 'uniforms' in yaml_block['shaders']
+
+def getUniformsIn(yaml_block):
+    if isUniformsIn(yaml_block):
+        return yaml_block['shaders']['uniforms'].keys()
     return []
 
 def uniformHaveMetadata(uniform_name, yaml_block):
@@ -67,9 +102,6 @@ def defineHaveMetadata(define_name, yaml_block):
 def isTestIn(yaml_block):
     return 'test' in yaml_block
 
-def getTest(test_name, yaml_block):
-    return yaml_block['test'][test_name]
-
 def isExamplesIn(yaml_block):
     if isDocumentationIn(yaml_block):
         return 'examples' in yaml_block['doc']
@@ -80,7 +112,10 @@ def isDependenceIn(yaml_block):
 
 def getDependencesIn(yaml_block):
     if isDependenceIn(yaml_block):
-        return yaml_block['mix']
+        if isinstance(yaml_block['mix'], (str, unicode)):
+            return [yaml_block['mix']]
+        else:
+            return yaml_block['mix']
     return []
 
 def collectDefines(yaml_file, block_name, defines_dict):
