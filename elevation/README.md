@@ -1,5 +1,59 @@
 
 
+#### [elevation-normal](http://tangrams.github.io/blocks/#elevation-normal) <a href="https://github.com/tangrams/blocks/blob/gh-pages/elevation/normal.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+The raster normal map tiles needs to be load like this:
+```
+    normals-elevation:
+        type: Raster
+        url: https://s3.amazonaws.com/elevation-tiles-prod/normal/{z}/{x}/{y}.png
+        max_zoom: 15
+```
+A simple way to do it is to import `https://tangrams.github.io/blocks/source-elevation.yaml` and then link the vector tiles to them (see the example).
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/elevation/normal.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/elevation/normal-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **NORMAL_TEXTURE_INDEX**:  The *default value* is ```0```. 
+
+These are the **shader blocks**:
+
+- **normal**:
+
+```glsl
+vec4 normal_elv_raster = sampleRaster(int(NORMAL_TEXTURE_INDEX));
+normal = (normal_elv_raster.rgb-.5)*2.;
+```
+
+
+
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/elevation.yaml&lines=14" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/elevation.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [elevation-contours](http://tangrams.github.io/blocks/#elevation-contours) <a href="https://github.com/tangrams/blocks/blob/gh-pages/elevation/contours.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
@@ -99,16 +153,9 @@ shade = mix(DASH_MIN_SIZE, DASH_MAX_SIZE, (shade*shade*shade)*4.);
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [elevation-normal](http://tangrams.github.io/blocks/#elevation-normal) <a href="https://github.com/tangrams/blocks/blob/gh-pages/elevation/normal.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+#### [elevation-stripes](http://tangrams.github.io/blocks/#elevation-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/elevation/stripes.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-The raster normal map tiles needs to be load like this:
-```
-    normals-elevation:
-        type: Raster
-        url: https://s3.amazonaws.com/elevation-tiles-prod/normal/{z}/{x}/{y}.png
-        max_zoom: 15
-```
-A simple way to do it is to import `https://tangrams.github.io/blocks/source-elevation.yaml` and then link the vector tiles to them (see the example).
+Perfect for the `landuse` layer on your elevation maps, the `elevation-stripe` modules use the color of the layer to draw a stripe pattern that changes width based on the surface of the terrain.
 
 
 
@@ -116,7 +163,7 @@ To import this block add the following url to your `import` list:
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/elevation/normal.yaml
+    - https://tangrams.github.io/blocks/elevation/stripes.yaml
 ```
 
 
@@ -126,28 +173,23 @@ If you want to import this block together **with their dependencies** use this o
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/elevation/normal-full.yaml
+    - https://tangrams.github.io/blocks/elevation/stripes-full.yaml
 ```
 
 
 These blocks uses a custom **shader**.
 These are the **defines**:
  -  **NORMAL_TEXTURE_INDEX**:  The *default value* is ```0```. 
-
-These are the **shader blocks**:
-
-- **normal**:
-
-```glsl
-vec4 normal_elv_raster = sampleRaster(int(NORMAL_TEXTURE_INDEX));
-normal = (normal_elv_raster.rgb-.5)*2.;
-```
-
+ -  **STRIPES_PCT**:  The *default value* is ```1.8```. 
+ -  **STRIPES_SCALE**:  The *default value* is ```20.0```. 
+ -  **STRIPES_WIDTH**:  The *default value* is ```dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2., STRIPES_DIR)*STRIPES_PCT```. 
+ -  **STRIPES_ALPHA**:  The *default value* is ```0.5```. 
+ -  **STRIPES_DIR**:  The *default value* is ```vec3(-0.600,-0.420,0.600)```. 
 
 
 Examples:
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/elevation.yaml&lines=14" target="_blank">
-<img src="https://tangrams.github.io/tangram-sandbox/styles/elevation.png" style="width: 100%; height: 100px; object-fit: cover;">
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/elevation-stripes.yaml" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/elevation-stripes.png" style="width: 100%; height: 100px; object-fit: cover;">
 </a>
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
@@ -238,46 +280,4 @@ color = texture2D(u_ramp, vec2((1.-normal_elv_raster.a),.5));
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/elevation-ramp.yaml" target="_blank">
 <img src="https://tangrams.github.io/tangram-sandbox/styles/elevation-ramp.png" style="width: 100%; height: 100px; object-fit: cover;">
-</a>
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [elevation-stripes](http://tangrams.github.io/blocks/#elevation-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/elevation/stripes.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Perfect for the `landuse` layer on your elevation maps, the `elevation-stripe` modules use the color of the layer to draw a stripe pattern that changes width based on the surface of the terrain.
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/elevation/stripes.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/elevation/stripes-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **defines**:
- -  **NORMAL_TEXTURE_INDEX**:  The *default value* is ```0```. 
- -  **STRIPES_PCT**:  The *default value* is ```1.8```. 
- -  **STRIPES_SCALE**:  The *default value* is ```20.0```. 
- -  **STRIPES_WIDTH**:  The *default value* is ```dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2., STRIPES_DIR)*STRIPES_PCT```. 
- -  **STRIPES_ALPHA**:  The *default value* is ```0.5```. 
- -  **STRIPES_DIR**:  The *default value* is ```vec3(-0.600,-0.420,0.600)```. 
-
-
-Examples:
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/elevation-stripes.yaml" target="_blank">
-<img src="https://tangrams.github.io/tangram-sandbox/styles/elevation-stripes.png" style="width: 100%; height: 100px; object-fit: cover;">
 </a>
