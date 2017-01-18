@@ -35,6 +35,17 @@ styles:
                     \ *= 0.5;\n    }\n    return v;\n}"
             defines:
                 NUM_OCTAVES: 5
+        test:
+            fbm_float:
+                blocks:
+                    color: color += fbm(v_texcoord.x);
+            fbm_vec2:
+                blocks:
+                    color: color += fbm(v_texcoord);
+            fbm_vec3:
+                blocks:
+                    color: color += fbm(vec3(v_texcoord
+                    u_time));: null
     generative-noise:
         doc:
             author:

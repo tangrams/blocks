@@ -9,6 +9,8 @@ styles:
             licence: MIT
             description: |
                 Caustic generative texture inspired on <https://www.shadertoy.com/view/MdlXz8> by David Hoskins
+        test:
+            getCaustic: { blocks: { color: color += getCaustic(v_texcoord); } }
         shaders:
             defines:
                 TAU: 6.28318530718

@@ -76,3 +76,7 @@ styles:
                     \ fpos + o;\n            float d = dot( r, r );\n            if(\
                     \ d<m.x )\n                m = vec3( d, o );\n        }\n    }\n\
                     \    return m;\n}"
+        test:
+            voronoi:
+                blocks:
+                    color: color += voronoi(v_texcoord);

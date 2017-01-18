@@ -14,6 +14,10 @@ styles:
                 Set of Fractal Brownian Motion functions.
                 For more information on this theme read [this chapter of The Book of Shaders about fractal Brownian Motion](http://thebookofshaders.com/13/).
         mix: generative-noise
+        test:
+            fbm_float: { blocks: { color: color += fbm(v_texcoord.x); } }
+            fbm_vec2: { blocks: { color: color += fbm(v_texcoord); } }
+            fbm_vec3: { blocks: { color: color += fbm(vec3(v_texcoord,u_time)); } }
         shaders:
             defines:
                 NUM_OCTAVES: 5
