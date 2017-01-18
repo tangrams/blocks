@@ -26,12 +26,18 @@ styles:
                     \ 43758.5453123); \n}\n//\n// 2D Random for 2 dimentions\n// ================================\n\
                     vec2 random2 (vec2 xy) { \n    return fract(sin(vec2(dot(xy,vec2(127.1,311.7)),dot(xy,vec2(269.5,183.3))))*43758.5453);\
                     \ \n}\n//\n// 3D Random for 2 dimentions\n// ================================\n\
-                    vec3 random3 (vec2 xy) { \n    return fract(sin(vec3( dot(xy,vec2(127.1,311.7)),\
-                    \ dot(xy,vec2(269.5,183.3)), dot(xy,vec2(419.2,371.9)) ))*43758.5453);\
-                    \ \n}\nvec3 random3 (vec3 c) {\n    float j = 4096.0*sin(dot(c,vec3(17.0,\
-                    \ 59.4, 15.0)));\n    vec3 r;\n    r.z = fract(512.0*j);\n   \
-                    \ j *= .125;\n    r.x = fract(512.0*j);\n    j *= .125;\n    r.y\
-                    \ = fract(512.0*j);\n    return r-0.5;\n}"
+                    vec3 random3 (vec2 xy) {\n    #ifdef RANDOM_TEXSAMPLE\n    return\
+                    \ texture2D(u_random,xy).rgb;\n    #else\n    return fract(sin(vec3(\
+                    \ dot(xy,vec2(127.1,311.7)), dot(xy,vec2(269.5,183.3)), dot(xy,vec2(419.2,371.9))\
+                    \ ))*43758.5453); \n    #endif\n}\nvec3 random3 (vec3 c) {\n \
+                    \   float j = 4096.0*sin(dot(c,vec3(17.0, 59.4, 15.0)));\n   \
+                    \ vec3 r;\n    r.z = fract(512.0*j);\n    j *= .125;\n    r.x\
+                    \ = fract(512.0*j);\n    j *= .125;\n    r.y = fract(512.0*j);\n\
+                    \    return r-0.5;\n}"
+            defines:
+                RANDOM_TEXSAMPLE: false
+            uniforms:
+                u_random: https://tangrams.github.io/blocks/generative/imgs/tex16.png
         test:
             random2_vec2:
                 blocks:
@@ -41,8 +47,7 @@ styles:
                     color: color.rgb += random3(v_texcoord);
             random3_vec3:
                 blocks:
-                    color: color.rgb += random3(vec3(v_texcoord
-                    u_time);: null
+                    color: color.rgb += random3(vec3(v_texcoord,u_time));
             random_float:
                 blocks:
                     color: color.rgb += random(v_texcoord.x);
@@ -51,8 +56,7 @@ styles:
                     color: color.rgb += random(v_texcoord);
             random_vec3:
                 blocks:
-                    color: color.rgb += random(vec3(v_texcoord
-                    u_time);: null
+                    color: color.rgb += random(vec3(v_texcoord,u_time));
     space-tile:
         doc:
             author:

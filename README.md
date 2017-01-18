@@ -1076,6 +1076,30 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ![](http://tangrams.github.io/blocks/./generative/generative-caustic.png)
 
+- **getCaustic_3iter** ( mean: 0.00209630747302 median: 0.001944 ):
+
+
+```glsl
+color += getCaustic(v_texcoord);
+```
+
+
+- **getCaustic_5iter** ( mean: 0.00211190949857 median: 0.001942 ):
+
+
+```glsl
+color += getCaustic(v_texcoord);
+```
+
+
+- **getCaustic_4iter** ( mean: 0.0020922601461 median: 0.001943 ):
+
+
+```glsl
+color += getCaustic(v_texcoord);
+```
+
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
@@ -1117,6 +1141,78 @@ These are the **shader blocks**:
 
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ![](http://tangrams.github.io/blocks/./generative/generative-fbm.png)
+
+- **fbm_float_5oct** ( mean: 0.0129870434165 median: 0.012979 ):
+
+
+```glsl
+color += fbm(v_texcoord.x);
+```
+
+
+- **fbm_vec2_5oct** ( mean: 0.0834270763158 median: 0.083421 ):
+
+
+```glsl
+color += fbm(v_texcoord);
+```
+
+
+- **fbm_vec3_5oct** ( mean: 0.00209524877651 median: 0.001943 ):
+
+
+```glsl
+color += fbm(vec3(v_texcoord,u_time));
+```
+
+
+- **bm_float_3oct** ( mean: 0.00209794147531 median: 0.001943 ):
+
+
+```glsl
+color += fbm(v_texcoord.x);
+```
+
+
+- **fbm_vec3_8oct** ( mean: 0.00210450295376 median: 0.001943 ):
+
+
+```glsl
+color += fbm(vec3(v_texcoord,u_time));
+```
+
+
+- **bm_float_8oct** ( mean: 0.00209602941773 median: 0.001943 ):
+
+
+```glsl
+color += fbm(v_texcoord.x);
+```
+
+
+- **fbm_vec2_3oct** ( mean: 0.0020915443606 median: 0.001943 ):
+
+
+```glsl
+color += fbm(v_texcoord);
+```
+
+
+- **fbm_vec3_3oct** ( mean: 0.00209682556483 median: 0.001944 ):
+
+
+```glsl
+color += fbm(vec3(v_texcoord,u_time));
+```
+
+
+- **fbm_vec2_8oct** ( mean: 0.00209181882879 median: 0.001944 ):
+
+
+```glsl
+color += fbm(v_texcoord);
+```
+
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -1162,6 +1258,46 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ![](http://tangrams.github.io/blocks/./generative/generative-noise.png)
 
+- **noise_float** ( mean: 0.0035343409876 median: 0.003563 ):
+
+
+```glsl
+color += noise(v_texcoord.x);
+```
+
+
+- **noise_vec2** ( mean: 0.00987188591692 median: 0.009916 ):
+
+
+```glsl
+color += noise(v_texcoord);
+```
+
+
+- **snoise_vec3** ( mean: 0.0021033981993 median: 0.001945 ):
+
+
+```glsl
+color += snoise(vec3(v_texcoord
+```
+
+
+- **noise_vec3** ( mean: 0.0021042587014 median: 0.001944 ):
+
+
+```glsl
+color += noise(vec3(v_texcoord
+```
+
+
+- **snoise_vec2** ( mean: 0.00831911847492 median: 0.008334 ):
+
+
+```glsl
+color += snoise(v_texcoord);
+```
+
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
@@ -1191,6 +1327,12 @@ import:
 
 
 These blocks uses a custom **shader**.
+These are the **uniforms**:
+ -  **u_random**:  The *default value* is ```https://tangrams.github.io/blocks/generative/imgs/tex16.png```. 
+
+These are the **defines**:
+ -  **RANDOM_TEXSAMPLE**:  The *default value* is ```False```. 
+
 These are the **shader blocks**:
 
 - **global**:
@@ -1203,6 +1345,54 @@ These are the **shader blocks**:
 
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ![](http://tangrams.github.io/blocks/./generative/generative-random.png)
+
+- **random_vec3** ( mean: 0.00210452701596 median: 0.001946 ):
+
+
+```glsl
+color.rgb += random(vec3(v_texcoord,u_time));
+```
+
+
+- **random_vec2** ( mean: 0.00368674241645 median: 0.003704 ):
+
+
+```glsl
+color.rgb += random(v_texcoord);
+```
+
+
+- **random_float** ( mean: 0.00244285341105 median: 0.002231 ):
+
+
+```glsl
+color.rgb += random(v_texcoord.x);
+```
+
+
+- **random2_vec2** ( mean: 0.00372688042406 median: 0.003863 ):
+
+
+```glsl
+color.rg += random2(v_texcoord);
+```
+
+
+- **random3_vec3** ( mean: 0.00210761213664 median: 0.001945 ):
+
+
+```glsl
+color.rgb += random3(vec3(v_texcoord,u_time));
+```
+
+
+- **random3_vec2** ( mean: 0.00500624215938 median: 0.005023 ):
+
+
+```glsl
+color.rgb += random3(v_texcoord);
+```
+
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -1240,6 +1430,14 @@ These are the **shader blocks**:
 
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ![](http://tangrams.github.io/blocks/./generative/generative-voronoi.png)
+
+- **voronoi** ( mean: 0.00210546293649 median: 0.001945 ):
+
+
+```glsl
+color += voronoi(v_texcoord);
+```
+
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
@@ -2873,6 +3071,30 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ![](http://tangrams.github.io/blocks/./shapes/shapes-circle.png)
 
+- **circle** ( mean: 0.00209704734694 median: 0.001944 ):
+
+
+```glsl
+color.rgb += circle(v_texcoord
+```
+
+
+- **circleBorder** ( mean: 0.00209737891505 median: 0.001944 ):
+
+
+```glsl
+color.rgb += circleBorder(v_texcoord
+```
+
+
+- **circleDF** ( mean: 0.00209514491488 median: 0.001989 ):
+
+
+```glsl
+color.rgb += circleDF(v_texcoord-.5);
+```
+
+
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/patterns.yaml&lines=146" target="_blank">
 <img src="https://tangrams.github.io/tangram-sandbox/styles/patterns.png" style="width: 100%; height: 100px; object-fit: cover;">
@@ -3011,6 +3233,30 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ![](http://tangrams.github.io/blocks/./shapes/shapes-polygons.png)
 
+- **shapeDF** ( mean: 0.00209376499488 median: 0.001943 ):
+
+
+```glsl
+color.rgb += shapeDF(v_texcoord
+```
+
+
+- **shape** ( mean: 0.00209363104222 median: 0.001943 ):
+
+
+```glsl
+color.rgb += shape(v_texcoord
+```
+
+
+- **shapeBorder** ( mean: 0.00209742571836 median: 0.001944 ):
+
+
+```glsl
+color.rgb += shapeBorder(v_texcoord
+```
+
+
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml&lines=153" target="_blank">
 <img src="https://tangrams.github.io/tangram-sandbox/styles/9845C.png" style="width: 100%; height: 100px; object-fit: cover;">
@@ -3058,6 +3304,38 @@ These are the **shader blocks**:
 
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ![](http://tangrams.github.io/blocks/./shapes/shapes-rect.png)
+
+- **rect_rnd** ( mean: 0.00271299203085 median: 0.002555 ):
+
+
+```glsl
+color.rgb += rect(v_texcoord
+```
+
+
+- **rectDF** ( mean: 0.00210271408221 median: 0.001945 ):
+
+
+```glsl
+color.rgb += rectDF(v_texcoord
+```
+
+
+- **rect** ( mean: 0.00209586788202 median: 0.001945 ):
+
+
+```glsl
+color.rgb += rect(v_texcoord
+```
+
+
+- **rectBorder_rnd** ( mean: 0.00209758413412 median: 0.001945 ):
+
+
+```glsl
+color.rgb += rectBorder(v_texcoord
+```
+
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 

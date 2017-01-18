@@ -11,12 +11,12 @@ styles:
                 Set of functions about random.
                 For more information on this theme read [this chapter of The Book of Shaders about Random](http://thebookofshaders.com/10/).
         test:
-            random_float: { blocks: { color: color.rgb += random(v_texcoord.x); } }
-            random_vec2: { blocks: { color: color.rgb += random(v_texcoord); } }
-            random_vec3: { blocks: { color: color.rgb += random(vec3(v_texcoord,u_time); } }
-            random2_vec2: { blocks: { color: color.rg += random2(v_texcoord); } }
-            random3_vec2: { blocks: { color: color.rgb += random3(v_texcoord); } }
-            random3_vec3: { blocks: { color: color.rgb += random3(vec3(v_texcoord,u_time); } }
+            random_float: { blocks: { color: "color.rgb += random(v_texcoord.x);" } }
+            random_vec2: { blocks: { color: "color.rgb += random(v_texcoord);" } }
+            random_vec3: { blocks: { color: "color.rgb += random(vec3(v_texcoord,u_time));" } }
+            random2_vec2: { blocks: { color: "color.rg += random2(v_texcoord);" } }
+            random3_vec2: { blocks: { color: "color.rgb += random3(v_texcoord);" } }
+            random3_vec3: { blocks: { color: "color.rgb += random3(vec3(v_texcoord,u_time));" } }
         shaders:
             defines:
                 RANDOM_TEXSAMPLE: false
@@ -44,8 +44,12 @@ styles:
                     //
                     // 3D Random for 2 dimentions
                     // ================================
-                    vec3 random3 (vec2 xy) { 
+                    vec3 random3 (vec2 xy) {
+                        #ifdef RANDOM_TEXSAMPLE
+                        return texture2D(u_random,xy).rgb;
+                        #else
                         return fract(sin(vec3( dot(xy,vec2(127.1,311.7)), dot(xy,vec2(269.5,183.3)), dot(xy,vec2(419.2,371.9)) ))*43758.5453); 
+                        #endif
                     }
                     vec3 random3 (vec3 c) {
                         float j = 4096.0*sin(dot(c,vec3(17.0, 59.4, 15.0)));
