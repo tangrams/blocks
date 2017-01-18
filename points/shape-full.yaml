@@ -133,6 +133,21 @@ styles:
                     // where N is the number of sides of it\n// ================================\n\
                     float shapeBorder (vec2 st, int N, float width) {\n    return\
                     \ stroke(width, shapeDF(st,N));\n}"
+        test:
+            shape:
+                blocks:
+                    5: null
+                    .5);: null
+                    color: color.rgb += shape(v_texcoord
+            shapeBorder:
+                blocks:
+                    5: null
+                    .5);: null
+                    color: color.rgb += shapeBorder(v_texcoord
+            shapeDF:
+                blocks:
+                    5);: null
+                    color: color.rgb += shapeDF(v_texcoord
     shapes-type:
         doc:
             author:

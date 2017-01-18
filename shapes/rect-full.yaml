@@ -60,6 +60,25 @@ styles:
                     \    vec2 uv = step(size,st*(1.0-st));\n    return (uv.x*uv.y);\n\
                     }\n\nfloat rect (vec2 st, float size){\n    return rect(st, vec2(size));\n\
                     }\n"
+        test:
+            rect:
+                blocks:
+                    color: color.rgb += rect(v_texcoord
+                    vec2(.5));: null
+            rectBorder_rnd:
+                blocks:
+                    .5);: null
+                    color: color.rgb += rectBorder(v_texcoord
+                    vec2(.5): null
+            rectDF:
+                blocks:
+                    color: color.rgb += rectDF(v_texcoord
+                    vec2(.5));: null
+            rect_rnd:
+                blocks:
+                    .5);: null
+                    color: color.rgb += rect(v_texcoord
+                    vec2(.5): null
     shapes-type:
         doc:
             author:
