@@ -143,7 +143,7 @@ def appendDoc2README(readme_file, filename, counter):
                 if isTestIn(block):
                     benchmark_image = folder+'/'+block_name+'.png'
                     if os.path.isfile(benchmark_image):
-                        readme_file.write('\nHere are some **benchmarks** of this block performed on a RaspberrPI:\n');
+                        readme_file.write('\nHere are some **benchmarks** of this block performed on a Raspberry Pi:\n');
                         readme_file.write('![]('+URL+benchmark_image+')\n')
 
         # Add a list of examples
