@@ -27,6 +27,7 @@ def mainREADME(readmes):
 
 def appendDoc2README(readme_file, filename, counter):
     toc_of_blocks = []
+    folder = os.path.dirname(filename)
     yaml_file = yaml.safe_load(open(filename))
 
     # For each style ('styles') in this yaml_file 
@@ -129,7 +130,7 @@ def appendDoc2README(readme_file, filename, counter):
                 if len(global_fncs):
                     readme_file.write('\n- **global**:')
                     for function in global_fncs:
-                        readme_file.write('\n + `' + function[0]+ '`')
+                        readme_file.write('\n + `' + function[1]+ ' ' + function[2] + function[4] + '`')
 
                 for block_type in block['shaders']['blocks'].keys():
                     # In case of a 'global' block... just list the functions it contain
@@ -139,6 +140,11 @@ def appendDoc2README(readme_file, filename, counter):
                                             block['shaders']['blocks'][block_type] +
                                             '\n```\n\n')
                 readme_file.write('\n')
+                if isTestIn(block):
+                    benchmark_image = folder+'/'+block_name+'.png'
+                    if os.path.isfile(benchmark_image):
+                        readme_file.write('\nHere are some **benchmarks** of this block performed on a RaspberrPI:\n');
+                        readme_file.write('![]('+benchmark_image[1:]+')\n')
 
         # Add a list of examples
         if isExamplesIn(block):

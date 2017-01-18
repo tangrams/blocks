@@ -32,6 +32,9 @@ These are the **shader blocks**:
  + `float circle (vec2 st, float radius)`
  + `float circleBorder (vec2 st, float radius)`
 
+Here are some **benchmarks** of this block performed on a RaspberrPI:
+![](/shapes/shapes-circle.png)
+
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/patterns.yaml&lines=146" target="_blank">
 <img src="https://tangrams.github.io/tangram-sandbox/styles/patterns.png" style="width: 100%; height: 100px; object-fit: cover;">

@@ -1073,6 +1073,9 @@ These are the **shader blocks**:
 - **global**:
  + `vec3 getCaustic (vec2 uv)`
 
+Here are some **benchmarks** of this block performed on a RaspberrPI:
+![](/generative/generative-caustic.png)
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
@@ -1111,6 +1114,9 @@ These are the **shader blocks**:
  + `float fbm (in float x)`
  + `float fbm (in vec2 xy)`
  + `float fbm (in vec3 xyz)`
+
+Here are some **benchmarks** of this block performed on a RaspberrPI:
+![](/generative/generative-fbm.png)
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -1153,6 +1159,9 @@ These are the **shader blocks**:
  + `float snoise(vec2 v)`
  + `float snoise (vec3 p)`
 
+Here are some **benchmarks** of this block performed on a RaspberrPI:
+![](/generative/generative-noise.png)
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
@@ -1185,12 +1194,15 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `float random (float x) { return fract(sin(x)*43758.5453)`
- + `float random (vec2 p) { return fract(1e4 * sin(17.0 * p.x + p.y * 0.1) * (0.1 + abs(sin(p.y * 13.0 + p.x))))`
- + `float random (vec3 p) { return fract(sin(dot(p.xyz, vec3(70.9898,78.233,32.4355)))* 43758.5453123)`
- + `vec2 random2 (vec2 xy) { return fract(sin(vec2(dot(xy,vec2(127.1,311.7)),dot(xy,vec2(269.5,183.3))))*43758.5453)`
- + `vec3 random3 (vec2 xy) { return fract(sin(vec3( dot(xy,vec2(127.1,311.7)), dot(xy,vec2(269.5,183.3)), dot(xy,vec2(419.2,371.9)) ))*43758.5453)`
+ + `float random (float x)`
+ + `float random (vec2 p)`
+ + `float random (vec3 p)`
+ + `vec2 random2 (vec2 xy)`
+ + `vec3 random3 (vec2 xy)`
  + `vec3 random3 (vec3 c)`
+
+Here are some **benchmarks** of this block performed on a RaspberrPI:
+![](/generative/generative-random.png)
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -1225,6 +1237,9 @@ These are the **shader blocks**:
 
 - **global**:
  + `vec3 voronoi (vec2 st)`
+
+Here are some **benchmarks** of this block performed on a RaspberrPI:
+![](/generative/generative-voronoi.png)
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
@@ -2854,6 +2869,9 @@ These are the **shader blocks**:
  + `float circleDF (vec2 st)`
  + `float circle (vec2 st, float radius)`
  + `float circleBorder (vec2 st, float radius)`
+
+Here are some **benchmarks** of this block performed on a RaspberrPI:
+![](/shapes/shapes-circle.png)
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/patterns.yaml&lines=146" target="_blank">

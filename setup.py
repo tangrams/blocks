@@ -18,6 +18,7 @@ folders = [os.path.join(d,o) for o in os.listdir(d) if os.path.isdir(os.path.joi
 folders.sort()
 
 def benchmarks():
+    print "Benchmarking on the PI"
     #   Iterate through all the folders
     for folder in folders:
 
@@ -146,6 +147,7 @@ if len(sys.argv) > 1:
         benchmarks()
 else:
     standaloneBlocks()
-    benchmarks()
-    # document()
+    if isRPi():
+        benchmarks()
+    document()
     

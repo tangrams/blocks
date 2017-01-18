@@ -29,6 +29,16 @@ styles:
                 CAUSTIC_ITERATIONS: 3
                 TAU: 6.28318530718
         test:
-            getCaustic:
+            getCaustic_3iter:
                 blocks:
                     color: color += getCaustic(v_texcoord);
+            getCaustic_4iter:
+                blocks:
+                    color: color += getCaustic(v_texcoord);
+                defines:
+                    CAUSTIC_ITERATIONS: 4
+            getCaustic_5iter:
+                blocks:
+                    color: color += getCaustic(v_texcoord);
+                defines:
+                    CAUSTIC_ITERATIONS: 5
