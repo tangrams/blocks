@@ -63,22 +63,16 @@ styles:
         test:
             rect:
                 blocks:
-                    color: color.rgb += rect(v_texcoord
-                    vec2(.5));: null
+                    color: color.rgb += rect(v_texcoord,vec2(.5));
             rectBorder_rnd:
                 blocks:
-                    .5);: null
-                    color: color.rgb += rectBorder(v_texcoord
-                    vec2(.5): null
+                    color: color.rgb += rectBorder(v_texcoord,vec2(.5),.5);
             rectDF:
                 blocks:
-                    color: color.rgb += rectDF(v_texcoord
-                    vec2(.5));: null
+                    color: color.rgb += rectDF(v_texcoord,vec2(.5));
             rect_rnd:
                 blocks:
-                    .5);: null
-                    color: color.rgb += rect(v_texcoord
-                    vec2(.5): null
+                    color: color.rgb += rect(v_texcoord,vec2(.5),.5);
     shapes-type:
         doc:
             author:

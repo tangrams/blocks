@@ -95,12 +95,10 @@ styles:
         test:
             circle:
                 blocks:
-                    .5);: null
-                    color: color.rgb += circle(v_texcoord
+                    color: color.rgb += circle(v_texcoord,.5);
             circleBorder:
                 blocks:
-                    .5);: null
-                    color: color.rgb += circleBorder(v_texcoord
+                    color: color.rgb += circleBorder(v_texcoord,.5);
             circleDF:
                 blocks:
                     color: color.rgb += circleDF(v_texcoord-.5);

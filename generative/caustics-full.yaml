@@ -31,14 +31,14 @@ styles:
         test:
             getCaustic_3iter:
                 blocks:
-                    color: color += getCaustic(v_texcoord);
+                    color: color.rgb += getCaustic(v_texcoord);
             getCaustic_4iter:
                 blocks:
-                    color: color += getCaustic(v_texcoord);
+                    color: color.rgb += getCaustic(v_texcoord);
                 defines:
                     CAUSTIC_ITERATIONS: 4
             getCaustic_5iter:
                 blocks:
-                    color: color += getCaustic(v_texcoord);
+                    color: color.rgb += getCaustic(v_texcoord);
                 defines:
                     CAUSTIC_ITERATIONS: 5

@@ -125,18 +125,16 @@ styles:
                     color: color += noise(v_texcoord.x);
             noise_vec2:
                 blocks:
-                    color: color += noise(v_texcoord);
+                    color: color += noise(v_texcoord.xy);
             noise_vec3:
                 blocks:
-                    color: color += noise(vec3(v_texcoord
-                    u_time));: null
+                    color: color += noise(vec3(v_texcoord.xy,u_time));
             snoise_vec2:
                 blocks:
-                    color: color += snoise(v_texcoord);
+                    color: color += snoise(v_texcoord.xy);
             snoise_vec3:
                 blocks:
-                    color: color += snoise(vec3(v_texcoord
-                    u_time));: null
+                    color: color += snoise(vec3(v_texcoord.xy,u_time));
     generative-random:
         doc:
             author:
@@ -169,26 +167,24 @@ styles:
                     \ vec3 r;\n    r.z = fract(512.0*j);\n    j *= .125;\n    r.x\
                     \ = fract(512.0*j);\n    j *= .125;\n    r.y = fract(512.0*j);\n\
                     \    return r-0.5;\n}"
-            defines:
-                RANDOM_TEXSAMPLE: false
             uniforms:
                 u_random: https://tangrams.github.io/blocks/generative/imgs/tex16.png
         test:
             random2_vec2:
                 blocks:
-                    color: color.rg += random2(v_texcoord);
+                    color: color.rg += random2(v_texcoord.xy);
             random3_vec2:
                 blocks:
-                    color: color.rgb += random3(v_texcoord);
+                    color: color.rgb += random3(v_texcoord.xy);
             random3_vec3:
                 blocks:
-                    color: color.rgb += random3(vec3(v_texcoord,u_time));
+                    color: color.rgb += random3(vec3(v_texcoord.xy,u_time));
             random_float:
                 blocks:
                     color: color.rgb += random(v_texcoord.x);
             random_vec2:
                 blocks:
-                    color: color.rgb += random(v_texcoord);
+                    color: color.rgb += random(v_texcoord.xy);
             random_vec3:
                 blocks:
-                    color: color.rgb += random(vec3(v_texcoord,u_time));
+                    color: color.rgb += random(vec3(v_texcoord.xy,u_time));

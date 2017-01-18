@@ -105,5 +105,5 @@ class Shader:
         self.process.stdin.write('q\n')
         sleep(1)
         self.process.kill()
-        if len(self.generated_file):
-            os.remove(self.generated_file)
+        # if len(self.generated_file):
+            # os.remove(self.generated_file)

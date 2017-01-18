@@ -136,18 +136,13 @@ styles:
         test:
             shape:
                 blocks:
-                    5: null
-                    .5);: null
-                    color: color.rgb += shape(v_texcoord
+                    color: color.rgb += shape(v_texcoord,5,.5);
             shapeBorder:
                 blocks:
-                    5: null
-                    .5);: null
-                    color: color.rgb += shapeBorder(v_texcoord
+                    color: color.rgb += shapeBorder(v_texcoord,5,.5);
             shapeDF:
                 blocks:
-                    5);: null
-                    color: color.rgb += shapeDF(v_texcoord
+                    color: color.rgb += shapeDF(v_texcoord,5);
     shapes-type:
         doc:
             author:

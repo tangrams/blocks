@@ -13,7 +13,7 @@ styles:
                 For more information on this theme read [this chapter of The Book of Shaders about Cellular Noise and Voronoi](http://thebookofshaders.com/12/).
         mix: generative-random
         test:
-            voronoi: { blocks: { color: color += voronoi(v_texcoord); } }
+            voronoi: { blocks: { color: "color.rgb = voronoi(v_texcoord);" } }
         shaders:
             blocks:
                 global: |

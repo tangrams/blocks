@@ -32,7 +32,7 @@ def benchmark(yaml_filename, block_name, block, test_name):
     # Add / overwrite defines with test defines
     if 'defines' in block['test'][test_name]:
         for d_name in block['test'][test_name]['defines']:
-            defines_dict[b_name] = block['test'][test_name]['defines'][d_name]
+            defines_dict[d_name] = block['test'][test_name]['defines'][d_name]
 
     # Add defines into a single block of text for pragma injection
     pragmas['defines'] = ''

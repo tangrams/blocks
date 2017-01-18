@@ -15,11 +15,11 @@ styles:
                 For more information on this theme read [this chapter of The Book of Shaders about Noise](http://thebookofshaders.com/11/).
         mix: generative-random
         test:
-            noise_float: { blocks: { color: color += noise(v_texcoord.x); } }
-            noise_vec2: { blocks: { color: color += noise(v_texcoord); } }
-            noise_vec3: { blocks: { color: color += noise(vec3(v_texcoord,u_time)); } }
-            snoise_vec2: { blocks: { color: color += snoise(v_texcoord); } }
-            snoise_vec3: { blocks: { color: color += snoise(vec3(v_texcoord,u_time)); } }
+            noise_float: { blocks: { color: "color += noise(v_texcoord.x);" } }
+            noise_vec2: { blocks: { color: "color += noise(v_texcoord.xy);" } }
+            noise_vec3: { blocks: { color: "color += noise(vec3(v_texcoord.xy,u_time));" } }
+            snoise_vec2: { blocks: { color: "color += snoise(v_texcoord.xy);" } }
+            snoise_vec3: { blocks: { color: "color += snoise(vec3(v_texcoord.xy,u_time));" } }
         shaders:
             blocks:
                 global: |
