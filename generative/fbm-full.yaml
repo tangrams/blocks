@@ -124,22 +124,23 @@ styles:
                     \ : \n//  Copyright (C) 2011 Ashima Arts. All rights reserved.\n\
                     //  Distributed under the MIT License. See LICENSE file.\n// \
                     \ https://github.com/ashima/webgl-noise\nvec3 mod289(vec3 x) {\
-                    \ return x - floor(x * (1.0 / 289.0)) * 289.0; }\nvec2 mod289(vec2\
-                    \ x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }\nvec3 permute(vec3\
-                    \ x) { return mod289(((x*34.0)+1.0)*x); }\nfloat snoise(vec2 v)\
-                    \ {\n\n    // Precompute values for skewed triangular grid\n \
-                    \   const vec4 C = vec4(0.211324865405187,\n                 \
-                    \       // (3.0-sqrt(3.0))/6.0\n                        0.366025403784439,\
-                    \  \n                        // 0.5*(sqrt(3.0)-1.0)\n        \
-                    \                -0.577350269189626,  \n                     \
-                    \   // -1.0 + 2.0 * C.x\n                        0.024390243902439);\
-                    \ \n                        // 1.0 / 41.0\n\n    // First corner\
-                    \ (x0)\n    vec2 i  = floor(v + dot(v, C.yy));\n    vec2 x0 =\
-                    \ v - i + dot(i, C.xx);\n\n    // Other two corners (x1, x2)\n\
-                    \    vec2 i1 = vec2(0.0);\n    i1 = (x0.x > x0.y)? vec2(1.0, 0.0):vec2(0.0,\
-                    \ 1.0);\n    vec2 x1 = x0.xy + C.xx - i1;\n    vec2 x2 = x0.xy\
-                    \ + C.zz;\n\n    // Do some permutations to avoid\n    // truncation\
-                    \ effects in permutation\n    i = mod289(i);\n    vec3 p = permute(\n\
+                    \ \n    return x - floor(x * (1.0 / 289.0)) * 289.0; \n}\nvec2\
+                    \ mod289(vec2 x) { \n    return x - floor(x * (1.0 / 289.0)) *\
+                    \ 289.0; \n}\nvec3 permute(vec3 x) { \n    return mod289(((x*34.0)+1.0)*x);\
+                    \ \n}\nfloat snoise(vec2 v) {\n\n    // Precompute values for\
+                    \ skewed triangular grid\n    const vec4 C = vec4(0.211324865405187,\n\
+                    \                        // (3.0-sqrt(3.0))/6.0\n            \
+                    \            0.366025403784439,  \n                        //\
+                    \ 0.5*(sqrt(3.0)-1.0)\n                        -0.577350269189626,\
+                    \  \n                        // -1.0 + 2.0 * C.x\n           \
+                    \             0.024390243902439); \n                        //\
+                    \ 1.0 / 41.0\n\n    // First corner (x0)\n    vec2 i  = floor(v\
+                    \ + dot(v, C.yy));\n    vec2 x0 = v - i + dot(i, C.xx);\n\n  \
+                    \  // Other two corners (x1, x2)\n    vec2 i1 = vec2(0.0);\n \
+                    \   i1 = (x0.x > x0.y)? vec2(1.0, 0.0):vec2(0.0, 1.0);\n    vec2\
+                    \ x1 = x0.xy + C.xx - i1;\n    vec2 x2 = x0.xy + C.zz;\n\n   \
+                    \ // Do some permutations to avoid\n    // truncation effects\
+                    \ in permutation\n    i = mod289(i);\n    vec3 p = permute(\n\
                     \            permute( i.y + vec3(0.0, i1.y, 1.0))\n          \
                     \      + i.x + vec3(0.0, i1.x, 1.0 ));\n\n    vec3 m = max(0.5\
                     \ - vec3(\n                        dot(x0,x0), \n            \
