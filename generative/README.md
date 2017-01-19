@@ -1,5 +1,69 @@
 
 
+#### [generative-caustic](http://tangrams.github.io/blocks/#generative-caustic) <a href="https://github.com/tangrams/blocks/blob/gh-pages/generative/caustics.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Caustic generative texture inspired on <https://www.shadertoy.com/view/MdlXz8> by David Hoskins
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/generative/caustics.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/generative/caustics-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **TAU**:  The *default value* is ```6.28318530718```. 
+ -  **CAUSTIC_ITERATIONS**:  The *default value* is ```3```. 
+
+These are the **shader blocks**:
+
+- **global**:
+ + `vec3 getCaustic (vec2 uv)`
+
+Here are some **benchmarks** of this block performed on a Raspberry Pi:
+![](http://tangrams.github.io/blocks/./generative/generative-caustic.png)
+
+- **getCaustic_3iter** ( mean: 0.0268101865201 median: 0.026808 ):
+
+
+```glsl
+color.rgb += getCaustic(v_texcoord);
+```
+
+
+- **getCaustic_5iter** ( mean: 0.042474998367 median: 0.042472 ):
+
+
+```glsl
+color.rgb += getCaustic(v_texcoord);
+```
+
+
+- **getCaustic_4iter** ( mean: 0.034765779316 median: 0.03476 ):
+
+
+```glsl
+color.rgb += getCaustic(v_texcoord);
+```
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [generative-fbm](http://tangrams.github.io/blocks/#generative-fbm) <a href="https://github.com/tangrams/blocks/blob/gh-pages/generative/fbm.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Set of Fractal Brownian Motion functions.
@@ -63,7 +127,7 @@ color += fbm(vec3(v_texcoord,u_time));
 ```
 
 
-- **bm_float_3oct** ( mean: 0.00816974566238 median: 0.008213 ):
+- **fbm_float_8oct**:
 
 
 ```glsl
@@ -79,7 +143,7 @@ color += fbm(vec3(v_texcoord,u_time));
 ```
 
 
-- **bm_float_8oct** ( mean: 0.0303704638272 median: 0.030372 ):
+- **fbm_float_3oct**:
 
 
 ```glsl
@@ -108,70 +172,6 @@ color += fbm(vec3(v_texcoord,u_time));
 
 ```glsl
 color += fbm(v_texcoord);
-```
-
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [generative-caustic](http://tangrams.github.io/blocks/#generative-caustic) <a href="https://github.com/tangrams/blocks/blob/gh-pages/generative/caustics.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Caustic generative texture inspired on <https://www.shadertoy.com/view/MdlXz8> by David Hoskins
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/generative/caustics.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/generative/caustics-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **defines**:
- -  **TAU**:  The *default value* is ```6.28318530718```. 
- -  **CAUSTIC_ITERATIONS**:  The *default value* is ```3```. 
-
-These are the **shader blocks**:
-
-- **global**:
- + `vec3 getCaustic (vec2 uv)`
-
-Here are some **benchmarks** of this block performed on a Raspberry Pi:
-![](http://tangrams.github.io/blocks/./generative/generative-caustic.png)
-
-- **getCaustic_3iter** ( mean: 0.0268101865201 median: 0.026808 ):
-
-
-```glsl
-color.rgb += getCaustic(v_texcoord);
-```
-
-
-- **getCaustic_5iter** ( mean: 0.042474998367 median: 0.042472 ):
-
-
-```glsl
-color.rgb += getCaustic(v_texcoord);
-```
-
-
-- **getCaustic_4iter** ( mean: 0.034765779316 median: 0.03476 ):
-
-
-```glsl
-color.rgb += getCaustic(v_texcoord);
 ```
 
 
@@ -256,51 +256,6 @@ color += noise(vec3(v_texcoord.xy,u_time));
 
 ```glsl
 color += snoise(v_texcoord.xy);
-```
-
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [generative-voronoi](http://tangrams.github.io/blocks/#generative-voronoi) <a href="https://github.com/tangrams/blocks/blob/gh-pages/generative/voronoi.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Set of Voronoi functions.
-For more information on this theme read [this chapter of The Book of Shaders about Cellular Noise and Voronoi](http://thebookofshaders.com/12/).
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/generative/voronoi.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/generative/voronoi-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **shader blocks**:
-
-- **global**:
- + `vec3 voronoi (vec2 st)`
-
-Here are some **benchmarks** of this block performed on a Raspberry Pi:
-![](http://tangrams.github.io/blocks/./generative/generative-voronoi.png)
-
-- **voronoi** ( mean: 0.0329323288536 median: 0.032934 ):
-
-
-```glsl
-color.rgb = voronoi(v_texcoord);
 ```
 
 
@@ -394,5 +349,50 @@ color.rgb += random3(vec3(v_texcoord.xy,u_time));
 
 ```glsl
 color.rgb += random3(v_texcoord.xy);
+```
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [generative-voronoi](http://tangrams.github.io/blocks/#generative-voronoi) <a href="https://github.com/tangrams/blocks/blob/gh-pages/generative/voronoi.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Set of Voronoi functions.
+For more information on this theme read [this chapter of The Book of Shaders about Cellular Noise and Voronoi](http://thebookofshaders.com/12/).
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/generative/voronoi.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/generative/voronoi-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
+
+- **global**:
+ + `vec3 voronoi (vec2 st)`
+
+Here are some **benchmarks** of this block performed on a Raspberry Pi:
+![](http://tangrams.github.io/blocks/./generative/generative-voronoi.png)
+
+- **voronoi** ( mean: 0.0329323288536 median: 0.032934 ):
+
+
+```glsl
+color.rgb = voronoi(v_texcoord);
 ```
 

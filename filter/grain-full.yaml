@@ -98,19 +98,19 @@ styles:
             defines:
                 NUM_OCTAVES: 5
         test:
-            bm_float_3oct:
+            fbm_float_3oct:
                 blocks:
                     color: color += fbm(v_texcoord.x);
                 defines:
                     NUM_OCTAVES: 3
-            bm_float_8oct:
+            fbm_float_5oct:
+                blocks:
+                    color: color += fbm(v_texcoord.x);
+            fbm_float_8oct:
                 blocks:
                     color: color += fbm(v_texcoord.x);
                 defines:
                     NUM_OCTAVES: 8
-            fbm_float_5oct:
-                blocks:
-                    color: color += fbm(v_texcoord.x);
             fbm_vec2_3oct:
                 blocks:
                     color: color += fbm(v_texcoord);

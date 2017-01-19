@@ -1,6 +1,6 @@
 
 
-#### [terrain-terrain](http://tangrams.github.io/blocks/#terrain-terrain) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrain/terrain.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+#### [terrain-base](http://tangrams.github.io/blocks/#terrain-base) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrain/base.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -8,7 +8,7 @@ To import this block add the following url to your `import` list:
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/terrain/terrain.yaml
+    - https://tangrams.github.io/blocks/terrain/base.yaml
 ```
 
 
@@ -18,7 +18,7 @@ If you want to import this block together **with their dependencies** use this o
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/terrain/terrain-full.yaml
+    - https://tangrams.github.io/blocks/terrain/base-full.yaml
 ```
 
 
@@ -129,7 +129,7 @@ These are the **defines**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [terrain-base](http://tangrams.github.io/blocks/#terrain-base) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrain/base.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+#### [terrain-terrain](http://tangrams.github.io/blocks/#terrain-terrain) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrain/terrain.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -137,7 +137,7 @@ To import this block add the following url to your `import` list:
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/terrain/base.yaml
+    - https://tangrams.github.io/blocks/terrain/terrain.yaml
 ```
 
 
@@ -147,7 +147,7 @@ If you want to import this block together **with their dependencies** use this o
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/terrain/base-full.yaml
+    - https://tangrams.github.io/blocks/terrain/terrain-full.yaml
 ```
 
 

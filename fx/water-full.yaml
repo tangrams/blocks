@@ -26,7 +26,11 @@ styles:
         - generative-noise
         shaders:
             blocks:
-                normal: normal += snoise(vec3(worldPosition().xy*0.08,u_time*.5))*0.02;
+                normal: normal += snoise(vec3(worldPosition().xy*FX_WATER_SCALE,u_time*FX_WATER_SPEED))*FX_WATER_AMOUNT;
+            defines:
+                FX_WATER_AMOUNT: 0.02
+                FX_WATER_SCALE: 0.08
+                FX_WATER_SPEED: 0.5
     generative-noise:
         doc:
             author:

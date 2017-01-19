@@ -26,12 +26,17 @@ import:
 
 
 These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **FX_WATER_SPEED**:  The *default value* is ```0.5```. 
+ -  **FX_WATER_SCALE**:  The *default value* is ```0.08```. 
+ -  **FX_WATER_AMOUNT**:  The *default value* is ```0.02```. 
+
 These are the **shader blocks**:
 
 - **normal**:
 
 ```glsl
-normal += snoise(vec3(worldPosition().xy*0.08,u_time*.5))*0.02;
+normal += snoise(vec3(worldPosition().xy*FX_WATER_SCALE,u_time*FX_WATER_SPEED))*FX_WATER_AMOUNT;
 ```
 
 
