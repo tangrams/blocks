@@ -17,6 +17,7 @@ styles:
             random2_vec2: { blocks: { color: "color.rg += random2(v_texcoord.xy);" } }
             random3_vec2: { blocks: { color: "color.rgb += random3(v_texcoord.xy);" } }
             random3_vec3: { blocks: { color: "color.rgb += random3(vec3(v_texcoord.xy,u_time));" } }
+            random3_vec2_t: { defines: { RANDOM_TEXSAMPLE: 1 }, blocks: { color: "color.rgb += random3(v_texcoord.xy);" } }
         shaders:
             uniforms:
                 u_random: https://tangrams.github.io/blocks/generative/imgs/tex16.png

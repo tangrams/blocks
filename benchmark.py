@@ -23,21 +23,35 @@ def benchmark(yaml_filename, block_name, block, test_name):
         for b_name in block['test'][test_name]['blocks']:
             pragmas[b_name] = block['test'][test_name]['blocks'][b_name]
 
-    # Collect global functions and defines
+    # Collect global functions
     standalone_yaml = yaml.safe_load(open(folder+'/'+name+'-full.yaml'))
     pragmas['global'] = getAllGlobals(standalone_yaml, block_name)
+
+    # Collect all defines
     defines_dict = {}
     collectDefines(standalone_yaml, block_name, defines_dict)
-
-    # Add / overwrite defines with test defines
+    # Add the defines specify by the test
     if 'defines' in block['test'][test_name]:
         for d_name in block['test'][test_name]['defines']:
             defines_dict[d_name] = block['test'][test_name]['defines'][d_name]
-
     # Add defines into a single block of text for pragma injection
     pragmas['defines'] = ''
     for define_name in defines_dict.keys():
         pragmas['defines'] += "\n#define " + define_name + " " + str(defines_dict[define_name]) + '\n'
+
+    # Collect Uniforms
+    uniforms_dict = {}
+    collectUniforms(standalone_yaml, block_name, uniforms_dict)
+    # Add the uniforms specify by the test
+    if 'uniforms' in block['test'][test_name]:
+        for u_name in block['test'][test_name]['uniforms']:
+            uniforms_dict[u_name] = block['test'][test_name]['uniforms'][u_name]
+    # Add uniforms into a single block of text for pragma injection
+    pragmas['uniforms'] = ''
+    for uniform_name in uniforms_dict.keys():
+        uniform_type = getUniformType(uniforms_dict[uniform_name])
+        uniform_comment = '// ' + uniforms_dict[uniform_name]
+        pragmas['uniforms'] += '\nuniform ' + uniform_type + ' ' + uniform_name + '; ' + uniform_comment + '\n'
 
     # Test it! 
     shader = Shader(shader_path, {'template': TEMPLATE, 'pragmas': pragmas, 'output':shader_output_path})

@@ -180,6 +180,11 @@ styles:
             random3_vec2:
                 blocks:
                     color: color.rgb += random3(v_texcoord.xy);
+            random3_vec2_t:
+                blocks:
+                    color: color.rgb += random3(v_texcoord.xy);
+                defines:
+                    RANDOM_TEXSAMPLE: 1
             random3_vec3:
                 blocks:
                     color: color.rgb += random3(vec3(v_texcoord.xy,u_time));

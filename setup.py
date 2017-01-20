@@ -137,7 +137,6 @@ def document():
     with open('toc.json', 'w') as outfile:
         json.dump(toc, outfile)
 
-
 if len(sys.argv) > 1:
     if sys.argv[1] == 'docs':
         document()
@@ -147,7 +146,8 @@ if len(sys.argv) > 1:
         benchmarks()
 else:
     standaloneBlocks()
-    if isRPi():
-        benchmarks()
+    # if isRPi():
+        # benchmarks()
+    benchmarks()
     document()
     

@@ -83,6 +83,14 @@ def getUniformsIn(yaml_block):
         return yaml_block['shaders']['uniforms'].keys()
     return []
 
+def getUniformType(uniform_value):
+    if type(uniform_value) is str:
+        return 'sampler2D'
+    elif type(uniform_value) is float:
+        return 'float'
+    elif isinstance(uniform_value, list):
+        return 'vec'+len(uniform_value)
+
 def uniformHaveMetadata(uniform_name, yaml_block):
     if 'ui' in yaml_block:
         if 'shaders' in yaml_block['ui']:
@@ -127,6 +135,16 @@ def collectDefines(yaml_file, block_name, defines_dict):
     defines = getDefinesIn(block)
     for define_name in defines:
         defines_dict[define_name] = block['shaders']['defines'][define_name]
+
+def collectUniforms(yaml_file, block_name, uniforms_dict):
+    block = yaml_file['styles'][block_name]
+    depts = getDependencesIn(block)
+    for dep_block_name in depts:
+        collectUniforms(yaml_file, dep_block_name, uniforms_dict)
+
+    uniforms = getUniformsIn(block)
+    for uniform_name in uniforms:
+        uniforms_dict[uniform_name] = block['shaders']['uniforms'][uniform_name]
 
 def getAllGlobals(yaml_file, block_name):
     rta = ""

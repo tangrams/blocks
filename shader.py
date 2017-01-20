@@ -9,6 +9,7 @@ from os import O_NONBLOCK, read
 
 class Shader:
     COMMAND='glslViewer'
+    TMP_DIR='/tmp/'
     process = {}
     cout = {}
     wait_time = 0.0001
@@ -40,6 +41,17 @@ class Shader:
 
         # compose and excecute a glslViewer command
         cmd = [self.COMMAND]
+        cmd.append(filename)
+
+        tex_counter=0
+        if options.has_key('textures'):
+            for uniform_name in options['textures']:
+                url = options['textures'][uniform_name]
+                ext = os.path.splitext(url)[1]
+                img_path = self.TMP_DIR + str(tex_counter) + ext
+                http = urllib.URLopener()
+                http.retrieve(url, img_path)
+            cmd.append('-' + uniform_name + ' ' + img_path)
 
         if options.has_key("scale"):
             cmd.append('-w '+ str(options["scale"]))
@@ -57,7 +69,7 @@ class Shader:
         if options.has_key('output'):
             cmd.append('-o '+options["output"])
 
-        cmd.append(filename)
+        
         self.process = Popen(cmd, stdin=PIPE, stdout=PIPE, stderr = PIPE, shell=False)
         flags = fcntl(self.process.stdout, F_GETFL) # get current self.process.stdout flags
         fcntl(self.process.stdout, F_SETFL, flags | O_NONBLOCK)
@@ -105,5 +117,5 @@ class Shader:
         self.process.stdin.write('q\n')
         sleep(1)
         self.process.kill()
-        # if len(self.generated_file):
-            # os.remove(self.generated_file)
+        if len(self.generated_file):
+            os.remove(self.generated_file)
