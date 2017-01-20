@@ -41,6 +41,7 @@ def benchmark(yaml_filename, block_name, block, test_name):
 
     # Collect Uniforms
     uniforms_dict = {}
+    textures_dict = {}
     collectUniforms(standalone_yaml, block_name, uniforms_dict)
     # Add the uniforms specify by the test
     if 'uniforms' in block['test'][test_name]:
@@ -52,9 +53,11 @@ def benchmark(yaml_filename, block_name, block, test_name):
         uniform_type = getUniformType(uniforms_dict[uniform_name])
         uniform_comment = '// ' + uniforms_dict[uniform_name]
         pragmas['uniforms'] += '\nuniform ' + uniform_type + ' ' + uniform_name + '; ' + uniform_comment + '\n'
+        if uniform_type == "sampler2D":
+            textures_dict[uniform_name] = uniforms_dict[uniform_name]
 
     # Test it! 
-    shader = Shader(shader_path, {'template': TEMPLATE, 'pragmas': pragmas, 'output':shader_output_path})
+    shader = Shader(shader_path, {'template': TEMPLATE, 'pragmas': pragmas, 'output':shader_output_path, 'textures': textures_dict})
     time_start = time.time()
 
     values = []

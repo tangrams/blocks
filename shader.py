@@ -43,16 +43,6 @@ class Shader:
         cmd = [self.COMMAND]
         cmd.append(filename)
 
-        tex_counter=0
-        if options.has_key('textures'):
-            for uniform_name in options['textures']:
-                url = options['textures'][uniform_name]
-                ext = os.path.splitext(url)[1]
-                img_path = self.TMP_DIR + str(tex_counter) + ext
-                http = urllib.URLopener()
-                http.retrieve(url, img_path)
-            cmd.append('-' + uniform_name + ' ' + img_path)
-
         if options.has_key("scale"):
             cmd.append('-w '+ str(options["scale"]))
             cmd.append('-h '+ str(options["scale"]))
@@ -69,6 +59,16 @@ class Shader:
         if options.has_key('output'):
             cmd.append('-o '+options["output"])
 
+        tex_counter=0
+        if options.has_key('textures'):
+            for uniform_name in options['textures'].keys():
+                url = options['textures'][uniform_name]
+                ext = os.path.splitext(url)[1]
+                img_path = self.TMP_DIR + str(tex_counter) + ext
+                http = urllib.URLopener()
+                http.retrieve(url, img_path)
+                cmd.append('-' + uniform_name + ' ' + img_path)
+                # print cmd
         
         self.process = Popen(cmd, stdin=PIPE, stdout=PIPE, stderr = PIPE, shell=False)
         flags = fcntl(self.process.stdout, F_GETFL) # get current self.process.stdout flags
