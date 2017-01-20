@@ -39,7 +39,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ![](http://tangrams.github.io/blocks/./generative/generative-fbm.png)
 
-- **fbm_float_5oct** ( mean: 0.0129774576478 median: 0.012975 ):
+- **fbm_float_5oct** ( mean: 0.0129786044136 median: 0.012977 ):
 
 
 ```glsl
@@ -47,7 +47,7 @@ color += fbm(v_texcoord.x);
 ```
 
 
-- **fbm_vec2_5oct** ( mean: 0.079735629998 median: 0.079723 ):
+- **fbm_vec2_5oct** ( mean: 0.0797156163074 median: 0.079713 ):
 
 
 ```glsl
@@ -55,7 +55,7 @@ color += fbm(v_texcoord);
 ```
 
 
-- **fbm_vec3_5oct** ( mean: 0.0917332784425 median: 0.091713 ):
+- **fbm_vec3_5oct** ( mean: 0.0918465875438 median: 0.091821 ):
 
 
 ```glsl
@@ -63,7 +63,7 @@ color += fbm(vec3(v_texcoord,u_time));
 ```
 
 
-- **fbm_float_8oct** ( mean: 0.0304763907486 median: 0.030477 ):
+- **fbm_float_8oct** ( mean: 0.036561471747 median: 0.036585 ):
 
 
 ```glsl
@@ -71,7 +71,7 @@ color += fbm(v_texcoord.x);
 ```
 
 
-- **fbm_vec3_8oct** ( mean: 0.252886738593 median: 0.213285 ):
+- **fbm_vec3_8oct** ( mean: 0.253147785452 median: 0.213681 ):
 
 
 ```glsl
@@ -79,7 +79,7 @@ color += fbm(vec3(v_texcoord,u_time));
 ```
 
 
-- **fbm_float_3oct** ( mean: 0.008213341731 median: 0.008213 ):
+- **fbm_float_3oct** ( mean: 0.0082190238837 median: 0.008214 ):
 
 
 ```glsl
@@ -87,7 +87,7 @@ color += fbm(v_texcoord.x);
 ```
 
 
-- **fbm_vec2_3oct** ( mean: 0.0427023476761 median: 0.04272 ):
+- **fbm_vec2_3oct** ( mean: 0.0427192917853 median: 0.042711 ):
 
 
 ```glsl
@@ -95,7 +95,7 @@ color += fbm(v_texcoord);
 ```
 
 
-- **fbm_vec3_3oct** ( mean: 0.0445340928818 median: 0.044537 ):
+- **fbm_vec3_3oct** ( mean: 0.0445404752999 median: 0.044535 ):
 
 
 ```glsl
@@ -103,7 +103,7 @@ color += fbm(vec3(v_texcoord,u_time));
 ```
 
 
-- **fbm_vec2_8oct** ( mean: 0.240925670043 median: 0.204998 ):
+- **fbm_vec2_8oct** ( mean: 0.241552287655 median: 0.204608 ):
 
 
 ```glsl
@@ -151,7 +151,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ![](http://tangrams.github.io/blocks/./generative/generative-caustic.png)
 
-- **getCaustic_3iter** ( mean: 0.026809421074 median: 0.026807 ):
+- **getCaustic_3iter** ( mean: 0.0268119082978 median: 0.026815 ):
 
 
 ```glsl
@@ -159,7 +159,7 @@ color.rgb += getCaustic(v_texcoord);
 ```
 
 
-- **getCaustic_5iter** ( mean: 0.0424667251877 median: 0.042468 ):
+- **getCaustic_5iter** ( mean: 0.0424732053934 median: 0.042478 ):
 
 
 ```glsl
@@ -167,7 +167,7 @@ color.rgb += getCaustic(v_texcoord);
 ```
 
 
-- **getCaustic_4iter** ( mean: 0.0347524664504 median: 0.034748 ):
+- **getCaustic_4iter** ( mean: 0.0347584188312 median: 0.034755 ):
 
 
 ```glsl
@@ -219,7 +219,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ![](http://tangrams.github.io/blocks/./generative/generative-noise.png)
 
-- **noise_float** ( mean: 0.00356270413358 median: 0.003563 ):
+- **noise_float** ( mean: 0.003561023355 median: 0.003563 ):
 
 
 ```glsl
@@ -227,7 +227,7 @@ color += noise(v_texcoord.x);
 ```
 
 
-- **noise_vec2** ( mean: 0.00991868313008 median: 0.009916 ):
+- **noise_vec2** ( mean: 0.00991735265406 median: 0.009915 ):
 
 
 ```glsl
@@ -235,7 +235,7 @@ color += noise(v_texcoord.xy);
 ```
 
 
-- **snoise_vec3** ( mean: 0.010435701575 median: 0.010432 ):
+- **snoise_vec3** ( mean: 0.012500758665 median: 0.012504 ):
 
 
 ```glsl
@@ -243,7 +243,7 @@ color += snoise(vec3(v_texcoord.xy,u_time));
 ```
 
 
-- **noise_vec3** ( mean: 0.0104721684339 median: 0.010472 ):
+- **noise_vec3** ( mean: 0.0104708118912 median: 0.01047 ):
 
 
 ```glsl
@@ -251,7 +251,7 @@ color += noise(vec3(v_texcoord.xy,u_time));
 ```
 
 
-- **snoise_vec2** ( mean: 0.00692378947368 median: 0.006965 ):
+- **snoise_vec2** ( mean: 0.00696662253005 median: 0.006966 ):
 
 
 ```glsl
@@ -296,7 +296,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ![](http://tangrams.github.io/blocks/./generative/generative-voronoi.png)
 
-- **voronoi** ( mean: 0.0330454247553 median: 0.03294 ):
+- **voronoi** ( mean: 0.0329303864778 median: 0.032942 ):
 
 
 ```glsl
@@ -349,7 +349,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ![](http://tangrams.github.io/blocks/./generative/generative-random.png)
 
-- **random_vec3** ( mean: 0.00236812884694 median: 0.002361 ):
+- **random_vec3** ( mean: 0.0023659912227 median: 0.002364 ):
 
 
 ```glsl
@@ -357,7 +357,7 @@ color.rgb += random(vec3(v_texcoord.xy,u_time));
 ```
 
 
-- **random_vec2** ( mean: 0.00311106921339 median: 0.003109 ):
+- **random_vec2** ( mean: 0.00311012685807 median: 0.00311 ):
 
 
 ```glsl
@@ -365,7 +365,7 @@ color.rgb += random(v_texcoord.xy);
 ```
 
 
-- **random3_vec2_t** ( mean: 0.00200885834704 median: 0.001963 ):
+- **random3_vec2_t** ( mean: 0.00198231552007 median: 0.001965 ):
 
 
 ```glsl
@@ -373,7 +373,7 @@ color.rgb += random3(v_texcoord.xy);
 ```
 
 
-- **random_float** ( mean: 0.00223158034065 median: 0.002227 ):
+- **random_float** ( mean: 0.00223235727403 median: 0.002227 ):
 
 
 ```glsl
@@ -381,7 +381,7 @@ color.rgb += random(v_texcoord.x);
 ```
 
 
-- **random2_vec2** ( mean: 0.00325405951383 median: 0.003261 ):
+- **random2_vec2** ( mean: 0.00325916375102 median: 0.003262 ):
 
 
 ```glsl
@@ -389,7 +389,7 @@ color.rg += random2(v_texcoord.xy);
 ```
 
 
-- **random3_vec3** ( mean: 0.00279502235268 median: 0.002683 ):
+- **random3_vec3** ( mean: 0.00267978437373 median: 0.002678 ):
 
 
 ```glsl
@@ -397,7 +397,7 @@ color.rgb += random3(vec3(v_texcoord.xy,u_time));
 ```
 
 
-- **random3_vec2** ( mean: 0.00421145345039 median: 0.004213 ):
+- **random3_vec2** ( mean: 0.00420477196954 median: 0.004213 ):
 
 
 ```glsl
