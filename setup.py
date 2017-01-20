@@ -146,8 +146,8 @@ if len(sys.argv) > 1:
         benchmarks()
 else:
     standaloneBlocks()
-    # if isRPi():
-        # benchmarks()
-    benchmarks()
+    if isRPi():
+        benchmarks()
+    # benchmarks()
     document()
     
