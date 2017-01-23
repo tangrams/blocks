@@ -115,7 +115,7 @@ class Shader:
         self.process.stdin.write('exit\n')
         while not self.isFinish():
             sleep(1)
-        # print "Finish"
+        print "Finish"
         # self.process.kill()
         if len(self.generated_file):
             os.remove(self.generated_file)
