@@ -14,7 +14,7 @@ def benchmark(yaml_filename, block_name, block, test_name):
     name, ext = os.path.splitext(name_yaml)
 
     shader_path = folder+'/'+name+'-'+test_name+'.frag'
-    shader_output_path = name+'-'+test_name+'.png'
+    shader_output_path = folder+'/'+name+'-'+test_name+'.png'
 
     pragmas = {}
 
@@ -57,7 +57,14 @@ def benchmark(yaml_filename, block_name, block, test_name):
             textures_dict[uniform_name] = uniforms_dict[uniform_name]
 
     # Test it! 
-    shader = Shader(shader_path, {'template': TEMPLATE, 'pragmas': pragmas, 'output':shader_output_path, 'textures': textures_dict})
+    shader = Shader(shader_path, {
+                                    'template': TEMPLATE, 
+                                    'pragmas': pragmas, 
+                                    'size': 5000,
+                                    'headless': True,
+                                    # 'output':shader_output_path, 
+                                    'textures': textures_dict
+                                })
     time_start = time.time()
 
     values = []

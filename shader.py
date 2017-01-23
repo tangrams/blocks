@@ -27,7 +27,7 @@ class Shader:
             with open(options['template']) as f:
                 if 'pragmas' in options:
                     for line in f:
-                        matches = re.findall("\\#pragma tangram:\\s+([\\w|]*)\\n", line)
+                        matches = re.findall('\\#pragma tangram:\\s+([\\w|]*)\\n', line)
                         if len(matches):
                             if options['pragmas'].has_key(matches[0]):
                                 shader_file.write(options['pragmas'][matches[0]])
@@ -43,21 +43,18 @@ class Shader:
         cmd = [self.COMMAND]
         cmd.append(filename)
 
-        if options.has_key("scale"):
-            cmd.append('-w '+ str(options["scale"]))
-            cmd.append('-h '+ str(options["scale"]))
-        else:
-            cmd.append('-w 5000')
-            cmd.append('-h 5000')
+        if options.has_key('size'):
+            cmd.append('-w')
+            cmd.append(str(options['size']))
+            cmd.append('-h')
+            cmd.append(str(options['size']))
 
-        if options.has_key("visible"):
-            if not options["visible"]:
-                cmd.append('--headless')
-        else:
+        if options.has_key('headless'):
             cmd.append('--headless')
 
         if options.has_key('output'):
-            cmd.append('-o '+options["output"])
+            cmd.append('-o')
+            cmd.append(options['output'])
 
         tex_counter=0
         if options.has_key('textures'):
@@ -67,10 +64,11 @@ class Shader:
                 img_path = self.TMP_DIR + str(tex_counter) + ext
                 http = urllib.URLopener()
                 http.retrieve(url, img_path)
-                cmd.append('-' + uniform_name + ' ' + img_path)
-                # print cmd
+                cmd.append('-' + uniform_name)
+                cmd.append(img_path);
         
-        self.process = Popen(cmd, stdin=PIPE, stdout=PIPE, stderr = PIPE, shell=False)
+        # print 'EXE ',  ' '.join(cmd)
+        self.process = Popen(cmd, stdin=PIPE, stdout=PIPE, stderr=PIPE, shell=False)
         flags = fcntl(self.process.stdout, F_GETFL) # get current self.process.stdout flags
         fcntl(self.process.stdout, F_SETFL, flags | O_NONBLOCK)
         # self.cout = NonBlockingStreamReader(self.process)
@@ -78,7 +76,7 @@ class Shader:
     def read(self):
         while True:
             try:
-                return read(self.process.stdout.fileno(), 1024).rstrip()
+                return read(self.process.stdout.fileno(), 1024).rstrip() 
             except OSError:
                 return 'none'
 
@@ -114,8 +112,10 @@ class Shader:
         return self.fps
 
     def stop(self):
-        self.process.stdin.write('q\n')
-        sleep(1)
-        self.process.kill()
+        self.process.stdin.write('exit\n')
+        while not self.isFinish():
+            sleep(1)
+        # print "Finish"
+        # self.process.kill()
         if len(self.generated_file):
             os.remove(self.generated_file)
