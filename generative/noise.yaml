@@ -20,6 +20,11 @@ styles:
             noise_vec3: { blocks: { color: "color += noise(vec3(v_texcoord.xy,u_time));" } }
             snoise_vec2: { blocks: { color: "color += snoise(v_texcoord.xy);" } }
             snoise_vec3: { blocks: { color: "color += snoise(vec3(v_texcoord.xy,u_time));" } }
+            noise_float_t: { defines: { NOISE_TEXSAMPLE: 1 }, blocks: { color: "color += noise(v_texcoord.x);" } }
+            noise_vec2_t: { defines: { NOISE_TEXSAMPLE: 1 }, blocks: { color: "color += noise(v_texcoord.xy);" } }
+            noise_vec3_t: { defines: { NOISE_TEXSAMPLE: 1 }, blocks: { color: "color += noise(vec3(v_texcoord.xy,u_time));" } }
+            snoise_vec2_t: { defines: { NOISE_TEXSAMPLE: 1 }, blocks: { color: "color += snoise(v_texcoord.xy);" } }
+            snoise_vec3_t: { defines: { NOISE_TEXSAMPLE: 1 }, blocks: { color: "color += snoise(vec3(v_texcoord.xy,u_time));" } }
         shaders:
             defines:
                 NOISE_TEXSAMPLE_SIZE: 256.0
