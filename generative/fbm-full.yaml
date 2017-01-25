@@ -29,8 +29,8 @@ styles:
                     \ i < int(NUM_OCTAVES); ++i) {\n        v += a * noise(xy);\n\
                     \        xy = rot * xy * 2.0 + shift;\n        a *= 0.5;\n   \
                     \ }\n    return v;\n}\nfloat fbm (in vec3 xyz) {\n    float v\
-                    \ = 0.0;\n    float a = 0.5;\n    vec3 shift = vec3(100);\n  \
-                    \  for (int i = 0; i < int(NUM_OCTAVES); ++i) {\n        v +=\
+                    \ = 0.0;\n    float a = 0.5;\n    vec3 shift = vec3(100.0);\n\
+                    \    for (int i = 0; i < int(NUM_OCTAVES); ++i) {\n        v +=\
                     \ a * noise(xyz);\n        xyz = xyz * 2.0 + shift;\n        a\
                     \ *= 0.5;\n    }\n    return v;\n}"
             defines:
@@ -176,42 +176,42 @@ styles:
         test:
             noise_float:
                 blocks:
-                    color: color += noise(v_texcoord.x);
+                    color: color += noise(v_texcoord.x*2.);
             noise_float_t:
                 blocks:
-                    color: color += noise(v_texcoord.x);
+                    color: color += noise(v_texcoord.x*2.);
                 defines:
                     NOISE_TEXSAMPLE: 1
             noise_vec2:
                 blocks:
-                    color: color += noise(v_texcoord.xy);
+                    color: color += noise(v_texcoord.xy*2.);
             noise_vec2_t:
                 blocks:
-                    color: color += noise(v_texcoord.xy);
+                    color: color += noise(v_texcoord.xy*2.);
                 defines:
                     NOISE_TEXSAMPLE: 1
             noise_vec3:
                 blocks:
-                    color: color += noise(vec3(v_texcoord.xy,u_time));
+                    color: color += noise(vec3(v_texcoord.xy,u_time)*2.);
             noise_vec3_t:
                 blocks:
-                    color: color += noise(vec3(v_texcoord.xy,u_time));
+                    color: color += noise(vec3(v_texcoord.xy,u_time)*2.);
                 defines:
                     NOISE_TEXSAMPLE: 1
             snoise_vec2:
                 blocks:
-                    color: color += snoise(v_texcoord.xy);
+                    color: color += snoise(v_texcoord.xy*2.);
             snoise_vec2_t:
                 blocks:
-                    color: color += snoise(v_texcoord.xy);
+                    color: color += snoise(v_texcoord.xy*2.);
                 defines:
                     NOISE_TEXSAMPLE: 1
             snoise_vec3:
                 blocks:
-                    color: color += snoise(vec3(v_texcoord.xy,u_time));
+                    color: color += snoise(vec3(v_texcoord.xy,u_time)*2.);
             snoise_vec3_t:
                 blocks:
-                    color: color += snoise(vec3(v_texcoord.xy,u_time));
+                    color: color += snoise(vec3(v_texcoord.xy,u_time)*2.);
                 defines:
                     NOISE_TEXSAMPLE: 1
     generative-random:

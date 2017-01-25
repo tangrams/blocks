@@ -124,30 +124,6 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ![](http://tangrams.github.io/blocks/./shapes/test/shapes-circle.png)
 
-- **circle** ( mean: 0.00154156646217 median: 0.001501 ):
-
-
-```glsl
-color.rgb += circle(v_texcoord,.5);
-```
-
-
-- **circleBorder** ( mean: 0.00156256647517 median: 0.001506 ):
-
-
-```glsl
-color.rgb += circleBorder(v_texcoord,.5);
-```
-
-
-- **circleDF** ( mean: 0.00156235806254 median: 0.001506 ):
-
-
-```glsl
-color.rgb += circleDF(v_texcoord-.5);
-```
-
-
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/patterns.yaml&lines=146" target="_blank">
 <img src="https://tangrams.github.io/tangram-sandbox/styles/patterns.png" style="width: 100%; height: 100px; object-fit: cover;">
@@ -197,30 +173,6 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ![](http://tangrams.github.io/blocks/./shapes/test/shapes-polygons.png)
 
-- **shapeDF** ( mean: 0.00416301215352 median: 0.004026 ):
-
-
-```glsl
-color.rgb += shapeDF(v_texcoord,5);
-```
-
-
-- **shape** ( mean: 0.00475708927213 median: 0.004895 ):
-
-
-```glsl
-color.rgb += shape(v_texcoord,5,.5);
-```
-
-
-- **shapeBorder** ( mean: 0.00500098740036 median: 0.005007 ):
-
-
-```glsl
-color.rgb += shapeBorder(v_texcoord,5,.5);
-```
-
-
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml&lines=153" target="_blank">
 <img src="https://tangrams.github.io/tangram-sandbox/styles/9845C.png" style="width: 100%; height: 100px; object-fit: cover;">
@@ -268,38 +220,6 @@ These are the **shader blocks**:
 
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ![](http://tangrams.github.io/blocks/./shapes/test/shapes-rect.png)
-
-- **rect_rnd** ( mean: 0.00153037006913 median: 0.001504 ):
-
-
-```glsl
-color.rgb += rect(v_texcoord,vec2(.5),.5);
-```
-
-
-- **rectDF** ( mean: 0.00152329597701 median: 0.001503 ):
-
-
-```glsl
-color.rgb += rectDF(v_texcoord,vec2(.5));
-```
-
-
-- **rect** ( mean: 0.00153208462071 median: 0.001501 ):
-
-
-```glsl
-color.rgb += rect(v_texcoord,vec2(.5));
-```
-
-
-- **rectBorder_rnd** ( mean: 0.00170618361456 median: 0.001523 ):
-
-
-```glsl
-color.rgb += rectBorder(v_texcoord,vec2(.5),.5);
-```
-
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
