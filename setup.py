@@ -153,6 +153,6 @@ else:
     standaloneBlocks()
     if isRPi():
         benchmarks()
-    benchmarks()
+    # benchmarks()
     document()
     
