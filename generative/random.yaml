@@ -22,7 +22,7 @@ styles:
             random_vec3_t: { defines: { RANDOM_TEXSAMPLE: 1 }, blocks: { color: "color.rgb += random(vec3(v_texcoord.xy,u_time)*2.);" } }
             random2_vec2_t: { defines: { RANDOM_TEXSAMPLE: 1 }, blocks: { color: "color.rg += random2(v_texcoord.xy*2.);" } }
             random3_vec2_t: { defines: { RANDOM_TEXSAMPLE: 1 }, blocks: { color: "color.rgb += random3(v_texcoord.xy*2.);" } }
-            random3_vec3_t: { defines: { RANDOM_TEXSAMPLE: 1 }, blocks: { color: "color.rgb += random3(vec3(v_texcoord.xy,u_time)*2.);" } 
+            random3_vec3_t: { defines: { RANDOM_TEXSAMPLE: 1 }, blocks: { color: "color.rgb += random3(vec3(v_texcoord.xy,u_time)*2.);" } }
         shaders:
             uniforms:
                 u_random: https://tangrams.github.io/blocks/generative/imgs/tex16.png
