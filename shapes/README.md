@@ -124,7 +124,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ![](http://tangrams.github.io/blocks/./shapes/shapes-circle.png)
 
-- **circle** ( mean: 0.00198017284714 median: 0.001972 ):
+- **circle** ( mean: 0.00152910390673 median: 0.001502 ):
 
 
 ```glsl
@@ -132,7 +132,7 @@ color.rgb += circle(v_texcoord,.5);
 ```
 
 
-- **circleBorder** ( mean: 0.00197792114474 median: 0.00197 ):
+- **circleBorder** ( mean: 0.0015218796164 median: 0.001505 ):
 
 
 ```glsl
@@ -140,7 +140,7 @@ color.rgb += circleBorder(v_texcoord,.5);
 ```
 
 
-- **circleDF** ( mean: 0.00200017118048 median: 0.001986 ):
+- **circleDF** ( mean: 0.00203770600361 median: 0.001945 ):
 
 
 ```glsl
@@ -197,7 +197,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ![](http://tangrams.github.io/blocks/./shapes/shapes-polygons.png)
 
-- **shapeDF** ( mean: 0.00616443721881 median: 0.006166 ):
+- **shapeDF** ( mean: 0.00481956229129 median: 0.004825 ):
 
 
 ```glsl
@@ -205,7 +205,7 @@ color.rgb += shapeDF(v_texcoord,5);
 ```
 
 
-- **shape** ( mean: 0.00627042016281 median: 0.006272 ):
+- **shape** ( mean: 0.00408558208046 median: 0.004095 ):
 
 
 ```glsl
@@ -213,7 +213,7 @@ color.rgb += shape(v_texcoord,5,.5);
 ```
 
 
-- **shapeBorder** ( mean: 0.00641350905392 median: 0.006415 ):
+- **shapeBorder** ( mean: 0.00500628047216 median: 0.005009 ):
 
 
 ```glsl
@@ -269,7 +269,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ![](http://tangrams.github.io/blocks/./shapes/shapes-rect.png)
 
-- **rect_rnd** ( mean: 0.00246585164016 median: 0.002564 ):
+- **rect_rnd** ( mean: 0.00152692941656 median: 0.001503 ):
 
 
 ```glsl
@@ -277,7 +277,7 @@ color.rgb += rect(v_texcoord,vec2(.5),.5);
 ```
 
 
-- **rectDF** ( mean: 0.00210874169742 median: 0.001973 ):
+- **rectDF** ( mean: 0.00152089489796 median: 0.001502 ):
 
 
 ```glsl
@@ -285,7 +285,7 @@ color.rgb += rectDF(v_texcoord,vec2(.5));
 ```
 
 
-- **rect** ( mean: 0.00197997207966 median: 0.001971 ):
+- **rect** ( mean: 0.00152486714286 median: 0.001501 ):
 
 
 ```glsl
@@ -293,7 +293,7 @@ color.rgb += rect(v_texcoord,vec2(.5));
 ```
 
 
-- **rectBorder_rnd** ( mean: 0.00199960233559 median: 0.001981 ):
+- **rectBorder_rnd** ( mean: 0.0015278442942 median: 0.001508 ):
 
 
 ```glsl
