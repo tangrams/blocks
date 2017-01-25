@@ -50,50 +50,54 @@ styles:
             blocks:
                 global: "// 1D Value Noise for 1, 2 and 3 dimentions\n// ================================\n\
                     float noise (in float x) {\n    float i = floor(x);\n    float\
-                    \ f = fract(x);\n    float u = f * f * (3.0 - 2.0 * f);\n    return\
-                    \ mix(random(i), random(i + 1.0), u);\n}\n\nfloat noise (vec2\
-                    \ xy) {\n    vec2 i = floor(xy);\n    vec2 f = fract(xy);\n  \
-                    \  float a = random(i);\n    float b = random(i + vec2(1.0, 0.0));\n\
-                    \    float c = random(i + vec2(0.0, 1.0));\n    float d = random(i\
-                    \ + vec2(1.0, 1.0));\n    vec2 u = f * f * (3.0 - 2.0 * f);\n\
-                    \    return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d\
-                    \ - b) * u.x * u.y;\n}\n\nfloat noise (vec3 xyz) {\n    const\
-                    \ vec3 step = vec3(110.0, 241.0, 171.0);\n    vec3 i = floor(xyz);\n\
-                    \    vec3 f = fract(xyz);\n    float n = dot(i, step);\n    vec3\
-                    \ u = f * f * (3.0 - 2.0 * f);\n    return mix( mix(mix(random(n\
-                    \ + dot(step, vec3(0,0,0))),\n                        random(n\
-                    \ + dot(step, vec3(1,0,0))),\n                        u.x),\n\
-                    \                    mix(random(n + dot(step, vec3(0,1,0))),\n\
-                    \                        random(n + dot(step, vec3(1,1,0))),\n\
-                    \                        u.x),\n                    u.y),\n  \
-                    \              mix(mix(random(n + dot(step, vec3(0,0,1))),\n \
-                    \                   random(n + dot(step, vec3(1,0,1))),\n    \
-                    \                u.x),\n                    mix(random(n + dot(step,\
-                    \ vec3(0,1,1))),\n                        random(n + dot(step,\
-                    \ vec3(1,1,1))),\n                        u.x),\n            \
-                    \    u.y),\n            u.z);\n}\n\n// Description : GLSL 2D simplex\
-                    \ noise function\n//      Author : Ian McEwan, Ashima Arts\n//\
-                    \  Maintainer : ijm\n//     Lastmod : 20110822 (ijm)\n//     License\
-                    \ : \n//  Copyright (C) 2011 Ashima Arts. All rights reserved.\n\
-                    //  Distributed under the MIT License. See LICENSE file.\n// \
-                    \ https://github.com/ashima/webgl-noise\nvec3 mod289(vec3 x) {\
-                    \ \n    return x - floor(x * (1.0 / 289.0)) * 289.0; \n}\nvec2\
-                    \ mod289(vec2 x) { \n    return x - floor(x * (1.0 / 289.0)) *\
-                    \ 289.0; \n}\nvec3 permute(vec3 x) { \n    return mod289(((x*34.0)+1.0)*x);\
-                    \ \n}\nfloat snoise(vec2 v) {\n\n    // Precompute values for\
-                    \ skewed triangular grid\n    const vec4 C = vec4(0.211324865405187,\n\
-                    \                        // (3.0-sqrt(3.0))/6.0\n            \
-                    \            0.366025403784439,  \n                        //\
-                    \ 0.5*(sqrt(3.0)-1.0)\n                        -0.577350269189626,\
-                    \  \n                        // -1.0 + 2.0 * C.x\n           \
-                    \             0.024390243902439); \n                        //\
-                    \ 1.0 / 41.0\n\n    // First corner (x0)\n    vec2 i  = floor(v\
-                    \ + dot(v, C.yy));\n    vec2 x0 = v - i + dot(i, C.xx);\n\n  \
-                    \  // Other two corners (x1, x2)\n    vec2 i1 = vec2(0.0);\n \
-                    \   i1 = (x0.x > x0.y)? vec2(1.0, 0.0):vec2(0.0, 1.0);\n    vec2\
-                    \ x1 = x0.xy + C.xx - i1;\n    vec2 x2 = x0.xy + C.zz;\n\n   \
-                    \ // Do some permutations to avoid\n    // truncation effects\
-                    \ in permutation\n    i = mod289(i);\n    vec3 p = permute(\n\
+                    \ f = fract(x);\n    f = f * f * (3.0 - 2.0 * f);\n    #ifdef\
+                    \ NOISE_TEXSAMPLE\n    return texture2D(u_random, vec2(fract((x+.5)/NOISE_TEXSAMPLE_SIZE),.5),\
+                    \ -100.).r;\n    #else\n    return mix(random(i), random(i + 1.0),\
+                    \ f);\n    #endif\n}\n\nfloat noise (vec2 p) {\n    vec2 i = floor(p);\n\
+                    \    vec2 f = fract(p);\n    f = f * f * (3.0 - 2.0 * f);\n  \
+                    \  #ifdef NOISE_TEXSAMPLE\n    return texture2D(u_random, fract((p+.5)/NOISE_TEXSAMPLE_SIZE),\
+                    \ -100.).r;\n    #else\n    float a = random(i);\n    float b\
+                    \ = random(i + vec2(1.0, 0.0));\n    float c = random(i + vec2(0.0,\
+                    \ 1.0));\n    float d = random(i + vec2(1.0, 1.0));\n    return\
+                    \ mix(a, b, f.x) + (c - a) * f.y * (1.0 - f.x) + (d - b) * f.x\
+                    \ * f.y;\n    #endif\n}\n\nfloat noise (vec3 p) {\n    vec3 i\
+                    \ = floor(p);\n    vec3 f = fract(p);\n    f = f*f*(3.0-2.0*f);\n\
+                    \    #ifdef NOISE_TEXSAMPLE\n    vec2 uv = (i.xy+vec2(37.0,17.0)*i.z)\
+                    \ + f.xy;\n    vec2 rg = texture2D(u_random, fract((uv+.5)/NOISE_TEXSAMPLE_SIZE),\
+                    \ -100.0 ).yx;\n    return mix( rg.x, rg.y, f.z );\n    #else\n\
+                    \    const vec3 step = vec3(110.0, 241.0, 171.0);\n    float n\
+                    \ = dot(i, step);\n    return mix( mix(mix(random(n + dot(step,\
+                    \ vec3(0,0,0))),\n                        random(n + dot(step,\
+                    \ vec3(1,0,0))), f.x),\n                    mix(random(n + dot(step,\
+                    \ vec3(0,1,0))),\n                        random(n + dot(step,\
+                    \ vec3(1,1,0))), f.x),\n                    f.y),\n          \
+                    \      mix(mix(random(n + dot(step, vec3(0,0,1))),\n         \
+                    \               random(n + dot(step, vec3(1,0,1))), f.x),\n  \
+                    \                  mix(random(n + dot(step, vec3(0,1,1))),\n \
+                    \                       random(n + dot(step, vec3(1,1,1))), f.x),\n\
+                    \                f.y),\n            f.z);\n    #endif\n}\n\n//\
+                    \ Description : GLSL 2D simplex noise function\n//      Author\
+                    \ : Ian McEwan, Ashima Arts\n//  Maintainer : ijm\n//     Lastmod\
+                    \ : 20110822 (ijm)\n//     License : \n//  Copyright (C) 2011\
+                    \ Ashima Arts. All rights reserved.\n//  Distributed under the\
+                    \ MIT License. See LICENSE file.\n//  https://github.com/ashima/webgl-noise\n\
+                    vec3 mod289(vec3 x) { \n    return x - floor(x * (1.0 / 289.0))\
+                    \ * 289.0; \n}\nvec2 mod289(vec2 x) { \n    return x - floor(x\
+                    \ * (1.0 / 289.0)) * 289.0; \n}\nvec3 permute(vec3 x) { \n   \
+                    \ return mod289(((x*34.0)+1.0)*x); \n}\nfloat snoise(vec2 v) {\n\
+                    \n    // Precompute values for skewed triangular grid\n    const\
+                    \ vec4 C = vec4(0.211324865405187,\n                        //\
+                    \ (3.0-sqrt(3.0))/6.0\n                        0.366025403784439,\
+                    \  \n                        // 0.5*(sqrt(3.0)-1.0)\n        \
+                    \                -0.577350269189626,  \n                     \
+                    \   // -1.0 + 2.0 * C.x\n                        0.024390243902439);\
+                    \ \n                        // 1.0 / 41.0\n\n    // First corner\
+                    \ (x0)\n    vec2 i  = floor(v + dot(v, C.yy));\n    vec2 x0 =\
+                    \ v - i + dot(i, C.xx);\n\n    // Other two corners (x1, x2)\n\
+                    \    vec2 i1 = vec2(0.0);\n    i1 = (x0.x > x0.y)? vec2(1.0, 0.0):vec2(0.0,\
+                    \ 1.0);\n    vec2 x1 = x0.xy + C.xx - i1;\n    vec2 x2 = x0.xy\
+                    \ + C.zz;\n\n    // Do some permutations to avoid\n    // truncation\
+                    \ effects in permutation\n    i = mod289(i);\n    vec3 p = permute(\n\
                     \            permute( i.y + vec3(0.0, i1.y, 1.0))\n          \
                     \      + i.x + vec3(0.0, i1.x, 1.0 ));\n\n    vec3 m = max(0.5\
                     \ - vec3(\n                        dot(x0,x0), \n            \
@@ -123,6 +127,8 @@ styles:
                     \ + i2), x2);\n    d.w = dot(random3(s + 1.0), x3);\n    w *=\
                     \ w;\n    w *= w;\n    d *= w;\n    return dot(d, vec4(52.0));\n\
                     }"
+            defines:
+                NOISE_TEXSAMPLE_SIZE: 256.0
         test:
             noise_float:
                 blocks:
@@ -155,22 +161,26 @@ styles:
             version: 0.0.1
         shaders:
             blocks:
-                global: "// 1D Random for 1 and 2 dimentions\n// ================================\n\
-                    float random (float x) { \n    return fract(sin(x)*43758.5453);\n\
-                    }\nfloat random (vec2 p) { \n    return fract(1e4 * sin(17.0 *\
-                    \ p.x + p.y * 0.1) * (0.1 + abs(sin(p.y * 13.0 + p.x)))); \n}\n\
-                    float random (vec3 p) { \n    return fract(sin(dot(p.xyz, vec3(70.9898,78.233,32.4355)))*\
-                    \ 43758.5453123); \n}\n//\n// 2D Random for 2 dimentions\n// ================================\n\
-                    vec2 random2 (vec2 xy) { \n    return fract(sin(vec2(dot(xy,vec2(127.1,311.7)),dot(xy,vec2(269.5,183.3))))*43758.5453);\
-                    \ \n}\n//\n// 3D Random for 2 dimentions\n// ================================\n\
-                    vec3 random3 (vec2 xy) {\n    #ifdef RANDOM_TEXSAMPLE\n    return\
-                    \ texture2D(u_random,xy).rgb;\n    #else\n    return fract(sin(vec3(\
-                    \ dot(xy,vec2(127.1,311.7)), dot(xy,vec2(269.5,183.3)), dot(xy,vec2(419.2,371.9))\
-                    \ ))*43758.5453); \n    #endif\n}\nvec3 random3 (vec3 c) {\n \
-                    \   float j = 4096.0*sin(dot(c,vec3(17.0, 59.4, 15.0)));\n   \
-                    \ vec3 r;\n    r.z = fract(512.0*j);\n    j *= .125;\n    r.x\
-                    \ = fract(512.0*j);\n    j *= .125;\n    r.y = fract(512.0*j);\n\
-                    \    return r-0.5;\n}"
+                global: "vec3 random3 (vec2 p) {\n    #ifdef RANDOM_TEXSAMPLE\n  \
+                    \  return texture2D(u_random,fract(p*2.),-100.).rgb;\n    #else\n\
+                    \    return fract(sin(vec3( dot(p,vec2(127.1,311.7)), dot(p,vec2(269.5,183.3)),\
+                    \ dot(p,vec2(419.2,371.9)) ))*43758.5453); \n    #endif\n}\nvec3\
+                    \ random3 (vec3 p) {\n    #ifdef RANDOM_TEXSAMPLE\n    vec2 uv\
+                    \ = fract(p.xy+vec2(37.0,17.0)*p.z);\n    return texture2D(u_random,\
+                    \ fract(uv*2.), -100.0).rgb;\n    #else\n    float j = 4096.0*sin(dot(p,vec3(17.0,\
+                    \ 59.4, 15.0)));\n    vec3 r;\n    r.z = fract(512.0*j);\n   \
+                    \ j *= .125;\n    r.x = fract(512.0*j);\n    j *= .125;\n    r.y\
+                    \ = fract(512.0*j);\n    return r-0.5;\n    #endif\n}\nvec2 random2\
+                    \ (vec2 p) { \n    #ifdef RANDOM_TEXSAMPLE\n    return random3(p).rg;\n\
+                    \    #else\n    return fract(sin(vec2(dot(p,vec2(127.1,311.7)),dot(p,vec2(269.5,183.3))))*43758.5453);\
+                    \ \n    #endif\n}\nfloat random (float x) { \n    return fract(sin(x)*43758.5453);\n\
+                    }\nfloat random (vec2 p) { \n    #ifdef RANDOM_TEXSAMPLE\n   \
+                    \ return random3(p).r;\n    #else\n    return fract(1e4 * sin(17.0\
+                    \ * p.x + p.y * 0.1) * (0.1 + abs(sin(p.y * 13.0 + p.x)))); \n\
+                    \    #endif\n}\nfloat random (vec3 p) { \n    #ifdef RANDOM_TEXSAMPLE\n\
+                    \    return random3(p).r;\n    #else\n    return fract(sin(dot(p.xyz,\
+                    \ vec3(70.9898,78.233,32.4355)))* 43758.5453123); \n    #endif\n\
+                    }"
             uniforms:
                 u_random: https://tangrams.github.io/blocks/generative/imgs/tex16.png
         test:
