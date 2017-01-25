@@ -147,24 +147,24 @@ def appendDoc2README(readme_file, filename, counter):
                         readme_file.write('\nHere are some **benchmarks** of this block performed on a Raspberry Pi:\n');
                         readme_file.write('![]('+URL+benchmark_image+')\n')
 
-                        with open(benchmark_json) as data_file:    
-                            benchmark_data = json.load(data_file)
+                        # with open(benchmark_json) as data_file:    
+                        #     benchmark_data = json.load(data_file)
 
-                        for test_name in block['test']:
-                            readme_file.write('\n- **'+test_name+'**')
+                        # for test_name in block['test']:
+                        #     readme_file.write('\n- **'+test_name+'**')
 
-                            if block_name in benchmark_data:
-                                if test_name in benchmark_data[block_name]:
-                                    readme_file.write(' ( mean: ' + str(benchmark_data[block_name][test_name]['mean']) +
-                                                        ' median: ' + str(benchmark_data[block_name][test_name]['median']) + ' )')
+                        #     if block_name in benchmark_data:
+                        #         if test_name in benchmark_data[block_name]:
+                        #             readme_file.write(' ( mean: ' + str(benchmark_data[block_name][test_name]['mean']) +
+                        #                                 ' median: ' + str(benchmark_data[block_name][test_name]['median']) + ' )')
 
-                            readme_file.write(':\n')
+                        #     readme_file.write(':\n')
 
-                            if 'blocks' in block['test'][test_name]:
-                                if 'color' in block['test'][test_name]['blocks']:
-                                    readme_file.write(  '\n\n```glsl\n' + 
-                                            block['test'][test_name]['blocks']['color'] +
-                                            '\n```\n\n')
+                        #     if 'blocks' in block['test'][test_name]:
+                        #         if 'color' in block['test'][test_name]['blocks']:
+                        #             readme_file.write(  '\n\n```glsl\n' + 
+                        #                     block['test'][test_name]['blocks']['color'] +
+                        #                     '\n```\n\n')
 
         # Add a list of examples
         if isExamplesIn(block):

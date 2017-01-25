@@ -88,6 +88,7 @@ def benchmark(yaml_filename, block_name, block, test_name):
     shader.stop()
 
     log = dict()
+    log['test'] = block['test'][test_name]
     log['values'] = values
     log['samples'] = samples
     log['mean'] = np.mean(log['values'])
