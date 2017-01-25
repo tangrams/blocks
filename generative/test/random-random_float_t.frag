@@ -8,6 +8,8 @@ uniform float u_time;
 
 uniform sampler2D u_random; // https://tangrams.github.io/blocks/generative/imgs/tex16.png
 
+#define RANDOM_TEXSAMPLE 1
+
 varying vec4 v_position;
 varying vec4 v_color;
 varying vec3 v_normal;
@@ -64,6 +66,6 @@ void main() {
     vec3 normal = v_normal;
     vec4 color = vec4(0.,0.,0.,1.);
 
-color.rg += random2(v_texcoord.xy*2.);
+color.rgb += random(v_texcoord.x*2.);
     gl_FragColor = color;
 }

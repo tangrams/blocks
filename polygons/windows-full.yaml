@@ -43,27 +43,52 @@ styles:
         test:
             random2_vec2:
                 blocks:
-                    color: color.rg += random2(v_texcoord.xy);
+                    color: color.rg += random2(v_texcoord.xy*2.);
+            random2_vec2_t:
+                blocks:
+                    color: color.rg += random2(v_texcoord.xy*2.);
+                defines:
+                    RANDOM_TEXSAMPLE: 1
             random3_vec2:
                 blocks:
-                    color: color.rgb += random3(v_texcoord.xy);
+                    color: color.rgb += random3(v_texcoord.xy*2.);
             random3_vec2_t:
                 blocks:
-                    color: color.rgb += random3(v_texcoord.xy);
+                    color: color.rgb += random3(v_texcoord.xy*2.);
                 defines:
                     RANDOM_TEXSAMPLE: 1
             random3_vec3:
                 blocks:
-                    color: color.rgb += random3(vec3(v_texcoord.xy,u_time));
+                    color: color.rgb += random3(vec3(v_texcoord.xy,u_time)*2.);
+            random3_vec3_t:
+                blocks:
+                    color: color.rgb += random3(vec3(v_texcoord.xy,u_time)*2.);
+                defines:
+                    RANDOM_TEXSAMPLE: 1
             random_float:
                 blocks:
-                    color: color.rgb += random(v_texcoord.x);
+                    color: color.rgb += random(v_texcoord.x*2.);
+            random_float_t:
+                blocks:
+                    color: color.rgb += random(v_texcoord.x*2.);
+                defines:
+                    RANDOM_TEXSAMPLE: 1
             random_vec2:
                 blocks:
-                    color: color.rgb += random(v_texcoord.xy);
+                    color: color.rgb += random(v_texcoord.xy*2.);
+            random_vec2_t:
+                blocks:
+                    color: color.rgb += random(v_texcoord.xy*2.);
+                defines:
+                    RANDOM_TEXSAMPLE: 1
             random_vec3:
                 blocks:
-                    color: color.rgb += random(vec3(v_texcoord.xy,u_time));
+                    color: color.rgb += random(vec3(v_texcoord.xy,u_time)*2.);
+            random_vec3_t:
+                blocks:
+                    color: color.rgb += random(vec3(v_texcoord.xy,u_time)*2.);
+                defines:
+                    RANDOM_TEXSAMPLE: 1
     geometry-normal:
         doc:
             author:

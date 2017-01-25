@@ -8,6 +8,8 @@ uniform float u_time;
 
 uniform sampler2D u_random; // https://tangrams.github.io/blocks/generative/imgs/tex16.png
 
+#define RANDOM_TEXSAMPLE 1
+
 varying vec4 v_position;
 varying vec4 v_color;
 varying vec3 v_normal;
