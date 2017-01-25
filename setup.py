@@ -47,22 +47,27 @@ def benchmarks():
 
                         logs[block_name][test_name] = benchmark(filename, block_name, block, test_name)
 
+                test_folder = folder+'/test'
+                if not os.path.exists(test_folder):
+                    os.makedirs(test_folder)
+        
                 # If there is benchmarks save them in json
                 if len(logs.keys()):
-                    with open(folder+'/'+block_name+'.json', 'w') as outfile:
+                    with open(test_folder+'/'+block_name+'.json', 'w') as outfile:
                         json.dump(logs, outfile)
 
                     # Make a chart
                     fig, ax = plt.subplots(nrows=1, ncols=1)
-                    legends = []
                     for block_name in yaml_file['styles']:
                         for log_name in logs[block_name]:
-                            legends.append(log_name)
                             ax.plot(logs[block_name][log_name]['samples'], 
-                                    logs[block_name][log_name]['values'])
+                                    logs[block_name][log_name]['values'], label=log_name)
 
-                    plt.legend(legends, loc='upper left')
-                    fig.savefig(folder+'/'+block_name+'.png')   # save the figure to file
+                    handles, labels = ax.get_legend_handles_labels()
+                    labels, handles = zip(*sorted(zip(labels, handles), key=lambda t: logs[block_name][t[0]]['mean'] ))
+
+                    plt.legend(handles, labels, loc='upper left')
+                    fig.savefig(test_folder+'/'+block_name+'.png')   # save the figure to file
                     plt.close(fig)
 
 # Generate *-full.yaml files... which are blocks that contain their dependencies
@@ -146,8 +151,8 @@ if len(sys.argv) > 1:
         benchmarks()
 else:
     standaloneBlocks()
-    if isRPi():
-        benchmarks()
-    # benchmarks()
+    # if isRPi():
+        # benchmarks()
+    benchmarks()
     document()
     

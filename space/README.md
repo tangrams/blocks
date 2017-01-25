@@ -1,8 +1,8 @@
 
 
-#### [space-tile](http://tangrams.github.io/blocks/#space-tile) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/tile.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+#### [space-constant](http://tangrams.github.io/blocks/#space-constant) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/constant.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-Get the position on the tile
+Get the constant coordinates **(warning: could glitch on zooms)**
 
 
 
@@ -10,7 +10,7 @@ To import this block add the following url to your `import` list:
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/space/tile.yaml
+    - https://tangrams.github.io/blocks/space/constant.yaml
 ```
 
 
@@ -20,7 +20,7 @@ If you want to import this block together **with their dependencies** use this o
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/space/tile-full.yaml
+    - https://tangrams.github.io/blocks/space/constant-full.yaml
 ```
 
 
@@ -28,48 +28,12 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec2 getTileCoords()`
-- **position**:
+ + `vec2 getConstantCoords ()`
 
-```glsl
-// Normalize the attribute position of a vertex
-v_pos = modelPosition().xyz;
-```
-
-
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [space-tex](http://tangrams.github.io/blocks/#space-tex) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/tex.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Get the position on TexCoords
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/space/tex.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/space/tex-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **shader blocks**:
-
-- **global**:
- + `vec2 getTexCoords ()`
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/grain-area.yaml&lines=26" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/grain-area.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -116,6 +80,80 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
+#### [space-tex](http://tangrams.github.io/blocks/#space-tex) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/tex.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Get the position on TexCoords
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/space/tex.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/space/tex-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
+
+- **global**:
+ + `vec2 getTexCoords ()`
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [space-tile](http://tangrams.github.io/blocks/#space-tile) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/tile.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Get the position on the tile
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/space/tile.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/space/tile-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
+
+- **global**:
+ + `vec2 getTileCoords()`
+- **position**:
+
+```glsl
+// Normalize the attribute position of a vertex
+v_pos = modelPosition().xyz;
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [space-uz](http://tangrams.github.io/blocks/#space-uz) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/uz.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Get the position on UZ from the TexCoords (on `x`) and the `z` of the World Position
@@ -145,41 +183,3 @@ These are the **shader blocks**:
 
 - **global**:
  + `vec2 getUZCoords ()`
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [space-constant](http://tangrams.github.io/blocks/#space-constant) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/constant.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Get the constant coordinates **(warning: could glitch on zooms)**
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/space/constant.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/space/constant-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **shader blocks**:
-
-- **global**:
- + `vec2 getConstantCoords ()`
-
-Examples:
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/grain-area.yaml&lines=26" target="_blank">
-<img src="https://tangrams.github.io/tangram-sandbox/styles/grain-area.png" style="width: 100%; height: 100px; object-fit: cover;">
-</a>

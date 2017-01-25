@@ -13,8 +13,12 @@ def benchmark(yaml_filename, block_name, block, test_name):
     name_yaml = os.path.basename(yaml_filename);
     name, ext = os.path.splitext(name_yaml)
 
-    shader_path = folder+'/'+name+'-'+test_name+'.frag'
-    shader_output_path = folder+'/'+name+'-'+test_name+'.png'
+    test_folder = folder+'/test'
+    if not os.path.exists(test_folder):
+        os.makedirs(test_folder)
+
+    shader_path = test_folder+'/'+name+'-'+test_name+'.frag'
+    shader_output_path = test_folder+'/'+name+'-'+test_name+'.png'
 
     pragmas = {}
 

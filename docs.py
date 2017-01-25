@@ -141,8 +141,8 @@ def appendDoc2README(readme_file, filename, counter):
                                             '\n```\n\n')
                 readme_file.write('\n')
                 if isTestIn(block):
-                    benchmark_image = folder+'/'+block_name+'.png'
-                    benchmark_json = folder+'/'+block_name+'.json'
+                    benchmark_image = folder+'/test/'+block_name+'.png'
+                    benchmark_json = folder+'/test/'+block_name+'.json'
                     if os.path.isfile(benchmark_image) and os.path.isfile(benchmark_json):
                         readme_file.write('\nHere are some **benchmarks** of this block performed on a Raspberry Pi:\n');
                         readme_file.write('![]('+URL+benchmark_image+')\n')
