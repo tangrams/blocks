@@ -64,7 +64,7 @@ def benchmarks():
                                     logs[block_name][log_name]['values'], label=log_name)
 
                     handles, labels = ax.get_legend_handles_labels()
-                    labels, handles = zip(*sorted(zip(labels, handles), key=lambda t: logs[block_name][t[0]]['mean'] ))
+                    labels, handles = zip(*sorted(zip(labels, handles), key=lambda t: logs[block_name][t[0]]['median'] ))
 
                     plt.legend(handles, labels, loc='upper left')
                     fig.savefig(test_folder+'/'+block_name+'.png')   # save the figure to file
