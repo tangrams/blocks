@@ -60,7 +60,7 @@ def benchmark(yaml_filename, block_name, block, test_name):
     shader = Shader(shader_path, {
                                     'template': TEMPLATE, 
                                     'pragmas': pragmas, 
-                                    # 'size': 500,
+                                    'size': 500,
                                     'headless': True,
                                     'output': shader_output_path, 
                                     'textures': textures_dict
