@@ -60,9 +60,9 @@ def benchmark(yaml_filename, block_name, block, test_name):
     shader = Shader(shader_path, {
                                     'template': TEMPLATE, 
                                     'pragmas': pragmas, 
-                                    'size': 1000,
+                                    # 'size': 500,
                                     'headless': True,
-                                    # 'output':shader_output_path, 
+                                    'output': shader_output_path, 
                                     'textures': textures_dict
                                 })
     time_start = time.time()
