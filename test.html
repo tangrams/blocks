@@ -16,16 +16,6 @@
             .linked {
                 width: 100%;
             }
-            #output {
-                width: 200px;
-                height: 200px;
-            }
-            #explorer {
-                z-index: 100;
-                position: absolute;
-                background-color: white;
-                border-style: solid;
-            }
             div.img-container {
                  width: 200px;
                  height: 200px;
@@ -41,6 +31,27 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
+            }
+            #explorer {
+                z-index: 100;
+                position: absolute;
+                background-color: white;
+                border-style: solid;
+            }
+            #title {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 10px;
+            }
+            #output {
+                width: 200px;
+                height: 200px;
+            }
+            #code {
+                margin: 10px;
+                padding: 10px;
+                background-color: lightgray;
             }
         </style>
     </head>
@@ -139,7 +150,19 @@
                                     var image = document.getElementById('output');
                                     if (image.src !== srcs[index]) {
                                         image.src = srcs[index];
-                                        document.getElementById('code').innerHTML = '<pre><code>'+tests[index]['blocks']['color']+'</pre></code>';
+                                        var code = ''
+                                        if (tests[index]['defines']) {
+                                            for (var define in tests[index]['defines']) {
+                                                code += '#define ' + define + ' ' + tests[index]['defines'][define] +'\n';
+                                            }
+                                            code += '\n';
+                                        }
+                                        if (tests[index]['blocks']) {
+                                            if (tests[index]['blocks']['color']) {
+                                                code += tests[index]['blocks']['color'];
+                                            }
+                                        }
+                                        document.getElementById('code').innerHTML = '<pre><code>'+code+'</pre></code>';
                                         explorer.style.borderColor = colors[index];
                                         var title = document.getElementById('title');
                                         title.innerHTML = titles[index];
