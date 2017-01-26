@@ -89,10 +89,14 @@ def benchmark(yaml_filename, block_name, block, test_name):
 
     log = dict()
     log['test'] = block['test'][test_name]
-    log['values'] = values
-    log['samples'] = samples
-    log['mean'] = np.mean(log['values'])
-    log['median'] = np.median(log['values'])
+    log['mean'] = np.mean(values)
+    log['median'] = np.median(values)
+    log['data'] = []
+    prev_val = 0
+    for index in range(0, len(values)):
+        if prev_val != values[index]:
+            prev_val = values[index]
+            log['data'].append({'sec':samples[index], 'val':values[index]})
     log['output'] = shader_output_path;
 
     return log

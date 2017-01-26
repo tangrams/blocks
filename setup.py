@@ -60,8 +60,12 @@ def benchmarks():
                     fig, ax = plt.subplots(nrows=1, ncols=1)
                     for block_name in yaml_file['styles']:
                         for log_name in logs[block_name]:
-                            ax.plot(logs[block_name][log_name]['samples'], 
-                                    logs[block_name][log_name]['values'], label=log_name)
+                            samples = []
+                            values = []
+                            for datum in logs[block_name][log_name]['data']:
+                                samples.append(datum['sec'])
+                                values.append(datum['val'])
+                            ax.plot(samples, values, label=log_name)
 
                     handles, labels = ax.get_legend_handles_labels()
                     labels, handles = zip(*sorted(zip(labels, handles), key=lambda t: logs[block_name][t[0]]['median'] ))
