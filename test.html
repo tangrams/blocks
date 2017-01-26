@@ -1,62 +1,130 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<style>
-.axis--x path {
-  display: none;
-}
-.line {
-  fill: none;
-  stroke: steelblue;
-  stroke-width: 1.5px;
-}
-</style>
-<svg width="960" height="500"></svg>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script>
-function fetchHTTP(url, methood){
-    var request = new XMLHttpRequest(), response;
-    request.onreadystatechange = function () {
-        if (request.readyState === 4 && request.status === 200) {
-            response = request.responseText;
-        }
-    }
-    request.open(methood ? methood : 'GET', url, false);
-    request.send();
-    return response;
-}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Test Blocks</title>
 
-function parseQuery (qstr) {
-    var query = {};
-    var a = qstr.split('&');
-    for (var i in a) {
-        var b = a[i].split('=');
-        query[decodeURIComponent(b[0])] = decodeURIComponent(b[1]);
-    }
-    return query;
-}
+        <link href='https://rawgit.com/mozilla/metrics-graphics/master/dist/metricsgraphics.css' rel='stylesheet' type='text/css'>
+        <link href='https://rawgit.com/dandehavilland/mg-line-brushing/master/dist/mg_line_brushing.css' rel='stylesheet' type='text/css'>
 
-window.onload = function(){
-    var query = parseQuery(window.location.search.slice(1));
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+        <script src="https://d3js.org/d3.v4.js"></script>
+        <script src="https://rawgit.com/mozilla/metrics-graphics/master/dist/metricsgraphics.js"></script>
+        <!-- <script src="https://rawgit.com/dandehavilland/mg-line-brushing/master/dist/mg_line_brushing.js"></script> -->
+        <style type="text/css">
+            #output {
+                width: 200px;
+                height: 200px;
+            }
+            #explorer {
+                z-index: 100;
+                position: absolute;
+                background-color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="chart"></div>
+        <div id="legend"></div>
+        <div id="explorer">
+            <img id='output'>
+            <div id="code">
+            </div>
+        </div>
+        <script type="text/javascript">
+            function fetchHTTP(url, methood){
+                var request = new XMLHttpRequest(), response;
+                request.onreadystatechange = function () {
+                    if (request.readyState === 4 && request.status === 200) {
+                        response = request.responseText;
+                    }
+                }
+                request.open(methood ? methood : 'GET', url, false);
+                request.send();
+                return response;
+            }
 
-    if (query['test']) {
-        console.log('Opening',query['test']);
-        var data = JSON.parse(fetchHTTP(query['test']));
+            function parseQuery (qstr) {
+                var query = {};
+                var a = qstr.split('&');
+                for (var i in a) {
+                    var b = a[i].split('=');
+                    query[decodeURIComponent(b[0])] = decodeURIComponent(b[1]);
+                }
+                return query;
+            }
 
-        var svg = d3.select("svg"),
-            margin = {top: 20, right: 80, bottom: 30, left: 50},
-            width = svg.attr("width") - margin.left - margin.right,
-            height = svg.attr("height") - margin.top - margin.bottom,
-            g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            function getRandomColor() {
+                function c() {
+                    var hex = Math.floor(Math.random()*256).toString(16);
+                    return ("0"+String(hex)).substr(-2); // pad with zero
+                }
+                return "#"+c()+c()+c();
+            }
 
-            var x = d3.scaleTime()
-                .rangeRound([0, width]);
+            var cursorX;
+            var cursorY;
+            document.onmousemove = function(e){
+                cursorX = e.pageX;
+                cursorY = e.pageY;
+            }
 
-            var y = d3.scaleLinear()
-                .rangeRound([height, 0]);
-    
-        for (var block in data) {
-            console.log(Object.keys(data[block]))
-        }
-    }
-};
-</script>
+            window.onload = function(){
+                var query = parseQuery(window.location.search.slice(1));
+
+                if (query['test']) {
+                    console.log('Opening',query['test']);
+                    d3.json(query['test'], function(data) {
+                        var datum = [];
+                        var legend = [];
+                        var colors = [];
+                        var tests = [];
+                        var srcs = [];
+                        for (var block in data) {
+                            for (var index in data[block]) {
+                                datum.push(data[block][index]['data']);
+                                srcs.push(data[block][index]['output']);
+                                tests.push(data[block][index]['test'])
+                                legend.push(index);
+                                colors.push(getRandomColor());
+                            }
+                        }
+
+                        MG.data_graphic({
+                            title: "Frame delta",
+                            description: "This test was perform on a RaspberryPi",
+                            data: datum,
+                            width: "1000",
+                            height: "600",
+                            target: '#chart',
+                            legend: legend,
+                            colors: colors,
+                            y_extended_ticks: true,
+                            min_y_from_data: true,
+                            legend_target: '#legend',
+                            x_accessor: 'sec',
+                            y_accessor: 'val',
+                            linked: true,
+                            mouseover: function(d, i) {
+                                // console.log(d,i,srcs[d['line_id']]);
+                                var index = d['line_id']-1;
+                                if (srcs[index] !== undefined ) {
+                                    var image = document.getElementById('output');
+                                    if (image.src !== srcs[index]) {
+                                        image.src = srcs[index];
+                                    }
+                                    var explorer = document.getElementById('explorer');
+                                    explorer.style.left = (cursorX+10)+'px';
+                                    explorer.style.top = (cursorY+10)+'px';
+
+                                    document.getElementById('code').innerHTML = '<pre><code>'+tests[index]['blocks']['color']+'</pre></code>';
+                                }
+                            },
+                        });
+                    });
+                }
+            };
+        </script>
+    </body>
+</html>
