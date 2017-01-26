@@ -13,6 +13,9 @@
         <script src="https://rawgit.com/mozilla/metrics-graphics/master/dist/metricsgraphics.js"></script>
         <!-- <script src="https://rawgit.com/dandehavilland/mg-line-brushing/master/dist/mg_line_brushing.js"></script> -->
         <style type="text/css">
+            .linked {
+                width: 100%;
+            }
             #output {
                 width: 200px;
                 height: 200px;
@@ -21,6 +24,23 @@
                 z-index: 100;
                 position: absolute;
                 background-color: white;
+                border-style: solid;
+            }
+            div.img-container {
+                 width: 200px;
+                 height: 200px;
+                 position: relative;
+                 margin-left: auto;
+                 margin-right: auto;
+                 overflow: hidden;
+             }
+            img.cropped {
+                position: absolute;
+                margin: auto;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
             }
         </style>
     </head>
@@ -28,7 +48,8 @@
         <div id="chart"></div>
         <div id="legend"></div>
         <div id="explorer">
-            <img id='output'>
+            <div id="title"></div>
+            <div class="img-container"><img id='output' class="cropped"></div>
             <div id="code">
             </div>
         </div>
@@ -81,8 +102,10 @@
                         var colors = [];
                         var tests = [];
                         var srcs = [];
+                        var titles = [];
                         for (var block in data) {
                             for (var index in data[block]) {
+                                titles.push(index);
                                 datum.push(data[block][index]['data']);
                                 srcs.push(data[block][index]['output']);
                                 tests.push(data[block][index]['test'])
@@ -102,7 +125,6 @@
                             colors: colors,
                             y_extended_ticks: true,
                             min_y_from_data: true,
-                            legend_target: '#legend',
                             x_accessor: 'sec',
                             y_accessor: 'val',
                             linked: true,
@@ -110,15 +132,20 @@
                                 // console.log(d,i,srcs[d['line_id']]);
                                 var index = d['line_id']-1;
                                 if (srcs[index] !== undefined ) {
-                                    var image = document.getElementById('output');
-                                    if (image.src !== srcs[index]) {
-                                        image.src = srcs[index];
-                                    }
                                     var explorer = document.getElementById('explorer');
                                     explorer.style.left = (cursorX+10)+'px';
                                     explorer.style.top = (cursorY+10)+'px';
 
-                                    document.getElementById('code').innerHTML = '<pre><code>'+tests[index]['blocks']['color']+'</pre></code>';
+                                    var image = document.getElementById('output');
+                                    if (image.src !== srcs[index]) {
+                                        image.src = srcs[index];
+                                        document.getElementById('code').innerHTML = '<pre><code>'+tests[index]['blocks']['color']+'</pre></code>';
+                                        explorer.style.borderColor = colors[index];
+                                        var title = document.getElementById('title');
+                                        title.innerHTML = titles[index];
+                                        title.style.color = colors[index];
+                                    }
+                                    
                                 }
                             },
                         });
