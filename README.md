@@ -53,39 +53,6 @@ If you have made a nice shader style you are proud of and want to share it, send
 
 ### [COLOR](http://tangrams.github.io/blocks/#color) <a href="https://github.com/tangrams/blocks/blob/gh-pages/color" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-#### [color-palette](http://tangrams.github.io/blocks/#color-palette) <a href="https://github.com/tangrams/blocks/blob/gh-pages/color/palette.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Procedural generation of color palettes implemented by [Inigo Quiles](https://twitter.com/iquilezles) (1999) explained in [this article](http://www.iquilezles.org/www/articles/palettes/palettes.htm)
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/color/palette.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/color/palette-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **shader blocks**:
-
-- **global**:
- + `vec3 palette (float t, vec3 a, vec3 b, vec3 c, vec3 d)`
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
 #### [color-conversion](http://tangrams.github.io/blocks/#color-conversion) <a href="https://github.com/tangrams/blocks/blob/gh-pages/color/conversion.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Set of functions to convert colors between color systems/spaces.
@@ -118,6 +85,39 @@ These are the **shader blocks**:
  + `vec3 rgb2hsb (vec3 c)`
  + `vec3 rgb2hsb (vec4 c)`
  + `vec3 hsb2rgb (vec3 c)`
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [color-palette](http://tangrams.github.io/blocks/#color-palette) <a href="https://github.com/tangrams/blocks/blob/gh-pages/color/palette.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Procedural generation of color palettes implemented by [Inigo Quiles](https://twitter.com/iquilezles) (1999) explained in [this article](http://www.iquilezles.org/www/articles/palettes/palettes.htm)
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/color/palette.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/color/palette-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
+
+- **global**:
+ + `vec3 palette (float t, vec3 a, vec3 b, vec3 c, vec3 d)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -160,60 +160,6 @@ These are the **shader blocks**:
 
 
 ### [ELEVATION](http://tangrams.github.io/blocks/#elevation) <a href="https://github.com/tangrams/blocks/blob/gh-pages/elevation" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-#### [elevation-normal](http://tangrams.github.io/blocks/#elevation-normal) <a href="https://github.com/tangrams/blocks/blob/gh-pages/elevation/normal.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-The raster normal map tiles needs to be load like this:
-```
-    normals-elevation:
-        type: Raster
-        url: https://s3.amazonaws.com/elevation-tiles-prod/normal/{z}/{x}/{y}.png
-        max_zoom: 15
-```
-A simple way to do it is to import `https://tangrams.github.io/blocks/source-elevation.yaml` and then link the vector tiles to them (see the example).
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/elevation/normal.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/elevation/normal-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **defines**:
- -  **NORMAL_TEXTURE_INDEX**:  The *default value* is ```0```. 
-
-These are the **shader blocks**:
-
-- **normal**:
-
-```glsl
-vec4 normal_elv_raster = sampleRaster(int(NORMAL_TEXTURE_INDEX));
-normal = (normal_elv_raster.rgb-.5)*2.;
-```
-
-
-
-Examples:
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/elevation.yaml&lines=14" target="_blank">
-<img src="https://tangrams.github.io/tangram-sandbox/styles/elevation.png" style="width: 100%; height: 100px; object-fit: cover;">
-</a>
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
 
 #### [elevation-contours](http://tangrams.github.io/blocks/#elevation-contours) <a href="https://github.com/tangrams/blocks/blob/gh-pages/elevation/contours.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
@@ -314,9 +260,16 @@ shade = mix(DASH_MIN_SIZE, DASH_MAX_SIZE, (shade*shade*shade)*4.);
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [elevation-stripes](http://tangrams.github.io/blocks/#elevation-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/elevation/stripes.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+#### [elevation-normal](http://tangrams.github.io/blocks/#elevation-normal) <a href="https://github.com/tangrams/blocks/blob/gh-pages/elevation/normal.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-Perfect for the `landuse` layer on your elevation maps, the `elevation-stripe` modules use the color of the layer to draw a stripe pattern that changes width based on the surface of the terrain.
+The raster normal map tiles needs to be load like this:
+```
+    normals-elevation:
+        type: Raster
+        url: https://s3.amazonaws.com/elevation-tiles-prod/normal/{z}/{x}/{y}.png
+        max_zoom: 15
+```
+A simple way to do it is to import `https://tangrams.github.io/blocks/source-elevation.yaml` and then link the vector tiles to them (see the example).
 
 
 
@@ -324,7 +277,7 @@ To import this block add the following url to your `import` list:
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/elevation/stripes.yaml
+    - https://tangrams.github.io/blocks/elevation/normal.yaml
 ```
 
 
@@ -334,23 +287,28 @@ If you want to import this block together **with their dependencies** use this o
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/elevation/stripes-full.yaml
+    - https://tangrams.github.io/blocks/elevation/normal-full.yaml
 ```
 
 
 These blocks uses a custom **shader**.
 These are the **defines**:
  -  **NORMAL_TEXTURE_INDEX**:  The *default value* is ```0```. 
- -  **STRIPES_PCT**:  The *default value* is ```1.8```. 
- -  **STRIPES_SCALE**:  The *default value* is ```20.0```. 
- -  **STRIPES_WIDTH**:  The *default value* is ```dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2., STRIPES_DIR)*STRIPES_PCT```. 
- -  **STRIPES_ALPHA**:  The *default value* is ```0.5```. 
- -  **STRIPES_DIR**:  The *default value* is ```vec3(-0.600,-0.420,0.600)```. 
+
+These are the **shader blocks**:
+
+- **normal**:
+
+```glsl
+vec4 normal_elv_raster = sampleRaster(int(NORMAL_TEXTURE_INDEX));
+normal = (normal_elv_raster.rgb-.5)*2.;
+```
+
 
 
 Examples:
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/elevation-stripes.yaml" target="_blank">
-<img src="https://tangrams.github.io/tangram-sandbox/styles/elevation-stripes.png" style="width: 100%; height: 100px; object-fit: cover;">
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/elevation.yaml&lines=14" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/elevation.png" style="width: 100%; height: 100px; object-fit: cover;">
 </a>
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
@@ -443,10 +401,103 @@ Examples:
 <img src="https://tangrams.github.io/tangram-sandbox/styles/elevation-ramp.png" style="width: 100%; height: 100px; object-fit: cover;">
 </a>
 
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [elevation-stripes](http://tangrams.github.io/blocks/#elevation-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/elevation/stripes.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Perfect for the `landuse` layer on your elevation maps, the `elevation-stripe` modules use the color of the layer to draw a stripe pattern that changes width based on the surface of the terrain.
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/elevation/stripes.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/elevation/stripes-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **NORMAL_TEXTURE_INDEX**:  The *default value* is ```0```. 
+ -  **STRIPES_PCT**:  The *default value* is ```1.8```. 
+ -  **STRIPES_SCALE**:  The *default value* is ```20.0```. 
+ -  **STRIPES_WIDTH**:  The *default value* is ```dot((sampleRaster(int(NORMAL_TEXTURE_INDEX)).rgb-.5)*2., STRIPES_DIR)*STRIPES_PCT```. 
+ -  **STRIPES_ALPHA**:  The *default value* is ```0.5```. 
+ -  **STRIPES_DIR**:  The *default value* is ```vec3(-0.600,-0.420,0.600)```. 
+
+
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/elevation-stripes.yaml" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/elevation-stripes.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
 ### [FILTER](http://tangrams.github.io/blocks/#filter) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+#### [filter-grain](http://tangrams.github.io/blocks/#filter-grain) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/grain.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Apply a lens grain effect to the scene.
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/filter/grain.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/filter/grain-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **GRAIN_AMOUNT**:  number between ```0.0``` and ```1.0``` that control the *amount*. The *default value* is ```0.3```. 
+ -  **GRAIN_BLEND**:  variable that control the *blend mode* with one of the following values: ```ADD, SUBTRACT, MULTIPLY```. The *default value* is ```SUBTRACT```. 
+
+These are the **shader blocks**:
+
+- **global**:
+ + `float grain ()`
+- **filter**:
+
+```glsl
+// Apply the grain in the amount defined on GRAIN_AMOUNT
+color.rgb = color.rgb GRAIN_BLEND (grain()*GRAIN_AMOUNT);
+
+```
+
+
+
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/grain.yaml&lines=29" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/grain.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
 
 #### [filter-grid](http://tangrams.github.io/blocks/#filter-grid) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/grid.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
@@ -487,6 +538,93 @@ color.rgb = color.rgb GRID_BLEND (tileGrid()*GRID_AMOUNT);
 ```
 
 
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [filter-hatch](http://tangrams.github.io/blocks/#filter-hatch) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/hatch.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Hatching filter based on [Jaume's Sanchez](https://twitter.com/thespite?lang=en) [Cross-hatching GLSL shader](https://www.clicktorelease.com/code/cross-hatching/).
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/filter/hatch.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/filter/hatch-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **uniforms**:
+ -  **u_hatchmap**:  The *default value* is ```imgs/hatch.png```. 
+
+These are the **shader blocks**:
+
+- **global**:
+ + `float getHatch (vec2 st, float brightness)`
+
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/crosshatch.yaml&lines=111" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/crosshatch.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/pericoli.yaml&lines=157" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/pericoli.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [filter-height](http://tangrams.github.io/blocks/#filter-height) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/height.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Adds a dark gradiant to the geometries conform they approach to height 0.
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/filter/height.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/filter/height-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
+
+- **color**:
+
+```glsl
+color.rgb *= min((worldPosition().z*.001 + .5),1.);
+```
+
+
+
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/default.yaml&lines=88" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/default.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -546,144 +684,6 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [filter-hatch](http://tangrams.github.io/blocks/#filter-hatch) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/hatch.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Hatching filter based on [Jaume's Sanchez](https://twitter.com/thespite?lang=en) [Cross-hatching GLSL shader](https://www.clicktorelease.com/code/cross-hatching/).
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/filter/hatch.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/filter/hatch-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **uniforms**:
- -  **u_hatchmap**:  The *default value* is ```imgs/hatch.png```. 
-
-These are the **shader blocks**:
-
-- **global**:
- + `float getHatch (vec2 st, float brightness)`
-
-Examples:
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/crosshatch.yaml&lines=111" target="_blank">
-<img src="https://tangrams.github.io/tangram-sandbox/styles/crosshatch.png" style="width: 100%; height: 100px; object-fit: cover;">
-</a>
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/pericoli.yaml&lines=157" target="_blank">
-<img src="https://tangrams.github.io/tangram-sandbox/styles/pericoli.png" style="width: 100%; height: 100px; object-fit: cover;">
-</a>
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [filter-grain](http://tangrams.github.io/blocks/#filter-grain) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/grain.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Apply a lens grain effect to the scene.
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/filter/grain.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/filter/grain-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **defines**:
- -  **GRAIN_AMOUNT**:  number between ```0.0``` and ```1.0``` that control the *amount*. The *default value* is ```0.3```. 
- -  **GRAIN_BLEND**:  variable that control the *blend mode* with one of the following values: ```ADD, SUBTRACT, MULTIPLY```. The *default value* is ```SUBTRACT```. 
-
-These are the **shader blocks**:
-
-- **global**:
- + `float grain ()`
-- **filter**:
-
-```glsl
-// Apply the grain in the amount defined on GRAIN_AMOUNT
-color.rgb = color.rgb GRAIN_BLEND (grain()*GRAIN_AMOUNT);
-
-```
-
-
-
-Examples:
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/grain.yaml&lines=29" target="_blank">
-<img src="https://tangrams.github.io/tangram-sandbox/styles/grain.png" style="width: 100%; height: 100px; object-fit: cover;">
-</a>
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [filter-height](http://tangrams.github.io/blocks/#filter-height) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/height.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Adds a dark gradiant to the geometries conform they approach to height 0.
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/filter/height.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/filter/height-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **shader blocks**:
-
-- **color**:
-
-```glsl
-color.rgb *= min((worldPosition().z*.001 + .5),1.);
-```
-
-
-
-Examples:
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/default.yaml&lines=88" target="_blank">
-<img src="https://tangrams.github.io/tangram-sandbox/styles/default.png" style="width: 100%; height: 100px; object-fit: cover;">
-</a>
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
 #### [filter-tv](http://tangrams.github.io/blocks/#filter-tv) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/tv.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Apply an old TV effect to the style.
@@ -735,6 +735,39 @@ Examples:
 
 
 ### [FUNCTIONS](http://tangrams.github.io/blocks/#functions) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+#### [functions-aastep](http://tangrams.github.io/blocks/#functions-aastep) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions/aastep.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+AnitAliased ```step()``` function implemented by [Matt DesLauriers](https://twitter.com/mattdesl) in this module <https://github.com/stackgl/glsl-aastep>
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/functions/aastep.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/functions/aastep-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
+
+- **global**:
+ + `float aastep(float threshold, float value)`
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
 
 #### [functions-decode](http://tangrams.github.io/blocks/#functions-decode) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions/decode.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
@@ -881,6 +914,39 @@ These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
+#### [functions-pulse](http://tangrams.github.io/blocks/#functions-pulse) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions/pulse.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+This one dimensional shaping function made by Inigo Quiles in [this article](http://www.iquilezles.org/www/articles/functions/functions.htm).
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/functions/pulse.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/functions/pulse-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
+
+- **global**:
+ + `float pulse (float x, float peak, float width)`
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [functions-zoom](http://tangrams.github.io/blocks/#functions-zoom) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions/zoom.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 when you mix this block to another block you can use the functions `zoom()` or `zoomEase()`. Both will help you to interpolate any values between the zooms `ZOOM_START` and `ZOOM_END`.
@@ -921,72 +987,6 @@ These are the **shader blocks**:
 - **global**:
  + `float zoom()`
  + `float zoomEase()`
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [functions-pulse](http://tangrams.github.io/blocks/#functions-pulse) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions/pulse.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-This one dimensional shaping function made by Inigo Quiles in [this article](http://www.iquilezles.org/www/articles/functions/functions.htm).
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/functions/pulse.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/functions/pulse-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **shader blocks**:
-
-- **global**:
- + `float pulse (float x, float peak, float width)`
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [functions-aastep](http://tangrams.github.io/blocks/#functions-aastep) <a href="https://github.com/tangrams/blocks/blob/gh-pages/functions/aastep.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-AnitAliased ```step()``` function implemented by [Matt DesLauriers](https://twitter.com/mattdesl) in this module <https://github.com/stackgl/glsl-aastep>
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/functions/aastep.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/functions/aastep-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **shader blocks**:
-
-- **global**:
- + `float aastep(float threshold, float value)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
@@ -1044,6 +1044,73 @@ Examples:
 
 ### [GENERATIVE](http://tangrams.github.io/blocks/#generative) <a href="https://github.com/tangrams/blocks/blob/gh-pages/generative" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+#### [generative-caustic](http://tangrams.github.io/blocks/#generative-caustic) <a href="https://github.com/tangrams/blocks/blob/gh-pages/generative/caustics.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Caustic generative texture inspired on <https://www.shadertoy.com/view/MdlXz8> by David Hoskins
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/generative/caustics.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/generative/caustics-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **TAU**:  The *default value* is ```6.28318530718```. 
+ -  **CAUSTIC_ITERATIONS**:  The *default value* is ```3```. 
+
+These are the **shader blocks**:
+
+- **global**:
+ + `vec3 getCaustic (vec2 uv)`
+
+Here are some **benchmarks** of this block performed on a Raspberry Pi:
+[![](http://tangrams.github.io/blocks/./generative/test/generative-caustic.png)](http://tangrams.github.io/blocks/test.html?test=./generative/test/generative-caustic.json)
+
+- **getCaustic_3iter** ( mean: 0.0174675349878 median: 0.017469 )
+
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_3iter.frag"><img src="http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_3iter.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+
+```glsl
+color.rgb += getCaustic(v_texcoord);
+```
+
+
+- **getCaustic_5iter** ( mean: 0.0276638253613 median: 0.027669 )
+
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_5iter.frag"><img src="http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_5iter.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+
+```glsl
+color.rgb += getCaustic(v_texcoord);
+```
+
+
+- **getCaustic_4iter** ( mean: 0.022639675198 median: 0.022643 )
+
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_4iter.frag"><img src="http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_4iter.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+
+```glsl
+color.rgb += getCaustic(v_texcoord);
+```
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [generative-fbm](http://tangrams.github.io/blocks/#generative-fbm) <a href="https://github.com/tangrams/blocks/blob/gh-pages/generative/fbm.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Set of Fractal Brownian Motion functions.
@@ -1085,7 +1152,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 
 - **fbm_float_5oct** ( mean: 0.00846322759747 median: 0.008465 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_5oct.png"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_5oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_5oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_5oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color += fbm(v_texcoord.x);
@@ -1094,7 +1161,7 @@ color += fbm(v_texcoord.x);
 
 - **fbm_vec2_5oct** ( mean: 0.0632126596619 median: 0.063205 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_5oct.png"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_5oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_5oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_5oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color += fbm(v_texcoord);
@@ -1103,7 +1170,7 @@ color += fbm(v_texcoord);
 
 - **fbm_vec3_5oct** ( mean: 0.065895754115 median: 0.065901 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_5oct.png"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_5oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_5oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_5oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color += fbm(vec3(v_texcoord,u_time));
@@ -1112,7 +1179,7 @@ color += fbm(vec3(v_texcoord,u_time));
 
 - **fbm_float_8oct** ( mean: 0.0198538147017 median: 0.019859 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_8oct.png"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_8oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_8oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_8oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color += fbm(v_texcoord.x);
@@ -1121,7 +1188,7 @@ color += fbm(v_texcoord.x);
 
 - **fbm_vec3_8oct** ( mean: 0.138063032717 median: 0.136574 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_8oct.png"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_8oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_8oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_8oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color += fbm(vec3(v_texcoord,u_time));
@@ -1130,7 +1197,7 @@ color += fbm(vec3(v_texcoord,u_time));
 
 - **fbm_float_3oct** ( mean: 0.00535602338824 median: 0.005357 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_3oct.png"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_3oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_3oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_3oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color += fbm(v_texcoord.x);
@@ -1139,7 +1206,7 @@ color += fbm(v_texcoord.x);
 
 - **fbm_vec2_3oct** ( mean: 0.0278355058919 median: 0.027839 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_3oct.png"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_3oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_3oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_3oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color += fbm(v_texcoord);
@@ -1148,7 +1215,7 @@ color += fbm(v_texcoord);
 
 - **fbm_vec3_3oct** ( mean: 0.0290188788927 median: 0.029025 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_3oct.png"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_3oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_3oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_3oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color += fbm(vec3(v_texcoord,u_time));
@@ -1157,77 +1224,10 @@ color += fbm(vec3(v_texcoord,u_time));
 
 - **fbm_vec2_8oct** ( mean: 0.130828491246 median: 0.130785 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_8oct.png"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_8oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_8oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_8oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color += fbm(v_texcoord);
-```
-
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [generative-caustic](http://tangrams.github.io/blocks/#generative-caustic) <a href="https://github.com/tangrams/blocks/blob/gh-pages/generative/caustics.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Caustic generative texture inspired on <https://www.shadertoy.com/view/MdlXz8> by David Hoskins
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/generative/caustics.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/generative/caustics-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **defines**:
- -  **TAU**:  The *default value* is ```6.28318530718```. 
- -  **CAUSTIC_ITERATIONS**:  The *default value* is ```3```. 
-
-These are the **shader blocks**:
-
-- **global**:
- + `vec3 getCaustic (vec2 uv)`
-
-Here are some **benchmarks** of this block performed on a Raspberry Pi:
-[![](http://tangrams.github.io/blocks/./generative/test/generative-caustic.png)](http://tangrams.github.io/blocks/test.html?test=./generative/test/generative-caustic.json)
-
-- **getCaustic_3iter** ( mean: 0.0174675349878 median: 0.017469 )
-
-<a href="http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_3iter.png"><img src="http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_3iter.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
-
-```glsl
-color.rgb += getCaustic(v_texcoord);
-```
-
-
-- **getCaustic_5iter** ( mean: 0.0276638253613 median: 0.027669 )
-
-<a href="http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_5iter.png"><img src="http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_5iter.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
-
-```glsl
-color.rgb += getCaustic(v_texcoord);
-```
-
-
-- **getCaustic_4iter** ( mean: 0.022639675198 median: 0.022643 )
-
-<a href="http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_4iter.png"><img src="http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_4iter.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
-
-```glsl
-color.rgb += getCaustic(v_texcoord);
 ```
 
 
@@ -1280,7 +1280,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 
 - **snoise_vec3** ( mean: 0.00682462164361 median: 0.006827 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec3.png"><img src="http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec3.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec3.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec3.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color += snoise(vec3(v_texcoord.xy,u_time)*2.);
@@ -1289,7 +1289,7 @@ color += snoise(vec3(v_texcoord.xy,u_time)*2.);
 
 - **snoise_vec2** ( mean: 0.00455209405738 median: 0.004552 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec2.png"><img src="http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec2.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec2.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec2.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color += snoise(v_texcoord.xy*2.);
@@ -1298,7 +1298,7 @@ color += snoise(v_texcoord.xy*2.);
 
 - **snoise_vec2_t** ( mean: 0.00455244673469 median: 0.004553 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec2_t.png"><img src="http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec2_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec2_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec2_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color += snoise(v_texcoord.xy*2.);
@@ -1307,7 +1307,7 @@ color += snoise(v_texcoord.xy*2.);
 
 - **noise_float** ( mean: 0.00234011278809 median: 0.00234 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/noise-noise_float.png"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_float.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-noise_float.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_float.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color += noise(v_texcoord.x*2.);
@@ -1316,7 +1316,7 @@ color += noise(v_texcoord.x*2.);
 
 - **noise_float_t** ( mean: 0.00161085638515 median: 0.001554 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/noise-noise_float_t.png"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_float_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-noise_float_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_float_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color += noise(v_texcoord.x*2.);
@@ -1325,7 +1325,7 @@ color += noise(v_texcoord.x*2.);
 
 - **snoise_vec3_t** ( mean: 0.00682170448065 median: 0.006828 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec3_t.png"><img src="http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec3_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec3_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec3_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color += snoise(vec3(v_texcoord.xy,u_time)*2.);
@@ -1334,7 +1334,7 @@ color += snoise(vec3(v_texcoord.xy,u_time)*2.);
 
 - **noise_vec3_t** ( mean: 0.00198670782146 median: 0.0018415 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/noise-noise_vec3_t.png"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_vec3_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-noise_vec3_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_vec3_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color += noise(vec3(v_texcoord.xy,u_time)*2.);
@@ -1343,7 +1343,7 @@ color += noise(vec3(v_texcoord.xy,u_time)*2.);
 
 - **noise_vec3** ( mean: 0.00679913159503 median: 0.006802 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/noise-noise_vec3.png"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_vec3.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-noise_vec3.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_vec3.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color += noise(vec3(v_texcoord.xy,u_time)*2.);
@@ -1352,7 +1352,7 @@ color += noise(vec3(v_texcoord.xy,u_time)*2.);
 
 - **noise_vec2** ( mean: 0.00647200060963 median: 0.006474 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/noise-noise_vec2.png"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_vec2.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-noise_vec2.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_vec2.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color += noise(v_texcoord.xy*2.);
@@ -1361,65 +1361,10 @@ color += noise(v_texcoord.xy*2.);
 
 - **noise_vec2_t** ( mean: 0.00160196899857 median: 0.001544 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/noise-noise_vec2_t.png"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_vec2_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-noise_vec2_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_vec2_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color += noise(v_texcoord.xy*2.);
-```
-
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [generative-voronoi](http://tangrams.github.io/blocks/#generative-voronoi) <a href="https://github.com/tangrams/blocks/blob/gh-pages/generative/voronoi.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Set of Voronoi functions.
-For more information on this theme read [this chapter of The Book of Shaders about Cellular Noise and Voronoi](http://thebookofshaders.com/12/).
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/generative/voronoi.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/generative/voronoi-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **shader blocks**:
-
-- **global**:
- + `vec3 voronoi (vec2 st)`
-
-Here are some **benchmarks** of this block performed on a Raspberry Pi:
-[![](http://tangrams.github.io/blocks/./generative/test/generative-voronoi.png)](http://tangrams.github.io/blocks/test.html?test=./generative/test/generative-voronoi.json)
-
-- **voronoi** ( mean: 0.0214614362375 median: 0.021464 )
-
-<a href="http://tangrams.github.io/blocks/./generative/test/voronoi-voronoi.png"><img src="http://tangrams.github.io/blocks/./generative/test/voronoi-voronoi.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
-
-```glsl
-color.rgb = voronoi(v_texcoord*2.);
-```
-
-
-- **voronoi_t** ( mean: 0.00494794069696 median: 0.004964 )
-
-<a href="http://tangrams.github.io/blocks/./generative/test/voronoi-voronoi_t.png"><img src="http://tangrams.github.io/blocks/./generative/test/voronoi-voronoi_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
-
-```glsl
-color.rgb = voronoi(v_texcoord*2.);
 ```
 
 
@@ -1470,7 +1415,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 
 - **random3_vec3_t** ( mean: 0.00271851857935 median: 0.00272 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/random-random3_vec3_t.png"><img src="http://tangrams.github.io/blocks/./generative/test/random-random3_vec3_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random3_vec3_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random3_vec3_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color.rgb += random3(vec3(v_texcoord.xy,u_time)*2.);
@@ -1479,7 +1424,7 @@ color.rgb += random3(vec3(v_texcoord.xy,u_time)*2.);
 
 - **random_vec3** ( mean: 0.00164128253774 median: 0.001586 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/random-random_vec3.png"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_vec3.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random_vec3.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_vec3.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color.rgb += random(vec3(v_texcoord.xy,u_time)*2.);
@@ -1488,7 +1433,7 @@ color.rgb += random(vec3(v_texcoord.xy,u_time)*2.);
 
 - **random_vec2** ( mean: 0.00247574265085 median: 0.002434 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/random-random_vec2.png"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_vec2.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random_vec2.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_vec2.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color.rgb += random(v_texcoord.xy*2.);
@@ -1497,7 +1442,7 @@ color.rgb += random(v_texcoord.xy*2.);
 
 - **random3_vec2_t** ( mean: 0.0033792866475 median: 0.003098 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/random-random3_vec2_t.png"><img src="http://tangrams.github.io/blocks/./generative/test/random-random3_vec2_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random3_vec2_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random3_vec2_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color.rgb += random3(v_texcoord.xy*2.);
@@ -1506,7 +1451,7 @@ color.rgb += random3(v_texcoord.xy*2.);
 
 - **random_vec2_t** ( mean: 0.0030430110525 median: 0.003078 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/random-random_vec2_t.png"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_vec2_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random_vec2_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_vec2_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color.rgb += random(v_texcoord.xy*2.);
@@ -1515,7 +1460,7 @@ color.rgb += random(v_texcoord.xy*2.);
 
 - **random_float_t** ( mean: 0.00161000838274 median: 0.001546 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/random-random_float_t.png"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_float_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random_float_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_float_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color.rgb += random(v_texcoord.x*2.);
@@ -1524,7 +1469,7 @@ color.rgb += random(v_texcoord.x*2.);
 
 - **random_vec3_t** ( mean: 0.00274600327667 median: 0.00272 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/random-random_vec3_t.png"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_vec3_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random_vec3_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_vec3_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color.rgb += random(vec3(v_texcoord.xy,u_time)*2.);
@@ -1533,7 +1478,7 @@ color.rgb += random(vec3(v_texcoord.xy,u_time)*2.);
 
 - **random2_vec2_t** ( mean: 0.00275469450186 median: 0.002739 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/random-random2_vec2_t.png"><img src="http://tangrams.github.io/blocks/./generative/test/random-random2_vec2_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random2_vec2_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random2_vec2_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color.rg += random2(v_texcoord.xy*2.);
@@ -1542,7 +1487,7 @@ color.rg += random2(v_texcoord.xy*2.);
 
 - **random_float** ( mean: 0.00160817445674 median: 0.001531 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/random-random_float.png"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_float.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random_float.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_float.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color.rgb += random(v_texcoord.x*2.);
@@ -1551,7 +1496,7 @@ color.rgb += random(v_texcoord.x*2.);
 
 - **random2_vec2** ( mean: 0.00246919490477 median: 0.002529 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/random-random2_vec2.png"><img src="http://tangrams.github.io/blocks/./generative/test/random-random2_vec2.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random2_vec2.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random2_vec2.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color.rg += random2(v_texcoord.xy*2.);
@@ -1560,7 +1505,7 @@ color.rg += random2(v_texcoord.xy*2.);
 
 - **random3_vec3** ( mean: 0.0018941242591 median: 0.001787 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/random-random3_vec3.png"><img src="http://tangrams.github.io/blocks/./generative/test/random-random3_vec3.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random3_vec3.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random3_vec3.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color.rgb += random3(vec3(v_texcoord.xy,u_time)*2.);
@@ -1569,10 +1514,65 @@ color.rgb += random3(vec3(v_texcoord.xy,u_time)*2.);
 
 - **random3_vec2** ( mean: 0.00276108147985 median: 0.002759 )
 
-<a href="http://tangrams.github.io/blocks/./generative/test/random-random3_vec2.png"><img src="http://tangrams.github.io/blocks/./generative/test/random-random3_vec2.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random3_vec2.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random3_vec2.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color.rgb += random3(v_texcoord.xy*2.);
+```
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [generative-voronoi](http://tangrams.github.io/blocks/#generative-voronoi) <a href="https://github.com/tangrams/blocks/blob/gh-pages/generative/voronoi.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Set of Voronoi functions.
+For more information on this theme read [this chapter of The Book of Shaders about Cellular Noise and Voronoi](http://thebookofshaders.com/12/).
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/generative/voronoi.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/generative/voronoi-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
+
+- **global**:
+ + `vec3 voronoi (vec2 st)`
+
+Here are some **benchmarks** of this block performed on a Raspberry Pi:
+[![](http://tangrams.github.io/blocks/./generative/test/generative-voronoi.png)](http://tangrams.github.io/blocks/test.html?test=./generative/test/generative-voronoi.json)
+
+- **voronoi** ( mean: 0.0214614362375 median: 0.021464 )
+
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/voronoi-voronoi.frag"><img src="http://tangrams.github.io/blocks/./generative/test/voronoi-voronoi.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+
+```glsl
+color.rgb = voronoi(v_texcoord*2.);
+```
+
+
+- **voronoi_t** ( mean: 0.00494794069696 median: 0.004964 )
+
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/voronoi-voronoi_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/voronoi-voronoi_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+
+```glsl
+color.rgb = voronoi(v_texcoord*2.);
 ```
 
 
@@ -1580,6 +1580,99 @@ color.rgb += random3(v_texcoord.xy*2.);
 
 
 ### [GEOMETRY](http://tangrams.github.io/blocks/#geometry) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+#### [geometry-dynamic-height](http://tangrams.github.io/blocks/#geometry-dynamic-height) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-height.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Scale geometries in `z` acording to the zoom level
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/geometry/dynamic-height.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/geometry/dynamic-height-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **ZOOM_START**:  The *default value* is ```15.0```. 
+ -  **ZOOM_END**:  The *default value* is ```20.0```. 
+ -  **HEIGHT_MAX**:  The *default value* is ```2.5```. 
+ -  **HEIGHT_MIN**:  The *default value* is ```1.0```. 
+ -  **HEIGHT**:  The *default value* is ```zoom()```. 
+
+These are the **shader blocks**:
+
+- **position**:
+
+```glsl
+position.z *= max(HEIGHT_MIN,HEIGHT_MAX*HEIGHT);
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [geometry-dynamic-width](http://tangrams.github.io/blocks/#geometry-dynamic-width) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-width.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Change the width of a line acording to the altitud
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/geometry/dynamic-width.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/geometry/dynamic-width-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **WIDTH_MIN**:  The *default value* is ```0.2```. 
+ -  **WIDTH_Z_SCALE**:  The *default value* is ```0.006```. 
+ -  **WIDTH_MAX**:  The *default value* is ```1.0```. 
+
+These are the **shader blocks**:
+
+- **width**:
+
+```glsl
+width *= min(WIDTH_MIN+(position.z*WIDTH_Z_SCALE)*(position.z*WIDTH_Z_SCALE),WIDTH_MAX);
+```
+
+
+
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/blueprint.yaml&lines=7-28" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/blueprint.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
 
 #### [geometry-matrices](http://tangrams.github.io/blocks/#geometry-matrices) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/matrices.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
@@ -1656,9 +1749,9 @@ These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [geometry-dynamic-width](http://tangrams.github.io/blocks/#geometry-dynamic-width) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-width.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+#### [geometry-projections](http://tangrams.github.io/blocks/#geometry-projections) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/projections.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-Change the width of a line acording to the altitud
+Collection of functions to do different geometry projections
 
 
 
@@ -1666,7 +1759,7 @@ To import this block add the following url to your `import` list:
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/geometry/dynamic-width.yaml
+    - https://tangrams.github.io/blocks/geometry/projections.yaml
 ```
 
 
@@ -1676,30 +1769,34 @@ If you want to import this block together **with their dependencies** use this o
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/geometry/dynamic-width-full.yaml
+    - https://tangrams.github.io/blocks/geometry/projections-full.yaml
 ```
 
 
 These blocks uses a custom **shader**.
 These are the **defines**:
- -  **WIDTH_MIN**:  The *default value* is ```0.2```. 
- -  **WIDTH_Z_SCALE**:  The *default value* is ```0.006```. 
- -  **WIDTH_MAX**:  The *default value* is ```1.0```. 
+ -  **EARTH_RADIUS**:  The *default value* is ```6378137.0```. 
 
 These are the **shader blocks**:
 
-- **width**:
-
-```glsl
-width *= min(WIDTH_MIN+(position.z*WIDTH_Z_SCALE)*(position.z*WIDTH_Z_SCALE),WIDTH_MAX);
-```
-
-
-
-Examples:
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/blueprint.yaml&lines=7-28" target="_blank">
-<img src="https://tangrams.github.io/tangram-sandbox/styles/blueprint.png" style="width: 100%; height: 100px; object-fit: cover;">
-</a>
+- **global**:
+ + `float y2lat_d (float y)`
+ + `float x2lon_d (float x)`
+ + `float lat2y_d (float lat)`
+ + `float lon2x_d (float lon)`
+ + `float y2lat_m (float y)`
+ + `float x2lon_m (float x)`
+ + `float lat2y_m (float lat)`
+ + `float lon2x_m (float lon)`
+ + `vec2 latlon2albers (float lat, float lon, float lat0, float lng0, float phi1, float phi2 )`
+ + `vec2 latlon2albers (float lat, float lon, float delta_phi1, float delta_phi2)`
+ + `vec2 latlon2albers (float lat, float lon, float width)`
+ + `vec2 latlon2albers (float lat, float lon)`
+ + `vec2 latlon2USalbers (float lat, float lon)`
+ + `vec2 latlon2azimuthal (float lat, float lon, float phi1, float lambda0)`
+ + `vec2 azimuthal(float lat, float lon)`
+ + `vec2 azimuthalNorth(float lat, float lon)`
+ + `vec2 azimuthalSouth(float lat, float lon)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -1802,151 +1899,10 @@ Examples:
 <img src="https://tangrams.github.io/tangram-sandbox/styles/oblivion.png" style="width: 100%; height: 100px; object-fit: cover;">
 </a>
 
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [geometry-dynamic-height](http://tangrams.github.io/blocks/#geometry-dynamic-height) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/dynamic-height.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Scale geometries in `z` acording to the zoom level
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/geometry/dynamic-height.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/geometry/dynamic-height-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **defines**:
- -  **ZOOM_START**:  The *default value* is ```15.0```. 
- -  **ZOOM_END**:  The *default value* is ```20.0```. 
- -  **HEIGHT_MAX**:  The *default value* is ```2.5```. 
- -  **HEIGHT_MIN**:  The *default value* is ```1.0```. 
- -  **HEIGHT**:  The *default value* is ```zoom()```. 
-
-These are the **shader blocks**:
-
-- **position**:
-
-```glsl
-position.z *= max(HEIGHT_MIN,HEIGHT_MAX*HEIGHT);
-```
-
-
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [geometry-projections](http://tangrams.github.io/blocks/#geometry-projections) <a href="https://github.com/tangrams/blocks/blob/gh-pages/geometry/projections.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Collection of functions to do different geometry projections
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/geometry/projections.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/geometry/projections-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **defines**:
- -  **EARTH_RADIUS**:  The *default value* is ```6378137.0```. 
-
-These are the **shader blocks**:
-
-- **global**:
- + `float y2lat_d (float y)`
- + `float x2lon_d (float x)`
- + `float lat2y_d (float lat)`
- + `float lon2x_d (float lon)`
- + `float y2lat_m (float y)`
- + `float x2lon_m (float x)`
- + `float lat2y_m (float lat)`
- + `float lon2x_m (float lon)`
- + `vec2 latlon2albers (float lat, float lon, float lat0, float lng0, float phi1, float phi2 )`
- + `vec2 latlon2albers (float lat, float lon, float delta_phi1, float delta_phi2)`
- + `vec2 latlon2albers (float lat, float lon, float width)`
- + `vec2 latlon2albers (float lat, float lon)`
- + `vec2 latlon2USalbers (float lat, float lon)`
- + `vec2 latlon2azimuthal (float lat, float lon, float phi1, float lambda0)`
- + `vec2 azimuthal(float lat, float lon)`
- + `vec2 azimuthalNorth(float lat, float lon)`
- + `vec2 azimuthalSouth(float lat, float lon)`
-
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
 ### [LINES](http://tangrams.github.io/blocks/#lines) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-#### [lines-glow](http://tangrams.github.io/blocks/#lines-glow) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/glow.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Add an exciting glow effect to your
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/lines/glow.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/lines/glow-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **defines**:
- -  **GLOW_WIDTH**:  number between ```0.0``` and ```1.0``` that control the *solid width*. The *default value* is ```0.4```. 
- -  **GLOW_BRIGHTNESS**:  number between ```0.0``` and ```1.0``` that control the *glow brightness*. The *default value* is ```0.25```. 
-
-These are the **shader blocks**:
-
-- **color**:
-
-```glsl
-vec4 glow_tmp_color = color;
-color = glow_tmp_color*(aastep(GLOW_WIDTH,1.-v_texcoord.x)*aastep(GLOW_WIDTH,v_texcoord.x));
-color += glow_tmp_color*(sin(v_texcoord.x*PI)*GLOW_BRIGHTNESS);
-```
-
-
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
 
 #### [lines-chevron](http://tangrams.github.io/blocks/#lines-chevron) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/chevron.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
@@ -1989,48 +1945,6 @@ These are the **shader blocks**:
 color = mix(vec4(CHEVRON_BACKGROUND_COLOR, CHEVRON_BACKGROUND_ALPHA),
             vec4(CHEVRON_COLOR, CHEVRON_ALPHA),
             step(.5,fract((v_texcoord.y+abs(v_texcoord.x-.5)) * CHEVRON_SCALE)*CHEVRON_SIZE));
-```
-
-
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [lines-dots](http://tangrams.github.io/blocks/#lines-dots) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/dots.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Apply a dot pattern to a line
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/lines/dots.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/lines/dots-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **defines**:
- -  **DOTS_SIZE**:  number between ```0.0``` and ```1.0``` that control the *size*. The *default value* is ```0.05```. 
-
-These are the **shader blocks**:
-
-- **color**:
-
-```glsl
-vec2 st = fract(v_texcoord.xy)-.5;
-color.a = 1.- step(DOTS_SIZE, dot(st,st)*2.);
 ```
 
 
@@ -2082,58 +1996,6 @@ if ( step(DASH_SIZE,fract(v_texcoord.y*DASH_SCALE)) == 0.){
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/elevation.yaml&lines=59-63" target="_blank">
 <img src="https://tangrams.github.io/tangram-sandbox/styles/elevation.png" style="width: 100%; height: 100px; object-fit: cover;">
-</a>
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [lines-outline](http://tangrams.github.io/blocks/#lines-outline) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/outline.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Apply an outline to a line
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/lines/outline.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/lines/outline-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **defines**:
- -  **OUTLINE_WIDTH**:  number between ```0.0``` and ```1.0``` that control the *width*. The *default value* is ```0.1```. 
- -  **OUTLINE_COLOR**:  The *default value* is ```color.rgb*.5```. 
-
-These are the **shader blocks**:
-
-- **color**:
-
-```glsl
-color.rgb = mix(color.rgb,
-                OUTLINE_COLOR,
-                (1.0-(aastep(OUTLINE_WIDTH,v_texcoord.x)-step(1.0-OUTLINE_WIDTH,v_texcoord.x))));
-```
-
-
-
-Examples:
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/blueprint.yaml&lines=116-120" target="_blank">
-<img src="https://tangrams.github.io/tangram-sandbox/styles/blueprint.png" style="width: 100%; height: 100px; object-fit: cover;">
-</a>
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/callejas.yaml&lines=116" target="_blank">
-<img src="https://tangrams.github.io/tangram-sandbox/styles/callejas.png" style="width: 100%; height: 100px; object-fit: cover;">
 </a>
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
@@ -2239,6 +2101,182 @@ color.a += smoothstep(1.,0.,df)*(DOTS_GLOW);
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
+#### [lines-dots](http://tangrams.github.io/blocks/#lines-dots) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/dots.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Apply a dot pattern to a line
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/dots.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/dots-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **DOTS_SIZE**:  number between ```0.0``` and ```1.0``` that control the *size*. The *default value* is ```0.05```. 
+
+These are the **shader blocks**:
+
+- **color**:
+
+```glsl
+vec2 st = fract(v_texcoord.xy)-.5;
+color.a = 1.- step(DOTS_SIZE, dot(st,st)*2.);
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [lines-glow](http://tangrams.github.io/blocks/#lines-glow) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/glow.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Add an exciting glow effect to your
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/glow.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/glow-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **GLOW_WIDTH**:  number between ```0.0``` and ```1.0``` that control the *solid width*. The *default value* is ```0.4```. 
+ -  **GLOW_BRIGHTNESS**:  number between ```0.0``` and ```1.0``` that control the *glow brightness*. The *default value* is ```0.25```. 
+
+These are the **shader blocks**:
+
+- **color**:
+
+```glsl
+vec4 glow_tmp_color = color;
+color = glow_tmp_color*(aastep(GLOW_WIDTH,1.-v_texcoord.x)*aastep(GLOW_WIDTH,v_texcoord.x));
+color += glow_tmp_color*(sin(v_texcoord.x*PI)*GLOW_BRIGHTNESS);
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [lines-outline](http://tangrams.github.io/blocks/#lines-outline) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/outline.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Apply an outline to a line
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/outline.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/outline-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **OUTLINE_WIDTH**:  number between ```0.0``` and ```1.0``` that control the *width*. The *default value* is ```0.1```. 
+ -  **OUTLINE_COLOR**:  The *default value* is ```color.rgb*.5```. 
+
+These are the **shader blocks**:
+
+- **color**:
+
+```glsl
+color.rgb = mix(color.rgb,
+                OUTLINE_COLOR,
+                (1.0-(aastep(OUTLINE_WIDTH,v_texcoord.x)-step(1.0-OUTLINE_WIDTH,v_texcoord.x))));
+```
+
+
+
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/blueprint.yaml&lines=116-120" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/blueprint.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/callejas.yaml&lines=116" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/callejas.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [lines-rainbow](http://tangrams.github.io/blocks/#lines-rainbow) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/rainbow.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Apply a rainbow color pattern to a line
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/rainbow.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/rainbow-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
+
+- **color**:
+
+```glsl
+color.rgb = hsb2rgb(vec3(v_texcoord.x,1.,1.));
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [lines-stripes](http://tangrams.github.io/blocks/#lines-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/stripes.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Apply a stripe pattern to a line
@@ -2285,44 +2323,6 @@ Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/grain-roads.yaml&lines=35" target="_blank">
 <img src="https://tangrams.github.io/tangram-sandbox/styles/grain-roads.png" style="width: 100%; height: 100px; object-fit: cover;">
 </a>
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [lines-rainbow](http://tangrams.github.io/blocks/#lines-rainbow) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/rainbow.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Apply a rainbow color pattern to a line
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/lines/rainbow.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/lines/rainbow-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **shader blocks**:
-
-- **color**:
-
-```glsl
-color.rgb = hsb2rgb(vec3(v_texcoord.x,1.,1.));
-```
-
-
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
@@ -2407,40 +2407,6 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [patterns-waves](http://tangrams.github.io/blocks/#patterns-waves) <a href="https://github.com/tangrams/blocks/blob/gh-pages/patterns/waves.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Collection of functions to draw wavy stripes. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/) 
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/patterns/waves.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/patterns/waves-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **shader blocks**:
-
-- **global**:
- + `float wavesDF (vec2 st, float freq, float amp)`
- + `float waves (vec2 st, float freq, float amp, float width)`
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
 #### [patterns-stripes](http://tangrams.github.io/blocks/#patterns-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/patterns/stripes.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Collection of functions to draw stripes. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)    
@@ -2492,6 +2458,40 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
+#### [patterns-waves](http://tangrams.github.io/blocks/#patterns-waves) <a href="https://github.com/tangrams/blocks/blob/gh-pages/patterns/waves.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Collection of functions to draw wavy stripes. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/) 
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/patterns/waves.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/patterns/waves-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
+
+- **global**:
+ + `float wavesDF (vec2 st, float freq, float amp)`
+ + `float waves (vec2 st, float freq, float amp, float width)`
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [patterns-zigzag](http://tangrams.github.io/blocks/#patterns-zigzag) <a href="https://github.com/tangrams/blocks/blob/gh-pages/patterns/zigzag.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Collection of functions to draw zigzag stripes. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/) 
@@ -2527,44 +2527,6 @@ These are the **shader blocks**:
 
 
 ### [POINTS](http://tangrams.github.io/blocks/#points) <a href="https://github.com/tangrams/blocks/blob/gh-pages/points" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-#### [points-glow](http://tangrams.github.io/blocks/#points-glow) <a href="https://github.com/tangrams/blocks/blob/gh-pages/points/glow.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/points/glow.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/points/glow-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **shader blocks**:
-
-- **filter**:
-
-```glsl
-float b = getBrightness(color.rgb);
-vec2 st = v_texcoord.xy;
-color = mix(v_color*color.a,vec4(0.),b*b);
-```
-
-
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
 
 #### [points-cross](http://tangrams.github.io/blocks/#points-cross) <a href="https://github.com/tangrams/blocks/blob/gh-pages/points/cross.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
@@ -2656,6 +2618,44 @@ color.a = fill(.5,sdf) - stroke(DOT_OFFSET,sdf);
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
+#### [points-glow](http://tangrams.github.io/blocks/#points-glow) <a href="https://github.com/tangrams/blocks/blob/gh-pages/points/glow.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/points/glow.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/points/glow-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
+
+- **filter**:
+
+```glsl
+float b = getBrightness(color.rgb);
+vec2 st = v_texcoord.xy;
+color = mix(v_color*color.a,vec4(0.),b*b);
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [points-shape](http://tangrams.github.io/blocks/#points-shape) <a href="https://github.com/tangrams/blocks/blob/gh-pages/points/shape.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Draws shape with N amount of sides (`SHAPE_SIDES`), a colored border (`SHAPE_BORDER_WIDTH` & `SHAPE_BORDER_COLOR`). To learn more about shapes on shaders read [this chapter from The Book of Shader](http://thebookofshaders.com/07/)
@@ -2711,6 +2711,195 @@ Examples:
 
 
 ### [POLYGONS](http://tangrams.github.io/blocks/#polygons) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+#### [polygons-diagonal-dash](http://tangrams.github.io/blocks/#polygons-diagonal-dash) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/diagonal-dash.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Apply a diagonal dash pattern to the polygon style. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/diagonal-dash.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/diagonal-dash-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **DASH_SIZE**:  number between ```0.0``` and ```1.0``` that control the *alpha*. The *default value* is ```0.9```. 
+ -  **DASH_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
+ -  **DASH_SCALE**:  number between ```1.0``` and ```1000.0``` that control the *scale*. The *default value* is ```10.0```. 
+ -  **DASH_COLOR**:  The *default value* is ```color.rgb*.5```. 
+ -  **DASH_TYPE**:  variable that control the *type* with one of the following values: ```fill, stroke```. The *default value* is ```fill```. 
+ -  **DASH_TILE_STYLE**:  variable that control the *tile type* with one of the following values: ```tile, brick```. The *default value* is ```tile```. 
+
+These are the **shader blocks**:
+
+- **global**:
+ + `float dashDF(vec2 st)`
+- **color**:
+
+```glsl
+color.rgb = mix(DASH_BACKGROUND_COLOR, 
+                DASH_COLOR, 
+                DASH_TYPE( DASH_SIZE, dashDF(DASH_TILE_STYLE(getTileCoords()*DASH_SCALE,3.))) );
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [polygons-diagonal-grid](http://tangrams.github.io/blocks/#polygons-diagonal-grid) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/diagonal-grid.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Apply a diagonal grid pattern to the polygon style. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/diagonal-grid.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/diagonal-grid-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **GRID_SCALE**:  number between ```1.0``` and ```1000.0``` that control the *scale*. The *default value* is ```20.0```. 
+ -  **GRID_COLOR**:  The *default value* is ```color.rgb```. 
+ -  **GRID_BACKGROUND_COLOR**:  The *default value* is ```color.rgb*.5```. 
+ -  **GRID_WIDTH**:  number between ```0.0``` and ```1.0``` that control the *width*. The *default value* is ```0.05```. 
+
+These are the **shader blocks**:
+
+- **color**:
+
+```glsl
+color.rgb = mix(GRID_COLOR, 
+                GRID_BACKGROUND_COLOR, 
+                diagonalGrid(   fract(getTileCoords()*GRID_SCALE),
+                                GRID_WIDTH));
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [polygons-diagonal-stripes](http://tangrams.github.io/blocks/#polygons-diagonal-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/diagonal-stripes.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Apply a diagonal stripe pattern to the polygon style. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/diagonal-stripes.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/diagonal-stripes-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **STRIPES_ALPHA**:  number between ```0.0``` and ```1.0``` that control the *alpha*. The *default value* is ```1.0```. 
+ -  **STRIPES_SCALE**:  number between ```1.0``` and ```1000.0``` that control the *scale*. The *default value* is ```2.0```. 
+ -  **STRIPES_WIDTH**:  number between ```0.0``` and ```1.0``` that control the *alpha*. The *default value* is ```0.5```. 
+
+These are the **shader blocks**:
+
+- **color**:
+
+```glsl
+color.a = diagonalStripes( (getTileCoords()*0.9999)*floor(STRIPES_SCALE), 
+                            STRIPES_WIDTH) * STRIPES_ALPHA;
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [polygons-dots](http://tangrams.github.io/blocks/#polygons-dots) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/dots.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Apply dot patterns to a polygon. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/dots.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/polygons/dots-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **DOTS_SIZE**:  number between ```0.0``` and ```1.0``` that control the *size*. The *default value* is ```0.41```. 
+ -  **DOTS_TYPE**:  variable that control the *type* with one of the following values: ```fill, stroke```. The *default value* is ```fill```. 
+ -  **DOTS_TILE_STYLE**:  variable that control the *tile type* with one of the following values: ```tile, brick```. The *default value* is ```brick```. 
+ -  **DOTS_SCALE**:  number between ```1.0``` and ```1000.0``` that control the *scale*. The *default value* is ```10.0```. 
+ -  **DOTS_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
+ -  **DOTS_COLOR**:  The *default value* is ```color.rgb*.5```. 
+
+These are the **shader blocks**:
+
+- **color**:
+
+```glsl
+color.rgb = mix(DOTS_BACKGROUND_COLOR, 
+                DOTS_COLOR, 
+                DOTS_TYPE( DOTS_SIZE, circleDF(vec2(0.5)-DOTS_TILE_STYLE(getTileCoords()*DOTS_SCALE,2.))) );
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
 
 #### [polygons-glass-walls](http://tangrams.github.io/blocks/#polygons-glass-walls) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/glass-walls.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
@@ -2774,9 +2963,9 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [polygons-dots](http://tangrams.github.io/blocks/#polygons-dots) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/dots.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+#### [polygons-pixelate](http://tangrams.github.io/blocks/#polygons-pixelate) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/pixelate.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-Apply dot patterns to a polygon. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)
+Apply a random pixelated pattern to the polygon style. To learn more about patterns or random check [this chapter](https://thebookofshaders.com/09/) or  [this other chapter from the Book of Shaders](https://thebookofshaders.com/10/)
 
 
 
@@ -2784,7 +2973,7 @@ To import this block add the following url to your `import` list:
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/polygons/dots.yaml
+    - https://tangrams.github.io/blocks/polygons/pixelate.yaml
 ```
 
 
@@ -2794,27 +2983,24 @@ If you want to import this block together **with their dependencies** use this o
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/polygons/dots-full.yaml
+    - https://tangrams.github.io/blocks/polygons/pixelate-full.yaml
 ```
 
 
 These blocks uses a custom **shader**.
 These are the **defines**:
- -  **DOTS_SIZE**:  number between ```0.0``` and ```1.0``` that control the *size*. The *default value* is ```0.41```. 
- -  **DOTS_TYPE**:  variable that control the *type* with one of the following values: ```fill, stroke```. The *default value* is ```fill```. 
- -  **DOTS_TILE_STYLE**:  variable that control the *tile type* with one of the following values: ```tile, brick```. The *default value* is ```brick```. 
- -  **DOTS_SCALE**:  number between ```1.0``` and ```1000.0``` that control the *scale*. The *default value* is ```10.0```. 
- -  **DOTS_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
- -  **DOTS_COLOR**:  The *default value* is ```color.rgb*.5```. 
+ -  **PIXELATE_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
+ -  **PIXELATE_SCALE**:  number between ```1.0``` and ```1000.0``` that control the *scale*. The *default value* is ```40.0```. 
+ -  **PIXELATE_COLOR**:  The *default value* is ```color.rgb*.5```. 
 
 These are the **shader blocks**:
 
 - **color**:
 
 ```glsl
-color.rgb = mix(DOTS_BACKGROUND_COLOR, 
-                DOTS_COLOR, 
-                DOTS_TYPE( DOTS_SIZE, circleDF(vec2(0.5)-DOTS_TILE_STYLE(getTileCoords()*DOTS_SCALE,2.))) );
+color.rgb = mix(PIXELATE_BACKGROUND_COLOR,
+                PIXELATE_COLOR,
+                random(floor(getTileCoords()*PIXELATE_SCALE)));
 ```
 
 
@@ -2878,9 +3064,9 @@ color.rgb = mix(SHIMMERING_COLOR,
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [polygons-diagonal-stripes](http://tangrams.github.io/blocks/#polygons-diagonal-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/diagonal-stripes.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+#### [polygons-stripes](http://tangrams.github.io/blocks/#polygons-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/stripes.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-Apply a diagonal stripe pattern to the polygon style. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)
+Apply stripe pattern to the polygon style. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)
 
 
 
@@ -2888,7 +3074,7 @@ To import this block add the following url to your `import` list:
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/polygons/diagonal-stripes.yaml
+    - https://tangrams.github.io/blocks/polygons/stripes.yaml
 ```
 
 
@@ -2898,115 +3084,25 @@ If you want to import this block together **with their dependencies** use this o
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/polygons/diagonal-stripes-full.yaml
+    - https://tangrams.github.io/blocks/polygons/stripes-full.yaml
 ```
 
 
 These blocks uses a custom **shader**.
 These are the **defines**:
- -  **STRIPES_ALPHA**:  number between ```0.0``` and ```1.0``` that control the *alpha*. The *default value* is ```1.0```. 
+ -  **STRIPES_WIDTH**:  number between ```0.0``` and ```1.0``` that control the *width*. The *default value* is ```0.5```. 
+ -  **STRIPES_ANGLE**:  number between ```0.0``` and ```3.1415``` that control the *angle (radiants)*. The *default value* is ```PI*0.25```. 
  -  **STRIPES_SCALE**:  number between ```1.0``` and ```1000.0``` that control the *scale*. The *default value* is ```2.0```. 
- -  **STRIPES_WIDTH**:  number between ```0.0``` and ```1.0``` that control the *alpha*. The *default value* is ```0.5```. 
+ -  **STRIPES_ALPHA**:  number between ```0.0``` and ```1.0``` that control the *amount*. The *default value* is ```0.5```. 
 
 These are the **shader blocks**:
 
 - **color**:
 
 ```glsl
-color.a = diagonalStripes( (getTileCoords()*0.9999)*floor(STRIPES_SCALE), 
-                            STRIPES_WIDTH) * STRIPES_ALPHA;
-```
-
-
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [polygons-diagonal-grid](http://tangrams.github.io/blocks/#polygons-diagonal-grid) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/diagonal-grid.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Apply a diagonal grid pattern to the polygon style. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/polygons/diagonal-grid.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/polygons/diagonal-grid-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **defines**:
- -  **GRID_SCALE**:  number between ```1.0``` and ```1000.0``` that control the *scale*. The *default value* is ```20.0```. 
- -  **GRID_COLOR**:  The *default value* is ```color.rgb```. 
- -  **GRID_BACKGROUND_COLOR**:  The *default value* is ```color.rgb*.5```. 
- -  **GRID_WIDTH**:  number between ```0.0``` and ```1.0``` that control the *width*. The *default value* is ```0.05```. 
-
-These are the **shader blocks**:
-
-- **color**:
-
-```glsl
-color.rgb = mix(GRID_COLOR, 
-                GRID_BACKGROUND_COLOR, 
-                diagonalGrid(   fract(getTileCoords()*GRID_SCALE),
-                                GRID_WIDTH));
-```
-
-
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [polygons-pixelate](http://tangrams.github.io/blocks/#polygons-pixelate) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/pixelate.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Apply a random pixelated pattern to the polygon style. To learn more about patterns or random check [this chapter](https://thebookofshaders.com/09/) or  [this other chapter from the Book of Shaders](https://thebookofshaders.com/10/)
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/polygons/pixelate.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/polygons/pixelate-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **defines**:
- -  **PIXELATE_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
- -  **PIXELATE_SCALE**:  number between ```1.0``` and ```1000.0``` that control the *scale*. The *default value* is ```40.0```. 
- -  **PIXELATE_COLOR**:  The *default value* is ```color.rgb*.5```. 
-
-These are the **shader blocks**:
-
-- **color**:
-
-```glsl
-color.rgb = mix(PIXELATE_BACKGROUND_COLOR,
-                PIXELATE_COLOR,
-                random(floor(getTileCoords()*PIXELATE_SCALE)));
+color.a = stripes(  getTileCoords()*STRIPES_SCALE, 
+                    STRIPES_WIDTH, 
+                    STRIPES_ANGLE)*STRIPES_ALPHA;
 ```
 
 
@@ -3072,106 +3168,86 @@ Examples:
 <img src="https://tangrams.github.io/tangram-sandbox/styles/gotham.png" style="width: 100%; height: 100px; object-fit: cover;">
 </a>
 
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [polygons-stripes](http://tangrams.github.io/blocks/#polygons-stripes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/stripes.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Apply stripe pattern to the polygon style. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/polygons/stripes.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/polygons/stripes-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **defines**:
- -  **STRIPES_WIDTH**:  number between ```0.0``` and ```1.0``` that control the *width*. The *default value* is ```0.5```. 
- -  **STRIPES_ANGLE**:  number between ```0.0``` and ```3.1415``` that control the *angle (radiants)*. The *default value* is ```PI*0.25```. 
- -  **STRIPES_SCALE**:  number between ```1.0``` and ```1000.0``` that control the *scale*. The *default value* is ```2.0```. 
- -  **STRIPES_ALPHA**:  number between ```0.0``` and ```1.0``` that control the *amount*. The *default value* is ```0.5```. 
-
-These are the **shader blocks**:
-
-- **color**:
-
-```glsl
-color.a = stripes(  getTileCoords()*STRIPES_SCALE, 
-                    STRIPES_WIDTH, 
-                    STRIPES_ANGLE)*STRIPES_ALPHA;
-```
-
-
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [polygons-diagonal-dash](http://tangrams.github.io/blocks/#polygons-diagonal-dash) <a href="https://github.com/tangrams/blocks/blob/gh-pages/polygons/diagonal-dash.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Apply a diagonal dash pattern to the polygon style. To learn more about patterns check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/polygons/diagonal-dash.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/polygons/diagonal-dash-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **defines**:
- -  **DASH_SIZE**:  number between ```0.0``` and ```1.0``` that control the *alpha*. The *default value* is ```0.9```. 
- -  **DASH_BACKGROUND_COLOR**:  The *default value* is ```color.rgb```. 
- -  **DASH_SCALE**:  number between ```1.0``` and ```1000.0``` that control the *scale*. The *default value* is ```10.0```. 
- -  **DASH_COLOR**:  The *default value* is ```color.rgb*.5```. 
- -  **DASH_TYPE**:  variable that control the *type* with one of the following values: ```fill, stroke```. The *default value* is ```fill```. 
- -  **DASH_TILE_STYLE**:  variable that control the *tile type* with one of the following values: ```tile, brick```. The *default value* is ```tile```. 
-
-These are the **shader blocks**:
-
-- **global**:
- + `float dashDF(vec2 st)`
-- **color**:
-
-```glsl
-color.rgb = mix(DASH_BACKGROUND_COLOR, 
-                DASH_COLOR, 
-                DASH_TYPE( DASH_SIZE, dashDF(DASH_TILE_STYLE(getTileCoords()*DASH_SCALE,3.))) );
-```
-
-
-
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
 ### [SHAPES](http://tangrams.github.io/blocks/#shapes) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+#### [shapes-circle](http://tangrams.github.io/blocks/#shapes-circle) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/circle.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Collection of functions to draw circles. To learn more about how to make shapes on shaders go to From check [this chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/shapes/circle.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/shapes/circle-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
+
+- **global**:
+ + `float circleDF (vec2 st)`
+ + `float circle (vec2 st, float radius)`
+ + `float circleBorder (vec2 st, float radius)`
+
+Here are some **benchmarks** of this block performed on a Raspberry Pi:
+[![](http://tangrams.github.io/blocks/./shapes/test/shapes-circle.png)](http://tangrams.github.io/blocks/test.html?test=./shapes/test/shapes-circle.json)
+
+- **circle** ( mean: 0.00152198110495 median: 0.001502 )
+
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/circle-circle.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/circle-circle.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+
+```glsl
+color.rgb += circle(v_texcoord,.5);
+```
+
+
+- **circleBorder** ( mean: 0.00205206029374 median: 0.001992 )
+
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/circle-circleBorder.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/circle-circleBorder.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+
+```glsl
+color.rgb += circleBorder(v_texcoord,.5);
+```
+
+
+- **circleDF** ( mean: 0.00151802165033 median: 0.001507 )
+
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/circle-circleDF.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/circle-circleDF.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+
+```glsl
+color.rgb += circleDF(v_texcoord-.5);
+```
+
+
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/patterns.yaml&lines=146" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/patterns.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/nursery.yaml&lines=146" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/nursery.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/lego.yaml&lines=109-110" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/lego.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
 
 #### [shapes-cross](http://tangrams.github.io/blocks/#shapes-cross) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/cross.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
@@ -3262,82 +3338,6 @@ These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [shapes-circle](http://tangrams.github.io/blocks/#shapes-circle) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/circle.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Collection of functions to draw circles. To learn more about how to make shapes on shaders go to From check [this chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/shapes/circle.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/shapes/circle-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **shader blocks**:
-
-- **global**:
- + `float circleDF (vec2 st)`
- + `float circle (vec2 st, float radius)`
- + `float circleBorder (vec2 st, float radius)`
-
-Here are some **benchmarks** of this block performed on a Raspberry Pi:
-[![](http://tangrams.github.io/blocks/./shapes/test/shapes-circle.png)](http://tangrams.github.io/blocks/test.html?test=./shapes/test/shapes-circle.json)
-
-- **circle** ( mean: 0.00152198110495 median: 0.001502 )
-
-<a href="http://tangrams.github.io/blocks/./shapes/test/circle-circle.png"><img src="http://tangrams.github.io/blocks/./shapes/test/circle-circle.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
-
-```glsl
-color.rgb += circle(v_texcoord,.5);
-```
-
-
-- **circleBorder** ( mean: 0.00205206029374 median: 0.001992 )
-
-<a href="http://tangrams.github.io/blocks/./shapes/test/circle-circleBorder.png"><img src="http://tangrams.github.io/blocks/./shapes/test/circle-circleBorder.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
-
-```glsl
-color.rgb += circleBorder(v_texcoord,.5);
-```
-
-
-- **circleDF** ( mean: 0.00151802165033 median: 0.001507 )
-
-<a href="http://tangrams.github.io/blocks/./shapes/test/circle-circleDF.png"><img src="http://tangrams.github.io/blocks/./shapes/test/circle-circleDF.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
-
-```glsl
-color.rgb += circleDF(v_texcoord-.5);
-```
-
-
-Examples:
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/patterns.yaml&lines=146" target="_blank">
-<img src="https://tangrams.github.io/tangram-sandbox/styles/patterns.png" style="width: 100%; height: 100px; object-fit: cover;">
-</a>
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/nursery.yaml&lines=146" target="_blank">
-<img src="https://tangrams.github.io/tangram-sandbox/styles/nursery.png" style="width: 100%; height: 100px; object-fit: cover;">
-</a>
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/lego.yaml&lines=109-110" target="_blank">
-<img src="https://tangrams.github.io/tangram-sandbox/styles/lego.png" style="width: 100%; height: 100px; object-fit: cover;">
-</a>
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
 #### [shapes-polygons](http://tangrams.github.io/blocks/#shapes-polygons) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/polygons.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Collection of functions to draw polygons. To learn more about how to make shapes on shaders go to From check [this chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
@@ -3375,7 +3375,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 
 - **shapeDF** ( mean: 0.00481358546017 median: 0.004817 )
 
-<a href="http://tangrams.github.io/blocks/./shapes/test/polygons-shapeDF.png"><img src="http://tangrams.github.io/blocks/./shapes/test/polygons-shapeDF.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/polygons-shapeDF.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/polygons-shapeDF.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color.rgb += shapeDF(v_texcoord,5);
@@ -3384,7 +3384,7 @@ color.rgb += shapeDF(v_texcoord,5);
 
 - **shape** ( mean: 0.0040942618708 median: 0.004096 )
 
-<a href="http://tangrams.github.io/blocks/./shapes/test/polygons-shape.png"><img src="http://tangrams.github.io/blocks/./shapes/test/polygons-shape.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/polygons-shape.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/polygons-shape.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color.rgb += shape(v_texcoord,5,.5);
@@ -3393,7 +3393,7 @@ color.rgb += shape(v_texcoord,5,.5);
 
 - **shapeBorder** ( mean: 0.00434100962773 median: 0.004187 )
 
-<a href="http://tangrams.github.io/blocks/./shapes/test/polygons-shapeBorder.png"><img src="http://tangrams.github.io/blocks/./shapes/test/polygons-shapeBorder.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/polygons-shapeBorder.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/polygons-shapeBorder.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color.rgb += shapeBorder(v_texcoord,5,.5);
@@ -3450,7 +3450,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 
 - **rect_rnd** ( mean: 0.00153397183967 median: 0.001505 )
 
-<a href="http://tangrams.github.io/blocks/./shapes/test/rect-rect_rnd.png"><img src="http://tangrams.github.io/blocks/./shapes/test/rect-rect_rnd.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/rect-rect_rnd.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/rect-rect_rnd.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color.rgb += rect(v_texcoord,vec2(.5),.5);
@@ -3459,7 +3459,7 @@ color.rgb += rect(v_texcoord,vec2(.5),.5);
 
 - **rectDF** ( mean: 0.00153152874974 median: 0.001503 )
 
-<a href="http://tangrams.github.io/blocks/./shapes/test/rect-rectDF.png"><img src="http://tangrams.github.io/blocks/./shapes/test/rect-rectDF.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/rect-rectDF.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/rect-rectDF.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color.rgb += rectDF(v_texcoord,vec2(.5));
@@ -3468,7 +3468,7 @@ color.rgb += rectDF(v_texcoord,vec2(.5));
 
 - **rect** ( mean: 0.00152068913136 median: 0.001501 )
 
-<a href="http://tangrams.github.io/blocks/./shapes/test/rect-rect.png"><img src="http://tangrams.github.io/blocks/./shapes/test/rect-rect.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/rect-rect.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/rect-rect.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color.rgb += rect(v_texcoord,vec2(.5));
@@ -3477,7 +3477,7 @@ color.rgb += rect(v_texcoord,vec2(.5));
 
 - **rectBorder_rnd** ( mean: 0.00152680359051 median: 0.001507 )
 
-<a href="http://tangrams.github.io/blocks/./shapes/test/rect-rectBorder_rnd.png"><img src="http://tangrams.github.io/blocks/./shapes/test/rect-rectBorder_rnd.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/rect-rectBorder_rnd.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/rect-rectBorder_rnd.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
 color.rgb += rectBorder(v_texcoord,vec2(.5),.5);
@@ -3565,9 +3565,9 @@ These are the **shader blocks**:
 
 ### [SPACE](http://tangrams.github.io/blocks/#space) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-#### [space-tile](http://tangrams.github.io/blocks/#space-tile) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/tile.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+#### [space-constant](http://tangrams.github.io/blocks/#space-constant) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/constant.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-Get the position on the tile
+Get the constant coordinates **(warning: could glitch on zooms)**
 
 
 
@@ -3575,7 +3575,7 @@ To import this block add the following url to your `import` list:
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/space/tile.yaml
+    - https://tangrams.github.io/blocks/space/constant.yaml
 ```
 
 
@@ -3585,7 +3585,7 @@ If you want to import this block together **with their dependencies** use this o
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/space/tile-full.yaml
+    - https://tangrams.github.io/blocks/space/constant-full.yaml
 ```
 
 
@@ -3593,48 +3593,12 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec2 getTileCoords()`
-- **position**:
+ + `vec2 getConstantCoords ()`
 
-```glsl
-// Normalize the attribute position of a vertex
-v_pos = modelPosition().xyz;
-```
-
-
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [space-tex](http://tangrams.github.io/blocks/#space-tex) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/tex.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Get the position on TexCoords
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/space/tex.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/space/tex-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **shader blocks**:
-
-- **global**:
- + `vec2 getTexCoords ()`
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/grain-area.yaml&lines=26" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/grain-area.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -3681,6 +3645,80 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
+#### [space-tex](http://tangrams.github.io/blocks/#space-tex) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/tex.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Get the position on TexCoords
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/space/tex.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/space/tex-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
+
+- **global**:
+ + `vec2 getTexCoords ()`
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [space-tile](http://tangrams.github.io/blocks/#space-tile) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/tile.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Get the position on the tile
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/space/tile.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/space/tile-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
+
+- **global**:
+ + `vec2 getTileCoords()`
+- **position**:
+
+```glsl
+// Normalize the attribute position of a vertex
+v_pos = modelPosition().xyz;
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [space-uz](http://tangrams.github.io/blocks/#space-uz) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/uz.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Get the position on UZ from the TexCoords (on `x`) and the `z` of the World Position
@@ -3711,50 +3749,12 @@ These are the **shader blocks**:
 - **global**:
  + `vec2 getUZCoords ()`
 
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [space-constant](http://tangrams.github.io/blocks/#space-constant) <a href="https://github.com/tangrams/blocks/blob/gh-pages/space/constant.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Get the constant coordinates **(warning: could glitch on zooms)**
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/space/constant.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/space/constant-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **shader blocks**:
-
-- **global**:
- + `vec2 getConstantCoords ()`
-
-Examples:
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/grain-area.yaml&lines=26" target="_blank">
-<img src="https://tangrams.github.io/tangram-sandbox/styles/grain-area.png" style="width: 100%; height: 100px; object-fit: cover;">
-</a>
-
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 
 ### [TERRAIN](http://tangrams.github.io/blocks/#terrain) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrain" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-#### [terrain-terrain](http://tangrams.github.io/blocks/#terrain-terrain) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrain/terrain.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+#### [terrain-base](http://tangrams.github.io/blocks/#terrain-base) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrain/base.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -3762,7 +3762,7 @@ To import this block add the following url to your `import` list:
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/terrain/terrain.yaml
+    - https://tangrams.github.io/blocks/terrain/base.yaml
 ```
 
 
@@ -3772,7 +3772,7 @@ If you want to import this block together **with their dependencies** use this o
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/terrain/terrain-full.yaml
+    - https://tangrams.github.io/blocks/terrain/base-full.yaml
 ```
 
 
@@ -3883,7 +3883,7 @@ These are the **defines**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [terrain-base](http://tangrams.github.io/blocks/#terrain-base) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrain/base.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+#### [terrain-terrain](http://tangrams.github.io/blocks/#terrain-terrain) <a href="https://github.com/tangrams/blocks/blob/gh-pages/terrain/terrain.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -3891,7 +3891,7 @@ To import this block add the following url to your `import` list:
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/terrain/base.yaml
+    - https://tangrams.github.io/blocks/terrain/terrain.yaml
 ```
 
 
@@ -3901,7 +3901,7 @@ If you want to import this block together **with their dependencies** use this o
 
 ```yaml
 import:
-    - https://tangrams.github.io/blocks/terrain/base-full.yaml
+    - https://tangrams.github.io/blocks/terrain/terrain-full.yaml
 ```
 
 
@@ -4026,6 +4026,42 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
+#### [tiling-simplex](http://tangrams.github.io/blocks/#tiling-simplex) <a href="https://github.com/tangrams/blocks/blob/gh-pages/tiling/simplex.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Repeats a coordinate space (`vec2 st`) in diferent simplex tiles. To learn more about simplex grids check [this chapter about noise from the Book of Shaders](https://thebookofshaders.com/11/)
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/tiling/simplex.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/tiling/simplex-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
+
+- **global**:
+ + `vec2 skew (vec2 st)`
+ + `vec3 simplexCoord (vec2 st, float td)`
+ + `vec3 simplexGrid (vec2 st)`
+ + `vec3 simplexRotatedGrid (vec2 st)`
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [tiling-tile](http://tangrams.github.io/blocks/#tiling-tile) <a href="https://github.com/tangrams/blocks/blob/gh-pages/tiling/tile.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Repeats a coordinate space (`vec2 st`) in diferent brick-like tiles N times (`float zoom`). For more information about tilling patterns read [this chapter of The Book of Shaders](https://thebookofshaders.com/09/)
@@ -4093,42 +4129,6 @@ These are the **shader blocks**:
 - **global**:
  + `vec2 truchetMirror (vec2 st)`
  + `vec2 truchetRotate (vec2 st)`
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [tiling-simplex](http://tangrams.github.io/blocks/#tiling-simplex) <a href="https://github.com/tangrams/blocks/blob/gh-pages/tiling/simplex.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Repeats a coordinate space (`vec2 st`) in diferent simplex tiles. To learn more about simplex grids check [this chapter about noise from the Book of Shaders](https://thebookofshaders.com/11/)
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/tiling/simplex.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/tiling/simplex-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **shader blocks**:
-
-- **global**:
- + `vec2 skew (vec2 st)`
- + `vec3 simplexCoord (vec2 st, float td)`
- + `vec3 simplexGrid (vec2 st)`
- + `vec3 simplexRotatedGrid (vec2 st)`
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 ### The MIT License (MIT)
