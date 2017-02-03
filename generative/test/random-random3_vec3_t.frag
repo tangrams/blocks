@@ -10,9 +10,9 @@ uniform sampler2D u_random; // https://tangrams.github.io/blocks/generative/imgs
 
 #define RANDOM_TEXSAMPLE 1
 
-varying vec4 v_position;
-varying vec4 v_color;
-varying vec3 v_normal;
+// varying vec4 v_position;
+// varying vec4 v_color;
+// varying vec3 v_normal;
 varying vec2 v_texcoord;
 
 
@@ -63,7 +63,7 @@ float random (vec3 p) {
     #endif
 }
 void main() {
-    vec3 normal = v_normal;
+    // vec3 normal = v_normal;
     vec4 color = vec4(0.,0.,0.,1.);
 
 color.rgb += random3(vec3(v_texcoord.xy,u_time)*2.);

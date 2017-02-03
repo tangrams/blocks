@@ -8,9 +8,9 @@ uniform float u_time;
 
 #define STROKE 0.15
 
-varying vec4 v_position;
-varying vec4 v_color;
-varying vec3 v_normal;
+// varying vec4 v_position;
+// varying vec4 v_color;
+// varying vec3 v_normal;
 varying vec2 v_texcoord;
 
 
@@ -54,7 +54,7 @@ float circleBorder (vec2 st, float radius) {
     return stroke(radius, circleDF(st-vec2(0.5)));
 }
 void main() {
-    vec3 normal = v_normal;
+    // vec3 normal = v_normal;
     vec4 color = vec4(0.,0.,0.,1.);
 
 color.rgb += circle(v_texcoord,.5);

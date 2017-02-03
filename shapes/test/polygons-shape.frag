@@ -28,9 +28,9 @@ uniform float u_time;
 
 #define rad2deg(d) (((d)*180.0)/3.1415926535897932384626433832795)
 
-varying vec4 v_position;
-varying vec4 v_color;
-varying vec3 v_normal;
+// varying vec4 v_position;
+// varying vec4 v_color;
+// varying vec3 v_normal;
 varying vec2 v_texcoord;
 
 
@@ -79,7 +79,7 @@ float shapeBorder (vec2 st, int N, float width) {
     return stroke(width, shapeDF(st,N));
 }
 void main() {
-    vec3 normal = v_normal;
+    // vec3 normal = v_normal;
     vec4 color = vec4(0.,0.,0.,1.);
 
 color.rgb += shape(v_texcoord,5,.5);

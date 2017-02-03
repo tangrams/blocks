@@ -10,9 +10,9 @@ uniform float u_time;
 
 #define CAUSTIC_ITERATIONS 3
 
-varying vec4 v_position;
-varying vec4 v_color;
-varying vec3 v_normal;
+// varying vec4 v_position;
+// varying vec4 v_color;
+// varying vec3 v_normal;
 varying vec2 v_texcoord;
 
 
@@ -36,7 +36,7 @@ vec3 getCaustic (vec2 uv) {
     return color;
 }
 void main() {
-    vec3 normal = v_normal;
+    // vec3 normal = v_normal;
     vec4 color = vec4(0.,0.,0.,1.);
 
 color.rgb += getCaustic(v_texcoord);
