@@ -117,5 +117,5 @@ class Shader:
             sleep(1)
         # print "Finish"
         # self.process.kill()
-        if len(self.generated_file):
-            os.remove(self.generated_file)
+        # if len(self.generated_file):
+            # os.remove(self.generated_file)

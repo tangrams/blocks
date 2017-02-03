@@ -1,5 +1,81 @@
 
 
+#### [shapes-circle](http://tangrams.github.io/blocks/#shapes-circle) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/circle.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Collection of functions to draw circles. To learn more about how to make shapes on shaders go to From check [this chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/shapes/circle.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/shapes/circle-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
+
+- **global**:
+ + `float circleDF (vec2 st)`
+ + `float circle (vec2 st, float radius)`
+ + `float circleBorder (vec2 st, float radius)`
+
+Here are some **benchmarks** of this block performed on a Raspberry Pi:
+[![](http://tangrams.github.io/blocks/./shapes/test/shapes-circle.png)](http://tangrams.github.io/blocks/test.html?test=./shapes/test/shapes-circle.json)
+
+- **circle** ( mean: 0.00153265928659 median: 0.001501 )
+
+<a href="http://tangrams.github.io/blocks/./shapes/test/circle-circle.png"><img src="http://tangrams.github.io/blocks/./shapes/test/circle-circle.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+
+```glsl
+color.rgb += circle(v_texcoord,.5);
+```
+
+
+- **circleBorder** ( mean: 0.00152216387413 median: 0.001505 )
+
+<a href="http://tangrams.github.io/blocks/./shapes/test/circle-circleBorder.png"><img src="http://tangrams.github.io/blocks/./shapes/test/circle-circleBorder.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+
+```glsl
+color.rgb += circleBorder(v_texcoord,.5);
+```
+
+
+- **circleDF** ( mean: 0.00152048804414 median: 0.001508 )
+
+<a href="http://tangrams.github.io/blocks/./shapes/test/circle-circleDF.png"><img src="http://tangrams.github.io/blocks/./shapes/test/circle-circleDF.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+
+```glsl
+color.rgb += circleDF(v_texcoord-.5);
+```
+
+
+Examples:
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/patterns.yaml&lines=146" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/patterns.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/nursery.yaml&lines=146" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/nursery.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/lego.yaml&lines=109-110" target="_blank">
+<img src="https://tangrams.github.io/tangram-sandbox/styles/lego.png" style="width: 100%; height: 100px; object-fit: cover;">
+</a>
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [shapes-cross](http://tangrams.github.io/blocks/#shapes-cross) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/cross.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Collection of functions to draw crosses. To learn more about how to make shapes on shaders go to From check [this chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
@@ -89,55 +165,6 @@ These are the **shader blocks**:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [shapes-circle](http://tangrams.github.io/blocks/#shapes-circle) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/circle.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Collection of functions to draw circles. To learn more about how to make shapes on shaders go to From check [this chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/shapes/circle.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/shapes/circle-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **shader blocks**:
-
-- **global**:
- + `float circleDF (vec2 st)`
- + `float circle (vec2 st, float radius)`
- + `float circleBorder (vec2 st, float radius)`
-
-Here are some **benchmarks** of this block performed on a Raspberry Pi:
-[![](http://tangrams.github.io/blocks/./shapes/test/shapes-circle.png)](http://tangrams.github.io/blocks/test.html?test=./shapes/test/shapes-circle.json)
-
-Examples:
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/patterns.yaml&lines=146" target="_blank">
-<img src="https://tangrams.github.io/tangram-sandbox/styles/patterns.png" style="width: 100%; height: 100px; object-fit: cover;">
-</a>
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/nursery.yaml&lines=146" target="_blank">
-<img src="https://tangrams.github.io/tangram-sandbox/styles/nursery.png" style="width: 100%; height: 100px; object-fit: cover;">
-</a>
-<a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/lego.yaml&lines=109-110" target="_blank">
-<img src="https://tangrams.github.io/tangram-sandbox/styles/lego.png" style="width: 100%; height: 100px; object-fit: cover;">
-</a>
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
 #### [shapes-polygons](http://tangrams.github.io/blocks/#shapes-polygons) <a href="https://github.com/tangrams/blocks/blob/gh-pages/shapes/polygons.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Collection of functions to draw polygons. To learn more about how to make shapes on shaders go to From check [this chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
@@ -172,6 +199,33 @@ These are the **shader blocks**:
 
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./shapes/test/shapes-polygons.png)](http://tangrams.github.io/blocks/test.html?test=./shapes/test/shapes-polygons.json)
+
+- **shapeDF** ( mean: 0.00421396071032 median: 0.004032 )
+
+<a href="http://tangrams.github.io/blocks/./shapes/test/polygons-shapeDF.png"><img src="http://tangrams.github.io/blocks/./shapes/test/polygons-shapeDF.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+
+```glsl
+color.rgb += shapeDF(v_texcoord,5);
+```
+
+
+- **shape** ( mean: 0.00462048962856 median: 0.00489 )
+
+<a href="http://tangrams.github.io/blocks/./shapes/test/polygons-shape.png"><img src="http://tangrams.github.io/blocks/./shapes/test/polygons-shape.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+
+```glsl
+color.rgb += shape(v_texcoord,5,.5);
+```
+
+
+- **shapeBorder** ( mean: 0.00418200611746 median: 0.004185 )
+
+<a href="http://tangrams.github.io/blocks/./shapes/test/polygons-shapeBorder.png"><img src="http://tangrams.github.io/blocks/./shapes/test/polygons-shapeBorder.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+
+```glsl
+color.rgb += shapeBorder(v_texcoord,5,.5);
+```
+
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/9845C.yaml&lines=153" target="_blank">
@@ -220,6 +274,42 @@ These are the **shader blocks**:
 
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./shapes/test/shapes-rect.png)](http://tangrams.github.io/blocks/test.html?test=./shapes/test/shapes-rect.json)
+
+- **rect_rnd** ( mean: 0.00212777588433 median: 0.001974 )
+
+<a href="http://tangrams.github.io/blocks/./shapes/test/rect-rect_rnd.png"><img src="http://tangrams.github.io/blocks/./shapes/test/rect-rect_rnd.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+
+```glsl
+color.rgb += rect(v_texcoord,vec2(.5),.5);
+```
+
+
+- **rectDF** ( mean: 0.00152173346939 median: 0.001502 )
+
+<a href="http://tangrams.github.io/blocks/./shapes/test/rect-rectDF.png"><img src="http://tangrams.github.io/blocks/./shapes/test/rect-rectDF.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+
+```glsl
+color.rgb += rectDF(v_texcoord,vec2(.5));
+```
+
+
+- **rect** ( mean: 0.00155261799137 median: 0.0015 )
+
+<a href="http://tangrams.github.io/blocks/./shapes/test/rect-rect.png"><img src="http://tangrams.github.io/blocks/./shapes/test/rect-rect.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+
+```glsl
+color.rgb += rect(v_texcoord,vec2(.5));
+```
+
+
+- **rectBorder_rnd** ( mean: 0.00157919564771 median: 0.001508 )
+
+<a href="http://tangrams.github.io/blocks/./shapes/test/rect-rectBorder_rnd.png"><img src="http://tangrams.github.io/blocks/./shapes/test/rect-rectBorder_rnd.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+
+```glsl
+color.rgb += rectBorder(v_texcoord,vec2(.5),.5);
+```
+
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
