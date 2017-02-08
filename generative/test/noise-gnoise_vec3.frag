@@ -10,8 +10,6 @@ uniform sampler2D u_random; // https://tangrams.github.io/blocks/generative/imgs
 
 #define NOISE_TEXSAMPLE_SIZE 256.0
 
-#define NOISE_TEXSAMPLE 1
-
 // varying vec4 v_position;
 // varying vec4 v_color;
 // varying vec3 v_normal;
@@ -262,6 +260,6 @@ void main() {
     // vec3 normal = v_normal;
     vec4 color = vec4(0.,0.,0.,1.);
 
-color.rgb += noise(vec3(v_texcoord.xy,u_time)*2.);
+color.rgb += gnoise(vec3(v_texcoord.xy*2.,u_time));
     gl_FragColor = color;
 }

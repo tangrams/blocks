@@ -120,6 +120,36 @@ float noise (vec3 p) {
     #endif
 }
 
+// From IQ (https://www.shadertoy.com/view/XdXGW8)
+float gnoise (in vec2 p) {
+    vec2 i = floor( p );
+    vec2 f = fract( p );
+    
+    vec2 u = f*f*(3.0-2.0*f);
+
+    return mix( mix( dot( random2( i + vec2(0.0,0.0) ), f - vec2(0.0,0.0) ), 
+                     dot( random2( i + vec2(1.0,0.0) ), f - vec2(1.0,0.0) ), u.x),
+                mix( dot( random2( i + vec2(0.0,1.0) ), f - vec2(0.0,1.0) ), 
+                     dot( random2( i + vec2(1.0,1.0) ), f - vec2(1.0,1.0) ), u.x), u.y);
+}
+
+// From IQ (https://www.shadertoy.com/view/Xsl3Dl)
+float gnoise (in vec3 p) {
+    vec3 i = floor( p );
+    vec3 f = fract( p );
+    vec3 u = f*f*(3.0-2.0*f);
+
+    return mix( mix( mix( dot( random3( i + vec3(0.0,0.0,0.0) ), f - vec3(0.0,0.0,0.0) ), 
+                          dot( random3( i + vec3(1.0,0.0,0.0) ), f - vec3(1.0,0.0,0.0) ), u.x),
+                     mix( dot( random3( i + vec3(0.0,1.0,0.0) ), f - vec3(0.0,1.0,0.0) ), 
+                          dot( random3( i + vec3(1.0,1.0,0.0) ), f - vec3(1.0,1.0,0.0) ), u.x), u.y),
+                mix( mix( dot( random3( i + vec3(0.0,0.0,1.0) ), f - vec3(0.0,0.0,1.0) ), 
+                          dot( random3( i + vec3(1.0,0.0,1.0) ), f - vec3(1.0,0.0,1.0) ), u.x),
+                     mix( dot( random3( i + vec3(0.0,1.0,1.0) ), f - vec3(0.0,1.0,1.0) ), 
+                          dot( random3( i + vec3(1.0,1.0,1.0) ), f - vec3(1.0,1.0,1.0) ), u.x), u.y), u.z );
+}
+
+
 // Description : GLSL 2D simplex noise function
 //      Author : Ian McEwan, Ashima Arts
 //  Maintainer : ijm
