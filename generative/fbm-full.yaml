@@ -92,20 +92,20 @@ styles:
         mix: generative-random
         shaders:
             blocks:
-                global: "// 1D Value Noise for 1, 2 and 3 dimentions\n// ================================\n\
-                    float noise (in float x) {\n    float i = floor(x);\n    float\
-                    \ f = fract(x);\n    f = f * f * (3.0 - 2.0 * f);\n    #ifdef\
-                    \ NOISE_TEXSAMPLE\n    return texture2D(u_random, vec2(fract((x+.5)/NOISE_TEXSAMPLE_SIZE),.5),\
-                    \ -100.).r;\n    #else\n    return mix(random(i), random(i + 1.0),\
-                    \ f);\n    #endif\n}\n\n// Gradient Noise\nfloat noise (vec2 p)\
-                    \ {\n    #ifdef NOISE_TEXSAMPLE\n    return texture2D(u_random,\
-                    \ p*vec2(1./NOISE_TEXSAMPLE_SIZE)).r;\n    #else\n    vec2 i =\
-                    \ floor(p);\n    vec2 f = fract(p);\n    f = f * f * (3.0 - 2.0\
-                    \ * f);\n    float a = random(i);\n    float b = random(i + vec2(1.0,\
-                    \ 0.0));\n    float c = random(i + vec2(0.0, 1.0));\n    float\
-                    \ d = random(i + vec2(1.0, 1.0));\n    return mix(a, b, f.x) +\
-                    \ (c - a) * f.y * (1.0 - f.x) + (d - b) * f.x * f.y;\n    #endif\n\
-                    }\n\nfloat noise (vec3 p) {\n    vec3 i = floor(p);\n    vec3\
+                global: "// Value Noise \nfloat noise (in float x) {\n    #ifdef NOISE_TEXSAMPLE\n\
+                    \    return texture2D(u_random, vec2(x*(1./NOISE_TEXSAMPLE_SIZE))).r;\n\
+                    \    #else\n    float i = floor(x);\n    float f = fract(x);\n\
+                    \    f = f * f * (3.0 - 2.0 * f);\n    return mix(random(i), random(i\
+                    \ + 1.0), f);\n    #endif\n}\n\n// Value Noise\nfloat noise (vec2\
+                    \ p) {\n    vec2 i = floor(p);\n    vec2 f = fract(p);\n    #ifdef\
+                    \ NOISE_TEXSAMPLE\n    vec2 uv = i.xy + f.xy*f.xy*(3.0-2.0*f.xy);\n\
+                    \    return texture2D(u_random, fract((uv+118.4)/NOISE_TEXSAMPLE_SIZE)\
+                    \ ).x;\n    #else\n    f = f * f * (3.0 - 2.0 * f);\n    float\
+                    \ a = random(i);\n    float b = random(i + vec2(1.0, 0.0));\n\
+                    \    float c = random(i + vec2(0.0, 1.0));\n    float d = random(i\
+                    \ + vec2(1.0, 1.0));\n    return mix(a, b, f.x) + (c - a) * f.y\
+                    \ * (1.0 - f.x) + (d - b) * f.x * f.y;\n    #endif\n}\n\n// Value\
+                    \ Noise\nfloat noise (vec3 p) {\n    vec3 i = floor(p);\n    vec3\
                     \ f = fract(p);\n    f = f*f*(3.0-2.0*f);\n    #ifdef NOISE_TEXSAMPLE\n\
                     \    vec2 uv = (i.xy+vec2(37.0,17.0)*i.z) + f.xy;\n    vec2 rg\
                     \ = texture2D(u_random, fract((uv+.5)/NOISE_TEXSAMPLE_SIZE), -100.0\
@@ -123,7 +123,7 @@ styles:
                     \                    mix(random(n + dot(step, vec3(0,1,1))),\n\
                     \                        random(n + dot(step, vec3(1,1,1))), f.x),\n\
                     \                f.y),\n            f.z);\n            */\n  \
-                    \  #endif\n}\n\n// From IQ (https://www.shadertoy.com/view/XdXGW8)\n\
+                    \  #endif\n}\n\n// Gradient Noise\n// From IQ (https://www.shadertoy.com/view/XdXGW8)\n\
                     float gnoise (in vec2 p) {\n    vec2 i = floor( p );\n    vec2\
                     \ f = fract( p );\n    \n    vec2 u = f*f*(3.0-2.0*f);\n\n   \
                     \ return mix( mix( dot( random2( i + vec2(0.0,0.0) ), f - vec2(0.0,0.0)\
@@ -131,7 +131,7 @@ styles:
                     \ f - vec2(1.0,0.0) ), u.x),\n                mix( dot( random2(\
                     \ i + vec2(0.0,1.0) ), f - vec2(0.0,1.0) ), \n               \
                     \      dot( random2( i + vec2(1.0,1.0) ), f - vec2(1.0,1.0) ),\
-                    \ u.x), u.y);\n}\n\n// From IQ (https://www.shadertoy.com/view/Xsl3Dl)\n\
+                    \ u.x), u.y);\n}\n\n// Gradient Noise\n// From IQ (https://www.shadertoy.com/view/Xsl3Dl)\n\
                     float gnoise (in vec3 p) {\n    vec3 i = floor( p );\n    vec3\
                     \ f = fract( p );\n    vec3 u = f*f*(3.0-2.0*f);\n\n    return\
                     \ mix( mix( mix( dot( random3( i + vec3(0.0,0.0,0.0) ), f - vec3(0.0,0.0,0.0)\
@@ -145,22 +145,17 @@ styles:
                     \ ), f - vec3(1.0,0.0,1.0) ), u.x),\n                     mix(\
                     \ dot( random3( i + vec3(0.0,1.0,1.0) ), f - vec3(0.0,1.0,1.0)\
                     \ ), \n                          dot( random3( i + vec3(1.0,1.0,1.0)\
-                    \ ), f - vec3(1.0,1.0,1.0) ), u.x), u.y), u.z );\n}\n\n\n// Description\
-                    \ : GLSL 2D simplex noise function\n//      Author : Ian McEwan,\
-                    \ Ashima Arts\n//  Maintainer : ijm\n//     Lastmod : 20110822\
-                    \ (ijm)\n//     License : \n//  Copyright (C) 2011 Ashima Arts.\
-                    \ All rights reserved.\n//  Distributed under the MIT License.\
-                    \ See LICENSE file.\n//  https://github.com/ashima/webgl-noise\n\
-                    vec3 mod289(vec3 x) { \n    return x - floor(x * (1.0 / 289.0))\
-                    \ * 289.0; \n}\nvec2 mod289(vec2 x) { \n    return x - floor(x\
-                    \ * (1.0 / 289.0)) * 289.0; \n}\nvec3 permute(vec3 x) { \n   \
-                    \ return mod289(((x*34.0)+1.0)*x); \n}\nfloat snoise(vec2 v) {\n\
-                    \n    // Precompute values for skewed triangular grid\n    const\
-                    \ vec4 C = vec4(0.211324865405187,\n                        //\
-                    \ (3.0-sqrt(3.0))/6.0\n                        0.366025403784439,\
-                    \  \n                        // 0.5*(sqrt(3.0)-1.0)\n        \
-                    \                -0.577350269189626,  \n                     \
-                    \   // -1.0 + 2.0 * C.x\n                        0.024390243902439);\
+                    \ ), f - vec3(1.0,1.0,1.0) ), u.x), u.y), u.z );\n}\n\nvec3 mod289(vec3\
+                    \ x) { \n    return x - floor(x * (1.0 / 289.0)) * 289.0; \n}\n\
+                    vec2 mod289(vec2 x) { \n    return x - floor(x * (1.0 / 289.0))\
+                    \ * 289.0; \n}\nvec3 permute(vec3 x) { \n    return mod289(((x*34.0)+1.0)*x);\
+                    \ \n}\n\n// Simplex Noise\n// from Ian McEwan, Ashima Arts\nfloat\
+                    \ snoise(vec2 v) {\n\n    // Precompute values for skewed triangular\
+                    \ grid\n    const vec4 C = vec4(0.211324865405187,\n         \
+                    \               // (3.0-sqrt(3.0))/6.0\n                     \
+                    \   0.366025403784439,  \n                        // 0.5*(sqrt(3.0)-1.0)\n\
+                    \                        -0.577350269189626,  \n             \
+                    \           // -1.0 + 2.0 * C.x\n                        0.024390243902439);\
                     \ \n                        // 1.0 / 41.0\n\n    // First corner\
                     \ (x0)\n    vec2 i  = floor(v + dot(v, C.yy));\n    vec2 x0 =\
                     \ v - i + dot(i, C.xx);\n\n    // Other two corners (x1, x2)\n\
@@ -183,16 +178,16 @@ styles:
                     \ - 0.85373472095314 * (a0*a0+h*h);\n\n    // Compute final noise\
                     \ value at P\n    vec3 g = vec3(0.0);\n    g.x  = a0.x  * x0.x\
                     \  + h.x  * x0.y;\n    g.yz = a0.yz * vec2(x1.x,x2.x) + h.yz *\
-                    \ vec2(x1.y,x2.y);\n    return 130.0 * dot(m, g);\n}\n\n\n//\n\
-                    // Simplex Noise\n//\nconst float F3 =  0.3333333;\nconst float\
-                    \ G3 =  0.1666667;\nfloat snoise (vec3 p) {\n    vec3 s = floor(p\
-                    \ + dot(p, vec3(F3)));\n    vec3 x = p - s + dot(s, vec3(G3));\n\
-                    \    vec3 e = step(vec3(0.0), x - x.yzx);\n    vec3 i1 = e*(1.0\
-                    \ - e.zxy);\n    vec3 i2 = 1.0 - e.zxy*(1.0 - e);\n    vec3 x1\
-                    \ = x - i1 + G3;\n    vec3 x2 = x - i2 + 2.0*G3;\n    vec3 x3\
-                    \ = x - 1.0 + 3.0*G3;\n    vec4 w, d;\n    w.x = dot(x, x);\n\
-                    \    w.y = dot(x1, x1);\n    w.z = dot(x2, x2);\n    w.w = dot(x3,\
-                    \ x3);\n    w = max(0.6 - w, 0.0);\n    d.x = dot(random3(s),\
+                    \ vec2(x1.y,x2.y);\n    return 130.0 * dot(m, g);\n}\n\n// Simplex\
+                    \ Noise\n// from Ian McEwan, Ashima Arts\nconst float F3 =  0.3333333;\n\
+                    const float G3 =  0.1666667;\nfloat snoise (vec3 p) {\n    vec3\
+                    \ s = floor(p + dot(p, vec3(F3)));\n    vec3 x = p - s + dot(s,\
+                    \ vec3(G3));\n    vec3 e = step(vec3(0.0), x - x.yzx);\n    vec3\
+                    \ i1 = e*(1.0 - e.zxy);\n    vec3 i2 = 1.0 - e.zxy*(1.0 - e);\n\
+                    \    vec3 x1 = x - i1 + G3;\n    vec3 x2 = x - i2 + 2.0*G3;\n\
+                    \    vec3 x3 = x - 1.0 + 3.0*G3;\n    vec4 w, d;\n    w.x = dot(x,\
+                    \ x);\n    w.y = dot(x1, x1);\n    w.z = dot(x2, x2);\n    w.w\
+                    \ = dot(x3, x3);\n    w = max(0.6 - w, 0.0);\n    d.x = dot(random3(s),\
                     \ x);\n    d.y = dot(random3(s + i1), x1);\n    d.z = dot(random3(s\
                     \ + i2), x2);\n    d.w = dot(random3(s + 1.0), x3);\n    w *=\
                     \ w;\n    w *= w;\n    d *= w;\n    return dot(d, vec4(52.0));\n\

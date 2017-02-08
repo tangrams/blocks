@@ -62,26 +62,26 @@ float random (vec3 p) {
     return fract(sin(dot(p.xyz, vec3(70.9898,78.233,32.4355)))* 43758.5453123); 
     #endif
 }
-// 1D Value Noise for 1, 2 and 3 dimentions
-// ================================
+// Value Noise 
 float noise (in float x) {
+    #ifdef NOISE_TEXSAMPLE
+    return texture2D(u_random, vec2(x*(1./NOISE_TEXSAMPLE_SIZE))).r;
+    #else
     float i = floor(x);
     float f = fract(x);
     f = f * f * (3.0 - 2.0 * f);
-    #ifdef NOISE_TEXSAMPLE
-    return texture2D(u_random, vec2(fract((x+.5)/NOISE_TEXSAMPLE_SIZE),.5), -100.).r;
-    #else
     return mix(random(i), random(i + 1.0), f);
     #endif
 }
 
-// Gradient Noise
+// Value Noise
 float noise (vec2 p) {
-    #ifdef NOISE_TEXSAMPLE
-    return texture2D(u_random, p*vec2(1./NOISE_TEXSAMPLE_SIZE)).r;
-    #else
     vec2 i = floor(p);
     vec2 f = fract(p);
+    #ifdef NOISE_TEXSAMPLE
+    vec2 uv = i.xy + f.xy*f.xy*(3.0-2.0*f.xy);
+    return texture2D(u_random, fract((uv+118.4)/NOISE_TEXSAMPLE_SIZE) ).x;
+    #else
     f = f * f * (3.0 - 2.0 * f);
     float a = random(i);
     float b = random(i + vec2(1.0, 0.0));
@@ -91,6 +91,7 @@ float noise (vec2 p) {
     #endif
 }
 
+// Value Noise
 float noise (vec3 p) {
     vec3 i = floor(p);
     vec3 f = fract(p);
@@ -120,6 +121,7 @@ float noise (vec3 p) {
     #endif
 }
 
+// Gradient Noise
 // From IQ (https://www.shadertoy.com/view/XdXGW8)
 float gnoise (in vec2 p) {
     vec2 i = floor( p );
@@ -133,6 +135,7 @@ float gnoise (in vec2 p) {
                      dot( random2( i + vec2(1.0,1.0) ), f - vec2(1.0,1.0) ), u.x), u.y);
 }
 
+// Gradient Noise
 // From IQ (https://www.shadertoy.com/view/Xsl3Dl)
 float gnoise (in vec3 p) {
     vec3 i = floor( p );
@@ -149,15 +152,6 @@ float gnoise (in vec3 p) {
                           dot( random3( i + vec3(1.0,1.0,1.0) ), f - vec3(1.0,1.0,1.0) ), u.x), u.y), u.z );
 }
 
-
-// Description : GLSL 2D simplex noise function
-//      Author : Ian McEwan, Ashima Arts
-//  Maintainer : ijm
-//     Lastmod : 20110822 (ijm)
-//     License : 
-//  Copyright (C) 2011 Ashima Arts. All rights reserved.
-//  Distributed under the MIT License. See LICENSE file.
-//  https://github.com/ashima/webgl-noise
 vec3 mod289(vec3 x) { 
     return x - floor(x * (1.0 / 289.0)) * 289.0; 
 }
@@ -167,6 +161,9 @@ vec2 mod289(vec2 x) {
 vec3 permute(vec3 x) { 
     return mod289(((x*34.0)+1.0)*x); 
 }
+
+// Simplex Noise
+// from Ian McEwan, Ashima Arts
 float snoise(vec2 v) {
 
     // Precompute values for skewed triangular grid
@@ -226,10 +223,8 @@ float snoise(vec2 v) {
     return 130.0 * dot(m, g);
 }
 
-
-//
 // Simplex Noise
-//
+// from Ian McEwan, Ashima Arts
 const float F3 =  0.3333333;
 const float G3 =  0.1666667;
 float snoise (vec3 p) {
