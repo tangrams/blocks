@@ -75,13 +75,14 @@ float noise (in float x) {
     #endif
 }
 
+// Gradient Noise
 float noise (vec2 p) {
+    #ifdef NOISE_TEXSAMPLE
+    return texture2D(u_random, p*vec2(1./NOISE_TEXSAMPLE_SIZE)).r;
+    #else
     vec2 i = floor(p);
     vec2 f = fract(p);
     f = f * f * (3.0 - 2.0 * f);
-    #ifdef NOISE_TEXSAMPLE
-    return texture2D(u_random, fract((p+.5)/NOISE_TEXSAMPLE_SIZE), -100.).r;
-    #else
     float a = random(i);
     float b = random(i + vec2(1.0, 0.0));
     float c = random(i + vec2(0.0, 1.0));
@@ -99,6 +100,9 @@ float noise (vec3 p) {
     vec2 rg = texture2D(u_random, fract((uv+.5)/NOISE_TEXSAMPLE_SIZE), -100.0 ).yx;
     return mix( rg.x, rg.y, f.z );
     #else
+    float n = i.x + i.y*57.0 + 113.0*i.z;
+    return mix(mix(mix(random(n+0.0),random(n+1.0),f.x),mix(random(n+ 57.0),random(n+ 58.0),f.x),f.y),mix(mix(random(n+113.0),random(n+114.0),f.x),mix(random(n+170.0),random(n+171.0),f.x),f.y),f.z);
+    /*
     const vec3 step = vec3(110.0, 241.0, 171.0);
     float n = dot(i, step);
     return mix( mix(mix(random(n + dot(step, vec3(0,0,0))),
@@ -112,6 +116,7 @@ float noise (vec3 p) {
                         random(n + dot(step, vec3(1,1,1))), f.x),
                 f.y),
             f.z);
+            */
     #endif
 }
 
@@ -225,6 +230,6 @@ void main() {
     // vec3 normal = v_normal;
     vec4 color = vec4(0.,0.,0.,1.);
 
-color += noise(v_texcoord.x*2.);
+color.rgb += noise(v_texcoord.x*2.);
     gl_FragColor = color;
 }

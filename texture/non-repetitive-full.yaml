@@ -59,10 +59,10 @@ styles:
                     RANDOM_TEXSAMPLE: 1
             random3_vec3:
                 blocks:
-                    color: color.rgb += random3(vec3(v_texcoord.xy,u_time)*2.);
+                    color: color.rgb += random3(vec3(v_texcoord.xy*2.,u_time));
             random3_vec3_t:
                 blocks:
-                    color: color.rgb += random3(vec3(v_texcoord.xy,u_time)*2.);
+                    color: color.rgb += random3(vec3(v_texcoord.xy*2.,u_time));
                 defines:
                     RANDOM_TEXSAMPLE: 1
             random_float:
@@ -83,10 +83,10 @@ styles:
                     RANDOM_TEXSAMPLE: 1
             random_vec3:
                 blocks:
-                    color: color.rgb += random(vec3(v_texcoord.xy,u_time)*2.);
+                    color: color.rgb += random(vec3(v_texcoord.xy*2.,u_time));
             random_vec3_t:
                 blocks:
-                    color: color.rgb += random(vec3(v_texcoord.xy,u_time)*2.);
+                    color: color.rgb += random(vec3(v_texcoord.xy*2.,u_time));
                 defines:
                     RANDOM_TEXSAMPLE: 1
     space-tile:

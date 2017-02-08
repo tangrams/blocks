@@ -38,41 +38,41 @@ styles:
         test:
             fbm_float_3oct:
                 blocks:
-                    color: color += fbm(v_texcoord.x);
+                    color: color.rgb += fbm(v_texcoord.x);
                 defines:
                     NUM_OCTAVES: 3
             fbm_float_5oct:
                 blocks:
-                    color: color += fbm(v_texcoord.x);
+                    color: color.rgb += fbm(v_texcoord.x);
             fbm_float_8oct:
                 blocks:
-                    color: color += fbm(v_texcoord.x);
+                    color: color.rgb += fbm(v_texcoord.x);
                 defines:
                     NUM_OCTAVES: 8
             fbm_vec2_3oct:
                 blocks:
-                    color: color += fbm(v_texcoord);
+                    color: color.rgb += fbm(v_texcoord);
                 defines:
                     NUM_OCTAVES: 3
             fbm_vec2_5oct:
                 blocks:
-                    color: color += fbm(v_texcoord);
+                    color: color.rgb += fbm(v_texcoord);
             fbm_vec2_8oct:
                 blocks:
-                    color: color += fbm(v_texcoord);
+                    color: color.rgb += fbm(v_texcoord);
                 defines:
                     NUM_OCTAVES: 8
             fbm_vec3_3oct:
                 blocks:
-                    color: color += fbm(vec3(v_texcoord,u_time));
+                    color: color.rgb += fbm(vec3(v_texcoord,u_time));
                 defines:
                     NUM_OCTAVES: 3
             fbm_vec3_5oct:
                 blocks:
-                    color: color += fbm(vec3(v_texcoord,u_time));
+                    color: color.rgb += fbm(vec3(v_texcoord,u_time));
             fbm_vec3_8oct:
                 blocks:
-                    color: color += fbm(vec3(v_texcoord,u_time));
+                    color: color.rgb += fbm(vec3(v_texcoord,u_time));
                 defines:
                     NUM_OCTAVES: 8
     generative-noise:
@@ -97,34 +97,37 @@ styles:
                     \ f = fract(x);\n    f = f * f * (3.0 - 2.0 * f);\n    #ifdef\
                     \ NOISE_TEXSAMPLE\n    return texture2D(u_random, vec2(fract((x+.5)/NOISE_TEXSAMPLE_SIZE),.5),\
                     \ -100.).r;\n    #else\n    return mix(random(i), random(i + 1.0),\
-                    \ f);\n    #endif\n}\n\nfloat noise (vec2 p) {\n    vec2 i = floor(p);\n\
-                    \    vec2 f = fract(p);\n    f = f * f * (3.0 - 2.0 * f);\n  \
-                    \  #ifdef NOISE_TEXSAMPLE\n    return texture2D(u_random, fract((p+.5)/NOISE_TEXSAMPLE_SIZE),\
-                    \ -100.).r;\n    #else\n    float a = random(i);\n    float b\
-                    \ = random(i + vec2(1.0, 0.0));\n    float c = random(i + vec2(0.0,\
-                    \ 1.0));\n    float d = random(i + vec2(1.0, 1.0));\n    return\
-                    \ mix(a, b, f.x) + (c - a) * f.y * (1.0 - f.x) + (d - b) * f.x\
-                    \ * f.y;\n    #endif\n}\n\nfloat noise (vec3 p) {\n    vec3 i\
-                    \ = floor(p);\n    vec3 f = fract(p);\n    f = f*f*(3.0-2.0*f);\n\
-                    \    #ifdef NOISE_TEXSAMPLE\n    vec2 uv = (i.xy+vec2(37.0,17.0)*i.z)\
-                    \ + f.xy;\n    vec2 rg = texture2D(u_random, fract((uv+.5)/NOISE_TEXSAMPLE_SIZE),\
-                    \ -100.0 ).yx;\n    return mix( rg.x, rg.y, f.z );\n    #else\n\
-                    \    const vec3 step = vec3(110.0, 241.0, 171.0);\n    float n\
-                    \ = dot(i, step);\n    return mix( mix(mix(random(n + dot(step,\
-                    \ vec3(0,0,0))),\n                        random(n + dot(step,\
-                    \ vec3(1,0,0))), f.x),\n                    mix(random(n + dot(step,\
-                    \ vec3(0,1,0))),\n                        random(n + dot(step,\
-                    \ vec3(1,1,0))), f.x),\n                    f.y),\n          \
-                    \      mix(mix(random(n + dot(step, vec3(0,0,1))),\n         \
-                    \               random(n + dot(step, vec3(1,0,1))), f.x),\n  \
-                    \                  mix(random(n + dot(step, vec3(0,1,1))),\n \
-                    \                       random(n + dot(step, vec3(1,1,1))), f.x),\n\
-                    \                f.y),\n            f.z);\n    #endif\n}\n\n//\
-                    \ Description : GLSL 2D simplex noise function\n//      Author\
-                    \ : Ian McEwan, Ashima Arts\n//  Maintainer : ijm\n//     Lastmod\
-                    \ : 20110822 (ijm)\n//     License : \n//  Copyright (C) 2011\
-                    \ Ashima Arts. All rights reserved.\n//  Distributed under the\
-                    \ MIT License. See LICENSE file.\n//  https://github.com/ashima/webgl-noise\n\
+                    \ f);\n    #endif\n}\n\n// Gradient Noise\nfloat noise (vec2 p)\
+                    \ {\n    #ifdef NOISE_TEXSAMPLE\n    return texture2D(u_random,\
+                    \ p*vec2(1./NOISE_TEXSAMPLE_SIZE)).r;\n    #else\n    vec2 i =\
+                    \ floor(p);\n    vec2 f = fract(p);\n    f = f * f * (3.0 - 2.0\
+                    \ * f);\n    float a = random(i);\n    float b = random(i + vec2(1.0,\
+                    \ 0.0));\n    float c = random(i + vec2(0.0, 1.0));\n    float\
+                    \ d = random(i + vec2(1.0, 1.0));\n    return mix(a, b, f.x) +\
+                    \ (c - a) * f.y * (1.0 - f.x) + (d - b) * f.x * f.y;\n    #endif\n\
+                    }\n\nfloat noise (vec3 p) {\n    vec3 i = floor(p);\n    vec3\
+                    \ f = fract(p);\n    f = f*f*(3.0-2.0*f);\n    #ifdef NOISE_TEXSAMPLE\n\
+                    \    vec2 uv = (i.xy+vec2(37.0,17.0)*i.z) + f.xy;\n    vec2 rg\
+                    \ = texture2D(u_random, fract((uv+.5)/NOISE_TEXSAMPLE_SIZE), -100.0\
+                    \ ).yx;\n    return mix( rg.x, rg.y, f.z );\n    #else\n    float\
+                    \ n = i.x + i.y*57.0 + 113.0*i.z;\n    return mix(mix(mix(random(n+0.0),random(n+1.0),f.x),mix(random(n+\
+                    \ 57.0),random(n+ 58.0),f.x),f.y),mix(mix(random(n+113.0),random(n+114.0),f.x),mix(random(n+170.0),random(n+171.0),f.x),f.y),f.z);\n\
+                    \    /*\n    const vec3 step = vec3(110.0, 241.0, 171.0);\n  \
+                    \  float n = dot(i, step);\n    return mix( mix(mix(random(n +\
+                    \ dot(step, vec3(0,0,0))),\n                        random(n +\
+                    \ dot(step, vec3(1,0,0))), f.x),\n                    mix(random(n\
+                    \ + dot(step, vec3(0,1,0))),\n                        random(n\
+                    \ + dot(step, vec3(1,1,0))), f.x),\n                    f.y),\n\
+                    \                mix(mix(random(n + dot(step, vec3(0,0,1))),\n\
+                    \                        random(n + dot(step, vec3(1,0,1))), f.x),\n\
+                    \                    mix(random(n + dot(step, vec3(0,1,1))),\n\
+                    \                        random(n + dot(step, vec3(1,1,1))), f.x),\n\
+                    \                f.y),\n            f.z);\n            */\n  \
+                    \  #endif\n}\n\n// Description : GLSL 2D simplex noise function\n\
+                    //      Author : Ian McEwan, Ashima Arts\n//  Maintainer : ijm\n\
+                    //     Lastmod : 20110822 (ijm)\n//     License : \n//  Copyright\
+                    \ (C) 2011 Ashima Arts. All rights reserved.\n//  Distributed\
+                    \ under the MIT License. See LICENSE file.\n//  https://github.com/ashima/webgl-noise\n\
                     vec3 mod289(vec3 x) { \n    return x - floor(x * (1.0 / 289.0))\
                     \ * 289.0; \n}\nvec2 mod289(vec2 x) { \n    return x - floor(x\
                     \ * (1.0 / 289.0)) * 289.0; \n}\nvec3 permute(vec3 x) { \n   \
@@ -176,44 +179,34 @@ styles:
         test:
             noise_float:
                 blocks:
-                    color: color += noise(v_texcoord.x*2.);
+                    color: color.rgb += noise(v_texcoord.x*2.);
             noise_float_t:
                 blocks:
-                    color: color += noise(v_texcoord.x*2.);
+                    color: color.rgb += noise(v_texcoord.x*2.);
                 defines:
                     NOISE_TEXSAMPLE: 1
             noise_vec2:
                 blocks:
-                    color: color += noise(v_texcoord.xy*2.);
+                    color: color.rgb += noise(v_texcoord.xy*2.);
             noise_vec2_t:
                 blocks:
-                    color: color += noise(v_texcoord.xy*2.);
+                    color: color.rgb += noise(v_texcoord.xy*2.);
                 defines:
                     NOISE_TEXSAMPLE: 1
             noise_vec3:
                 blocks:
-                    color: color += noise(vec3(v_texcoord.xy,u_time)*2.);
+                    color: color.rgb += noise(vec3(v_texcoord.xy*2.,u_time));
             noise_vec3_t:
                 blocks:
-                    color: color += noise(vec3(v_texcoord.xy,u_time)*2.);
+                    color: color.rgb += noise(vec3(v_texcoord.xy,u_time)*2.);
                 defines:
                     NOISE_TEXSAMPLE: 1
             snoise_vec2:
                 blocks:
-                    color: color += snoise(v_texcoord.xy*2.);
-            snoise_vec2_t:
-                blocks:
-                    color: color += snoise(v_texcoord.xy*2.);
-                defines:
-                    NOISE_TEXSAMPLE: 1
+                    color: color.rgb += snoise(v_texcoord.xy*2.);
             snoise_vec3:
                 blocks:
-                    color: color += snoise(vec3(v_texcoord.xy,u_time)*2.);
-            snoise_vec3_t:
-                blocks:
-                    color: color += snoise(vec3(v_texcoord.xy,u_time)*2.);
-                defines:
-                    NOISE_TEXSAMPLE: 1
+                    color: color.rgb += snoise(vec3(v_texcoord.xy*2.,u_time));
     generative-random:
         doc:
             author:
@@ -271,10 +264,10 @@ styles:
                     RANDOM_TEXSAMPLE: 1
             random3_vec3:
                 blocks:
-                    color: color.rgb += random3(vec3(v_texcoord.xy,u_time)*2.);
+                    color: color.rgb += random3(vec3(v_texcoord.xy*2.,u_time));
             random3_vec3_t:
                 blocks:
-                    color: color.rgb += random3(vec3(v_texcoord.xy,u_time)*2.);
+                    color: color.rgb += random3(vec3(v_texcoord.xy*2.,u_time));
                 defines:
                     RANDOM_TEXSAMPLE: 1
             random_float:
@@ -295,9 +288,9 @@ styles:
                     RANDOM_TEXSAMPLE: 1
             random_vec3:
                 blocks:
-                    color: color.rgb += random(vec3(v_texcoord.xy,u_time)*2.);
+                    color: color.rgb += random(vec3(v_texcoord.xy*2.,u_time));
             random_vec3_t:
                 blocks:
-                    color: color.rgb += random(vec3(v_texcoord.xy,u_time)*2.);
+                    color: color.rgb += random(vec3(v_texcoord.xy*2.,u_time));
                 defines:
                     RANDOM_TEXSAMPLE: 1
