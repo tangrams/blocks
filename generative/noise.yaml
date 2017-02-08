@@ -15,16 +15,14 @@ styles:
                 For more information on this theme read [this chapter of The Book of Shaders about Noise](http://thebookofshaders.com/11/).
         mix: generative-random
         test:
-            noise_float: { blocks: { color: "color += noise(v_texcoord.x*2.);" } }
-            noise_vec2: { blocks: { color: "color += noise(v_texcoord.xy*2.);" } }
-            noise_vec3: { blocks: { color: "color += noise(vec3(v_texcoord.xy,u_time)*2.);" } }
-            snoise_vec2: { blocks: { color: "color += snoise(v_texcoord.xy*2.);" } }
-            snoise_vec3: { blocks: { color: "color += snoise(vec3(v_texcoord.xy,u_time)*2.);" } }
-            noise_float_t: { defines: { NOISE_TEXSAMPLE: 1 }, blocks: { color: "color += noise(v_texcoord.x*2.);" } }
-            noise_vec2_t: { defines: { NOISE_TEXSAMPLE: 1 }, blocks: { color: "color += noise(v_texcoord.xy*2.);" } }
-            noise_vec3_t: { defines: { NOISE_TEXSAMPLE: 1 }, blocks: { color: "color += noise(vec3(v_texcoord.xy,u_time)*2.);" } }
-            snoise_vec2_t: { defines: { NOISE_TEXSAMPLE: 1 }, blocks: { color: "color += snoise(v_texcoord.xy*2.);" } }
-            snoise_vec3_t: { defines: { NOISE_TEXSAMPLE: 1 }, blocks: { color: "color += snoise(vec3(v_texcoord.xy,u_time)*2.);" } }
+            noise_float: { blocks: { color: "color.rgb += noise(v_texcoord.x*2.);" } }
+            noise_vec2: { blocks: { color: "color.rgb += noise(v_texcoord.xy*2.);" } }
+            noise_vec3: { blocks: { color: "color.rgb += noise(vec3(v_texcoord.xy*2.,u_time));" } }
+            snoise_vec2: { blocks: { color: "color.rgb += snoise(v_texcoord.xy*2.);" } }
+            snoise_vec3: { blocks: { color: "color.rgb += snoise(vec3(v_texcoord.xy*2.,u_time));" } }
+            noise_float_t: { defines: { NOISE_TEXSAMPLE: 1 }, blocks: { color: "color.rgb += noise(v_texcoord.x*2.);" } }
+            noise_vec2_t: { defines: { NOISE_TEXSAMPLE: 1 }, blocks: { color: "color.rgb += noise(v_texcoord.xy*2.);" } }
+            noise_vec3_t: { defines: { NOISE_TEXSAMPLE: 1 }, blocks: { color: "color.rgb += noise(vec3(v_texcoord.xy,u_time)*2.);" } }
         shaders:
             defines:
                 NOISE_TEXSAMPLE_SIZE: 256.0
@@ -43,13 +41,14 @@ styles:
                         #endif
                     }
 
+                    // Gradient Noise
                     float noise (vec2 p) {
+                        #ifdef NOISE_TEXSAMPLE
+                        return texture2D(u_random, p*vec2(1./NOISE_TEXSAMPLE_SIZE)).r;
+                        #else
                         vec2 i = floor(p);
                         vec2 f = fract(p);
                         f = f * f * (3.0 - 2.0 * f);
-                        #ifdef NOISE_TEXSAMPLE
-                        return texture2D(u_random, fract((p+.5)/NOISE_TEXSAMPLE_SIZE), -100.).r;
-                        #else
                         float a = random(i);
                         float b = random(i + vec2(1.0, 0.0));
                         float c = random(i + vec2(0.0, 1.0));
@@ -67,6 +66,9 @@ styles:
                         vec2 rg = texture2D(u_random, fract((uv+.5)/NOISE_TEXSAMPLE_SIZE), -100.0 ).yx;
                         return mix( rg.x, rg.y, f.z );
                         #else
+                        float n = i.x + i.y*57.0 + 113.0*i.z;
+                        return mix(mix(mix(random(n+0.0),random(n+1.0),f.x),mix(random(n+ 57.0),random(n+ 58.0),f.x),f.y),mix(mix(random(n+113.0),random(n+114.0),f.x),mix(random(n+170.0),random(n+171.0),f.x),f.y),f.z);
+                        /*
                         const vec3 step = vec3(110.0, 241.0, 171.0);
                         float n = dot(i, step);
                         return mix( mix(mix(random(n + dot(step, vec3(0,0,0))),
@@ -80,6 +82,7 @@ styles:
                                             random(n + dot(step, vec3(1,1,1))), f.x),
                                     f.y),
                                 f.z);
+                                */
                         #endif
                     }
 
