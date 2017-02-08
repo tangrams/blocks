@@ -162,10 +162,14 @@ def appendDoc2README(readme_file, filename, counter):
                             readme_file.write('\n\n')
                             readme_file.write('<a href="http://thebookofshaders.com/edit.php#'+URL+benchmark_data[block_name][test_name]['output'][:-3]+'frag"><img src="'+URL+benchmark_data[block_name][test_name]['output']+'" style="width:100px; height:100px; float: right; left: 55px;"></a>')
                             if 'blocks' in block['test'][test_name]:
+                                readme_file.write('\n\n```glsl\n')
+                                if 'defines' in block['test'][test_name]:
+                                    for define in block['test'][test_name]['defines']:
+                                        readme_file.write('#define '+define+' '+str(block['test'][test_name]['defines'][define])+'\n')
                                 if 'color' in block['test'][test_name]['blocks']:
-                                    readme_file.write(  '\n\n```glsl\n' + 
-                                            block['test'][test_name]['blocks']['color'] +
-                                            '\n```\n\n')
+                                    readme_file.write('...\n// Color:\n')
+                                    readme_file.write(block['test'][test_name]['blocks']['color'])
+                                readme_file.write('\n```\n\n')
 
 
 
