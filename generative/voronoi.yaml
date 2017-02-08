@@ -14,7 +14,6 @@ styles:
         mix: generative-random
         test:
             voronoi: { blocks: { color: "color.rgb = voronoi(v_texcoord*2.);" } }
-            voronoi_t: { defines: { RANDOM_TEXSAMPLE: 1 }, blocks: { color: "color.rgb = voronoi(v_texcoord*2.);" } }
         shaders:
             blocks:
                 global: |
