@@ -18,6 +18,8 @@ styles:
             noise_float: { blocks: { color: "color.rgb += noise(v_texcoord.x*2.);" } }
             noise_vec2: { blocks: { color: "color.rgb += noise(v_texcoord.xy*2.);" } }
             noise_vec3: { blocks: { color: "color.rgb += noise(vec3(v_texcoord.xy*2.,u_time));" } }
+            gnoise_vec2: { blocks: { color: "color.rgb += gnoise(v_texcoord.xy*2.);" } }
+            gnoise_vec3: { blocks: { color: "color.rgb += gnoise(vec3(v_texcoord.xy*2.,u_time));" } }
             snoise_vec2: { blocks: { color: "color.rgb += snoise(v_texcoord.xy*2.);" } }
             snoise_vec3: { blocks: { color: "color.rgb += snoise(vec3(v_texcoord.xy*2.,u_time));" } }
             noise_float_t: { defines: { NOISE_TEXSAMPLE: 1 }, blocks: { color: "color.rgb += noise(v_texcoord.x*2.);" } }
