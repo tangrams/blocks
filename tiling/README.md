@@ -41,42 +41,6 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
-#### [tiling-simplex](http://tangrams.github.io/blocks/#tiling-simplex) <a href="https://github.com/tangrams/blocks/blob/gh-pages/tiling/simplex.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Repeats a coordinate space (`vec2 st`) in diferent simplex tiles. To learn more about simplex grids check [this chapter about noise from the Book of Shaders](https://thebookofshaders.com/11/)
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/tiling/simplex.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/tiling/simplex-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **shader blocks**:
-
-- **global**:
- + `vec2 skew (vec2 st)`
- + `vec3 simplexCoord (vec2 st, float td)`
- + `vec3 simplexGrid (vec2 st)`
- + `vec3 simplexRotatedGrid (vec2 st)`
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
 #### [tiling-tile](http://tangrams.github.io/blocks/#tiling-tile) <a href="https://github.com/tangrams/blocks/blob/gh-pages/tiling/tile.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Repeats a coordinate space (`vec2 st`) in diferent brick-like tiles N times (`float zoom`). For more information about tilling patterns read [this chapter of The Book of Shaders](https://thebookofshaders.com/09/)
@@ -144,3 +108,39 @@ These are the **shader blocks**:
 - **global**:
  + `vec2 truchetMirror (vec2 st)`
  + `vec2 truchetRotate (vec2 st)`
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [tiling-simplex](http://tangrams.github.io/blocks/#tiling-simplex) <a href="https://github.com/tangrams/blocks/blob/gh-pages/tiling/simplex.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Repeats a coordinate space (`vec2 st`) in diferent simplex tiles. To learn more about simplex grids check [this chapter about noise from the Book of Shaders](https://thebookofshaders.com/11/)
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/tiling/simplex.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/tiling/simplex-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
+
+- **global**:
+ + `vec2 skew (vec2 st)`
+ + `vec3 simplexCoord (vec2 st, float td)`
+ + `vec3 simplexGrid (vec2 st)`
+ + `vec3 simplexRotatedGrid (vec2 st)`
