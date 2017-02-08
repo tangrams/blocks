@@ -64,6 +64,6 @@ void main() {
     // vec3 normal = v_normal;
     vec4 color = vec4(0.,0.,0.,1.);
 
-color.rgb += random(vec3(v_texcoord.xy,u_time)*2.);
+color.rgb += random(vec3(v_texcoord.xy*2.,u_time));
     gl_FragColor = color;
 }

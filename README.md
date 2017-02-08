@@ -1083,84 +1083,84 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./generative/test/generative-fbm.png)](http://tangrams.github.io/blocks/test.html?test=./generative/test/generative-fbm.json)
 
-- **fbm_float_5oct** ( mean: 0.00846448749139 median: 0.008465 )
+- **fbm_float_5oct** ( mean: 0.00844455485575 median: 0.008455 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_5oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_5oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
-color += fbm(v_texcoord.x);
+color.rgb += fbm(v_texcoord.x);
 ```
 
 
-- **fbm_vec2_5oct** ( mean: 0.063269158215 median: 0.063276 )
+- **fbm_vec2_5oct** ( mean: 0.0619974188173 median: 0.061916 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_5oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_5oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
-color += fbm(v_texcoord);
+color.rgb += fbm(v_texcoord);
 ```
 
 
-- **fbm_vec3_5oct** ( mean: 0.0660109724771 median: 0.065965 )
+- **fbm_vec3_5oct** ( mean: 0.0631390882533 median: 0.063172 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_5oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_5oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
-color += fbm(vec3(v_texcoord,u_time));
+color.rgb += fbm(vec3(v_texcoord,u_time));
 ```
 
 
-- **fbm_float_8oct** ( mean: 0.0198543131354 median: 0.019859 )
+- **fbm_float_8oct** ( mean: 0.0197683240703 median: 0.019772 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_8oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_8oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
-color += fbm(v_texcoord.x);
+color.rgb += fbm(v_texcoord.x);
 ```
 
 
-- **fbm_vec3_8oct** ( mean: 0.138511308021 median: 0.136518 )
+- **fbm_vec3_8oct** ( mean: 0.149106719334 median: 0.137607 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_8oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_8oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
-color += fbm(vec3(v_texcoord,u_time));
+color.rgb += fbm(vec3(v_texcoord,u_time));
 ```
 
 
-- **fbm_float_3oct** ( mean: 0.00535548188111 median: 0.005357 )
+- **fbm_float_3oct** ( mean: 0.00533053739837 median: 0.005349 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_3oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_3oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
-color += fbm(v_texcoord.x);
+color.rgb += fbm(v_texcoord.x);
 ```
 
 
-- **fbm_vec2_3oct** ( mean: 0.0278343564598 median: 0.027842 )
+- **fbm_vec2_3oct** ( mean: 0.0276804281066 median: 0.027701 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_3oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_3oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
-color += fbm(v_texcoord);
+color.rgb += fbm(v_texcoord);
 ```
 
 
-- **fbm_vec3_3oct** ( mean: 0.0290185058991 median: 0.029027 )
+- **fbm_vec3_3oct** ( mean: 0.0345446638418 median: 0.034577 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_3oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_3oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
-color += fbm(vec3(v_texcoord,u_time));
+color.rgb += fbm(vec3(v_texcoord,u_time));
 ```
 
 
-- **fbm_vec2_8oct** ( mean: 0.130707660573 median: 0.13072 )
+- **fbm_vec2_8oct** ( mean: 0.139839480374 median: 0.133798 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_8oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_8oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
-color += fbm(v_texcoord);
+color.rgb += fbm(v_texcoord);
 ```
 
 
@@ -1204,7 +1204,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./generative/test/generative-caustic.png)](http://tangrams.github.io/blocks/test.html?test=./generative/test/generative-caustic.json)
 
-- **getCaustic_3iter** ( mean: 0.0175719577493 median: 0.017573 )
+- **getCaustic_3iter** ( mean: 0.0175769296327 median: 0.017581 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_3iter.frag"><img src="http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_3iter.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -1213,7 +1213,7 @@ color.rgb += getCaustic(v_texcoord);
 ```
 
 
-- **getCaustic_5iter** ( mean: 0.027608025 median: 0.027598 )
+- **getCaustic_5iter** ( mean: 0.0275867830383 median: 0.0276 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_5iter.frag"><img src="http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_5iter.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -1222,7 +1222,7 @@ color.rgb += getCaustic(v_texcoord);
 ```
 
 
-- **getCaustic_4iter** ( mean: 0.0225878217338 median: 0.0226 )
+- **getCaustic_4iter** ( mean: 0.0225804117512 median: 0.022586 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_4iter.frag"><img src="http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_4iter.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -1278,93 +1278,75 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./generative/test/generative-noise.png)](http://tangrams.github.io/blocks/test.html?test=./generative/test/generative-noise.json)
 
-- **snoise_vec3** ( mean: 0.0068254305216 median: 0.006828 )
+- **snoise_vec3** ( mean: 0.00680765400244 median: 0.006817 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec3.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec3.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
-color += snoise(vec3(v_texcoord.xy,u_time)*2.);
+color.rgb += snoise(vec3(v_texcoord.xy*2.,u_time));
 ```
 
 
-- **snoise_vec2** ( mean: 0.00455059050143 median: 0.004552 )
+- **snoise_vec2** ( mean: 0.00542089034152 median: 0.005445 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec2.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec2.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
-color += snoise(v_texcoord.xy*2.);
+color.rgb += snoise(v_texcoord.xy*2.);
 ```
 
 
-- **snoise_vec2_t** ( mean: 0.00455103955148 median: 0.004553 )
-
-<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec2_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec2_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
-
-```glsl
-color += snoise(v_texcoord.xy*2.);
-```
-
-
-- **noise_float** ( mean: 0.00261858089808 median: 0.00277 )
+- **noise_float** ( mean: 0.00287833465924 median: 0.00279 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-noise_float.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_float.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
-color += noise(v_texcoord.x*2.);
+color.rgb += noise(v_texcoord.x*2.);
 ```
 
 
-- **noise_float_t** ( mean: 0.00159872515813 median: 0.001545 )
+- **noise_float_t** ( mean: 0.00177188959123 median: 0.001604 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-noise_float_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_float_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
-color += noise(v_texcoord.x*2.);
+color.rgb += noise(v_texcoord.x*2.);
 ```
 
 
-- **snoise_vec3_t** ( mean: 0.00682604483391 median: 0.006828 )
-
-<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec3_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec3_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
-
-```glsl
-color += snoise(vec3(v_texcoord.xy,u_time)*2.);
-```
-
-
-- **noise_vec3_t** ( mean: 0.00184437960688 median: 0.00184 )
+- **noise_vec3_t** ( mean: 0.00193247301717 median: 0.001841 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-noise_vec3_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_vec3_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
-color += noise(vec3(v_texcoord.xy,u_time)*2.);
+color.rgb += noise(vec3(v_texcoord.xy,u_time)*2.);
 ```
 
 
-- **noise_vec3** ( mean: 0.00680012894683 median: 0.006802 )
+- **noise_vec3** ( mean: 0.0067764171968 median: 0.00679 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-noise_vec3.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_vec3.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
-color += noise(vec3(v_texcoord.xy,u_time)*2.);
+color.rgb += noise(vec3(v_texcoord.xy*2.,u_time));
 ```
 
 
-- **noise_vec2** ( mean: 0.00647261948342 median: 0.006474 )
+- **noise_vec2** ( mean: 0.00645491727642 median: 0.006464 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-noise_vec2.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_vec2.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
-color += noise(v_texcoord.xy*2.);
+color.rgb += noise(v_texcoord.xy*2.);
 ```
 
 
-- **noise_vec2_t** ( mean: 0.00160896360662 median: 0.001545 )
+- **noise_vec2_t** ( mean: 0.00176432679739 median: 0.001581 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-noise_vec2_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_vec2_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
-color += noise(v_texcoord.xy*2.);
+color.rgb += noise(v_texcoord.xy*2.);
 ```
 
 
@@ -1405,7 +1387,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./generative/test/generative-voronoi.png)](http://tangrams.github.io/blocks/test.html?test=./generative/test/generative-voronoi.json)
 
-- **voronoi** ( mean: 0.0215641208545 median: 0.02157 )
+- **voronoi** ( mean: 0.0215715489717 median: 0.021572 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/voronoi-voronoi.frag"><img src="http://tangrams.github.io/blocks/./generative/test/voronoi-voronoi.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -1414,7 +1396,7 @@ color.rgb = voronoi(v_texcoord*2.);
 ```
 
 
-- **voronoi_t** ( mean: 0.00491736652893 median: 0.004964 )
+- **voronoi_t** ( mean: 0.00500958035339 median: 0.004969 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/voronoi-voronoi_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/voronoi-voronoi_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -1468,25 +1450,25 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./generative/test/generative-random.png)](http://tangrams.github.io/blocks/test.html?test=./generative/test/generative-random.json)
 
-- **random3_vec3_t** ( mean: 0.00273711536076 median: 0.002719 )
+- **random3_vec3_t** ( mean: 0.00327055467302 median: 0.003177 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random3_vec3_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random3_vec3_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
-color.rgb += random3(vec3(v_texcoord.xy,u_time)*2.);
+color.rgb += random3(vec3(v_texcoord.xy*2.,u_time));
 ```
 
 
-- **random_vec3** ( mean: 0.00163844192229 median: 0.001584 )
+- **random_vec3** ( mean: 0.00183251077083 median: 0.001625 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random_vec3.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_vec3.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
-color.rgb += random(vec3(v_texcoord.xy,u_time)*2.);
+color.rgb += random(vec3(v_texcoord.xy*2.,u_time));
 ```
 
 
-- **random_vec2** ( mean: 0.00238925379448 median: 0.002419 )
+- **random_vec2** ( mean: 0.00210767018852 median: 0.002063 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random_vec2.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_vec2.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -1495,7 +1477,7 @@ color.rgb += random(v_texcoord.xy*2.);
 ```
 
 
-- **random3_vec2_t** ( mean: 0.00273505611305 median: 0.002738 )
+- **random3_vec2_t** ( mean: 0.00281972319967 median: 0.002814 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random3_vec2_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random3_vec2_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -1504,7 +1486,7 @@ color.rgb += random3(v_texcoord.xy*2.);
 ```
 
 
-- **random_vec2_t** ( mean: 0.00310490623349 median: 0.00309 )
+- **random_vec2_t** ( mean: 0.0034343796056 median: 0.003195 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random_vec2_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_vec2_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -1513,7 +1495,7 @@ color.rgb += random(v_texcoord.xy*2.);
 ```
 
 
-- **random_float_t** ( mean: 0.00162599815536 median: 0.001525 )
+- **random_float_t** ( mean: 0.00175957276119 median: 0.001629 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random_float_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_float_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -1522,16 +1504,16 @@ color.rgb += random(v_texcoord.x*2.);
 ```
 
 
-- **random_vec3_t** ( mean: 0.00271740102249 median: 0.002717 )
+- **random_vec3_t** ( mean: 0.00279518439861 median: 0.002794 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random_vec3_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_vec3_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
-color.rgb += random(vec3(v_texcoord.xy,u_time)*2.);
+color.rgb += random(vec3(v_texcoord.xy*2.,u_time));
 ```
 
 
-- **random2_vec2_t** ( mean: 0.00273440155387 median: 0.002735 )
+- **random2_vec2_t** ( mean: 0.00281311616987 median: 0.002816 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random2_vec2_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random2_vec2_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -1540,7 +1522,7 @@ color.rg += random2(v_texcoord.xy*2.);
 ```
 
 
-- **random_float** ( mean: 0.001843045898 median: 0.001748 )
+- **random_float** ( mean: 0.00172900348361 median: 0.001599 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random_float.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_float.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -1549,7 +1531,7 @@ color.rgb += random(v_texcoord.x*2.);
 ```
 
 
-- **random2_vec2** ( mean: 0.00229143585118 median: 0.002144 )
+- **random2_vec2** ( mean: 0.00272855632322 median: 0.002561 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random2_vec2.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random2_vec2.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -1558,16 +1540,16 @@ color.rg += random2(v_texcoord.xy*2.);
 ```
 
 
-- **random3_vec3** ( mean: 0.00178975296039 median: 0.001783 )
+- **random3_vec3** ( mean: 0.00188027041046 median: 0.001773 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random3_vec3.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random3_vec3.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
 ```glsl
-color.rgb += random3(vec3(v_texcoord.xy,u_time)*2.);
+color.rgb += random3(vec3(v_texcoord.xy*2.,u_time));
 ```
 
 
-- **random3_vec2** ( mean: 0.00275798306122 median: 0.002758 )
+- **random3_vec2** ( mean: 0.00275644565665 median: 0.002774 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random3_vec2.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random3_vec2.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -3297,7 +3279,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./shapes/test/shapes-circle.png)](http://tangrams.github.io/blocks/test.html?test=./shapes/test/shapes-circle.json)
 
-- **circle** ( mean: 0.00198022544701 median: 0.001956 )
+- **circle** ( mean: 0.00167235880058 median: 0.001539 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/circle-circle.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/circle-circle.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -3306,7 +3288,7 @@ color.rgb += circle(v_texcoord,.5);
 ```
 
 
-- **circleBorder** ( mean: 0.00152749886855 median: 0.001508 )
+- **circleBorder** ( mean: 0.00174372764394 median: 0.001543 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/circle-circleBorder.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/circle-circleBorder.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -3315,7 +3297,7 @@ color.rgb += circleBorder(v_texcoord,.5);
 ```
 
 
-- **circleDF** ( mean: 0.00152161629569 median: 0.001506 )
+- **circleDF** ( mean: 0.0017259835443 median: 0.001541 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/circle-circleDF.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/circle-circleDF.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -3373,7 +3355,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./shapes/test/shapes-polygons.png)](http://tangrams.github.io/blocks/test.html?test=./shapes/test/shapes-polygons.json)
 
-- **shapeDF** ( mean: 0.00402316986134 median: 0.004025 )
+- **shapeDF** ( mean: 0.00481279196704 median: 0.004844 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/polygons-shapeDF.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/polygons-shapeDF.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -3382,7 +3364,7 @@ color.rgb += shapeDF(v_texcoord,5);
 ```
 
 
-- **shape** ( mean: 0.0040920768917 median: 0.004094 )
+- **shape** ( mean: 0.00490130430301 median: 0.004916 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/polygons-shape.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/polygons-shape.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -3391,7 +3373,7 @@ color.rgb += shape(v_texcoord,5,.5);
 ```
 
 
-- **shapeBorder** ( mean: 0.00417628880719 median: 0.004186 )
+- **shapeBorder** ( mean: 0.00418719640971 median: 0.004192 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/polygons-shapeBorder.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/polygons-shapeBorder.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -3448,7 +3430,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./shapes/test/shapes-rect.png)](http://tangrams.github.io/blocks/test.html?test=./shapes/test/shapes-rect.json)
 
-- **rect_rnd** ( mean: 0.00152041159657 median: 0.001506 )
+- **rect_rnd** ( mean: 0.00164996839873 median: 0.001542 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/rect-rect_rnd.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/rect-rect_rnd.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -3457,7 +3439,7 @@ color.rgb += rect(v_texcoord,vec2(.5),.5);
 ```
 
 
-- **rectDF** ( mean: 0.00155081376185 median: 0.001504 )
+- **rectDF** ( mean: 0.00225892111959 median: 0.002056 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/rect-rectDF.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/rect-rectDF.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -3466,7 +3448,7 @@ color.rgb += rectDF(v_texcoord,vec2(.5));
 ```
 
 
-- **rect** ( mean: 0.00153278500824 median: 0.001504 )
+- **rect** ( mean: 0.00170454425336 median: 0.001544 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/rect-rect.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/rect-rect.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -3475,7 +3457,7 @@ color.rgb += rect(v_texcoord,vec2(.5));
 ```
 
 
-- **rectBorder_rnd** ( mean: 0.00152717228694 median: 0.001508 )
+- **rectBorder_rnd** ( mean: 0.00229793821096 median: 0.002014 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/rect-rectBorder_rnd.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/rect-rectBorder_rnd.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
