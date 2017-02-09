@@ -123,40 +123,40 @@ styles:
         test:
             gnoise_vec2:
                 blocks:
-                    color: color.rgb += gnoise(v_texcoord.xy*2.);
+                    color: '    color.rgb += gnoise(v_texcoord.xy*2.);'
             gnoise_vec3:
                 blocks:
-                    color: color.rgb += gnoise(vec3(v_texcoord.xy*2.,u_time));
+                    color: '    color.rgb += gnoise(vec3(v_texcoord.xy*2.,u_time));'
             noise_float:
                 blocks:
-                    color: color.rgb += noise(v_texcoord.x*2.);
+                    color: '    color.rgb += noise(v_texcoord.x*2.);'
             noise_float_t:
                 blocks:
-                    color: color.rgb += noise(v_texcoord.x*2.);
+                    color: '    color.rgb += noise(v_texcoord.x*2.);'
                 defines:
                     NOISE_TEXSAMPLE: 1
             noise_vec2:
                 blocks:
-                    color: color.rgb += noise(v_texcoord.xy*2.);
+                    color: '    color.rgb += noise(v_texcoord.xy*2.);'
             noise_vec2_t:
                 blocks:
-                    color: color.rgb += noise(v_texcoord.xy*2.);
+                    color: '    color.rgb += noise(v_texcoord.xy*2.);'
                 defines:
                     NOISE_TEXSAMPLE: 1
             noise_vec3:
                 blocks:
-                    color: color.rgb += noise(vec3(v_texcoord.xy*2.,u_time));
+                    color: '    color.rgb += noise(vec3(v_texcoord.xy*2.,u_time));'
             noise_vec3_t:
                 blocks:
-                    color: color.rgb += noise(vec3(v_texcoord.xy,u_time)*2.);
+                    color: '    color.rgb += noise(vec3(v_texcoord.xy,u_time)*2.);'
                 defines:
                     NOISE_TEXSAMPLE: 1
             snoise_vec2:
                 blocks:
-                    color: color.rgb += snoise(v_texcoord.xy*2.);
+                    color: '    color.rgb += snoise(v_texcoord.xy*2.);'
             snoise_vec3:
                 blocks:
-                    color: color.rgb += snoise(vec3(v_texcoord.xy*2.,u_time));
+                    color: '    color.rgb += snoise(vec3(v_texcoord.xy*2.,u_time));'
     generative-random:
         doc:
             author:
@@ -198,50 +198,50 @@ styles:
         test:
             random2_vec2:
                 blocks:
-                    color: color.rg += random2(v_texcoord.xy*2.);
+                    color: '    color.rg += random2(v_texcoord.xy*2.);'
             random2_vec2_t:
                 blocks:
-                    color: color.rg += random2(v_texcoord.xy*2.);
+                    color: '    color.rg += random2(v_texcoord.xy*2.);'
                 defines:
                     RANDOM_TEXSAMPLE: 1
             random3_vec2:
                 blocks:
-                    color: color.rgb += random3(v_texcoord.xy*2.);
+                    color: '    color.rgb += random3(v_texcoord.xy*2.);'
             random3_vec2_t:
                 blocks:
-                    color: color.rgb += random3(v_texcoord.xy*2.);
+                    color: '    color.rgb += random3(v_texcoord.xy*2.);'
                 defines:
                     RANDOM_TEXSAMPLE: 1
             random3_vec3:
                 blocks:
-                    color: color.rgb += random3(vec3(v_texcoord.xy*2.,u_time));
+                    color: '    color.rgb += random3(vec3(v_texcoord.xy*2.,u_time));'
             random3_vec3_t:
                 blocks:
-                    color: color.rgb += random3(vec3(v_texcoord.xy*2.,u_time));
+                    color: '    color.rgb += random3(vec3(v_texcoord.xy*2.,u_time));'
                 defines:
                     RANDOM_TEXSAMPLE: 1
             random_float:
                 blocks:
-                    color: color.rgb += random(v_texcoord.x*2.);
+                    color: '    color.rgb += random(v_texcoord.x*2.);'
             random_float_t:
                 blocks:
-                    color: color.rgb += random(v_texcoord.x*2.);
+                    color: '    color.rgb += random(v_texcoord.x*2.);'
                 defines:
                     RANDOM_TEXSAMPLE: 1
             random_vec2:
                 blocks:
-                    color: color.rgb += random(v_texcoord.xy*2.);
+                    color: '    color.rgb += random(v_texcoord.xy*2.);'
             random_vec2_t:
                 blocks:
-                    color: color.rgb += random(v_texcoord.xy*2.);
+                    color: '    color.rgb += random(v_texcoord.xy*2.);'
                 defines:
                     RANDOM_TEXSAMPLE: 1
             random_vec3:
                 blocks:
-                    color: color.rgb += random(vec3(v_texcoord.xy*2.,u_time));
+                    color: '    color.rgb += random(vec3(v_texcoord.xy*2.,u_time));'
             random_vec3_t:
                 blocks:
-                    color: color.rgb += random(vec3(v_texcoord.xy*2.,u_time));
+                    color: '    color.rgb += random(vec3(v_texcoord.xy*2.,u_time));'
                 defines:
                     RANDOM_TEXSAMPLE: 1
     polygons-shimmering:
@@ -365,3 +365,10 @@ styles:
                     \       xyz.xy = 1.-vec2(p.x,p.y-p.x);\n        xyz.z = p.y;\n\
                     \    } else {\n        xyz.zx = 1.-vec2(p.x-p.y,p.y);\n      \
                     \  xyz.y = p.x;\n    }\n    \n    return fract(xyz);\n}"
+        test:
+            rotatedSimplex:
+                blocks:
+                    color: '    color.rgb += simplexRotatedGrid(v_texcoord.xy*5.);'
+            simplex:
+                blocks:
+                    color: '    color.rgb += simplexGrid(v_texcoord.xy*5.);'

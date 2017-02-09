@@ -31,3 +31,22 @@ styles:
                     \    } else {\n        st.x *= u_resolution.x/u_resolution.y;\n\
                     \        st.x -= (u_resolution.x*.5-u_resolution.y*.5)/u_resolution.y;\n\
                     \    } \n    return st;\n}\n#endif"
+        test:
+            screen:
+                blocks:
+                    color: 'vec2 st = getScreenCoords();
+
+                        color.rg += fract(st*3.);
+
+                        '
+                defines:
+                    TANGRAM_FRAGMENT_SHADER: 1
+            screen_nonstretch:
+                blocks:
+                    color: 'vec2 st = getScreenNonStretchCoords();
+
+                        color.rg += fract(st*3.);
+
+                        '
+                defines:
+                    TANGRAM_FRAGMENT_SHADER: 1

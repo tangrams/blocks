@@ -22,6 +22,9 @@ styles:
                         return mat2(cos(angle),-sin(angle),
                                     sin(angle),cos(angle));
                     }
+                    vec2 rotate2D (vec2 st, float a) {
+                        return (rotate2D(a)*(st-.5))+.5;
+                    }
                     mat3 rotateX3D (float phi) {
                         return mat3(
                             vec3(1.,0.,0.),

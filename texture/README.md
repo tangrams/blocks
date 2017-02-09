@@ -26,7 +26,23 @@ These blocks uses a custom **shader**.
 These are the **shader blocks**:
 
 - **global**:
- + `vec4 NonRepetitiveTexture (sampler2D tex, vec2 x, float v)`
+ + `vec4 NonRepetitiveTexture (sampler2D tex, vec2 xy, float v)`
+
+Here are some **benchmarks** of this block performed on a Raspberry Pi:
+[![](http://tangrams.github.io/blocks/./texture/test/texture-non-repetitive.png)](http://tangrams.github.io/blocks/test.html?test=./texture/test/texture-non-repetitive.json)
+
+- **repete_texture** ( mean: 0.00167502756857 median: 0.001683 )
+
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./texture/test/non-repetitive-repete_texture.frag"><img src="http://tangrams.github.io/blocks/./texture/test/non-repetitive-repete_texture.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+
+```glsl
+...
+// Color:
+color.rgb = vec3(1.);
+color.rgb -= NonRepetitiveTexture(u_tex0, v_texcoord.xy*10., 1.).a;
+
+```
+
 
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
@@ -60,6 +76,24 @@ These are the **shader blocks**:
 
 - **global**:
  + `vec4 TileTexture (sampler2D tex, float scale)`
+
+Here are some **benchmarks** of this block performed on a Raspberry Pi:
+[![](http://tangrams.github.io/blocks/./texture/test/texture-zoom-fade.png)](http://tangrams.github.io/blocks/test.html?test=./texture/test/texture-zoom-fade.json)
+
+- **zoom_fade** ( mean: 0.000227025644679 median: 0.000191 )
+
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./texture/test/zoom-fade-zoom_fade.frag"><img src="http://tangrams.github.io/blocks/./texture/test/zoom-fade-zoom_fade.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+
+```glsl
+#define v_pos v_texcoord
+#define u_map_position vec3(0.,0.,.5)
+...
+// Color:
+color.rgb = vec3(1.);
+color.rgb -= TileTexture(u_tex0,1.).a;
+
+```
+
 
 Examples:
 <a href="https://mapzen.com/tangram/play/?scene=https://tangrams.github.io/tangram-sandbox/styles/crosshatch.yaml&lines=76" target="_blank">

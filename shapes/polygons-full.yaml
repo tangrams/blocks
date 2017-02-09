@@ -68,13 +68,13 @@ styles:
         test:
             shape:
                 blocks:
-                    color: color.rgb += shape(v_texcoord,5,.5);
+                    color: '    color.rgb += shape(v_texcoord.xy,5,.5);'
             shapeBorder:
                 blocks:
-                    color: color.rgb += shapeBorder(v_texcoord,5,.5);
+                    color: '    color.rgb += shapeBorder(v_texcoord.xy,5,.5);'
             shapeDF:
                 blocks:
-                    color: color.rgb += shapeDF(v_texcoord,5);
+                    color: '    color.rgb += shapeDF(v_texcoord.xy,5);'
     shapes-type:
         doc:
             author:

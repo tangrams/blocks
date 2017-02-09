@@ -6,13 +6,11 @@ uniform vec2 u_resolution;
 uniform float u_time;
 
 
+
 #define TAU 6.28318530718
 
 #define CAUSTIC_ITERATIONS 5
 
-// varying vec4 v_position;
-// varying vec4 v_color;
-// varying vec3 v_normal;
 varying vec2 v_texcoord;
 
 
@@ -36,9 +34,11 @@ vec3 getCaustic (vec2 uv) {
     return color;
 }
 void main() {
-    // vec3 normal = v_normal;
+    vec3 normal = vec3(0.,0.,1.);
     vec4 color = vec4(0.,0.,0.,1.);
 
-color.rgb += getCaustic(v_texcoord);
+
+    color.rgb += getCaustic(v_texcoord);
+
     gl_FragColor = color;
 }

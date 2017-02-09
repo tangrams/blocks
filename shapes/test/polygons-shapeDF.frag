@@ -6,6 +6,7 @@ uniform vec2 u_resolution;
 uniform float u_time;
 
 
+
 #define TWO_PI 6.28318530718
 
 #define HALF_PI 1.57079632679
@@ -28,9 +29,6 @@ uniform float u_time;
 
 #define rad2deg(d) (((d)*180.0)/3.1415926535897932384626433832795)
 
-// varying vec4 v_position;
-// varying vec4 v_color;
-// varying vec3 v_normal;
 varying vec2 v_texcoord;
 
 
@@ -79,9 +77,11 @@ float shapeBorder (vec2 st, int N, float width) {
     return stroke(width, shapeDF(st,N));
 }
 void main() {
-    // vec3 normal = v_normal;
+    vec3 normal = vec3(0.,0.,1.);
     vec4 color = vec4(0.,0.,0.,1.);
 
-color.rgb += shapeDF(v_texcoord,5);
+
+    color.rgb += shapeDF(v_texcoord.xy,5);
+
     gl_FragColor = color;
 }

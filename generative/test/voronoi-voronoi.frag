@@ -8,9 +8,7 @@ uniform float u_time;
 
 uniform sampler2D u_random; // https://tangrams.github.io/blocks/generative/imgs/tex16.png
 
-// varying vec4 v_position;
-// varying vec4 v_color;
-// varying vec3 v_normal;
+
 varying vec2 v_texcoord;
 
 
@@ -77,9 +75,11 @@ vec3 voronoi (vec2 st) {
     return m;
 }
 void main() {
-    // vec3 normal = v_normal;
+    vec3 normal = vec3(0.,0.,1.);
     vec4 color = vec4(0.,0.,0.,1.);
 
+
 color.rgb = voronoi(v_texcoord*2.);
+
     gl_FragColor = color;
 }

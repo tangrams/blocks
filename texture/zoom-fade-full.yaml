@@ -1,4 +1,5 @@
-import: ../space/tile.yaml
+import:
+- ../space/tile.yaml
 styles:
     space-tile:
         doc:
@@ -14,12 +15,22 @@ styles:
         shaders:
             blocks:
                 global: "// Variant to be add to both vertex and fragments shaders\n\
-                    varying vec3 v_pos;\n//\n// Get the coordinates in tile space\n\
-                    // ================================\nvec2 getTileCoords() {\n\
-                    \    return fract(v_pos.xy);\n}\n"
+                    #ifndef v_pos\nvarying vec3 v_pos;\n#endif\n\n//\n// Get the coordinates\
+                    \ in tile space\n// ================================\nvec2 getTileCoords()\
+                    \ {\n    return fract(v_pos.xy);\n}\n"
                 position: '// Normalize the attribute position of a vertex
 
                     v_pos = modelPosition().xyz;'
+        test:
+            tile:
+                blocks:
+                    color: 'vec2 st = getTileCoords();
+
+                        color.rg += fract(st*3.);
+
+                        '
+                defines:
+                    v_pos: v_texcoord
     texture-zoom-fade:
         doc:
             author:
@@ -47,3 +58,16 @@ styles:
                     \ IN = getTileCoords()*scale;\n    vec2 OUT = getTileCoords()*scale*2.;\n\
                     \    return mix(texture2D(tex,fract(IN)), texture2D(tex,fract(OUT)),\
                     \ fract(u_map_position.z));\n}"
+        test:
+            zoom_fade:
+                blocks:
+                    color: 'color.rgb = vec3(1.);
+
+                        color.rgb -= TileTexture(u_tex0,1.).a;
+
+                        '
+                defines:
+                    u_map_position: vec3(0.,0.,.5)
+                    v_pos: v_texcoord
+                uniforms:
+                    u_tex0: http://tangrams.github.io/tangram-sandbox/styles/imgs/hatch_1.png

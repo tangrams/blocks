@@ -8,13 +8,11 @@ uniform float u_time;
 
 uniform sampler2D u_random; // https://tangrams.github.io/blocks/generative/imgs/tex16.png
 
+
 #define NOISE_TEXSAMPLE_SIZE 256.0
 
 #define NOISE_TEXSAMPLE 1
 
-// varying vec4 v_position;
-// varying vec4 v_color;
-// varying vec3 v_normal;
 varying vec2 v_texcoord;
 
 
@@ -254,9 +252,11 @@ float snoise (vec3 p) {
     return dot(d, vec4(52.0));
 }
 void main() {
-    // vec3 normal = v_normal;
+    vec3 normal = vec3(0.,0.,1.);
     vec4 color = vec4(0.,0.,0.,1.);
 
-color.rgb += noise(v_texcoord.xy*2.);
+
+    color.rgb += noise(v_texcoord.xy*2.);
+
     gl_FragColor = color;
 }

@@ -9,11 +9,22 @@ styles:
             licence: MIT
             description: |
                 Get the position on the tile
+        test:
+            tile: 
+                defines:
+                    v_pos: 'v_texcoord'
+                blocks:
+                    color: |
+                        vec2 st = getTileCoords();
+                        color.rg += fract(st*3.);
         shaders:
             blocks:
                 global: |
                     // Variant to be add to both vertex and fragments shaders
+                    #ifndef v_pos
                     varying vec3 v_pos;
+                    #endif
+
                     //
                     // Get the coordinates in tile space
                     // ================================

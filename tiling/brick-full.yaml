@@ -26,3 +26,7 @@ styles:
                 global: "vec2 brick (vec2 st, float zoom) {\n    st *= zoom;\n   \
                     \ // Here is where the offset is happening\n    st.x += step(1.,\
                     \ mod(st.y,2.0)) * 0.5;\n    return fract(st);\n}"
+        test:
+            brick:
+                blocks:
+                    color: '    color.rg += brick(v_texcoord.xy,5.);'

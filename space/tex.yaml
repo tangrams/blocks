@@ -9,6 +9,12 @@ styles:
             licence: MIT
             description: |
                 Get the position on TexCoords
+        test:
+            tex: 
+                blocks:
+                    color: |
+                        vec2 st = getTexCoords();
+                        color.rg += fract(st*3.);
         texcoords: true
         shaders:
             blocks:

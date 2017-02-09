@@ -18,6 +18,21 @@ styles:
                     url: https://tangrams.github.io/tangram-sandbox/styles/radar.yaml
                     img: https://tangrams.github.io/tangram-sandbox/styles/radar.png
                     lines: 0-143
+        test:
+            screen: 
+                defines:
+                    TANGRAM_FRAGMENT_SHADER: 1
+                blocks:
+                    color: |
+                        vec2 st = getScreenCoords();
+                        color.rg += fract(st*3.);
+            screen_nonstretch: 
+                defines:
+                    TANGRAM_FRAGMENT_SHADER: 1
+                blocks:
+                    color: |
+                        vec2 st = getScreenNonStretchCoords();
+                        color.rg += fract(st*3.);
         shaders:
             blocks:
                 global: |

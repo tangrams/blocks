@@ -13,18 +13,19 @@ styles:
             description: |
                 Set of Noise functions.
                 For more information on this theme read [this chapter of The Book of Shaders about Noise](http://thebookofshaders.com/11/).
-        mix: generative-random
         test:
-            noise_float: { blocks: { color: "color.rgb += noise(v_texcoord.x*2.);" } }
-            noise_vec2: { blocks: { color: "color.rgb += noise(v_texcoord.xy*2.);" } }
-            noise_vec3: { blocks: { color: "color.rgb += noise(vec3(v_texcoord.xy*2.,u_time));" } }
-            gnoise_vec2: { blocks: { color: "color.rgb += gnoise(v_texcoord.xy*2.);" } }
-            gnoise_vec3: { blocks: { color: "color.rgb += gnoise(vec3(v_texcoord.xy*2.,u_time));" } }
-            snoise_vec2: { blocks: { color: "color.rgb += snoise(v_texcoord.xy*2.);" } }
-            snoise_vec3: { blocks: { color: "color.rgb += snoise(vec3(v_texcoord.xy*2.,u_time));" } }
-            noise_float_t: { defines: { NOISE_TEXSAMPLE: 1 }, blocks: { color: "color.rgb += noise(v_texcoord.x*2.);" } }
-            noise_vec2_t: { defines: { NOISE_TEXSAMPLE: 1 }, blocks: { color: "color.rgb += noise(v_texcoord.xy*2.);" } }
-            noise_vec3_t: { defines: { NOISE_TEXSAMPLE: 1 }, blocks: { color: "color.rgb += noise(vec3(v_texcoord.xy,u_time)*2.);" } }
+            noise_float: { blocks: { color: "    color.rgb += noise(v_texcoord.x*2.);" } }
+            noise_vec2: { blocks: { color: "    color.rgb += noise(v_texcoord.xy*2.);" } }
+            noise_vec3: { blocks: { color: "    color.rgb += noise(vec3(v_texcoord.xy*2.,u_time));" } }
+            gnoise_vec2: { blocks: { color: "    color.rgb += gnoise(v_texcoord.xy*2.);" } }
+            gnoise_vec3: { blocks: { color: "    color.rgb += gnoise(vec3(v_texcoord.xy*2.,u_time));" } }
+            snoise_vec2: { blocks: { color: "    color.rgb += snoise(v_texcoord.xy*2.);" } }
+            snoise_vec3: { blocks: { color: "    color.rgb += snoise(vec3(v_texcoord.xy*2.,u_time));" } }
+            noise_float_t: { defines: { NOISE_TEXSAMPLE: 1 }, blocks: { color: "    color.rgb += noise(v_texcoord.x*2.);" } }
+            noise_vec2_t: { defines: { NOISE_TEXSAMPLE: 1 }, blocks: { color: "    color.rgb += noise(v_texcoord.xy*2.);" } }
+            noise_vec3_t: { defines: { NOISE_TEXSAMPLE: 1 }, blocks: { color: "    color.rgb += noise(vec3(v_texcoord.xy,u_time)*2.);" } }
+
+        mix: generative-random
         shaders:
             defines:
                 NOISE_TEXSAMPLE_SIZE: 256.0

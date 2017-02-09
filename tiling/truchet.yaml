@@ -1,5 +1,6 @@
 import: 
     - ../geometry/matrices.yaml
+    
 styles:
     tiling-truchet:
         doc:
@@ -12,7 +13,11 @@ styles:
             description: |
                 Repeats a coordinate space (`vec2 st`) in diferent tiles acording to a Truchet patern.
                 There is two way to do this: by mirroring the spaces (`vec2 truchetMirror (vec2 st)`) or rotating them ('vec2 truchetRotate (vec2 st)')
-        mix: geometry-matrices
+        test:
+            mirror: { blocks: { color: "    color.rg += truchetMirror(v_texcoord.xy);" } }
+            rotate: { blocks: { color: "    color.rg += truchetRotate(v_texcoord.xy);" } }
+            
+        mix: [geometry-matrices]
         shaders:
             defines:
                 PI: 3.14159265358979323846

@@ -28,3 +28,10 @@ styles:
                     \       xyz.xy = 1.-vec2(p.x,p.y-p.x);\n        xyz.z = p.y;\n\
                     \    } else {\n        xyz.zx = 1.-vec2(p.x-p.y,p.y);\n      \
                     \  xyz.y = p.x;\n    }\n    \n    return fract(xyz);\n}"
+        test:
+            rotatedSimplex:
+                blocks:
+                    color: '    color.rgb += simplexRotatedGrid(v_texcoord.xy*5.);'
+            simplex:
+                blocks:
+                    color: '    color.rgb += simplexGrid(v_texcoord.xy*5.);'

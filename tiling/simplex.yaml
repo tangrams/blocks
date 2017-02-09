@@ -9,6 +9,10 @@ styles:
             licence: MIT
             description: |
                 Repeats a coordinate space (`vec2 st`) in diferent simplex tiles. To learn more about simplex grids check [this chapter about noise from the Book of Shaders](https://thebookofshaders.com/11/)
+        test:
+            simplex: { blocks: { color: "    color.rgb += simplexGrid(v_texcoord.xy*5.);" } }
+            rotatedSimplex: { blocks: { color: "    color.rgb += simplexRotatedGrid(v_texcoord.xy*5.);" } }
+
         shaders:
             blocks:
                 global: |

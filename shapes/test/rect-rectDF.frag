@@ -6,11 +6,9 @@ uniform vec2 u_resolution;
 uniform float u_time;
 
 
+
 #define STROKE 0.15
 
-// varying vec4 v_position;
-// varying vec4 v_color;
-// varying vec3 v_normal;
 varying vec2 v_texcoord;
 
 
@@ -80,9 +78,11 @@ float rect (vec2 st, float size){
 }
 
 void main() {
-    // vec3 normal = v_normal;
+    vec3 normal = vec3(0.,0.,1.);
     vec4 color = vec4(0.,0.,0.,1.);
 
-color.rgb += rectDF(v_texcoord,vec2(.5));
+
+    color.rgb += rectDF(v_texcoord.xy,vec2(.5));
+
     gl_FragColor = color;
 }

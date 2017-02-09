@@ -33,11 +33,12 @@ styles:
             blocks:
                 global: "// Rotate in 2, 3 and 4 dimensions\n// ================================\n\
                     mat2 rotate2D (float angle) {\n    return mat2(cos(angle),-sin(angle),\n\
-                    \                sin(angle),cos(angle));\n}\nmat3 rotateX3D (float\
-                    \ phi) {\n    return mat3(\n        vec3(1.,0.,0.),\n        vec3(0.,cos(phi),-sin(phi)),\n\
-                    \        vec3(0.,sin(phi),cos(phi)));\n}\nmat4 rotateX4D (float\
-                    \ phi) {\n    return mat4(\n        vec4(1.,0.,0.,0),\n      \
-                    \  vec4(0.,cos(phi),-sin(phi),0.),\n        vec4(0.,sin(phi),cos(phi),0.),\n\
+                    \                sin(angle),cos(angle));\n}\nvec2 rotate2D (vec2\
+                    \ st, float a) {\n    return (rotate2D(a)*(st-.5))+.5;\n}\nmat3\
+                    \ rotateX3D (float phi) {\n    return mat3(\n        vec3(1.,0.,0.),\n\
+                    \        vec3(0.,cos(phi),-sin(phi)),\n        vec3(0.,sin(phi),cos(phi)));\n\
+                    }\nmat4 rotateX4D (float phi) {\n    return mat4(\n        vec4(1.,0.,0.,0),\n\
+                    \        vec4(0.,cos(phi),-sin(phi),0.),\n        vec4(0.,sin(phi),cos(phi),0.),\n\
                     \        vec4(0.,0.,0.,1.));\n}\nmat3 rotateY3D (float theta)\
                     \ {\n    return mat3(\n        vec3(cos(theta),0.,-sin(theta)),\n\
                     \        vec3(0.,1.,0.),\n        vec3(sin(theta),0.,cos(theta)));\n\
@@ -73,7 +74,8 @@ styles:
             licence: MIT
             tangram-version: 0.0.7
             version: 0.0.1
-        mix: geometry-matrices
+        mix:
+        - geometry-matrices
         shaders:
             blocks:
                 global: "// Truchet Patern reference\n// ================================\n\
@@ -103,3 +105,10 @@ styles:
                     \ st = rotate2D(st,PI);\n    }\n    //\n    return st;\n}"
             defines:
                 PI: 3.141592653589793
+        test:
+            mirror:
+                blocks:
+                    color: '    color.rg += truchetMirror(v_texcoord.xy);'
+            rotate:
+                blocks:
+                    color: '    color.rg += truchetRotate(v_texcoord.xy);'

@@ -1,6 +1,5 @@
 import:
 - ../generative/random.yaml
-- ../space/tile.yaml
 styles:
     generative-random:
         doc:
@@ -43,72 +42,52 @@ styles:
         test:
             random2_vec2:
                 blocks:
-                    color: color.rg += random2(v_texcoord.xy*2.);
+                    color: '    color.rg += random2(v_texcoord.xy*2.);'
             random2_vec2_t:
                 blocks:
-                    color: color.rg += random2(v_texcoord.xy*2.);
+                    color: '    color.rg += random2(v_texcoord.xy*2.);'
                 defines:
                     RANDOM_TEXSAMPLE: 1
             random3_vec2:
                 blocks:
-                    color: color.rgb += random3(v_texcoord.xy*2.);
+                    color: '    color.rgb += random3(v_texcoord.xy*2.);'
             random3_vec2_t:
                 blocks:
-                    color: color.rgb += random3(v_texcoord.xy*2.);
+                    color: '    color.rgb += random3(v_texcoord.xy*2.);'
                 defines:
                     RANDOM_TEXSAMPLE: 1
             random3_vec3:
                 blocks:
-                    color: color.rgb += random3(vec3(v_texcoord.xy*2.,u_time));
+                    color: '    color.rgb += random3(vec3(v_texcoord.xy*2.,u_time));'
             random3_vec3_t:
                 blocks:
-                    color: color.rgb += random3(vec3(v_texcoord.xy*2.,u_time));
+                    color: '    color.rgb += random3(vec3(v_texcoord.xy*2.,u_time));'
                 defines:
                     RANDOM_TEXSAMPLE: 1
             random_float:
                 blocks:
-                    color: color.rgb += random(v_texcoord.x*2.);
+                    color: '    color.rgb += random(v_texcoord.x*2.);'
             random_float_t:
                 blocks:
-                    color: color.rgb += random(v_texcoord.x*2.);
+                    color: '    color.rgb += random(v_texcoord.x*2.);'
                 defines:
                     RANDOM_TEXSAMPLE: 1
             random_vec2:
                 blocks:
-                    color: color.rgb += random(v_texcoord.xy*2.);
+                    color: '    color.rgb += random(v_texcoord.xy*2.);'
             random_vec2_t:
                 blocks:
-                    color: color.rgb += random(v_texcoord.xy*2.);
+                    color: '    color.rgb += random(v_texcoord.xy*2.);'
                 defines:
                     RANDOM_TEXSAMPLE: 1
             random_vec3:
                 blocks:
-                    color: color.rgb += random(vec3(v_texcoord.xy*2.,u_time));
+                    color: '    color.rgb += random(vec3(v_texcoord.xy*2.,u_time));'
             random_vec3_t:
                 blocks:
-                    color: color.rgb += random(vec3(v_texcoord.xy*2.,u_time));
+                    color: '    color.rgb += random(vec3(v_texcoord.xy*2.,u_time));'
                 defines:
                     RANDOM_TEXSAMPLE: 1
-    space-tile:
-        doc:
-            author:
-                name: Patricio Gonzalez Vivo
-                twitter: patriciogv
-            description: 'Get the position on the tile
-
-                '
-            licence: MIT
-            tangram-version: 0.0.7
-            version: 0.0.1
-        shaders:
-            blocks:
-                global: "// Variant to be add to both vertex and fragments shaders\n\
-                    varying vec3 v_pos;\n//\n// Get the coordinates in tile space\n\
-                    // ================================\nvec2 getTileCoords() {\n\
-                    \    return fract(v_pos.xy);\n}\n"
-                position: '// Normalize the attribute position of a vertex
-
-                    v_pos = modelPosition().xyz;'
     texture-non-repetitive:
         doc:
             author:
@@ -118,17 +97,28 @@ styles:
             tangram-version: 0.0.7
             version: 0.0.1
         mix:
-        - space-tile
         - generative-random
         shaders:
             blocks:
-                global: "vec4 NonRepetitiveTexture (sampler2D tex, vec2 x, float v)\
-                    \ {\n    vec2 p = floor(xy);\n    vec2 f = fract(xy);\n    vec4\
-                    \ va = vec4(0.0);\n    float wt = 0.0;\n    for (int j=-1; j<=1;\
-                    \ j++) {\n        for (int i=-1; i<=1; i++ ) {\n            vec2\
-                    \ g = vec2( float(i),float(j) );\n            vec3 o = random3(\
-                    \ p + g );\n            vec2 r = g - f + o.xy;\n            float\
-                    \ d = dot(r,r);\n            float w = pow( 1.0 - smoothstep(0.0,2.0,dot(d,d)),\
-                    \ 1.0 + 16.0*v );\n            vec4 c = texture2D(tex, fract(.2*xy\
-                    \ + v*o.zy) );\n            va += w*c;\n            wt += w;\n\
-                    \        }\n    }\n    return va/wt;\n}"
+                global: "vec4 NonRepetitiveTexture (sampler2D tex, vec2 xy, float\
+                    \ v) {\n    vec2 p = floor(xy);\n    vec2 f = fract(xy);\n   \
+                    \ vec4 va = vec4(0.0);\n    float wt = 0.0;\n    for (int j=-1;\
+                    \ j<=1; j++) {\n        for (int i=-1; i<=1; i++ ) {\n       \
+                    \     vec2 g = vec2( float(i),float(j) );\n            vec3 o\
+                    \ = random3( p + g );\n            vec2 r = g - f + o.xy;\n  \
+                    \          float d = dot(r,r);\n            float w = pow( 1.0\
+                    \ - smoothstep(0.0,2.0,dot(d,d)), 1.0 + 16.0*v );\n          \
+                    \  vec4 c = texture2D(tex, fract(.2*xy + v*o.zy) );\n        \
+                    \    va += w*c;\n            wt += w;\n        }\n    }\n    return\
+                    \ va/wt;\n}"
+        test:
+            repete_texture:
+                blocks:
+                    color: 'color.rgb = vec3(1.);
+
+                        color.rgb -= NonRepetitiveTexture(u_tex0, v_texcoord.xy*10.,
+                        1.).a;
+
+                        '
+                uniforms:
+                    u_tex0: http://tangrams.github.io/tangram-sandbox/styles/imgs/hatch_1.png

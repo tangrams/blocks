@@ -13,10 +13,10 @@ styles:
             description: |  
                 Collection of functions to draw rectangles. To learn more about how to make shapes on shaders go to From check [this chapter about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
         test:
-            rectDF: { blocks: { color: "color.rgb += rectDF(v_texcoord,vec2(.5));" } }
-            rect_rnd: { blocks: { color: "color.rgb += rect(v_texcoord,vec2(.5),.5);" } } 
-            rectBorder_rnd: { blocks: { color: "color.rgb += rectBorder(v_texcoord,vec2(.5),.5);" } }
-            rect: { blocks: { color: "color.rgb += rect(v_texcoord,vec2(.5));" } } 
+            rectDF: { blocks: { color: "    color.rgb += rectDF(v_texcoord.xy,vec2(.5));" } }
+            rect_rnd: { blocks: { color: "    color.rgb += rect(v_texcoord.xy,vec2(.5),.5);" } } 
+            rectBorder_rnd: { blocks: { color: "    color.rgb += rectBorder(v_texcoord.xy,vec2(.5),.5);" } }
+            rect: { blocks: { color: "    color.rgb += rect(v_texcoord.xy,vec2(.5));" } } 
         mix: [shapes-type]
         shaders:
             blocks:

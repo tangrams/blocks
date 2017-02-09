@@ -13,4 +13,12 @@ styles:
         shaders:
             blocks:
                 global: "vec2 getTexCoords () {\n    return v_texcoord.xy;\n}"
+        test:
+            tex:
+                blocks:
+                    color: 'vec2 st = getTexCoords();
+
+                        color.rg += fract(st*3.);
+
+                        '
         texcoords: true

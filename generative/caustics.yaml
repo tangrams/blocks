@@ -10,9 +10,10 @@ styles:
             description: |
                 Caustic generative texture inspired on <https://www.shadertoy.com/view/MdlXz8> by David Hoskins
         test:
-            getCaustic_3iter: { blocks: { color: "color.rgb += getCaustic(v_texcoord);" } }
-            getCaustic_4iter: { defines: { CAUSTIC_ITERATIONS: 4 }, blocks: { color: "color.rgb += getCaustic(v_texcoord);" } }
-            getCaustic_5iter: { defines: { CAUSTIC_ITERATIONS: 5 }, blocks: { color: "color.rgb += getCaustic(v_texcoord);" } }
+            getCaustic_3iter: { blocks: { color: "    color.rgb += getCaustic(v_texcoord);" } }
+            getCaustic_4iter: { defines: { CAUSTIC_ITERATIONS: 4 }, blocks: { color: "    color.rgb += getCaustic(v_texcoord);" } }
+            getCaustic_5iter: { defines: { CAUSTIC_ITERATIONS: 5 }, blocks: { color: "    color.rgb += getCaustic(v_texcoord);" } }
+            
         shaders:
             defines:
                 TAU: 6.28318530718

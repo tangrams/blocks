@@ -8,11 +8,9 @@ uniform float u_time;
 
 uniform sampler2D u_random; // https://tangrams.github.io/blocks/generative/imgs/tex16.png
 
-#define RANDOM_TEXSAMPLE 1
+uniform sampler2D u_tex0; // http://tangrams.github.io/tangram-sandbox/styles/imgs/hatch_1.png
 
-// varying vec4 v_position;
-// varying vec4 v_color;
-// varying vec3 v_normal;
+
 varying vec2 v_texcoord;
 
 
@@ -62,26 +60,33 @@ float random (vec3 p) {
     return fract(sin(dot(p.xyz, vec3(70.9898,78.233,32.4355)))* 43758.5453123); 
     #endif
 }
-vec3 voronoi (vec2 st) {
-    vec2 ipos = floor(st);
-    vec2 fpos = fract(st);
-    vec3 m = vec3( 8.0 );
-    for( int j=-1; j<=1; j++ ){
-        for( int i=-1; i<=1; i++ ){
-            vec2  g = vec2( float(i), float(j) );
-            vec2  o = random2( ipos + g );
-            vec2  r = g - fpos + o;
-            float d = dot( r, r );
-            if( d<m.x )
-                m = vec3( d, o );
+vec4 NonRepetitiveTexture (sampler2D tex, vec2 xy, float v) {
+    vec2 p = floor(xy);
+    vec2 f = fract(xy);
+    vec4 va = vec4(0.0);
+    float wt = 0.0;
+    for (int j=-1; j<=1; j++) {
+        for (int i=-1; i<=1; i++ ) {
+            vec2 g = vec2( float(i),float(j) );
+            vec3 o = random3( p + g );
+            vec2 r = g - f + o.xy;
+            float d = dot(r,r);
+            float w = pow( 1.0 - smoothstep(0.0,2.0,dot(d,d)), 1.0 + 16.0*v );
+            vec4 c = texture2D(tex, fract(.2*xy + v*o.zy) );
+            va += w*c;
+            wt += w;
         }
     }
-    return m;
+    return va/wt;
 }
 void main() {
-    // vec3 normal = v_normal;
+    vec3 normal = vec3(0.,0.,1.);
     vec4 color = vec4(0.,0.,0.,1.);
 
-color.rgb = voronoi(v_texcoord*2.);
+
+color.rgb = vec3(1.);
+color.rgb -= NonRepetitiveTexture(u_tex0, v_texcoord.xy*10., 1.).a;
+
+
     gl_FragColor = color;
 }

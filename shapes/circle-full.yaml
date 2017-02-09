@@ -65,13 +65,13 @@ styles:
         test:
             circle:
                 blocks:
-                    color: color.rgb += circle(v_texcoord,.5);
+                    color: '    color.rgb += circle(v_texcoord.xy,.5);'
             circleBorder:
                 blocks:
-                    color: color.rgb += circleBorder(v_texcoord,.5);
+                    color: '    color.rgb += circleBorder(v_texcoord.xy,.5);'
             circleDF:
                 blocks:
-                    color: color.rgb += circleDF(v_texcoord-.5);
+                    color: '    color.rgb += circleDF(v_texcoord.xy-.5);'
     shapes-type:
         doc:
             author:

@@ -55,9 +55,19 @@ styles:
         shaders:
             blocks:
                 global: "// Variant to be add to both vertex and fragments shaders\n\
-                    varying vec3 v_pos;\n//\n// Get the coordinates in tile space\n\
-                    // ================================\nvec2 getTileCoords() {\n\
-                    \    return fract(v_pos.xy);\n}\n"
+                    #ifndef v_pos\nvarying vec3 v_pos;\n#endif\n\n//\n// Get the coordinates\
+                    \ in tile space\n// ================================\nvec2 getTileCoords()\
+                    \ {\n    return fract(v_pos.xy);\n}\n"
                 position: '// Normalize the attribute position of a vertex
 
                     v_pos = modelPosition().xyz;'
+        test:
+            tile:
+                blocks:
+                    color: 'vec2 st = getTileCoords();
+
+                        color.rg += fract(st*3.);
+
+                        '
+                defines:
+                    v_pos: v_texcoord
