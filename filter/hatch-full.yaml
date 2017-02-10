@@ -30,4 +30,10 @@ styles:
                     \ fract(pos1) ).a,\n               texture2D(u_hatchmap, fract(pos2)\
                     \ ).a,\n               1.0-fract(brightness*9.0));\n}"
             uniforms:
-                u_hatchmap: imgs/hatch.png
+                u_hatchmap: https://tangrams.github.io/blocks/filter/imgs/hatch.png
+        test:
+            hatch:
+                blocks:
+                    color: '    color += getHatch(v_texcoord.xy, texture2D(u_tex0,v_texcoord.xy).r);'
+                uniforms:
+                    u_tex0: https://tangrams.github.io/tangram-sandbox/styles/imgs/grid-0002.jpg

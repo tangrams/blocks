@@ -41,6 +41,12 @@ styles:
                 TV_BLEND: MULTIPLY
                 TV_FREQ: 2.7
                 TV_SPEED: 5.0
+        test:
+            tv:
+                blocks:
+                    color: '    color = texture2D(u_tex0,v_texcoord.xy);'
+                uniforms:
+                    u_tex0: https://tangrams.github.io/tangram-sandbox/styles/imgs/grid-0002.jpg
         ui:
             shaders:
                 defines:

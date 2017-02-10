@@ -29,7 +29,25 @@ def benchmark(yaml_filename, block_name, block, test_name):
 
     # Collect global functions
     standalone_yaml = yaml.safe_load(open(folder+'/'+name+'-full.yaml'))
-    pragmas['global'] = getAllGlobals(standalone_yaml, block_name)
+    if 'global' in pragmas:
+        pragmas['global'] += getAllGlobals(standalone_yaml, block_name)
+    else:
+        pragmas['global'] = getAllGlobals(standalone_yaml, block_name)
+
+    if 'normal' in pragmas:
+        pragmas['normal'] += getAllNormals(standalone_yaml, block_name)
+    else:
+        pragmas['normal'] = getAllNormals(standalone_yaml, block_name)
+
+    if 'color' in pragmas:  
+        pragmas['color'] += getAllColors(standalone_yaml, block_name)
+    else:
+        pragmas['color'] = getAllColors(standalone_yaml, block_name)
+
+    if 'filter' in pragmas:
+        pragmas['filter'] += getAllFilters(standalone_yaml, block_name)
+    else:
+        pragmas['filter'] = getAllFilters(standalone_yaml, block_name)
 
     # Collect all defines
     defines_dict = {}

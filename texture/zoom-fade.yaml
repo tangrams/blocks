@@ -25,7 +25,6 @@ styles:
             zoom_fade:
                 defines:
                     v_pos: "v_texcoord"
-                    u_map_position: "vec3(0.,0.,.5)"
                 uniforms: { u_tex0: "http://tangrams.github.io/tangram-sandbox/styles/imgs/hatch_1.png" }
                 blocks: 
                     color: |

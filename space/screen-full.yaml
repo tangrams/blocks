@@ -39,8 +39,6 @@ styles:
                         color.rg += fract(st*3.);
 
                         '
-                defines:
-                    TANGRAM_FRAGMENT_SHADER: 1
             screen_nonstretch:
                 blocks:
                     color: 'vec2 st = getScreenNonStretchCoords();
@@ -48,5 +46,3 @@ styles:
                         color.rg += fract(st*3.);
 
                         '
-                defines:
-                    TANGRAM_FRAGMENT_SHADER: 1

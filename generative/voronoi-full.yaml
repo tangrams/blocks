@@ -115,4 +115,4 @@ styles:
         test:
             voronoi:
                 blocks:
-                    color: color.rgb = voronoi(v_texcoord*2.);
+                    color: '    color.rgb = voronoi(v_texcoord.xy*2.);'

@@ -36,6 +36,14 @@ styles:
             defines:
                 GRID_AMOUNT: 0.2
                 GRID_BLEND: ADD
+        test:
+            grid:
+                blocks:
+                    color: '    color = texture2D(u_tex0,v_texcoord.xy);'
+                defines:
+                    v_pos: v_texcoord
+                uniforms:
+                    u_tex0: https://tangrams.github.io/tangram-sandbox/styles/imgs/grid-0002.jpg
         ui:
             shaders:
                 defines:

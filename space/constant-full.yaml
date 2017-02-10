@@ -24,3 +24,11 @@ styles:
                     \    const float dot_wrap = 1000.;\n    st += mod(u_map_position.xy\
                     \ / meter_pixels, dot_wrap)/pixel_scale;\n    return st;\n   \
                     \ #else\n    return vec2(0.0,0.0);\n    #endif\n}"
+        test:
+            constant:
+                blocks:
+                    color: 'vec2 st = getConstantCoords();
+
+                        color.rg += fract(st*3.);
+
+                        '

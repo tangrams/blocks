@@ -67,7 +67,6 @@ styles:
 
                         '
                 defines:
-                    u_map_position: vec3(0.,0.,.5)
                     v_pos: v_texcoord
                 uniforms:
                     u_tex0: http://tangrams.github.io/tangram-sandbox/styles/imgs/hatch_1.png

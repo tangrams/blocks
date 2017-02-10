@@ -17,9 +17,13 @@ styles:
                     url: https://tangrams.github.io/tangram-sandbox/styles/pericoli.yaml
                     img: https://tangrams.github.io/tangram-sandbox/styles/pericoli.png
                     lines: 157
+
+        test:
+            hatch: { uniforms: { u_tex0: "https://tangrams.github.io/tangram-sandbox/styles/imgs/grid-0002.jpg" }, blocks: { color: "    color += getHatch(v_texcoord.xy, texture2D(u_tex0,v_texcoord.xy).r);" } }
+
         shaders:
             uniforms:
-                u_hatchmap: imgs/hatch.png
+                u_hatchmap: "https://tangrams.github.io/blocks/filter/imgs/hatch.png"
             blocks:
                 global: |
                     float getHatch (vec2 st, float brightness) {

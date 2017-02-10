@@ -12,7 +12,7 @@ styles:
                 Set of Voronoi functions.
                 For more information on this theme read [this chapter of The Book of Shaders about Cellular Noise and Voronoi](http://thebookofshaders.com/12/).
         test:
-            voronoi: { blocks: { color: "color.rgb = voronoi(v_texcoord*2.);" } }
+            voronoi: { blocks: { color: "    color.rgb = voronoi(v_texcoord.xy*2.);" } }
 
         mix: generative-random
         shaders:

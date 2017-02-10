@@ -39,7 +39,7 @@ def getGlobalFunctionsIn(yaml_block):
 
 def isNormalBlockIn(yaml_block):
     if isShaderBlocksIn(yaml_block):
-        return 'global' in yaml_block['shaders']['normal']
+        return 'normal' in yaml_block['shaders']['blocks']
 
 def getNormalBlockIn(yaml_block):
     if isNormalBlockIn(yaml_block):
@@ -48,7 +48,7 @@ def getNormalBlockIn(yaml_block):
 
 def isColorBlockIn(yaml_block):
     if isShaderBlocksIn(yaml_block):
-        return 'global' in yaml_block['shaders']['color']
+        return 'color' in yaml_block['shaders']['blocks']
 
 def getColorBlockIn(yaml_block):
     if isColorBlockIn(yaml_block):
@@ -57,7 +57,7 @@ def getColorBlockIn(yaml_block):
 
 def isFilterBlockIn(yaml_block):
     if isShaderBlocksIn(yaml_block):
-        return 'global' in yaml_block['shaders']['filter']
+        return 'filter' in yaml_block['shaders']['blocks']
 
 def getFilterBlockIn(yaml_block):
     if isFilterBlockIn(yaml_block):
@@ -152,6 +152,30 @@ def getAllGlobals(yaml_file, block_name):
     for dep_block_name in depts:
         rta += getAllGlobals(yaml_file, dep_block_name)
     rta += getGlobalBlockIn(yaml_file['styles'][block_name])
+    return rta
+
+def getAllNormals(yaml_file, block_name):
+    rta = ""
+    depts = getDependencesIn(yaml_file['styles'][block_name])
+    for dep_block_name in depts:
+        rta += getAllNormals(yaml_file, dep_block_name)
+    rta += getNormalBlockIn(yaml_file['styles'][block_name])
+    return rta
+
+def getAllColors(yaml_file, block_name):
+    rta = ""
+    depts = getDependencesIn(yaml_file['styles'][block_name])
+    for dep_block_name in depts:
+        rta += getAllColors(yaml_file, dep_block_name)
+    rta += getColorBlockIn(yaml_file['styles'][block_name])
+    return rta
+
+def getAllFilters(yaml_file, block_name):
+    rta = ""
+    depts = getDependencesIn(yaml_file['styles'][block_name])
+    for dep_block_name in depts:
+        rta += getAllFilters(yaml_file, dep_block_name)
+    rta += getFilterBlockIn(yaml_file['styles'][block_name])
     return rta
 
 # Recursive dict merge (From https://gist.github.com/angstwad/bf22d1822c38a92ec0a9)
