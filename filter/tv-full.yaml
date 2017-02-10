@@ -46,7 +46,7 @@ styles:
                 blocks:
                     color: '    color = texture2D(u_tex0,v_texcoord.xy);'
                 uniforms:
-                    u_tex0: https://tangrams.github.io/tangram-sandbox/styles/imgs/grid-0002.jpg
+                    u_tex0: https://tangrams.github.io/blocks/test.jpg
         ui:
             shaders:
                 defines:

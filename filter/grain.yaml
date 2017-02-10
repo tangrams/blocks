@@ -35,7 +35,7 @@ styles:
                         values: ['ADD', 'SUBTRACT', 'MULTIPLY']
 
         test:
-            grain: { uniforms: { u_tex0: "https://tangrams.github.io/tangram-sandbox/styles/imgs/grid-0002.jpg" }, blocks: { color: "    color = texture2D(u_tex0,v_texcoord.xy);" } }
+            grain: { uniforms: { u_tex0: "https://tangrams.github.io/blocks/test.jpg" }, blocks: { color: "    color = texture2D(u_tex0,v_texcoord.xy);" } }
 
         shaders:
             defines:

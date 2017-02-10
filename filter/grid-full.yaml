@@ -43,7 +43,7 @@ styles:
                 defines:
                     v_pos: v_texcoord
                 uniforms:
-                    u_tex0: https://tangrams.github.io/tangram-sandbox/styles/imgs/grid-0002.jpg
+                    u_tex0: https://tangrams.github.io/blocks/test.jpg
         ui:
             shaders:
                 defines:

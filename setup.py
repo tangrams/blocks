@@ -158,6 +158,6 @@ else:
     if isRPi():
         print "Benchmarking on the PI"
         benchmarks()
-    # benchmarks()
+    benchmarks()
     document()
     

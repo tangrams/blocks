@@ -30,7 +30,7 @@ styles:
                         values: ['ADD', 'SUBTRACT', 'MULTIPLY']
 
         test:
-            grid: { defines: { v_pos: 'v_texcoord' }, uniforms: { u_tex0: "https://tangrams.github.io/tangram-sandbox/styles/imgs/grid-0002.jpg" }, blocks: { color: "    color = texture2D(u_tex0,v_texcoord.xy);" } }
+            grid: { defines: { v_pos: 'v_texcoord' }, uniforms: { u_tex0: "https://tangrams.github.io/blocks/test.jpg" }, blocks: { color: "    color = texture2D(u_tex0,v_texcoord.xy);" } }
 
         shaders:
             defines:

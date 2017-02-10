@@ -13,7 +13,7 @@ uniform float u_time;
 
 uniform sampler2D u_lut; // https://tangrams.github.io/blocks/filter/imgs/lut-0001.png
 
-uniform sampler2D u_tex0; // https://tangrams.github.io/tangram-sandbox/styles/imgs/grid-0002.jpg
+uniform sampler2D u_tex0; // https://tangrams.github.io/blocks/test.jpg
 
 
 #define LUT_AMOUNT 0.5

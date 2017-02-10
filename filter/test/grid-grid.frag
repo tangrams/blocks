@@ -11,7 +11,7 @@ uniform float u_time;
 #define TANGRAM_FRAGMENT_SHADER
 
 
-uniform sampler2D u_tex0; // https://tangrams.github.io/tangram-sandbox/styles/imgs/grid-0002.jpg
+uniform sampler2D u_tex0; // https://tangrams.github.io/blocks/test.jpg
 
 
 #define GRID_AMOUNT 0.2

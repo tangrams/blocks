@@ -13,7 +13,7 @@ uniform float u_time;
 
 uniform sampler2D u_hatchmap; // https://tangrams.github.io/blocks/filter/imgs/hatch.png
 
-uniform sampler2D u_tex0; // https://tangrams.github.io/tangram-sandbox/styles/imgs/grid-0002.jpg
+uniform sampler2D u_tex0; // https://tangrams.github.io/blocks/test.jpg
 
 
 varying vec2 v_texcoord;
