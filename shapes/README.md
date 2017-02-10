@@ -35,7 +35,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./shapes/test/shapes-circle.png)](http://tangrams.github.io/blocks/test.html?test=./shapes/test/shapes-circle.json)
 
-- **circle** ( mean: 0.000152626155139 median: 0.000173 )
+- **circle** ( mean: 0.000165580631399 median: 0.000173 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/circle-circle.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/circle-circle.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -46,7 +46,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **circleBorder** ( mean: 0.000152912710567 median: 0.000173 )
+- **circleBorder** ( mean: 0.000227090060327 median: 0.0001755 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/circle-circleBorder.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/circle-circleBorder.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -57,7 +57,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **circleDF** ( mean: 0.000152487161499 median: 0.000172 )
+- **circleDF** ( mean: 0.00023945361119 median: 0.000176 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/circle-circleDF.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/circle-circleDF.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -206,7 +206,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./shapes/test/shapes-polygons.png)](http://tangrams.github.io/blocks/test.html?test=./shapes/test/shapes-polygons.json)
 
-- **shapeDF** ( mean: 0.000174618151166 median: 0.000174 )
+- **shapeDF** ( mean: 0.000218177929855 median: 0.000178 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/polygons-shapeDF.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/polygons-shapeDF.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -217,7 +217,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **shape** ( mean: 0.000192396566282 median: 0.000176 )
+- **shape** ( mean: 0.000226817641229 median: 0.000177 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/polygons-shape.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/polygons-shape.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -228,7 +228,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **shapeBorder** ( mean: 0.000206254244543 median: 0.000178 )
+- **shapeBorder** ( mean: 0.000208961446123 median: 0.00018 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/polygons-shapeBorder.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/polygons-shapeBorder.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -287,7 +287,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./shapes/test/shapes-rect.png)](http://tangrams.github.io/blocks/test.html?test=./shapes/test/shapes-rect.json)
 
-- **rect_rnd** ( mean: 0.000160822427253 median: 0.000175 )
+- **rect_rnd** ( mean: 0.000152542821159 median: 0.000173 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/rect-rect_rnd.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/rect-rect_rnd.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -298,7 +298,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **rectDF** ( mean: 0.000159542877193 median: 0.000174 )
+- **rectDF** ( mean: 0.000240486152535 median: 0.000174 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/rect-rectDF.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/rect-rectDF.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -309,7 +309,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **rect** ( mean: 0.000161571187157 median: 0.000173 )
+- **rect** ( mean: 0.000153605637773 median: 0.000173 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/rect-rect.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/rect-rect.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -320,7 +320,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **rectBorder_rnd** ( mean: 0.000155262184633 median: 0.000174 )
+- **rectBorder_rnd** ( mean: 0.000153447888904 median: 0.000173 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./shapes/test/rect-rectBorder_rnd.frag"><img src="http://tangrams.github.io/blocks/./shapes/test/rect-rectBorder_rnd.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 

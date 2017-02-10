@@ -19,7 +19,14 @@ styles:
                     lines: 157
 
         test:
-            hatch: { uniforms: { u_tex0: "https://tangrams.github.io/blocks/test.jpg" }, blocks: { color: "    color += getHatch(v_texcoord.xy, texture2D(u_tex0,v_texcoord.xy).r);" } }
+            hatch:
+                uniforms:
+                    u_tex0: "https://tangrams.github.io/blocks/test.jpg"
+                blocks:
+                    color: |
+                        float brightness = texture2D(u_tex0,v_texcoord.xy).r;
+                        color.rgb = vec3(1.);
+                        color.rgb -= getHatch(v_texcoord.xy*10., brightness);
 
         shaders:
             uniforms:

@@ -37,7 +37,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./generative/test/generative-caustic.png)](http://tangrams.github.io/blocks/test.html?test=./generative/test/generative-caustic.json)
 
-- **getCaustic_3iter** ( mean: 0.000674725604552 median: 0.000657 )
+- **getCaustic_3iter** ( mean: 0.000729905967195 median: 0.000659 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_3iter.frag"><img src="http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_3iter.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -48,7 +48,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **getCaustic_5iter** ( mean: 0.00103541527817 median: 0.001021 )
+- **getCaustic_5iter** ( mean: 0.00113254674021 median: 0.001022 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_5iter.frag"><img src="http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_5iter.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -60,7 +60,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **getCaustic_4iter** ( mean: 0.000857607446206 median: 0.000875 )
+- **getCaustic_4iter** ( mean: 0.00088235646509 median: 0.000877 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_4iter.frag"><img src="http://tangrams.github.io/blocks/./generative/test/caustics-getCaustic_4iter.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -114,7 +114,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./generative/test/generative-fbm.png)](http://tangrams.github.io/blocks/test.html?test=./generative/test/generative-fbm.json)
 
-- **fbm_float_5oct** ( mean: 0.000548375320239 median: 0.000539 )
+- **fbm_float_5oct** ( mean: 0.000618721441748 median: 0.000539 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_5oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_5oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -125,7 +125,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **fbm_vec2_5oct** ( mean: 0.00157921060932 median: 0.001562 )
+- **fbm_vec2_5oct** ( mean: 0.0016859520577 median: 0.001566 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_5oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_5oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -136,7 +136,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **fbm_vec3_5oct** ( mean: 0.00193423135073 median: 0.001921 )
+- **fbm_vec3_5oct** ( mean: 0.00202046261615 median: 0.001926 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_5oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_5oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -147,7 +147,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **fbm_float_8oct** ( mean: 0.000837968709999 median: 0.000844 )
+- **fbm_float_8oct** ( mean: 0.000882367498598 median: 0.000859 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_8oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_8oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -159,7 +159,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **fbm_vec3_8oct** ( mean: 0.00326366609565 median: 0.00323 )
+- **fbm_vec3_8oct** ( mean: 0.00329928538517 median: 0.003235 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_8oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_8oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -171,7 +171,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **fbm_float_3oct** ( mean: 0.000329106662894 median: 0.000305 )
+- **fbm_float_3oct** ( mean: 0.000490216642755 median: 0.00031 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_3oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_float_3oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -183,7 +183,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **fbm_vec2_3oct** ( mean: 0.000915104882203 median: 0.000896 )
+- **fbm_vec2_3oct** ( mean: 0.000966871243413 median: 0.0009 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_3oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_3oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -195,7 +195,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **fbm_vec3_3oct** ( mean: 0.00119764719326 median: 0.001214 )
+- **fbm_vec3_3oct** ( mean: 0.00125177728948 median: 0.001215 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_3oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec3_3oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -207,7 +207,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **fbm_vec2_8oct** ( mean: 0.00251385130696 median: 0.002516 )
+- **fbm_vec2_8oct** ( mean: 0.00260350444508 median: 0.00251 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_8oct.frag"><img src="http://tangrams.github.io/blocks/./generative/test/fbm-fbm_vec2_8oct.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -268,7 +268,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./generative/test/generative-noise.png)](http://tangrams.github.io/blocks/test.html?test=./generative/test/generative-noise.json)
 
-- **snoise_vec3** ( mean: 0.000739529077207 median: 0.000759 )
+- **snoise_vec3** ( mean: 0.000850614960513 median: 0.000757 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec3.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec3.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -279,7 +279,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **snoise_vec2** ( mean: 0.000580874928775 median: 0.000551 )
+- **snoise_vec2** ( mean: 0.000575150839565 median: 0.000548 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec2.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-snoise_vec2.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -290,7 +290,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **gnoise_vec3** ( mean: 0.000876699229173 median: 0.000886 )
+- **gnoise_vec3** ( mean: 0.00087550463353 median: 0.000879 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-gnoise_vec3.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-gnoise_vec3.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -301,7 +301,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **gnoise_vec2** ( mean: 0.00052739091693 median: 0.000424 )
+- **gnoise_vec2** ( mean: 0.000425151545223 median: 0.000416 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-gnoise_vec2.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-gnoise_vec2.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -312,7 +312,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **noise_float** ( mean: 0.000171632862644 median: 0.000175 )
+- **noise_float** ( mean: 0.000150953824757 median: 0.000174 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-noise_float.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_float.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -323,7 +323,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **noise_float_t** ( mean: 0.000205368325243 median: 0.000179 )
+- **noise_float_t** ( mean: 0.000226399381261 median: 0.000178 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-noise_float_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_float_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -335,7 +335,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **noise_vec3_t** ( mean: 0.000207740729884 median: 0.000183 )
+- **noise_vec3_t** ( mean: 0.0001923254836 median: 0.00018 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-noise_vec3_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_vec3_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -347,7 +347,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **noise_vec3** ( mean: 0.00053272334004 median: 0.000429 )
+- **noise_vec3** ( mean: 0.000456504985755 median: 0.0004255 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-noise_vec3.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_vec3.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -358,7 +358,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **noise_vec2** ( mean: 0.000360088445078 median: 0.000318 )
+- **noise_vec2** ( mean: 0.00037561145863 median: 0.000317 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-noise_vec2.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_vec2.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -369,7 +369,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **noise_vec2_t** ( mean: 0.000160553997997 median: 0.000177 )
+- **noise_vec2_t** ( mean: 0.000163274838165 median: 0.000176 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/noise-noise_vec2_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/noise-noise_vec2_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -426,7 +426,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./generative/test/generative-random.png)](http://tangrams.github.io/blocks/test.html?test=./generative/test/generative-random.json)
 
-- **random3_vec3_t** ( mean: 0.000241599828865 median: 0.000188 )
+- **random3_vec3_t** ( mean: 0.00020646085359 median: 0.000185 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random3_vec3_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random3_vec3_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -438,7 +438,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **random_vec3** ( mean: 0.000179698332854 median: 0.000177 )
+- **random_vec3** ( mean: 0.000152098053148 median: 0.000176 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random_vec3.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_vec3.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -449,7 +449,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **random_vec2** ( mean: 0.000152177240118 median: 0.000173 )
+- **random_vec2** ( mean: 0.000258608917921 median: 0.000175 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random_vec2.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_vec2.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -460,7 +460,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **random3_vec2_t** ( mean: 0.000191424229573 median: 0.000178 )
+- **random3_vec2_t** ( mean: 0.000200974167137 median: 0.000181 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random3_vec2_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random3_vec2_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -472,7 +472,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **random_vec2_t** ( mean: 0.000197266826584 median: 0.000179 )
+- **random_vec2_t** ( mean: 0.000205170480226 median: 0.00018 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random_vec2_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_vec2_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -484,7 +484,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **random_float_t** ( mean: 0.00015171563115 median: 0.000174 )
+- **random_float_t** ( mean: 0.000167787908681 median: 0.000174 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random_float_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_float_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -496,7 +496,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **random_vec3_t** ( mean: 0.000206448805461 median: 0.000184 )
+- **random_vec3_t** ( mean: 0.000200336621108 median: 0.000184 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random_vec3_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_vec3_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -508,7 +508,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **random2_vec2_t** ( mean: 0.000202160906516 median: 0.000181 )
+- **random2_vec2_t** ( mean: 0.000192946272855 median: 0.000179 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random2_vec2_t.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random2_vec2_t.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -520,7 +520,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **random_float** ( mean: 0.000174436747415 median: 0.000175 )
+- **random_float** ( mean: 0.000182520598696 median: 0.000174 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random_float.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random_float.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -531,7 +531,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **random2_vec2** ( mean: 0.000161282728428 median: 0.000174 )
+- **random2_vec2** ( mean: 0.000157550363738 median: 0.000174 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random2_vec2.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random2_vec2.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -542,7 +542,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **random3_vec3** ( mean: 0.000156023494654 median: 0.000176 )
+- **random3_vec3** ( mean: 0.000161166903207 median: 0.000176 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random3_vec3.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random3_vec3.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -553,7 +553,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **random3_vec2** ( mean: 0.000162678627145 median: 0.000175 )
+- **random3_vec2** ( mean: 0.000153087837838 median: 0.000174 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/random-random3_vec2.frag"><img src="http://tangrams.github.io/blocks/./generative/test/random-random3_vec2.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -601,7 +601,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./generative/test/generative-voronoi.png)](http://tangrams.github.io/blocks/test.html?test=./generative/test/generative-voronoi.json)
 
-- **voronoi** ( mean: 0.00084405080897 median: 0.000869 )
+- **voronoi** ( mean: 0.000853415038233 median: 0.000867 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./generative/test/voronoi-voronoi.frag"><img src="http://tangrams.github.io/blocks/./generative/test/voronoi-voronoi.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 

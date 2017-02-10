@@ -36,7 +36,10 @@ void main() {
     vec4 color = vec4(0.,0.,0.,1.);
 
 
-    color += getHatch(v_texcoord.xy, texture2D(u_tex0,v_texcoord.xy).r);
+float brightness = texture2D(u_tex0,v_texcoord.xy).r;
+color.rgb = vec3(1.);
+color.rgb -= getHatch(v_texcoord.xy*10., brightness);
+
 
     gl_FragColor = color;
 }
