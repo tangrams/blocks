@@ -43,7 +43,7 @@ color.rgb = color.rgb GRID_BLEND (tileGrid()*GRID_AMOUNT);
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./filter/test/filter-grid.png)](http://tangrams.github.io/blocks/test.html?test=./filter/test/filter-grid.json)
 
-- **grid** ( mean: 0.00320517927544 median: 0.003036 )
+- **grid** ( mean: 0.00304044469336 median: 0.003008 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./filter/test/grid-grid.frag"><img src="http://tangrams.github.io/blocks/./filter/test/grid-grid.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -108,7 +108,7 @@ color.rgb = mix(color.rgb,
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./filter/test/filter-lut.png)](http://tangrams.github.io/blocks/test.html?test=./filter/test/filter-lut.json)
 
-- **lut** ( mean: 0.00892173642007 median: 0.00891 )
+- **lut** ( mean: 0.00868012126674 median: 0.008671 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./filter/test/lut-lut.frag"><img src="http://tangrams.github.io/blocks/./filter/test/lut-lut.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -163,7 +163,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./filter/test/filter-hatch.png)](http://tangrams.github.io/blocks/test.html?test=./filter/test/filter-hatch.json)
 
-- **hatch** ( mean: 0.0127835060614 median: 0.012744 )
+- **hatch** ( mean: 0.012407688866 median: 0.01234 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./filter/test/hatch-hatch.frag"><img src="http://tangrams.github.io/blocks/./filter/test/hatch-hatch.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -234,7 +234,7 @@ color.rgb = color.rgb GRAIN_BLEND (grain()*GRAIN_AMOUNT);
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./filter/test/filter-grain.png)](http://tangrams.github.io/blocks/test.html?test=./filter/test/filter-grain.json)
 
-- **grain** ( mean: 0.082899233445 median: 0.082851 )
+- **grain** ( mean: 0.0663819553174 median: 0.066388 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./filter/test/grain-grain.frag"><img src="http://tangrams.github.io/blocks/./filter/test/grain-grain.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -341,7 +341,7 @@ color = color TV_BLEND (abs(cos((gl_FragCoord.y*(TV_FREQ/u_device_pixel_ratio)+u
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./filter/test/filter-tv.png)](http://tangrams.github.io/blocks/test.html?test=./filter/test/filter-tv.json)
 
-- **tv** ( mean: 0.00271084003132 median: 0.002547 )
+- **tv** ( mean: 0.00258911544382 median: 0.002508 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./filter/test/tv-tv.frag"><img src="http://tangrams.github.io/blocks/./filter/test/tv-tv.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
