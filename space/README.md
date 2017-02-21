@@ -41,7 +41,7 @@ v_pos = modelPosition().xyz;
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./space/test/space-tile.png)](http://tangrams.github.io/blocks/test.html?test=./space/test/space-tile.json)
 
-- **tile** ( mean: 0.00161028527607 median: 0.001506 )
+- **tile** ( mean: 0.00166300699588 median: 0.00155 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./space/test/tile-tile.frag"><img src="http://tangrams.github.io/blocks/./space/test/tile-tile.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -91,7 +91,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./space/test/space-tex.png)](http://tangrams.github.io/blocks/test.html?test=./space/test/space-tex.json)
 
-- **tex** ( mean: 0.00161277526026 median: 0.001505 )
+- **tex** ( mean: 0.00166229960849 median: 0.001551 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./space/test/tex-tex.frag"><img src="http://tangrams.github.io/blocks/./space/test/tex-tex.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -141,7 +141,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./space/test/space-screen.png)](http://tangrams.github.io/blocks/test.html?test=./space/test/space-screen.json)
 
-- **screen** ( mean: 0.00167172570372 median: 0.001507 )
+- **screen** ( mean: 0.00166233120626 median: 0.00155 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./space/test/screen-screen.frag"><img src="http://tangrams.github.io/blocks/./space/test/screen-screen.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -154,7 +154,7 @@ color.rg += fract(st*3.);
 ```
 
 
-- **screen_nonstretch** ( mean: 0.00163808626329 median: 0.001506 )
+- **screen_nonstretch** ( mean: 0.0016628725631 median: 0.001551 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./space/test/screen-screen_nonstretch.frag"><img src="http://tangrams.github.io/blocks/./space/test/screen-screen_nonstretch.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -244,7 +244,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./space/test/space-constant.png)](http://tangrams.github.io/blocks/test.html?test=./space/test/space-constant.json)
 
-- **constant** ( mean: 0.00163783844581 median: 0.001507 )
+- **constant** ( mean: 0.00165867662819 median: 0.00155 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./space/test/constant-constant.frag"><img src="http://tangrams.github.io/blocks/./space/test/constant-constant.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
