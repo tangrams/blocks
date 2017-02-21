@@ -33,7 +33,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./tiling/test/tiling-brick.png)](http://tangrams.github.io/blocks/test.html?test=./tiling/test/tiling-brick.json)
 
-- **brick** ( mean: 0.00167199038658 median: 0.001549 )
+- **brick** ( mean: 0.00163280594224 median: 0.001542 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./tiling/test/brick-brick.frag"><img src="http://tangrams.github.io/blocks/./tiling/test/brick-brick.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -88,7 +88,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./tiling/test/tiling-tile.png)](http://tangrams.github.io/blocks/test.html?test=./tiling/test/tiling-tile.json)
 
-- **tile** ( mean: 0.00166165083913 median: 0.00155 )
+- **tile** ( mean: 0.0015889624355 median: 0.001538 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./tiling/test/tile-tile.frag"><img src="http://tangrams.github.io/blocks/./tiling/test/tile-tile.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -140,7 +140,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./tiling/test/tiling-truchet.png)](http://tangrams.github.io/blocks/test.html?test=./tiling/test/tiling-truchet.json)
 
-- **rotate** ( mean: 0.0016817718258 median: 0.001549 )
+- **rotate** ( mean: 0.00249571344513 median: 0.002402 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./tiling/test/truchet-rotate.frag"><img src="http://tangrams.github.io/blocks/./tiling/test/truchet-rotate.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -151,7 +151,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **mirror** ( mean: 0.00166911953412 median: 0.001551 )
+- **mirror** ( mean: 0.00222999240506 median: 0.002103 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./tiling/test/truchet-mirror.frag"><img src="http://tangrams.github.io/blocks/./tiling/test/truchet-mirror.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -201,7 +201,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./tiling/test/tiling-simplex.png)](http://tangrams.github.io/blocks/test.html?test=./tiling/test/tiling-simplex.json)
 
-- **simplex** ( mean: 0.0016662143879 median: 0.001549 )
+- **simplex** ( mean: 0.0021807195795 median: 0.002077 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./tiling/test/simplex-simplex.frag"><img src="http://tangrams.github.io/blocks/./tiling/test/simplex-simplex.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -212,7 +212,7 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ```
 
 
-- **rotatedSimplex** ( mean: 0.00166337609806 median: 0.001552 )
+- **rotatedSimplex** ( mean: 0.00163385825322 median: 0.001547 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./tiling/test/simplex-rotatedSimplex.frag"><img src="http://tangrams.github.io/blocks/./tiling/test/simplex-rotatedSimplex.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 

@@ -31,7 +31,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./texture/test/texture-non-repetitive.png)](http://tangrams.github.io/blocks/test.html?test=./texture/test/texture-non-repetitive.json)
 
-- **repete_texture** ( mean: 0.00173170654941 median: 0.001557 )
+- **repete_texture** ( mean: 0.0674823859149 median: 0.067404 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./texture/test/non-repetitive-repete_texture.frag"><img src="http://tangrams.github.io/blocks/./texture/test/non-repetitive-repete_texture.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
@@ -80,7 +80,7 @@ These are the **shader blocks**:
 Here are some **benchmarks** of this block performed on a Raspberry Pi:
 [![](http://tangrams.github.io/blocks/./texture/test/texture-zoom-fade.png)](http://tangrams.github.io/blocks/test.html?test=./texture/test/texture-zoom-fade.json)
 
-- **zoom_fade** ( mean: 0.00173938111442 median: 0.001554 )
+- **zoom_fade** ( mean: 0.00301328471286 median: 0.002634 )
 
 <a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./texture/test/zoom-fade-zoom_fade.frag"><img src="http://tangrams.github.io/blocks/./texture/test/zoom-fade-zoom_fade.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
 
