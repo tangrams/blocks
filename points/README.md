@@ -1,43 +1,5 @@
 
 
-#### [points-glow](http://tangrams.github.io/blocks/#points-glow) <a href="https://github.com/tangrams/blocks/blob/gh-pages/points/glow.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/points/glow.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/points/glow-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **shader blocks**:
-
-- **filter**:
-
-```glsl
-float b = getBrightness(color.rgb);
-vec2 st = v_texcoord.xy;
-color = mix(v_color*color.a,vec4(0.),b*b);
-```
-
-
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
 #### [points-cross](http://tangrams.github.io/blocks/#points-cross) <a href="https://github.com/tangrams/blocks/blob/gh-pages/points/cross.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Draws a '+' shape in each point. To learn more about shapes on shaders read [this chapter from The Nook of Shader](http://thebookofshaders.com/07/)
@@ -121,6 +83,44 @@ These are the **shader blocks**:
 ```glsl
 float sdf = dot(v_texcoord.xy-.5,v_texcoord.xy-.5)*2.;
 color.a = fill(.5,sdf) - stroke(DOT_OFFSET,sdf);
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [points-glow](http://tangrams.github.io/blocks/#points-glow) <a href="https://github.com/tangrams/blocks/blob/gh-pages/points/glow.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/points/glow.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/points/glow-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
+
+- **filter**:
+
+```glsl
+float b = getBrightness(color.rgb);
+vec2 st = v_texcoord.xy;
+color = mix(v_color*color.a,vec4(0.),b*b);
 ```
 
 

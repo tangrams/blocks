@@ -55,6 +55,67 @@ Examples:
 ![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
 
 
+#### [tiling-simplex](http://tangrams.github.io/blocks/#tiling-simplex) <a href="https://github.com/tangrams/blocks/blob/gh-pages/tiling/simplex.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Repeats a coordinate space (`vec2 st`) in diferent simplex tiles. To learn more about simplex grids check [this chapter about noise from the Book of Shaders](https://thebookofshaders.com/11/)
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/tiling/simplex.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/tiling/simplex-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **shader blocks**:
+
+- **global**:
+ + `vec2 skew (vec2 st)`
+ + `vec3 simplexCoord (vec2 st, float td)`
+ + `vec3 simplexGrid (vec2 st)`
+ + `vec3 simplexRotatedGrid (vec2 st)`
+
+Here are some **benchmarks** of this block performed on a Raspberry Pi:
+[![](http://tangrams.github.io/blocks/./tiling/test/tiling-simplex.png)](http://tangrams.github.io/blocks/test.html?test=./tiling/test/tiling-simplex.json)
+
+- **simplex** ( mean: 0.00214673029046 median: 0.002049 )
+
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./tiling/test/simplex-simplex.frag"><img src="http://tangrams.github.io/blocks/./tiling/test/simplex-simplex.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+
+```glsl
+...
+// Color:
+    color.rgb += simplexGrid(v_texcoord.xy*5.);
+```
+
+
+- **rotatedSimplex** ( mean: 0.00213914743093 median: 0.002055 )
+
+<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./tiling/test/simplex-rotatedSimplex.frag"><img src="http://tangrams.github.io/blocks/./tiling/test/simplex-rotatedSimplex.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
+
+```glsl
+...
+// Color:
+    color.rgb += simplexRotatedGrid(v_texcoord.xy*5.);
+```
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [tiling-tile](http://tangrams.github.io/blocks/#tiling-tile) <a href="https://github.com/tangrams/blocks/blob/gh-pages/tiling/tile.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Repeats a coordinate space (`vec2 st`) in diferent brick-like tiles N times (`float zoom`). For more information about tilling patterns read [this chapter of The Book of Shaders](https://thebookofshaders.com/09/)
@@ -159,66 +220,5 @@ Here are some **benchmarks** of this block performed on a Raspberry Pi:
 ...
 // Color:
     color.rg += truchetMirror(v_texcoord.xy);
-```
-
-
-![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
-
-
-#### [tiling-simplex](http://tangrams.github.io/blocks/#tiling-simplex) <a href="https://github.com/tangrams/blocks/blob/gh-pages/tiling/simplex.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-
-Repeats a coordinate space (`vec2 st`) in diferent simplex tiles. To learn more about simplex grids check [this chapter about noise from the Book of Shaders](https://thebookofshaders.com/11/)
-
-
-
-To import this block add the following url to your `import` list:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/tiling/simplex.yaml
-```
-
-
-
-
-If you want to import this block together **with their dependencies** use this other url:
-
-```yaml
-import:
-    - https://tangrams.github.io/blocks/tiling/simplex-full.yaml
-```
-
-
-These blocks uses a custom **shader**.
-These are the **shader blocks**:
-
-- **global**:
- + `vec2 skew (vec2 st)`
- + `vec3 simplexCoord (vec2 st, float td)`
- + `vec3 simplexGrid (vec2 st)`
- + `vec3 simplexRotatedGrid (vec2 st)`
-
-Here are some **benchmarks** of this block performed on a Raspberry Pi:
-[![](http://tangrams.github.io/blocks/./tiling/test/tiling-simplex.png)](http://tangrams.github.io/blocks/test.html?test=./tiling/test/tiling-simplex.json)
-
-- **simplex** ( mean: 0.00214673029046 median: 0.002049 )
-
-<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./tiling/test/simplex-simplex.frag"><img src="http://tangrams.github.io/blocks/./tiling/test/simplex-simplex.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
-
-```glsl
-...
-// Color:
-    color.rgb += simplexGrid(v_texcoord.xy*5.);
-```
-
-
-- **rotatedSimplex** ( mean: 0.00213914743093 median: 0.002055 )
-
-<a href="http://thebookofshaders.com/edit.php#http://tangrams.github.io/blocks/./tiling/test/simplex-rotatedSimplex.frag"><img src="http://tangrams.github.io/blocks/./tiling/test/simplex-rotatedSimplex.png" style="width:100px; height:100px; float: right; left: 55px;"></a>
-
-```glsl
-...
-// Color:
-    color.rgb += simplexRotatedGrid(v_texcoord.xy*5.);
 ```
 

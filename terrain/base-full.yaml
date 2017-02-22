@@ -33,12 +33,13 @@ styles:
             blocks:
                 global: "// Rotate in 2, 3 and 4 dimensions\n// ================================\n\
                     mat2 rotate2D (float angle) {\n    return mat2(cos(angle),-sin(angle),\n\
-                    \                sin(angle),cos(angle));\n}\nvec2 rotate2D (vec2\
-                    \ st, float a) {\n    return (rotate2D(a)*(st-.5))+.5;\n}\nmat3\
-                    \ rotateX3D (float phi) {\n    return mat3(\n        vec3(1.,0.,0.),\n\
-                    \        vec3(0.,cos(phi),-sin(phi)),\n        vec3(0.,sin(phi),cos(phi)));\n\
-                    }\nmat4 rotateX4D (float phi) {\n    return mat4(\n        vec4(1.,0.,0.,0),\n\
-                    \        vec4(0.,cos(phi),-sin(phi),0.),\n        vec4(0.,sin(phi),cos(phi),0.),\n\
+                    \                sin(angle),cos(angle));\n}\n#ifdef TANGRAM_FRAGMENT_SHADER\n\
+                    vec2 rotate2D (vec2 st, float a) {\n    return (rotate2D(a)*(st-.5))+.5;\n\
+                    }\n#endif\nmat3 rotateX3D (float phi) {\n    return mat3(\n  \
+                    \      vec3(1.,0.,0.),\n        vec3(0.,cos(phi),-sin(phi)),\n\
+                    \        vec3(0.,sin(phi),cos(phi)));\n}\nmat4 rotateX4D (float\
+                    \ phi) {\n    return mat4(\n        vec4(1.,0.,0.,0),\n      \
+                    \  vec4(0.,cos(phi),-sin(phi),0.),\n        vec4(0.,sin(phi),cos(phi),0.),\n\
                     \        vec4(0.,0.,0.,1.));\n}\nmat3 rotateY3D (float theta)\
                     \ {\n    return mat3(\n        vec3(cos(theta),0.,-sin(theta)),\n\
                     \        vec3(0.,1.,0.),\n        vec3(sin(theta),0.,cos(theta)));\n\
