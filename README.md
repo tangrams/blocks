@@ -1,5 +1,3 @@
-![](blocks.png)
-
 # Tangram Blocks
 
 Gallery of **reusable building blocks for Tangram** to make beautiful maps simpler.
