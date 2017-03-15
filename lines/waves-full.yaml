@@ -24,55 +24,30 @@ styles:
                     \ step(threshold, value);\n        #endif  \n    #else\n     \
                     \   return step(threshold, value);\n    #endif\n}"
             extensions: OES_standard_derivatives
-    shapes-rect:
+    lines-waves:
+        base: lines
+        blend: inlay
         doc:
             author:
                 name: Patricio Gonzalez Vivo
                 twitter: patriciogv
-            description: 'Collection of functions to draw rectangles. To learn more
-                about how to make shapes on shaders go to From check [this chapter
-                about shapes from the Book of Shaders](https://thebookofshaders.com/07/)
-
-                '
+            description: "Draw a wavy line. To learn more about shapes and patterns\
+                \ using shaders check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/)\
+                \ \n"
             licence: MIT
-            tangram-version: 0.0.7
+            tangram-version: 0.11
             version: 0.0.1
         mix:
         - shapes-type
         shaders:
             blocks:
-                global: "// get distance field of a rectangle in the center\n// ================================\n\
-                    float rectDF (in vec2 st, in vec2 size) {\n    st = st*2.-1.;\n\
-                    \    return length(max(abs(st)-size,.0));\n}\nfloat rectDF (in\
-                    \ vec2 st, in float size) {\n    return rectDF(st, vec2(size));\n\
-                    }\n\n// Draw a round corners rectangle in the center\n// ================================\n\
-                    float rect (in vec2 st, in vec2 size, in float radio) {\n    radio\
-                    \ = max(.000001, radio);\n    return fill(radio, rectDF(st, size-radio));\n\
-                    }\n\nfloat rect (vec2 st, float size, float radio) {\n    return\
-                    \ rect(st,vec2(size),radio);\n}\n\n// Draw a round corners rectangle\
-                    \ border in the center\n// ================================\n\
-                    float rectBorder (in vec2 st, in vec2 size, in float radio) {\n\
-                    \    radio = max(.000001, radio);\n    return stroke(radio, rectDF(st,\
-                    \ size-radio));\n}\n\nfloat rectBorder (vec2 st, float size, float\
-                    \ radio) {\n    return rect(st,vec2(size),radio);\n}\n\n// Draw\
-                    \ a rectangle in the center\n// ================================\n\
-                    float rect (vec2 st, vec2 size){\n    size = .25-size*.125;\n\
-                    \    vec2 uv = step(size,st*(1.0-st));\n    return (uv.x*uv.y);\n\
-                    }\n\nfloat rect (vec2 st, float size){\n    return rect(st, vec2(size));\n\
-                    }\n"
-        test:
-            rect:
-                blocks:
-                    color: '    color.rgb += rect(v_texcoord.xy,vec2(.5));'
-            rectBorder_rnd:
-                blocks:
-                    color: '    color.rgb += rectBorder(v_texcoord.xy,vec2(.5),.5);'
-            rectDF:
-                blocks:
-                    color: '    color.rgb += rectDF(v_texcoord.xy,vec2(.5));'
-            rect_rnd:
-                blocks:
-                    color: '    color.rgb += rect(v_texcoord.xy,vec2(.5),.5);'
+                color: color.a = stroke(v_texcoord.x+sin(v_texcoord.y*WAVE_FREQ)*WAVE_AMP,.5);
+            defines:
+                STROKE: 0.38
+                WAVE_AMP: 0.1
+                WAVE_FREQ: 9.216
+                ZOOM_START: 16
+        texcoords: true
     shapes-type:
         doc:
             author:

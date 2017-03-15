@@ -131,7 +131,7 @@ styles:
             blocks:
                 global: "float fill (in float size, in float x) {\n    return 1.-aastep(size,\
                     \ x);\n}\n\nfloat stroke (in float size, in float x) {\n    return\
-                    \ aastep(size, x+STROKE) - aastep(size, x);\n}"
+                    \ aastep(size, x+STROKE*.5) - aastep(size, x-STROKE*.5);\n}"
             defines:
                 STROKE: 0.15
     space-tile:

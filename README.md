@@ -2477,6 +2477,50 @@ Examples:
 <img src="https://tangrams.github.io/tangram-sandbox/styles/grain-roads.png" style="width: 100%; height: 100px; object-fit: cover;">
 </a>
 
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
+#### [lines-waves](http://tangrams.github.io/blocks/#lines-waves) <a href="https://github.com/tangrams/blocks/blob/gh-pages/lines/waves.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Draw a wavy line. To learn more about shapes and patterns using shaders check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/) 
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/waves.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/lines/waves-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **defines**:
+ -  **ZOOM_START**:  The *default value* is ```16```. 
+ -  **WAVE_AMP**:  The *default value* is ```0.1```. 
+ -  **STROKE**:  The *default value* is ```0.38```. 
+ -  **WAVE_FREQ**:  The *default value* is ```9.216```. 
+
+These are the **shader blocks**:
+
+- **color**:
+
+```glsl
+color.a = stroke(v_texcoord.x+sin(v_texcoord.y*WAVE_FREQ)*WAVE_AMP,.5);
+```
+
+
+
 ![](https://mapzen.com/common/styleguide/images/divider/compass-lg-red.png)
 
 

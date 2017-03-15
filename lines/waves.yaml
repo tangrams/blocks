@@ -1,0 +1,27 @@
+import: 
+    - ../shapes/type.yaml
+    
+styles:
+    lines-waves:
+        doc:
+            author: 
+                name: Patricio Gonzalez Vivo
+                twitter: patriciogv
+            version: 0.0.1
+            tangram-version: 0.11
+            licence: MIT
+            description: |  
+                Draw a wavy line. To learn more about shapes and patterns using shaders check [this chapter from the Book of Shaders](https://thebookofshaders.com/09/) 
+        base: lines
+        mix: [shapes-type]
+        blend: inlay
+        texcoords: true
+        shaders:
+            defines:
+                ZOOM_START: 16
+                STROKE: 0.380
+                WAVE_FREQ: 9.216
+                WAVE_AMP: 0.100
+            blocks:
+                color: |
+                    color.a = stroke(v_texcoord.x+sin(v_texcoord.y*WAVE_FREQ)*WAVE_AMP,.5);
