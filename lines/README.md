@@ -449,9 +449,8 @@ import:
 
 These blocks uses a custom **shader**.
 These are the **defines**:
- -  **ZOOM_START**:  The *default value* is ```16```. 
- -  **WAVE_AMP**:  The *default value* is ```0.1```. 
  -  **STROKE**:  The *default value* is ```0.38```. 
+ -  **WAVE_AMP**:  The *default value* is ```0.1```. 
  -  **WAVE_FREQ**:  The *default value* is ```9.216```. 
 
 These are the **shader blocks**:

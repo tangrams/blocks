@@ -46,7 +46,6 @@ styles:
                 STROKE: 0.38
                 WAVE_AMP: 0.1
                 WAVE_FREQ: 9.216
-                ZOOM_START: 16
         texcoords: true
     shapes-type:
         doc:

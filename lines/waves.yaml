@@ -1,6 +1,6 @@
 import: 
     - ../shapes/type.yaml
-    
+
 styles:
     lines-waves:
         doc:
@@ -18,7 +18,6 @@ styles:
         texcoords: true
         shaders:
             defines:
-                ZOOM_START: 16
                 STROKE: 0.380
                 WAVE_FREQ: 9.216
                 WAVE_AMP: 0.100
