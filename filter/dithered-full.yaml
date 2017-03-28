@@ -3,7 +3,7 @@ styles:
         doc:
             author:
                 name: FabriceNeyret2
-            description: 'Apply a color dithered filter https://www.shadertoy.com/view/MllSzj#
+            description: 'Apply a color dithered filter <https://www.shadertoy.com/view/MllSzj#>
 
                 '
             licence: MIT
@@ -11,7 +11,8 @@ styles:
             version: 0.0.1
         shaders:
             blocks:
-                filter: 'color = step(texture(iChannel0, gl_FragCoord.xy/8.), color);
+                filter: 'color = step(texture2D(u_grid_texture, gl_FragCoord.xy/8.),
+                    color);
 
                     '
             uniforms:

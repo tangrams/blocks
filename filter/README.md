@@ -2,7 +2,7 @@
 
 #### [filter-dithered](http://tangrams.github.io/blocks/#filter-dithered) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/dithered.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
-Apply a color dithered filter https://www.shadertoy.com/view/MllSzj#
+Apply a color dithered filter <https://www.shadertoy.com/view/MllSzj#>
 
 
 
@@ -33,7 +33,7 @@ These are the **shader blocks**:
 - **filter**:
 
 ```glsl
-color = step(texture(iChannel0, gl_FragCoord.xy/8.), color);
+color = step(texture2D(u_grid_texture, gl_FragCoord.xy/8.), color);
 
 ```
 
