@@ -446,6 +446,48 @@ Examples:
 
 ### [FILTER](http://tangrams.github.io/blocks/#filter) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
+#### [filter-dithered](http://tangrams.github.io/blocks/#filter-dithered) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/dithered.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+Apply a color dithered filter https://www.shadertoy.com/view/MllSzj#
+
+
+
+To import this block add the following url to your `import` list:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/filter/dithered.yaml
+```
+
+
+
+
+If you want to import this block together **with their dependencies** use this other url:
+
+```yaml
+import:
+    - https://tangrams.github.io/blocks/filter/dithered-full.yaml
+```
+
+
+These blocks uses a custom **shader**.
+These are the **uniforms**:
+ -  **u_grid_texture**:  The *default value* is ```https://tangrams.github.io/blocks/filter/imgs/grid.png```. 
+
+These are the **shader blocks**:
+
+- **filter**:
+
+```glsl
+color = step(texture(iChannel0, gl_FragCoord.xy/8.), color);
+
+```
+
+
+
+![](https://mapzen.com/common/styleguide/images/divider/compass-red.png)
+
+
 #### [filter-grain](http://tangrams.github.io/blocks/#filter-grain) <a href="https://github.com/tangrams/blocks/blob/gh-pages/filter/grain.yaml" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 Apply a lens grain effect to the scene.

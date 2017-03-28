@@ -1,0 +1,24 @@
+styles:
+    filter-dithered:
+        doc:
+            author:
+                name: FabriceNeyret2
+            description: 'Apply a color dithered filter https://www.shadertoy.com/view/MllSzj#
+
+                '
+            licence: MIT
+            tangram-version: 0.0.7
+            version: 0.0.1
+        shaders:
+            blocks:
+                filter: 'color = step(texture(iChannel0, gl_FragCoord.xy/8.), color);
+
+                    '
+            uniforms:
+                u_grid_texture: https://tangrams.github.io/blocks/filter/imgs/grid.png
+        test:
+            dithered:
+                blocks:
+                    color: '    color = texture2D(u_tex0,v_texcoord.xy);'
+                uniforms:
+                    u_tex0: https://tangrams.github.io/blocks/test.jpg
