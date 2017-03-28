@@ -15,4 +15,4 @@ styles:
                 u_grid_texture: https://tangrams.github.io/blocks/filter/imgs/grid.png
             blocks: 
                 filter: |
-                    color = step(texture2D(u_grid_texture, gl_FragCoord.xy/8.), color);
+                    color = step(texture2D(u_grid_texture, fract(gl_FragCoord.xy/8.)), color);
