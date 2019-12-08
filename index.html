@@ -5,14 +5,14 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Tangram Blocks</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/build/GlslCanvas.js"></script>
+
+        <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
         <script type="text/javascript" src="https://rawgit.com/chjj/marked/master/lib/marked.js"></script>
 
-        <link rel="stylesheet" href="https://mapzen.com/common/styleguide/styles/styleguide.css">
+        <link rel="stylesheet" href="https://raw.githubusercontent.com/mapzen/styleguide/gh-pages/styles/styleguide.min.css">
         <style type="text/css">
             img {
                 position: relative;
@@ -49,13 +49,13 @@
             </div>
 
             <div class="col-md-9">
-                <div id="content"> 
+                <div id="content">
                 </div>
             </div>
         </div>
-        
 
-        <script src="https://mapzen.com/common/styleguide/scripts/mapzen-styleguide.min.js"></script>
+
+        <script src="https://raw.githubusercontent.com/mapzen/styleguide/gh-pages/scripts/mapzen-styleguide.min.js"></script>
         <script type="text/javascript">
 
             function fetchHTTP(url, methood){
@@ -111,7 +111,7 @@
                 for (var folder in tocData) {
                     var category = document.createElement('li');
                     category.className = 'toc-top-level';
-                    
+
                     var link = document.createElement('a');
                     link.className = 'toc-subnav-toggle';
                     link.href = '#'+folder;
@@ -184,7 +184,7 @@
             function getScroll() {
                 var html = document.documentElement;
                 var body = document.body;
-                var height = Math.max(  body.scrollHeight, body.offsetHeight, 
+                var height = Math.max(  body.scrollHeight, body.offsetHeight,
                                         html.clientHeight, html.scrollHeight, html.offsetHeight );
                 var scroll = html.scrollTop || body.scrollTop || 0;
                 return scroll/height;
